@@ -1,0 +1,37 @@
+Course Outline
+--------------
+- Core Basics
+    - Getting Started
+    - Language Basics
+    - Base Syntax
+    - Efficient Development & Debugging
+    - Control Structures (conditional, loops)
+    - Close look at Functions
+    - DOM Basics
+    - Arrays & Iterables
+    - Objects
+
+
+- Building A Strong Foundation
+    - Classes & OOP
+    - Constructor Functions & Prototypes
+    - DOM & Browser APIs
+    - Events
+    - Functions Deep Dive
+    - More on Number & Strings
+    - Asynchronous Code
+    - Background HTTP (AJAX)
+
+
+= Advanced Concepts
+    - 3rd Party Libraries
+    - JavaScript Modules
+    - Tooling (Webpack, Babel, etc.)
+    - Browser Support
+    - JavaScript Frameworks
+    - Meta-programming
+    - Node.Js Introduction
+    - Security
+    - Deployment
+    - Performance  Optimizations & Memory Leaks
+    
