@@ -1,4 +1,4 @@
-# JS The Complete Guide JavaScript Bootcamp
+# JavaScript The Complete Guide (Beginner + Advanced)
 A documented relearning of modern day JavaScript
 
 ## What is it?
