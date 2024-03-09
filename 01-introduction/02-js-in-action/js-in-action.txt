@@ -1,0 +1,56 @@
+JavaScript In Action
+--------------------
+- The attached project demonstrates JavaScript in action 
+    - Demonstrates a normal webpage
+
+
+- Refactor the index.html
+    - To demonstrate how JavaScript provide a level of user-interaction 
+
+    - Link-up the provided app.js to the webpage
+        - The script file is located at assests/scripts/app.js
+
+        - Add a <script> tag beneath the last <link> tag
+            - Within the <head> section
+            
+        <script src="assets/scripts/app.js" defer></script>
+
+
+    - Within the content of the webpage
+        - Refactor the following hyperlinks:
+      
+        <a href="info/dynamic.html">dynamic, interpreted</a>
+
+        <a href="info/weakly-typed.html">weakly typed</a>
+
+
+        - Into their respective updates:
+
+        <a
+            href="#"
+            data-text="That means that code is not pre-compiled but instead evaluated, compiled
+            and executed at runtime (e.g. when the browser executes the script)."
+            class="info-modal">dynamic, interpreted
+        </a>
+
+        <a
+            href="#"
+            data-text="Weakly typed languages assign types (like 'number') to variables (data
+            containers) at runtime - i.e. you (the developer) can't set the types
+            you want to use in certain places in advance. Only indirectly by making
+            sure you're always working with the correct values."
+            class="info-modal">weakly typed
+        </a>
+
+
+    - These changes implements an dynamic overlay 
+        - Displayed when the following hyperlinks are clicked
+
+        - Content taken from the respective html files
+            - info/dynamic.html
+            - info/weakly-typed.html
+
+        - Imported as value to the HTML attribute data-text
+
+        - The overlay behavior defined in app.js is linked through the HTML attribute class
+            - Assigned with the value "info-modal"
