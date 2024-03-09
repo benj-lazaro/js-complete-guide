@@ -1,0 +1,43 @@
+<mxfile host="Electron" modified="2024-03-09T06:50:11.633Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/23.1.5 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="Q9kQKC6auRuBqxYlNKkO" version="23.1.5" type="device">
+  <diagram name="Page-1" id="Ikk-44iAqlB9v3dyu7Yl">
+    <mxGraphModel dx="885" dy="534" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="gd1InhqutPdKchK4I8fL-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ILhAsIOJ0kpENmMuVwWW-5" target="gd1InhqutPdKchK4I8fL-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ILhAsIOJ0kpENmMuVwWW-5" value="Browser JavaScript Engine&lt;br&gt;&lt;br&gt;Chrome (V8)&lt;br&gt;FireFox (SpiderMonkey)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="225" y="190" width="150" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1InhqutPdKchK4I8fL-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="gd1InhqutPdKchK4I8fL-1" target="ILhAsIOJ0kpENmMuVwWW-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1InhqutPdKchK4I8fL-1" value="JavaScript Code" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="225" y="40" width="150" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1InhqutPdKchK4I8fL-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="gd1InhqutPdKchK4I8fL-3" target="gd1InhqutPdKchK4I8fL-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1InhqutPdKchK4I8fL-3" value="Parse Code" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="425" y="219" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1InhqutPdKchK4I8fL-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="gd1InhqutPdKchK4I8fL-4" target="gd1InhqutPdKchK4I8fL-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1InhqutPdKchK4I8fL-4" value="Compile To Machine Code" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="425" y="269" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1InhqutPdKchK4I8fL-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="gd1InhqutPdKchK4I8fL-5" target="gd1InhqutPdKchK4I8fL-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1InhqutPdKchK4I8fL-5" value="Execute Machine Code (Single Thread)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="425" y="321" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gd1InhqutPdKchK4I8fL-12" value="Effect on Webpage" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="180" y="420" width="240" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
