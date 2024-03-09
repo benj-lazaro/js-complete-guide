@@ -1,0 +1,31 @@
+JavaScript Executes In A Hosted Environment
+-------------------------------------------
+- Browser Side
+    - JavaScript was invented to create dynamic websites
+        - Executed in the Browser
+
+    - JavaScript can manipulated the:
+        - HTML Code
+        - CSS
+        - Send background HTTP requests & more
+
+    - JavaScript CAN NOT
+        - Access the local filesystem
+        - Interact with the operating system, etc.
+
+
+- Server Side
+    - Google's JavaScript Engine (V8) was extracted into a stand-alone tool
+        - Enables JavaScript to be run anywhere
+        - This tool in the end is known as Node.js 
+
+    - Node.js can be executed on any machine and use to build
+        - Web backends (server-side JavaScript)
+        - Web servers
+
+    - Node.js CAN
+        - Access the local filesystem
+        - Interact with the operating system, etc.
+
+    - Node.js CAN NOT
+        - Manipulate HTML Code or CSS
