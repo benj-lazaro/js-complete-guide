@@ -1,0 +1,31 @@
+Adding JavaScript To The Website
+--------------------------------
+- Create a blank JavaScript file within assests/scripts
+    - Name it app.js
+    - This will contain the calculator logic of the website
+
+
+- On the index.html, at the last line within the <body> 
+    - Add a <script> tag
+        - With a HTML attribute "src"
+        - Assign the path of the vendor.js file
+
+    - Add another <script> tag
+        - This time add the recently created JavaScript file app.js
+
+    - NOTE: The reason behind the order of the files
+        - The vendor.js contains dependencies required by app.js
+
+    - NOTE: Placing the <script> tag on the last line of the <body>
+        - Browser renders the content of the webpage
+        - Before calling the JavaScript file app.js
+
+
+- To test the connectivity of app.js
+    - Add the line of code
+    
+    alert('This works!');
+
+    - Save changes
+    - Launch browser
+    - Access the index.html file
