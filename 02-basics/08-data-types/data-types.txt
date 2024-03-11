@@ -1,0 +1,20 @@
+Data Types
+----------
+- JavaScript has the following Data Types
+    - Numbers   = 2, -3, 22.956
+        - Important for calculations and working with numbers 
+
+    - String    = "Hi", 'Hi', `Hi`
+        - Important for outputting results, gathering input
+        - Backticks (3rd option) is special
+
+    - Boolean   = true / false
+        - Important for conditional statements
+
+    - Objects   = { name: "Max", age: 31}
+        - Important for grouped / related data, helps organize data
+
+    - Arrays    = [1, 3, 5]
+        - Important for list data, unknown amount of data
+
+    
