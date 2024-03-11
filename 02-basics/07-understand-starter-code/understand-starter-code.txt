@@ -1,0 +1,12 @@
+Understanding The Starter Code
+------------------------------
+- The JavaScript code in app.js 
+    - Calls the outputResult() function defined in vendor.js
+    
+    - The function targets two <h2> elements in the index.html 
+    
+        <h2 id="current-calculation">0</h2>
+        <h2>Result: <span id="current-result">0</span></h2>
+
+    - Overwrite the initial content of the <h2> tags 
+        - With the value passed to outputResult() as argument values
