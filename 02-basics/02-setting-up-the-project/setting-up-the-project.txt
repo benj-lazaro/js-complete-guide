@@ -1,0 +1,5 @@
+Setting Up The Project
+----------------------
+- Set up a starter basic website that will be used for exploring JavaScript
+    - It is a basic browser-based calculator
+    
