@@ -1,0 +1,42 @@
+Declaring & Defining Variables
+------------------------------
+- Allowed variable naming conventions
+    - Use camelCase
+    - Use ONLY letters and digits
+    - Starting with $ is allowed
+    - Starting with _ is allowed 
+
+Example:
+let userName        // camelCase
+let ageGroup5       // letters & digits
+let $kindOfSpecial  // starting with $
+let _internalValue  // starting with _ 
+
+
+- Not allowed / recommanded variable naming conventions
+    - Using snake_case is allowed but considered as bad practice
+    - Starting with digits is NOT allowed
+    - Using special characters is NOT allowed
+    - Using JavaScript keywords is NOT allowed
+
+Example:
+let user_name       // snake_case
+let 21Players       // starting with digits
+let user-bad        // special characters
+let let             // JavaScript keyword 
+
+
+- NOTE: JavaScript is case-sensitive
+
+
+- Variables in JavaScript does not need to initialize with a starter value 
+    - This variable is an uninitialized variable
+
+
+- A semi-colon at the end of a JavaScript expression is GENERALLY OPTIONAL
+    - REQUIRED when writing two (2) expression on a single line of code
+
+Example:
+let const a = 1; let const b = 2;
+
+
