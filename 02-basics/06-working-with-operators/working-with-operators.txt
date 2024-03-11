@@ -1,0 +1,16 @@
+Working With Variables & Operators
+----------------------------------
+- An operator manipulate a value stored in a variable
+
+
+- JavaScript has the following mathematical operators 
+    - Add two numbers (+)
+    - Subtract two numbers (-)
+    - Multiply two numbers (*)
+    - Divide two number (/)
+    - Divide two numbers, yield the remainder instead (%)
+    - Exponentiation (**)
+
+
+- JavaScript uses the following assignment operator
+    - Assings a value to a variable (=)
