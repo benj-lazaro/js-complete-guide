@@ -1,0 +1,8 @@
+Module Introduction
+-------------------
+- This section focuses on:
+    - Diving into Core Syntax
+    - Understanding Variables & Data Types
+    - Working with Operators
+    - Explore & Use Functions
+    
