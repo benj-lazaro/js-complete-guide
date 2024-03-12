@@ -1,0 +1,31 @@
+More On Strings
+---------------
+- Single or double quotes can be used for a string data type
+    - Important thing is consistency and to stick to the chosen convention
+    - Content in-between the quotes is considered as text
+
+
+- Backticks (leftside of '1' key) offers a feature known as template literal
+    - It renders the value of a constant, variable or expression as text
+
+    - This is done using a special syntax
+        - A $ sign followed by a pair of { }
+        - Passing the name of constant, variable or expression as an argument value
+
+        ${[constant_name | variable_name | expression]}
+
+
+- Template literals also offer the ability to write multiline Strings
+    - Strings that contain multiple line breaks
+    - This is NOT possible with single or double quotes strings
+
+
+- Using a '\' in a string serves as an escape character
+    - Any character AFTER the \ is NOT treated as a normal character
+    - It will have a special meaning depending on the chosen character
+
+    Example:
+    \n  = linebreak
+    \'  = single quote
+    \\  = backslash
+
