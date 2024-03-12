@@ -1,0 +1,9 @@
+Constants
+---------
+- HTML code is read / executed by the browser from top to bottom
+    
+    
+- JavaScript code is parsed, compiled and execute (on-the-fly) from top to bottom
+    - This is a default JavaScript behavior
+
+
