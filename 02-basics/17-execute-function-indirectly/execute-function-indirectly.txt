@@ -1,0 +1,24 @@
+Executing Functions Indirectly
+------------------------------
+- Refactor the code of app.js
+    - Add an Event Listener to the constant addBtn (defined in vendor.js)
+    - The constant constains a targeted HTML element in index.html
+
+    - The .addEventListener() is a JavaScript method that
+        - Set up a function to be called
+        - Whenever a specified event occurred on the targeted element (addBtn)
+        - Reference (https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
+
+    - Pass two argument values to .addEventListener()
+        - 1st argument = name of event to listen to
+
+        - 2nd argument = name function to be called when the event occurred
+            - NOTE: Omit ( ) from the callback function to prevent from immediately being executed
+
+
+    - Inside the callback function add()
+        - Add the value of currentResult with userInput (defined in vendor.js)
+            - The property .value = stored value 
+        
+        - Call outputResult() (defined in vendor.js) to render the result on the HTML document
+        
