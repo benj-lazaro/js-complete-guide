@@ -1,0 +1,5 @@
+Returning Values
+----------------
+- The "return" statement ends function execution 
+    - Specifies the value to be returned to the function caller
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return)
