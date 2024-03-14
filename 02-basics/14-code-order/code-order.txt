@@ -1,0 +1,21 @@
+The (Un)Importance Of Code Order
+--------------------------------
+- In JavaScript when using "let" or "const" keyword
+    - Requires to be declared ONCE
+    - Before accessing the constant or variable
+    - Failing to do so triggers a "ReferenceError"
+
+
+- A JavaScript function is NOT affected by the order of the code 
+    - A function can be declared anywhere in the codebase
+    - It will execute with no issues when called
+
+    - When the browser reads a JavaScript code
+        - It parses the entire codebase from top to bottom
+        - It registers any defined functions(s) it finds
+        - Then "pulls" the function(s) to the top of the codebase
+
+    - In most cases, defining functions at the top of the codebase is recommended
+        - Some developers prefer at the bottom
+        - There is NO right way
+        - Important is to be consistent with the chosen convention 
