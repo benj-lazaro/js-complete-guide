@@ -1,0 +1,19 @@
+Converting Data Types
+---------------------
+- Any value from a HTML <input> element
+    - JavaScript will ALWAYS considered as a string
+
+    - <input> element's value will return a string
+        - Even set with an HTML attribute "type" with a value of "number"
+        - This is how JavaScript in the browser works
+
+    - To convert the value of an HTML <input> element into a number
+        - Use parseInt()
+            
+    - The parseInt if a function that parses a string argument
+        - Then returns an integer of the specified radix (base number)
+        - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt)
+
+    
+- To convert number data type into a string, use the method .toString()
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toString)
