@@ -1,0 +1,10 @@
+Splitting Code Into Functions
+-----------------------------
+- Split repeating code into their own function
+    - To address code repetition
+    - Helps change a piece of code in a single place within a codebase
+    - AVOID code repetition at all cost 
+
+
+- When working with Template Literal
+    - Any value passed into it is IMPLICITY CONVERTED into a string
