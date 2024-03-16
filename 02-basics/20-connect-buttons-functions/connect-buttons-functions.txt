@@ -1,0 +1,10 @@
+Connecting All Buttons To Functions
+-----------------------------------
+- Hook-up targeted HTML elements defined in vendor.js
+    - To their respective callback functions
+
+
+- Refactor repetitive code into their own respective functions
+    - Capture user input from HTML form 
+    - Render the corresponding mathematical operation on HTML 
+    
