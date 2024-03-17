@@ -1,0 +1,30 @@
+More Core Data Types
+--------------------
+- Booleans
+    - Has two values: true or false
+    - Used with control structures / statements
+
+Example:
+isUserLoggedIn = true;
+isUserLoggedIn = false;
+
+
+- Objects
+    - Used for grouping related data
+    - An object is enclosed within a pair of { }
+    - Each object contains a number of key-value pair values
+    - Each key-value pair value is separated by a ,
+
+Example:
+userAccount = {
+    name: "Max",
+    age: 55
+}
+
+
+- Arrays
+    - Used for storing a list of data
+    - Can store an unknown amount of data
+    - An array is enclosed within a pair of [ ]
+    - Each item in an array is separeated by a ,
+    - It can store a mix of data types 
