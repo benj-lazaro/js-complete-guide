@@ -1,0 +1,39 @@
+More Operators
+--------------
+- Shorthand mathematical operators 
+    - Applied to assigning a new value to the same variable, use:   
+        - add       +=
+        - subtract  -=
+        - multiply  *=
+        - divide    /=
+
+
+Example
+// Regular statement
+currentResult = currentResult + enteredNumber;
+
+// Using shorthand 
+currentResult += enteredNumber;
+
+
+- Incrementor and Decrementor operator
+    - Increments / decrements the number value assigned to a variable by 1
+        - Increment     ++
+        - Decerement    --
+
+    - NOTE: NOT available for multiplication and division operations
+        - Multiply by 1 yields the same result 
+        - Divide by 1 yields the same result
+
+
+Example
+// Regular statement
+currentResult = currentResult + 1;
+
+// Using shorthand (incrementor)
+currentResult++;    // Increments the value AFTER reading the statement
+++currentResult;    // Increments the value BEFORE reading the statement
+
+// Using shorthand (decrementor)
+currentResult--;    // Decrements the value AFTER reading the statement
+--currentResult;    // Decrements the value BEFORE reading the statement
