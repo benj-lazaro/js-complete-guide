@@ -1,0 +1,45 @@
+Using Arrays
+------------
+- Introduction on arrays
+    - Create an array that keeps track of the mathematical operations performed on the unconventional calculator web app
+    - This serves as an internal log
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+
+Syntax:
+<array_name> = [];
+<array_name> = [<element_1>, <element_2>, <element_n>];
+
+
+- The method .push() adds or pushes a new element at the end of an array
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
+
+Syntax:
+push()
+push(<element1>)
+push(<element1>, <element2>)
+push(<element_1>, <element_2>, /* …, */ <element_n>)
+
+
+- Use console.log() to view the content of an array
+    - A built-in method that outputs a message to the console
+    - The message may be a single string (with optional substitution values), or it may be any one or more JavaScript object
+
+Syntax:
+console.log(<object_1>)
+console.log(<object_1>, /* …, */ <object_n>)
+console.log(<msg>)
+console.log(<msg>, <subst_1>, /* …, */ <subst_n>) 
+
+
+- To read or access a specific item within an array
+    - Use the index value (position) of the item
+
+    - NOTE: JavaScript array uses zero-based index
+        - The first element is located at index 0
+
+    - Accessing a non-existent array item based on its index value
+        - Returns an undefined value
+
+
+Syntax:
+<array_name>[<target_element_index_position_value>];
