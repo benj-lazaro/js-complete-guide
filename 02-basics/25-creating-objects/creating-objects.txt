@@ -1,0 +1,34 @@
+Creating Objects
+----------------
+- An object is used to store various keyed colections (key-pair values) & more complex entties
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object#examples)
+
+
+- Created using the Object() constructor
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/Object)
+
+Syntax:        
+<object_name> = new Object();
+<object_name> = new Object(<value>);
+
+
+- Created using the object initialzer / literal syntax
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#syntax)
+
+Syntax:
+<object_name> = {
+    <key_1>: <value_1>,
+    <key_n>: <value_n>,
+    <method_namme>(<parameters>) {
+        // ..
+    },
+};
+
+
+- To demonstrate the creation of an object
+    - Implement a detailed log using an object
+    - Log will contain
+        - Mathematical operator (ADD)
+        - Previous result
+        - User input
+        - Result of the mathematical opeartion
