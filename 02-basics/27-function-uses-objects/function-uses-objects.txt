@@ -1,0 +1,8 @@
+Adding A Reusable Function That Uses Objects
+--------------------------------------------
+- Refactor the codebase of app.js's add() function
+    - Grab the code that generates a log of mathematical operations performed
+    - Transfer it into a function of its own
+    - So that other mathematical function can re-use it as well
+
+
