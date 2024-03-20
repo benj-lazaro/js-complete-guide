@@ -1,0 +1,27 @@
+Importing Scripts Correctly With defer & async
+----------------------------------------------
+- The "defer" is a boolean attribute of the <script> tag
+    - Informs the browser to download the external JavaScript file right away
+    - Load the JavaScript file as soon as possible
+    - BUT executes the JavaScript file ONLY AFTER the HTML document has been parsed
+        - The order of script execution is GUARANTEED
+
+- NOTE: Recommended to import external JavaScript files within the <head> section
+    - This loads the external JavaScript file in a more efficient way
+
+
+- The "async" is a boolean attribute of the <script> tag
+    - Informs the browser to download the external JavaScript file right away
+    - Load the JavaScript file as soon as possible
+    - BUT executes the JavaScript file IMMEDIATELY
+        - HTML document parsing is paused
+        - The order of script execution is NOT GUARANTEED
+        
+    - NOTE: Use for stand-alone script that DOES NOT RELY on HTML content / elements
+
+
+- Both "async" and "defer" attributes are AVAILABLE ONLY for external JavaScript files
+    - Both requires to work with the "src" attribute
+
+
+- Reference (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script)
