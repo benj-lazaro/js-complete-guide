@@ -1,0 +1,26 @@
+typepof Operatior
+----------------
+- It returns a string indicating the data type of the operand's value
+    - It evaluates the data type of a value currently assigned to a variable at runtime
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof)
+
+
+Syntax:
+
+typeof operand
+
+
+Example:
+
+typeof "Max"                    // returns "string"
+type of 1                       // returns "number"
+type of 1.1                     // returns "number"
+typeof 37 === "number";         // returns "true"
+typeof 3.14 === "number";       // returns "true"
+typeof 42 === "number";         // returns "true"
+typeof "trek" === "string";     // returns "true"
+typeof [1, 2, 3]                // returns "object"
+typeof { name: "Max", age: 50 } // returns "object"
+typeof undefined                // returns "undefined"
+typeof null                     // returns "object"
+typeof NaN                      // returns "number"
