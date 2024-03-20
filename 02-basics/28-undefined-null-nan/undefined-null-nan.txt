@@ -1,0 +1,27 @@
+Undefined, Null & NaN
+---------------------
+- Additional data types in JavaScript that contain special values
+    - undefined
+    - null
+    - NaN (Not a Number)
+
+
+- undefined
+    - Default value of an uninitialized variable
+    - NOT RECOMMENDED to manually assign an "undefined" value to a variable
+
+
+- null 
+    - Similar to undefined 
+    - BUT it is NEVER used as a default value of an uninitialized variable
+    - Often used to manually "reset" or "clear" the value of a variable
+        - An alternative to assigning an empty string
+
+
+- NaN (Not a Number)
+    - Technicall is NOT a data type
+    - It is a type of "number" that is NOT a number
+
+    - It works like an error code when performing calculations
+    - It is the result of a calculation that is INVALID
+    - A calculation with a value that is NOT a number (e.g. string)
