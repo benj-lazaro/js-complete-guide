@@ -1,0 +1,9 @@
+Module Introduction
+-------------------
+- This section focuses on:
+    - Debugging your code
+    - Efficiently work on your code
+    - How to find and fix errors
+    - How to find help and resources to dive deeper
+    
+    
