@@ -1,0 +1,15 @@
+Efficient Development & Debugging An Overview
+---------------------------------------------
+- How to write code efficiently
+    - Work in a productive environment (i.e. code editor, IDE)
+    - Configure it to be comfortable working with it
+    - Utilize auto-format and shortcuts
+    - Use auto-completion and hints
+    - Explore extensions and settings
+
+
+- How to find help
+    - The goal as a developer is NOT to learn all features & commands by heart
+    - Know how and where to find help
+
+- Debug your code
