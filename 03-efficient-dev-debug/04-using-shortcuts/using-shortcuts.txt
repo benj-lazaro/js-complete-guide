@@ -2,9 +2,7 @@ Using Shortcuts
 ---------------
 - Selection shortcuts (under "Selction" menu item)
     - Select next occurrence of text    = CTRL + D
-    
     - Move selected line of text up     = ALT + <arrow-up>
-
     - Move selected line of text down   = ALT + <arrow_down>
 
 
