@@ -1,0 +1,9 @@
+Installing IDE Extensions
+-------------------------
+- To launch VS Code's Extensions window
+    - View -> Extensions (CTRL + SHIFT + X)
+
+
+- Recommended Extensions
+    - Prettier (Esben Petersen)
+    
