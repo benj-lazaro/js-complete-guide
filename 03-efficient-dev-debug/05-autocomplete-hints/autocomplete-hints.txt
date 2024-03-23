@@ -1,0 +1,19 @@
+Using Autocomplete & IDE Hints
+------------------------------
+- VS Code have autocomplete capabilities
+    - Partially writing a piece of code returns a list of suggestions to choose from
+    - Press ENTER or TAB
+    - Helps write code faster
+
+
+- VS Code provide hints 
+    - Hovering the mouse cursor over the name of a function
+        - Provide some details regarding expected arguments
+        - Language built-in functions even provide some descriptions
+
+    - Adding a "." after an object
+        - Lists associated methods and/or properties
+        - Provide description on said method / property
+
+        - NOTE: CTRL + SPACE    = re-enables the description
+
