@@ -1,0 +1,7 @@
+How To Google Correctly
+-----------------------
+- To Google a topic correctly
+    - Declare the programming language first (e.g. JavaScript)
+    - Followed by a short description of how a targeted function (or idea) works
+
+    - Entries from StackOverflow (popular development forum) is helpful (most of the time)
