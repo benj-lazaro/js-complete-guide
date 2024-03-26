@@ -1,0 +1,12 @@
+Using the console.log() To Look Into The Code
+---------------------------------------------
+- The console.log() is JavaScript's built-in static method
+    - Outputs a message to the console (browser's Console tab)
+    - The message may be a single string or any JavaScript objects
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/console/log_static)
+
+
+    - Helps find logical errors in code 
+        - String value is printed in Black
+        - Number value is printed in Blue
+
