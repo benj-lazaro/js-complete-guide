@@ -1,0 +1,12 @@
+Testing Code Changes Directly With Devtools
+-------------------------------------------
+- In the Sources tab
+    - You can change the code directly 
+    
+    - To save changes made
+        - Type CTRL + S
+
+        - Locally save changes in the browser
+            - So it can survive when reloading the web page
+
+        - NOTE: Changes are NOT saved in the source file on the filesystem
