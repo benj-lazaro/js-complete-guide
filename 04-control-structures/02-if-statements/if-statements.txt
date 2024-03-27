@@ -1,0 +1,33 @@
+if Statements & Boolean (Comparison) Operators
+----------------------------------------------
+- The if...else statement executes a statement IF a specified condition is truthy
+    - If the specified condition is falsy, then statement in the ELSE clause will be executed
+        - The ELSE clause is OPTIONAL
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else)
+
+Syntax:
+
+if (condition)
+  statement1
+
+// With an else clause
+if (condition)
+  statement1
+else
+  statement2
+
+
+- Boolean operators are important for conditional statements
+    - Returns a value of true or false
+
+    - Check for value equality                  =   ==
+    - Check for value inequality                =   !=
+    - Check for value AND type equality         =   === (preferred over ==)
+    - Check for value AND type inequality       =   !==
+    - Check for value being greater             =   >
+    - Check for value being lesser              =   <
+    - Check for value being greater or equal    =   >=
+    - Check for value being lesser or equal     =   <=
+    - Check if NOT true                         =   !
+
