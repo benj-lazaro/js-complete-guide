@@ -1,0 +1,9 @@
+Adding An Attack Function
+-------------------------
+- Implementing the corresponding callback function for the Attack button
+
+
+- Globally scoped constant or variable names
+    - Written in UPPERCASE
+    - Separate by a _ if there are more than 1 word
+    
