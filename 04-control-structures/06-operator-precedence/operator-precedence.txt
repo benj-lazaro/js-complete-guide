@@ -1,0 +1,24 @@
+Understanding Operator Precedence
+---------------------------------
+- Operator precedence describes the order on which operators are executed
+    - Value yieled by a higher precedence operator serves as an operand to lower precedence operator
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#table)
+
+    - Reference (https://www.w3schools.com/js/js_precedence.asp)
+
+
+- Mathematical operators follows the PEMDAS precedence
+    - Parenthesis
+    - Exponentiation
+    - Multiplication
+    - Division
+    - Addition
+    - Subtraction
+
+
+- Logical operators
+    - NOT   = !
+    - AND   = &&
+    - OR    = ||
+
