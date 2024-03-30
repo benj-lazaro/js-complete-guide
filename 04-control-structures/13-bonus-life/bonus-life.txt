@@ -1,0 +1,15 @@
+Controlling The Conditional Bonus Life (Without Boolean Operators)
+------------------------------------------------------------------
+- Enable the Bonus Life button
+    - Implement the corresponding code for this functionality
+        - Within the function endRound()
+
+    - Automatically gets trigerred when player's health reaches 0
+        - Restores health back to its state prior to the recent attack
+    
+    - Use the functions removeBonusLife() & setPlayerHealth() from vendor.js
+        - To remove the corresponding element from the DOM
+        - Restore player health back to its recent state before the attack
+
+        - To update the player's health bar
+            - To reflect the Bonus Life
