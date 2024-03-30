@@ -1,0 +1,8 @@
+Time For A Heal Player Functionality
+------------------------------------
+- Enable the Heal button
+    - Implement the corresponding code for this functionality
+    - Hooking up the button to its corresponding callback function
+    
+    - Make sure that in using heal 
+        - It will NOT restore the player's health to full
