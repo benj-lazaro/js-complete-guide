@@ -1,0 +1,4 @@
+Adding A Reset Game Functionality
+---------------------------------
+- Implement code that resets the game once it is over
+
