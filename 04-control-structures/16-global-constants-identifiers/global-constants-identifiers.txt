@@ -1,0 +1,10 @@
+Utilizing Global Constants As Identifiers In Conditional Code
+-------------------------------------------------------------
+- A common code pattern is using global constants as an identifier
+    - Whose assigned value will be evaluated in a conditional statement
+
+    - Instead of using string identifiers directly in a conditional statement
+        - An unintentional typo might break the code
+
+    - The idea is to define the string value once (in the global constant)
+        - To prevent from introducing a typo within the latter part of the code
