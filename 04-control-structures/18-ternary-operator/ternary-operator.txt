@@ -1,0 +1,25 @@
+Ternary Operator
+----------------
+- It takes three (3) operands
+    - A condition
+    - Followed by a ?
+    - Then an expression to execute if the condition is truthy
+    - Followed by a :
+    - Finally an expression to execute if the condition is falsy
+
+
+Syntax:
+
+condition ? exprIfTrue : exprIfFalse
+
+
+- It addresses the limitation of an if statement
+    - It does NOT return a value
+
+    - It can NOT be used in an assigment statement where
+        - A conditional statement is expected to return a value
+        - A value that will be asisgned to a constant / variable
+
+
+- Ideal for relatively short conditional statements & value assignments
+    - Use if statements for complex conditions & more complex values
