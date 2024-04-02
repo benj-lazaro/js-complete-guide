@@ -1,0 +1,9 @@
+Adding A Conditional Battle Log
+-------------------------------
+- Enable the Show Log button
+    - Implement the corresponding code for this functionality
+    - Hooking up the button to its corresponding callback function
+
+    - Logs every round of the game
+        - Including every "event" or action performed in a round
+        
