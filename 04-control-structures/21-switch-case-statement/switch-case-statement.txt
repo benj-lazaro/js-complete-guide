@@ -1,0 +1,38 @@
+Working With the switch-case Statement
+--------------------------------------
+- The switch statement evaluates an expression (that yields a value)
+    - Matching the expression's value against a series of case clauses
+    - Executes statements after the first case clause with matching value
+    - Until a break statement is encountered
+
+    - The default clause of a switch statement will be jumped to
+        - If NO case matches the expression's value
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)
+
+
+Syntax:
+
+switch (expression) {
+  case caseExpression1:
+    statements
+  case caseExpression2:
+    statements
+  // …
+  case caseExpressionN:
+    statements
+  default:
+    statements
+}
+
+
+- A break statement terminates the current loop or switch statement
+    - Transfers program control to the statement following the terminated statement
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/break)
+
+
+- Common use case of switch-case statement
+    - Multiple equality checks
+    - Executes different code based on the condition that was met 
+    - An effective replacement for multiple if (and else-if) statements 
+
