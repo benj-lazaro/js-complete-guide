@@ -1,2 +1,46 @@
 Introducing Loops
 -----------------
+- Loops help execute code multiple times
+    - In a more dynamic and flexible way
+
+
+- In JavaScript, it has four main loops
+    - for
+        - Excecute code in a certain amount of time
+        - With the help of a counter variable
+        - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for)
+
+        Syntax:
+
+        for (initialization; exit_condition; afterthought/counter_variable)
+            statement
+
+
+    - for-of
+        - Executes for every element in an array or an iterable
+        - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
+
+        Syntax:
+
+        for (element_variable of iterable)
+            statement
+
+
+    - for-in 
+        - Executes for every key in an object
+        - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in)
+
+        Syntax:
+
+        for (key_variable in object)
+            statement
+
+
+    - while
+        - Execute code as long as a condition remain true
+        - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while)
+
+        Syntax:
+
+        while (condition)
+        statement
