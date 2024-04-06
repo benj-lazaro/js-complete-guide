@@ -1,0 +1,28 @@
+The while & do while Loop
+-------------------------
+- The while statement creates a loop that
+    - Executes a specified statement as long as the test condition evalutes to true
+    - The condition is evaluated before executing the statement
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while)
+
+
+Syntax:
+
+while (condition)
+  statement
+
+
+- The do while statement create a loop that
+    - Executes a specified statement until the test condition evaluates to false
+    - The condition is evaluated after executing the statement
+        - Resulting in the specified statement executing at least once
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/do...while)
+
+
+Syntax:
+
+do
+  statement
+while (condition);
