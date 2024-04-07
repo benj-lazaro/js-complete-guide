@@ -1,0 +1,13 @@
+Controlling Loops With break
+----------------------------
+- The break statement terminates the current loop or switch
+    - Transfers program control to the statement following the terminated statement 
+    - It can also jump past a labeled statement when used within that labeled statement
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/break)
+
+
+Syntax:
+
+break;
+break label;
