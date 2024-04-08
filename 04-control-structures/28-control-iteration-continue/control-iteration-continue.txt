@@ -1,0 +1,24 @@
+Controlling Iterations With continue
+------------------------------------
+- The continue statement terminates execution of statements
+    - In the current iteration of the current loop / labeled loop
+    - Continues execution of the loop with the next iteration
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/continue)
+
+
+Syntax:
+
+continue;
+continue label;
+
+
+Example:
+
+for (let i = 0; i < 5; i++) {
+    if (i === 3) {
+        continue;               // Skip the current iteration and move on to the next
+    }
+
+    console.log(i);
+}
