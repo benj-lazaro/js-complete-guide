@@ -1,0 +1,42 @@
+How Code Is Parsed & Compiled
+-----------------------------
+- After the browser reads the HTML file and see the imported JavaScript code
+    - Browser executes the JavaScript code from top to bottom line-by-line
+        - Details on how it is exactly executed depends on the JavaScript Engine used
+
+        - JavaScript Engine under the hood
+            - V8 Chrome (https://hackernoon.com/javascript-v8-engine-explained-3f940148d4ef)
+            - SpiderMonkey (https://firefox-source-docs.mozilla.org/js/index.html)
+    
+
+        - JavaScript Engine parses & execute the code
+            - JavaScript Engine's interpreter 
+                - Loads, read and parses the JavaScript code
+                - Translates it into bytecode
+                - Starts running the script / bytecode line-by-line in an optimized way 
+                    - Far from being executed as fast as possible
+
+            - Javascript Engine's just-in-time compiler 
+                - Compiles the bytecode into machine code
+                    - Offers beter performance
+                
+                - NOTE: Just-in-time compilation meant that
+                    - The compiler starts compiling + executing the compiled code
+                    - Whilst the code is being read / executed
+
+            - Hands off the machine code to the browser's host OS to execute it
+
+            - JavaScript Engine applies optimization techniques 
+                - To speed up execution and compilation time
+
+                - Code that weren't changed between the last & current execution
+                    - Is NOT necessarily recompiled, the previously compiled code is taken again
+
+
+        - Browser offer features in the form of APIs
+            - Communication bridges between JavaScript and logic built into the browser
+                - The "logic" or browser features are often implemented in C++
+
+            - Access to these APIs can be bundled into the compiled machine code
+
+
