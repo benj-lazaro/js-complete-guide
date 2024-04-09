@@ -1,0 +1,30 @@
+Understanding Hoisting
+----------------------
+- Hoisting refers to the process whereby the JavaScript interpreter
+    - Appears to move the declaration of
+        - Classes
+        - Imports
+        - Variables
+
+    - To the top of their scope prior to execution of the code
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Glossary/Hoisting)
+
+
+- Using the keyword let to define a variable & accessing before it was declared
+    - Returns a ReferenceError: Cannot access before initialization
+
+    - JavaScript hoists or pulls the variable declaration on top of its scope
+        - Then immediatlely access that triggers the ReferenceError
+
+
+- Using the keyword var to define a variable & accessing before it was declared
+    - Returns an undefined value
+
+    - JavaScript hoists or pulls the variable declaration on top of its scope
+        - Then immediatlely access it prior to the assignment of the initial value
+        - Thus returning a value of undefined
+
+
+- It is ENCOURAGED to declare variables before using it
+    - Regardless on whether using the keywords let or var
