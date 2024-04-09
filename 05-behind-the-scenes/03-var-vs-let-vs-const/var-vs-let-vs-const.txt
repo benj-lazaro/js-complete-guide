@@ -1,0 +1,32 @@
+var VS let VS const: Introducing The Block Scope
+------------------------------------------------
+- The keyword var creates / defines a variable
+    - It has been made available since the beginning of the JavaScript language
+    - Declares a function & globally scoped variable
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var)
+
+    - It is possible to redeclare a variable within the same scope 
+        - This will NOT trigger a SyntaxError
+        - Pointing that a variable of the same name is already DECLARED earlier
+
+    - It is DISCOURAGED using var on modern JavaScript code
+        - It ONLY exists for backward compatibility on older browsers
+
+ 
+- The keyword let creates / defines a variable
+    - It has been made avaialble since ES6
+    - Declares a block scoped variable
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)
+
+
+- The keyword const creates / defines a constant variable
+    - It has been made available since ES6
+    - Declares a block scoped constant variable
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)
+
+
+- A Block Scope or Statement is used to group zero or more statements
+    - The block is delimited by a pair of braces { }
+        - And contains zero or more statements and declarations
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/block)
