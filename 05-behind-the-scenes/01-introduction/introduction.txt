@@ -1,0 +1,10 @@
+Module Introduction
+-------------------
+- This section focuses on:
+    - ES6 VS ES6 syntax
+
+    - How JavaScript works
+        - How the brwoser interprets & executes the JavaScript code
+
+    - Look on the weird parts of JavaScript
+    
