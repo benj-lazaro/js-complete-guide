@@ -1,0 +1,41 @@
+ES5 VS ES6+ (Next Gen JS): Evolution Of JavaScript
+--------------------------------------------------
+- ES stands for ECMAScript
+    - It is the language behind JavaScript 
+    - It is the language being standardize by ECMA International
+    - It is under active development
+
+    - ECMA International 
+        - They are responsible on working new iterations of ECMAScript (JavaScript)
+        - Browser developers adopt these iterations into their respective JavaScript Engines
+
+
+- JavaScript Evolution
+    - Dates back into the 90s
+
+    - ES5 
+        - It was the released standard that was agreed and adopted by browser developers
+                
+        - It was supported by all browsers including the old Internet Explorer
+        
+        - ONLY have the keyword var for creating variables
+            - NO support for keyword let and const
+
+        - Generally has the same syntax in ES6 BUT missing some features
+
+    
+    - ES6 (and recent iterations)
+        - Considered as the modern JavaScript
+            - Recent ECMAScript standard was finalized by 2015
+            - Thus dubbed as ECMAScript 2015 and also referred as ES6
+
+        - It has a great support for modern browser
+            - Modern browsers' auto update feature ensures the latest JavaScript updates
+                - Incremental updates on their respective JavaScript Engines
+
+            - It mostly can transpile ES6 code into ES5 for older browser support
+
+        - Offer new features that help write better, clearner & faster code
+
+        - It is still under active development
+            - ES6 was a milestrong moving forward
