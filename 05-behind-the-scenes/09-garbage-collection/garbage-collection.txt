@@ -1,0 +1,32 @@
+Garbage Collection & Memory Management
+--------------------------------------
+- How does the browser manage the heap (long-term memory)
+    - Host OS allocates a certain amount of memory for the browser
+    - Excess allocation of memory would kill the web app (if not the browser)
+     
+
+- Memory management is handled by the Garbage Collector 
+    - Every JavaScript Engine has one
+
+    - Garbage Collector periodically checks the heap
+        - For unused objects (objects without references)
+        - Removes the unused objects
+
+    - Chrome V8 Garbage Collection Logic
+        - Reference (https://v8.dev/blog/free-garbage-collection)
+
+
+    - Modern browser automatically activate the Garbage Collector
+        - Removing the need to manually assing null to a variable
+            - That once held a reference value
+        
+        - Variables that are no longer used anywhere in the script
+            - Will automatically be removed by the Garbage Collector
+        
+        - Garbage collection is an automatic event
+            - It can NOT be invoked manually
+
+
+- Be aware of memory leaks
+    - Memory leaks refers to unused objects BUT you still hold references to
+        
