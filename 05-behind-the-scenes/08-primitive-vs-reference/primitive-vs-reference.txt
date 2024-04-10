@@ -1,0 +1,84 @@
+Primitive VS Reference Values
+-----------------------------
+- There are two categories of data types or values in JavaScript
+    - Primitive values
+        - Refers to data or value that is NOT an object
+        
+        - It has NO methods or properties but behaves as if they do
+        
+        - Stored in memory (generally on the Stack)
+            - Short-living values
+
+            - Cheap to recrete, duplicate
+                - NOT much memory is consumed by these values therefore cheap
+
+            - It is up to the browser to decide
+                - Where to store the primitive value (heap VS stack)
+
+        - When assigning to a variable
+            - The actual value is stored
+
+        - Copying a variable with a primitive value to another variable
+            - JavaScript creates a copy of the value to the new variable
+            - They are COPIED BY VALUE
+
+            - Changes made on the value of 1st variable
+                - Does NOT reflect the changes on the value of the 2nd variable
+
+        - 7 primitive data types
+            - string (dynamically transformed into pseudo object)
+            - number (dynamically transformed into pseudo object)
+            - bigint
+            - boolean
+            - undefined
+            - symbol
+            - null
+
+
+    - Reference values
+        - Refers to all other objects
+            - They are expense to create = occupies more memory
+
+        - Stored in memory (Heap)
+
+        - When assigning to a variable
+            - The address (pointer) of the value's location in memory is stored
+            - NOT the actual value            
+
+        - Copying a variable with a reference value to another variable
+            - JavaScript assigns the same address (pointer) of the value to the new variable
+            - They are COPIED BY REFERENCE
+
+        - Changes made on the value of 1st variable
+            - Reflects the changes made on the 2nd variable
+
+        - To create a duplicate copy of a reference value
+            - Use the spread operator ... followed by the name of object to be COPIED
+
+            - Copies the key-value pairs of the former object into the new object
+
+            - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
+
+
+- Using the === operator on two reference values
+    - This will ALWAYS yield a boolean value of false
+
+    - This is due to the fact that the addresses (pointers) in memory
+        - Are the ones being compared, NOT the data stored in those locations in memory
+
+        - The addresses (pointers) will ALWAYS be DIFFERENT
+            - Yielding a boolean false value
+
+
+- Adding a new item / property to a constant variable assigned with a reference value
+    - Using the .push() method for arrays (for example)
+        - Or updating the assigned value to an object's property 
+        - Will NOT generate an error
+        
+    - The value stored in the constant variable is the address of the actual value in memory
+    - The address (pointer) of the value in memory NEVER changes
+
+
+- Assigning a new reference value to an already defined constant variable
+    - Will generate a "TypeError: Assignment to constant variable"
+    - This is due to replacing an existing address of a value in memory
