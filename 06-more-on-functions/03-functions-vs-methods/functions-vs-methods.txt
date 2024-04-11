@@ -1,0 +1,16 @@
+Functions VS Methods
+--------------------
+- A function is one of the fundamental building blocks in JavaScript
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions)
+
+
+- A method is a function which is a property of an object
+    - Instance methods are built-in tasks performd by an object Instance
+    - Static methods are tasks that are called directly on an object constructor
+    - Reference (https://developer.mozilla.org/en-US/docs/Glossary/Method)
+
+    - Think of it as a function inside (or attached to) an object
+
+
+- .addEventListener() is a method attached to an object 
+    - It listens to the declared event passed as an argument value
