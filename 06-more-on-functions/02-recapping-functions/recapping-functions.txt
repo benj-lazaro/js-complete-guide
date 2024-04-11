@@ -1,0 +1,30 @@
+Recapping Functions Knowledge: What We Know Thus Far
+----------------------------------------------------
+- Functions are "code on demand"
+    - When JavaScript read the code/script
+        - It goes through the entire code first
+        - Finds all function declarations & register each of them
+        - Start executing the code
+        - Declared function(s) can then be called as often as needed
+            - From different places in the code
+
+
+- Constants and variables created within a function
+    - Belongs to that function = block scope
+
+
+- Functions can take any number of parameters / arguments and can return a value
+
+
+- Functions can be called multiple times
+    - Each with different arguments
+
+
+- Functions can be called directly and indirectly
+    - Directly by calling the function by its name followed by ( )
+        - Executes the function immediately
+
+    - Indirectly binding the function name without ( ); often binded to an event listener
+        - Prevents the function from executing immediately
+        - Calls the function when the corresponding event is triggered
+        
