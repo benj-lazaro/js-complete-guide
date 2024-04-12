@@ -1,0 +1,31 @@
+Function Expression VS Function Declaration
+-------------------------------------------
+- Function declaration / statement
+    - JavaScript hoists the function to the top of the code
+
+    - It can be declared anywhere in the code
+
+
+Syntax:
+function <name>() {
+    // statement
+}
+
+
+- Function expression
+    - JavaScript hoists the function to the top of the code
+        - But it is NOT defined or initialized 
+        - It can NOT call the constant or variable name PRIOR to its expression
+        - Doing so, triggers a ReferenceError due to accessing an uninitialized variable/constant
+
+    - It CAN NOT be declared anywhere in the code
+
+
+Syntax:
+let <variable_name> = function () {
+    // statement
+};
+
+const <constant_name> = function () {
+    // statement
+};
