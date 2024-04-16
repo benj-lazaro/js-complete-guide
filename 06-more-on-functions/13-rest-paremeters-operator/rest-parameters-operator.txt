@@ -1,0 +1,32 @@
+Introducing Rest Parameters and Rest Operator
+---------------------------------------------
+- The rest parameter syntax allow a function 
+    - To accept an indefinite amount of arguments as an array
+
+    - The rest operator ... MUST be the last formal parameter
+        - This will cause remaining (user-supplied) arguments / parameters values
+            - To be placed within an array object
+
+    - NOTE: ONLY ONE rest parameter is ALLOWED
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters)
+
+
+Syntax:
+
+function f(a, b, ...theArgs) {
+  // …
+}
+
+
+- On normal function declaration without defining a paramter variable
+    - JavaScript uses an invisible parameter variable named "arguments"
+    
+    - This serves as an implicit (somewhat equivalent) ... operator
+        - That stores user-supplied argument values into an array-like object
+
+    - This arguments was made available in JavaScript prior the ... operator
+        - The ... operator was released in ES6
+        - Using the ... operator is much better
+
+    - NOTE: This ONLY works with function declaration what uses they keyword function
