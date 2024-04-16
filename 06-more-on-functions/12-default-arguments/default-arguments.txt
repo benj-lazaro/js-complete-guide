@@ -1,0 +1,25 @@
+Default Arguments In Functions
+------------------------------
+- Default function arguments / parameters allow named parameters 
+    - To be initialized with default values if no value or undefned is passed
+
+    - In JavaScript, function parameters default to "undefined"
+        - When the expectant argument / parameter variable receives nothing
+        - Using default argument help set a different default value instead
+
+    - It is a handy feature that allows to write more flexible functions
+
+    - NOTE: Default argument / parameter "defaults" to an "undefined" value ONLY
+        - Any values that might be considered invalid to your code will be accepted
+        - Values such as 0, null or any incorrect value
+
+    - Best practice is to put arguments / parameters with default values last
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters)
+
+
+Syntax:
+
+function fnName(param1 = defaultValue1, /* …, */ paramN = defaultValueN) {
+  // …
+}
