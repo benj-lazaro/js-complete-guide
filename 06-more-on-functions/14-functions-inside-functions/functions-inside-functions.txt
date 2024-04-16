@@ -1,0 +1,6 @@
+Creating Functions Inside Functions
+-----------------------------------
+- JavaScript allows creating a function within a function
+    - The inner function will be locally scope within the outer function
+    - The inner function will NOT be available globally
+
