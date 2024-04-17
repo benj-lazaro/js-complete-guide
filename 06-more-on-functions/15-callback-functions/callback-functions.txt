@@ -1,0 +1,14 @@
+Understanding Callback Functions
+--------------------------------
+- A callback function is a function passed into another function as input
+    - Which is then invoked inside the outer function to complete some kind of routine or action
+    - Reference (https://developer.mozilla.org/en-US/docs/Glossary/Callback_function)
+
+
+- It is basically passing a function as an argument value to another function
+    - Behind the scenes, it is passing a pointer (of a function) as an argument value to another function
+
+
+- An event-based callback function is NEVER called directly
+    - This function is called by an event at some point in the future
+    - It is NOT called directly by the user
