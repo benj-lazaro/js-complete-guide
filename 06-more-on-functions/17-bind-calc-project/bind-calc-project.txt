@@ -1,0 +1,3 @@
+Adding .bind() To The Calculator Project
+----------------------------------------
+- Implementing the .bind() method to the module 2's Calculator project
