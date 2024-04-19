@@ -1,0 +1,47 @@
+Understanding The DOM And How It's Created
+------------------------------------------
+- When the browser reads an HTML document
+    - It renders the elements that have been parsed on the active window
+
+    - An object representation of each HTML element / tag is then created
+        - Translated into its corresponding Element node
+
+    - Text content are translated into Text node
+        - Unrendered whitespace preceeding Text nodes are also translated as a node
+
+
+- The browser creates a tree of Element nodes
+    - Mirroring the structure of the HTML document it has parsed
+    
+    - The topmost node of the tree is the HTML node
+
+    - The HTML node has two child nodes:
+        - HEAD
+        - BODY 
+
+    - The HEAD node has a child node named TITLE
+
+    - The BODY node has a variety of child nodes
+        - Such as HEADER, MAIN, H1 and more
+
+
+- To witness how the browser reads and parses the DOM
+    - Load the index.html into the browser
+    - Open Dev Tools
+    - Click the Elements tab
+
+    - Displays a human-readable representation of the DOM
+        - Along with its associated Element and Text nodes
+        - Looks just like the HTML code 
+        - BUT in reality it is a document object that is is being read & presented
+    
+    - NOTE: Nodes representing whitespaces are NOT shown 
+        - BUT are visually represented as intendents
+
+
+- Typing $0 on the console tab and then pressing ENTER
+    - Returns the LAST element CLICKED in the Elements tab
+    - NOTE: This is a Chrome Dev Tools feature and NOT of JavaScript
+
+    - Using console.dir() and passing $0 as argument value
+        - Returns the properties of the corresponding Element node selected as $0
