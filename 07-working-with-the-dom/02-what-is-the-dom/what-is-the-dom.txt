@@ -1,0 +1,37 @@
+What Is The DOM
+---------------
+- The Document Object Model (DOM) represents a document with a logical tree
+    - Each branch of the tree ends in a node
+    - Each node contains an object
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
+
+
+- The DOM methods allows programmatic access to the tree
+    - You can change the document's structure, style or content
+
+    - The DOM is NOT strictly tied to browsers
+        - There are other tools that can parse the HTML document
+        - It is NOT exclusively restricted to JavaScript
+
+
+- The "document" interface represents any web page loaded in the browser
+    - This serves as an entry point into the web page's content
+    
+    - It is a property of the "window" object also referred to as the Root DOM Node
+        - It provides various methods to get access to the elements of the HTML document
+            - To query for elements
+            - To interface with the content of the DOM or loaded HTML document
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Document)
+
+
+- The "Window" interface represents a window containing the DOM document
+    - It is basically the active browser window or tab
+    
+    - It is a global variable / object
+        - This is the REAL topmost global object made available by the browser
+
+        - It represents the (browser) window in which the script is running
+        - It provides access to window-specific properties & methods to JavaScript
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Window)
