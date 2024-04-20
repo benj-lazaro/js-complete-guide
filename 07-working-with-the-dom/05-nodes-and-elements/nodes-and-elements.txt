@@ -1,0 +1,58 @@
+Nodes & Elements: Querying The DOM Overview
+-------------------------------------------
+- Common methods used in querying node or elements from a rendered HTML page in the DOM
+    - querySelector()
+    - getElementById()
+
+    - NOTE: These methods select one element at a time
+        - These methods return direct reference to a DOM element
+
+
+- The document method querySelector() returns the FIRST element within the document
+    - That matches the specified selector or group of selectors
+        - Includes CSS & pseudo selectors
+
+    - It returns null if NO match is found
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector)
+
+Syntax:
+
+querySelector(selectors)
+
+
+- The document method getElementById() returns an element object 
+    - Representing the element whose "id" property matches the specified string
+    - It returns null if NO match is found
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById)
+
+    - NOTE: Accessing an element which does NOT have an ID, use querySelector() instead
+
+Syntax:
+
+getElementById(id)
+
+
+- The following methods allow to select multiple elements from the DOM:
+    - querySelectorAll()
+    - getElementsByTagName()
+
+
+- The document method querySelectorAll() returns a static (not live / snapshot) NodeList
+    - Representing an array-like list of the document's elements that match the specified group of selectors
+    - It returns an empty NodeList if there are NO matches
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll)
+
+
+Syntax:
+
+querySelectorAll(selectors)
+
+
+- The document method getElementsByTagName() returns a live HTMLCollection of elements with the given tag name
+    - It returns an empty HTMLCollection if there are NO matches
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/getElementsByTagName)
+
+
+Syntax:
+
+getElementsByTagName(tagName)
