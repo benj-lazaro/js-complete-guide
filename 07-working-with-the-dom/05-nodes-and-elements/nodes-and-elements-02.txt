@@ -1,0 +1,17 @@
+Nodes & Elements: Querying The DOM Overview
+-------------------------------------------
+- Nodes 
+    - Are the objects that make up the DOM 
+    - HTML tags         = Element Nodes (or Elements)
+    - Text content      = Text Nodes
+    - HTML Attributes   = Attribute Nodes
+
+
+- Elements 
+    - Are just Element Nodes
+    - They are created from HTML tags which were rendered in the browser
+    - It has special methods & properties to interact with the element
+    - Available methods & properies depends on the kind of element
+    - They can be selected in various ways via JavaScript
+    - They can be created / removed via JavaScript
+    
