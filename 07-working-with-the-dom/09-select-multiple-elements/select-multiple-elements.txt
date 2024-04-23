@@ -1,0 +1,5 @@
+Selecting Multiple Elements & Summary
+-------------------------------------
+- Exploration on methods of selecting multiple Element nodes in the DOM
+    - NodeList returns a static (non-live) array-like list of selected Element nodes
+    - HTMLCollection returns a live array-like list of selected Element nodes
