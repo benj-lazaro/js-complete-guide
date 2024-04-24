@@ -1,0 +1,13 @@
+Selecting Sibling Elements
+--------------------------
+- Explore accessing the previous and next siblings nodes/elements using the traversal properties:
+    - previousSibling
+    - previousElementSibling
+    - nextSibling
+    - nextElementSibling
+    
+    - NOTE: Using these properties is much quicker to the browser than the .querySelector() method
+        - The latter reads the entire HTML document first
+        - Then searches for the matching criteria 
+        - It is NOT bad but has some performance penalities
+
