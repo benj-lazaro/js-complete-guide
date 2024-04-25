@@ -1,0 +1,46 @@
+Styling DOM Elements
+--------------------
+- Using the property "style"
+    - This is is a READ-ONLY property of the HTMLElement
+        - Returns the inline style of an element
+            - In the form of a live CSSStyleDeclaration object
+            - List of all style properties for the target element
+            - It has the highest level of specificity
+
+    - The style property names are based on CSS properties
+        - BUT have their names are adjusted
+        - NO "-" to separate names and adopt the camelcase naming convention
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style)
+
+
+- Using the property "classname"
+    - This is a property of the Element interface
+        - Gets and sets the value of the attribute class of the specified element
+
+    - Sets / control all classes at once
+
+    - Can also control the attribute id or other properties
+        - When using an attribute or id selector in the CSS code
+
+    - Toggling classes requires managing it manually
+        - Keeping track of the classes that you don't want to remove
+        - Remove the classes that you want to get rid of
+        - Requires quite a bit of code to implement
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/className)
+
+
+- Using the property "classList"
+    - This is is a READ-ONLY property of the Element interface
+        - Returns a live DOMTokenList collection of the attribute class of the specified element
+        - DOMTokenList is a case-sensitive array-like object
+
+    - It comes with methods to add, remove or toggle CSS classes
+
+    - Fine-grained control over classes that are dynamically added, removed or toggled
+        - Offers writing less code
+
+    - It can be used with property "className" with care
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/classList) 
