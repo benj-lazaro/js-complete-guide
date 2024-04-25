@@ -1,0 +1,85 @@
+Creating Element With JS
+------------------------
+- Two ways to create and insert element into the DOM
+    - Write HTML string by either:
+        - Using the property innerHTML 
+        - Using the method insertAdjacentHTML()
+
+    - Use the createElement() method then use any of the following methods:
+        - appendChild(), append()
+        - preprend(), before(), after(), insertBefore()
+        - replaceChild(), replaceWith()
+
+
+- innerHTML
+    - A property of the Element interface
+    - That gets & sets the HTML markup contained within the element
+    - Add / render HTML string
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML)
+
+
+- insertAdjacentHTML()
+    - A method of the Element interface
+    - That parses the specified text as HTML
+    - Insert / render HTML string into the DOM tree at a specified position
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML)
+
+
+- createElement()
+    - A method that creates the HTML element specified by tag name
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement)
+
+
+- appendChild()
+    - A method of the Node interface
+    - Adds a node to the end of the list of children of a specified parent node
+    - Reference(https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild)
+
+
+- append() 
+    - A method of the Element interface
+    - Inserts a set of node / string objects AFTER the last child of the targeted element
+    - String objects are inserted as equivalent Text nodes
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/append)
+
+
+- prepend()
+    - A method of the Element interface
+    - Inserts a set of node / string objects BEFORE the first child of the targeted element
+    - String objects are inserted as equivalent Text nodes
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/prepend)
+
+
+- before()
+    - A method of the Element interface
+    - Inserts a set of node / string objects BEFORE the targeted element
+    - String objects are inserted as equivalent Text nodes
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/before)
+
+
+- after()
+    - A method of the Element interface
+    - Inserts a set of node / string objects AFTER the targeted element
+    - String objects are inserted as equivalent Text nodes
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/after)
+
+
+- insertBefore()
+    - A method of the Node interface
+    - Inserts a node before a reference node as a child of a specified parent node
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Node/insertBefore)
+
+
+- replaceChild()
+    - A method of the Node interface
+    - It replaces a child node within the given parent node
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Node/replaceChild)
+
+
+- replaceWith()
+    - A method of the Element interface
+    - Replaces an element in the children list of its parent element 
+        - With a set of node / string objects
+
+    - String objects are inserted as equivalent Text nodes
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/replaceWith)
