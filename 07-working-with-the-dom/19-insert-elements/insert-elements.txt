@@ -1,0 +1,67 @@
+Inserting DOM Elements
+----------------------
+- The .appendChild() method
+    - Insert Element nodes
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild)
+
+    - NOTE: Supports Internet Explorer (IE) browser
+
+
+- The .append() method
+    - Inserts an Element or Text node
+    - Can insert multiples nodes, each separated by a ;
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/append)
+
+    - NOTE: NO support for Internet Explorer (IE) browser
+        - Use .appendChild() as an alternative
+
+
+- The .prepend() method
+    - Inserts an Element or Text node
+    - Before the first child of the parent nodes
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/prepend)
+
+    - NOTE: NO support for Internet Explorer (IE) browser
+        - Use .insertBefore() as an aternative
+
+
+- The .before() method
+    - Inserts an Element or Text node in the children list of the parent Element node
+    - Insert just before the targeted element
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/before)
+    
+    - NOTE: NO support for Internet Explorer (IE) and Safari browser
+
+
+- The .after() method
+    - Inserts an Element or Text node in the children list of the parent Element node
+    - Insert just after the targeted element
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/after)
+    
+    - NOTE: NO support for Internet Explorer (IE) and Safari browser
+
+
+- NOTE: Moving the recently insert child node somewhere else in the DOM
+    - Using .lastElementChild property with .before() method (for example)
+
+    - The child element/node will be removed from its previous place unto the new location
+        - The child node will NOT BE COPIED to the new location
+
+
+- The .replaceWith() method replaces the targeted element 
+    - In the children list of the parent node with a new Element / Text node
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/replaceWith)
+
+
+- The .children property returns a live HTMLCollection of selected element's child nodes
+    - This helps insert a created element at different location within the list of child nodes
+    - Use index value to target a specific child node
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/children)
+    
+    - NOTE: NO support for Internet Explorer (IE) and Safari browser
+
+
+- The .insertAdjacentElement() method inserts a node at a specified position
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML)
+    
+    - NOTE: Supported by all browsers
