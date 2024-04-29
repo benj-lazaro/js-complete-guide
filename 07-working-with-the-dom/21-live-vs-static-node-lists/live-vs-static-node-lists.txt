@@ -1,0 +1,17 @@
+Live Node Lists VS Static Node Lists
+------------------------------------
+- Live NodeList meant that any changes in the DOM automatically updates the collection
+    - It could lead to a higher memory consumption when managing a lot of collections
+        - Although this is a niche occurence
+
+    - The methods .getElementsByTagName(), .getElementsByClassName, .getElementsByName
+        - Returns a live HTMLCollection
+
+
+- Static NodeList meant that any changes in the DOM does NOT affect the collection
+    - It offers better performance & less memory consumption
+
+    - The method .querySelectorAll() returns a static NodeList
+
+
+- Reference (https://developer.mozilla.org/en-US/docs/Web/API/NodeList)
