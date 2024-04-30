@@ -1,0 +1,31 @@
+Removing Elements
+-----------------
+- The method .remove() of the Element interface
+    - Removes the selected element from the DOM
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/remove)
+
+    - NOTE: This is NOT supported by Internet Explorer (IE) browser
+
+Syntax:
+
+remove()
+
+
+- An alternative to .remove()
+    - Select the parent element using the property parentElement
+    - Then call the method .removeChild()
+    - Pass the element to be deleted as an argument value
+
+
+- The method .removeChild() of the Node interface
+    - Removes a child node from the DOM
+    - Returns the removed node
+    - NOTE: As long as a reference is kept on the remove child
+        - It still exists in memory
+        - But NO longer part of the DOM
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild)
+
+
+Syntax:
+
+removeChild(child)
