@@ -1,0 +1,18 @@
+Insertion & Removal Summary
+---------------------------
+- Older insertion & removal methods that have broad browser support
+    - appendChild()
+    - insertAdjacentElement()
+    - replaceChild()
+    - removeChild()
+
+
+- Modern insertion & removal methods that are NOT supported by ALL browsers
+    - append()
+    - prepend()
+    - before()
+    - after()
+    - replaceWith()
+    - remove()
+
+    - NOTE: Use these if Internet Explorer and/or Safari browser support is NOT a concern
