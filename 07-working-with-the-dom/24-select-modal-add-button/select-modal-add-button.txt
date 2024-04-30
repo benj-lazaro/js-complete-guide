@@ -1,0 +1,14 @@
+Seleting The Model And Add Button
+---------------------------------
+- Clicking the "Add Movie" button renders a data-entry modal
+    - The modal is a <div> element with an "id" attribute set to "add-modal"
+
+    - The modal is currently hidden
+        - Defined by the CSS class "modal"
+        - Property "display" set to none
+
+
+- Implement JavaScript code that renders the modal 
+    - Assign an event listener on the "Add Movie" button
+    - Listen for a "click" event
+    - When "clicked", add the classes "modal" and "visible" to the modal element
