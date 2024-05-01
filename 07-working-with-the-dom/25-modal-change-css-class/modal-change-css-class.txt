@@ -1,0 +1,7 @@
+Opening A Model By Changing CSS Classes
+---------------------------------------
+- Implement code that will
+    - Monitor a "click" event on the button
+    - In doing so will add CSS classes to the selected modal element
+    - Thus enabling the modal card to be rendered on the browser
+
