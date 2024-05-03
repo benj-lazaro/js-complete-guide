@@ -1,0 +1,7 @@
+Creating A Movie & Clearing The Input
+-------------------------------------
+- Implement code that:
+    - Store user input taken from the modal element into a data structure
+    - Close the modal element
+    - Display the content of the data structure on the JavaScript console (testing purposes)
+    - Clear the <input> elements of the modal
