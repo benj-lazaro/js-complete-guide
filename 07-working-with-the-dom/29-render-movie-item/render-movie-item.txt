@@ -1,0 +1,7 @@
+Rendering Movie Items On The Screen
+-----------------------------------
+- Implement code that:
+    - Update the web app's UI
+        - Remove the "Your personal movie database!" ad
+
+    - Dynamically render the provided movie item(s) on the HTML document
