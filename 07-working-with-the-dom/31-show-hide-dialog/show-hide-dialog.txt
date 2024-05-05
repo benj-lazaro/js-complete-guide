@@ -1,0 +1,32 @@
+Showing & Hiding The "Are You Sure" Dialog
+------------------------------------------
+- Implement code that:
+    - Show / Hide the "Are You Sure" modal element (dialog box)
+    - This is confirmation when deleting a movie element 
+        - From the DOM and NodeList
+
+    - Create a new function expression deleteMovie()
+        - Accepts the movie element's ID as argument value
+        - Move the entire code of deleteMovieHandler() into this function
+
+    - Refactor the deleteMovieHandler() callback function expression
+        - Select the delete confirmation modal element by its attribute ID
+        - Add the CSS class "visible" to render the modal element on the DOM
+        - Call the function expression toggleBackDrop()
+
+    - Refactor the backdropClickHandler() callback function expression
+        - The embedded toggleMovideModal() function calls the other modal
+            - When the backdrop is accidentally clicked
+
+        - Create a new function expression closeMovieModal()
+            - Removes the CSS class "visible" from the addMovieModal element
+
+    - RENAME toggleMovideModal() to showMovieModal()
+        - Use the method .add() as replacement to .toggle()
+        - Update .addEventListener() for the startAddMovieButton element to reflect changes
+        - Update cancelAddMovieHandler(), replace .toggleMovideModal() with .closeMovieModal()
+        - Update newMovie object, replace .toggleMovideModal() with .closeMovieModal()
+        - Update backdropClickHandler(), replace .toggleMovideModal() with .closeMovieModal()
+    
+    - Refactor deleteMovieHandler()
+        - Move selection of the element mdal with ID attribute of "delete-modal" as global
