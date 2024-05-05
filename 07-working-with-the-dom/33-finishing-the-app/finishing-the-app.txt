@@ -1,0 +1,5 @@
+Finishing The App
+-----------------
+- Address the encountered bugs in the app
+    - That was introduced after the implementation of the confirmation logic
+    
