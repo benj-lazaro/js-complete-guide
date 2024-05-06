@@ -1,0 +1,25 @@
+What Are Iterables And Array-like Objects
+-----------------------------------------
+- An Iterable is:
+    - Basically an object where you can use the for-of loop
+
+    - It is also an object that implement the "iterable" protocol
+        - It have an @@iterator method (i.e. symbol.iterator)
+        - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols)
+        - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator/@@iterator)
+
+    - NOT every iterable is an array
+
+    - Other iterables: NodeList, String, Map, Set
+
+
+- An Array-like object is:
+    - An object that have a "length" property
+        - It uses indexes to access items
+
+    - An array-like object is NOT THE SAME as an iterable
+    
+    - NOT every array-like object is an array
+
+    - Other array-like objects: NodeList, String
+
