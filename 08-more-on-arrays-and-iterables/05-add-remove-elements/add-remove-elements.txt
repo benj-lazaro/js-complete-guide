@@ -1,0 +1,61 @@
+Adding & Removing Elements
+--------------------------
+- The .push() method of Array instances
+    - Adds the specified elements to the END of an array
+    - Returns the new length of the array
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
+
+    Syntax:
+
+    push()
+    push(element1)
+    push(element1, element2)
+    push(element1, element2, /* …, */ elementN)
+
+
+- The .pop() method of Array instances
+    - Removes the LAST ELEMENT from an array
+    - Returns that element
+    - This method changes the length of the array
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop)
+
+    Syntax:
+
+    pop()
+
+
+- The .shift() method of Array instances
+    - Removes the FIRST ELEMENT from an array
+    - Returns the removed element
+    - This method changes the length of the array
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift)
+
+    - NOTE: Be aware that this method has performance issues
+        - Due to the shifting of all elements in the array
+        - Slower than push() and pop() methods
+
+    Syntax:
+
+    shift()
+
+
+- The .unshift() method of Array instances
+    - Adds the specified element to the BEGINNING of an array
+    - Returns the new length of the array
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift)
+
+    - NOTE: Be aware that this method has performance issues
+        - Due to the unshifting of all elements in the array
+        - Slower than push() and pop() methods
+
+    Syntax:
+
+    unshift()
+    unshift(element1)
+    unshift(element1, element2)
+    unshift(element1, element2, /* …, */ elementN)
+
+
+- When manipulating elements in different places in an array
+    - Use direct index access to select a specific element
+    - Then employ any of the aforementioned methods
