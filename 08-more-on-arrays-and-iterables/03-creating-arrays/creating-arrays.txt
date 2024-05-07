@@ -1,0 +1,85 @@
+Creating Arrays
+---------------
+- The most common way of creating an array is:
+
+    Syntax:
+
+    <variable_name> = [<element1>, <element2>, /* …, */ <elementN>];
+
+
+- To create an array using an Array construtor
+    - It uses the keyword "new" (optional)
+
+    - Followed by function Array()
+
+    - The elements to be added into the array are passed as argument values
+        - Each separated by a comma ,
+
+    - HOWEVER passing a single number as an argument value
+        - It will be interpreted as the length of the to-be create array
+        - Proceeds creating the array
+        - Then fills the array that number of empty elements
+
+        - It basically creates an empty array with a fixed length
+        - NOTE: This is rarely implemented but does exists
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Array)
+
+    - NOTE: From a performance perspective, this method is slower
+        - Compared to the common way of creating an array
+
+    - NOTE: This is a niche way of creating an array
+
+    Syntax:
+
+    new Array()
+    new Array(element1)
+    new Array(element1, element2)
+    new Array(element1, element2, /* …, */ elementN)
+    new Array(arrayLength)
+
+    Array()
+    Array(element1)
+    Array(element1, element2)
+    Array(element1, element2, /* …, */ elementN)
+    Array(arrayLength)
+
+
+- To create an array using the .of() method
+    - Creates a new Array instance from a variable number of arguments
+        - Regardless of number or type of the arguments
+
+    - Pass elements to be added into the array as argument values
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/of)
+
+    - NOTE: From a performance perspective, this method is slower
+        - Compared to the common way of creating an array
+
+    - NOTE: This is a niche way of creating an array
+
+    Syntax:
+
+    Array.of()
+    Array.of(element1)
+    Array.of(element1, element2)
+    Array.of(element1, element2, /* …, */ elementN)
+
+
+- To create an array using the .from() method
+    - Creates a new, shallow-copied Array instance from an iterable or array-like object
+
+    - Basically converts an iterable or array-like object into a legitimate array object
+
+    - Use case:
+        - Selecting child nodes from a parent element in the DOM using .querySelectorAll()
+            - Which returns a NodeList (an array-like object)
+            - Use .from() to convert into a legitimate array object
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from)
+
+    Syntax:
+
+    Array.from(arrayLike)
+    Array.from(arrayLike, mapFn)
+    Array.from(arrayLike, mapFn, thisArg)
