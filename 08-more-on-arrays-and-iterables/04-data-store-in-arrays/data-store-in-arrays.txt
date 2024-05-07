@@ -1,0 +1,12 @@
+Which Data Can You Store In An Array
+------------------------------------
+- An array can store:
+    - Numbers
+    - Strings
+    - Objects
+    - Mixed data types
+    - Nested arrays (multi-dimensional array)
+
+
+- Elements within an array is accessed by their corresponding index value
+    - Starting index starts at 0
