@@ -1,0 +1,29 @@
+.splice() Method
+----------------
+- A method of the Array instance
+    - Changes the content of an array
+    - By removing or replacing existing elements and/or adding new elements in place
+    - Basically insert an element between two existing elements in an array
+
+    - It returns the remove element(s) from the array
+
+    - Passing a single arguement
+        - The argument will be interpreted as the starting index
+        - Deletes the elements starting from the specified index value
+
+    - Passing a negative index value
+        - The index count starts at the end of the array
+
+    - NOTE: This is AVAILABLE ONLY on REAL arrays; not iterables or array-like objects
+        - Use the .from() method to convert iterables / array-like objects into REAL arrays
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice)
+
+
+Syntax:
+
+splice(start)
+splice(start, deleteCount)
+splice(start, deleteCount, item1)
+splice(start, deleteCount, item1, item2)
+splice(start, deleteCount, item1, item2, /* …, */ itemN)
