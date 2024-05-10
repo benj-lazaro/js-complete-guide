@@ -1,0 +1,32 @@
+Finding Stuff find() And findIndex()
+------------------------------------
+- The .find() is a method of the Array instance
+    - Returns the 1st element in the provided array
+    - That satisfies the provided testing function
+    - Returns "undefined" if no value(s) satisfies the testing function
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
+
+    - NOTE: It does NOT create a copy of the provided array
+        - It works with the actual array
+        - Any changes made in the element(s) of an array will be reflected
+
+    Syntax:
+
+    find(callbackFn)
+    find(callbackFn, thisArg)
+
+
+- The .findIndex() is a method of the Array instance
+    - Returns the 1st index of the 1st element in an array
+    - That satisfies the provided testing function
+    - Returns -1 if NO element(s) satisfies the testing function
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex)
+
+    Syntax:
+
+    findIndex(callbackFn)
+    findIndex(callbackFn, thisArg)
+
+
+- Use case, searching for the index value of elements that are of reference values
+    - For primitive values, use .indexOf() or .lastIndexOf() methods instead
