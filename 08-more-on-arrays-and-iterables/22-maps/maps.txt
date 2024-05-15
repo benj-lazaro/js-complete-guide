@@ -1,0 +1,91 @@
+Working With Maps
+-----------------
+- Map can be used to attach additional properties to an object without bloating it
+    - The additional property is NOT merged to the specified object
+    
+    - It basically maps the additional information to the specified object
+        - Without bloating the object
+
+
+- To display the additional information of an object in a map, use .get() method
+    - It returns the specified element from this map
+
+    - If the value that is associated to the provided key is an object
+        - It returns a reference to that object
+        - Any changes made to that object will effectively modify it inside the Map object
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/get)
+
+    Syntax:
+
+    get(key)
+
+
+- To add an entry to a map, use .set() method
+    - It adds or updates an entry in this map with a specified key and value
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/set)
+
+    Syntax:
+
+    set(key, value)
+
+
+- To display content of a Map object, use .entries() method
+    - It returns a new map iterator object
+    - It contains an array [key, value] pairs for each element/entry in this map
+        - Arranged in insertion order
+
+    - Often used with for..of loop
+        - Can use array destructuring to collect the key & corresponding value of each entry
+         
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/entries)
+
+    Syntax:
+
+    entries()
+
+
+- To display the keys only from a Map object, use .keys() method
+    - It returns a new map iterator object
+    - It contains the keys of each element in this map
+        - Arranged in insertion order
+
+    - Often used with for..of loop
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/keys)
+
+    Syntax:
+
+    keys()
+
+
+- To display the values of each entry in a Map object, use .values() method
+    - It returns a new map iterator object
+    - It contains the values of each element in this map
+        - Arranged in insertion order
+
+    - Often used with for..of loop
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/values)
+
+    Syntax:
+
+    values()
+
+
+- To remove all elements in a map, use .clear() method
+    - Removes all elements from this map
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/clear)
+
+    Syntax:
+
+    clear()
+
+
+- To determine the size of a Map object, use the .size property
+    - It returns the number of elements in this map
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/size)
+
+    Syntax:
+
+    <map_object>.size
