@@ -1,0 +1,74 @@
+Working With Sets
+-----------------
+- To check for the existence of an element in a set, use the .has() method
+    - It returns a boolean indicating whether an element w/ a specified value 
+        - Exists in this set or not
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/has)
+
+    - NOTE: A set is basically a data storage
+        - It tells you whether a specified element exists or not
+
+        - An element (or value) inside a set is UNIQUE; it does NOT have duplicates
+
+    Syntax:
+
+    has(value)
+
+
+- To add / insert a new element into a set, use the .add() method
+    - Inserts a new element with a specified value in this set
+        - PROVIDED that there is NOT an element with the same value ALREADY IN this set
+
+    - Adding a value that already exists in the set, get ignored
+        - No error message will be triggered
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/add)
+
+    Syntax:
+
+    add(value)
+
+
+- To display elements of a set, use the .entries() method
+    - It returns a new SetIterator object
+        - Basically an object that conforms to the iterator protocol
+        - It can be used with a for..of loop to display individual elements
+
+    - Returns an array of [value, value] for each element in this set
+        - Arranged in insertion order
+        - This iterable could easily be swapped for a Map object
+    
+    - For Set objects, there is no key like in Map objects
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/entries)
+
+    Syntax:
+
+    entries()
+
+
+- To access/read the assigned value of an element in a set, use .values() method
+    - It returns a new SetIterator object
+        - It contains ONLY the values for each element in this set
+        - Arranged in insertion order
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/values)
+
+    Syntax:
+
+    values()
+
+
+- To remove an element from a set, use .delete() method
+    - It removes a specified value from this set
+        - If the element is in this set
+
+    - Deleting a non-existent value get ignored
+        - No error message will be triggered
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/delete)
+
+    Syntax:
+
+    setInstance.delete(value)
