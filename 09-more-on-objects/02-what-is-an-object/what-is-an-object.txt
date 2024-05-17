@@ -1,0 +1,29 @@
+What Is An Object
+-----------------
+- An object is a core data structure in JavaScript
+    - It is made up of properties and methods
+    - Store data in properties and actions in methods
+    - Allow to "group" related data together
+        - Split the code into logical pieces
+
+    - Typically reflects "real-world" entities
+        - e.g. button, movie
+    
+        - Allows to apply real-world logic to coding
+
+
+- JavaScript primitive values
+    - Numbers
+    - Strings
+    - Booleans
+    - null
+    - undefined
+    - Symbol (advanced niche data type)
+
+
+- JavaScript reference value (i.e. objects)
+    - Everything else
+    - { ... }
+    - Arrays
+    - DOM Nodes
+    - Built-in objects
