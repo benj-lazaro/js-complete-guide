@@ -1,0 +1,16 @@
+Understanding WeakMap
+---------------------
+- WeakMap is a collection of key-value pairs whose keys MUST be object or non-registered symbols
+    - With values of any artibrary JavaScript data type
+        - Which does NOT create strong reference to its keys
+
+    - The object as a key does NOT prevent it from being garbage collected
+        - Once an object used as a key has been collected
+            - The corresponding value become a candidate for garbage collection
+            - As long as it is NOT strongly referred to elsewhere in the code
+
+    - To remove data from a WeakSet
+        - Assign the object key with the value of "null"
+        - The object will be marked by the browser for garbage collection
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap)
