@@ -1,0 +1,40 @@
+Understanding WeakSet
+---------------------
+- WeakSet is a collection of garbage-collectable values   
+    - A value in the WeakSet may ONLY occur ONCE
+
+    - It ONLY stores objects and symbols (garbage collectables)
+
+    - It has a limited amount of methods compared to a Set
+        - It does NOT have .entries() method 
+        - Content of a WeakSet can be viewed using console.log()
+
+    - NOTE: A garbage collection is controlled by the browser; NOT by the user
+        - Assigning a "null" value to an object in order to be garbage collected
+            - The object may remain present when performing a console.log() on the WeakSet
+            - The browser have marked the object for garbage collection at its own leisure
+
+        - In order to verify if an object has been garbage collected
+            - After assigning a "null" value to the target object
+            
+            - Pass the object as a parameter value to the .delete() method of WeakSet
+
+            - It should return the boolean value of false
+                - This meant that the object ceased to exists
+
+                - A value of true meant that initially it was NOT garbage collected
+                    - But after execute .delete(), it is now
+
+    - Common use case
+        - An application that stores data in a set or arrays
+            - Where eventually will let go of the data at some point
+            - Needed to be sure that the data can be garbage collected
+            - Clears the object from heap memory
+
+            - NOTE: On a normal Set, despite clearning the data
+                - The reference to the data will remain
+                - It will NOT be cleared from memory
+                - That is until .delete() method is used
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet)
+
