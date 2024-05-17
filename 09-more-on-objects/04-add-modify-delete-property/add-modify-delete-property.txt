@@ -1,0 +1,58 @@
+Adding, Modifying & Deleting Properties
+---------------------------------------
+- Two ways to dynamically add a property after an object has been created
+    - Complext approach
+        - Make sure that the variable storing the created object is NOT a constant
+
+        - Copy the properties and/or methods of the object
+            - Add new property and/or method
+
+        - Assign the recreated object to the same variable
+            - Effectively overriding the previous object
+
+
+    - Simple approach
+        - Add the new property along with its corresponding value using the "." notation
+
+            <object_name>.<new_property> = <corresponding_value>;
+
+        - NOTE: This is referred to assigning a new property on-the-fly
+        
+        - In the event that a property already exists
+            - The previous assigned value is overriden by the new value
+
+
+- NOTE: Accessing a non-existent property returns an "undefined" value
+
+
+- To remove a certain property from an object
+    - First way is to use the delete operator
+        - It simply removes a property from an object
+
+        - If the property's value is an object & no more references to said object
+            - It is eventually released automatically
+
+        - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete)
+
+        Syntax:
+
+        delete object.property
+        delete object[property]
+
+
+    - Second way is to assign the value of "undefined" to the targeted property
+
+        <object_name>.<new_property> = undefined;
+
+        - NOTE: It is NOT considered a good practice assigning "undefined" to anything
+            - Therefore NOT RECOMMENDED to use
+                - This is mentioned for educational purposes ONLY
+
+            - Technically the targeted property still exists
+                - It informs the browser that said property does NOT matter anymore
+
+            - Using the delete operator is the WAY TO GO
+            
+        
+        - NOTE: Assigning the value of "null" resets the assigned value in a property
+            - It does NOT remove the targeted property from an object
