@@ -14,17 +14,6 @@ Understanding WeakSet
             - The object may remain present when performing a console.log() on the WeakSet
             - The browser have marked the object for garbage collection at its own leisure
 
-        - In order to verify if an object has been garbage collected
-            - After assigning a "null" value to the target object
-            
-            - Pass the object as a parameter value to the .delete() method of WeakSet
-
-            - It should return the boolean value of false
-                - This meant that the object ceased to exists
-
-                - A value of true meant that initially it was NOT garbage collected
-                    - But after execute .delete(), it is now
-
     - Common use case
         - An application that stores data in a set or arrays
             - Where eventually will let go of the data at some point
