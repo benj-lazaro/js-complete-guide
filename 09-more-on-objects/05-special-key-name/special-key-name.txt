@@ -1,0 +1,28 @@
+Special Key Name & Sqaure Bracket Property Access
+-------------------------------------------------
+- Any name that can be used as a variable name
+    - Can be used as a key name for an object's property 
+        - However, NOT every property key name can be used as a variable name
+    
+    - Any property key name is AUTOMATICALLY COERCED to a string data type
+        - Technically an object is a dictionary of keys which are of string data type
+    
+        - Values assigned to an object's property keys can be of ANY data type / value
+    
+    - Key name with a:
+        - Dash in-between words
+        - Whitespace in-between words
+        - Multiple words with either dash or whitespace in-between
+    
+        - Can be allowed by wrapping the key name within the pair of " " 
+    
+
+- To access the value from key enclosed with a pair of " "
+    - Call the object name
+    - Followed by the "." notation
+    - Then a square bracket notation [ ]
+    - Pass the key name as a string enclosed with a pair of " "
+
+        <object_name>.["<key_name>"];
+
+    - This can also be used when accessing and/or manipulating properties of queried DOM elements
