@@ -1,0 +1,20 @@
+Demo App & Shorthand Property Syntax
+------------------------------------
+- The demo app requires a user to:
+    - Enter the title of a favorite movie
+
+    - Offers a form to provide extra information about the movie
+        - Where in the user can set the name of the property & its corresponding value
+
+    - Clicking "Add Movie" button
+        - The movie and corresponding extra information will be added
+        - Displayed in the list, located just underneath the form
+
+    - Offers a search bar
+        - Where a movie is searched
+
+
+- Shorthand property name notation
+    - If the property name has the same as the value name (storing the actual value)
+        - You can omit the ":" and value name all together
+        - Leaving the property name by its own
