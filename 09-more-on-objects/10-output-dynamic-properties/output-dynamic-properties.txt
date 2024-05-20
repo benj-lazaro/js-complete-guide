@@ -1,0 +1,4 @@
+for-in Loops & Outputting Dynamic Properties
+--------------------------------------------
+- Implement code that renders the dynamic properties of each movie object
+    - As child <li> elements of the parent <ul> element 
