@@ -1,0 +1,16 @@
+Render Elements Based On Objects
+--------------------------------
+- Render individual movie object as an <li> child element within the <ul> parent element
+    - The parent <ul> element is currently hidden through the CSS display property set to "none"
+
+
+- The code implementation for the renderMovie() function is NOT ideal
+    - It clear the entire <li> child elements
+    - Re-renders every objects in the list whenever a new movie object is added
+        - Costing performance issues in the long run
+
+    - This was done intentionally to focus solely on rendering objects as elements
+    
+    - Ideally, each new movie object added and rendered
+        - It should NOT clear the entire <li> child elements 
+        - It should NOT require re-rendering everything from scratch
