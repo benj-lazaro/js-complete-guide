@@ -1,0 +1,30 @@
+The Object Spread Operator
+--------------------------
+- The spread operator "..." allows an iterable (array or string) to be expanded
+    - In places where zero or more arguments (functions calls) or elements (array) are expected
+
+    - In an object literal, it enumerates the properties of an object
+        - When adds / merges these properties into a new object being created
+
+        - The new object is NOT a shallow-copy of the original object
+            - Additional / removal of a property is NOT reflected back to the original object
+
+    - It looks like the rest operator but performs the opposite
+        - The rest operator collectes multiple elements & then condenses them into a single element
+        - The spread operator expands an iterable into individual elements
+
+    - NOTE: The spread operator does NOT perform a deep dive copy of the original object
+        - The object itself is NOT shallow-copied
+        - Any iterable value assigned to a property of the object remains to be a reference value
+        - An update to this value will be reflected on both the original and new object
+
+        - To prevent this, the iterable values MUST be copied manually
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
+
+
+Syntax:
+
+myFunction(a, ...iterableObj, b)
+[1, ...iterableObj, '4', 'five', 6]
+{ ...obj, key: 'value' }
