@@ -1,0 +1,36 @@
+Introducing this
+----------------
+- The "this" keyword refers to the context where a piece of code is supposed to run
+    - Piece of code such as a function's body
+
+    - Another way of looking at "this"
+        - Look for the thing (e.g. object) responsible for executing the attached function
+        
+        - To determine which object "this" is referring to
+            - Look at the object before the "." that called the function/method
+
+    - On object methods
+        - "this" refers to the object that the method is attached to
+        - Allowing the same method to be reused on different objects
+
+    - The value of "this" depends
+        - On how a function is invoked (runtime binding)
+        - NOT how it is defined
+
+    - When a function is invoked as a method of an object
+        - "this" points to that object
+
+    - When a function is invoked as a standalone function
+        - "this" typically refers to the global object (in non-strict mode)
+            - Or "undefined" (in strict mode)
+
+    - Arrow functions differ in handling "this"
+        - They inherit "this" from the parent scope at the time they are defined
+        - Useful for callbacks and preserving context
+        
+        - They do NOT have their own "this" binding
+            - They can NOT be set by .bind(), .apply() or .call() methods
+            - It does NOT point to the current object in object methods
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
+
