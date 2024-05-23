@@ -1,0 +1,34 @@
+Checking For Property Existence
+-------------------------------
+- Use the operator in to validate the existence of a property in the specified object
+    - It returns true if the property is in the specified object
+    - It can NOT be used to search for values n other collectables (e.g. array)
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/in)
+
+
+Syntax:
+
+prop in object
+#prop in object
+
+
+Example:
+
+if ("info" in movie) {
+    // Place corresponding code here
+}
+
+
+- Alternatively, another way is to use an if statement along with the strict equality operator:
+
+    <object_name>.<property_name> === undefined
+
+    - A non-existent or deleted property returns a value of undefined
+
+
+Example:
+
+if (movie.info === undefined) {
+    // Place corresponding code here
+}
