@@ -1,0 +1,38 @@
+The Method Shorthand Syntax
+---------------------------
+- A shorthand when adding / defining a method inside an object
+    - Remove the "function" keyword
+    - Remove the ":" after the property name of the method
+    
+    From:
+
+    <property_name>: function () {
+        // Body of method
+    }
+
+    To:
+
+    <property_name>() {
+        // Body of method
+    }
+
+
+- When using an arrow function (instead of a normal method declaration)
+    - Remove the "=>"
+    - Remove the ":" after the property name of the method
+
+
+    From:
+
+    <property_name>: () => {
+        // Body of method
+    }
+
+    To:
+
+    <property_name>() {
+        // Body of method
+    }
+
+
+- NOTE: This is the shorthand for methods that will be used moving forward in this course
