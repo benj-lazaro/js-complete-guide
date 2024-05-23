@@ -1,0 +1,23 @@
+The this Keyword And Its Strange Behavior
+-----------------------------------------
+- If calling a method without properly associating an object
+
+    - When a function is invoked as a method of an object
+        - "this" points to that object
+
+    - When a function is invoked as a standalone function
+        - i.e. with no object name declared prior to the method
+
+        - In non-strict mode (default)
+            - "this" refers to the global Window object
+
+        - In strict mode
+            - "this" returns an undefined value
+
+
+- To address this issue
+    - Declare the object name prior to calling the method
+
+    - If that is NOT an option,
+        - Use the .bind() method
+        - To pre-configure what "this" will refer to
