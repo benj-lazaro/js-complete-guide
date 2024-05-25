@@ -1,0 +1,12 @@
+What The Browser (Sometimes) Does To this
+-----------------------------------------
+- Using "this" in an event listener, 
+    - Results to a different behavior
+    - It is assumed that the value of "this" inside an event handler
+        - Refers to the global Window object which is NOT entirely wrong
+    
+    - Behind the scenes, the browser triggers the event (e.g. click)
+        - The browser binds "this" to the DOM element that triggered the event
+
+        - However, this is ONLY if an arrow function is NOT USED to define the event handler
+            - Otherwise, "this" will refer to the global Window object
