@@ -103,6 +103,8 @@ const addMovieHandler = () => {
   renderMovies();
 };
 
+// Event handler defined as a normal function
+// this refers to the associated DOM element that triggered the "click" event
 const searchMovieHandler = function () {
   console.log("Calling within searchMovieHandler");
   console.log(this);
