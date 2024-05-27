@@ -1,0 +1,23 @@
+Getting Started With OOP Code
+-----------------------------
+- Build a simple frontend web app
+    - Render a list of products
+    - Add product to a shopping cart 
+
+    - Using object literal notation
+        - Demonstrates how hard to write proper OOP code 
+        - How difficult to write reusable object code
+
+        - Require manual insertion of a product into the product list
+            - Check property name is NOT mistyped or forgotten
+
+    - A better implementation would be
+        - A blueprint for the product object
+
+        - Write a function / method that creates a product object
+            - Pass certain amount of argument values 
+            - Generates said product object
+
+        - Create non-object components
+            - Regular objects that holds some data (a class)
+            
