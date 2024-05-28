@@ -1,0 +1,70 @@
+Defining & Using A First Class
+------------------------------
+- Classes are a template for creating objects
+    - They encapsulate data with code to work on that data
+
+
+- Classes are actually special functions that are defined in two ways:
+    - Class expression
+    - Class declaration
+
+
+- Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
+
+
+- Classes serves as "blueprint" (theoretical definition) for objects
+    - They define how objects look like which properties & methods they will have
+
+    - They make the creation of multiple similar objects much easier
+        - Data differs but retains the same structure
+
+
+- Objects are the "things" you work in code
+    - They are the instances of (based on) defined classes
+    - They serve as an alternative to using object literal notation
+    
+    - Object literal notation is great for grouping some data quickly
+    - Classes offer reusaable logic defined in one place 
+        - Then create multiple objects from it
+
+
+Syntax:
+
+// Class declaration
+class Rectangle {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+}
+
+// Class expression; the class is anonymous but assigned to a variable
+const Rectangle = class {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+};
+
+// Class expression; the class has its own name
+const Rectangle = class Rectangle2 {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+};
+
+
+- The body of a class is the part that is in curly braces {}
+    - It is executed in "strict mode" even without the "use strict" directive
+
+    - A class element is characterized by three aspects:
+        - Kind:         getter, setter or field (translates to properties after instantiation)
+        - Location:     static, instance
+        - Visibility:   public, private
+
+
+- To instantiate a class into an object
+    - Use the keyword new
+    - Followed by the class name with a pair of ()
+    
