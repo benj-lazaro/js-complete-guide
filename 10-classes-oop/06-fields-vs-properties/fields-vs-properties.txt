@@ -1,0 +1,23 @@
+Fields VS Properties
+--------------------
+- A class field located within a class 
+    - It defines a property of an object when it is created from this class
+    - This is public (by default) in terms of visibility
+
+
+- A class property is located within a class' constructor method
+    - It initialize a class field with an argument value
+    - This is public (by default) in terms of visibility
+
+
+- The class constructor itself is public (by default) in terms of visibility
+    - It overwrites initial values (if any) assigned to the class fields
+
+    - It is possible to define class fields within the constructor method
+        - Particularly if these fields will hold an initial value after instantiation
+
+        - Class fields that will NOT be initialized with a value upon instantiation
+            - Can be left in the class declaration (outside the constructor method)
+
+    - It is also possible add new class fields within the constructor
+        - Without defining one in the class declaration
