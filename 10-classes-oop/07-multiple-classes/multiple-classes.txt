@@ -1,0 +1,9 @@
+Using & Connecting With Multiple Classes
+----------------------------------------
+- In addition to using class to create objects that contain data
+    - It can also create objects that hold logic 
+
+    - NOTE: The order of the class (in the code) does NOT matter
+        - JavaScript parses the entire code prior execution
+
+        - All classes HAVE to be defined before calling them
