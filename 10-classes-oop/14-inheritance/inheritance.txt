@@ -1,0 +1,19 @@
+Introducting Inheritance
+------------------------
+- In the demo app, the classes ProductItem, ProductList, ShoppingCart & Shop
+    - Have a render() method that creates an element
+    - Although each does differently but it ALWAYS create an element
+
+
+- The concept of inheritance is basically sharing code among classes
+    - Instead of creating multiple classes
+        - Each contains duplicated properties and/or methods
+        - Resulting to sub-optiomal code due to code duplication
+
+    - Using inheritance, write a base class
+        - Which contains commonly used properties and/or methods among classes
+    
+    - The base class is then EXTENDED in order to create a specialized class
+        - Which inherits the commonly used properties and/or methods
+        - Then add extra properties and/or methods that is/are specific to its own
+    
