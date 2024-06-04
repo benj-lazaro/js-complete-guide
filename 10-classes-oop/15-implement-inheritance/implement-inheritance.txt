@@ -1,0 +1,27 @@
+Implementing Inheritance
+------------------------
+- Implement the concept of inheritance on the project app
+
+
+- In JavaScript, it is NOT possible to inherit from multiple classes
+    - It can ONLY extend (inherit) from one class
+
+
+- Class constructor rules
+    - If a sub-class (e.g. ShoppingCart) does NOT have a constructor
+        - The constructor of the parent class (e.g. Component) constructor is automatically called
+        - Otherwise, it will call its own constructor
+
+    - If a sub-class has its own constructor & needed to call the parent class' constructor
+        - Use the special keyword "super"
+        - Execute it like a function e.g. super()
+
+    - When adding "super" to a sub-class constructor
+        - Make user you are NOT relying on any fields in that super constructor
+
+        - When adding properties to the sub-class constructor
+            - It MUST be done ONLY AFTER calling super()
+
+
+
+    
