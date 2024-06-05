@@ -1,0 +1,4 @@
+Using Inheritance Everywhere
+----------------------------
+- Implement inheritance on the remaining classes
+    - Classes that renders a new element on the HTML document
