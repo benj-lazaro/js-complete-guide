@@ -1,0 +1,12 @@
+Overriding Methods & The super() Constructor
+--------------------------------------------
+- After adjusting classes to implement the concept of inheritance
+    - Improve the code a little bit
+    - Address the redundant calls for the method .render()
+
+
+- Inside a constructor method of a sub-class
+    - Using the keyword "new" results to
+        - The value of "this" referring to the object that is being created
+        - And NOT of the base class
+
