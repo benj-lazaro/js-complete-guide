@@ -1,39 +1,37 @@
-document And window Object
+document and window Object
 --------------------------
-- Playing around with the document & window objects using the browser's console tab
+- Typing "document" on the JavaScript console
+    - Returns the "document" object loaded on the browser's active window / tab
+
+    - This is a JavaScript object
+        - Contains the representation of the rendered HTML document
+        - Includes the elements, tags and content
 
 
-- Typing "document" returns the current document object loaded on the browser's window / tab
-    - It returns the content of the HTML document 
-        - Including elements, tags & content
-
-    - It is actually JavaScript object that contains a representation of the rendered HTML document
-
-
-- To access the properties of the document
+- To access the "document" properties
     - Use console.dir()
-    - Pass the value "document" as argument
-    - Returns a read-only list of properties of the document & their corresonding values
+    - Pass the "document" object as an argument value
+    - Returns a READ-ONLY list of properties and their corresponding values
+
+    - The static method console.dir()
+        - Returns the specified JavaScript object's properties
+        - Reference (https://developer.mozilla.org/en-US/docs/Web/API/console/dir_static)
 
 
-- The console.dir() is a static method
-    - Displays a list of properties of the specified JavaScript object in the browser console
-    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/console/dir_static)
+- Typing "window" on the JavaScript console
+    - Returns the current "window" object
 
-
-- Typing "window" returns the current windows object
-    - It contains a list of properties associated to the current / active browser window
-    - It provides access to the core APIs that the browser provides 
+    - This is a JavaScript object
+        - Contains properties and methods associated to the current browser window 
+        - Provides access to the browser's core APIs
 
 
 - The "window" object is the top-most global object
-    - When the browser parses and executes a JavaScript code 
-        - Then it encounters an unresolved function / method being called
-        - It automatically looks into the "window" object to see if it has it
-        - If it does, it implicitly prepends the "window" object into the said method name
+    - When the JavaScript Engine encounteres an unresolved function / method call
+        - It automatically looks into the "window" object
+        - If it exists, JavaScript Engine prepends the "window" into the function / method call
 
-    - This object also contains the corresponding "document" object as a property
+    - It also contains the "docment" object as a property
 
-    - It ONLY gives access to the current active browser window / tab
-        - Does NOT provide access to other windows / tabs of the browser
-        
+    - It ONLY provides access to the ACTIVE browser window 
+        - Does NOT provide access to other browser windows in the background
