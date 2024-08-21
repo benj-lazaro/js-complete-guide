@@ -1,7 +1,7 @@
 JavaScript VS Java 
 ------------------
 - JavaScript is a flexible, weakly-type programming language
-    - Was inspired to be named after Java to "sound cool"
+    - Inspired to be named after Java to "sound cool"
     - It runs in the browser
 
     - JavaScript Client-side

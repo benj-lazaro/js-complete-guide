@@ -1,21 +1,22 @@
 Dynamic VS Weakly Typed Languages
 ---------------------------------
-- Dynamic, interpreted Programming Language 
-    - Not pre-compiled
-        - Parsed and then compiled (on-the-fly) in the browser during runtime
+- Dynamic (interpreted) programming language
+    - NOT pre-compiled
+        - Code is parsed first
+        - Then compiled on-the-fly in the browser during runtime
 
-    - Code is evaluated & then executed at runtime
+    - Code is evaluated and then executed at runtime
 
     - Code can change at runtime
-        - A variable's assigned data type can be changed during runtime
-        - e.g. initially assigned string data type later replaced with an integer data type
+        - A variable's data type can be changed during runtime
+            - e.g. A string value can be replaced with an integer at a later time
 
 
-- Weakly Typed Programming Language
-    - Data type of a value assigned to variable is automatically / implicitly assumed
+- Weakly typed programming language
+    - Data type of a variable's value is automatically or implicitly assumed
 
-    - Does NOT require defining the data type of the value to be stored in a variable in advance 
+    - It does NOT require stating the data type of the value
+        - To be stored in a variable in advance
 
-    - Data type of value assigned in a variable is NOT set in stone 
-        - It can be changed during runtime
-
+    - Data type of a variable's value is NOT set in stone
+        - Can be changed at runtime

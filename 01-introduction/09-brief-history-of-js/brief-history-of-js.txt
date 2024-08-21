@@ -8,7 +8,7 @@ A Brief History Of JavaScript
 - 1996
     - Microsoft released its own version of Internet Explorer
         - Same idea, generally same syntax
-        - But implemented differently
+        - But implemented DIFFERENTLY
 
 
 - 1996 (Late)

@@ -2,12 +2,16 @@ How To Get The Most Out Of This Course
 --------------------------------------
 - Watch the videos
 
-- Code along
+
+- Do the code along
+
 
 - Practice
-    - Do the assignments, practice projects, quizzes
+    - By doing the assignments, practice projects & quizzes
+
 
 - Debug & Search
-    - Use attached code, Google & Udemy search for answers
-    - To find & address common issues
+    - Using the attached files
+    - Google for answers
+    - Find and address common issues
     

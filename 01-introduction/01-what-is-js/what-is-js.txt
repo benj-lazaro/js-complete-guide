@@ -1,17 +1,16 @@
 What is JavaScript
 ------------------
-- JavaScript is a dynamic, weakly-type programming language
-    - Compited at runtime
-    - Executed as
-        - Part of a webpage in a browser
-        - Directly on any machine (i.e. host environment)
+- It is a dynamic, weakly-type programming language
+    - Compited at run-time
+    - Executed as part of a web page in a browser
+    - Executed directly on any machine (i.e. host environment)
 
 
-- It was created to make webpages more dynamic
-    - Change content on a page from inside the browser
+- It was created to make web pages more dynamic
+    - Changing content on a page from inside the browser
 
 
-- Originally named LiveScript but RENAMED to JavaScript
-    - Due to the populatiry of Java 
-    - JavaScript is totally INDEPENDENT from Java
-        - It has NOTHING in common with Java
+- Originally named LiveScript
+    - Later renamed to JavaScript due to the popularity of Java 
+    - JavaScript is TOTALLY INDEPENDENT from Java
+        - It has NOTHING in common with the Java programming language

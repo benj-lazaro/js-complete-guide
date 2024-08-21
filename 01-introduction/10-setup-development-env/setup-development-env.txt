@@ -11,13 +11,14 @@ Setting Up A Development Environment
 
 
 - VS Code User VS Workspace Settings
-    - User      = applies configuration changes on all projects managed by VS Code
-    - Workspace = appleis configuration changes to a specific project
+    - User      = implements config changes on ALL projects managed by VS Code
+    - Workspace = implements config changes on a specific project
 
 
 - Google Chrome Settings
-    - Use Incognito Mode to prevent from being distrated by other installed plugins
+    - Use "Incognito Mode" 
+        - To prevent from being distrated by other installed browser plugins
     
-    - In the Console log
+    - On the JavaScript Console log
         - Uncheck "Preserve log" 
-        - To ensure the console will be emptied at every time a webpage is reloaded
+        - To ensure the console will be emptied at EVERY TIME a web page is reloaded
