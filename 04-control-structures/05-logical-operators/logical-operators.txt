@@ -1,22 +1,24 @@
 The Logical AND & OR Operators
 ------------------------------
-- The logical AND yields the boolean value of true
-    - If both conditions are true
-    - Otherwise yields the boolean value of false
+- The logical AND yields the boolean value of "true"
+    - If both conditions are "true"
+    - Otherwise yields the boolean value of "false"
 
 
-- The logical OR yields the boolean value of true
-    - If one of the condition is true
-    - Otherwise the boolean value of false
+- The logical OR yields the boolean value of "true"
+    - If one of the condition is "true"
+    - Otherwise the boolean value of "false"
 
 
-- A conditional statement using both AND and OR operators
+- A conditional statement using AND & OR operators
     - The 1st and 2nd operands are evaluated first
-        - If both yields the boolean value of true
-            - It DISREGARDS the 3rd operand
+    - If it yields the boolean value of "true"
+    - It disregards the 3rd operand
 
-    - The 3rd operand is evaluated as an alternative
-        - If the OR operator and 3rd operand yields a boolean value of true
-            - It DISREGARDS the AND operator yielding a boolean value of false
+    - The 3rd operatnd is evaluated as an alternative
+    - If the OR operator & 3rd operand yields the boolean value of "true"
+    - It DISREGARDS the AND operator, yielding the boolean value of "false"
 
-    - Using a parenthesis controls the evaluation of a logical statement
+
+- To gain control on the evaluation of a logical statement
+    - Use a parenthesis

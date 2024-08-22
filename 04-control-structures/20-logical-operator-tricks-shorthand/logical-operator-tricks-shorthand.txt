@@ -1,36 +1,37 @@
 Logical Operator Tricks & Shorthands
 ------------------------------------
-- Boolean coercion via double NOT operator !!
-    - Coerces a truthy or falsy value into a real boolean value
+- A "boolean coercion" can be done using a double NOT operator "!!"
+    - It coerces a truthy / falsy value into a real boolean "true" / "false" value
 
-    - A type convertion trick when there is a need to work with a real boolean values
-        - Instead of falsy or truthy values
+    - This type conversion trick is used 
+        - When there is a need to work with real boolean values
+        - Instead of working with falsy / truhty values
 
-    - Common use case is to check if a user provided a truthy user input
+    - Common use case
+        - To check if a user provided a truhty user input
 
-    Example:
-    !!1     // Converts the truthy value into a real boolean value of true
-    !!""    // Converts the falsy value into a real boolean value of false
+            !!1     // Converts the truthy value into a real boolean value of true
+            !!""    // Converts the falsy value into a real boolean value of false
 
 
-- Default value assignment via the OR operator ||
-    - If the 1st value (operand) is truthy
-        - JavaScript immediately assigns the said value to a constant or variable
-        - It does NOT evaluate the 2nd value
+- Assigning a default value using the OR operator "||"
+    - If the 1st value (operand) is truhty
+    - JavaScript IMMEDIATELY assigns said value (operand) to a constant / variable
+    - JavaScript does NOT evaluate the 2nd value (operand) anymore
 
     - If the 1st value (operand) is falsy
-        - JavaScript evaluates the 2nd value if it is falsy or truthy
-        - It assigns the 2nd value (operand) to a constant or variable
+    - JavaScript evaluates the 2nd value (operand) if it is falsy / truhty
+    - JavaScript then assigns the value (operand) to a constant / variable
 
-    - Common use case is to ensure that a constant or variable will have an assigned default value
-    - NOTE: The && and || operators does NOT generate a boolean value
-
-    Example:
-    const name = someInput || "Max"     // Assigns the value in someInput if truthy, otherwise assigns the string "Max"
+    - Common use case
+        - To ensure that a value will be assigned to a constant / variable
+        - NOTE: The AND "&&" and OR "||" operators does NOT GENERATED boolean values
 
 
-- Assigns a value to a constant or variable if 1st value (operand) is truhty via the AND operator &&
-    - Used when intending to get the 2nd value (operand) to be assigned to a constant or variable
+- Assigning a value of the 2nd operand to a constant / variable
+    - If the 1st value (operand) is truhty using the AND operator "&&"
+
     
-    Example:
-    const name = isLoggedIn && "Max"    // Assigns the string "Max" if the value in isLoggedIn is truthy
+Example:
+
+const name = isLoggedIn && "Max"    // Assigns the string "Max" if the value in isLoggedIn is truthy

@@ -1,10 +1,13 @@
 if Statements & Boolean (Comparison) Operators
 ----------------------------------------------
-- The if...else statement executes a statement IF a specified condition is truthy
-    - If the specified condition is falsy, then statement in the ELSE clause will be executed
-        - The ELSE clause is OPTIONAL
+- The if..else statement
+  - Executes the statement(s) in the "if" clause if the condition is truthy
+
+  - Otherwise (falsy), executeds the statement(s) in the "else" clause
+    - NOTE: The "else" clause is OPTIONAL
 
     - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else)
+
 
 Syntax:
 
@@ -18,8 +21,8 @@ else
   statement2
 
 
-- Boolean operators are important for conditional statements
-    - Returns a value of true or false
+- Boolean Operators are IMPORTANT for Conditional Statements
+  - It returns a value of "true" or "false"
 
     - Check for value equality                  =   ==
     - Check for value inequality                =   !=

@@ -20,4 +20,4 @@ Syntax:
 
 
 - The downside of using for..of loop
-    - It does NOT provide access of an element's index
+    - It does NOT provide access to an element's index

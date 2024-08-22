@@ -1,10 +1,9 @@
 Introducing Loops
 -----------------
-- Loops help execute code multiple times
-    - In a more dynamic and flexible way
+- Loops execute code multiple times in a more dynamic & flexible way
 
 
-- In JavaScript, it has four main loops
+- JavaScript has four main loops
     - for
         - Excecute code in a certain amount of time
         - With the help of a counter variable

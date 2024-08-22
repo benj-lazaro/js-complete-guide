@@ -1,21 +1,22 @@
 Beware When Comparing Objects & Arrays For Equality
 ---------------------------------------------------
-- When comparing values of two Arrays and Object using the === or == operators
-    - ALWAYS yield a false value
-        - Regardless if they have identical values
-
-    - The reason being is that Arrays and Objects are special in JavaScript
-        - An Array is technically an Object
-
-    - Each defined Array or Object occupies
-        - Stores their assigned value at a specific location in memory
-        - Comparing with another Array / Object despite having identical values
-            - It will NEVER be equal 
+- Using the === or == operators to compare values of arrays and objects
+    - Will ALWAYS yield a value of "false"
+    - Even if they both arrays / objects have identical values
 
 
-- HOWEVER, comparing the value of an array item or object property with another
-    - Using comparison operators == or === 
-    - Yelds the value of true
+- Both arrays and objects are considered special in JavaScript
+    - Each individual array / object created
+    - Store their respective values at a specific addresses in memory
+
+    - Using the == or === operators between two arrays / objects with identical values
+        - Will yield the value of "false"
+        - Due to each being located at different addresses in memory
+
+
+- However, comparing individual items (array) or properties (object) between arrays / objects
+    - With identical values using the === or == operators
+    - Will yield the value of "true"
 
 
 Example:

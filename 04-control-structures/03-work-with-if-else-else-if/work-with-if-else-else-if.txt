@@ -1,2 +1,22 @@
 Working With if, else and else-if
 ---------------------------------
+- The if..else statement
+  - Executes the statement(s) in the "if" clause if the condition is truthy
+
+  - Otherwise (falsy), executeds the statement(s) in the "else" clause
+    - NOTE: The "else" clause is OPTIONAL
+
+  - Multiple if..else statements can be nested to create an else...if clause
+    - NOTE: There is NO "elseif" keyword in JavaScript
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else)
+
+
+Syntax:
+
+if (condition)
+  statement1
+else if (condition)
+  statement2
+else
+  statement3

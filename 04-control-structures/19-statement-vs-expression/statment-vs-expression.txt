@@ -1,10 +1,12 @@
 A Bit of Theory Statements & Expressions
 ----------------------------------------
 - The difference between an expression and a statement 
-    - An expression is something that YIELDS a VALUE
-        - This value that can be stored in a constant or a variable
-        - It is something which would work if used on the right side of an assignment operator =  
-        - An expression is ALSO a statement
+    - An expression
+        - Yields a value
+        - The returned value can be stored in a constant / variable
+        - Often used on the right-side of an assignment operator "="
+        - It is also a statement
 
-    - A statement does NOT YIELD a VALUE
-        - It can NOT be USED on the right side of an assignment operator =
+    - A statement
+        - Does NOT yield a value
+        - It can NOT be used on the right-side of an assignment operator "="

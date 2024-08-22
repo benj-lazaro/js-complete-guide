@@ -1,11 +1,11 @@
 Ternary Operator
 ----------------
-- It takes three (3) operands
-    - A condition
-    - Followed by a ?
-    - Then an expression to execute if the condition is truthy
-    - Followed by a :
-    - Finally an expression to execute if the condition is falsy
+- The Ternary operator takes 3 operands:
+    - A conditional expression
+    - Followed by a "?"
+    - Then an expression to be executed if the condition is truthy
+    - Followed by a ":"
+    - Finally an expression to be executed if the condition is falsy
 
 
 Syntax:
@@ -13,13 +13,13 @@ Syntax:
 condition ? exprIfTrue : exprIfFalse
 
 
-- It addresses the limitation of an if statement
-    - It does NOT return a value
+- The Ternary operator addresses the following limitations of the if statement
+    - The if statement  does NOT return a value
 
-    - It can NOT be used in an assigment statement where
+    - The if statement can NOT be used in an assignment statement where:
         - A conditional statement is expected to return a value
-        - A value that will be asisgned to a constant / variable
+        - A value that will be assigned to a variable 
 
 
-- Ideal for relatively short conditional statements & value assignments
-    - Use if statements for complex conditions & more complex values
+- It is ideal for short conditional statements and value assignments
+    - Use the if statement for complex conditions and more complex values
