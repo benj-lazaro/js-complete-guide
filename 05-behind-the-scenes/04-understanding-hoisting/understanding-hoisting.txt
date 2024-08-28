@@ -1,30 +1,31 @@
 Understanding Hoisting
 ----------------------
 - Hoisting refers to the process whereby the JavaScript interpreter
-    - Appears to move the declaration of
-        - Classes
-        - Imports
-        - Variables
+    - Appears to have "moved" the declaration of:
+        - classes
+        - imports
+        - variables
 
-    - To the top of their scope prior to execution of the code
+        - At the top of their corresponding scope PRIOR to the execution of the code
 
     - Reference (https://developer.mozilla.org/en-US/docs/Glossary/Hoisting)
 
 
-- Using the keyword let to define a variable & accessing before it was declared
-    - Returns a ReferenceError: Cannot access before initialization
+- Accessing a variable created using the keyword "let" BEFORE it is declared
+    - Returns a "ReferenceError: Cannot access before initialization"
 
-    - JavaScript hoists or pulls the variable declaration on top of its scope
-        - Then immediatlely access that triggers the ReferenceError
-
-
-- Using the keyword var to define a variable & accessing before it was declared
-    - Returns an undefined value
-
-    - JavaScript hoists or pulls the variable declaration on top of its scope
-        - Then immediatlely access it prior to the assignment of the initial value
-        - Thus returning a value of undefined
+    - Behind the scenes, JavaScript hoists the variable to the top of its scope
+        - Then access the variable which at this point undeclared
+        - Triggers the "ReferenceError: Cannot access before initialization"
 
 
-- It is ENCOURAGED to declare variables before using it
-    - Regardless on whether using the keywords let or var
+- Accessing a variable created using the keyword "var" BEFORE it is declared
+    - Returns an "undefined" value
+
+    - Behind the scenes, JavaScript hoists the variable to the top of its scope
+        - Then access the variable prior to the assignment of its initial value
+        - Returns a value of "undefined"
+
+
+- It is ENCOURAGED to declare a variable BEFORE using it
+    - Regardless on whether "let" or "var is used

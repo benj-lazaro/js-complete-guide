@@ -1,74 +1,69 @@
 Inside The JavaScript Engine: How The Code Executes
 ---------------------------------------------------
-- How the JavaScript code gets executed within the JavaScript Engine
-    - Specifically the steps involved in executing the code
-
-
-- Inside the JavaScript Engine
-    - Two important concepts
+- Steps on how the JavaScript Engine executes the JavaScript code
+    - Inside the JavaScript Engine are two important concepts
         - Heap
-            - It is responsible on memory allocation
-                - Think of it as a long-term memory
-
-            - It stores data used by JavaScript code in system memory
-                - Browser taps into the computer's system memory
-                - Host OS allocates memory (heap) for the browser application
-
-            - It manages access of data to & from it
-
-            - Functions are stored into the heap
-      
-
         - Stack
-            - Responsible in the execution context of the JavaScript code
-                - Think of it as a short-term memory
 
-            - It manages the program flow
-                - Keeps control which function is current executing
-                    - Tp which function it returns data
 
-            - When the script runs, the stack becomes active
-                - Starts with an anonymous code pushed unto the stack
-          
-            - Anonymous function get pushed into the stack first
-            
-            - For each function call, it gets pushed into the stack    
-                - The topmost item in the stack is always the item that is currently executing
-                
-                - A function pops off from the stack when it is not required anymore
-                    - The said function remains stored in the heap
+- Heap is responsible for memory allocation
+    - Think of it as a Long Term memory
+    
+    - It stores data in system memory used by the JavaScript code
+        - The browser taps into the Host OS's system memory
+        - Host OS allocates the corresponding "heap memory" for the browser
 
-                - Once everything is done
-                    - The anonymous function gets popped off the stack
+    - It manages access of data to and from the "heap memory"
 
-            - Ths stack can be viewed using Chrome Dev Tools
-                - Click Sources tab
-                - Choose a function with a return statement
-                - Place a breakpoint on that line
-                - Reload the page
-                - Look at the Call Stack tab
-                    - List of function names in the stack are displayed
+    - All declared functions are stored in the "heap memory"
+
+
+- Stack is responsible in the executon context of the JavaScript code
+    - Think of it as a Short Term memory    
+
+    - It manages the JavaScript code's program flow
+        - Monitors which function is currently executing
+        - To which function it returns data
+
+    - When the JavaScript code is run, the stack becomes active
+        - It pushes anonymous code into the stack
+            - Anonymous function(s) get pushed into the stack first
+
+        - Each function call is pushed into the stack
+            - The top-most item in the stack points to the function currently executing
+
+            - When a function is done or NOT required anymore
+                - It gets popped off from the stack
+                - BUT remains stored in "heap memory"
+
+        - Once the entire JavaScript code is done
+            - The anonymous function get popped off from the stack 
+
+    - The "stack memory" can be viewed using Chrome's Dev Tools
+        - Click "Sources" tab
+        - Choose a function with a "return" statement
+        - Place a breakpoint on that line of code
+        - Reload the HTML document
+        - Look at the "Call Stack" tab
+            - A list of function names in the stack are displayed
 
 
 - JavaScript is single-threaded
-    - It basically means that JavaScript can only do one thing at a time
+    - This means that the JavaScript can ONLY do ONE THING at a time
     - It calls one function at a time
-        - The other functions wait for the response of that function
+        - The remaining functions wait for a response from the function currently executing
 
 
 - Event Loop
-    - It is NOT a part of the JavaScript Engine but of modern browsers
+    - This is NOT part of the JavaScript Engine BUT of modern browsers
 
     - It helps with asynchronous code
-        - Helps with things like event listeners
+        - With things like Event Listeners 
 
-    - Pass information (events) to the browser
-        - Does NOT involve the participation of the JavaScript Engine
+    - Pass Events to the browser
+        - It does NOT involve the participation of the JavaScript Engine
 
-        - Browser manages the defined event listeners
-            - Pings the JavaScript Engine
-
-            - Pushes the corresponding callback function of the associated into the stack
-                - When the event when it is activated
-                - Then pops off the stack after completing its task
-
+    - The browser manages defined Event Listeners
+        - Pushes the associated callback function of an Event into the stack
+        - When an Event occurs, it calls the corresponding callback function
+        - Then pops it off the stack after completing its task

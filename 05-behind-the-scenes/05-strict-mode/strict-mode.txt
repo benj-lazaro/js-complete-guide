@@ -1,49 +1,50 @@
 Strict Mode & Writing Good Code
 -------------------------------
-- JavaScript's strict mode is a way to enable a restricted variant of JavaScript
-    - Implicityly opting-out "sloppy mode" (non-strict mode)
-    
-    - It is introduced in ES5
-    
-    - To enable strict mode
-        - At top of the code block, type the string
+- Strict Mode is a way to enable a "restricted variant" of JavaScript
+    - Introduced in ES5
+    - It implicitly opts out "sloppy mode" or Non-Strict Mode
+
+
+- To enable Strict Mode 
+    - At the very start of the code, type the string
 
         "use strict"
-    
-    - NOTE: This can be declared within a function
-        - It only applies within that particular block scope
 
-    - Strict mode code & non-strict mode code can coexists
-        - Scripts can opt into strict mode incrementally
+    - Strict Mode can also be declared within a function
+        - Resulting to Strict Mode enabled ONLY within that particular function
+
+    - Both Strict Mode & Non-Strict Mode codebase can coexists
+        - Code can opt into Strict Mode incrementally
 
     - Enabling Strict Mode is optional
-        - Better to implement best coding practices instead
-        - Modern JavaScript mimics most of the Strict Mode behavior
+        - Better implement best coding practices
+        - Modern JavaScript "mimics" most of the Strict Mode behavior
 
     - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)
 
 
-- Non-strict mode
-    - JavaScript allows declaration of a variable without using the keyword let or var
-        - Behind the scenes, it implicitly uses the keyword var
+- When Strict Mode is enabled
+    - Variable declaration is REQUIRED
+        - Using either "let" or "var"
+        - Otherwise, returns a "ReferenceError: Cannot access before initialization"
 
-    - JavaScript allows to use a reserved name as a variable name using the keyword var
-        - Often returns an undefined value (depending on the reserved name used)
-        - It does NOT trigger an error
+    - Prohibits the use of a Reserved Name when declaring a variable
+        - Using "var" returns a "TypeError"
+        - JavaScript can NOT assign a value to a READ-ONLY property of the <window> object
 
+        - Using "let" returns a "SyntaxError"
+        - JavaScript can NOT use the Reserved Name as it had already been declared
 
-- Strict mode
-    - List of changes in the JavaScript's behavior when it is in Strict Mode
+    - List of behavioral changes in JavaScript when Strict Mode is enabled
         - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode#changes_in_strict_mode)
 
-    - JavaScript requires a variable declaration to use the keyword let or var
-        - NOT doing so, returns a ReferenceError
-        - States that the variable is not defined
+    
+- Whe in Non-Strict Mode
+    - Variable declaration is NOT enforced
+        - Behind the scenes, JavaScript uses the "var"
 
-    - JavaScript prohibits the use of a reserved name even when using the keyword var
-        - Returns a TypeError
-        - Stating that it can not assign to a read only property of the object <Window>
+    - Reserved Names / Words can be used as a variable name using "var" 
+        - Often returns an "undefined" value
+            - Depending on the Reserved Name used
 
-        - Using the keyword let instead
-            - Returns a SyntaxError
-            - Stating that the reserved word had already beeen declared
+        - JavaScript does NOT trigger an error

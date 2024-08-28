@@ -1,42 +1,36 @@
 How Code Is Parsed & Compiled
 -----------------------------
-- After the browser reads the HTML file and see the imported JavaScript code
-    - Browser executes the JavaScript code from top to bottom line-by-line
-        - Details on how it is exactly executed depends on the JavaScript Engine used
-
-        - JavaScript Engine under the hood
-            - V8 Chrome (https://hackernoon.com/javascript-v8-engine-explained-3f940148d4ef)
-            - SpiderMonkey (https://firefox-source-docs.mozilla.org/js/index.html)
+- The browser loads and parses through an HTML document
+    - Sees and loads the imported JavaScript code
     
+    - Then browser execute each line of JavaScript code from top to bottom
+        - Details on its execution is heavily dependent on the browser's JavaScript Engine
+            - Chrome    = v8 Chrome (https://hackernoon.com/javascript-v8-engine-explained-3f940148d4ef)
+            - firefox   = SpiderMonkey (https://firefox-source-docs.mozilla.org/js/index.html)
 
-        - JavaScript Engine parses & execute the code
-            - JavaScript Engine's interpreter 
-                - Loads, read and parses the JavaScript code
-                - Translates it into bytecode
-                - Starts running the script / bytecode line-by-line in an optimized way 
-                    - Far from being executed as fast as possible
+    - The JavaScript Engine interpreter
+        - Loads, reads and parses the JavaScript code
+        - Translates it into bytecode
+        - Runs the bytecode line-by-line in an optimized way
 
-            - Javascript Engine's just-in-time compiler 
-                - Compiles the bytecode into machine code
-                    - Offers beter performance
-                
-                - NOTE: Just-in-time compilation meant that
-                    - The compiler starts compiling + executing the compiled code
-                    - Whilst the code is being read / executed
+    - The interpreter hands over the bytecode to the Just-In-Time (JIT) compiler
+        - To translate bytecode into machine code
 
-            - Hands off the machine code to the browser's host OS to execute it
+        - The JIT compiler starts compiling AND executing the compiled code
+            - Whilst the remainder of the bytecode is being translated 
 
-            - JavaScript Engine applies optimization techniques 
-                - To speed up execution and compilation time
-
-                - Code that weren't changed between the last & current execution
-                    - Is NOT necessarily recompiled, the previously compiled code is taken again
+    - The JIT compiler then hands over the machine code to the browser's Host OS
+        - To execute the machine code
 
 
-        - Browser offer features in the form of APIs
-            - Communication bridges between JavaScript and logic built into the browser
-                - The "logic" or browser features are often implemented in C++
+- The JavaScript Engine applies optimization techniques
+    - To speed up compilation and execution time
 
-            - Access to these APIs can be bundled into the compiled machine code
+    - JavaScript code that is NOT modified between the recent & current execution
+        - Is NOT necessarily re-compiled
+        - Previous compiled code is re-used
 
-
+    - The browser offer features in the for of APIs
+        - Serves as a communication bridge between the browser's APIs & JavaScript
+        - Browser's APIs / features are often implemented in C++
+        - Access to these APIs can be bundled into the compiled machine code

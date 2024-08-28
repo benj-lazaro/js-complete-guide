@@ -1,32 +1,32 @@
 var VS let VS const: Introducing The Block Scope
 ------------------------------------------------
-- The keyword var creates / defines a variable
-    - It has been made available since the beginning of the JavaScript language
-    - Declares a function & globally scoped variable
+- The keyword "var" defines a variable
+    - Made available since the beginning of the JavaScript language
+    - Declares a variable to be a function and globally scoped
     - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var)
 
     - It is possible to redeclare a variable within the same scope 
-        - This will NOT trigger a SyntaxError
-        - Pointing that a variable of the same name is already DECLARED earlier
+        - This will NOT trigger a "SyntaxError"
+        - Which meant that a variable of the same name had already been declared
 
-    - It is DISCOURAGED using var on modern JavaScript code
-        - It ONLY exists for backward compatibility on older browsers
+    - On modern JavaScript, it is DISCOURAGED to use "var"
+        - It ONLY exists for backward compatibility with older borwsers
 
  
-- The keyword let creates / defines a variable
-    - It has been made avaialble since ES6
-    - Declares a block scoped variable
+- The keyword "let" defines a variable
+    - Made available since ES6
+    - Declares a variable to be blocked scoped
     - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)
 
 
-- The keyword const creates / defines a constant variable
-    - It has been made available since ES6
-    - Declares a block scoped constant variable
+- The keyword "const" defines a constant variable
+    - Made available since ES6
+    - Declares a constant variable to be blocked scoped    
     - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)
 
 
-- A Block Scope or Statement is used to group zero or more statements
-    - The block is delimited by a pair of braces { }
-        - And contains zero or more statements and declarations
-
+- A block scope or statement
+    - It is used to group 0 or more statements
+    - Delimited by a pair of braces { }
+    - Contains 0 or more declarations and/or statements
     - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/block)
