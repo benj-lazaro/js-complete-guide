@@ -1,26 +1,27 @@
 const startGameBtn = document.getElementById("start-game-btn");
 
-// Function declaration
+// Stand-alone / normal function
 function startGame() {
   console.log("Game is starting...");
 }
 
-// Direct execution of a function
+// Directly executes the function
 // startGame();
 
-// Indirect execution of a function
+// Indirectly executes the function
+// Pass the function as an argument value to the method .addEventListener()
 startGameBtn.addEventListener("click", startGame);
 
-// A function inside an object = method
-const person = {
-  name: "Max",
-  greet: function greet() {
-    console.log("Hello there!");
-  },
-};
+// A function declared as a property of an object i.e. method
+// const person = {
+//   name: "Max",
+//   greet: function greet() {
+//     console.log("Hello there!");
+//   },
+// };
 
-// Calling method .greet() of the person object
-person.greet();
+// Calls the method .greet()
+// person.greet();
 
-// Access .name property of the person object
-console.log("My name is ", person.name);
+// Access the property "name" from the object person
+// console.log("My name is ", person.name);

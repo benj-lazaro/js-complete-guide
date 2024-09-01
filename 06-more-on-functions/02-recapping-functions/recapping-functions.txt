@@ -1,30 +1,38 @@
 Recapping Functions Knowledge: What We Know Thus Far
 ----------------------------------------------------
-- Functions are "code on demand"
-    - When JavaScript read the code/script
+- Functions are constructs that define "code on-demand"
+    - When JavaScript reads a JavaScript file
         - It goes through the entire code first
-        - Finds all function declarations & register each of them
-        - Start executing the code
-        - Declared function(s) can then be called as often as needed
-            - From different places in the code
-
-
-- Constants and variables created within a function
-    - Belongs to that function = block scope
-
-
-- Functions can take any number of parameters / arguments and can return a value
-
-
-- Functions can be called multiple times
-    - Each with different arguments
-
-
-- Functions can be called directly and indirectly
-    - Directly by calling the function by its name followed by ( )
-        - Executes the function immediately
-
-    - Indirectly binding the function name without ( ); often binded to an event listener
-        - Prevents the function from executing immediately
-        - Calls the function when the corresponding event is triggered
         
+        - Find all function declarations
+            - Registers them       
+            
+            - Functions can be called as often as needed
+                - Executed multiple times
+                - From different places in the code
+        
+        - Starts executing the script
+
+
+- Defined constants and variables within a function
+    - They belong to that function (i.e. Block Scope)
+
+
+- A function can take parameters (arguments) and return a value
+    - Optionally can take parameters
+    - Optionally can return a value
+
+
+- A function can be called multiple
+    - Each call with different argument value(s)
+    - Producting different results for different calls
+
+
+- A function can be called directly and/or indirectly
+    - Directly by calling a function by its name
+    - Followed by a pair of ( )
+
+    - Indirectly by binding a function's name to another function (e.g. Event Listner)
+    - Without the suceeding pair of ( )
+        - This prevents a function from being executed immediately
+        - ONLY called when the corresponding function / event is triggered
