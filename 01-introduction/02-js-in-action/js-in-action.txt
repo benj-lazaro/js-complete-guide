@@ -1,24 +1,31 @@
 JavaScript In Action
 --------------------
-- The attached project demonstrates JavaScript in action
+- Attached starter files
+    - Demonstrates JavaScript in action
 
 
 - Open the file "index.html"
-    - Within the HTML element <head>
-        - Just beneath the last HTML element <link>
-        - Add the HTML element <script> </script>
+    - At the closing tag of the HTML element <head>
+        - Add the HTML element <script>
 
-    - Link the JavaScript file "app.js" to the HTML document "index.html"
-        - At the opening <script> tag
-            - Add the HTML attribute "src"
-            - Assign "app.js" file's relative path as value
+    - Add the HTML attribute "src"
+        - Assign the relative path (string) of the JavaScript file "app.js"
 
-        - Next, add the HTML attribute "defer"
-            
+    - After the relative path
+        - Add a whitespace
+        - Followed by adding the HTML attribute "defer"
+
             <script src="assets/scripts/app.js" defer></script>
 
-        - Save changes
+        - Save the changes
 
+
+- Refactor the content of "index.html"
+    - Add a couple of "dynamic overlays"
+        - Replacing links of the following external HTML documents
+            - dynamic.html
+            - weakly-typed.html
+    
 
 - Refactor the HTML document "index.html"
     - To implement a couple of "Dynamic Overlays"
