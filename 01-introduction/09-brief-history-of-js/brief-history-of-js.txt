@@ -1,44 +1,52 @@
 A Brief History Of JavaScript
 -----------------------------
-- 1995
-    - Netscape introduces "LiveScript"
-    - Later renamed "JavaScript"
+- JavaScript's brief history outline
+    - 1995
+        - Netscape introduces LiveScript
+        - Later renamed JavaScript
 
+    - 1996
+        - Microsoft released their own version of JavaScript
+            - For their Internet Explorer browser
+        
+        - Same idea and (generally) same syntax
+            - But implemented differently 
 
-- 1996
-    - Microsoft released its own version of Internet Explorer
-        - Same idea, generally same syntax
-        - But implemented DIFFERENTLY
+    - 1996 (late)
+        - JavaScript submitted to ECMA International
+            - To start standardization
+            - To address the fragmented implementation of JavaScript
+            
+            - NOTE: ECMA (European Computer Manufacturers Association)
 
+    - 1997 to 2005
+        - Standardization effort continues
 
-- 1996 (Late)
-    - JavaScript submitted to ECMA International to start standardization
-        - To address the fragmented implementation of JavaScript
+        - Microsoft did NOT joined & supported the standardized JavaScript version
 
-    - ECMA = European Computer Manufacturers Association
+    - 2008 to 2011
+        - Huge progress with JavaScript's ecosystem that resulted into
+            - A uniform language with minor differences
+            
+        - Single core language that can be implemented on different browsers
+            - Each browser can have their own specific feature(s)
 
-
-- 1997 - 2005
-    - Standardication efforts
-    - Microsoft DID NOT JOIN & SUPPORT the standardized JavaScript version
-
-
-- 2008 - 2011
-    - Huge progress in JavaScript ecosystem
-        - Resulted into a uniform language with minor differences
-        - One core language that can be used in different browsers
-            - Different browsers have their own specific features
-
-    - Microsoft eventually join forces & became part of the standardization process
-        - Contributed in building the standard & adding new features
+        - Microsoft joined & became part of the standardization process
+            - Contributed in building the standardized JavaScript & add new features
 
 
 - ECMAScript
-    - Actual language evolved by the ECMA International Organization
-    
-    - It is NOT directly used as it is
-        - Browser Vendors implement the standard into their JavaScript Engines as JavaScript
-        
-    - Each browser comes with its own JavaScript Engine 
-        - Define which features (defined in the ECMAScript) that are actually supported
+    - Refers to the actual language that was evolved by the ECMA International Organization
+        - It is NOT directly used as it is (i.e. in this form)
 
+    - Browser vendors
+        - Implements the ECMAScript into their JavaScript Engine as JavaScript
+
+        - Select & implement features defined in ECMAScript 
+            - That will be supported by their browser
+
+    - Browser vendors implement the standard (i.e. ECMAScript)
+        - Into their respective JavaScript Engines as JavaScript
+
+        - Implement features (defined in ECMAScript) that 
+            - Will be supported by their browser
