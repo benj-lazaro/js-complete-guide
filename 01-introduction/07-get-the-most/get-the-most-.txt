@@ -1,17 +1,15 @@
 How To Get The Most Out Of This Course
 --------------------------------------
-- Watch the videos
+- Tips to get more out of the course
+    - Watch the video (first)
 
+    - Do the code along
 
-- Do the code along
+    - Practice by doing
+        - The assignments
+        - Practice projects & quizzes
 
-
-- Practice
-    - By doing the assignments, practice projects & quizzes
-
-
-- Debug & Search
-    - Using the attached files
-    - Google for answers
-    - Find and address common issues
-    
+    - Debug and Search
+        - Using the attached starter files
+        - Google for answers
+        - Find and address common issues
