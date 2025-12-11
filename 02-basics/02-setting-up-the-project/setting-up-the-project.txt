@@ -1,5 +1,7 @@
 Setting Up The Project
 ----------------------
-- Set up a starter basic website that will be used for exploring JavaScript
-    - It is a basic browser-based calculator
-    
+- Set up the attached starter file that
+    - Will be used in exploring the basics of JavaScript
+
+
+- The starter file is a browser-based calculator
