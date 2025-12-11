@@ -1,29 +1,40 @@
 Introducing Variables & Constants
 ---------------------------------
-- A variable is a data container where the assigned value can change
+- A variable 
+    - A data container where the assigned value can CHANGE during runtime
 
-- To define a variable
-    - Use the JavaScript keyword "let"
-    - Followed by a name
-    - Followed by a = operator
-    - Followed by the assigned value
+    - To define a variable
+        - JavaScript keyword "let"
+        - Followed by a name and the operator "="
+        - Then the assigned value
+        - Concludes with a ";"
+        
+    Syntax:
 
-Example:
-let userName = "Max";
-userName = "Maximillian";
+    let <variable_name> = <assigned_value>;
+    
+    Example:
+
+    let username = "Max";
+    username = "Maximillian";  // Overwrite initial assigned value
 
 
-- A constant is a data container where the assigned MUST NOT change
-    - Assigning a new value triggers a TypeError
+- A constant
+    - A data container where the assigned value MUST NOT CHANGE during runtime
+    
+    - Assigning a new value triggers a "TypeError"
 
-- To define a constant
-    - Use the JavaScript keyword "const"
-    - Followed by a name
-    - Followed by a = operator
-    - Followed by the assigned value
+    - To define a constant
+        - JavaScript keyword "const"
+        - Followed by a name and the operator "="
+        - Then the assigned value
+        - Concludes with a ";"
+        
+    Syntax:
 
-    - NOTE: Use constants as often as possible on data that NEVER changes 
+    let <variable_name> = <assigned_value>;
+    
+    Example:
 
-Example:
-const userName = "Max";
-userName = "Maximillian";   // Triggers a TypeError
+    const username = "Max";
+    username = "Maximillian";  // Triggers a TypeError
