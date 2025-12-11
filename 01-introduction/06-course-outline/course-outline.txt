@@ -33,5 +33,5 @@ Course Outline
     - Node.Js Introduction
     - Security
     - Deployment
-    - Performance  Optimizations & Memory Leaks
+    - Performance Optimizations & Memory Leaks
     
