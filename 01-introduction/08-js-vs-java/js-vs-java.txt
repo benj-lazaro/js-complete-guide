@@ -1,26 +1,28 @@
 JavaScript VS Java 
 ------------------
-- JavaScript is a flexible, weakly-type programming language
-    - Inspired to be named after Java to "sound cool"
-    - It runs in the browser
+- JavaScript
+    - It is a flexible, weakly-typed programming language
+        - Runs in the browser
+        - Inspired to be named after Java to 'sound cool'
 
-    - JavaScript Client-side
-        - Runs in the brwoser
-        - Original JavaScript implementation 
-        - Browser vendors provide their own JavaScript Engines
-        - Interacts with the web page & browser API
+    - JavaScript client-side
+        - Runs in the browser
+        - Original JavaScript implementation
+        - Interacts with the web page and browser's API
+        - Browser vendors provide their own JavaScript Engine 
 
-    - JavaScript Server-side
-        - Runs on a machine connected to the Internet
-        - Does NOT run on the directly on the machine of the users (client-side)
-        - Extracts the JavaScript Engine to run JavaScript anywhere
-        - Access special non-browser APIs 
+    - JavaScript server-side
+        - Runs on a host machine connected to the Internet
+        - Does NOT run directly on user's machine (like the client-side)
+        - Access special non-browser APIs
+        - Extracts the JavaScript Engine in order to run JavaScript anywhere
 
-    - The syntax & principles of both client-side and server-side are the same
-    
+    - NOTE: The syntax & principles of the JavaScript client-side & server-side are the same
+
 
 - Java is an object-oriented, strongly-type programming language
     - NOT supported to run directly from the browser
 
 
-- Both are totally independent languages with different syntax & principles
+- NOTE: JavaScript and Java are independent programming languages
+    - Each has its own syntax and principles
