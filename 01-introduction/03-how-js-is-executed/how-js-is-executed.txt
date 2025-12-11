@@ -1,12 +1,13 @@
 How JavaScript Is Executed
 --------------------------
 - The JavaScript Engine is the most important piece of code
-    - When executing JavaScript code in the browser
-    - Googe Chrome  = V8
-    - FireFox       = SpiderMonkey
+    - It executes the JavaScript code in the browser
 
+    - JavaScript Engine w/in popular browsers
+        - V8 (Google Chrome)
+        - SpiderMonkey (FireFox)
 
-- The JavaScript Engine's job is as follows:
-    - Parse the JavaScript code
-    - Compile the code on-the-fly into Machine code
-    - Execute the Machine code on a single thread
+    - It's job is to
+        - Parse the JavaScript code
+        - Compile the code "on-they-fly" into machine code
+        - Executes the machine code on a single thread
