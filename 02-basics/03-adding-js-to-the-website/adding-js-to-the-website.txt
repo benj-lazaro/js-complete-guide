@@ -1,31 +1,36 @@
 Adding JavaScript To The Website
 --------------------------------
-- Create a blank JavaScript file within assests/scripts
-    - Name it app.js
-    - This will contain the calculator logic of the website
+- Create a new JavaScript file named "app.js"
+    - W/in the folder "assets/scripts"
+    - This file will store the logic of the web-based calculator
 
 
-- On the index.html, at the last line within the <body> 
-    - Add a <script> tag
-        - With a HTML attribute "src"
-        - Assign the path of the vendor.js file
+- On the "index.html"
+    - Link the JavaScript file
 
-    - Add another <script> tag
-        - This time add the recently created JavaScript file app.js
+    - At the closing tag of the HTML element <body>
+        - Add the HTML element <script>
+            - Declare the HTML attribute "src"
+            - Assign the path for the JavaScript file "vendor.js"
+        
+        - Add another HTML element <script>
+            - Declare the HTML attribute "src"
+            - Assign the path for the JavaScript file "app.js"
 
-    - NOTE: The reason behind the order of the files
-        - The vendor.js contains dependencies required by app.js
-
-    - NOTE: Placing the <script> tag on the last line of the <body>
-        - Browser renders the content of the webpage
-        - Before calling the JavaScript file app.js
+    - NOTE: Declaring the HTML elements <script> at the closing tag of the <body>
+        - Allows the browser to render the content of the HTML document
+        - BEFORE calling the logic stored in the JavaScript file "app.js"
 
 
-- To test the connectivity of app.js
+- To test the connectivity between the HTML document and "app.js"
+    - Open the JavaScript file "app.js"
+
     - Add the line of code
-    
-    alert('This works!');
 
-    - Save changes
-    - Launch browser
-    - Access the index.html file
+        alert("This works!");
+
+    - Save the changes
+    
+    - Reload the file "index.html" (if already open)
+        - A pop-up alert with the content "This works!"
+        - Renders the calculator UI after clicking the alert's button "OK"
