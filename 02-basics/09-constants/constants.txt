@@ -1,9 +1,10 @@
 Constants
 ---------
-- HTML code is read / executed by the browser from top to bottom
-    
-    
-- JavaScript code is parsed, compiled and execute (on-the-fly) from top to bottom
-    - This is a default JavaScript behavior
+- Demonstrates the use of a constant on the starter file "app.js"
+    - The browser reads the content of a HTML document
+        - From top to bottom
+        - Executes (renders) each line that is read
 
-
+    - JavaScript code's default behavior
+        - Code is parsed (read) from top to bottom
+        - Each line read is compiled and executed "on-the-fly"

@@ -1,13 +1,14 @@
-// Default value NEVER changes throughout the execution of the code
+// Constant stores a default value that NEVER changes throughout the code's runtime
 const defaultResult = 0;
 
-// Copy the value of defaultResult to currentResult
+// Stores the value of a constant into a variable
 let currentResult = defaultResult;
 
-// Overwrite initial value of currentResult with the result of the mathematical expression
+// Evaluates the mathematical expression and stores it into the variable
 currentResult = ((currentResult + 10) * 3) / 2 - 1;
 
+// A variable stores the string representation of the mathematical expression
 let calculationDescription = "((" + defaultResult + " + 10) * 3) / 2 - 1";
 
-// Call outputResult() function from vendor.js to render value of variables in HTML
+// Calls the function outputResult() to render the values of variables on the HTML document
 outputResult(currentResult, calculationDescription);
