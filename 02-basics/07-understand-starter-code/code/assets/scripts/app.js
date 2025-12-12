@@ -1,9 +1,8 @@
+// Initialize variable currentResult
 let currentResult = 0;
 
-// Overwrite the initial value of currentResult with the result of the mathematical expression
+// Evaluate and store the result of the mathematical expression in the variable
 currentResult = ((currentResult + 10) * 3) / 2 - 1;
 
-// Invoke outputResult() function in vendor.js
-// Pass the value stored in currentResult an an argument value
-// Followed by a blank string
+// Pass two argument values; the value of currentResult and a blank string
 outputResult(currentResult, "");
