@@ -1,42 +1,40 @@
 Declaring & Defining Variables
 ------------------------------
-- Allowed variable naming conventions
-    - Use camelCase
-    - Use ONLY letters and digits
-    - Starting with $ is allowed
-    - Starting with _ is allowed 
+- Declaring a JavaScript variable 
+    - Use the camelCase naming convention
+    - Contains ONLY letters and numbers
+    - May start with character "$" or "_"
+    - JavaScript is CASE-SENSITIVE
+    
+    Example:
 
-Example:
-let userName        // camelCase
-let ageGroup5       // letters & digits
-let $kindOfSpecial  // starting with $
-let _internalValue  // starting with _ 
+    let userName        // camelCase naming convention
+    let ageGroup5       // contains letters and numbers
+    let $kindOfSpecial  // starts with "$"
+    let _internalValue  // starts with "_"
 
+    - While using the snake_case naming convention is allowed
+        - It is considered as "bad practice"
+    
+    - NOT allowed to start with a number or special character
+    - NOT allowed to use a special character anywhere w/in the variable name
+    - NOT allowed to use a JavaScript keyword as variable name
 
-- Not allowed / recommanded variable naming conventions
-    - Using snake_case is allowed but considered as bad practice
-    - Starting with digits is NOT allowed
-    - Using special characters is NOT allowed
-    - Using JavaScript keywords is NOT allowed
-
-Example:
-let user_name       // snake_case
-let 21Players       // starting with digits
-let user-bad        // special characters
-let let             // JavaScript keyword 
-
-
-- NOTE: JavaScript is case-sensitive
+    Example:
+    let user_name       // snake_case
+    let 21Players       // starts with a number
+    let user-bad        // contains a special characters
+    let let             // uses a JavaScript keyword "let"
 
 
-- Variables in JavaScript does not need to initialize with a starter value 
-    - This variable is an uninitialized variable
+- Defining a JavaScript variable
+    - Does NOT require to be initialized with an initial value
+    - NOTE: This is referred as an "uninitialized variable"
+    
 
-
-- A semi-colon at the end of a JavaScript expression is GENERALLY OPTIONAL
-    - REQUIRED when writing two (2) expression on a single line of code
-
-Example:
-let const a = 1; let const b = 2;
-
-
+- Using a semi-colon ";" 
+    - At the end of a JavaScript expression is generally OPTIONAL
+    
+    - However, it is REQUIRED when writing two (2) expressions
+        - On a single line of code
+        - e.g. let const a = 1; let const b = 2;
