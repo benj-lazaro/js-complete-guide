@@ -1,31 +1,32 @@
 More On Strings
 ---------------
-- Single or double quotes can be used for a string data type
-    - Important thing is consistency and to stick to the chosen convention
-    - Content in-between the quotes is considered as text
+- The string data type is expressed using
+    - Either a pair of single ' ' or double " " quotes around a string value
+        - Important thing is consistency
+        - Stick to the chosen convention throughout the entire codebase
 
+    - A pair of backticks ` `
+        - Offers a feature known as "template literal"
 
-- Backticks (leftside of '1' key) offers a feature known as template literal
-    - It renders the value of a constant, variable or expression as text
+        - Renders a value stored within a constant, expression or variable
+            - As string
 
-    - This is done using a special syntax
-        - A $ sign followed by a pair of { }
-        - Passing the name of constant, variable or expression as an argument value
+        - This is expressed using the syntax:
 
-        ${[constant_name | variable_name | expression]}
+            ${<constant | expression | variable>}
 
+        - Also offers the ability to render a multiline string
+            - A string containing multiple line breaks
+            - NOT achievable when enclosing a string with a pair of single or double quotes
+            
+    - Using a "\" followed by a single character within a string
+        - Functions as an "escape character"
 
-- Template literals also offer the ability to write multiline Strings
-    - Strings that contain multiple line breaks
-    - This is NOT possible with single or double quotes strings
+        - The character is NOT treated as a normal character
+            - Each character has a special meaning (or purpose)
 
+        Example:
 
-- Using a '\' in a string serves as an escape character
-    - Any character AFTER the \ is NOT treated as a normal character
-    - It will have a special meaning depending on the chosen character
-
-    Example:
-    \n  = linebreak
-    \'  = single quote
-    \\  = backslash
-
+        \n  = linebreak
+        \'  = single quote
+        \\  = backslash
