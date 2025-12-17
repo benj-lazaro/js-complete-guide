@@ -1,16 +1,22 @@
 Adding A Custom Function
 ------------------------
-- Adding a custom function to the codebase of app.js
+- Explores the different between
+    - Global-scoped variable
+    - Local-scoped variable
+
+    - Declaring a new Function inot the code base of "app.js"
 
 
-- A variable declared outside a function is referred as a global-scoped variable 
-    - This variable can be referenced WITHIN a function
+- Global-scoped variables
+    - Variable(s) declared outside of a Function
+    - Variable(s) that can be referred w/in a Function
 
 
-- A variable declared within a function is referred as a local-scoped variable
-    - This variable can NOT be referenced OUTSIDE a function
+- Local-scope variable(s)
+    - Variable(s) declared w/in a Function
+    - Variable(s) can NOT be referenced OUTSIDE a Function
 
 
-- The alert() function is a JavaScript built-in function
-    - Requires a string data type argument
-    - Displays a pop-up message on the browser as soon as the web page gets rendered
+- The built-in JavaScript Function "alert()"
+    - Renders a pop-up message on the browser as the web page is rendered
+    - Requires a "string" data type as argument value

@@ -1,17 +1,15 @@
-// Global-scope variables
+// Global-scoped variable(s)
 const defaultResult = 0;
 let currentResult = defaultResult;
 
-// Define a custom function that adds two numbers
-function add(num1, num2) {
-  // Local-scope variable
-  const result = num1 + num2;
+function add(number1, number2) {
+  // Local-scoped variable(2)
+  const result = number1 + number2;
 
-  // Outputs the value to the browser as a pop-up
   alert(`The result is ${result}`);
 }
 
-// Call the custom function
+// Calling the custom function
 add(1, 2);
 add(5, 5);
 
