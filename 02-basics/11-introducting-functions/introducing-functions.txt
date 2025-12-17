@@ -1,27 +1,48 @@
 Introducting Functions
 ----------------------
-- Function is referred as code on demand
-    - It is a language construct
-    - It defines a piece of code that can be executed at a later point of time
+- A Function is a language construct
+    - Refers to a piece of code that can be executed at a later point of time
+    - Often referred as "code on demand"
 
 
-- The code within a function does NOT immediately get executed
-    - When the main JavaScript code is being executed
-    - The function code is registered & stored in memory
-    - Until it is called from the main JavaScript code
+- Code w/in a Function
+    - It gets registered and then stored in memory
+        - Waits until it is called from the main JavaScript code
+
+    - It does NOT immediately gets executed
+        - As the main JavaScript code is being read or running
 
 
-- To define a Function, use the syntax:
+- To define a Function
 
-    function <name>([parameter, parameter, etc]) {
+    Syntax:
+
+    function <name>([parameter_name, ...]) {
         // body of code
     }
 
-    - The use of a parameter is optional
-    - Returning a value from within a function using the keyword return is also optional
+
+    - NOTE: The declaration of parameter variables w/in the pair of ( ) is OPTIONAL
 
 
-- Calling a function, use the convention
+- To return a value from a Function
+    - At the last line of code w/in a Function
+    
+    - Use the keyword "return"
+        - Followed by an expression, a variable or value 
 
-    <function_name>([argument, argument, etc]);
+    - NOTE: Returning a value from a Function is OPTIONAL
 
+    Syntax:
+
+
+- To call a Function from w/in the main JavaScript code
+    - Use the convention:
+
+    return [<variable_name>, <value>, <expression>];
+
+
+- To call a Function from w/in the main JavaScript code
+    - Use the calling convention
+    
+    <function_name>([<argument_value>, ...]);
