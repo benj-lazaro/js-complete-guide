@@ -1,17 +1,22 @@
 An Introduction To Global And Local Scope
 -----------------------------------------
-- Constant, variable & data defined INSIDE a function
-    - This falls within the confines of Local (Block) Scope
-    - It can NOT be accessed outside of a function
-    - Even if a constant or variable has an IDENTICAL identifier outside a function
+- A constant, variable or data defined INSIDE a Function
+    - Falls w/in the confines of Local (block) scope
+    
+    - It can NOT be accessed OUTSIDE of a function
+        - Even an identical identifier defined outside a function
 
 
-- Constant, variable & data defined OUTSIDE a function
-    - This falls within the confines of Global Scope
-    - It can be accessed inside a function
+- A constant, variable or data defined OUTSIDE a Function 
+    - Falls w/in the fones of Global scope 
+    
+    - It also can be accesssed w/in a Function
 
 
-- A pure function is a function that:
-    - Takes some input through the use of parameters
-    - Returns an output through the use of a "return" statement
-    - Does NOT directly access / manipulate anything from the Global Scope
+- A pure Function is one that
+    - Takes some input via parameter(s)
+    
+    - Returns an output
+        - Using the "return" statement
+    
+    - Does NOT directly access & manipulate anything from the Global scope
