@@ -1,20 +1,19 @@
-// Global-scope variables
+// Global-scoped variable(s)
 const defaultResult = 0;
 let currentResult = defaultResult;
 
-// Define a custom function that adds two numbers
+// A function that returns the sum of two numbers
 function add(num1, num2) {
-  // Local-scope variable
+  // Local-scoped variable
   const result = num1 + num2;
 
-  // Returns the value back to the express that called the function
+  // Returns the sum stored in the local-scoped constant variable"result"
   return result;
 }
 
-// Call the custom function
+// Calling the custom function add(); stores the sum in the variable "currentResult"
 currentResult = add(1, 2);
 
-// NOTE: value of calculationDescription is NOT corrent for the moment
+// NOTE: The value of the variable "calculationDescription" is currently incorrect
 let calculationDescription = `((${defaultResult} + 10) * 3) / 2 - 1`;
-
 outputResult(currentResult, calculationDescription);

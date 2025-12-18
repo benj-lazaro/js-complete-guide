@@ -1,5 +1,14 @@
 Returning Values
 ----------------
-- The "return" statement ends function execution 
-    - Specifies the value to be returned to the function caller
+- The JavaScript statement "return"
+    - Returns the specified value to the function caller
+
+    - It also ends a Function's execution
+
     - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return)
+
+
+Syntax:
+
+return;
+return <expression>;
