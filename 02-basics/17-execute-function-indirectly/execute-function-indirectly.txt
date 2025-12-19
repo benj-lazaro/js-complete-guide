@@ -1,24 +1,33 @@
 Executing Functions Indirectly
 ------------------------------
-- Refactor the code of app.js
-    - Add an Event Listener to the constant addBtn (defined in vendor.js)
-    - The constant constains a targeted HTML element in index.html
+- Refactor the code base of "app.js"
+    - Hook up an Event Listener to the constant "addBtn"
+        - Defined within "vendor.js"
 
-    - The .addEventListener() is a JavaScript method that
-        - Set up a function to be called
-        - Whenever a specified event occurred on the targeted element (addBtn)
-        - Reference (https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
-
-    - Pass two argument values to .addEventListener()
-        - 1st argument = name of event to listen to
-
-        - 2nd argument = name function to be called when the event occurred
-            - NOTE: Omit ( ) from the callback function to prevent from immediately being executed
+    - The constant "addBtn"
+        - Stores the selected HTML element <button> w/ an attribute "id" of "btn-add"
 
 
-    - Inside the callback function add()
-        - Add the value of currentResult with userInput (defined in vendor.js)
-            - The property .value = stored value 
-        
-        - Call outputResult() (defined in vendor.js) to render the result on the HTML document
-        
+- The JavaScript Method ".addEventListener()"
+    - Requires two (2) arguments
+        - An Event to listen to (e.g. "click")
+        - Corresponding Callback Function
+
+    - Callback Function will be executed
+        - When the defined Event occurs within the selected HTML element <button>
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
+
+
+- The Function "add()"
+    - Adds the value of the variable "currentResult" & constant "userInput"
+        - Sum is stored to the variable "currentResult"
+        - Effectively overwritting the previous value
+
+    - The property ".value" attached to the constant "userInput"
+        - Fetches the content of the selected HTML element in the constant "userInput" (i.e. <button>)
+
+    - The Function "outputResult()"
+        - Passes the variable "currentResult" & empty string as argument values
+
+        - Renders the value to the corresponding HTML elements <h2> in "index.html"
