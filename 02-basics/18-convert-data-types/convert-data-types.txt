@@ -1,19 +1,32 @@
 Converting Data Types
 ---------------------
-- Any value from a HTML <input> element
-    - JavaScript will ALWAYS considered as a string
+- The property ".value()" attached to the constant "userInput"
+    - Where the HTML <input> with the attribute "id" of "input-number" is stored
 
-    - <input> element's value will return a string
-        - Even set with an HTML attribute "type" with a value of "number"
-        - This is how JavaScript in the browser works
+    - Returns a string value
+        - Despite the HTML element <input> has the attribute "type" set with the value of "number"
+        - JavaScript still "reads" the content (value) as string
 
-    - To convert the value of an HTML <input> element into a number
-        - Use parseInt()
-            
-    - The parseInt if a function that parses a string argument
-        - Then returns an integer of the specified radix (base number)
+    - To convert a number of string data type into a real number
+        - Use the JavaScript Function "parseInt()"
+
+    - The Function "parseInt()"
+        - Requires an argument value of string data type
+        - Returns an integer of the specified base number (radix)
         - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt)
 
-    
-- To convert number data type into a string, use the method .toString()
+    Syntax:
+
+    parseInt(<string>);
+    parseInt(<string>, <radix>);
+
+
+- To convert a value of number data type into a string
+    - Use the Method ".toString()"
+
     - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toString)
+
+    Syntax:
+
+    <object>.toString();
+    <object>.toString(<radix>);
