@@ -8,3 +8,4 @@ Splitting Code Into Functions
 - Working with Template Literal strings
     - Any value passed into ${ }
     - JavaScript IMPLICITY converts a value into a string
+    
