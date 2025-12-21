@@ -1,10 +1,10 @@
 Splitting Code Into Functions
 -----------------------------
-- Split repeating code into their own function
-    - To address code repetition
-    - Helps change a piece of code in a single place within a codebase
-    - AVOID code repetition at all cost 
+- Splitting the code base into their respective Functions
+    - Helps addresses (and avoids) code repetition
+    - Helps implement changes in a piece of code easily
 
 
-- When working with Template Literal
-    - Any value passed into it is IMPLICITY CONVERTED into a string
+- Working with Template Literal strings
+    - Any value passed into ${ }
+    - JavaScript IMPLICITY CONVERTS the value into a string
