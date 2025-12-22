@@ -1,20 +1,19 @@
+// Global scope constant(s) & variable(s)
 const defaultResult = 0;
 let currentResult = defaultResult;
 
-// Move repeating code into their own respective functions
-
-// Capture user input from HTML form
+// Function that fetches user input from the HTML document
 function getUserNumberInput() {
   return parseInt(userInput.value);
 }
 
-// Render mathematical operation on HTML document
+// Function that renders the mathematical operation on the HTML document
 function createAndWriteOutput(operator, resultBeforeCalc, calcNumber) {
   const calcDescription = `${resultBeforeCalc} ${operator} ${calcNumber}`;
   outputResult(currentResult, calcDescription);
 }
 
-// Mathematical operations
+// Function that adds two numbers; renders the mathematical expression & result
 function add(num1, num2) {
   const enteredNumber = getUserNumberInput();
   const initialResult = currentResult;
@@ -22,6 +21,7 @@ function add(num1, num2) {
   createAndWriteOutput("+", initialResult, enteredNumber);
 }
 
+// Function that substracts two numbers; renders the mathematical expression & result
 function subtract(num1, num2) {
   const enteredNumber = getUserNumberInput();
   const initialResult = currentResult;
@@ -29,6 +29,7 @@ function subtract(num1, num2) {
   createAndWriteOutput("-", initialResult, enteredNumber);
 }
 
+// Function that multiplies two numbers; renders the mathematical expression & result
 function multiply(num1, num2) {
   const enteredNumber = getUserNumberInput();
   const initialResult = currentResult;
@@ -36,6 +37,7 @@ function multiply(num1, num2) {
   createAndWriteOutput("*", initialResult, enteredNumber);
 }
 
+// Function that divides two numbers; renders the mathematical expression & result
 function divide(num1, num2) {
   const enteredNumber = getUserNumberInput();
   const initialResult = currentResult;
@@ -43,7 +45,7 @@ function divide(num1, num2) {
   createAndWriteOutput("/", initialResult, enteredNumber);
 }
 
-// Hook up Event Listeners of targeted HTML elements to their respective callback functions
+// Hook up an Event Listener for "click" for each targeted HTML element & their respective callback Functions
 addBtn.addEventListener("click", add);
 subtractBtn.addEventListener("click", subtract);
 multiplyBtn.addEventListener("click", multiply);
