@@ -1,20 +1,19 @@
+// Global scope constant(s) & variable(s)
 const defaultResult = 0;
 let currentResult = defaultResult;
 
-// Move repeating code into their own respective functions
-
-// Capture user input from <input> tag
+// Fetch & conver user-input value into an integer
 function getUserNumberInput() {
   return parseInt(userInput.value);
 }
 
-// Render log of mathematical operation on the HTML document
+// Render result and mathematical expression  on the HTML document
 function createAndWriteOutput(operator, resultBeforeCalc, calcNumber) {
   const calcDescription = `${resultBeforeCalc} ${operator} ${calcNumber}`;
   outputResult(currentResult, calcDescription); // Imported from vendor.js
 }
 
-// Mathematical operations
+// Returns the sum of two numbers
 function add(num1, num2) {
   const enteredNumber = getUserNumberInput();
   const initialResult = currentResult;
@@ -22,6 +21,7 @@ function add(num1, num2) {
   createAndWriteOutput("+", initialResult, enteredNumber);
 }
 
+// Returns the difference of two numbers
 function subtract(num1, num2) {
   const enteredNumber = getUserNumberInput();
   const initialResult = currentResult;
@@ -29,6 +29,7 @@ function subtract(num1, num2) {
   createAndWriteOutput("-", initialResult, enteredNumber);
 }
 
+// Returns the product of two numbers
 function multiply(num1, num2) {
   const enteredNumber = getUserNumberInput();
   const initialResult = currentResult;
@@ -36,6 +37,7 @@ function multiply(num1, num2) {
   createAndWriteOutput("*", initialResult, enteredNumber);
 }
 
+// Returns the quotient of two numbers
 function divide(num1, num2) {
   const enteredNumber = getUserNumberInput();
   const initialResult = currentResult;
@@ -43,7 +45,7 @@ function divide(num1, num2) {
   createAndWriteOutput("/", initialResult, enteredNumber);
 }
 
-// Link Event Listeners to targeted HTML elements (in vendor.js) & their respective callback functions
+// Hookup a 'click' event listener & their corresponding callback functions on selected HTML elements
 addBtn.addEventListener("click", add);
 subtractBtn.addEventListener("click", subtract);
 multiplyBtn.addEventListener("click", multiply);

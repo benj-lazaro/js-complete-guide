@@ -1,49 +1,37 @@
 Working With Code Comments
 --------------------------
-- A JavaScript comments is implemented in two ways:
-    - Single-line comment
-    - Multi-line comment
+- JavaScript comments are implemented in two (2) ways:
+  - Single-line
+  - Multi-line
 
-    - Comments does NOT get executed by the JavaScript Engine
+  Syntax:
 
-
-- Content of the comment SHOULD NOT point out the obvious
-    - Write short and to the point content 
-    - That provide SUPPLEMENTAL CONTEXT that is NOT immediately OBVIOUS 
-
-
-Syntax
-- Single-line comment
-
-    // <comment_text>
-
-- Multi-line comment
-
-    /*  <comment_text>
-        <comment_text>
-        <comment_text>
-    */
+  // This is a single-line comment
+  
+  /* This is
+     a multi-line
+     comment
+  */
 
 
-Example
-- Single-line comment
-
-// This is a single-line comment
-function getUserNumberInput() {         
-  return parseInt(userInput.value);
-}
-
-function getUserNumberInput() {         // This is a single-line comment
-  return parseInt(userInput.value);
-}
+  - Comments w/in the JavaScript code
+    - Are ignored and does NOT get executed by the JavaScript Engine
 
 
-- Multl-line comment
+  - Content of a comment
+    - Should NOT point out the obvious
+    - Should contain short & to the point supplemental content
 
-/*  This is a
-    multi-line 
-    comment
-*/
-function getUserNumberInput() {
-  return parseInt(userInput.value);
-}
+
+  Example:
+
+  function getUserNumberInput() {         // Fetch & conver user-input value into an integer
+    return parseInt(userInput.value);
+  }
+
+  /*  Fetch & convert user-input value
+      Into an integer
+  */
+  function getUserNumberInput() {
+    return parseInt(userInput.value);
+  }
