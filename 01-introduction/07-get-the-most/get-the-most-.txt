@@ -1,15 +1,29 @@
 How To Get The Most Out Of This Course
 --------------------------------------
-- Tips to get more out of the course
-    - Watch the video (first)
+- Tips on the best way to learn
+    - Watch the videos
+        - At preferred speed using Udemy's playback controls
+        - Slow down or rewing videos on concepts that are NOT clear
 
-    - Do the code along
+    - Code along
+        - Implement the code on your own prior to looking at the author's solution        
+        - NOTE: This is the best way of practice
+        
+    - Practice 
+        - Do the assignments, practice projects & quizzes
 
-    - Practice by doing
-        - The assignments
-        - Practice projects & quizzes
+    - Debug & search
+        - Debug your code
+            - Search for errors & solutions
+        
+        - Compare the attached codebase with your work
+            - Replace your code step-by-step with the author's
+            - To narrow down the root cause of an encountered issue
 
-    - Debug and Search
-        - Using the attached starter files
-        - Google for answers
-        - Find and address common issues
+    - Ask & answer
+        - Using Udemy's "Q&A" section to ask questions & help others
+
+        - You will learn the most by
+            - Solving issues on your own
+            - Helping others
+    
