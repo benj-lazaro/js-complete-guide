@@ -1,29 +1,39 @@
 Setting Up A Development Environment
 ------------------------------------
-- Development environment
-    - VS Code (code editor)
-    
-    - VS Code recommended plugins
-        - Material Icon Theme (Philipp Kief)
-        - Prettier (Esben Petersen)
-    
-    - Google Chrome (browser)
+- A good & proper development environment
+    - To write code & dive into JavaScript
+
+    - VS Code is a strongly recommended code editor
+        - Customizable & extensible
+        - Modern & under active development
+        
+        - Recommended core extensions:
+            - Material Icon Theme (Philipp Keif)
+            - Prettier (Esben Petersen)
+
+    - Google Chrome is a strongly recommended browser
+        - Offers built-in Developer Tools
+        - For testing & seeing JavaScript code in action
 
 
-- VS Code User vs Workspace Settings
-    - User settings
+- VS Code's User VS Workspace Settings
+    - User
         - Implements configuration changes on ALL projects managed by VS Code
 
-    - Workspace settings
-        - Implements configuration changes on a specific project 
+    - Workspace
+        - Implements configuration changes on a SPECIFIC project
 
 
 - Google Chrome browser settings
     - Use "Incognito Mode"
-        - Prevents being distracted by other (installed) browser plugins 
+        - Disables installed browser plugins that interfere
+            - Or caused unforeseen issues with your code
 
-    - On the "JavaScript Console" settings
-        - Uncheck the checkbox "Preserve log" (if checked)
+    - On the Developer Tools "Console"
+        - Click "Preferences" (gear icon)
 
-        - Ensure that the JavaScript console log is emptied
-            - Every time the web page is reloaded
+        - Under the section "Network"
+            - Uncheck the checkbox "Preserve log" (if checked)
+
+        - Ensures that the JavaScript console is empty
+            - Every time a web page is loaded (and reloaded)
