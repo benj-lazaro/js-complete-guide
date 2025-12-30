@@ -1,0 +1,37 @@
+What is JavaScript
+------------------
+- It is a dynamic, weakly type programming language
+    - Compiled at runtime
+    - Executed as part of a web page in a browser
+    - Executed directly on any machine (host environment)
+
+
+- Originally created to make web pages more dynamic
+    - Changes the content of a web page directly from inside a browser
+
+
+- Initially named "LiveScript", later changed to "JavaScript"
+    - Due to the popularity of the Java programming language
+
+    - JavaScript is independent from Java
+        - It has nothing in common with the language
+        - Besides the similarities of their names
+
+
+- How do web pages work
+    - When a user (i.e. client) visits a web site
+        - Hosted on a remote server using a browser
+
+    - The browser initially makes a HTTP request to the server
+        - For the corresponding data (e.g. HTML document)
+
+    - The server responds with
+        - The requested data if it exists
+        - The corresponding error message if the data is non-existent
+
+    - JavaScript
+        - Helps the received HTML document to be more reactive
+
+        - Able to change its content
+            - Without the need to send another HTTP request to the server
+            - To make the change of content possible
