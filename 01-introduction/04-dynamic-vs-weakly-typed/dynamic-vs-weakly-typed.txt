@@ -1,20 +1,31 @@
 Dynamic VS Weakly Typed Languages
 ---------------------------------
-- Dynamic (i.e. interpreted) programming language
-    - Code is NOT pre-compiled
-        - It is parsed first
-        - Then compiled "on-the-fly" (in the browser) as it executes at runtime
-
-    - Code can change at runtime
-        - A variable's data type can be changed at runtime
-        - e.g. string type switches to integer type at a later time
+- JavaScript is a dynamic, intepreted & weakly-typed programming language
 
 
-- Weakly Typed programming language
-    - A variable's data type is IMPLICITLY assumed
+- Dynamic
+    - A value stored in a variable can dynamically change at runtime
+        - e.g. A string value later changed to a number
 
-    - It does NOT require to declare the data type of a value
-        - In advance before being assigned to a variable
+    - NOTE: A "variable" is simply a temporal data container
 
-    - The data type of a variable's assigned value is NOT set in stone
-        - It can be changed at runtime
+
+- Interpreted
+    - JavaScript code is NOT pre-compiled
+
+    - The code is evaluated (parsed), compiled into Machine code "on-the-fly"
+        - Then executed at runtime
+    
+
+- Weakly typed
+    - The data type of a value stored in a JavaScript variable
+        - Can change at runtime
+        - Data type is NOT "set in stone"
+
+    - JavaScript IMPLICITLY assumes (infers) the data type
+        - Solely on the value assigned in a variable
+
+        - Does NOT require to declare the data type in advance
+            - Prior to its assignment to a variable
+
+            - It simply does NOT care about strong declarations in advance
