@@ -1,35 +1,36 @@
 JavaScript Executes In a Hosted Environment
 -------------------------------------------
-- Browser Side
-    - JavaScript was inveted to create dynamic websites
-        - That is executed in the browser 
-
-    - JavaScript can manipulate
-        - HTML document
-        - CSS stylesheet
-        - Sent background HTTP requests & more
-
-    - JavaScript can NOT
-        - Access the host computer's local filesystem
-        - Interact w/ the host computer's operating system, etc.
+- JavaScript Engine can be executed in different environments
+    - Browser
+    - Others (e.g. Server side)
 
 
-- Server Side
-    - Google's JavaScript engine V8 was extracted into a stand-alone tool
-        - It enables JavaScript to be run anywhere
-        - The stand-alone tool is now known as "Node.js"
+- JavaScript on the browser side
+    - Invented to create dynamic websites executed w/in the browser
 
-    - Node.js can be
-        - Executed on any machine 
+    - It can 
+        - Manipulate HTML documents & CSS stylesheets
+        - Send HTTP requests in the background & more
 
-        - Used to build 
-            - Web back-end (server-side JavaScript) apps
-            - Web servers
+    - It can NOT
+        - Access a host computer's local filesystem
+        - Interact with host computer's operating system, etc. 
+
+
+- JavaScript on the server side
+    - JavaScript Engine was extracted & turned into a stand-alone tool
+        - That can run JavaScript anywhere
+        - This tool is now known as "Node.js"
+
+    - The code base is also referred as "server-side JavaScript"
+        - Often used to write backend apps & web servers
+
+    - It can
+        - Execute JavaScript code on a host computer
+        - Access the local filesystem
+        - Interact with the operating systems
+
+    - It can NOT
+        - Manipulate HTML documents & CSS stylesheets
         
-        - Used to access
-            - Host computer's local filesystem
-            - Host computer's operating system, etc.
-
-
-    - Node.js can NOT
-        - Manipulate HTML document and/or CSS stylesheet
+    - NOTE: A direct opposite of the "browser-side JavaScript"
