@@ -1,28 +1,33 @@
 JavaScript VS Java 
 ------------------
+- Comparison between JavaScript & Java
+    - Both are totally independent programming languages
+    - Each has their own different syntax & principles
+    - Have nothing in common besides their names
+
+
 - JavaScript
-    - It is a flexible, weakly-typed programming language
-        - Runs in the browser
-        - Inspired to be named after Java to 'sound cool'
+    - A flexible, weakly-typed programming language
+        - That runs w/in the browser as well as on the server side
 
-    - JavaScript client-side
-        - Runs in the browser
-        - Original JavaScript implementation
-        - Interacts with the web page and browser's API
-        - Browser vendors provide their own JavaScript Engine 
+    - JavaScript client side (browser)
+        - Origin of JavaScript
 
-    - JavaScript server-side
-        - Runs on a host machine connected to the Internet
-        - Does NOT run directly on user's machine (like the client-side)
-        - Access special non-browser APIs
-        - Extracts the JavaScript Engine in order to run JavaScript anywhere
+        - Browser vendors provide their own JavaScript Engine
 
-    - NOTE: The syntax & principles of the JavaScript client-side & server-side are the same
+        - Allows interaction with web pages & browser-specific APIs
 
+    - JavaScript server side
+        - Runs JavaScript outside of the browser & anywhere using Node.js
+        
+        - Allows for code & knowledge reuse
+        
+        - Allows access to non-brwoser APIs
+            - e.g. local filesystem, incoming HTTP requests, etc.
 
-- Java is an object-oriented, strongly-type programming language
-    - NOT supported to run directly from the browser
+    - NOTE: Syntax, concepts & core features of the client & server side are EXACTLY the SAME
 
 
-- NOTE: JavaScript and Java are independent programming languages
-    - Each has its own syntax and principles
+- Java
+    - A strictly object-oriented and strongly typed programming language
+        - It is NOT supported to run directly w/in the browser
