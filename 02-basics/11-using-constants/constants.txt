@@ -1,0 +1,37 @@
+Using Constants
+---------------
+- The browser reads the content of a HTML document from top to bottom
+    - Renders (executes) each line that is read
+
+
+- JavaScript's default behavior
+    - JavaScript code is parsed (read) from top to bottom
+    
+    - Each line parsed is
+        - Compiled
+        - Executed "on-the-fly"
+
+
+- On the starter project
+    - Open the file "assets/scripts/app.js"
+
+    - Declare a new constant named "defaultResult"
+        - Assign with the value of 0
+
+    - Copy the value of the constant "defaultResult"
+        - To the declaration of the variable "currentResult"
+        - Effectively initialzing the variable
+
+    - Assign the result of the mathematical expression
+        - Into the variable "currentResult"
+
+    - Declare a new variable named "calculationDescription"
+        - Assign the string representation of the previous mathematical expression
+
+    - Pass the variables "currentResult" and "calculationDescription"
+        - As argument values to the function "outputResult()"
+
+    - Save the changes
+
+    - Browser then renders the values in the HTML document (index.html)
+
