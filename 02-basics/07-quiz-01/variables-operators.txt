@@ -1,0 +1,44 @@
+Quiz 01: Variables & Operators
+------------------------------
+- What is a Variable
+    - Answer: A data container (where data can be changed during program execution)
+
+
+- What's a constant"
+    - Answer: It's a data container where the value CAN"T be changed
+
+
+- In the following example; what's the variable & what's the data of the variable
+
+    let userAge = 30;
+
+    - Answer: userAge is the variable, 30 is the data
+
+
+- Could you replace the snipet
+
+    let age = 30;
+    alert(age);
+
+    - With this one "alert(30)" and still get the same result?
+
+    - Answer: Yes
+
+
+- Why do we need variables if
+
+    let age = 30;
+    alert(age);
+    
+    - Can be re-written as "alert(30);"
+
+    - Answer: 
+        - Variables can store data that may change during the program execution
+        - Hardcoding isn't always an option
+        - Additionally, the same value might be needed in multiple places
+        - Using a variable allows you to refer to that variable
+            - And only change the value in one place instead of multiple places
+
+
+- Which kind of operator is =
+    - Answer: It's an assignment operator (assigns a value)

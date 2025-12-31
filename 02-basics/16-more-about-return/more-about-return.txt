@@ -1,9 +1,0 @@
-More About The Return Statement
--------------------------------
-- JavaScript's "return" statement
-    - Useful for getting data out of a Function
-
-    - Succeeding statements after the "return" statement are IGNORED
-
-    - Can also be used to return nothing such as
-        - A Function that cancels execution after satisfying a conditional logic

@@ -1,8 +1,0 @@
-Accessing Object Data
----------------------
-- To access data from an object use the notation:
-
-    <object_name>.<object_property_name>
-
-    - NOTE: property = key part of the object's key-value pair
-    
