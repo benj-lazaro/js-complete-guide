@@ -1,40 +1,45 @@
 Introducing Variables & Constants
 ---------------------------------
-- A variable 
-    - A data container where the assigned value can CHANGE during runtime
+- A variable is a data container or storage wherein
+    - The assigned value can CHANGE during runtime
 
-    - To define a variable
-        - JavaScript keyword "let"
-        - Followed by a name and the operator "="
-        - Then the assigned value
-        - Concludes with a ";"
-        
+    - Once a value is assigned to a variable
+        - There is NO need to use the keyword "let" when referring to it
+
+
     Syntax:
+    let <name> = <value>;
 
-    let <variable_name> = <assigned_value>;
-    
     Example:
+    let username = "Max";       // Assigns an initial string value
+    username = "Maximillian;    // Overwrites previous string value
 
-    let username = "Max";
-    username = "Maximillian";  // Overwrite initial assigned value
 
+- A constant is another data container or storage wherein
+    - The assigned value MUST NOT CHANGE during runtime
 
-- A constant
-    - A data container where the assigned value MUST NOT CHANGE during runtime
+    - Once a value is assigned to a constant
+        - There is NO need to use the keyword "const" when referring to it
     
-    - Assigning a new value triggers a "TypeError"
+    - Attempt to re-assign a new value into a constant
+        - Triggers a "TypeError"
 
-    - To define a constant
-        - JavaScript keyword "const"
-        - Followed by a name and the operator "="
-        - Then the assigned value
-        - Concludes with a ";"
-        
+    - It is used for storing data that NEVER CHANGES
+
+
     Syntax:
+    const <name> = <value>;
 
-    let <variable_name> = <assigned_value>;
-    
     Example:
+    const username = "Max";     // Initial string value
+    username = "Maximillian;    // Triggers a "TypeError"
 
-    const username = "Max";
-    username = "Maximillian";  // Triggers a TypeError
+
+- On the starter project
+    - Open the file "app.js"
+        - Remove the previous line of code (i.e. alert())
+            - Used for testing the connectivity w/ "index.html"
+
+    - This file will contain the logic of
+        - Performing mathematical operations between two numbers
+
