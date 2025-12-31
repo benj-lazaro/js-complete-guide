@@ -1,36 +1,38 @@
 Adding JavaScript To The Website
 --------------------------------
-- Create a new JavaScript file named "app.js"
-    - W/in the folder "assets/scripts"
-    - This file will store the logic of the web-based calculator
+- To add your own JavaScript code into the starter project
+    - Create a new JavaScript file named "app.js" w/in the folder "assets/scripts"
+        - Add the following line of code
 
+            alert("This works!");
 
-- On the "index.html"
-    - Link the JavaScript file
+        - Save the changes
 
-    - At the closing tag of the HTML element <body>
-        - Add the HTML element <script>
-            - Declare the HTML attribute "src"
-            - Assign the path for the JavaScript file "vendor.js"
-        
-        - Add another HTML element <script>
-            - Declare the HTML attribute "src"
-            - Assign the path for the JavaScript file "app.js"
+        - This file will eventually contain the logic for the web-based calculator
 
-    - NOTE: Declaring the HTML elements <script> at the closing tag of the <body>
-        - Allows the browser to render the content of the HTML document
-        - BEFORE calling the logic stored in the JavaScript file "app.js"
-
-
-- To test the connectivity between the HTML document and "app.js"
-    - Open the JavaScript file "app.js"
-
-    - Add the line of code
-
-        alert("This works!");
-
-    - Save the changes
+    - On the HTML document "index.html"
+        - Import the JavaScript files "app.js" & "vendor.js"
     
-    - Reload the file "index.html" (if already open)
-        - A pop-up alert with the content "This works!"
-        - Renders the calculator UI after clicking the alert's button "OK"
+        - At the closing tag of the HTML element <body>
+            - Add the HTML element <script>
+                - Declare the HTML attribute "src"
+                - Assign the path for the JavaScript file "vendor.js"
+        
+            - Add another HTML element <script>
+                - Declare the HTML attribute "src"
+                - Assign the path for the JavaScript file "app.js"
+
+            - NOTE: The "vendor.js" contains dependencies that will be needed by "app.js"
+
+        - Importing the JavaScript files at the end of the HTML document
+            - Allows the browser to render the entire content
+            - BEFORE the JavaScript files are executed & access the content
+
+        - Save the changes
+
+    - Test the connectivity between the HTML document & the "app.js"
+        - Load / reload the "index.html" on the browser
+        
+        - Content of the HTML document is rendered
+            - Then a pop-up window (alert) appears with the content "This works!"
+            - Click the button "OK" to close the alert window
