@@ -1,0 +1,66 @@
+More On Strings
+---------------
+- As previous mentioned, data type string is expressed w/in a pair of:
+    - Single quotes ''
+    - Double quotes ""
+
+    - Important: Stick to the chosen convention throughout the entire codebase
+        - Avoid mixing the opening & closing quote character
+        - Doing so triggers an "Uncaught SyntaxError"
+
+
+- A pair of backticks `` offers a feature known as "Template Literal"
+    - It injects (interpolates) the value of a constant, variable or expression into a string
+    
+    - Require to enclose the constant, variable or expressed w/in a "${ }"
+
+
+    Syntax:
+        `Lorem ipsum dolor sit amet, ${<constant | expression | variable>} consectetur...`
+
+
+    - It also offers the ability to render a multi-line string
+        - A string that contains multiple line breaks
+        - NOT achievable when enclosing a string w/in a pair of ' ' or " "
+
+
+- Escape characters in a string value
+    - Expressed using a "\" followed by a single character
+        - Enclosed w/in a pair of ' ' or " "
+
+    - These characters are NOT treated as normal characters
+        - Each has its own special meaning or purpose
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#escape_sequences)
+    
+
+    Example:
+        \n  = linebreak
+        \'  = single quote
+        \\  = backslash
+
+
+- On the starter project
+    - Open the file "assets/scripts/app.js"
+
+    - On the variable "calculationDescription"
+        - Replace the assigned string with a Template Literal
+
+    - Declare a new variable "errorMessage"
+        - Assign a string value embedded with an escape character "\n"
+
+    - Replace the variable "calculationDescription" with "errorMessage"
+        - When calling the function "outputResult()"
+
+    - Save the changes
+
+    - Browser then renders the values in the HTML document (index.html)
+    
+    - Launch Chrome's "Developer Tools"
+        - Inspect the HTML element <h2> with an attribute "id" of "current-calculation"
+
+        - Set the CSS Selector "element.style"
+            - Set the CSS Property "white-space" to the value of "pre"
+
+        - Renders the escaped string value
+
