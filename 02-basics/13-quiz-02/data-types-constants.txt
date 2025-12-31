@@ -1,0 +1,31 @@
+Quiz 02: Data Types & Constants
+-------------------------------
+- Where do "data types" comes into play
+    - Answer: Data you work with in your code is of different type e.g. numbers, text, etc.
+
+
+- Which of the following statement
+    - Correctly create a number and stores it in a Constants
+
+    - Answer: const userAge = 30;
+
+
+- Is 30 the same as '30'
+    - Answer: No
+
+
+- Which of the following snippets will NOT yield an error
+    - Answer:
+        let myOtherName;
+        const myName = "Max";
+        myOtherName = "Max";
+        alert(myName);
+
+
+- Given that JavaScript is a weakly-typed, dynamic language
+    - Would you expect that this code works
+
+        let myName = "Max";
+        myName = 30;
+
+    - Answer: This code snippet will work
