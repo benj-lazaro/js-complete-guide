@@ -1,0 +1,59 @@
+Data Types: Numbers & Strings (Text)
+------------------------------------
+- JavaScript Data Types
+    - Number
+        - For calculations of integers and/or floats
+        - For working with a (positive & negative) numbers
+        - e.g. 2, -3, 22.956
+
+    - String
+        - For working with text
+        - For gathering text user-input & outputing text results
+        
+        - Expressed by enclosing text w/in a pair of:
+            - Single quotes ' '
+            - Double quotes " "
+            - Backticks ` `
+
+        - e.g. 'Hi', "Hi", `Hi`
+
+    - Boolean
+        - For working with conditional statements
+        - e.g. true, false
+
+    - Objects
+        - For grouping and organizing related data
+        - Enclosed w/in a pair of { }
+        - e.g. { name: "Max", age: 31}
+
+    - Arrays
+        - For listing unknown amount of data
+        - Elements enclosed w/in a pair of [ ]
+        - e.g. [1, 3, 5]
+
+
+- On the starter project
+    - Open the file "assets/scripts/app.js"
+
+    - Declare a new variable named "calculationDescription"
+        - Below the declaration of the variable "currentResult"
+
+        - Assign a stirng value based on the previous line's mathematical expression
+
+    - Use the string concatenation operator "+"
+        - To insert the variable "currentResult" w/in the string value
+
+        let calculationDescription = "(" + currentResult + "+ 10) * 3 / 2 - 1";
+
+    - Pass the variable "calculationDescription"
+        - As the 2nd argument value to the function "outputResult()"
+    
+    - Move the line of code where the variable "currentResult" is
+        - Assigned with the value of the mathematical expression
+
+        - Below the declaration of the variable "calculationDescription" in order
+            - To render the string representation of the mathematical expression properly
+
+    - Save the changes
+
+    - Browser then renders the values in the HTML document (index.html)
