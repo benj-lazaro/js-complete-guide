@@ -1,0 +1,9 @@
+Coding Exercise 01: Variables & Operators
+-----------------------------------------
+- Create two variables or constants
+    - Named "a" and "b" that should store the values 5 and 3, respectively
+
+
+- Create a thrid variable or constant named "sum"
+    - Stores the sum of the value of "a" and "b"
+    - You don't have to do anything else with those variables / constants
