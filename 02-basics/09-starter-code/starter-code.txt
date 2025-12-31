@@ -1,0 +1,36 @@
+Understanding The Starter Code
+------------------------------
+- A walkthrough of the starter project's code
+
+
+- In the file "assets/scripts/app.js"
+    - Declares a variable "currentResult"
+
+    - The "currentResult" stores the result of a mathematical expression
+        - After it is evaluated
+
+    - Calls the function "outputResult()"
+        - Declared w/in the file "assets/scripts/vendor.js"
+
+        - Accepts two argument values
+            - 1st = value stored w/in "currentResult"
+            - 2nd = an empty string
+
+
+- On the code of the function "outputResult()"
+    - It is declared to have two (2) parameter variables
+        - Named "result" and "text", respectively
+        - Both receives the values passed from the file "app.js"
+
+    - Assigns the value of "result" (i.e. value from "currentResult")
+        - Overrides the preivous text content of the selected HTML element <h2>
+            - With an HTML attribute "id" of "current-result"
+
+    - Assigns the value of "text" (i.e. empty string)
+        - Overrides the preivous text content of the selected HTML element <h2>
+            - With an HTML attribute "id" of "current-calculation"
+
+        - NOTE: Both assigned values are of data type string
+
+    - Browser then re-renders the HTML document (index.html)
+        - Displays the new values
