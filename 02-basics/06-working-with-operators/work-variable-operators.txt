@@ -1,0 +1,40 @@
+Working With Variables & Operators
+----------------------------------
+- An operator is a syntax feature in JavaScript that
+    - Allows to manipulate values
+
+    - JavaScript Mathematical operators
+        - +     = Addition
+        - -     = Subtraction
+        - *     = Multiplication
+        - /     = Division
+        - %     = Modulo
+        - **    = Exponentiation
+
+        - NOTE: JavaScript follows normal mathematical rules (PMDAS)
+
+    - The assignment operator "="
+        - Assigns a value into a variable
+
+
+- On the starter project
+    - Open the file "assets/scripts/app.js"
+
+    - After the declaration of the variable "currentResult"
+        - Write a mathematical expression
+        
+            (currentResult + 10) * 3 / 2 - 1
+         
+        - Assign the result of the expression back to "currentResult"
+            - Effectively overwriting the initial value of 0
+
+    - Render the new value of "currentResult" on the browser
+        - Call the function "outputResult()" defined w/in the file "vendor.js"
+
+        - Pass the variable "currentResult" & an empty string
+            - As argument values to the function
+
+    - Save the changes
+    
+    - Load / reload the HTML document "index.html" on the browser
+        - The sum is rendered besides the text "Result: "
