@@ -1,40 +1,53 @@
 Declaring & Defining Variables
 ------------------------------
-- Declaring a JavaScript variable 
+- To declare a JavaScript variable name
     - Use the camelCase naming convention
-    - Contains ONLY letters and numbers
-    - May start with character "$" or "_"
-    - JavaScript is CASE-SENSITIVE
-    
-    Example:
+        - While snake_case is allowed but it is considered as BAD PRACTICE
 
-    let userName        // camelCase naming convention
-    let ageGroup5       // contains letters and numbers
-    let $kindOfSpecial  // starts with "$"
-    let _internalValue  // starts with "_"
+    - Contains ONLY letters & numbers
+        - NOT allowed to start with a number or special characters
+        - NO whitespace in-between words of the name
+        - NOTE: JavaScript is case-sensitive 
 
-    - While using the snake_case naming convention is allowed
-        - It is considered as "bad practice"
-    
-    - NOT allowed to start with a number or special character
-    - NOT allowed to use a special character anywhere w/in the variable name
-    - NOT allowed to use a JavaScript keyword as variable name
+    - May start w/ the character "$" or "_"
+        - NO special characters in-between words of the name
+
+    - NOT allowed to use reserved JavaScript keywords
+
 
     Example:
-    let user_name       // snake_case
-    let 21Players       // starts with a number
-    let user-bad        // contains a special characters
-    let let             // uses a JavaScript keyword "let"
+    let userName        // Using camelCase naming convention
+    let ageGroup5       // Contains letters and numbers
+    let $kindOfSpecial  // Starts with "$"
+    let _internalValue  // Starts with "_"
+
+    let user_name       // Using snake_case is BAD PRACTICE
+    let 21Players       // NOT allowed to start with a number
+    let user-bad        // NOT allowed to contain a special characters
+    let let             // NOT allowed to use a JavaScript reserved keyword
 
 
-- Defining a JavaScript variable
-    - Does NOT require to be initialized with an initial value
-    - NOTE: This is referred as an "uninitialized variable"
+- To define a JavaScript variable
+    - A variable does NOT REQUIRE to be initial with a value
+    - NOTE: Referred as an "uninitialized" variable
+
+
+    Example:
+    let score;          // Uninitialized variable
+
+
+- On using a ";" at the end of a JavaScript expression
+    - This practice is considered OPTIONAL
+        - Important thing is to be consistent throughout the entire codebase
+
+    - A ";" is REQUIRED 
+        - When writng two (2) expressions on a single line of code
+
+
+    Example:
+    let const a = 1; let const b = 2;
     
 
-- Using a semi-colon ";" 
-    - At the end of a JavaScript expression is generally OPTIONAL
-    
-    - However, it is REQUIRED when writing two (2) expressions
-        - On a single line of code
-        - e.g. let const a = 1; let const b = 2;
+- On the starter project
+    - Declare a new variable "currentResult"
+    - Assign it with an initial value of 0
