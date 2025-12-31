@@ -17,20 +17,19 @@ Understanding The Starter Code
             - 2nd = an empty string
 
 
-- On the code of the function "outputResult()"
-    - It is declared to have two (2) parameter variables
-        - Named "result" and "text", respectively
-        - Both receives the values passed from the file "app.js"
+- On the function "outputResult()"
+    - Declared to have two (2) parameters namely "result" & "text"
+        - Receives the values passed from "app.js"
 
     - Assigns the value of "result" (i.e. value from "currentResult")
-        - Overrides the preivous text content of the selected HTML element <h2>
+        - To the text content of the selected HTML element <h2>
             - With an HTML attribute "id" of "current-result"
 
     - Assigns the value of "text" (i.e. empty string)
-        - Overrides the preivous text content of the selected HTML element <h2>
+        - To the text content of the selected HTML element <h2>
             - With an HTML attribute "id" of "current-calculation"
 
-        - NOTE: Both assigned values are of data type string
+        - NOTE: Both rendered values are of data type "string"
+            - Instead of "number"
 
-    - Browser then re-renders the HTML document (index.html)
-        - Displays the new values
+    - Browser then renders the values in the HTML document (index.html)
