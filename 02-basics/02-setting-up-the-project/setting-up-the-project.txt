@@ -5,3 +5,12 @@ Setting Up The Project
 
     - This basic website will be used to
         - Explore the basics of JavaScript
+
+
+- Git is a local version control system that
+    - Helps control source code
+
+    - Also allows to push project & commits ("snapshots")
+        - To remote storage (e.g. GitHub)
+
+    - Official documentation (https://git-scm.com/learn)
