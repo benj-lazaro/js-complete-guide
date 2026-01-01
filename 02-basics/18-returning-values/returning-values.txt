@@ -1,0 +1,41 @@
+Returning Values
+----------------
+- The JavaScript "return" statement
+    - Declared inside of a function
+
+    - Returns a value
+        - Back to the line of code that called the function
+
+    - Then terminates the function's execution
+
+    - (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return)
+
+    
+    Syntax:
+    return;                 // Returns nothing & terminates a function's execution
+    return <expression>;    // Returns a value then terminates a function's execution
+
+
+- On the starter project
+    - Open the file "assets/scripts/app.js"
+
+    - Refactor the custom function "add()"
+        - Remove the built-in function "alert()"
+        
+        - Replace it with a "return" statement
+            - Returning the value stored in the constant "result"
+
+    - Remove the lines that calls the function "add()"
+
+    - Refactor the assigned value to the variable "currentResult"
+        - Remove the mathemtical expression
+
+        - Replace it with a call to the function "add()"
+            - Passing the respective argument values
+
+            - Effectively accepting the returned value from the function
+
+    - Save the changes
+
+    - Load / reload browser
+        - Renders the return value received from the function "add()"
