@@ -1,0 +1,33 @@
+The (Un)importance Of Code Order
+--------------------------------
+- JavaScript keywords "const" & "let"
+    - Required to be declared ONLY ONCE
+
+    - Important to have them declared
+        - BEFORE accessing (or using) them
+    
+    - Otherwise, it triggers an "Uncaught ReferenceError"
+
+
+- A function is NOT affected by the code's order 
+    - It can be declared ANYWHERE w/in the code base
+
+    - Regardless where the function is declared
+        - It will still execute w/out issues when called 
+    
+    - When a browser parses through the JavaScript code from top to bottom
+        - Declared functions are registered in memory
+        - Then are moved (hoisted) to the of the code base
+
+    - Recommended convention
+        - Declare functions at the top of the code base
+            - Just below the declaration of constants & variables
+
+        - Some prefer to declare at the bottom or middle
+            - There is NO RIGHT WAY
+
+        - NOTE: Important to stick w/ the chosen convention
+
+
+- On the starter project
+    - Open the file "assets/scripts/app.js"
