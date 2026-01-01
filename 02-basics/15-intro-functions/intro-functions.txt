@@ -1,0 +1,38 @@
+Introducting Functions
+----------------------
+- A function is a language construct that
+    - Defines some code w/c can be executed at a later time   
+    - Often referred as "code on demand"
+
+
+    Syntax:
+    function <name>([<parameter(s)>]) {
+        ...
+        [return <variable | value | expression>;]
+    }
+
+    Example:
+    // Accepts two numbers & returns the sum
+    function addTwoNumbers(number1, number2) {
+        return sum = number1 + number2;
+    }
+
+
+- A function can optionally
+    - Accept input(s) into it using parameter(s)
+    - Return some value from it using a "return" statement
+
+
+- When JavaScript code is loaded
+    - It is read from top to bottom
+
+    - Functions are registered & stored in memory
+        - They are NOT IMMEDIATELY executed
+        - They wait until a function is called
+
+
+- A function is called w/in the main JavaScript code
+    - Using the convention
+
+        <function_name>([<parameter(s)]);
+
