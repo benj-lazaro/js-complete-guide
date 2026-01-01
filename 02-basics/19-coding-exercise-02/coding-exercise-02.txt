@@ -1,0 +1,11 @@
+Coding Exercise 02: Functions
+-----------------------------
+- Define two (2) functions
+    - Named "subtract"
+        - Accepts two (2) numbers
+        - Returns the difference of the two (2) numbers
+
+    - Named "stringify"
+        - Accepts a number
+        - Returns a string that includes the passed number value
+
