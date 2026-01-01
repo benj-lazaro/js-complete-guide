@@ -1,0 +1,25 @@
+Assignment 01: Variables, Operators, Data Types
+-----------------------------------------------
+- Create two (2) variables
+    - One that holds a fictional user input (a number of your choice)
+        - NOTE: This value does NOT change
+
+    - One that holds NO value initially, named "result"
+
+
+- Set the "result" variable to 18
+    - Plus the value stored in user input
+
+
+- Add three (3) additional lines of code where you change the "result" again
+    - Subtracting a value of your choice
+    - Multiplying it 
+    - Dividing it 
+
+
+- Think about the value stored in the user input variable created
+    - Did that value changed?
+
+
+- alert() the "result" & the user input variables
+    - In two (2) separate alert() calls
