@@ -1,0 +1,55 @@
+Adding A Custom Function
+------------------------
+- Function(s) can be declared
+    - At the top of the script
+        - Below the constant & variable declarations
+
+    - At the end of the script
+        - Allows the entire code to be read from top to bottom
+        - Registers all functions in memory
+        - A function is "hoisted" at the top of the file when it is called (executed)
+
+
+- Naming a function
+    - Choose one that describes the action it will perform
+
+
+- Function parameter variables
+    - The values of these variables are available ONLY w/in the function
+
+    - A function can have as many parameters it needs
+
+    - Declared constants & variables w/in a function
+        - Are AVAILABLE ONLY w/in the function
+        - NOT AVAILABLE outside of the function
+        - Categorized as LOCAL SCOPE
+
+
+- Global-scope constant & variables
+    - Declared OUTSIDE of a function
+    - Accessible INSIDE & OUTSIDE of a function
+
+
+- Local-scope constant & variables
+    - Declared INSIDE of a function
+    - Inaccessible OUTSIDE of a function
+
+
+- On the starter project
+    - Open the file "assets/scripts/app.js"
+
+    - Declare a new function named "add()"
+        - It has two (2) parameter variables named "num1" & "num2"
+
+    - Inside the function
+        - Declare a constant named "result"
+            - Assigns the sum of the parameter variables
+        
+        - Calls a JavaScript built-in function "alert()"
+            - Pass a string message & the constant "result"
+            - To render it on the browser
+
+    - Outside of the Function
+        - Call the function "add()" twice
+            - Each call passes their respective argument values
+
