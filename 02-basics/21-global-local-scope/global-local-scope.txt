@@ -1,0 +1,24 @@
+An Introduction To Global & Local Scope
+---------------------------------------
+- Global scope
+    - Refers to a constant, variable or data declared OUTSIDE a function
+    - They are ACCESSIBLE INSIDE & OUTSIDE of a function
+
+
+- Local (i.e. block) scope
+    - Refers to a constant, variable or data declared INSIDE a function
+    - They are INACCESSIBLE OUTSIDE of a function
+    
+
+- It is possible to declare a variable globally
+    - Then declare a variable (of the same name) locally w/in a function
+        - That does NOT overwrite the value of the global variable
+
+    - This process is referred as "shadowing"
+        - Discussed on the next lesson
+
+
+- A pure function is one that
+    - Accepts input from outside via parameters
+    - Returns an value using the "return" statement
+    - Does NOT access or manipulate any value from the Global scope
