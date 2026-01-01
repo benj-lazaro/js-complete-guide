@@ -1,0 +1,24 @@
+Code Styles, Conventions & Syntax
+---------------------------------
+- A function with NO parameter list
+    - It is expressed with an empty ()
+    - It does NOT OMIT the ()
+
+    Example:
+    function greetUser() {
+        alert("Hi there!");
+    }
+
+
+- Whitespace, linbreaks & indentation is OPTIONAL
+    - Does NOT make it an execuse for NOT writing readable code
+
+
+- Semi-colon is OPTIONAL
+    - General practice is to use it after EVERY expression
+
+    - Placing a ";" after a function
+        - Will NOT be a problem
+        - Will NOT generate an error
+        - Common practice NOT to add a one there
+
