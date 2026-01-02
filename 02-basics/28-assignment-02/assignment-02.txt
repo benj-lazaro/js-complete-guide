@@ -1,0 +1,31 @@
+Assignment 02: Functions
+------------------------
+- Download and open the attached starter file
+
+
+- Create two (2) new functions
+    - First one that takes NO parameters
+        - Simply show an "alert()" with some text of your choice
+
+    - Second one
+        - Receives a name as a parameter
+        - Uses "alert()" to output that name
+
+
+- Call both functions directly from your code
+
+
+- Add an event listener to the constant "task3Element"
+    - Listen to a "click" event
+    - Callback the 1st function (the one w/o arguments)
+    - Click this task thereafter to verify whether it works
+
+
+- Add a new function
+    - Takes three (3) parameters of string data type
+    - Pass any three names you want
+    - Returns the combined string (where the three strings are concatenated)
+
+
+- Call the new function directly from your code
+    - Send the result of that function to "alert()"
