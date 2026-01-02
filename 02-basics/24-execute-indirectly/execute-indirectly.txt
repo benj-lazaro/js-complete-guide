@@ -1,0 +1,65 @@
+Executing Functions Indirectly
+------------------------------
+- A demonstration of calling a function indirectly
+
+
+- On the starter project
+    - Open the file "assets/scripts/app.js"
+
+    - Below the declared function "add()"
+        - Use the constant "addBtn"
+            - Declared in the file "assets/scripts/vendor.js"
+
+        - This refers to the HTML element in "index.html"
+            - With the attribute "id" of "btn-add"
+
+        - Attach the method ".addEventListener()"
+            - A built-in browser function that listens for an "event"
+
+            - It accepts two (2) parameters
+                - 1st   = string identifier of an "event" to listen
+                - 2nd   = function to call when it happens (i.e. callback function)
+
+            - A callback function does NOT IMMEDIATELY execute
+                - It ONLY executes when the associated "event" occurs
+                - NOTE: Use the name of the function ONLY; OMIT the ()
+
+        - Reference (https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
+
+        - Pass the argument values
+            - 1st   = "click"
+            - 2nd   = "add"
+
+    - Refactor the function "add()"
+        - Remove the parameter variables "num1" & "num2"
+
+        - Inside the function body
+            - Replace the variable "num1" with "currentResult"
+
+            - Replace the variable "num2" with "userInput"
+                - NOTE: "userInput" declared in the file "assets/scripts/vendor.js" 
+
+            - Attach the property ".value" to "userInput"
+                - Fetches the value (content) of the HTML element
+                - NOTE: This is of string data type
+
+            - Replace the constant "result" with "currentResult"
+                - Storing the "sum" of the variables "currentResult" & "userInput"
+
+        - Move the function "outputResult()" w/in the function "add()"
+            - Replace the parameter variable "calculationDescription" w/ an empty string ""
+        
+        - Comment the declaration of the variable "calculationDescription"
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Enter a number
+
+        - Click the "+" button
+
+        - The "Result" renders the supposedly sum
+            - Instead renders the concatenated string of numbers instead
+        
+
+    
