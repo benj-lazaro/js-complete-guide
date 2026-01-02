@@ -48,6 +48,13 @@ Executing Functions Indirectly
 
         - Move the function "outputResult()" w/in the function "add()"
             - Replace the parameter variable "calculationDescription" w/ an empty string ""
+
+            - The reason behind the move
+                - The function "outputResult()" runs ONLY once 
+                    - When JavaScript parses the code BEFORE an "event" occurs
+
+                - The function "add()" ONLY executes when an "event" occurs
+                    - It will NOT IMMEDIATELY execute when the code is parsed
         
         - Comment the declaration of the variable "calculationDescription"
 
