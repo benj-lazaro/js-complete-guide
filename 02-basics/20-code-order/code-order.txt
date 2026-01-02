@@ -28,6 +28,3 @@ The (Un)importance Of Code Order
 
         - NOTE: Important to stick w/ the chosen convention
 
-
-- On the starter project
-    - Open the file "assets/scripts/app.js"
