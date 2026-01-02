@@ -1,0 +1,25 @@
+Indirect VS Direct Function Execution Summary
+--------------------------------------------
+- Calling a function using its name w/ a pair of ()
+    - When JavaScript encounters this statement
+        - It IMMEDIATELY executes the code of the function
+
+    - This is referred as "direct execution"
+
+
+- Calling a function using its name w/o a pair of ()
+    - Tells JavaScript to register this function
+        - It does NOT IMMEDIATELY execute the code of the function
+    
+    - Execute the function at some point in the future
+        - e.g. When an "event" occurs
+
+    - This is referred as "direct execution"
+
+
+- NOTE: Passing a function w/ a pair of () as argument
+    - To the method ".addEventListener()"
+        - Informs JavaScript to register the event listener
+
+        - BUT IMMEDIATELY executes the callback function
+            - NOT waiting for the associated "event" to occur 
