@@ -1,0 +1,16 @@
+More About The "return" Statement
+---------------------------------
+- The "return" statement
+    - Is used for getting data out of a function
+    - Is declared ONLY ONCE w/in a function
+
+
+- Any line of code after the "return" statement will be IGNORED
+    - This also includes a 2nd "return" statement
+
+
+- It can also be used to return nothing (no value)
+    - Often used to cancel a function's execution after satisfying a certain condition
+
+    - NOTE: The "return" statement terminates the execution of a function
+
