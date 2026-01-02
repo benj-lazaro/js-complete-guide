@@ -1,0 +1,13 @@
+Shadowed Variables
+------------------
+- Declaring a variable of the same name twice
+    - One at a Global & the other at a Local scope
+        - NO error is triggered
+        - Due to their declaration at being done on different scopes
+
+    - This is referred as "shadowing"
+
+    - The Local scope variable does NOT overwrite
+        - The value stored in the Global scope variable of the same name
+
+        - It ONLY works with the value assigned to it w/in the function
