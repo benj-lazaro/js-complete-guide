@@ -1,0 +1,22 @@
+Coding Exercise 03: Executing Functions Directly & Indirectly
+-------------------------------------------------------------
+- Create two functions named "double()" and "transform()"
+
+
+- Function "double()"
+    - Takes a single value
+
+    - Returns the doubled value
+        - e.g. input 2, returns 4
+
+
+- Function "transform()"
+    - Takes two inputs
+        - 1st argument  = a number
+        - 2nd argument  = another function
+
+    - Call the passed function w/in "transform()"
+
+    - Pass the value of the 1st argument to the function (2nd argument)
+
+    - Returns the value received from the function (2nd argument)
