@@ -1,0 +1,36 @@
+Quiz 03: Functions & Scopes
+---------------------------
+- What is a Function?
+    - Answer: A function defines code w/c doesn't execute right away
+        - But w/c can be executed multiple times by calling the function
+
+
+- Please explain what's what in this function:
+
+    function greetUser(name) {
+        alert('Hi ' + name);
+    }
+
+    - Answer:
+        - "function" is the keyword
+        - "greetUser" is the function name
+        - "name" is the parameter
+        - "alert('Hi ' + name);" is the function body
+
+
+- What are "function parameters"?
+    - Answer: Data that can be provided to the function (input)
+        - Available only inside of the function, like local variables
+
+
+- Which kind of variables live in the "local scope"?
+    - Answer: Variables declared inside of Functions
+
+
+- Where can you use "global scope" variables?
+    - Answer: Everywhere in the script, including of functions
+
+
+- What's a "shadowed variable"?
+    - Answer: A local variable, declared in a function, that also exists as a global variable
+
