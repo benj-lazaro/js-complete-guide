@@ -1,0 +1,36 @@
+Converting Data Types
+---------------------
+- Demonstration of converting data types
+    - Use the function "parseInt()"
+        - To convert a string into an integer
+        - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt)
+
+    - Use the function "parseFloat()"
+        - To convert a string into a float
+        - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseFloat)
+
+        - NOTE: Alternatively prefixing a "+" on a constant / variable
+            - Converts a string into a number
+            - Returns the best "fitting" number; NO control to convert into an integer or float
+            - NOT as EXPLICIT as the functions "parseInt()" or "parseFloat()"
+            - e.g. currentResult = currentResult + +userInput.value;
+
+        - NOTE: Reading a value the HTML element <input> using the property ".value"
+            - ALWAYS returns a string
+
+    - Use the method ".toString()"
+        - To convert a number into a string
+        - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toString)
+
+
+- On the starter project
+    - Open the file "assets/scripts/app.js"
+
+    - Use the function "parseInt()"
+        - To convert the value received from the HTML element <input>
+        - Pass "userInput.value" as an argument value
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Test the "+" button
