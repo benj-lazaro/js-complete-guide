@@ -1,0 +1,21 @@
+Mixing Numbers & Strings
+------------------------
+- In the code example where a number and a string "number" is being added
+    - Resulted into a concatenated string of numbers instead of the sum
+
+    - This happens due to the "+" operator
+        - Resulting to a "string concatenation"
+
+        - This is the ONLY arithmetic operator supported by the string data type
+
+
+- The NaN (i.e. Not A Number)
+    - It is returned when an arithmetic operator besides "+"
+        - Used between a pair of strings
+
+
+- Using other arithmetic operators between a number & a string
+    - JavaScript IMPLICITLY converts the string into a number
+    - Then perform the corresponding arithmetic operation
+
+    
