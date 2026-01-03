@@ -1,0 +1,29 @@
+Splitting Code Into Functions
+-----------------------------
+- Refactoring the starter project
+    - Address code repetition by placing then into their own specific function
+
+    - Manually (directly) call the specific function w/in another function
+    
+    - NOTE: A general rule is to avoid code repetition as possible
+
+
+- On the starter project
+    - Open the file "assets/scripts/app.js"
+
+    - Create a new function named "getUserNumberInput()"
+        - Accepts NO argument value
+        
+        - Returns the value stored ni the constant "userInput.value"
+            - Runs through the function "parseInt()"
+
+    - Refactor the function "add()"
+        - Declares a new constant named "enteredNumber"
+            - Stores the returned value from the function "getUserNumberInput()"
+
+        - Declares another constant named "calcDescription"
+            - Stores the template literal of the arithmetic (mathematical) expression
+
+    - Save the changes
+
+    - Load / reload the browser
