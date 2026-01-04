@@ -1,0 +1,68 @@
+Using Arrays
+------------
+- An array is used for storing a list of (unlimited amount) data
+    - It can be declared as uninitialized
+
+
+    Syntax:
+    <variable_name> = []; // Uninitialized array
+    <variable_name> = [<element_1>, <element_2>, ..., <element_n>];
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+
+
+- To add an element into an array
+    - Use the array method ".push()"
+        - Pass the new element as an argument value
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
+
+
+- To access (read) a specific element w/in an array
+    - Use the element's index value (position w/in an array)
+        - Returns the referenced element
+
+    - Accessing a non-existent element
+        - Returns a "undefined" value
+
+    - NOTE: JavaScript's array starts at 0 (i.e. zero-based index)
+   
+
+    Syntax:
+    <variable_name> = <array_name>[<index_value>];
+
+
+    Example:
+    numbers = [1, 2, 3, 4, 5];
+    numbers[0]; // Refers to the element 1
+
+
+- On the starter project
+    - Open the file "assets/scripts/app.js"
+
+    - Use an array to keep track of the arithmetic operations performed
+        - To store this information as an internal log
+        - Theoretically to be sent to a server or locally write into a file
+
+    - Create a global variable named "logEntries"
+        - Initialize it with an empty array
+
+    - Refactor the function "add()"
+        - At the last line of code
+
+        - Attach the method ".push()" to the array "logEntries"
+
+        - Pass the constant "enteredNumber" as argument value
+            - To push its stored value into the array as a new element
+
+        - To view the content of the array "logEntries"
+            - Pass the array as an argument value to the function "console.log()"
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Open the Dev Tools
+        
+        - Click the tab "Console"
+            - To view the content of the array "logEntries"
+
