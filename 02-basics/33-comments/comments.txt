@@ -1,0 +1,26 @@
+Working With Code Comments
+--------------------------
+- JavaScript comments 
+    - Are IGNORED & NOT executed by the JavaScript Engine
+
+    - To make the code readable (understandable) for 
+        - Other develoeprs
+        - Yourself after coming back at a later time
+    
+    - Implemented in the form of a
+        - Single line comment
+        - Block or multi-line comment (for longer comments)
+
+    - A comment should
+        - Be & "to-the-point" content that is NOT obvious by looking at it
+        - NOT point out the obvious
+        - Refrain from adding redundant information
+        
+
+    Syntax:
+    // single line comment
+
+    /* This is
+       a block or multi-line
+       comment
+    */
