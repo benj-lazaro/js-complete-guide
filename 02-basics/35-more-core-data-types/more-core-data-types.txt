@@ -1,0 +1,58 @@
+More Core Data Types!
+---------------------
+- Focus on the other core data types of JavaScript
+
+
+- Booleans
+    - Handles ONLY wwo (2) values
+        - true
+        - false
+
+    - It is used w/ control statements
+
+    Example:
+    isUserLoggedIn = true;
+    isUserLoggedIn = false;
+
+
+- Objects
+    - It is used for grouping related data 
+        - e.g. user data
+
+    - An object is enclosed with a pair of "{ }"
+        - Contains key-value pairs
+            - Key & value is separated by a ":"
+
+        - Every pair is separated by a ","
+
+        - Assigned as a value to a variable
+
+
+    Syntax:
+    <variable_name> = {
+        <key>: <value>,
+        <key>: <value>,
+        ...
+    };
+
+    Example:
+    userAccount = {
+        name: "Max",
+        age: 55
+    }
+
+
+- Arrays
+    - It is used for storing a list (of unknown amount) of data
+        - It can store non-related (mixed) data
+        - Including arrays, objects
+
+    - An array is enclosed with a pair of "[ ]"
+        - Each item (i.e. element) in an array is separated by ","
+
+
+    Syntax:
+    <variable_name> = [<element_1>, <element_2>, ..., <element_n>];
+
+    Example:
+    userAccount = ["Max", 55, 123456789];
