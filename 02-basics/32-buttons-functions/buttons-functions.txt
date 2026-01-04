@@ -1,0 +1,50 @@
+Connecting All Buttons To Functions
+-----------------------------------
+- Define respective callback functions that corresponds to
+    - The event listeners of web-based calculator's buttons
+
+
+- On the starter project
+    - Open the file "assets/scripts/app.js"
+
+    - Define a new function named "createAndWriteOutput()"
+        - Accepts three (3) parameters
+            - "operator"            = arithmetic operator as string
+            - "resultBeforeCalc"    = a copy of the "currentResult" value
+            - "calcNumber"          = value from the "getUserNumberInput()"
+
+        - Stores the argument values as a template literal
+            - In a constant named "calcDescription"
+
+        - Calls the function "outputResult()" passes the following as arguments
+            - Global variable "currentResult"
+            - Local constant "calcDescription"
+
+    - Refactor the function "add()"
+        - Define a new constant "initialResult"
+            - Stores the value of the global variable "currentResult"
+
+        - At the end of the code block
+            - Call the function "createAndWriteOutput()", pass the arguments
+                - 1st   = arithmetic operator as a string
+                - 2nd   = value of the local constant "initialResult"
+                - 3rd   = value of the local constant "enteredNumber"
+
+    - Duplicate the function "add()" three (3) times
+        - Rename the name respectively as
+            - "subtract()"
+            - "multiply()"
+            - "divide()"
+
+        - Refactor the arithmetic operators
+
+        - Refactor the 1st argument value passed to "createAndWriteOutput()"
+
+    - Link the callback functions to the corresponding buttons in "index.html"
+        - Use the constant variables defined in the file assets/scripts/vendor.js
+        - The event to listen is "click"
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Test the buttons
