@@ -1,0 +1,28 @@
+More Operators!
+---------------
+- Shorthand mathematical (arithmetic) operators
+    - Performing an arithmetic operation
+    - Then assigning the result to the same variable
+
+
+    Syntax:
+    <variable_name> += <value>;
+    <variable_name> -= <value>;
+    <variable_name> *= <value>;
+    <variable_name> /= <value>;
+
+
+- The "++" and "--" operators
+    - Referred as the "incrementor" & "decrementor" operator, respectively
+    - It increments & decrements the value in a variable by 1
+
+    - NOTE: This is NOT available for multiplication & division operation
+        -As multiplying or dividing a value by 1 yields the same result
+
+
+    Syntax:
+    <variable_name>++;  // Increments a value by 1 AFTER reading the expression
+    ++<variable_name>;  // Increments a value by 1 BEFORE reading the expression
+
+    <variable_name>--;  // Decrements a value by 1 AFTER reading the expression
+    --<variable_name>;  // Decrements a value by 1 BEFORE reading the expression
