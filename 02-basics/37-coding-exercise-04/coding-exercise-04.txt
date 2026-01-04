@@ -1,0 +1,9 @@
+Coding Exercise 04: Arrays
+--------------------------
+- In the given function "solve()"
+    - Push two (2) numbers 8 and 2 onto the existing "numbers" array, respectively
+
+    - Do NOT overwrite the existing array
+        - Manipulate the array as taught earlier in the course
+
+
