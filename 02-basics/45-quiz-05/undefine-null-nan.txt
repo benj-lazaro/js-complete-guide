@@ -1,0 +1,18 @@
+Quiz 05: undefined, null & NaN
+------------------------------
+- When is the undefined value coming into play?
+    - Answer: Declared variables where you haven't assigned a value yet are "undefined"
+
+
+- Is undefined exactly the same as null?
+    - Answer: No
+
+
+- When do you get NaN as a result?
+    - Answer: When running a mathematical calculation with invalid inputs
+        (e.g. mixing numbers and text that can't be converted to a number)
+
+
+- What does typeof 'Hi there' yield?
+    - Answer: "string"
+
