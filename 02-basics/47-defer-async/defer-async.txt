@@ -1,0 +1,31 @@
+Importing Scripts Correctly With "defer" & "async"
+--------------------------------------------------
+- HTML attribute "defer"
+    - Informs the browser to
+        - Download the external JavaScript file right away
+        - Load the script as soon as possible
+        - Does NOT execute until the HTML document is parsed
+
+
+- HTML attribute "async"
+        - Download the external JavaScript file right away
+        - Load the script as soon as possible
+        - Execute the script IMMEDIATELY does NOT WAIT until the HTML document is parsed
+
+    - Does NOT guarantee the "order of execution" of the JavaScript file(s) will be followed
+        - It executes the JavaScript file that gets downloaded first
+
+    - Recommended ONLY for stand-alone JavaScript file that
+        - Does NOT access / manipulate elements of the HTML document 
+
+
+- It is recommended to place the import of external JavaScript file(s)
+    - At the <head> section of the HTML document
+        - Loads the external JavaScript files more efficiently
+
+    - It does NOT wait for the entire HTML document to be parsed
+        - Before downloading & loading the external JavaScript file(s)
+
+    - NOTE: Both HTML attributes "async" & "defer" are ONLY for use with external JavaScript files
+    
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script)
