@@ -1,0 +1,50 @@
+Adding a Reusable Function That Uses Objects
+--------------------------------------------
+- Instead of duplicating the object "logEntry" w/in the function "add()"
+    - To the rest of the arithmetic operation functions
+    
+
+- On the starter project
+    - Open the file "assets/scripts/app.js"
+
+    - Create a separate function named "writeToLog()"
+        - Handles the detailed log information & the object "logEntry"
+
+        - Defines four (4) parameter variables
+            - "operationIdentifier"
+            - "prevResult"
+            - "operationNumber"
+            - "newResult"
+
+        - Cut the declaration of the object "logEntry" from the function "add()"
+        
+        - Paste into the body of the function including
+            - Push of the object "logEntry" into the array "logEntries"
+            - Display the contents of the array "logEntries" in the browser's JavaScript console
+
+        - Refactor the assigned values of the object's properties
+            - Replace each with the function's declared parameter variables
+                - "operation"   = "operationIdentifier"
+                - "prevResult"  = "prevResult"
+                - "number"      = "operationNumber"
+                - "result"      = "currentResult"
+
+    - Switch back to the function "add()"
+        - Right after the call to the function "createAndWriteOutput()"
+        
+        - Call the function "writeToLog()"
+            - Pass the following arguments values
+                - 1st   = string value "ADD"
+                - 2nd   = local constant "initialResult"
+                - 3rd   = local constant "enteredNumber"
+                - 4th   = global variable "currentResult"
+        
+    - Copy the same to the rest of the arithmetic functions
+        - Replace the 1st argument value based on the arithmetic operation (e.g. SUBTRACT, etc.)
+    
+    - Save the changes
+
+    - Load / reload the web browser
+        - Launch Chrome's Dev Tools
+        
+        - Click the tab "Console" to view (access) the value of the property "operation"
