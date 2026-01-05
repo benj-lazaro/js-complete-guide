@@ -1,0 +1,26 @@
+Accessing Object Data
+---------------------
+- To access the value assigned to an object's property
+    - NOTE: The property refers to the "key" part of an object's key-value pair
+
+    Syntax:
+    <object_name>.<property_name>
+
+
+- On the starter project
+    - Open the file "assets/scripts/app.js"
+
+    - To demonstrate access to a property of an object
+        - Right after pushing the object "logEntry" into the array "logEntries"
+
+        - Declare the function "console.log()"
+            - Pass "logEntry.operation" as argument value
+
+            - Access the property "operation" of the object "logEntry"
+
+    - Save the changes
+
+    - Load / reload the web browser
+        - Launch Chrome's Dev Tools
+        
+        - Click the tab "Console" to view (access) the value of the property "operation"
