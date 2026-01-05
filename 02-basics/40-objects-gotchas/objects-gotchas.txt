@@ -1,0 +1,14 @@
+Objects Common Syntax Gotchas
+-----------------------------
+- When creating an object using a pair pf "{ }"
+    - Use a ";" at the closing "}"
+
+
+- Each key-value pair w/in an object is separated using a ","
+    - NOT using a ";"
+    - Doing so would result to a syntax error
+
+
+- A value assign to an object's property uses ":"
+    - NOT using a "="
+
