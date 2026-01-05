@@ -1,0 +1,14 @@
+Useful Resources & Links
+------------------------
+- MDN (Mozilla Developer Network) Links
+    - JavaScript basics (https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+
+    - Variables (https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Variables)
+
+    - Operators (https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Math)
+
+    - Functions (https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Functions)
+
+    - Arrays (https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Arrays)
+    
+    - Objects (https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Object_basics)
