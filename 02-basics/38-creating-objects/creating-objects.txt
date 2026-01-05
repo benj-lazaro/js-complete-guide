@@ -1,0 +1,48 @@
+Creating Objects 
+----------------
+- An object is great for grouping (related) data together
+    - Comprised of multiple key-value pairs
+    - Each pair is separate by a ","
+
+
+    Syntax:
+    <variable_name> = {
+        <property_name>: <value>,
+        <property_name>: <value>,
+        ...
+    };
+
+
+- On the starter project
+    - Open the file "assets/scripts/app.js"
+
+    - Inside the function "add()"
+        - Right after the call to the function "createAndWriteOutput()"
+
+        - Create a new constant "logEntry"
+            - Assign an empty object 
+
+        - Add the property "operation"
+            - Assign the string value "ADD"
+
+        - Add the property "prevResult"
+            - Assign the value stored in the local constant "initialResult"
+
+        - Add the property "number"
+            - Assign the value stored in the local constant "enteredNumber"
+        
+        - Add the property "result"
+            - Assign the value stored in the global variable "currentResult"
+
+        - Pass the object "logEntry" as argument to the method ".push()" of the array "logEntries"
+            - Replacing the local constant "enteredNumber"
+        
+    - The each object element in the array "logEntries"
+        - Contains detailed information of the performed arithmetic operation
+
+    - Save the changes
+
+    - Load / reload the web browser
+        - Launch Chrome's Dev Tools
+        
+        - Click the tab "Console" to view the contents of the array "logEntries"        
