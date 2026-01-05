@@ -1,0 +1,10 @@
+Coding Exercise 05: Objects
+---------------------------
+- Create a new object that
+    - Should be stored in the variable "courseData"
+
+    - Contains three (3) properties
+        - title     = a string with the value of "JavaScript - The Complete Guide"
+        - duration  = a positive number with the value of 30
+        - levels    = an array w/ two (2) elements; namely "Beginner" & "Advanced"
+
