@@ -1,0 +1,32 @@
+Quiz 04: Arrays & Objects
+-------------------------
+- What's an array?
+    - Answer: A list of data of any kind
+
+
+- What's an object?
+    - Answer: Grouped data, structured in key-value pairs
+
+
+- How do you extract a single element from an array?
+    - Answer: myArray[0]
+
+
+- How do you extract 55 from the following array?
+
+    const ages = [55, 44, 33, 22, 11, 0];
+
+    - Answer: ages[0]
+
+
+- Consider this object:
+
+    const user = {
+        name: 'Max',
+        age: 30
+    };
+
+    - How do you extract the age? 
+
+    - Answer: user.age
+
