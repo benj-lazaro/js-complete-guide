@@ -1,0 +1,27 @@
+undefined, null & NaN
+---------------------
+- The (data type &) special value "undefined"
+    - It is the DEFAULT value of an uninitialized variable
+    
+    - It is a value that indicates that nothing is there 
+
+    - NEVER assign the value "undefined" to a variable
+    
+
+- The special value "null"
+    - It is a data type of "object"
+
+    - Similar to "undefined" that indicates nothing is there 
+
+    - Assigning the value "null" to a variable
+        - Clears or resets the previously stored value
+
+
+- The special value "NaN" (Not a Number)
+    - It is a data type of "number"
+        - Despite representing a value that is NOT a number
+
+    - Works like an error code when performing calculations
+        - Referring to an invalid result 
+        - e.g. Performed a mathematical operation with a string value
+
