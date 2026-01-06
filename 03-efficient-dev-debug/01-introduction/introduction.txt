@@ -2,8 +2,11 @@ Module Introduction
 -------------------
 - This section focuses on:
     - Debugging your code
+
     - Efficiently work on your code
-    - How to find and fix errors
-    - How to find help and resources to dive deeper
+        - With the preferred code editor (VS Code) & tools
     
+    - How to find & fix errors
     
+    - How to find help & resources to dive deeper
+     
