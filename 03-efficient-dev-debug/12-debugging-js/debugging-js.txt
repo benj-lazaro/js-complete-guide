@@ -1,0 +1,27 @@
+Debugging JavaScript: An Overview
+---------------------------------
+- Two (2) types of errors to encounter when writing code
+    - An error that crash an application
+        - It shows an error message
+
+    - An error that does NOT crash an application
+        - It does NOT show an error message
+            - Application does NOT execute as intended
+
+        - This is referred to as a "logical error"
+
+
+- To address an error through debugging 
+    - Read & utiltiize the error message
+        - An error message is (often) clearly stated
+        - If the error message NOT clear or easily understood, Google it
+
+    - Use JavaScript's "console.log()" statement
+        - To gain insight into the code
+        - Outputs information on the browser's Console window
+        - Views the stored value in a variable during code execution
+        - NOTE: Can be cumbersome for large code base
+
+    - Use Chrome & VS Code's debugging tools
+        - To identify & fix the error
+    
