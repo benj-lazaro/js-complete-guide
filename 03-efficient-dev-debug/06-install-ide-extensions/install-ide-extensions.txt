@@ -1,0 +1,15 @@
+Installing IDE Extensions
+-------------------------
+- To launch VS Code's Extensions
+    - Keyboard shortcut = CTRL + SHIFT + X
+
+    - Click the button "Install"
+        - To install the selected extension
+
+    - NOTE: Do NOT install TOO MANY extensions
+        - Will slow down the performance of the editor
+        - Encounter strange behavior caused by clashing extensions
+
+
+- Recommended extension(s)
+    - Prettier (Esben Petersen)
