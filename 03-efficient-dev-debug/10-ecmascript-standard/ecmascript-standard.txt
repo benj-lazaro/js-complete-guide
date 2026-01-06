@@ -1,0 +1,10 @@
+The ECMAScript Standard
+-----------------------
+- ECMAScript is the language behind JavaScript
+    - It is under active development
+        - The current progress & active standard is documented
+        - Website (https://262.ecma-international.org/)
+
+    - This document is absolutely NOT MEANT to
+        - Be learned by heart or used by developers
+        - Rather it is IMPORTANT to browser vendors
