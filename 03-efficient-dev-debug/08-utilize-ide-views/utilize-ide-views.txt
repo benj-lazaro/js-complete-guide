@@ -1,0 +1,19 @@
+Utilizing IDE Views
+-------------------
+- VS Code offers various views (modes)
+    - Explorer
+        - Lists project files & folders
+        - Highlights file currently working on
+
+    - Search
+        - Searches through the current project files
+
+    - Source Control
+        - GUI source control (Git) for current project files & folders
+
+    - Debug
+        - Help in understanding how the current code executes
+        - Used in finding & fixing errors in the code
+
+    - Extensions
+        - Browser, install & remove VS Code extensions
