@@ -1,0 +1,17 @@
+Using Shortcuts
+---------------
+- Selection shortcuts
+    - Located under menu "Selection"
+
+    - Keyboard shortcuts
+        - Select next occurrence    = CTRL + D
+        - Move selected text up     = ALT + <arrow-up>
+        - Move selected text down   = ALT + <arrow-down>
+
+
+- To manually remap a shortcut
+    - File -> Preferences -> Keyboard Shortcuts
+    
+    - Alternatively: CTRL + K then CTRL + S
+        - To launch VS Code's "Keyboard Shortcuts" window
+
