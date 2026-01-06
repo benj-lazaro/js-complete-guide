@@ -1,0 +1,26 @@
+Finding Help & Working With MDN
+-------------------------------
+- MDN (Mozilla Developer Network)
+    - An online documentation on web technologies since 2005
+        - Includes HTML, CSS, JavaScript & related technologies
+        - It is considered as the "unofficial" JavaScript documentation
+        - Website (https://developer.mozilla.org/en-US/)
+
+    - Other online source for help
+        - Google (https://www.google.com)
+        - stacloverflow (https://stackoverflow.com/questions)
+
+
+- To properly find help
+    - Learn how to ask proper questions
+        - Describe the problem
+        - Copy & paste the encountered error message
+        - Also help others & be friendly
+
+    - NO matter how seasoned a developer is
+        - He/She will encounter a lot of trial & error
+    
+    - Important NOT to give up
+        - Keep on trying
+        - Keep on tweaking the code
+        - Google for solutions & come back to work on the problem
