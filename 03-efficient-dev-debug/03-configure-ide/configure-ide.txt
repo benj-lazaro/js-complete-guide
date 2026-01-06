@@ -1,0 +1,17 @@
+Configuring the IDE: Look & Feel
+--------------------------------
+- Recommended basic VS Code configuration
+    - Color theme
+        - File -> Preferences -> Theme -> Color Theme
+        - Choose "Dark Modern (default dark modern)"
+
+    - Icon theme 
+        - File -> Preferences -> Theme -> File Icon Theme
+        - Choose "Seti (Visual Studio Code)"
+        - Alternative: Material Icon Theme (3rd-party)
+
+    - Apperance
+        - View -> Apperance -> Activity Bar Position
+        - Choose "Hidden" (author's preference)
+
+    - NOTE: These configuration settings are OPTIONAL
