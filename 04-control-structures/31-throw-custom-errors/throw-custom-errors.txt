@@ -1,2 +1,0 @@
-Throwing Custom Errors
-----------------------

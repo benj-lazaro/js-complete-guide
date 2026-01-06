@@ -1,6 +1,0 @@
-Starting With Confirmation Logic
---------------------------------
-- Implement code for the confirmation of a movie element's deletion
-    - Update code for the callback function deleteMovieHandler()
-    
-

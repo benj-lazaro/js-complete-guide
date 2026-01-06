@@ -1,7 +1,0 @@
-Fetching And Validating User Input
-----------------------------------
-- Implement code to
-    - Select the modal element's "Add" button
-    - Fetch user input from respective <input> elements
-    - Store it in an array-like data structure (i.e. NodeList)
-    - Validate individual values

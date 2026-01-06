@@ -1,3 +1,0 @@
-Getters & Setters
------------------
-- Both getters & setters can be added in classes

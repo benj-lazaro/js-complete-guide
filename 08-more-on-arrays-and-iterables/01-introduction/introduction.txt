@@ -1,7 +1,0 @@
-Module Introduction
--------------------
-- This section focuses on:
-    - Different wayrs of creating arrays
-    - Working with arrays (deep dive)
-    - Important array methods
-    - Other important iterables: maps and sets

@@ -1,3 +1,0 @@
-Tweaking Editor Settings
-------------------------
-- To access VS Code's settings (CTRL + ,)

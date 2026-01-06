@@ -1,9 +1,0 @@
-Utilizing Different IDE Views
------------------------------
-- VS Code offers different views (or modes)
-    - Extensions        = browse, install & remove extensions
-    - Explorer          = display files and folder currently working on
-    - Search            = search through current project files 
-    - Source Control    = displays GUI on source control of project files / folders
-    - Debug             = helps understand how the code executes, find and fix errors
-

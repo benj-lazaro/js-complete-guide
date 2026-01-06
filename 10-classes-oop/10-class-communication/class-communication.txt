@@ -1,3 +1,0 @@
-Communicating Can Be Challenging
---------------------------------
-- Modify code base that prepares for communication between classes
