@@ -1,0 +1,38 @@
+Efficident Development & Debugging: An Overview
+-----------------------------------------------
+- How to write code efficiently
+    - NOT writing code as quickly as possible
+
+    - Get a lot out of the tools
+        - Write out w/o too much copy-and-paste (manual work)
+
+    - Work in a productive environment
+        - Environment = code editor
+
+        - Configure the code editor
+            - To make working with it comfortable
+            - To auto complete & format one's own code
+        
+        - Utilize important shortcuts
+        
+        - Explore code extensions & settings
+
+
+- How to find help
+    - Encountering use cases NOT sure how to solve
+
+    - The goal is NOT to learn ALL JavaScript
+        - Features, functions, methods, etc. by heart
+        
+        - This is IMPOSSIBLE as any programming languages evolve over time
+
+    - Learn how a programming language generally work
+        - How to think about writing it in code
+        
+        - Know where to find help & dive deeper for 
+            - A specific feature, function, method, etc.
+
+
+- How to debug your own code
+    - To be able to find & fix error(s) in one's own code
+
