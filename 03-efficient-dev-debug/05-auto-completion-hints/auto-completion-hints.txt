@@ -1,0 +1,22 @@
+Working With Auto-Completion & IDE Hints
+----------------------------------------
+- VS Code comes w/ auto-completion capabilities
+    - Partially write a piece of code
+        - VS Code offers a list of suggestions
+
+    - Then press TAB or ENTER
+        - To select and use the suggested option
+
+    - Helps write code faster
+
+
+- VS Code also provide hints
+    - Hover mouse cursor over a piece of code (e.g. function, etc.)
+        - Provides a short description & related information
+    
+    - When writing a call a function
+        - Hovering over the parameter list
+        - VS Code provide details of expected argument value(s)
+
+    - Placing a "." after a JavaScript object
+        - VS Code provides a list of associated properties & methods
