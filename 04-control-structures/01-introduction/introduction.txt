@@ -1,0 +1,11 @@
+Module Introduction
+-------------------
+- This section focuses on:
+    - Conditional statements & expressions
+        - "if" statement
+    
+    - Boolean values & operators
+
+    - Loops in JavaScript
+
+    - Error handling
