@@ -1,0 +1,28 @@
+An Error Message! No Reason To Panic!
+-------------------------------------
+- Syntax errors
+    - Highlighted by VS code
+        - Represented by Red squigly lines underneath the source of the error
+
+    - Hovering over a mouse pointer
+        - Provide some description of the problem
+
+    - VS Code's Explorer view also highlights the file where the error is located
+        - File is colored in Red
+
+
+- Logical errors
+    - Represented by the unusual behavior of an application
+        - NO error message is generated
+        - NOT detected by the VS Code
+
+    - Require using Google Chrome's Dev Tools
+        - Work with the "Console" tab
+        
+        - Identifies the line of code where the error is located
+
+        - Clicking the number line where the error is located
+            - Opens the tab "Source"
+            - Loads the associated source (JavaScript) file
+            - Highlights the line of code where the error is triggered
+
