@@ -1,0 +1,29 @@
+Debugging Code Directly Inside VS Code
+--------------------------------------
+- An alternative to debugging using Chrome Dev Tools
+
+
+- To emulate the debugging JavaScript code in the Chrome browser
+    - Requires installing the extension "Debugger for Chrome"
+        - Published by Microsoft
+
+    - It comes with a bundled JavaScript debugger
+        - Offers same features & functionaly
+
+    - Setting of a breakpoint & watchers 
+        - Are pretty much the same as the Chrome Dev Tools
+
+    - To start debugging in VS Code
+        - Set a breakpoint
+
+        - Click "Run" -> "Start Debugging"
+            - On the 1st run, will be asked w/c environment (i.e browser) to run the code
+
+            - Creates & opens a "launch.json" file w/in the folder ".vscode" 
+
+            - Change the value of the field "url"
+                - With the "file" URL of the HTML document currently running on the browser
+
+            - Save the changes
+
+        
