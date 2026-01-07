@@ -1,0 +1,20 @@
+Testing Code Changes Directly In The Devtools
+---------------------------------------------
+- Debugging errors & implementing changes directly in Chrome Dev Tools
+
+
+- The tab "Sources"
+    - Allows to implement tenative changes in the code directly
+
+    - To save changes
+        - Keyboard shortcut = CTRL + s
+        
+    - Changes is locally saved in the browser
+        - Allows to experiment solution(s) that
+            - Can survive the browser reloading the HTML document
+
+        - Does NOT ALTER the actual source file
+            - Refrains from immediately breaking the source file's code
+
+        - Once a solution is found
+            - Implement the changes on the actual source file 
