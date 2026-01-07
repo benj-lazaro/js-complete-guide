@@ -1,0 +1,11 @@
+Using console.log To Look "Into The Code"
+-----------------------------------------
+- Using JavaScript's method "console.log()" in troubleshooting an error
+    - Sends output to the Chrome Dev Tools' "Console" tab
+
+    - View the value stored in a constant, variable or expression
+        - A string value is colored in Black
+        - A number value is colored in Blue
+
+    - Help troubleshoot logical errors
+
