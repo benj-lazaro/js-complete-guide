@@ -1,0 +1,93 @@
+Next-Level Debugging With Chrome Devtools & Breakpoints
+-------------------------------------------------------
+- A breakpoint
+    - Tells the browser to "stop" code execution
+        - When a certain part of the code is reached
+
+    - It allows to look into the code at its current state during execution
+
+
+- To place a breakpoint
+    - On the Chrome Dev Tools' "Source" tab
+        - Select & click the JavaScript file to troubleshoot
+
+    - Click on the code's line number
+        - Corresponding line number is highlighted
+
+        - NOTE: Multiple breakpoints can be placed
+
+    - When the script is run
+        - The code execution pauses when it reaches a breakpoint
+            - NOTE: To resume execution, click the button "Resume script execution"
+        
+        - The line of code is highlighted in Blue
+
+        - Hover the mouse pointer over a variable
+            - To view the current stored value
+
+    - It provides the ability to "step" & read the next line of code
+        - If the next line is a function call
+
+        - It offers the option
+            - To "step into" the function's code
+                - Go through it line-by-line
+                - View the value of local scope variable(s)
+
+            - To "step over" the function call
+                - Skips going into the function's code
+                - Move to the next line of code instead
+
+            - To "setup out" of a function
+                - Gets out of the function's code
+                - Move back to the main program's line of code
+
+
+- To place a conditional breakpoint
+    - The same as setting a normal breakpoint EXCEPT
+        - Perform a right-mouse click at the targeted line of code
+        
+    - Select the menu option "Add conditional breakpoint..."
+        - Provide a conditional statement & press ENTER
+
+    - Highlights the line of code in Orange
+
+
+- To place an event listener breakpoint
+    - The same as setting a normal breakpoint
+
+    - On the tab "Event Listener Breakpoints"
+        - Select the event to listen (e.g. Mouse -> click)
+
+    - Highlights the line of code in Blue
+
+
+- The Chrome Dev Tools' "Call Stack" tab
+    - Lists all the functions that have been called
+
+    - The function at the top of the "stack"
+        - Refers to the function that is currently running
+
+    - The function(s) below the top of the "stack"
+        - Are responsible that lead to the current running function
+
+    - Show the order of the script's code execution
+
+    
+- The Chrome Dev Tools' "Scope" tab
+    - Offers a list of "Local" & "Global" scope constants, variables, functions & more
+    
+    - Assigned values of the variables
+        - Can tentatively changed to help troubleshoot a logical error
+
+
+- The Chrome Dev Tools' "Watch" tab
+    - Offers to set a "watcher" by clicking the "+" button
+        - Keeps track of how things change during code execution
+    
+    - Setting a variable
+        - Allows to see the changes of the assigned value
+        
+    - Setting an expression
+        - Allows to see the changes of the evaluated result
+
+    - NOTE: Setting of a watcher will be cleared when the browser reloads the HTML document
