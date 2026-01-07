@@ -1,0 +1,9 @@
+Useful Resources & Links
+------------------------
+- VS Code Documentation (https://code.visualstudio.com/docs)
+
+- VS Code Keybindings (https://code.visualstudio.com/docs/configure/keybindings)
+
+- VS Code Extensions (https://code.visualstudio.com/docs/configure/extensions/extension-marketplace)
+
+- Google Chrome DevTools (https://developer.chrome.com/docs/devtools/)
