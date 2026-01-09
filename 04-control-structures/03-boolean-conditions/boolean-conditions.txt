@@ -1,0 +1,27 @@
+Using Booleans In Conditions & More On Text Comparisons
+-------------------------------------------------------
+- Keep in mind that the condition in an "if" statement
+    - Simply has to be a boolean value (i.e. "true" or "false")
+
+    - Often using conditional operators
+        - To yield a boolean value w/o changing the variables or values you're working on
+
+    - Since an "if" statement ONLY wants a boolean value
+        - The conditional is NOT ALWAYS needed
+        
+        - A variable can store a boolean value does NOT require a conditional statement
+
+        - The conditional operator "!"
+            - Will negate the boolean value in a variable
+
+
+- Conditional operators "<" and ">"
+    - Can also be used on a value of string data type
+
+    - JavaScript compares strings based on
+        - Standard lexicographical ordering using Unicode values
+
+    - JavaScript ALWAYS look at the 1st character
+        - ONLY considers other characters if the 1st character is similar
+
+    - NOTE: Uppercase characters are considered "smaller or lower" than lowercase characters
