@@ -1,0 +1,50 @@
+Using "if" Statements
+---------------------
+- Using an "if..else" statement & conditional expressions
+    - To optimize the stater project web-based calculator
+    
+    - Eliminating code duplication from user-defined functions
+        - By consolidating them into a single function
+
+    - Refactor the functions "add()" & "subtract()"
+
+
+- On the starter project
+    - Open the file "assets/scripts/app.js"
+
+    - Declare a new function named "calculateResult()"
+    
+    - Define the parameter variable "calculationType"
+        - Expects the argument value to be of string data type
+
+    - On the function "add()"
+        - Copy the entire code 
+        
+    - Switch back to the function "calculateResult()"
+        - Paste the copied code
+
+    - Define a local undefined variable named "mathOperator"
+
+    - Implement an "if..else" statement
+        - If the value of the parameter "calculationType" is equal to "ADD"
+            - Move the math operation that assigns the value to the global variable "currentResult"
+            - Assign the string value "+" to the local variable "mathOperator"
+
+        - On the "else" clause
+            - Copy the same math operation line EXCEPT replace "+" with "-"
+            - Assign the string value "-" to the local variable "mathOperator"
+
+    - On the function call to "createAndWriteOutput()"
+        - Replace the arguement value "+" with the local variable "mathOperator"
+
+    - On the function call to "writeToLog()"
+        - Replace the argument value "ADD" with parameter variable "calculationType"
+
+    - Save the changes
+
+    - Load / reload the browser
+    
+             
+
+
+            
