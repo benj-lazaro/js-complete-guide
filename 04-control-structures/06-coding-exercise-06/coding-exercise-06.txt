@@ -1,0 +1,14 @@
+Coding Exercise 06: Getting Started With "if" Statements
+--------------------------------------------------------
+- Your task is to set the value of the defined variable "userCategory" conditionally
+    - The value of "userCategory" depends on the value of the variable "age"
+    
+        - If "age" < 18, the value of "userCategory" is "child"
+
+        - If "age" is between 18 and 65, the value of "userCategory" is "adult"
+            - The value of 18 is included
+            - The value of 65 is excluded
+        
+        - For all other ages, the value of "userCategory" is "senior"
+
+    - Put ALL of the conditional code into the pre-defined function "solve()"
