@@ -1,0 +1,46 @@
+Working With "if", "else" & "else-if"
+-------------------------------------
+- Refactor the starter project
+    - Implementing an "else if" clause
+
+    - NOTE: There is NO "elseif" keyword in JavaScript
+
+
+    Syntax:
+    if (<condition>) {
+        // if clause statements;
+    } else if (<condition>) {
+        // else if clause statements;
+    } else {
+        // else clause statements;
+    }
+
+
+- On the starter project
+    - Open the file "assets/scripts/app.js"
+
+    - Inside the function "calculateResult()"
+        - Refactor the "else" statement to "else if"
+
+        - Define a conditional statement to check
+            - If the parameter variable "calculationType" is strictly equal to "SUBTRACT"
+
+        - Add another "else if" that checks
+            - Define another conditional statement check
+            - If the parameter variable "calculationType" is strictly equal to "MULTIPLY" 
+            - Copy & paste the "else if" clause of the previous arithmetic operation
+            - Change the math operator from "-=" to "*=" of the global variable "currentResult"
+            - Assign the value "*" for the local variable "mathOperator"
+
+        - Add another "else if" that checks
+            - Define another conditional statement check
+            - If the parameter variable "calculationType" is strictly equal to "DIVIDE" 
+            - Copy & paste the "else if" clause of the previous arithmetic operation
+            - Change the math operator from "-=" to "/=" of the global variable "currentResult"
+            - Assign the value "/" for the local variable "mathOperator"
+
+    - Save the changes
+
+    - Load / reload the browser
+
+
