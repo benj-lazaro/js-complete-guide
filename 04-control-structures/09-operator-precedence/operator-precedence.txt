@@ -1,0 +1,28 @@
+Understanding Operator Precedence
+---------------------------------
+- Operator precedence
+    - Describes the order on w/c operators are executed
+    
+    - The value yielded by a higher precedence operator
+        - Serves as an operand (input) to a lower precedence operator
+
+    - MDN Precedence table
+        - NOTE: Table lists operators in order from highest precedence (18) to lowest precedence (1)
+        - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#table)
+
+    - Reference (https://www.w3schools.com/js/js_precedence.asp)
+
+
+- Math operators follows the PEMDAS precedence
+    - Parenthesis (highest precedence)
+    - Exponentiation
+    - Multiplication
+    - Division
+    - Addition
+    - Subtraction (lowest precedence)
+
+
+- Logical operators
+    - ! (NOT)
+    - && (AND)
+    - || (OR)
