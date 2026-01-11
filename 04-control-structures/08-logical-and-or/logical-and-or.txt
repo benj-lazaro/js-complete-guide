@@ -1,0 +1,45 @@
+The Logical AND & OR operators
+------------------------------
+- The logical "&&" (AND) operator
+    - Evaluates to "true" if BOTH conditions are "true"
+    - Otherwise, evaluates to "false"
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND)
+
+
+- The logical "||" (OR) operator
+    - Evaluates to "true" if EITHER ONE of the conditions is "true"
+    - Otherwise, evaluates to "false"
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_OR)
+
+
+- Combining "&&" and "||" operators in a conditional statement
+    - In a three (3) conditions statement where
+        - Between the 1st & 2nd condition, uses the "&&" operator
+        - Between the 2nd & 3rd condition, uses the "||" operator
+
+    - If BOTH 1st & 2nd condition evaluates to "true"
+        - Then the 3rd condition is disregarded
+
+    - If BOTH 1st & 2nd condition evaluates to "false"
+        - Then the 3rd condition is considered for evaluation
+
+    - If BOTH 1st & 2nd condition evaluates to "false" & the 3rd condition evaluates to "true"
+        - Then the 1st & 2nd conditions are disregarded
+    
+    - NOTE: Use a pair of ( ) to control what's evaluated together
+
+
+- On the starter project
+    - Open the file "assets/scripts/app.js"
+
+    - Refactor the function "calculateResult()"
+        - Implement a conditional statement 
+            - Using the logical AND
+        
+        - Check if the correct argument value for the parameter "calculationType" is passed
+            - Otherwise issue a "return" statment
+
+    - Save the changes
+
+    - Load / reload the browser
+
