@@ -1,0 +1,44 @@
+Quiz 07: Falsy & Truthy Values 
+------------------------------
+- Which part of the code will be executed in the below if statement?
+
+    const userName = 'Max';
+    if (userName) {
+        // A
+    } else if (userName === 'Max') {
+        // B
+    } else {
+        // C
+    }
+
+    - Answer: A will be executed
+
+
+- Which part of the code will be executed in the below if statement?
+
+    let age;
+    if (age) {
+        // A
+    } else if (age === null) {
+        // B
+    } else {
+        // C
+    }
+
+    - Answer: C will be executed
+
+
+- Is -10 a "truthy" or a "falsy" value?
+    - Answer: It's a "truthy" value
+
+
+- What's stored in userAge after the below code executed?
+
+    const userAge = 30;
+    if (userAge) {
+        // do something
+    } else {
+        // do something else...
+    }
+
+    - userAge still holds 30 as a value
