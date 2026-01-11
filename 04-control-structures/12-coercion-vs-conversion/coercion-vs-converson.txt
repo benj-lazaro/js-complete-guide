@@ -1,0 +1,14 @@
+Coercion VS Conversion
+----------------------
+- JavaScript is able to use variables in a condition w/o using comparison operators
+    - It coerces a value (stored in a variable) to produce a boolean value
+        - Then evaluates the condition
+
+    - NOTE: Coerce = convert w/o really converting
+        - JavaScript does NOT convert the variable's value to a boolean value   
+
+
+- The comparison operators (e.g. "===") in a condition
+    - Generates & returns a boolean value
+    - It uses the returned boolean value in evaluating a condition
+
