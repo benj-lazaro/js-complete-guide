@@ -1,0 +1,75 @@
+Quiz 06: "if" & Boolean Operators: The Basics
+---------------------------------------------
+- Which part of the if statement will be executed in the below example?
+
+    const val1 = 10;
+    const val2 = 5;
+
+    if (val1 + val2 > 16) {
+        // A
+    } else {
+        // B
+    }
+
+    - Answer: B will be executed
+
+
+- Which part of the if statement will be executed in the below example?
+
+    const val1 = 10;
+    const val2 = 5;
+
+    if (val1 + val2 < 15) {
+        // A
+    } else if (val1 === '10') {
+        // B
+    } else if (val2 > 4) {
+        // C
+    } else {
+        // D
+    }
+
+    - Answer: C will be executed
+
+
+- Which part of the if statement will be executed in the below example?
+
+    const val1 = 10;
+    const val2 = 5;
+
+    if (val1 + val2 === '15') {
+        // A
+    } else if (val1 + val2 == 15) {
+        // B
+    } else if (val2 > 4) {
+        // C
+    } else {
+        // D
+    }
+
+    - Answer: B will be executed
+
+
+- How many block of an if-else if-else statement can be executed?
+    - Answer: Only one (or none, if NO condition is met & NO else block exists)
+
+
+- What's the role of the ! operator?
+    - Answer: It negates a condition (e.g. check for inequality)
+
+
+- What does this expression yield?
+
+    5 + 2 === 7 && 4 > 5 || 'Hi' === 'Hi'
+
+    - Side-note: Of course you'd not write a condition like this in your code since the result is pre-determined 
+    - This example is just about understanding how these operators work together.
+
+    - Answer: It yields true
+
+
+- What's evaluated first in the below expression?
+
+    5 + 5 === 10 && 3 < 5 && 10 > 9 || 'Hi' === 'Hi'
+
+    - Answer: The 5 + 5 part
