@@ -1,0 +1,57 @@
+Beyond "true", "false", Truthy & Falsy Values
+---------------------------------------------
+- JavaScript has a concept of Falsy & Truthy values
+    - These are NOT data types
+    - They're how JavaScript evaluates conditiona under the hood
+
+
+- JavaScript's conditional statements generally work w/ either
+    - Boolean values (e.g. "true" or "false")
+    - Falsy or Truthy values
+
+
+- In a conditional statement
+    - JavaScript tries to coerce a value to a boolean value
+        - If a boolean value is required
+
+
+    Example:
+    const nameInput = "Max";
+
+    if (nameInput) { // Constant "nameInput" is NOT an empty string; evaluates as a truthy value
+        ...
+    }
+
+
+- Examples of a "false" & Falsy value
+    - The number 0
+    - An empty string
+    - A "null" value
+    - An "undefined" value
+    - A "NaN" value
+
+
+- Examples of a "true" & Truthy value
+    - A number besides 0; including negative numbers
+    - A non-empty string; including the string value "false"
+    - ALL arrays & objects; including an empty array or object
+
+
+- On the starter project
+    - Open the file "assets/scripts/app.js"
+
+    - Refactor the function "calculateResult()"
+        - Move the declaration of the local constant "enteredNumber"
+            - At the top of the "if" statement
+
+        - On the "if" statement
+            - Chain a new logical "||" (OR) operator
+            - Followed by a "!" operator
+            - Prefixing the local constant "enteredNumber"
+
+        - This implements a Falsy check 
+            - On the assigned value for local constant "enteredNumber"
+
+    - Save the changes
+
+    - Load / reload the browser
