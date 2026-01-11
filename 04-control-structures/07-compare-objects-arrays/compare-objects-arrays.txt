@@ -1,0 +1,39 @@
+Beware When Comparing Objects & Arrays For Equality
+---------------------------------------------------
+- Using the operators "===" and "==" to perform an equality check
+    - Between arrays or objects respectively ALWAYS evaluate to "false"
+        - Both are considered SPECIAL in JavaScript
+        - NOTE: An array is basically an object
+    
+    - For every individual array or object created
+        - Each is assigned to a SPECIFIC ADDRESS in memory
+
+        - On this SPECIFIC ADDRESS is where
+            - Their assigned elements (array) or properties (object) are stored       
+   
+    - When comparing between two arrays or objects, respectively
+        - They end up comparing SPECIFIC ADDRESSES in memory 
+            - NOT the identical stored values
+            - This ALWAYS evaluates to "false"
+
+     
+    Example:
+    const person1 = {name: "Max"};
+    const person2 = {name: "Max"};
+    
+    const hobbies = ["Sports", "Cooking"];
+    const moreHobbies = ["Sports", "Cooking"];
+
+    person1 === person2; // Evaluates to false
+    hobbies === moreHobbies; // Evaluates to false
+
+
+- In order to compare the stored values between two arrays or objects, respectively
+    - Use the operators "===" or "==" 
+        - To compare specific elements (array) or properties (object) that stores identical values
+        - Identical values will evaluate to "true"
+
+
+    Example:
+    person1.name === person2.name; // Evaluates to true
+    hobbies[0] === moreHobbies[0]; // Evaluates to true
