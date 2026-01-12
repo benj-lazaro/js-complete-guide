@@ -1,0 +1,22 @@
+Setting Up A Bigger Example Project: The Monster Killer
+-------------------------------------------------------
+- To practice on "if" statements and related conditional concepts
+    - Work on a new starter web app project
+        - A "monster killer" application
+    
+    - Download & extract starter files
+        - Load the "index.html" on the browser
+
+    - The file "scripts/vendor.js"
+        - Serves as a "communication channel" between HTML document & JavaScript code
+        
+        - It contains
+            - Global scope constants
+            - User (author) defined functions 
+
+    - The file "scripts/app.js"
+        - Implement one's code throghout this module
+
+    - The file "styles/app.css"
+        - Styles for the HTML document
+        - NOTE: This is optimized for Google Chrome
