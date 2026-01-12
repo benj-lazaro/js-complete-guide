@@ -1,0 +1,56 @@
+Adding An "Attack" Function
+---------------------------
+- To start
+    - Add an "Attack" callback function to the button "ATTACK"
+    
+    - When a user clicks the button "ATTACK"
+        - The monster's health bar shrinks
+
+    - NOTE: Common convention for global scope constant or variable w/ hard-coded value
+        - To be written in uppercase
+        - In-between words separated by a "_" character
+
+    - NOTE: Specifically for this project
+        - Convention of naming function that handles an event
+        - Will have the suffix "Handler" attached to its name (e.g. attackHandler)
+
+
+- On the starter project
+    - Open the file "assets/scripts/app.js"
+
+    - Define a global constant named "ATTACK_VALUE"
+        - Initially hard code the value of 10
+        - NOTE: Naming convention for constants or variables w/ a hard-coded value
+
+    - Define the following global variables named
+        - "chosenMaxLife"           = assign w/ the value of 100
+        - "currentMonsterHealth"    = assign w/ the value of the global variable "chosenMaxLife"
+        - "currentPlayerHealth"     = assign w/ the value of the global variable "chosenMaxLife"
+
+    - Call the function "adjustHealthBars()"
+        - Defined in the file "scripts/vendor.js"
+        - Renders the current health bar of both monster & player
+        - Pass the global variable "chosenMaxLife" as argument value
+
+    - Define a function named "attackHandler()"
+    
+    - Inside the function "attackHandler()"
+        - Define a local constant named "damage"
+            - Accepts the returned value from calling the function "dealMonsterDamage()"
+
+            - The function "dealMonsterDamage()"
+                - Passes the global constant "ATTACK_VALUE" as argument value
+
+        - The global variable "currentMonsterHealth"
+            - Receives the evaluated value from the expression "currentMonsterHealth - damage"
+
+    - Attach the method ".addEventListener()"
+        - To the global constant "attackBtn"
+
+        - Pass the argument values
+            - 1st   = event "click"
+            - 2nd   = callback function "attackHandler()"
+
+    - Save the changes
+
+    - Load / reload the browser
