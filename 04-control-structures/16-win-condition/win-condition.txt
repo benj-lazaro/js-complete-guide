@@ -1,0 +1,47 @@
+Using "if" Statements For Checking The Win Condition 
+----------------------------------------------------
+- Implement "if" statements on the project starter
+    - To check if either the player or monster wins
+    - Every time the "ATTACK" button is clicked
+
+
+- On the starter project
+    - Open the file "assets/scripts/app.js"
+
+    - Declare a new global constant named "MONSTER_ATTACK_VALUE"
+        - Assign it with a hard-coded number of 14
+
+    - On the function attackHandler()
+        - Right after the line that declares the local constant "damage"
+        
+        - Declare a new local constant named "playerDamage"
+            - Calls the function "dealPlayerDamage()"
+                - With the global constant "MONSTER_ATTACK_VALUE" as argument value
+
+            - Stores the returned value as its current assigned value
+            
+        - Right after the line where the global variable "currentMonsterHealth"
+            - Stores the value of itself minus the value of the local constant "damage"
+
+            - The global variable constant "currentPlayerHealth" is
+                - Assigned w/ its current value minus the value of the local constant "playerDamage"
+
+        - Implement a series of "if" & "if else" statements
+            - Checks the current health bars of both monster & player 
+            
+            - Uses the JavaScript function "alert()"
+                - To display the corresponding message who wins
+
+                - NOTE: The function "alert()" when called
+                    - Tenatively halts the rendering of the content on the browser
+
+                    - Resulting to displaying the message who win
+                        - Before the health bars are updated
+
+                - A "draw" message if BOTH monster & player have depleted
+                    - Their respective health bars down to 0
+
+        - Save the changes
+
+        - Load / reload the browser
+            - Test the button "ATTACK"
