@@ -1,0 +1,60 @@
+Adding More "if" Statements & A "Strong Attack" Functionality
+-------------------------------------------------------------
+- Link an event listener for the "STRONG ATTACK" button
+    - Executes the corresponding callback function "strongAttackHandler()" when it occurs
+
+
+- On the starter project
+    - Open the file "assets/scripts/app.js"
+
+    - Create a new global constant named "STRONG_ATTACK_VALUE"
+        - Assign a hardcoded value of 17
+
+
+    - Create a new function named "attackMonster()"
+        - Consolidates the duplicate code for a "normal" & "strong" attack against a monster
+
+        - Define a parameter value named "mode"
+            - Identifies the "mode" of attack chosen by the player
+
+        - Define a new local variable named "maxDamage"
+            - Will hold the corresponding attack value of the player
+            - Based on the chosen "mode" of attack
+
+        - Define an "if" statement based on the assigned value of the parameter variable "mode"
+            - If the passed argument value of "mode" is "ATTACK"
+                - Assign the global constant "ATTACK_VALUE" as value to the local variable "maxDamage"
+
+            - If the passed argument value of "mode" is "STRONG_ATTACK"
+                - Assign the global constant "STRONG_ATTACK_VALUE" as value to the local variable "maxDamage"
+
+    - On the function "attackHandler()"
+        - Cut the entire function body
+
+    - Switch back to the function "attackMonster()"
+        - After the previous "if" statement
+            - Paste the code
+
+    - On the declaration of the local constant "damage"
+        - Refactor the passed value to the function "dealMonsterDamage()"
+            - Change it to the local variable "maxDamage"
+
+    - Switch back to the function "attackHandler()"
+        - Call the function "attackMonster()"
+            - Pass the argument value of "ATTACK"
+
+    - Create a new event handler function "strongAttackHandler()"
+        - Call the function "attackMonster()"
+            - Pass the argument value of "STRONG_ATTACK"
+
+    - At the bottom of the file "app.js"
+        - On the global constant "strongAttackBtn" defined in the file "scripts/vendor.js"
+
+        - Attach the event handler that
+            - Listen to a "click" event
+            - That excutes the callback function "strongAttackHandler()" it occurs
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Test the "STRONG ATTACK" button
