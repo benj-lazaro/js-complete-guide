@@ -1,0 +1,56 @@
+Time For A "Heal Player" Functionality
+--------------------------------------
+- Link an event listener for the "HEAL" button
+    - Executes the corresponding callback function "strongAttackHandler()" when it occurs
+
+
+- On the starter project
+    - Open the file "assets/scripts/app.js"
+
+    - Create a new global constant named "HEAL_VALUE"
+        - Assign a hardcoded value of 20
+
+    - Create a new function named "endRound()"
+    
+    - Switch to the function "attackMonster()"
+        - Cut the code from where the monster attack the Player
+            - Up to the "if" statements that determines who win the current endRound
+
+    - Switch back to the function "endRound()"
+        - Paste the code
+
+    - Switch back to the function "attackMonster()"
+        - After the line of code where the global variable "currentMonsterHealth"
+            - Is assigned the difference between the variables "currentMonsterHealth & "damage"
+
+        - Call the function "endRound()"
+
+
+    - Create a callback function named "healPlayerHandler()"
+        - Create a new local variable named "healValue"
+
+        - Define an "if" statement that checks
+            - If the value of the global variable "currentPlayerHealth" is equal or greater than
+                - The difference of the global variables "chosenMaxLife" & global constant "HEAL_VALUE"
+
+            - If true, assign the difference between 
+                - The global variables "chosenMaxLife" & "currentPlayerHealth" to the local variable "healValue"
+
+            - Otherwise, assign the value of the global constant "HEAL_VALUE to the local variable "healValue"
+
+        - Call the function "increasePlayerHealth()"
+            - Pass the local variable "healValue" as argument value
+            - NOTE: This ONLY updates the player's UI health bar, NOT the actual health value
+
+        - Assign the sum of the global variable "currentPlayerHealth" & local variable "healValue"
+            - To itself (i.e. "currentPlayerHealth")
+
+        - Call the function "endRound()"
+
+
+    - At the bottom of the file "app.js"
+        - On the global constant "healBtn" defined in the file "scripts/vendor.js"
+
+        - Attach the event handler that
+            - Listen to a "click" event
+            - That excutes the callback function "healPlayerHandler()" it occurs
