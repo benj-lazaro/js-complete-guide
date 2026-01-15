@@ -1,0 +1,53 @@
+Controlling The Conditional Bonus Life (Without Boolean Operators)
+------------------------------------------------------------------
+- Implement a passive feature known as "bonus life"
+    - Rendered as a UI labeled "1"
+
+    - Trigger when the player's current health is 0 
+        - Restores the player's health prior to being slained by the monster
+
+        - Grants the opportunity to
+            - Heal
+            - Launch an attack (normal or strong) against the monster
+
+        - Shows an alert message that the bonus life has been triggered
+            - Corresonding UI button disppears
+
+
+- On the starter project
+    - Open the file "assets/scripts/app.js"
+
+    - Declare a new global variable named "hasBonuslife"
+        - Assign a boolean value of "true"
+
+    - On the function "endRound()"
+        - Create a new local constant named "initialPlayerHealth"
+            - Assign the value of global variable "currentPlayerHealth"
+
+        - Prior to the "if" statements that check who win the current round
+            
+        - Implement an "if" statement that checks whether the player's
+            - Current health is below or equal to 0 AND has a "bonus life" left
+
+        - If the condition is truthy
+            - Set the global variable "hasBonuslife" to the boolean value of "false"
+
+            - Calls the function "removeBonusLife()"
+                - Defined in the file "assets/scripts/vendor.js"
+                - Effectively removes the UI labeled "1"
+
+            - Assign the value of the local variable "initialPlayerHealth"
+                - To the global variable "currentPlayerHealth"
+                - Effectively implementing the "bonus life"
+
+            - Calls the function setPlayerHealth()
+                - Pass the updated value of the global variable "currentPlayerHealth" as argument
+        
+            - Calls the function "alert()"
+                - Sends a message that the "bonus life" has been applied
+
+            
+    - Save the changes
+
+    - Load / reload the browser
+        - Test the "bonus life" feature
