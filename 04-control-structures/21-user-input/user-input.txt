@@ -1,0 +1,37 @@
+Validating User Input
+---------------------
+- Implement the ability for users to manually input their
+    - Preferred max life for BOTH monster & player
+        - Using JavaScript's function "prompt()"
+        
+        - Displays the message "Maximum life for you and the monster."
+            - With a placeholder value of "100" 
+
+    - Use the function "parseInt()"
+        - To convert user input (string by default) to a number
+
+    - Use the function "isNaN()"
+        - To check if the user input can be converted to a number
+            
+        - If the condition evaluates to truthy
+            - Assign the default value 100 to the global variable "chosenMaxLife"
+    
+    - If the user input is below or equal to 0
+        - Assign the default value 100 to the global variable "chosenMaxLife"
+
+
+- On the starter project
+    - Open the file "assets/scripts/app.js"
+
+    - Define a new global constant named "enteredValue"
+        - Assign with the returned value from "prompt()"
+
+    - Call the function "parseInt()"
+        - Pass the global constant "enteredValue" as argument value
+        - Save the returned value to the global variable "chosenMaxLife"
+
+    - Declare a new "if" statement to check the value of the global variable "chosenMaxLife"
+        - Is NOT a number using the function "isNaN()" OR less than or equal to 0
+        
+        - If either conditions evaluates to truthy
+            - Assign a value of 100 as default
