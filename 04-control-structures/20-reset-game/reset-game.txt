@@ -1,0 +1,36 @@
+Adding A "Reset Game" Functionality
+-----------------------------------
+- Implement a reset game functionality that
+    - Resets the game once it is over
+    
+    - It does NOT reset the "bonus life"
+        - Exists ONLY ONCE across ALL (current) games
+
+    - Resets the health of the monster & player
+        - As well as their corresponding health bars (UI)
+        - Calling the pre-defined function "resetGame()"
+
+
+- On the starter project
+    - Open the file "assets/scripts/app.js"
+
+    - Create a new function named "reset()"
+        - Assign the value of the global variable "chosenMaxLife" to the global variables
+            - "currentMonsterHealth"
+            - "currentPlayerHealth"
+        
+        - Call the function "resetGame()"
+            - Defined in the file "assets/scripts/vendor.js"
+            - Pass the global variable "chosenMaxLife" as argument value
+
+    - In the function "endRound()"
+        - Add a new "if" statements that check if EITHER values of the global variables
+            - "currentMonsterHealth" OR "currentPlayerHealth" is less than or equal to 0
+
+        - If the condition evaluates to truthy
+            - Call the function "reset()"
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Test the reset game functionality
