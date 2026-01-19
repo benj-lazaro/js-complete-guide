@@ -1,0 +1,25 @@
+Utilizing Global Constants As Identifiers In Conditional Code
+-------------------------------------------------------------
+- Implementing a pattern for conditational statements that
+    - Use global constants as identifiers over hard-coded values
+        - Assign static values to constants
+
+        - Offers a single point w/in the codebase 
+            - To update respective static values when required
+        
+    - Hard-coded values are prone to typographical errors
+        - Often triggers an application crash
+        - Challenging to debug & find on large codebases
+
+
+- On the starter project
+    - Open the file "assets/scripts/app.js"
+
+    - Declare the constants respectively named
+        - "MODE_ATTACK" assigned w/ a static string value of "ATTACK"
+        - "MODE_STRONG_ATTACK" assigned w/ a static string value of "STRONG_ATTACK"
+
+    - Refactor the function "attackMonster()"
+        - Replace static string values in the "if" statement w/ their respective constant identifiers
+
+    
