@@ -1,0 +1,109 @@
+Adding A Conditional Battle Log
+-------------------------------
+- Implement the log functionality as a separate function that
+    - Records an event of each round of the game, stored in an array
+        - Details of the log is viewable on the browser's console tab
+        - Using an event handler (callback function)
+    
+    - Each element an object that contains data on
+        - Event identifier
+        - Damage cost, who won or heal value
+        - Target (i.e. hard-coded string value of 'monster' or 'player' BUT non-existent at game over)
+        - Current monster health
+        - Current player health
+    
+    - Each event has a constant identifier
+        - Assigned with their corresponding static value
+
+    - Calls the function from w/in the following functions
+        - "endRound()"
+        - "attackMonster()"
+        - "healPlayerHandler()"
+
+    
+- On the starter project
+    - Open the file "assets/scripts/app.js"
+
+    - Declare new global constant 'event identifiers' respectively named
+        - "LOG_EVENT_PLAYER_ATTACK"         = "PLAYER_ATTACK"
+        - "LOG_EVENT_PLAYER_STRONG_ATTACK"  = "PLAYER_STRONG_ATTACK"
+        - "LOG_EVENT_MONSTER_ATTACK"        = "MONSTER_ATTACK"
+        - "LOG_EVENT_PLAYER_HEAL"           = "PLAYER_HEAL"
+        - "LOG_EVENT_GAME_OVER"             = "GAME_OVER"
+
+    - Declare a new global variable named "battleLog"
+        - Assign an empty array
+
+    - Create a new function named "writeToLog()"
+        - Define the following parameter variables
+            - "event"           = event identifier
+            - "value"           = damage cost, winner (monster or player) or heal value
+            - "MonsterHealth"   = current monster health
+            - "playerHealth"    = current player health
+
+        - Declare a local variable named "logEntry"
+            - Stores event information taken from the parameter values as an object
+            
+            - NOTE: Optionally assign the initial properties & values
+                - Have the additional property added w/in respective "if" block statement
+
+        - Implement "if" statements
+            - Use the constant event identifier to identify values to assign into the object
+        
+        - Push the object stored in the local variable "logEvent" into the array "battleLog"
+
+    - Hook up an event listener for the constant "logBtn"
+        - Listen for a "click" event
+        - Calls the event handler "printLogHandler()"
+
+    - Create a new event handler function named "printLogHandler()"
+        - Pass the value of the array "battleLog"
+            - As an argument to the "console.log()"
+    
+    - In the function "endRound()"
+        - Right after the value update for the global variable "currentPlayerHealth"
+
+        - Call the function "writeToLog()" w/ the following argument values
+            - 1st = LOG_EVENT_MONSTER_ATTACK
+            - 2nd = playerDamage
+            - 3rd = currentMonsterHealth
+            - 4th = currentPlayerHealth
+
+        - In the "if" statements block that identifies the player won the game
+
+        - Call the function "writeToLog()" w/ the following argument values
+            - 1st = LOG_EVENT_GAME_OVER
+            - 2nd = "PLAYER WON"
+            - 3rd = currentMonsterHealth
+            - 4th = currentPlayerHealth
+
+    - In the function "attackMonster()"
+        - Declare a new local variable named "logEvent"
+
+        - In the "if" statement where the player attacked w/ a normal attack
+            - Assign the value "LOG_EVENT_PLAYER_ATTACK" to the variable "logEvent"
+
+        - In the "if" statement where the player attacked w/ a strong attack
+            - Assign the value "LOG_EVENT_PLAYER_STRONG_ATTACK" to the variable "logEvent"
+
+        - Right after the value update for the global variable "currentMonsterHealth"
+
+        - Call the function "writeToLog()" w/ the following argument values
+            - 1st = logEvent
+            - 2nd = damage
+            - 3rd = currentMonsterHealth
+            - 4th = currentPlayerHealth
+
+    - In the function "healPlayerHandler()"
+        - Right after the value update for the global variable "currentPlayerHealth"
+
+        - Call the function "writeToLog()" w/ the following argument values
+            - 1st = LOG_EVENT_PLAYER_HEAL
+            - 2nd = healValue
+            - 3rd = currentMonsterHealth
+            - 4th = currentPlayerHealth        
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Test the log functionality 
