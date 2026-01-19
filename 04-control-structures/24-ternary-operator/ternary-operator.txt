@@ -1,0 +1,52 @@
+Introducting The Ternary Operator
+---------------------------------
+- A Ternary operator is a special conditional expression that 
+    - Takes three (3) operators
+        - A condintional statement followed by a "?"
+        - Then an expression if condition is truthy followed by a ":"
+        - Then an expression if condition is falsy
+
+    - NOTE: It can have nested conditions
+        - Use it w/ caution
+        - Can quickly lead to hard-to-read code
+
+
+    Syntax:
+    <conditional_statement> ? <truthy_expression> : <falsy_expression>;
+
+
+- It addresses limitations of an "if" statement
+    - An "if" statement does NOT return a value
+
+    - It can NOT be used in an assignment statement
+        - Wherein a condition expects to return a value
+        - The returned value is then assigned to a variable
+
+
+- A Ternary operator is ideal for
+    - Short condintional statement wherein
+        - Returned value will be assigned to a constant / variable
+
+    - It is NOT strictly better than an "if" statement
+
+    - Use an "if" statement when 
+        - Working with complex conditions
+        - Working w/ complex values
+        - Working w/ deep nested ternary expression
+
+
+- On the starter project
+    - Open the file "assets/scripts/app.js"
+
+    - On the function "attackMonster()"
+        - Assign a ternary expression to both the local variables "maxDamage" & "logEvent"
+
+        - Refactor both variables to become a constant since
+            - The assigned value will NOT be updated w/in the closure
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Test the buttons "ATTACK" & "STRONG ATTACK"
+
+        
