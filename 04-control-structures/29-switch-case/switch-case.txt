@@ -1,0 +1,63 @@
+Working With "switch-case" Statement
+------------------------------------
+- The "switch" statement
+    - Evaluates an expression that yields a value
+        - Then matches the returned value against a series of "case" clauses
+
+    - Executes the statement(s) of the 1st matching "case" clause
+        - Until a "break" statement is encountered
+        - Ignores succeeding "case" clauses
+
+        - Failing to implement a "break" statement
+            - The "switch" statement will execute the succeeding "case" clause as well
+
+        - NOTE: The "break" statement terminates the execution of a "switch" statement
+
+    - If NO match is found
+        - Executes the statement(s) of the optional "default" clause
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)
+
+
+    Syntax:
+    switch (<expression>) {
+        case <match_clause_1>:
+            // statement
+            break;
+        case <match_clause_n>:
+            // statement
+            break;
+        [default:]
+            // statement
+    }
+
+    
+    - Common use case:
+        - Codebase that have multiple (simple BUT strict) equality checks
+            - Executes statement(s) based on the evaluated condition (or returned value)
+            - NOTE: Checks for a single value yielded by the evaluated expression
+            
+        - Behind the scene
+            - The "switch" statement uses the "===" operator for strict equality checks          
+
+        - A replacement for multiple "if" & "else if" statements w/
+            - Strict equality checks
+            - Checking for multiple different values
+
+        - For complex conditional expressions
+            - Use an "if" statement instead
+
+
+- On the starter project
+    - Open the file "assets/scripts/app.js"
+
+    - Refactor the function "writeToLog()"
+        - Replace the "if" & "else if" statements w/ "switch-case"
+
+        - On the "default" clause
+            - Assign the local variable "logEntry" w/ an empty object
+
+    - Save the changes
+
+    - Load / reload the browser
+
