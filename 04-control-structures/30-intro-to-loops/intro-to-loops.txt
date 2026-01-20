@@ -1,0 +1,79 @@
+Introduction To Loops
+---------------------
+- A loop executes certain pieoce of code 
+    - Multiple times in a more dynamic & flexible way
+
+    - JavaScript has four (4) main loops
+        - "for"
+        - "for of"
+        - "for in"
+        - "while"
+
+
+- The "for" loop
+    - Executes code in a certain amount of time (iterations) w/ the help of a counter variable
+        - Value of the counter variable changes w/ every loop iteration 
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for)
+
+    Syntax:
+    for (<initialization>; <exit_condition>; <counter_variable>) {
+        // statement
+    }
+
+    Example:
+    for (let i = 0; i < 3; i++) {
+        console.log(i);
+    }
+
+
+- The "for of" loop
+    - Executes for every element in an array or iterable
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
+
+    Syntax:
+    for (<element> of <iterable>) {
+        // statement
+    }
+
+    Example:
+    const numbers = [1, 2, 3, 4 ,5];
+
+    for (const number of numbers) {
+        console.log(number)
+    }
+    
+
+- The "for in" loop
+    - Executes for every property (key) in an object
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in) 
+
+    Syntax:
+    for (<property> in <object>) {
+        // statement
+    }
+
+    Example:
+    let person = { name: "Max", age: 100};
+
+    for (const key in person) {
+        console.log(key);
+        console.log(person[key]);
+    }
+
+
+- The "while" loop
+    - Executes as long as the condition evaluates to "true"
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while)
+
+    Syntax:
+    while (<condition_is_true>) {
+        // statement
+    }
+
+    Example:
+    let isLoggedIn = true;
+        
+    while (isLoggedIn) {
+        // statement
+    }
