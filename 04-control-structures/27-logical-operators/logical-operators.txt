@@ -1,0 +1,33 @@
+Logical Operators: A Quick Summary
+----------------------------------
+- Quick summary on how logical & comparison operators behave
+
+    Example:
+    const userName = 'Max';
+    const altName = '';
+
+    console.log(userName === 'Max'); // generates and prints a boolean => true
+    console.log(userName); // wasn't touched, still is a string => 'Max'
+
+    console.log(userName || null); // userName is truthy, therefore returns 'Max'
+    console.log(altName || 'Max'); // altName is falsy, 'Max' is returned => 'Max'
+    console.log(altName || ''); // both are falsy if the 1st operand is falsy, the 2nd one is returned
+    console.log(altName || null || 'Anna'); // altName and null are falsy, 'Anna' is returned
+ 
+    console.log(userName && 'Anna'); // userName is truthy, hence 2nd value is returned => 'Anna'
+    console.log(altName && 'Anna'); // altName is falsy, hence 1st value is returned => ''
+    console.log(userName && ''); // userName is truthy, hence 2nd value is returned => ''
+
+    - Keep in mind: NO operator (e.g. ===, > etc. nor && or ||) 
+        - Changes the value of a variable you might be using in the comparison
+        - In the above examples, the values stored in userName and altName are NEVER changed.
+
+    - The ===, > etc. operators
+        - Just generate new boolean values which are used in the comparison
+        
+    - The || and && generate NO booleans
+        - They just treat the values before & after them as conditions 
+            - Which yield boolean values & are coerced to booleans if required
+
+    - Often use the || operator
+        - To assign default/ fallback values to variables/ constants
