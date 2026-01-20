@@ -1,0 +1,20 @@
+A Bit Of Theory: Statements VS Expressions
+------------------------------------------
+- An expression
+    - Yields a value
+    - Stores the value in a constant / variable
+    - Often located at the right-side of the "=" operator
+    - It is ALSO a statement
+
+    Example:
+    const maxDamage = mode === MODE_ATTACK ? ATTACK_VALUE : STRONG_ATTACK_VALUE;
+
+
+- A statement
+    - Does NOT yield a value
+    - Can NOT be located at the right-side of the "=" operator
+
+    Example:
+    if (currentMonsterHealth <=0 && currentPlayerHealth > 0) {
+        ...
+    }
