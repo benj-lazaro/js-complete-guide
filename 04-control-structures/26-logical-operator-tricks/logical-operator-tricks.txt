@@ -1,0 +1,61 @@
+Logical Operator "Tricks" & Shorthands
+--------------------------------------
+- Logical opeartor "!!"
+    - Performs a boolean coercion that
+        - Coerces a truthy or falsy value into a REAL boolean "true" or "false" value
+        - Basically a Type Conversion trick
+        
+    - Common use case
+        - Need to work on REAL boolean values
+        - Confirm user-input provided a truthy value
+
+    Example:
+    const userInput = "";
+    const isValidInput = !!userInput // Returns "true" userInput has a value; otherwise false
+
+
+- Logical operator "||"
+    - Used to assign a default value to a constant or variable
+
+    - When used in an expression 
+        - Located at the right-hand side of the "=" operator
+
+    - JavaScript evaluates the 1st operand (value)
+        - If truthy
+            - Returns the operand w/o converting it into a real boolean value
+            - Assigns it to a constant / variable
+            - Ignores the 2nd operand
+
+        - If falsy
+            - Returns the 2nd operand instead
+            - Assigns it to a constant / variable
+
+    Example:
+    const defaultUser = "Nameless"
+    const userName = defaultUser || "Max"; // Assigns "Max" IF the defaultUser is falsy
+
+
+- Logical operator "&&"
+    - Used to assign the 2nd operand (value) but
+        - ONLY if the 1st operand is truthy
+
+    - When used in an expression 
+        - Located at the right-hand side of the "=" operator
+
+    - JavaScript evaluates the 1st operand
+        - If truthy or boolean "true"
+            - The 2nd operand is assigned to a constant / variable
+
+        - If falsy or "false"
+            - The 1st operand is assigned to a constant / variable
+            - Boolean "false" if assigned as value to the 1st operand
+
+    Example:
+    const name = isLoggedIn && "Max"    // Assigns "Max" ONLY if isLoggedIn is truthy
+                                        // Otherwise, isLoggedIn will be assigned
+
+
+- NOTE: The "&&" and "||" operators do NOT generate a boolean value
+    - When used to combine conditions w/in an expression
+        - BOTH return a generated boolean value
+        - Due to the evaluated condition, NOT by the operators themselves
