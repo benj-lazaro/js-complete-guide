@@ -1,0 +1,64 @@
+Quiz 08: Logical Operators & How They Work
+------------------------------------------
+- What's stored in userName at the end of the below code?
+
+    const enteredValue = '';
+    const userName = enteredValue || 'DEFAULT';
+
+    - Answer: "DEFAULT"
+
+
+- What's stored in userName at the end of the below code?
+
+    const enteredValue = '';
+    const userName = enteredValue || null;
+
+    - Answer: null
+
+
+- What's stored in userName at the end of the below code?
+
+    const enteredValue = 'Max';
+    const userName = enteredValue || 'Anna';
+
+    - Answer: "Max"
+
+
+- What's stored in userName at the end of the below code?
+
+    const enteredValue = 'Max';
+    const userName = enteredValue && 'Anna';
+
+    - Answer: "Anna"
+
+
+- What's stored in userName at the end of the below code?
+
+    const enteredValue = '';
+    const userName = enteredValue && 'Anna';
+
+    - Answer: '' (empty string)
+
+
+- What's stored in userName at the end of the below code?
+
+    const enteredValue = 'Max';
+    const userName = enteredValue && '';
+
+    - Answer: '' (empty string)
+
+
+- What does the follow code yield?
+
+    const userName = 'Max';
+    console.log(!!userName);
+
+    - Answer: true
+
+
+- What does the follow code yield?
+
+    const userName = 'Max';
+    console.log(!userName);
+
+    - Answer: false
