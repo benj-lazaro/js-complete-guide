@@ -1,0 +1,55 @@
+The "while" & "do while" Loops
+------------------------------
+- The "while" loop
+    - The condition is evaluated first BEFORE
+        - Executing the statements w/in the loop block 
+
+    - Executes the loop as long as the condition evaluates to "true"
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while)
+
+    - NOTE: A "while" loop can serve as a replacement for a "for" loop
+        - Although they're kind of niche
+
+    Syntax:
+    while (<condition>) {
+        // statement
+    }
+
+    Example:
+    let j = 0;
+    while (j < 3) {
+        console.log("----------");
+        j++;
+    }
+
+
+- The "do while" loop
+    - The condition is evaluated first AFTER
+        - Executing the statements once w/in the loop block 
+
+    - Executes the loop as long as the condition evaluates to "false"
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/do...while)
+
+    Syntax:
+    do {
+        // statement
+    } while (<condition>);
+
+    Example:
+    let randomNumbers = [];
+    let finished = false;
+
+    while(!finished) {
+        const randomNumber = Math.random();
+        randomNumbers.push(randomNumber);
+
+        if (randomNumber > 0.5) {
+            finished = true;
+            console.log(randomNumbers)
+        }
+    }
+
+- On the starter project
+    - Open the file "assets/scripts/app.js"
