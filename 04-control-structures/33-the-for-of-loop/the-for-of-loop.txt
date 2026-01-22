@@ -1,0 +1,45 @@
+The "for of" Loop
+-----------------
+- The "for..of" loop
+    - Operates on a sequence of elements (values) from an iterable object
+        - An iterable object includes
+            - Array
+            - String
+            - TypedArray
+            - Map
+            - Set
+            - NodeList (& other DOM collections)
+            - Arguments object
+            - Generators (produced by Gnerator Functions)
+            - User-defined iterables
+
+    - The downside of a "for..of" loop
+        - Does NOT provide access to an array element's index value
+        
+        - A workaround is to declare a counter variable 
+            - Outside of the "for..of" loop
+            - Then increment the variable counter w/in the loop
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
+
+
+    Syntax:
+    for (const <element> of <iterable>) {
+        // statement
+    }
+
+
+- On the starter project
+    - Open the file "assets/scripts/app.js"
+
+    - In the event handler function "printLogHandler()"
+        - Remove the previous "for" Loop
+
+        - Use a "for..of" loop in order to
+            - Output every array element stored in the global variable "battleLog"
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Open the browser's "console" tab
+        - Test the "SHOW LOG" button
