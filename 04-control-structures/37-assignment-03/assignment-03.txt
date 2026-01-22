@@ -1,0 +1,30 @@
+Assignment 03: Time To Practice Control Structures
+--------------------------------------------------
+- In the attached code assignment (assignment.js)
+
+
+- Assignment #1
+    - A varaible holds a random number between 0 & 1
+
+    - Write code that
+        - Shows an alert w/ any message
+        - When the number is greater than 0.7
+
+    
+- Assignment #2
+    - Create an array of numbers
+    - Loop through the array in two (2) different ways
+    - Output the numbers inside the loop 
+
+
+- Assignment #3
+    - Adjust one of the loops from the previous task
+    - It starts at the end (last element) of the array & loops to the 1st element 
+
+
+- Assignment #4
+    - Create another random number in a separate constant
+    
+    - Show an alert when
+        - BOTH are greater than 0.7 
+        - OR at least one of two is NOT greater than 0.2
