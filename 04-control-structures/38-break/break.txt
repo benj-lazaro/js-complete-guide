@@ -1,0 +1,49 @@
+Controlling Loops With "break"
+------------------------------
+- The "break" statement
+    - Terminates the current loop (as well as a "switch" statement)
+        - Earlier than intended
+        - Think of it as a "cancel" loop execution
+
+    - If placed w/in a nested "for" loop
+        - It terminates the inner "for" loop
+        - Continues the execution of the outer "for" loop
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/break)
+
+
+    Syntax:
+    break;
+
+
+- On the starter project
+    - Open the file "assets/scripts/app.js"
+
+    - Declare a new global variable named "lastLoggedEntry"
+        - Leave it undefined
+
+    - In the event handler function "printLogHandler()"
+        - In the "for..of" loop
+
+        - Declare a new "if" statement
+            - Check if the global variable "lastLoggedEntry" is set AND
+                - NOT equal to 0
+                - OR the assigned value to "lastLoggedEntry" less than
+                    - The assigned value of the local variable "i"
+
+            - If truthy
+                - Use the "for..of" loop to print the key-value pairs
+                    - Of the objects stored in the global variable "battleLog"
+
+                - Assign the value of the local variable "i"
+                    - To the global variable "lastLoggedEntry"
+
+                - Insert a "break" statement
+
+            - Increment the value of the local variable "i"
+                - At the end of the "if" statement
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Test the modified behavior of the button "SHOW LOG"
