@@ -1,0 +1,53 @@
+The "for..in" Loop
+------------------
+- The "for..in" loop
+    - Enumerates properties (i.e. key-value pairs) of an object
+
+    - When accessing the value of a property (i.e. key)
+        - The property name MUST be of a string data type
+            - (e.g. <object_name>["<property_name>"]) 
+
+        - JavaScript accesses the value from the given property name
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in)
+
+
+    Syntax:
+    for (const <property> in <object>) {
+        // statement
+    }
+
+
+- On the starter project
+    - Open the file "assets/scripts/app.js"
+
+    - In the event handler function "printLogHandler()"
+        - Declare a local variable "i" w/ the initial value of 0
+        
+        - Serves as an identifier to the object 
+            - Stored as an array element in the global variable "battleLog"
+        
+
+    - In the "for..of" loop
+        - Refactor the "console.log()"
+            - Replace the argument value "logEntry" w/ `Log # ${i}`
+                - Serves as an identifier for the object element stored in the array "battleLog"
+
+        - Declare a nested "for..in" loop
+            - Declare a local constant "key"
+                - Placeholder of the object's property name
+
+            - Use the previously declared local constant "logEntry" as the object
+                - Holds the value assigned to the corresponding property naem
+
+            - Pass the following string template literals to the function "console.log()"
+                - `${key}`              = Object's property name
+                - `${logEntry[key]}`    = Assigned value of the property name
+
+    - At the closing end of the "for..in" loop
+        - Use a post-increment operator on the local variable "i" (e.g. i++)
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Test the implemented changes
