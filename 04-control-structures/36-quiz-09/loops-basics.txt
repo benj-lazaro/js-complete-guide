@@ -1,0 +1,100 @@
+Quiz 09: Loops Basics
+---------------------
+- Why do loops exists?
+    - Answer: Because you somtimes need to execute the same code
+        - Maybe with different, dynamic values multiple times
+
+
+- What does the following loop produce as output?
+
+    let sum = 0;
+    for (let i = 2; i <= 6; i++) {
+        sum = sum + i;
+    }
+    console.log(sum); // ???
+
+    - Answer: 20
+
+
+- What does the following loop produce as output?
+
+    let sum = 0;
+    for (const i = 2; i <= 6; i++) {
+        sum = sum + i;
+    }
+    console.log(sum); // ???
+
+    - Answer: An error is thrown
+
+
+- What does the following loop produce as output?
+
+    let sum = 0;
+    for (let i = 0; i < 3; i++) {
+        for (let j = 5; j > 2; j--) {
+            sum = sum + j + i;
+        }
+    }
+    console.log(sum); // ???
+
+    - Answer: 45
+
+    - Solution:
+
+        0 + 5 + 0 = 5
+        5 + 4 + 0 = 9
+        9 + 3 + 0 = 12
+
+        12+ 5 + 1 = 18
+        18+ 4 + 1 = 23
+        23+ 3 + 1 = 27
+
+        27+ 5 + 2 = 34
+        34+ 4 + 2 = 40
+        40+ 3 + 2 = 45
+    
+
+- What does the following loop produce as output?
+
+    let sum = 0;
+    for (let i = 0; i < 3; i++) {
+        for (let j = 5; j > 2; j--) {
+            sum = j + i;
+        }
+    }
+    console.log(sum); // ???
+
+    - Answer: 5
+
+    - Solution:
+
+        5 + 0 = 5
+        4 + 0 = 9
+        3 + 0 = 12
+
+        5 + 1 = 6 
+        4 + 1 = 4
+        3 + 1 = 3
+
+        5 + 2 = 7
+        4 + 2 = 6
+        3 + 2 = 5
+
+
+- What does the following loop produce?
+
+    const hobbies = ['Sports', 'Cooking', 'Coding'];
+
+    let favoriteHobby;
+
+    for (const hobby of hobbies) {
+        favoriteHobby = hobby;
+    }
+
+    console.log(favoriteHobby);
+
+    - Answer: Coding
+
+
+- What's the main difference between for-of and for-in loops?
+    - Answer: for-of loops are used for arrays, for-in loops are used for objects
