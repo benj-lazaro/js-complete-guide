@@ -1,0 +1,48 @@
+Throwing Custom Errors
+----------------------
+- Implement the logic that
+    - Catches an error
+    - Then throw a custom error message on the browser's Javascript console
+
+
+- On the starter project
+    - Open the file "assets/scripts/app.js"
+
+    - Create a new function named "getMaxLifeValues()"
+
+    - Move the declaration of the global constant "enteredValue"
+        - Into the function "getMaxLifeValues()"
+
+    - Declare a new local constant "parsedValue"
+        - Assign the function "parseInt()" w/ the local constant "enteredValue" as an argument value
+        - e.g. parseInt(enteredValue)
+
+    - Move the logic that checks the value of the global variable "chosenMaxLife"
+        - Into the function "getMaxLifeValues()"
+
+        - On the "if" statement
+            - Change the global variable "chosenMaxLife" to the local constant "parsedValue"
+
+        - Refactor the line that
+            - Assigns the value of 100 to the global variable "chosenMaxLife"
+            - Replace it w/ a "throw" statement that returns an object
+
+            - The object contains the
+                - Property named "message"
+                - Value of "Invalid user input, not a number"
+
+        - Outside of the "if" statement
+            - Return the local constant "parsedValue"
+
+    - On the global variable "chosenMaxLife"
+        - Assign it with a call to the function "getMaxLifeValues()"
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Provide an invalid maximum life (e.g. "hello")
+
+        - The browser's Javascript console should receive an object
+            - Containing the custom error message
+        
+        - The other buttons are unclickable
