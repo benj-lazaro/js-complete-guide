@@ -1,0 +1,13 @@
+Quiz 11: Error Handling
+-----------------------
+- Which kind of error should you typically handle via try-catch?
+    - Answer: Network errors
+
+
+- What goes into the try {} block?
+    - Answer: The code that could throw an error
+
+
+- What goes into the catch {} block?
+    - Answer: The error handling & fallback logic
+
