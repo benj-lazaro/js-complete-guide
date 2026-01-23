@@ -1,0 +1,65 @@
+Quiz 10: break & continue
+-------------------------
+- What does "break" do?
+    - Answer: It ends / stops loop execution
+
+
+- What does "continue" do?
+    - Answer: It continue w/ the next loop iteration & stop the current one
+
+
+- What's the result of the below code?
+
+    let sum = 0;
+    for (let i = 0; i < 5; i++) {
+        sum = sum + i;
+        break;
+    }
+    console.log(sum); // ???
+
+    - Answer: 0
+
+
+- What's the result of the below code?
+
+    let sum = 0;
+    for (let i = 0; i < 5; i++) {
+        for (let j = 0; j < 2; j++) {
+            sum = sum + i + j;
+            break;
+        }
+    }
+    console.log(sum); // ???
+
+    - Answer: 10
+
+
+- What's the result of the below code?
+
+    let sum = 0;
+    for (let i = 0; i < 5; i++) {
+        for (let j = 0; j < 2; j++) {
+            sum = sum + i + j;
+            continue;
+        }
+    }
+    console.log(sum); // ???
+
+    - Answer: 25
+
+
+- What's the result of the below code?
+
+    let sum = 0;
+    for (let i = 0; i < 5; i++) {
+        for (let j = 0; j < 2; j++) {
+            if (i >= 2) {
+                continue;
+            }
+            sum = sum + i + j;
+        }
+    }
+    console.log(sum); // ???
+
+    - Answer: 4
+
