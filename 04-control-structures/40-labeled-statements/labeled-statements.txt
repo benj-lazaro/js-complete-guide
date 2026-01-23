@@ -1,0 +1,39 @@
+More Control With Labeled Statements
+------------------------------------
+- A labeled statement
+    - Refers to any statement prefixed with an identifier (i.e. label)
+    
+    - Commonly used on nested loops
+        - Placing identifiers in front of an outer & inner loop
+        
+        - Using "break" & "continue" statements to respectively
+            - Break the entire loop execution
+            - Skip the current loop iteration 
+
+    - NOTE: It is a nice-to-know feature but RARELY needed
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/label)
+
+    Syntax:
+    <label>: <loop>;
+    <label>: <expression>;
+
+
+    - Common use case
+        - Terminates the entire execution of nested loops
+            - From a condition defined w/in an inner loop
+
+            - Using a "break" statement (e.g. break <label>)
+                - To jump to the outer loop's identifier
+                - Effectively terminates the entire loop execution
+
+
+        - Skips the current iteration of the outer loop
+            - From a condition defined w/in an inner loop
+
+            - Using a "continue" statement (e.g. continue <label>)
+                - To jump to the outer loop's identifier
+                - Effectively skips the current iteration of the outer loop
+
+            - NOTE: Be mindful of the condition required to terminate the loop
+                - This has the potential to become an infinite loop
