@@ -1,0 +1,30 @@
+Error Handling With "try..catch": An Introduction
+-------------------------------------------------
+- A "try..catch" statement
+    - A control structure that throws & catch errors gracefully
+        - Recover from these errors w/ a corresponding fallback code
+
+    - It is composed of a "try", "catch" & "finally" blocks wherein
+        - The statement(s) w/in the "try" block is executed
+
+        - If an error is thrown, the "catch" block will be executed
+            - To execute some fallback code
+
+        - The statement(s) w/in the "finally" block will
+            - ALWAYS be executed before the "try..catch" terminates
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch)
+
+
+    Syntax:
+    try {
+        // statement
+    } catch (<exception>) {
+        // statement
+    } finally {
+        // statement
+    }
+
+
+- On the starter project
+    - Open the file "assets/scripts/app.js"
