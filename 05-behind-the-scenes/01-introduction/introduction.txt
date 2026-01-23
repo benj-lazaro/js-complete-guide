@@ -1,0 +1,12 @@
+Module Introduction
+-------------------
+- This section focuses on:
+    - ES5 VS ES6
+        - How the syntax changed
+            - e.g. creating variables
+
+    - How JavaScript works (behind the scene)
+        - What the browser parses & interprets JavaScript code
+        - Then how it executes the code
+    
+    - A look on the weird parts of JavaScript
