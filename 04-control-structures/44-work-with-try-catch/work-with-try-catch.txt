@@ -1,0 +1,40 @@
+Working With "try..catch" To Catch & Handle Errors
+--------------------------------------------------
+- Implement a "try..catch" statement on the starter project
+    - Move code into a "try" block
+        - Where the developer can NOT control whether it throws an error or NOT
+        - e.g. a user enters a valid / invalid input
+
+    - Declare the corresponding "catch" block
+        - Implement a graceful "fallback" when an error occurs
+
+    
+- On the starter project
+    - Open the file "assets/scripts/app.js"
+
+    - On the declaration of the global variable "chosenMaxLife"
+        - Refactor it to be assigned w/ "undefined"
+        - Instead of a call to the function "getMaxLifeValues()"
+
+    - Implement a "try" block
+        - Assign a call to the function "getMaxLifeValues()" to
+            - The global variable "chosenMaxLife"
+
+    - Implement a "catch" block
+        - Pass "error" as an argument value
+    
+    - Inside the "catch" block
+        - Pass "error" as argument value to "console.log()"
+
+        - Assign the value 100 to the global variable "chosenMaxLife"
+
+        - Call the function "alert()" w/ the
+            - String "You entered something wrong, default value of 100 is used." as argument value
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Intentionally provide an invalid user input
+        - An alert message is prompted
+        - An object containing an error message is prompted on the browser's JavaScript console
+
