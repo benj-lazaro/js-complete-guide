@@ -1,0 +1,19 @@
+Coding Exercise 08: Throwing & Handling Errors
+----------------------------------------------
+- You must add code to both
+    - Functions "breakMe()" & "main()"
+
+
+- In the function "breakMe()"
+    - You should throw a custom error object
+
+    - The object may contain any data but
+        - It should MUST contain a property "message"
+        - Assign a string value of your choice
+
+
+- In the function "main()"
+    - It calls the function "breakMe()'
+
+    - It should return (but NOT throw) the error object
+        - Thrown by the function "breakMe()"
