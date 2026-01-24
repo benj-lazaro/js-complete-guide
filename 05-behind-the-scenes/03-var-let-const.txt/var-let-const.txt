@@ -1,0 +1,51 @@
+var VS let & const: Introducing Block Scope
+-------------------------------------------
+- The keyword "var"
+    - Creates a variable that is of Function & Global scoped
+        - Introduced since the creation of JavaScript
+
+    - Allows the declaration of the same variable name w/in the same scope
+        - It does NOT trigger an "Uncaught SyntaxError"
+
+    - Accessing the variable outside of its declared scope
+        - It triggers an "Uncaught ReferenceError"
+    
+    - NOTE: Discouraged of the use of "var" in modern JavaScript
+        - It ONLY exists for backward compatibility w/ older browsers
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var)
+
+
+- The keyword "let"
+    - Creates a variable that is of Block scoped
+        - Introduced in ES6
+
+    - Prohibits the declaration of the same variable name w/in the same scope
+        - It trigger an "Uncaught SyntaxError"
+
+    - Allows to shadow a declared global scoped variable w/in a function
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)
+
+
+- The keyword "const"
+    - Creates a constant that is of Block scoped
+        - Introduced in ES6
+
+    - Prohibits the declaration of the same constant name w/in the same scope
+        - It trigger an "Uncaught SyntaxError"
+
+    - Allows to shadow a declared global scoped constant w/in a function
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)
+
+
+- A block scope (or statement)
+    - Refers to a number of declaration / statements enclosed w/in a pair of { }
+        - e.g. function, loop, error handling, etc. statements
+
+    - Constants and/or variables declared w/in a Block scope using "const" & "let", respectively
+        - They are ONLY accessible w/in that block
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/block)
+
