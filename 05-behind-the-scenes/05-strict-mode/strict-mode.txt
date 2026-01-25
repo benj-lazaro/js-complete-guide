@@ -1,0 +1,52 @@
+Strict Mode & Writing Good Code
+-------------------------------
+- Strict Mode
+    - Enables a restricted variant of JavaScript
+        - Introduced in ES5
+        - Implements best coding practices
+    
+    - NOTE: ES6 mimics most of the behavior enabled by Strict Mode
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)
+
+
+- To enable Strict Mode
+    - At the top of the file, declare the following statement
+
+        "use strict";
+
+        - Enables the Strict Mode for the content of this specific file ONLY
+
+    - The Strict Mode can also be declared w/in a function
+        - This enables Strict Mode ONLY w/in the function's closure
+
+    - BOTH Strict & Non-Strict Modes can co-exists
+        - Codebase can opt into Strict Mode incrementally
+
+
+- When Strict Mode is enabled
+    - Declaring a variable w/o using either "let" or "var" keyword
+        - Triggers an "Uncaught ReferenceError: <variable> is not defined"
+
+    - Declaring a reserved word as a variable name using the keyword "let"
+        - Triggers an "Uncaught SyntaxError"
+        - NOTE: Returned error message is dependent on the reserved word used
+
+    - Declaring a reserved word as a variable name using the keyword "let" or "var"
+        - Triggers an "Uncaught TypeErrpr"
+        - NOTE: Returned error message is dependent on the reserved word used
+        
+    - List of behavioral changes when in Strict Mode
+        - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode#changes_in_strict_mode)
+
+
+- When Strict Mode is disabled
+    - Variable declartion (before using it) is NOT REQUIRED
+        - Declaring a variable w/o using either "let" or "var" keywords
+        - Behind the scene, JavaScript defaults using the keyword "var"
+
+    - Using a reserved word to declare a variable is NOT prohibited
+        - When using the keyword "var"
+            - When the variable is accessed
+            - Often returns an "undefined" value
+
+        - It does NOT trigger an error
