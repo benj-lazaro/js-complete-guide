@@ -1,0 +1,17 @@
+Quiz 12: JavaScript Specialties
+-------------------------------
+- What's the most important difference between var and let/ const?
+    - Answer: var has global/function scopes, let & const have block scopes
+
+
+- What does "Block Scope" mean?
+    - Anwer: Variables are created in a block { } & then belongs to that block
+
+
+- Does this code execute correctly?
+
+    console.log(name);
+    const name = 'Max';
+
+    - Answer: No
+
