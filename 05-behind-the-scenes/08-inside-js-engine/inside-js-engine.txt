@@ -1,0 +1,75 @@
+Inside The JavaScript Engine: How The Code Executes
+---------------------------------------------------
+- The JavaScript Engine in the end is all about
+    - Managing memory (heap)
+    - Manaing execution steps (stack)
+
+
+- Heap
+    - It is the long-term memory
+        - It is all about memory allocation
+        - It stores data in the system memory & manages access to it
+
+    - The browser taps into the host computer's system memory
+        - The host computer allocates memory for use of the browser application
+        - This allocated memory is called a "Heap"
+
+    - This is where the (long-term) data that 
+        - The JavaScript code works with get stored
+
+
+- Stack
+    - Think of it as short-term memory (or data structure)
+        - It is all about for the execution of the JavaScript code
+        - It is where the JavaScript Engine keeps track on what is currently happening
+        
+    - JavaScript Engine keeps track on what is currently happening
+        - By pushing new function calls (or short-living data) on top of the Stack
+        - Popping it off when it is NOT required anymore
+
+    - When the JavaScript code execution starts
+        - It pushes the "anonymous" function on the Stack
+            - NOTE: "anonymous" function basically the JavaScript code as an unnamed function
+
+        - Each succeeding function call is pushed on the top of the Stack
+            - NOTE: Top-most item of the Stack is ALWAYS the function that is currently executing
+        
+        - When a function completes its task
+            - It is popped off from the Stack
+            - NOTE: Does NOT mean that the corresponding function definition is removed from the Heap
+
+        - When the JavaScript code completes its task
+            - The "anonymous" function gets popped off from the Stack
+
+    - To visually view the content of the Stack
+        - Launch Chrome Dev Tools
+
+        - Click the tab "Sources"
+
+        - On the tab "Page"
+            - Select the (currently running) JavaScript file
+
+        - On the JavaScript code (in the tab "Sources")
+            - Select a function w/ a "return" statement
+            - Place a breakpoint on that line of code
+        
+        - Reload the browser
+
+        - Expand the tab "Call Stack"
+            - Lists functions inside the Stack
+
+    - NOTE: JavaScript is single-threaded
+        - This basically means that it can "only do one thing at a time"
+        
+        - JavaScript Engine can ONLY call one (1) function at a time
+            - Other functions wait for the completion of the current executing function
+
+
+- Event Loop
+    - It is NOT part of the JavaScript Engine but of modern browsers
+        - Helps work w/ asynchronous code (e.g.  Event Listeners)
+
+        - JavaScript Engine does NOT care about ongoing Event Listeners
+
+    - Browser "pings" the JavaScript Engine when
+        - A new event is being fired by the JavaScript code' Event Listeners    
