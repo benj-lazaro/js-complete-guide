@@ -1,0 +1,21 @@
+Deep Dive: JavaScript Language VS Browser APIs
+----------------------------------------------
+- JavaScript language
+    - Understand core syntax (e.g. let, const, etc.)
+        - Does NOT know anything about the DOM (Document Object Model)
+
+    - It is advanced by the ECMA International Technical Committee 39 (TC39)
+        - A group responsible for adding new features to the JavaScript itself
+        - Reference (https://tc39.es/)
+
+    - Just because a new feature becomes part of the JavaScript language
+        - Does NOT mean ALL JavaScript Engines IMMEDIATELY support it
+
+
+- Browser APIs
+    - NOT responsible for understanding what the code does
+        - Responsible for exposing APIs (e.g. DOM) w/c can be used w/in a JavaScript code
+
+    - APIs are also standardized & handled by the WHATWG community
+        - NOTE: This community is NOT related to TC39
+        - Reference (https://whatwg.org/)
