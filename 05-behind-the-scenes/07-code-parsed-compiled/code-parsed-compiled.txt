@@ -1,0 +1,44 @@
+How Code Is Parsed & Compiled
+-----------------------------
+- When the browser loads & reads through an HTML document
+    - It detects the linked external JavaScript file
+    - Parses (reads) through the JavaScript code & then executes it
+    
+    - The exact details on what the browser does with 
+        - The JavaScript code is dependent on a brower's JavaScript Engine
+            - V8 Engine     = Chome, Brave, Edge, Opera
+                - Reference (https://hackernoon.com/javascript-v8-engine-explained-3f940148d4ef)
+
+            - Spidermonkey  = Firefox
+                - Reference (https://firefox-source-docs.mozilla.org/js/index.html)
+
+
+- The following is how the V8 Engine generally works w/ the JavaScript code
+    - Two (2) of its components are involved
+        - Interpreter
+        - JIT (Just-In-Time) compiler (called TurboFan)
+
+    - The Interpreter loads, reads & translates (each line of code) into bytecode
+        - Starts executing the bytecode
+        - Concurrently, hands over the bytecode to the JIT compiler
+
+    - The JIT compiler compiles the bytecode into machine code
+        - Compiled machine code is handed over to the browser for execution
+
+
+- The browser's JavaScript Engine applies a couple of optimization techniques
+    - To speed up the compilation & execution time
+
+    - JavaScript code that did NOT change between the last & current execution
+        - Is NOT necessarily re-compiled into machine code again
+        - Instead re-uses the recently compiled machine code
+
+    - Browser APIs serves as "communication bridges"
+        - Between JavaScript & the C++ logic built into the browser
+        
+        - Offer features that allows JavaScript to work with the
+            - Loaded HTML document
+            - User's (geographical) location
+    
+        - These come in the form of functions or objects
+            - Bundled w/ the compiled machine code 
