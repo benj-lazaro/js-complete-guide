@@ -1,0 +1,13 @@
+Module Introduction
+-------------------
+- This section focuses on:
+    - Different ways of creating functions
+
+    - A closer look on Anonymous functions 
+
+    - Callback functions & define function w/in a function
+
+    - Default arguments & the rest operator
+
+    - Special built-in functions (and/or methods)
+        - The ".bind()" method
