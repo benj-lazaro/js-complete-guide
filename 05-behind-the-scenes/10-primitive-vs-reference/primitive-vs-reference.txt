@@ -1,0 +1,78 @@
+Primitive VS Reference Values
+------------------------------
+- JavaScript has two (2) categories of values
+    - Primitive
+    - Reference
+
+
+- Primitive values
+    - Refers to the value of the following data types
+        - Strings, Numbers, Booleans, null, undefined & Symbol
+
+    - The variable stores the actualy value itself
+
+    - Stored (generally) on the Stack
+        - These are short-living values
+        - JavaScript gets rid of them relatively easily
+        - NOTE: The browser decides w/c memory to store primitive values
+
+    - They are cheap to re-create & duplicate
+        - Does NOT cost much memory
+
+    - Copying a primitive value between two (2) variables using the operator "="
+        - JavaScript copies the actual value to the recepient variable
+            - This is referred as "copied by value"
+    
+        - When the source variable change its stored primitive value
+            - The recepient variables does NOT REFLECT the change 
+
+
+- Reference values
+    - Refers to the value of the following data types
+        - All JavaScript (real) objects (e.g. array, object)
+
+        - NOTE: Strings & Numbers are technically "pseudo-objects"
+            - JavaScript transforms these primitive values into an object that
+            - Grants them object-like properties & methods
+
+    - Stored on the Heap 
+        - NOTE: The browser decides w/c memory to store reference values
+
+    - They are expensive to re-create & duplicate
+        - Consumes more memory
+        - Complex to manage
+        - Creating takes longer
+
+    - The variable (or constant) stores a reference to the value (real object) stored in Heap memory
+        - Instead of the actual value itself
+
+    - Copying a reference value between two (2) variables using the operator "="
+        - JavaScript assigns (NOT copies) the exact reference (memory address) to the recepient variable
+            - This is referred as "copied by reference"
+    
+        - When the source variable changes (or updates) its stored reference value 
+            - The recepient variables REFLECT the changes made
+
+    - To copy the actual value of a reference value between two (2) variables
+        - Use the spead operator "..." followed by the variable
+            - Enclosed w/in the pair of "{ }" or  "[ ]"
+
+        - It pulls out the elements (if an array) or properties (if an object)
+            - Creates a real copy of the value (NOT the memory address) into the recepient variable
+
+    - When comparing between two (2) identical reference values using the "===" or "==" operator
+        - Will ALWAYS yield a boolean "false"
+        
+        - Due to pointers (NOT the actual) value are being compared
+            - Their respective reference (memory address) will ALWAYS be different
+
+    - Storing a reference value in a constant & then updating the value
+        - Does NOT generate an error
+        
+        - Due to the pointer (NOT the actual) value that remains UNCHANGED
+            - The update is sent to the same pointer (memory address)
+        
+        - Assigning a new array or object into the same constant 
+            - Triggers an "Uncaught TypeError: Assignment to constant variable"
+            - This is an attempt to replace the existing pointer stored in the constant
+
