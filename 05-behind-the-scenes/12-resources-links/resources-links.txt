@@ -1,0 +1,16 @@
+Useful Resources & Links
+------------------------
+- More on JavaScript Memory Management (Garbage Collection)
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management)
+
+
+- V8's Garbage Collection Logic
+    - Reference (https://v8.dev/blog/free-garbage-collection)
+
+
+- V8's JavaScript in Great Details
+    - Reference (https://hackernoon.com/javascript-v8-engine-explained-3f940148d4ef)
+
+
+- More on Primitive vs Reference Values
+    - Reference (https://academind.com/tutorials/reference-vs-primitive-values)
