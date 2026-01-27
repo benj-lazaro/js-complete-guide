@@ -1,0 +1,59 @@
+Garbage Collection & Memory Management
+--------------------------------------
+- How the brower manages the Heap (long-living memory)
+    - Browser taps the host computer's system memory
+        - Host computer allocates a certain amount of memory for use of the browser
+    
+    - Excess allocation of Heap results to an overflow that
+        - Either terminates a web application or possibly the browser itself
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Memory_management)
+
+
+- Memory management is handled by the JavaScript Engine's Garbage Collector
+    - It periodically checks the Heap
+        - For unused objects
+            - (i.e. objects w/o a reference or pointer to an actual value stored in Heap)
+    
+    - Then removes ALL unused objects from the Heap
+
+
+- Modern browsers automatically activates its Garbage Collector
+    - It is an automatic event
+        - It can NOT be triggered manually or by human-intervention
+
+    - Constants and/or variables that are NO longer used anywhere in the script
+        - They are automatically removed from Heap
+
+    - Chrome's V8 Engine's Garbage Collection Logic
+        - Reference (https://v8.dev/blog/free-garbage-collection)
+
+    - NOTE: Be mindful of memory leaks
+        - An object that is NOT used anymore anywhere w/in the codebase
+            - BUT still holds reference to it
+
+        - Garbage Collection will NOT be able to remove it
+            - Introduces a bug in the codebase
+            - Due to the allocation of memory that is NOT used & may lead to an overflow
+    
+
+- In the example (app.js)
+    - Copy the body of the function "printMessage()"
+
+    - In the function "addListener()"
+        - Replace the callback function name "printMessage"
+            - Paste the codebase
+            - Remove the name, effectively making it an Anonymous function
+
+        - Every click of the HTML element <button> w/ an attribute "id" of "addListenerBtn"
+            - It calls the Anonymous callback function
+
+            - However, unliked the named callback function
+                - Every click, creates a new function on-the-fly
+                - Allocating memory for each instance
+                - This is a potential problem that can lead to a memory leak
+
+        - Using the named callback function
+            - Once the function is registered when the JavaScript code is parsed
+            - It ONLY allocates memory once
+            - The same named callback function is used for every click
