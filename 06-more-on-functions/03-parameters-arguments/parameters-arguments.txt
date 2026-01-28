@@ -1,0 +1,18 @@
+Parameters VS Arguments
+-----------------------
+- Parameters
+    - Refers to the variables specified w/in the "( )"
+        - When defining a function
+
+    Syntax:
+    <function_name>(<parameter_variable>, ...) {
+        // statements
+    }
+
+
+- Arguments
+    - Refers to the concrete values that
+        - Are passed to a function when it is called
+
+    Syntax:
+    <function_name>(<argument_value>, ...);
