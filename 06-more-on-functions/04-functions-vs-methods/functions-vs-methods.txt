@@ -1,0 +1,67 @@
+Functions VS Methods
+--------------------
+- A Function is one of the fundamental building blocks in JavaScript
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions)
+
+
+- When a function is stored as a value of an Object's property
+    - The property (where the function stored as value) is now referred as a "Method"
+    - It is nothing else but a Function attached to an Object
+
+    Example:
+    const person = {
+        name: "Max",
+        greet: function greet() {
+            console.log("Hello there");
+        }
+    };
+
+    - To execute an Object's Method
+        - Declare the Object name 
+        - Followed by a "."
+        - Then the Method name w/ a pair of "( )"
+
+        <object_name>.<property_name>();
+
+    Exanple:
+    person.greet(); // Calls the "person" object's "greet()" method
+
+
+- In the starting code
+    - The constant "startGameBtn" is assigned w/ an object named "document"
+        - NOTE: The "document" object provides access
+            - To the elements of the HTML document 
+            - Where the JavaScript file is attached to
+
+    - Attach the method ".getElementById()" to the "document" object
+        - NOTE: The method targets a specific HTML element
+            - By the assigned value of its HTML attribute "id"
+
+    - Define a normal function named "startGame()"
+        - Calls "console.log()"
+        - Passing the string "Game is starting..." as argument value
+
+    - Define an Event handler
+        - Declare the object "startGameBtn"
+            - NOTE: The same constant assigned w/ the "document" object
+
+        - Attach the method ".addEventListener()" to the object "startGameBtn"
+            - Requires two (2) argument values
+                - 1st argument: Event to listen to
+                - 2nd argument: Callback function w/o the pair of "( )"
+
+            - Pass the argument values
+                - 1st argument: "click"
+                - 2nd argument: "startGame"
+
+        startGameBtn. addEventListener("click", startGame);
+    
+    - Save the changes
+
+    - Load / reload the browser
+        - Launch the Chrome Dev Tools
+
+        - Click the button "Start Game!"
+
+        - The message "Game is starting..." is prompted
+            - On the browser's "Console" tab
