@@ -1,0 +1,42 @@
+Anonymous Functions
+-------------------
+- An Anonymous function is a function w/o a name
+
+- Common use case
+    - In a Function Expression
+        - Anonymous function referenced by the name of the constant or variable
+
+    - In-place callback function of an Event Listener
+        - Defines an Anonymous function as an in-place callback function
+
+        - Instead of defining a callback function as Function expression
+            - Referencing the constant or variable name
+
+        - This approach is preferred when
+            - There is NO other place w/in the codebase
+                - To call the Anonymous function again
+                - e.g. Executes when an Event occurs
+
+        - Reduce the change of a memory leak due to an unreferenced object
+            - As it is defined in-place w/in the Even Listener
+            - NOTE: A function is a (special) object
+
+
+- Why assign a name to an Anonymous function
+    - When an error occurred w/in an Anonymous function
+        - The browser is unable to provide the function name that triggered it
+        - However, BOTH filename & line number where it occurred are provided
+
+        Example:
+        Uncaught ReferenceError: <variable> is not defined at HTMLButtonElement.<anonymous>
+
+    - With a named Anonymous function
+        - The browser provides a 'hint' by mentioning the function name
+
+        Example:
+        Uncaught ReferenceError: <variable> is not defined at HTMLButtonElement.startGame
+
+    - NOTE: Providing a name to an Anonymous function
+        - Quite helpful when debugging code 
+        - But NOT necessary since BOTH the filename & line number 
+            - Where the error occurred are provided
