@@ -1,0 +1,36 @@
+Recapping Functions: What We Know Thus Far
+------------------------------------------
+- A quick recap on functions
+    - A function is a construct that defines "code on demand"
+
+
+- When the browser's JavaScript Engine reads a JavaScript file
+    - It goes through the entire code from top to bottom
+
+    - Finds & then registers ALL declared functions
+        - Grants the ability to be called & executed as often as needed
+        - Called from anywhere in the codebase
+
+    - Then starts executing the code line-by-line
+
+
+- The constants and/or variables declared w/in a function
+    - Belongs to that function ONLY (i.e. Block Scope)
+
+
+- A function can
+    - Optionally take parameters (arguments) & return a value
+    
+    - Be called directly
+        - By its function name followed by a pair of "( )"
+        - This IMMEDIATELY EXECUTES the function
+
+    - Be called indirectly
+        - Attaching the function name to another function
+            - Without the suceeding pair of "( )"
+            - (e.g. event handler functions)
+            - This PREVENTS the IMMEDIATE EXECUTION of the function
+        
+        - It ONLY EXECUTES when
+            - The other function where it is called from gets executed
+            - The corresponding Event is triggered
