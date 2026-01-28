@@ -1,0 +1,39 @@
+Function Expressions VS Function Declarations
+---------------------------------------------
+- A Function declaration (or statement)
+    - Hoists the function to the top of the codebase
+    
+    - Initializes (or defines) the function
+
+    - The function can be called anywhere in the codebase
+        - Even PRIOR its declaration
+
+    Syntax:
+    function <name>(<parameter>, ...) {
+        // statement
+    }
+
+
+- A Function expression
+    - Hoists the function to the top of the codebase
+        - But it is NOT initialized (or defined)
+        
+        - The constant or variable name that is actually hoisted
+            - But its current assigned value is "undefined"
+    
+    - The constant or variable name can NOT be referenced PRIOR
+        - To the assignment of the function expression
+        - Doing so, triggers an "Uncaught ReferenceError"
+
+    - Offers a cleaner coding styles
+        - Forces to define a function BEFORE using it
+
+    Syntax:
+    let <variable_name> = function (<parameter>, ...) {
+        // statement
+    };
+
+    const <constant_name> = function (<parameter>, ...) {
+        // statement
+    };
+
