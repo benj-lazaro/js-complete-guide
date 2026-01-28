@@ -1,0 +1,16 @@
+Functions Are Objects
+---------------------
+- A Function is a special type of an Object
+    - It comes with pre-configured properties
+    - Typically stored in the Heap
+    - Like an Object, it is a Reference type value
+
+
+- To prove that Function is an Object
+    - Define a function
+
+    - Pass the function name w/o the pair of "( )"
+        - As an argument value to "console.dir()"
+
+    - Returns a list of key-value pairs (i.e. properties)
+        - Similar to that of an Object 
