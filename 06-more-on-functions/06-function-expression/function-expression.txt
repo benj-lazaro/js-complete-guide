@@ -1,0 +1,43 @@
+Function Expression: Storing Functions In Variables
+---------------------------------------------------
+- The keyword "function"
+    - Can also be used to define a Function w/in an expression
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/function)
+
+
+- A function expression refers to
+    - The assignment of a Function object to a constant or variable 
+
+    - Doing so, the Function object losses its Global Scope coverage
+        - Making it a Local Scope w/in the constant or variable
+
+        - Attempt to access by its name directly
+            - Triggers an "Uncaught ReferenceError: <function> not defined"
+
+    - The name of the Function object is (typically) OMITTED
+        - Making it an "Anonymous Function"
+            - As it can NOT be referenced anymore by its name
+        
+        - Accessed ONLY by referencing the constant or variable name 
+            - It is assigned (or belongs) to
+
+
+- In the starting code
+    - Declare a constant named "start"
+        - Assign an Anonymous function as value
+        - NOTE: This is referred as a "Function expression"
+
+    - The Anonymous function
+        - Passes the string "Game is starting..." as argument value
+            - To the "console.log()"
+
+    - Delete the function "startGame()"
+
+    - In the Event handler for the object "startGameBtn"
+        - Refactor the callback function "startGame" to "start"
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Click the "Start Game!" button
+        - It should work as it was prior to the refactor of its code
