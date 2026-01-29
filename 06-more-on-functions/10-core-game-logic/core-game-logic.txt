@@ -1,0 +1,58 @@
+Implementing The Core Game Logic
+--------------------------------
+- Implement the logic that 
+    - Allows the opponent computer to make its choice
+
+    - Use the method ".random()" of the object "Math"
+        - Returns a floating-point value between 0 & 1 (i.e. 0.99 to be exact)
+        - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+
+    - The returned value & their corresponding "choice"
+        - 0 to 0.33     = ROCK
+        - 0.34 to 0.67  = PAPER
+        - 0.67 to 0.99  = SCISSORS
+    
+    - Implement the logic to determine who wins the current round
+
+
+- On the starter code (app.js)
+    - Define the new global constants & their corresponding string values
+        - RESULT_DRAW           = "DRAW"
+        - RESULT_PLAYER_WINS    = "PLAYER"
+        - RESULT_COMPUTER_WINS  = "COMPUTER"
+
+    - Define an anonymous function
+        - Save it to the local constant named "getComputerChoice"
+
+        - Use "Math.random()"
+            - To randomly choose a choice for the computer
+            - Save the return value to the local constant named "randomValue"
+
+        - Declare an "if" statement that
+            - Assign the returned value to a specific choice for the computer
+
+    - Define another anonymous function
+        - Save it to the local constant named "getWinner"
+
+        - It accepts two argument values
+            - 1st   = computer's choice
+            - 2nd   = player's choice
+
+        - Declare an "if" statement that
+            - Detemrines who wins the current round
+
+    - On the anonymous function of the Event handler
+        - Call the function "getComputerChoice()"
+            - Save the returned value to the local constant "computerSelection"
+
+        - Call the function "getWinner()"
+            - Save the returned value to the local constant "winner"
+
+        - Call "console.log()"
+            - Pass the constant "winner" as argument value
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Test the Game
+        - NOTE: Reload the page in order to play another round
