@@ -46,6 +46,7 @@ Implementing The Core Game Logic
             - Save the returned value to the local constant "computerSelection"
 
         - Call the function "getWinner()"
+            - Pass the local constants "playerSelection" & "computerSelection" as argument values
             - Save the returned value to the local constant "winner"
 
         - Call "console.log()"
