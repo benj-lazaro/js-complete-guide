@@ -1,0 +1,66 @@
+Working On The Project: Adding User Choices To The Game
+-------------------------------------------------------
+- On the starter project "rock, paper & scissors"
+    - Implement the option for a user to choose
+        - Automatically convert the provided choice in uppercase
+
+    - Defaults to the choice of "ROCK"
+        - If the user does NOT provide a proper choice
+
+    - Computer makes its own choice
+
+    - Declare who won (i.e. computer or user)
+        - On the browser's "console" tab
+
+
+- On the starter code (app.js)
+    - Define the following global constants & their corresponding string values
+        - ROCK                  = "ROCK"
+        - PAPER                 = "PAPER"
+        - SCISSORS              = "SCISSORS"
+        - DEFAULT_USER_CHOICE   = ROCK
+
+    - Define a global variable named "gameIsRunning"
+        - Assign a boolean value of "false"
+
+    - Define a function named "getPlayerChoice()"
+        - Accepts a player's choice of rock, paper or scissors
+        
+        - Use the Method ".toUpperCase()"
+            - Automatically converts a user's valid input to uppercase
+
+        - Define an "if" statement
+            - To check if the user's input is valid
+            - Otherwise, assign the selection of "rock" as the user's input
+
+        - Return the user's selection
+
+
+    - On the Event handler's anonymous function
+        - Define an "if" statement
+            - Check if the global variable "gameIsRunning" is truthy
+            - If it is then return immediately
+            - NOTE: This prevents from restarting the game
+
+        - On the next line of code
+            - Assign the boolean value of "true" to the global variable "gameIsRunning"
+
+        - On the line after the "console.log()"
+            - Define a local constant named "playerSelection"
+            
+            - Call the function "getPlayerChoice()
+                - Assign the returned value to this constant
+
+        - Call the "console.log()"
+            - Pass the constant "playerSelection" as argument value
+    
+    - Save the changes
+
+    - Load / reload the browser
+        - Launch the browser's Chrome Dev Tools
+
+        - Click the tab "Console"
+
+        - Click the button "Start Game!"
+            - Provide a correct choice
+            - Provide an incorrect choice
