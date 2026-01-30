@@ -1,0 +1,43 @@
+Different Arrow Function Syntaxes
+---------------------------------
+- A summary of different Arrow function syntaxes
+    - Default syntax
+        - Drop the "function" keyword
+        - A pair of "()" around parameter variables
+        - A ";" at the end
+
+        const <name> = (<parameter_1>, ...) => {
+            // statement
+            return <value>;
+        };
+
+
+    - Shorter parameter syntax w/ ONLY 1 (one) parameter variable
+
+        const <name> = <parameter> => {
+            // statement
+            return <value>;
+        };
+
+
+    - EMPTY parameter, NO argument value received
+
+        const <name> = () => {
+            // statement
+            return <value>;
+        };    
+        
+
+    - One expression i used
+        - Drop the pair of "{ }"
+        - Drop the "return" statement
+
+        const <name> = (<parameter_1>, ...) => <expression>;
+
+
+    - Shorter parameter syntax w/ ONLY 1 (one) parameter variable & returns an object
+        - Place an extra pair of "( )" around the object
+            - Avoids the object's "{ }" being misinterpreted as the function body's delimeters
+        
+        const <name> = <parameter> => (<{object}>);
+        
