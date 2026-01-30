@@ -1,0 +1,58 @@
+Introducting Arrow Functions
+----------------------------
+- An Arrow function
+    - A shorter alternative syntax when working w/ an Anonymous function
+        - Drops the keyword "function"
+
+        - Uses a pair of "()" to house parameter variable(s)
+            - NOTE: Optionally drop the pair of "( )" if it has one (1) parameter variable
+
+        - Uses an arrow "=>" that 
+            - Points to the body of the function
+
+        - Uses a pair of "{ }" to contain its body
+
+        - A "return" statement is required to EXPLICITLY RETURN a value
+
+    - If the Anonymous function has ONLY a single-line expression
+        - Drop the pair of "{ }"
+        - Drop the "return" statement as it ALWAYS IMPLICTLY RETURNS a value
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
+
+
+    Syntax:
+    (<parameter_1>, ...) => {                           // General syntax
+        // statement_1;
+        // statement_2;
+        return <value>;
+    }
+
+    () => {                                             // NO arguments w/ multiple statements
+        // statement_1;
+        // statement_2;
+        return <value>;
+    }
+
+    () => <single-line_expression>;                     // NO arguments & a single-line expression
+
+    (<parameter>) => <expression>;                      // One (1) parameter & a single-line expression
+
+    <parameter> => <expression>;                        // One (1) parameter & a single-line expression alternative
+
+    (<parameter_1, ...>) => <expression>;               // Multiple arguments & a single-line expression
+
+
+- On the starter code (app.js)
+    - Convert the Anonymous function stored in the constant "getWinner"
+        - Into an Arrow function w/ a single-line ternary expression
+
+    - Convert the Anonymous functions stored in the following constants:
+        - "getPlayerChoice"
+        - "getComputerChoice"
+        - Defined in-place Anonymous function of the Event handler for the object "startGameBtn"
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Test if the game operates normally
