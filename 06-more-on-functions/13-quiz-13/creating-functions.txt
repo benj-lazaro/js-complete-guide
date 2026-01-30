@@ -1,0 +1,13 @@
+Quiz 13: Creating Functions
+---------------------------
+- What's the difference between a function declaration and function expression?
+    - Answer: Function expression produces a value (a function object) w/c needs to be stored somewhere manually
+
+
+- What's an advantage of arrow functions?
+    - Answer: (Much) shorter syntax
+
+
+- What's an anonymous function?
+    - Answer: A function w/o a name assigned
+
