@@ -1,0 +1,26 @@
+Outputting Messages To The User
+-------------------------------
+- Implement the logic that outputs a message to the user
+
+
+- On the starter code (app.js)
+    - On the in-place Anonymous function for the Event Handler of the object "startGameBtn"
+
+    - Define a local variable named "message"
+        - Assign a literal string value
+
+            `You picked ${playerChoice}, computer picked ${computerChoice}, therefore you `
+    
+    - Declare an "if" statement
+        - To determine who wins & customize the literal string value
+
+    - Use the function "alert()"
+        - To display the message
+
+    - Set the global variable "gameIsRunning" to the boolean value of "false"
+        - To allow the "Start Game!" button to be clicked & start a new round
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Test the implemented feature
