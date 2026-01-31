@@ -1,0 +1,87 @@
+Introducing Rest Parameters (Rest Operator)
+-------------------------------------------
+- The Rest operator (...) allows a function to
+    - Accept an indefinite amount of argument values in the form of an array
+
+    - It is similar to that of the Spread operator (...)
+        - EXCEPT it takes all argument values & merges them into an array
+    
+    - The "..." operator prefixes a parameter variable
+        
+    - The "..." operator MUST be positioned as the last formal parameter
+        - Otherwise, triggers an "Uncaught SyntaxError: Rest parameter must be last formal parameter"
+
+    - NOTE: ONLY one (1) Rest parameter is ALLOWED
+        - The 1st Rest parameter alone merges ALL argument values together in an array
+        - Leaving NO room for a 2nd Rest parameter
+
+    Syntax:
+    function <name>(<parameter>, ...<parameter_name>) {
+        // statement
+    }
+
+    const <name> = (<parameter>, ...<parameter_name>) => {
+        // statement
+    }
+
+
+- An alternative to "..." operator
+    - But ONLY works on a function declaration that
+        - Uses the keyword "function" & w/o a defined parameter variable
+
+    - JavaScript offers an special "invisible" parameter variable named "arguments"
+        - This was available BEFORE the "..." operator was introduced in ES6
+
+    - The "arguments" operator like that of the "..."
+        - It takes all argument values & merges them into an array-like object
+
+    - NOTE: Does NOT work on Arrow functions due to the absence of the keyword "function"
+        - Using the "..." operator is RECOMMENDED over "arguments"
+
+
+- On the starter code (app.js)
+    - The implemented code is NOT related to the game
+
+    - Define a global constant named "sumUp"
+        - Assign an Arrow function
+            - Use the "..." operator w/ the parameter variable named "numbers"
+
+    - Inside the Arrow function
+        - Declare a local variable named "sum"
+            - Assign the initial value of 0
+
+        - Declare a "for..of" loop
+            - Add each argument value passed to the value stored in the local variable "sum"
+
+        - Declare a "return" statement
+            - To return the stored value in the local variable "sum"
+
+    - Call the "console.log()"
+        - Pass the Arrow function stored in the global constant "sumUp" as argument value
+    
+
+    - Define another global constant named "subtractUp"
+        - Assign a function expression that uses the keyword "function" 
+            - It has NO declared parameter variable
+
+        - Inside the function
+            - Declare a local variable named "difference"
+                - Assign the initial value of 0
+
+        - Declare a "for.. of" loop
+            - Uses the keyword "arguments" as the iterable object
+            - Subtract each argument value passed to the value stored in the local variable "difference"
+        
+        - Declare a "return" statement
+            - To return the stored value in the local variable "difference"
+
+    - Call the "console.log()"
+        - Pass the function stored in the global constant "subtractUp" as argument value 
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Launch the Chrome Dev Tools
+
+        - Click the tab "Console"
+            - To view the results
