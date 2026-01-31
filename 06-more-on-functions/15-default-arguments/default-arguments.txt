@@ -1,0 +1,75 @@
+Default Arguments In Functions
+------------------------------
+- A parameter variable in a function that received NO argument value
+    - Defaults to the value of "undefined"
+
+    - JavaScript allows for a parameter variable to be initialized w/ a default value
+
+    - To initialize a default value to a parameter variable
+        - Use the operator "="
+        - Followed by the default value
+
+    - Best practice to position the parameter variable w/ an initialized default value
+        - At the last position of the parameter field
+
+    - NOTE: ONLY applies to a parameter variable w/ an argument value of "undefined"
+        - Any other argument value (including a falsy one) will be NOT be replaced w/ a default value     
+
+    - When initializing a default value to parameter variable
+        - The parameter variable(s) that came before can be used in a ternary expression that
+            - Evaluates the default value that will be assigned
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters)
+
+
+    Syntax:
+    function <name>(<parameter>, ..., <parameter>=<default_value>) {
+        // statement
+    }
+
+    const <name> = (<parameter>, ..., <parameter>=<default_value>) => {
+        // statement
+    }
+
+
+- On the starter code (app.js)
+    - On the Anonymous function in the global constant "getPlayerChoice"
+        - Refactor remove the "DEFAULT_USER_CHOICE" from the "return" statement
+        
+        - Leave the "return" keyword
+            - To stops the execution of the Anonymous function
+            - When the user provided an invalid or NO value
+            - Effectively returns an "undefined" value
+
+    - On the in-place Anonymous function for the Event Handler of the object "startGameBtn"
+        Declare a local variable named "winner"
+            - Leave it as undefined
+
+        - Declare an "if" statement
+            - If the local constant "playerChoice" is set (or has a truthy value)
+
+            - Move the declaration of the constant "winner" w/in the "if" statement
+                - Remove the "const" keyword
+                - Copy the entire statement
+
+            - On the "else" clause
+                - Past the copied statement
+
+                - Refactor the argument values passed
+                    - Pass ONLY the argument value stored in the local constant "computerChoice"
+
+    - On the global constant "getWinner"
+        - Assign the default value of "DEFAULT_USER_CHOICE" on the parameter variable "pChoice"
+
+    
+    - Switch back to the in-place Anonymous function for the Event Handler of the object "startGameBtn"
+        - On the local variable "message"
+
+        - Refactor the string literal template ${playerChoice} into
+            - A logical OR expression between a user's choice or the "DEFAULT_USER_CHOICE" value
+    
+    - Save the changes
+
+    - Load / reload the browser
+        - Test by intentionally provided an invalid or NO value
+        - The game should run normally as it did prior to the refactor of its code         
