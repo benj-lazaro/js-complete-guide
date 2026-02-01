@@ -1,0 +1,38 @@
+Functions In Functions
+----------------------
+- JavaScript allows creating a function inside a function
+    - The inner function will
+        - ONLY be available w/in the outer function (i.e. Local Scope)
+        - Inaccessible globally
+
+
+- On the starter code (app.js)
+    - NOTE: The implemented code is NOT related to the game
+
+    - On the Arrow function stored in the global constant "sumUp"
+        - Create a new Arrow function & save it w/in a local constant named "validateNumber"
+            - Declare a single parameter variable named "number"
+
+        - Inside the arrow function
+            - Declare a "return" statement
+
+            - Followed by a ternary operator
+                - Use the function "isNaN()"
+                    - Pass the parameter variable "number" as argument
+
+                - If the argument value in "number" is NOT a number
+                    - Return w/ the value of 0
+                    - Otherwise, return the argument value stored in the parameter variable "number"
+                    
+        - On the outer function
+            - W/in the body of the "for..of" loop
+                - Call the Arrow function w/in "validateNumber"
+                - Pass the local constant "number" as argument value
+
+        - On the test value
+            - Deliberately provide a non-number value on the parameter list of "sumUp"
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Test the implemented changes
