@@ -1,0 +1,58 @@
+Understanding Callback Functions
+--------------------------------
+- A Callback Function is a function
+    - Passed as an argument value (pointer) to another function
+        - Invoked w/in a function to complete an 
+
+     - Reference (https://developer.mozilla.org/en-US/docs/Glossary/Callback_function)
+
+
+- An event listener Callback Function
+    - Created in-place at another function's parameter field OR stored in a constant
+
+    - It is NEVER executed directly like that of a normal function
+        - Rather invokved by an Event (e.g. click) at some point in the future
+
+
+- On the starter code (app.js)
+    - NOTE: The implemented code is NOT related to the game
+
+    - On global constant "sumUp"
+        - Add a parameter variable named "resultHandler" as the 1st parameter
+            - This stores the Callback Function passed as an argument value
+
+        - Inside the Anonymous function
+            - Refactor the "returm" statement that return the value of the local variable "sum"
+            
+            - Replace it by executing the Callback Function stored in the parameter variable "resultHandler"
+                - Pass the local variable "sum" as argument value
+                - NOTE: Include the pair of "( )" to execute the stored function
+
+    - Outside the Anonymous function store in the global constant "sumUp"
+        - Create a global constant named "showResult"
+
+        - Assign an Anonymous function w/ the parameter variable named "result"
+
+        - Inside the Anonymous function
+            - Call the function "alert()"
+            - Pass a string value w/ the value stored in the parameter variable "result"
+
+    - Refactor the "console.log()" statements that
+        - Call the Anonymous function stored in the global constant "sumUp"
+
+        - Call the Anonymous function directly
+            - Adding the pair of "( )" suffix
+
+            - Pass the Anonymous function stored in the global constant "showResult" 
+                - As the 1st argument value
+                - Followed by previous argument values
+
+            - This efffectively pass the function as argument value that
+                - Will be executed w/n the Anonymous function of the global constant "sumUp"
+    
+    - Save the changes
+
+    - Load / reload the browser
+        - Launch Chrome Dev Tools
+        - Click the tab "Console"
+        - Test implemented changes  
