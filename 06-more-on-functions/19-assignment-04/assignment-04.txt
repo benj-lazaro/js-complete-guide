@@ -1,0 +1,23 @@
+Assignment 04: Time To Practice Functions
+-----------------------------------------
+- Re-write the gunction named "sayHello" as an Arrow Functions
+
+- Adjust the Arrow function to use three (3) different syntaxes
+    - W/ two (2) arguments
+        - Including a phrase that replaces "Hi"
+    
+    - W/ NO arguments
+        - Hard-coded values in the function body
+
+    - W/ returned value
+        - Instead of outputting text inside of the function directly
+
+
+- Add a default argument to the function
+    - A fallback value for the phrase when NO argument value provided
+
+
+- Add a new function named "checkInput"
+    - Takes an unlimited amount of arguments (string)
+    - Executes a callback function if NO passed argument value is an empty
+
