@@ -1,0 +1,65 @@
+Working With ".bind()"
+----------------------
+- The method ".bind()" of the "function" object that
+    - Creates a new function w/ pre-configured argument value(s)
+    
+    - It takes at least two (2) argument values
+        - 1st = A value referred by the keyword "this" (NOTE: ignore for now)
+        - 2nd = 1st parameter variable to be configured; can accept an infinite number of succeeding parameters
+
+        - NOTE: The order of the parameter variable(s)
+            - Are expected to be received in the same order 
+                - As the same order of the function's parameter fields it is "bind" to
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind)
+
+    Syntax:
+    <function>.bind(this, "argument_1", ...);
+
+
+- On the starter code (app.js)
+    - NOTE: The implemented code is NOT related to the game
+
+    - Refactor the Anonymous function stored in the global constant "sumUp"
+        - Rename "sumUp" to "combine"
+
+        - Add a new parameter variable named "operation"
+            - Right AFTER the parameter variable "resultHandler"
+
+        - On the "for..of" loop
+            - Declare an "if" statement that
+                - Checks the value of the parameter variable "operation"
+
+                - If the value is "ADD"
+                    - Execute the following statement:
+
+                    sum += validateNumber(number);
+
+                - Otherwise
+
+                    sum -= validateNumber(number);
+
+    - Refactor the Anonymous function stored in the global constant "showResult"
+        - Add a new parameter variable named "messageText"
+            - Right BEFORE the parameter variable "result"
+
+        - Refactor the string argument value passed to "alert()"
+
+    - Delete the global constant "subtractUp"
+
+    - Call the Anonymous function stored in the global constant "combine"
+        - Pass the Callback function stored in the global constant "showResult" as the 1st argument value
+            - Attach the method ".bind()"
+                - Pass the argument values
+                    - 1st   = "this"
+                    - 2nd   = string value
+            
+        - Pass the string value "ADD" to corresponding to 
+            - The Anonymous function's parameter variable "operation" stored in the global constant "combine"
+
+        - Pass the rest of the number argument values
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Test implemented changes
