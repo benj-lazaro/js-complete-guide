@@ -1,0 +1,20 @@
+Quiz 14: Functions Advanced
+---------------------------
+- What could be a benefit of default function arguments/ parameters?
+    - Answer: The function can be called w/ less (or w/o any) arguments
+
+
+- What does the "Rest Parameter" in the following code snippet do?
+
+    function add(startingValue, ...values) {
+        let sum = startingValue;
+        // ... other code ...
+    }
+
+    - Answer: It bundles all arguments beyond the 1st argument into an array, accessible via "values" parameter
+
+
+- When might bind() come in handy?
+    - Answer: In situations where you want to "pre-configure" a function's arguments
+        - When you're not calling the function on your own
+
