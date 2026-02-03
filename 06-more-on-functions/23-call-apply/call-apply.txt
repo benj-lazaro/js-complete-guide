@@ -1,0 +1,17 @@
+.call() & .apply()
+------------------
+- When researching about the function method ".bind()"
+    - The methods ".call()" & ".apply()" will likely be mentioned
+
+    - BOTH methods
+        - Allow to specify the argument value(s) 
+            - Passed into the respective function object's parameter field
+
+        - IMMEDIATELY executes the corresponding function object
+            - The method ".bind()" does NOT
+        
+        - NOTE: The method ".bind()" is used MOST OFTEN than either of these two methods
+
+    - These methods will be further explored in the later sections
+        - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call)
+        - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply)
