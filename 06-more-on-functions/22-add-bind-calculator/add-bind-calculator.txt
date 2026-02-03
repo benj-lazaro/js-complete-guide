@@ -1,0 +1,48 @@
+Adding .bind() To The Calculator Project
+----------------------------------------
+- Implementing the method ".bind()" to an earlier starter project (i.e. Calculator)
+    - Merging the declared functions earlier 
+        - Into a single function named "calculation()"
+
+    - Using the method ".bind()"
+        - To pass specific arguments values in order to execute specifc mathematical opearation
+
+
+- On the starter project (app.js)
+    - Declare a new function named "calculation()"
+        - Declare a new parameter variable named "opearation"
+
+    - Inside the function "calculation()"
+        - Copy & paste the declaration of local constants "enteredNumber" & "initialResult"
+            - From the function "add()"
+
+        - Declare a local variable named "operator"
+            - Leave the local variable undefined
+
+        - Declare an "if" statement
+            - Check the argument value of the parameter variable "operation"
+
+            - Copy &p aste the line that stores the evaluated value from the expression
+                - Between the global variable "currentResult" & local constant "enteredNumber"
+                - From their respective functions (e.g. "add()", "subtract()", "multiply()" & "divide()")
+
+            - Assign the respective mathematical operator (i.e. +, -, *, /)
+                - To the local variable "operator"
+
+        - Copy & paste the calls to the functions "createAndWriteOutput()" & "writeToLog()"
+
+    - Delete previous declared functions (e.g. "add()", "subtract()", "multiply()" & "divide()")
+
+    - On the Event handlers
+        - Replace the respective Callback Function with "calculate"
+            - Attach the method ".bind()"
+
+            - Pass the respective argument values to corresponding objects (e.g. "addBtn", "subtractBtn", "multipleBtn", "divideBtn")
+                - 1st = "this"
+                - 2nd = "ADD", "SUBTRACT", "MULTIPLY", "DIVIDE"
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Test implemented changes
+
