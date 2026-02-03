@@ -1,0 +1,8 @@
+Module Introduction
+-------------------
+- This section focuses on:
+    - HTML, DOM (Document Object Model) & JavaScript
+    - DOM node & elements
+    - Query DOM nodes & traversing the DOM
+    - Evaluating & manipulating DOM nodes
+    - Creating & removing DOM Nodes
