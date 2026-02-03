@@ -1,0 +1,39 @@
+What's The DOM?
+---------------
+- The Document Object Model (DOM)
+    - The browser loads a HTML document
+        - Parses the HTML code from top to bottom
+        - Simultaneously render the elements & content 
+        - Executes JavaScript code
+
+    - Refers to the object representation of the HTML document loaded in & parsed by the browser
+        - Offer access & interaction w/ the parsed HTML document via APIs
+        - Work w/ the HTML document's structure, style or content
+
+    - The DOM represents a document w/ a logical tree wherein
+        - Each branch ends in a Node
+        - Each Node contains an object
+
+    - It is NOT strictly tied to browsers
+        - There are other tools that can parse & work w/ the HTML document
+        - NOT restricted to JavaScript
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
+
+
+- The DOM has two (2) important built-in objects
+    - The global object "document" is referred as the "Root DOM Node"
+        - Provide access to & ability to interact w/ elements of the parsed HTML document
+
+        - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Document)
+
+
+    - The global object "window" is referred as the "active browser window" (or tab)
+        - The top-most global object made available by the browser            
+            - It features a property named "document"
+
+        - It represents the active browser window in which JavaScript is running
+            - Acts as a global entry-point or storage for the script
+            - Provide access to window-specific properties & methods
+
+        - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Window)
