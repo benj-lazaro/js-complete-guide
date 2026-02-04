@@ -1,0 +1,39 @@
+document & window Object
+------------------------
+- The "document" object
+    - Returns an object that contains
+        - The representation of the document's HTML code
+
+    - To list the object's properties
+        - Pass the "document" object as argument value to "console.dir()"
+        - It returns a list of READ-ONLY properties
+
+    - The property "body" of the object "document"
+        - Grants access to the HTML element <body> & its rendered contents
+
+    - The property "documentElement"
+        - Grants access to the entire HTML code (e.g. element <html>)
+
+    - The property "head"
+        - Grants access to the HTML element <head>, its child elements & content
+
+- The "window" object
+    - Returns access properties & ALL core APIs of the browser
+
+    - It refers to the active browser window (tab) 
+        - Where JavaScript is currently running
+    
+    - By default, when calling a function (method) w/o an identified object
+        - The browser will first look into the "window" object
+
+        - Execute the method if found w/o requiring "window" as prefix
+            - (e.g. "alert()" instead of "window.alert()")
+    
+        - NOTE: The "document" object is part of the "window" object
+            - (e.g. "document" instead of "window.document")
+
+    - Properties "outerHeight" & "outerWidth"
+        - Refers to the dimension of the current browser window (or tab) w/c the app is running
+            - Does NOT provide access the properties of another browser window
+
+    
