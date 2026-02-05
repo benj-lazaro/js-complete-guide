@@ -1,0 +1,53 @@
+Nodes & Elements: Querying The DOM Overview
+-------------------------------------------
+- To query for a single Element node in the DOM (rendered HTML document)
+    - Method ".querySelector()"
+        - Accepts CSS selector as argument value
+        - Returns the 1st Element node w/ the matching selector (or group of selectors)
+            - Otherwise, returns a "null"
+
+        - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector)
+
+
+    - Method ".getElementById()"
+        - Accepts a value assigned to the HTML attribute "id" as argument value
+        - Returns the Element node w/ the matching attribute "id" value
+            - Otherwise, returns a "null"
+
+        - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById)
+
+
+- To query for multiple Element nodes in the DOM
+    - Method ".querySelectorAll()"
+        - Accepts CSS selector, tag name as argument value
+        - Returns a STATIC NodeList (array-like object) of ALL matching Element nodes
+            - Otherwise, returns an empty NodeList
+
+        - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll)
+
+
+    - Method ".getElementsByTagName()"
+        - Accepts HTML tag name as argument value
+        - Returns a LIVE HTMLCollection (array-like object) of ALL matching Element nodes
+            - Otherwise, returns an empty HTMLCollection
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/getElementsByTagName)
+
+
+- The difference between Elements & Nodes
+    - A Node is an object that make up the DOM
+        - Everything w/in the DOM is a Node
+            - Element node      = HTML element (tag)
+            - Text node         = text content
+            - Attribute node    = HTML element attribute
+
+    - An Element is a type of Node (i.e. ELement node)
+        - It is an object created from a rendered HTML element (tag)
+            - The text content is NOT included
+        
+        - Comes w/ properties & methods that interacts w/ the Element node
+            - Change the Element node's style, content & so on
+
+        - Each Element node has its own specific properties & methods
+
+        - With JavaScript, there are several ways of selecting, creating or removing Element nodes
