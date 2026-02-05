@@ -1,0 +1,33 @@
+Understanding The DOM
+---------------------
+- When the browser parse through an HTML document
+    - It creates an object representation of each HTML element & corresponding content
+
+    - The browser
+        - Does NOT work w/ the actual HTML code
+            - Rather w/ created objects (i.e. Nodes) that are stored in memory
+            - e.g. HTML element <head> = Element Node "HEAD"
+        
+        - Organizes the Nodes into a tree-like structure
+            - Mirroring the structure of the parsed HTML code
+            - Keeps track of parent-child relations between different elements
+
+    - Two (2) commonly used Nodes in the DOM
+        - Element Node  = HTML element
+        - Text Node     = Content including the un-rendered whitespace character that preceeds a Text Node
+
+
+- Load the starter project (index.html) on the browser
+    - Launch the Chrome Dev Tools (CTRL + SHIFT + I)
+        - Click the tab "Console"
+
+    - Typing "$0" on the tab "Console"
+        - Refers to the last clicked or selected element in the tab "Elements"
+            - Returns the corresponding HTML element (or Element Node)
+
+        - NOTE: It is a browser (NOT JavaScript) feature that 
+            - Makes it easier to select rendered HTML elements
+
+        - Passing "$0" as an argument value to "console.dir()"
+            - Returns the properties of the selected Element Node
+
