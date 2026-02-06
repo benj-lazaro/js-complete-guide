@@ -1,0 +1,20 @@
+Coding Exercise 09: Selecting Elements In The DOM
+-------------------------------------------------
+- Your task
+    - To select & store three (3) DOM elements in the pre-defined variables:
+        - mainHeading
+        - secondAdvantage
+        - advDiv
+
+    - The variables
+        - mainHeading
+            - Should store the HTML element <h1>
+
+        - secondAdvantage
+            - Should store the second HTML element <li>
+
+        - advDiv
+            - Should store the HTML element <div> w/ the "id" value of "advantages"
+
+    - Use the DOM selection tools previous learned to
+        - Access targeted elements & stored them accordingly to their respective variables
