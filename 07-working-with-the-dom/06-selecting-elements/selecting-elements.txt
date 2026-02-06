@@ -1,0 +1,88 @@
+Selecting Elements In The DOM
+-----------------------------
+- The selection method ".getElementById()"
+    - The ONLY method that returns a matching Element node based on the targeted HTML attribute "id"
+
+
+- The selection method ".getElementByClassName()"
+    - Returns a single or collection of Element nodes that matches the targeted HTML attribute "class"
+    - The collection of nodes are stored as elements of a live "HTMLCollection"
+
+
+- The selection methods ".querySelector()" & ".querySelectorAll()"
+    - The method ".querySelector()"
+        - Returns the 1st matching Element node based on the targeted CSS selector
+
+    - The method ".querySelectorAll()"
+        - Returns a collection of matching Element nodes based on the targeted CSS selector
+        - Stored as elements of a static "NodeList"
+    
+    - Best use case:
+        - Event listeners
+        - Manipulating Element nodes
+
+
+- NOTE: ALL of the selection methods are NOT strictly tied to the "document" object
+    - They can be used on the returned Element node(s) itself
+        - To search for Element node(s) from its own child Element node(s)
+
+
+- NOTE: To view the attached properties & methods of the returned Element node
+    - Pass it as an argument value to "console.dir()"
+
+
+- NOTE: The live "HTMLCollection" & static "NodeList" are array-like data structures
+    - Can access their respective elements by their index values
+
+    - Use either a "for" or "for..of" loops 
+        - To iterate through their elements
+
+
+- IMPORTANT: Properly import the external JavaScript file into a HTML document
+    - To make sure that ALL element of the document have been parsed by the browser
+
+    - Placing the HTML element <script> as child of the HTML element <head>
+        - Requires the HTML attribute "defer"
+            - Instructs the browser to download the JavaScript file
+            - Execute it ONLY when the entire HTML document has been completely parsed
+
+    - Placing the HTML element <script> as the last child of the HTML element <body>
+        - Does NOT require the HTML attribute "defer"
+
+    - Either of the two HTML element <script> placement area will suffice
+        - Solely left to the developer's choice
+
+
+- On the starter project (app.js)
+    - Use the selection method ".getElementById()"
+        - To find & select an Element node from the "document" w/ an HTML attribute "id" value of "main-title"
+            - Pass the method as an argument value to "console.log()"
+    
+        - To view the attached properties & methods of the returned Element node
+            - Save the returned Element node to a constant
+            - Pass the constant as argument value to "console.dir()"
+
+    - Use the selection method ".getElementByClassName()"
+        - To find & select an Element node from the "document" w/ an HTML attribute "class" value of "list-item"
+            - Pass the method as an argument value to "console.log()"        
+    
+    - Use the selection method ".querySelector()"
+        - To find & select an Element node from the "document" based on the passed CSS selector as argument value
+            - Look for an Element node w/ a CSS class selector ".list-item"
+            - Pass the method as an argument value to "console.log()"
+
+        - To find & select the 1st child Element node of the HTML element <ul>
+            - Use CSS element & pseudo-attribute selectors 
+            - Save the returned Element node to a constant named "firstChild"
+            - Pass the constant as an argument value to "console.log()"
+
+        - To find & select the last child Element node of the HTML element <ul>
+            - Use CSS element & pseudo-attribute selectors 
+            - Save the returned Element node to a constant named "lastChild"
+            - Pass the constant as an argument value to "console.log()"
+
+    - Use the selection method ".querySelectorAll()"
+        - To find & select matching Element nodes from the "document" based on the passed CSS selector as argument value
+            - Look for Element nodes w/ a CSS class selector ".list-item"
+            - Save the returned Element nodes to a constant named "list"
+            - Pass the constant as argument value to "console.log()"
