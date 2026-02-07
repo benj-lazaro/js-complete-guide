@@ -1,0 +1,117 @@
+Attributes VS Properties
+------------------------
+- An attribute is part of a HTML element (i.e. tag)
+    - When the browser parses through the HTML document
+        - It creates an Element node based on an HTML Element
+
+    - The attributes defined w/in an HTML Element translates to
+        - The properties of its corresponding Element node
+
+    - The assigned values on an HTML Element's attributes
+        - Becomes the assigned values of the corresponding Element node's properties
+
+    - NOTE: NOT every every attribute has
+        - A 1:1 mapping w/ their Element node property counterpart
+            - Mapping = the name of an attribute & property are IDENTICAL
+
+        - Live synchronization w/ their property counterpart
+            - Updating the assigned value on an Element node's property
+            - Updates the hardcoded value assigned to the corresponding HTML element's attribute
+
+        - The Element node property "id"
+            - Has 1:1 mapping & live synchronization w/ its HTML attribute "id" counterpart
+
+        - The Element node property "className"
+            - Has NO 1:1 mapping BUT has live synchronization w/ its HTML attribute "class" counterpart
+
+        - The Element node property "value"
+            - Has 1:1 mapping BUT NO live synchronization w/ its HTML attribute "value" counterpart
+            
+            - Updating the value of the property "value"
+                - Will NOT update the hardcoded assigned value on the corresponding HTML attribute "value"
+
+
+- To update (set) the value of HTML attributes that
+    - Has NO live synchronization w/ their Element node property counterpart
+        - Requires the use of the Element node's method ".setAttribute()"
+
+    - It requires two (2) argument value
+        - Target HTML attribute name
+        - New value to assign (set)
+    
+    Syntax:
+    <element_node>.setAttribute("<attribute_name>", "<new_value>");
+
+
+    - NOTE: This method sets a new value of the HTML attribute
+        - Reflects the changes in the HTML code
+            - However, does NOT update the rendered DOM in the browser
+
+        - The previous value of the HTML attribute is still kept in memory
+            - Can be used for re-assigning back to the corresponding property of the Element node
+
+            - Using the Element node's method ".getAttribute()"
+                - Accepts the HTML attribute "value" as argument
+                - Store the returned value back into the Element node's property "value"
+
+    Syntax:
+    <element_node>.value = <element_node>.getAttribute("<attribute_name>");
+
+  
+- On the starter project (index.html)
+    - Add an HTML element <input>, underneath the HTML element <ul>
+        - Declare the HTML attribute "value"
+        - Assign the value "default text"
+
+
+    - Switch to the file "app.js"
+        - Select the HTML element <input> from the DOM
+            - Using the "document" method ".querySelector()" w/ "input" as argument value
+        
+        - Save the returned Elenment node in a constant named "input"
+        
+        - Pass "input.value" as argument value to "console.log"
+            - Returns the value "default text"
+
+
+    - Assign a new value to the property ".value" of the Element node "input"
+        - Use the "=" operator
+            - Assign the string value "some other input the user might have entered"
+       
+        - Save the changes
+            - The new value "some other input the user might have entered" is 
+                - Rendered on the browser
+                - NOT reflected on the DOM
+            
+
+    - To set a new value to the attribute "value" of the HTML element <input> on the DOM
+        - Use the method ".setAttribute()"
+            - 1st argument  = HTML attribute "value"
+            - 2nd argument  = string value "some other default text"
+
+        - Save the changes
+            - The new value "some other default text" is 
+                - NOT rendered on the browser
+                - Reflected on the DOM
+
+
+    - Assign another new value to the property ".value" of the Element node "input"
+        - Use the "=" operator
+            - Assign the string value "another attempt"
+        
+        - Save the changes
+            - The new value "another attempt" is 
+                - Rendered on the browser
+                - NOT reflected on the DOM
+
+
+    - To fetch the previously set value on the attribute "value" of the HTML element <input> on the DOM
+        - Use the Elemet node method ".getAttribute()"
+            - 1st argument = HTML attribute "value"
+
+        - Assign the returned value to the Element node's property ".value"
+
+        - Save the changes
+            - The new value "another attempt" is 
+                - Rendered on the browser
+                - Reflected on the DOM
