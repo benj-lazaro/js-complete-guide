@@ -1,0 +1,46 @@
+Exploring & Changing DOM Properties
+-----------------------------------
+- To evaluate & manipulate the value of properties from a selected Element node
+    - Use the "=" operator to assign a new value to a property
+        
+        p.className = "new-class"
+
+    - NOTE: NOT ALL properties of an Element node are writable
+
+
+- Commonly accessed properties of an Element node
+    - ".textContent"    = text content of the Element node
+    - ".id"             = value of the Element node's HTML attribute "id"
+    - ".className"      = value of the Element node's HTML attribute "class"
+
+
+- To determine what properties are available to an Element node
+    - Pass the selected Element node as argument value to "console.dir()"
+        - Play around w/ the values of properties
+        - Simply reload the browser when something goes wrong
+
+        - NOTE: This is the STRONGLY RECOMMENDED approach
+
+    - An alternative is to use MDN (Mozilla Developer Network)
+        - The "DOM Interface" section of each HTML element
+            - Provides a list of related properties & methods
+            - Provides information (i.e. flag)  if a property is READ-ONLY or NOT
+
+    - NOTE: Changes in the Element node's properties w/in the browser's "console" tab
+        - Will be lost after the browser is reloaded
+
+
+- On the starter project
+    - Select the HTML element <h1>
+        - Change the text content to "Some new text!"
+        
+        - Assign "title" to its HTML attribute "class"
+        
+        - Set the text color to "white" & background color to "red"
+            - Use the property ".style"
+                - To access a list of CSS styling properties
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Inspect changes using Chrome's Dev Tools
