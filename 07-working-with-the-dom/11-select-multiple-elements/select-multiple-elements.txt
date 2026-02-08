@@ -1,0 +1,93 @@
+Selecting Multiple Elements Summary
+-----------------------------------
+- A dive into other ways of selecting Element nodes from the DOM
+
+
+- The "document" object's method ".querySelectorAll()"
+    - Accepts a CSS selector tag, class name or pseudo-selector as argument value
+        - Returns a collection of Element nodes stored in a static "NodeList"
+
+    - To access elements of a "NodeList"
+        - Access via index value of each element
+        - Use a "for..of" loop to iterate through each element
+
+    - NOTE: Any changes w/in the "NodeList" is NOT reflected back in the DOM
+        - e.g. changes = adding / remove elements
+    
+
+- The "document" object method ".getElementsByTagName()"
+    - Accepts an Element node's tagname as argument value
+        - Returns a collection of Element nodes stored in a live "HTMLCollection"
+
+    - To access elements of a "HTMLCollection"
+        - Access via index value of each element
+        - Use a "for..of" loop to iterate through each element
+
+    - NOTE: Any changes w/in the "HTMLCollection" is reflected back in the DOM
+        - e.g. changes = adding / remove elements
+
+
+- IMPORTANT: Any changes made on an Element node is reflected back in the DOM
+    - Due to being a DOM object storing a reference (address) to the actual value
+        - Regardless whether it is stored w/in a "HTMLCollection" or "NodeList"
+
+    - Selection methods that starts w/ ".get*()"
+        - Returns a live "HTMLCollection"
+
+    - Selection methods that starts w/ ".query*()"
+        - Returns a static "NodeList"
+
+
+- On the project starter (app.js)
+    - Use the "document" object method ".querySelectorAll()"
+        - Pass the Element node name "li" as argument value
+        - To select ALL <li> Element nodes from the DOM
+        - Store the returned "NostList" to a constant named "listItemElements"
+
+    - Use "for..of" loop
+        - Iterate through each element on the "NodeList"
+        - Pass each element as an argument value to "console.dir()"
+
+    - Perform the same task except using the "document" object method ".getElementsByTagName()"
+        - Pass the Element node name "li" as argument value
+            - To select ALL <li> Element nodes from the DOM
+            - Store the returned "HTMLCollection" to a constant named "listItemElements2"
+
+        - Use "for..of" loop
+            - Iterate through each element on the "NodeList"
+            - Pass each element as an argument value to "console.dir()"
+
+
+    - Use the "document" object method ".getElementById()"
+        - Pass the Element node name "h1" as argument value
+            - To select the <h1> Element node from the DOM
+            - Store the selected <h1> Element node to a constant named "h1"
+
+        - Access the property ".textContent" of the <h1> Element node
+            - Assign the value "Some new title"
+            - To overwrite the initial text content
+        
+        - Save the changes
+            - The text content of the <h1> Element node is IMMEDIATELY updated
+
+        - Access the property ".style.backgroundColor" of the <h1> Element node
+            - Assign the value "black"
+
+        - Access the property ".style.color" of the <h1> Element node
+            - Assign the value "white"
+
+        - Save the changes
+            - The background & foreground color of the <h1> Element node is IMMEDIATELY updated
+
+
+    - Use the "document" object method ".querySelector()"
+        - Pass the Element node name "li" w/ the pseudo select ":last-of-type" as argument value
+            - To select the last child of the <li> Element node from the DOM
+            - Store the select <li> Element node to a constant name "li"
+
+        - Access the property ".textContent" of the <li> Element node
+            - Assign a new value based on the concatenation of the current value w/ the string " updated!"
+
+        - Save the changes
+            - The text content of the last <li> Element node is IMMEDIATELY updated
+
