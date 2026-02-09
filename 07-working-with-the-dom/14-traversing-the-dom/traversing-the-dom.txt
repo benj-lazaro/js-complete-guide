@@ -1,0 +1,103 @@
+Traversing The DOM: Overview
+----------------------------
+- Traversing the DOM is a concept that meant 
+    - Once an Element node is selcted
+        - It provides the ability to dive into ALL of its child, parent or sibling Element nodes
+            - To add, remove or manipulate
+            - Rather than manually selecting every (child, parent or sibling) Element nodes
+        
+    - Terminologies used w/ the current selected Element node
+        - child         = direct child Element node; NOT a nested child
+        - descendant    = direct or indirect child Element node; includes nested child Element nodes
+        - parent        = direct parent Element node
+        - ancestor      = direct or indirect parent Element node
+
+    - Properties
+        - ".parentNode"
+            - Selects ANY parent node of the current selected Element node
+            - NOTE: This is a READ-ONLY property 
+            - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Node/parentNode)
+
+        - ".parentElement"
+            - Selects ONLY a parent Element node of the current selected Element node
+            - Returns "null" if NO matching Element node is found
+            - NOTE: This is a READ-ONLY property 
+            - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Node/parentElement)
+
+        - ".childNodes"
+            - Selects ALL child nodes (including non-Element nodes)
+            - 1st child is accessed at index 0
+            - NOTE: This is a READ-ONLY property 
+            - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Node/childNodes)
+
+        - ".children"
+            - Selects child Element nodes ONLY
+            - Returns a live "HTMLCollection" containing all child Element nodes
+            - NOTE: This is a READ-ONLY property 
+            - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/children)
+
+        - ".firstChild"
+            - Selects the 1st child node (including non-Element nodes)
+            - Returns "null" if NO matching child node is found
+            - NOTE: This is a READ-ONLY property 
+            - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Node/firstChild)
+
+        - ".firstElementChild"
+            - Selects the 1st child Element node ONLY
+            - Returns "null" if NO matching child Element node is found
+            - A READ-ONLY property of the Element interface
+            - NOTE: This is a READ-ONLY property 
+            - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/firstElementChild)
+
+        - ".lastChild"
+            - Selects the last child node (including non-Element nodes)
+            - Returns "null" if NO matching child node is found
+            - NOTE: This is a READ-ONLY property
+            - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Node/lastChild)
+
+        - ".lastElementChild"
+            - Selects the last child Element node ONLY
+            - Returns "null" if NO matching child Element node is found
+            - NOTE: This is a READ-ONLY property 
+            - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/lastElementChild)
+
+        - ".previousSibling"
+            - Selects the previous direct sibling node (including non-Element nodes)
+            - Refers to the sibling node that IMMEDIATELY PRECEDES the current selected Element node
+            - NOTE: Returns "null" if the sibling node is the 1st child in a list
+            - NOTE: This is a READ-ONLY property 
+            - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Node/previousSibling)
+
+        - ".previousElementSibling"
+            - Selects the previous direct sibling Element node
+            - Refers to the sibling Element onde that IMMEDIATELY PRECEDES the current selected Element node
+            - NOTE: Returns "null" if the sibling node is the 1st child in a list
+            - NOTE: This is a READ-ONLY property 
+            - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/previousElementSibling)
+
+        - ".nextSibling"
+            - Selects the next direct sibling node (including non-Element nodes)
+            - Refers to the sibling node that IMMEDIATELY SUCEEDS the current selected Element node
+            - NOTE: Returns "null" if the sibling node is the last child in a list
+            - NOTE: This is a READ-ONLY property
+            - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Node/nextSibling)
+
+        - ".nextElementSibling"
+            - Selects the next direct sibling Element node
+            - Refers to the sibling Element onde that IMMEDIATELY SUCEEDS the current selected Element node
+            - NOTE: Returns "null" if the sibling node is the last child in a list
+            - NOTE: This is a READ-ONLY property 
+            - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/nextElementSibling)
+
+
+    - Methods
+        - Element node method ".closest()"
+            - Traverses the DOM for a direct parent or any ancestor Element node that matches the specified CSS selector
+            - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/closest)
+
+        - "document" methods ".querySelector()", ".getElementsByClassName() & so on
+            - Previous learned selection methods to select (Element, Text, etc.) nodes from the DOM
+            - To dive deeper into ALL of the current selected Element node's descendants
+
+        
+        
