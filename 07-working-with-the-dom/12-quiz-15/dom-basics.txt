@@ -1,0 +1,29 @@
+Quiz 15: DOM Basics
+-------------------
+- Where can you "find" the DOM?
+    - Answer: It's part of the APIs exposed to JavaScript by the browser
+
+
+- Which of the following examples selects the <p> in the below example?
+
+    <div>
+        <p id="description">Hi there!</p>
+    </div>
+
+    - Answer: document.querySelector("#description");
+
+
+- What's a difference between document.querySelector('#someId') and document.getElementById('someId')?
+    - Answer: querySelector uses a CSS selector & can match ANY elements, getElementById look only for the ID
+
+
+- What's the difference between querySelector() and querySelectorAll()?
+    - Answer: querySelector finds the 1st matching element, querySelectorAll finds all matching elements
+
+
+- In the below example - is "value" an attribute or a property?
+
+    <input value="Enter your text here..." type="text">
+
+    - Answer: An attribute
+
