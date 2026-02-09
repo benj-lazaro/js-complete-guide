@@ -1,0 +1,18 @@
+Assignment 05: Time To Practice DOM Querying
+--------------------------------------------
+- Select task #1 (in HTML document)
+    - Change the background-color to "black"
+    - Change the text-color to "white"
+    - NOTE: Use two (2) different ways to select the Element nodes & change their property value
+
+
+- Change the document title (in the HTML element <head>)
+    - Into "Assignment - Solved!"
+    - Use two (2) different ways to access the HTML element <title>
+        - .querySelector() on document
+        - .querySelector() on certain property you find in document
+
+
+- Select the HTML element <h1>
+    - Change its text to "Assignment - Solved!"
+
