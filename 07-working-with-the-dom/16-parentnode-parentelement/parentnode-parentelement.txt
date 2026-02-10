@@ -1,0 +1,41 @@
+Using parentNode & parentElement
+--------------------------------
+- Explore traversing the parent nodes from a child node perspective.
+    - Using properties ".parentNode" & ".parentElement"
+        - Returns the nearest direct parent Element node of a child node
+        
+        - IMPORTANT: Each node in the DOM can ONLY have one (1) parent node
+        
+        - NOTE: ONLY an Element node can have a child node
+            - A Text node can NOT have a child node
+
+
+- To access a child node's ancestor
+    - Use the method ".closest()"
+        - Pass the target CSS selector as argument value
+            - To pick the nearest ancestor Element node (e.g. "body")
+
+        - NOTE: Does NOT work w/ a sibling Element node
+            - Returns the value of "null"
+
+
+- To access a child node's nearest descendant
+    - Use the method ".querySelector()"
+        - Pass the target CSS selecto as argument value
+            - To pick the nearest descendant Element node
+
+            
+- In the starter project (app.js)
+    - To select the parent node of the 1st HTML element <li>
+        - Select the 1st child Element node <li> using the "document" object method ".querySelector()"
+        - Store the returned Element node in a constant named "liFirst"
+
+    - To select the parent node
+        - Use either properties ".parentElement" or ".parentNode"
+            - Returns the Element node "ul" along w/ its children Element nodes "li"
+
+    - To select the ancestor node
+        - Use the method ".closest()" on the child node "liFirst"
+            - Pass the CSS selector "body" as argument value
+            - Returns the ancestor node
+    
