@@ -1,0 +1,79 @@
+Add Elements Via HTML Code
+--------------------------
+- The property ".innerHTML"
+    - Replaces the Element node's entire nested HTML structure w/ a new HTML code
+        - REPLACES ALL child nodes including descendant nodes
+
+    - Use case:
+        - Good for replacing the HTML structure of an Element node's descendants
+
+        - NOT GOOD for adding / inserting new Element node(s) to 
+            - The existing HTML structure of a selected Element node
+        
+        - NOTE: A workaround is to assign an expression based on
+            - The current value of the ".innerHTML", the "+" operator & the new HTML mark-up
+                - Then assign the expression back (as a new value) to the property ".innerHTML"
+
+                <Element_node>.innerHTML = <Element_node>.innerHTML + "<new_HTML_mark-up>";
+
+        - The downside of this workaround
+            - It replaces tne entire structure of the 
+                - Selected Element node & ALL of its descendants
+
+            - It is NOT great for performance
+                - Hurts the User Experience (UX)
+
+            - It forces the browser to render a lot of HTML mark-up that
+                - Did NOT get updated at all
+
+
+- The method ".insertAdjacentHTML()"
+    - Appends a new child Element node into the selected Element node's descendants
+    
+    - The method requires two (2) argument values
+        - 1st   = position of the Element node to be inserted
+        - 2nd   = actual HTML mark-up to be inserted as a new child Element node
+
+    - The position values are as follows:
+        - "beforebegin" = before the selected Element node
+        - "afterbegin"  = inside the selected Element node, BEFORE its 1st child node
+        - "beforeend"   = inside the selected Element node, AFTER its last child
+        - "afterend"    = after the selected Element node
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML)
+
+
+- On the starter project (app.js)
+    - Select the HTML element <section> using the method ".querySelector()"
+        - Pass "section" as argument value
+        - Store the returned Element node to a constant named "section"
+
+    - Replace the nested HTML structure of the Element node "section"
+        - Using the property ".innerHTML"
+        - Assign a new HTML mark-up
+        
+    - Select the HTML element <ul> using the method ".querySelector()"
+        - Pass "ul" as argument value
+        - Store the returned Element node to a constant named "list"
+
+    - Add new child Element nodes using the property ".innerHTML"
+        - Appending the existing value of ".innerHTML" w/ a new HTML mark-up using the "+" operator
+        - Store the expression as a new value back to the property ".innerHTML" of the Element node "list"
+
+    - Select the HTML element <div> using the method ".querySelector()"
+        - Pass "div" as argument value
+        - Store the returned Element node to a constant named "div"
+
+    - Insert a new child Element node to the select Element node "div"
+        - Using the method ".insertAdjacentHTML()"
+            - Pass the argument values
+                - 1st   = "beforeend"
+                - 2nd   = "<p>Something went wrong!</p>"
+
+        - Effectively inserts a new child Element node "p"
+            - Right after the existing (previously) last child Element node "input"
+    
+    - Save the changes
+    
+    - Load / reload the browser
+
