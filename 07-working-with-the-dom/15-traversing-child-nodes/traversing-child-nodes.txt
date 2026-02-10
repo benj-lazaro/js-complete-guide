@@ -42,3 +42,5 @@ Traversing Child Nodes
             
             - NOTE: BOTH "HTMLCollection" & "NodeList" are zero (0) based index
 
+    - Save the changes
+        - Load / reload the browser
