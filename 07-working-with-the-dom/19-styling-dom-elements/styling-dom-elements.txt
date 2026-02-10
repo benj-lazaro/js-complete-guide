@@ -1,0 +1,119 @@
+Styling DOM Elements
+--------------------
+- Exploring ways to manipulate & chaning the styles of Element nodes
+
+- Using the READ-ONLY property ".style"
+    - Directly targets individual CSS style properties applied to that Element node
+        - Similar to using inline CSS on the targeted HTML element
+        - NOTE: This has the HIGHEST SPECIFICITY level
+
+    - Property names are based on CSS properties
+        - But their names have been adjusted
+        - NOTE: Camelcase names used instead of the conventional CSS property name
+            - e.g. "backgroundColor" instead of "background-color"
+    
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style)
+
+
+- Using the property ".className"
+    - Directly sets the CSS classes assigned to an Element node
+        - To dynamically add, remove or toggle classes using a CSS Class selectors
+
+    - It takes a single string argument
+        - The class name to be added, removed or toggle
+        
+    - Allows to set or control ALL class at once
+
+    - Alternatively, changing the attribute "id" or any HTML attribute
+        - Using an CSS ID or Attribute selector, respectively
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/className)
+
+
+- Using the READ-ONLY property ".classList"
+    - Provides an easy way to manage assigned classes on an Element node
+        - Offers more flexibility
+
+    - It comes w/ built-in methods
+        - To add, remove or toggle CSS Class selectors
+
+    - Provides fine-grain control over classes that are added
+        - Can be used in conjunction w/ the property ".className" w/ care
+            - Careful that it will not OVERWRITE each other
+        
+        - Typically use either ".className" or ".classList"
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/classList)
+
+    - The ".classList" method ".contains()"
+        - Quickly checks if a class is set on an Element node
+
+    - The ".classList" method ".add()" & ".remove()"
+        - Respectively, adds & removes a class from an Element node
+
+    - The ".classList" method ".toggle()" 
+        - Offers an easy way to change (toggle) assigned classes on an Element node
+        - Accepts the class(es) to be swapped w/ the previous class(es) as argument value(s)
+
+
+- On the starter project (index.html)
+    - Implement an internal CSS on the HTML document
+        - Declare a CSS Class selector named ".red-bg"
+            - Set the value of "background-color" to "red"
+            - Set the value of "color" to "white"
+
+        - Declare a CSS Class selector named ".visible"
+            - Set the value of "display" to "block"
+
+        - Declare a CSS Class selector named ".invisible"
+            - Set the value of "display" to "none"
+
+    - On the HTML element <section>
+        - Declare a HTML attribute "class"
+        - Assign the value of "red-bg" & "visible"
+
+    - Right after the HTML element <section>
+        - Add a new HTML element <button> w/ the content text of "Toggle Visibility"
+
+    - Next add a new HTML element <input> w/ the following HTML attributes
+        - HTML attribute "type" w/ the assigned value of "text"
+        - HTML attribute "value" w/ the assigned value of "default text"
+    
+    - Save the changes
+
+    - Switch to the file "app.js"
+        - Select the HTML element <section> using the method ".querySelector()"
+            - Pass the value "section" as an argument value
+            - Store the returned Element node in a constant named "section"
+
+        - Use the property ".className" 
+            - To remove the assigned classes from the Element node "section"
+            - Assigning an empty string
+
+        - Select the HTML element <button> using the method ".querySelector()"
+            - Pass the value "button" as an argument value
+            - Store the returned Element node in a constant named "button"
+
+        - Hook an Event listener to the Element node "button" 
+            - Using the method ".addEventListener()"
+                - To listen to an Event "click
+            
+            - Use a callback Arrow function 
+                - To change (toggle) the assigned Classes to the Element node "section"
+
+            - Inside the Arrow function
+                - Use the property ".classList"
+                    - To retrieve the currently assigned classes 
+
+                - Chain the method ".toggle()"
+                    - Pass the class "invisible" as argument value
+
+                - Whenever a "click" event occurs
+                    - The class "invisible" replaces the classes w/in the property ".classList"
+
+        - Save the changes
+            - Load / reload the browser
+
+            - Clicking the button
+                - Toggles the visibility of the HTML element <section> on the DOM
+            
