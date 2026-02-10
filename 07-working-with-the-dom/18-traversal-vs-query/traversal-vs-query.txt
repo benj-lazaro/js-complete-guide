@@ -1,0 +1,42 @@
+DOM Traversal VS Query Methods
+------------------------------
+- DOM traversal
+    - Use when an Element node is already been select using a Query method 
+
+    - Use various properties to traverse through the DOM
+        - To access an ancestor, child, parent or sibling
+
+    - PROS
+        - Offers better performance than performing another Query method
+        - Requires less steps to select the targeted node
+
+    - CONS
+        - The code can be a bit hard to read
+            - It is NOT immediately obvious to the one reading the code
+            - Particularly if the name of the contant is chosen poorly
+            - Requires reading the HTML code to understand what is actuallly going on
+
+        - Web app may introduce unexpected behavior or unexpectedly break
+            - When its HTML code is refactored
+            - Require updating the JavaScript code & associated DOM traversal properties
+
+        - Deeply nested traversal logic
+            - Will NOT yield better performance
+            - Likely be worse then using Query methods   - e.g. unoredered list
+
+    - Use case:
+        - When relations between DOM nodes (being traversed) remains the same
+            - Even after the HTML code is refactored
+
+
+- Query methods
+    - Best when selecting a specific Element node or node 
+
+    - NOT necessarily yields horrible performance
+        - Just requires a few more steps before able to select the targeted node
+
+    - Less likely for the web app to unexpectedly break
+        - When its HTML code is refactored
+
+
+- Bottom line: There is NO strict right or wrong when choosing w/c one to use
