@@ -1,0 +1,38 @@
+Creating Elements With JS: Overview
+-----------------------------------
+- Two (2) ways to create & insert an Element node into the DOM
+    - Write HTML code in JavaScript
+        - Informs the browser to parse the HTML code
+            - Render in a certain location in the DOM tree
+
+        - The HTML code can be added using the property ".innerHTML" of the selected Element node
+            - Adds (renders) the HTML code in the place that it is declared
+            - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML)
+
+        - Alternatively, use the method ".insertAdjacentHTML()"
+            - Add rendered HTML content next to an existing content at a specific position in the DOM
+            - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML)
+        
+
+    - Ues the "document" object method ".createElement()"
+        - To create a single brand-new Element node
+            - Then manually insert it somewhere in the DOM tree
+            - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement)
+
+        - To insert a new Element node or node inside another
+            - Using methods the ".appendChild()" or ".append()"
+            - Reference(https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild)
+            - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/append)
+
+        - To specifically add / insert new Element node or node at specific position in the DOM
+            - Using methods ".prepend()", ".before()", ".after()" & ".insertBefore()"
+            - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/prepend)
+            - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/before)
+            - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/after)
+            - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Node/insertBefore)
+
+        - To replace an existing node
+            - Using method ".replaceChild()" & ".replaceWith()"
+            - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Node/replaceChild)
+            - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/replaceWith)
+    
