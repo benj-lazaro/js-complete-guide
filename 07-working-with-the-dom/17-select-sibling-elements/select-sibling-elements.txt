@@ -1,0 +1,38 @@
+Selecting Sibling Elements
+--------------------------
+- Traversing sibling elements of a selected Element node
+    - The property ".previousElementSibling"
+        - Returns the preceeding sibling Element node
+
+    - The property ".previousSibling"
+        - Returns the proceeding sibling node w/c includes the Text node
+
+    - The property ".nextElementSibling"
+        - Returns the succeeding sibling Element node
+
+    - The property ".nextSibling"
+        - Returns the succeeding sibling node w/c includes the Text node
+
+
+- In the starter project (app.js)
+    - To select the previous sibling of the HTML element <ul>
+        - Select the target Element node "ul" using the method ".querySelector()"
+            - Passing "ul" as argument value
+        
+        - Store the returned Element node in a constant named "ul"
+
+        - Use the property ".previousElementSibling"
+            - To return the nearest preceeding Element node "header"
+
+        - Using the property ".previousSibling"
+            - To return the nearest preceeding Text node
+
+    - To select the next sibling
+        - Use the property ".nextElementSibling"
+            - To return the nearest succeeding Element node "li"
+
+        - Use the property ".nextSibling"
+            - To return the nearest succeeding Text node
+    
+    - Save the changes
+        - Load / reload the browser
