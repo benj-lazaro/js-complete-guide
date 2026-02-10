@@ -1,0 +1,44 @@
+Traversing Child Nodes
+----------------------
+- Explore traversing child nodes in the DOM
+    - Using the property ".children"
+        - Returns a live "HTMLCollection" that contains ONLY child Element nodes
+
+    - Using the property ".childNodes"
+        - Returns a static "NodeList" that contains ALL child nodes
+            - This includes both Element & Text nodes
+
+        - NOTE: Using properties like ".children" or ".childNodes" is cheaper than
+            - Using the method ".querySelector()" to select child nodes
+            
+            - The method costs a little bit of performance
+                - Scans the DOM
+                - Checks the target CSS selector 
+                - Finds the matching child element
+
+            - Whereas the said properties directly points to the targeted child node
+
+    - To select the 1st child node
+        - Use either ".firstChild" or ".firstElementChild"
+            - BOTH returns the 1st child node
+            - Latter returns the 1st child Element node
+
+    - To select the last child node
+        - Use either ".lastChild" or ".lastElementChild"
+            - BOTH returns the last child node
+            - Latter returns the last child Element node
+
+
+- On the start project (app.js)
+    - Select the 2nd child HTML element <li> of the <ul>
+
+    - Use the "document" object method ".querySelector()" to 
+        - Select the parent HTML element <ul>
+        - Store the retured Element node in a constant name "ul"
+
+    - To access the 2nd child Element node
+        - Use the property ".children" on the Element node stored in the constant "ul"
+            - Followed by the 2nd child's index value of 1
+            
+            - NOTE: BOTH "HTMLCollection" & "NodeList" are zero (0) based index
+
