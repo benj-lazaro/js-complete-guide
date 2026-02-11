@@ -1,0 +1,127 @@
+Inserting DOM Elements
+----------------------
+- The method ".appendChild()"
+    - Appends a child node to a selected parent Element node
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild)
+
+
+- The method ".append()"
+    - Appends mutiple child Element or Text nodes
+        - AFTER the last child of the selected parent Element node
+        - Each argument value is separated by a ","
+
+    - Passing a string as argument value
+        - Appends a child Text node   
+
+    - Browser compatibility: Internet Explorer (IE) NOT supported
+        - Use the method ".appendChild()" instead
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/append)
+    
+
+- The method ".prepend()"
+    - Inserts a child Element or Text node
+        - BEFORE the 1st child of the selected parent Element node
+
+    - Browser compatibility: Internet Explorer (IE) NOT supported
+        - Use the method ".insertBefore()" instead
+    
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/prepend)
+
+
+- The method ".before()"
+    - Inserts a child Element or Text node
+        - BEFORE the selected parent Element node
+
+    - May be used in conjunction w/ properties
+        - ".firstElementChild"
+        - ".lastElementChild"
+        
+    - NOTE: If the child Element node to be inserted has already been selected prior
+        - It will be "moved" (NOT copied) to the new position in the DOM
+
+    - Browser compatibility: Internet Explorer (IE) & Safari NOT supported
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/before)
+
+
+- The method ".after()"
+    - Inserts a child Element or Text node
+        - AFTER the selected parent Element node
+
+    - May be used in conjunction w/ properties
+        - ".firstElementChild"
+        - ".lastElementChild"
+    
+    - Browser compatibility: Internet Explorer (IE) & Safari NOT supported
+        - Use the method ".insertAdjacentElement()" instead
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/after)
+    
+    
+- The method ".replaceWith()"
+    - Drops the selected child node
+        - Replaced with a new child node(e.g. Element, Text or any DOM node)
+
+    - Browser compatibility: Internet Explorer (IE) & Safari NOT supported
+        - Use the method ".insertAdjacentElement()" instead
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/replaceWith)
+
+    
+- The method ".insertAdjacentElement()"
+    - Inserts a child DOM node at a specified position in the DOM
+    - Browser compatibility: supports ALL browsers
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML)
+
+
+- In the starter project (app.js)
+    - Select the HTML element <ul> using the method ".querySelector()"
+        - Pass "ul" as argument value
+        - Store returned Element node to the constant named "list"
+
+    - Create a new Element node
+        - Pass "li" as argument value
+        - Store returned Element node to the constant named "newLi"
+
+    - Set the ".textContent" property of the Element node "newLi"
+        - Assign the value of "Item 4"
+
+    - Append the Element node "newLi" as the 1st child of the parent Element node "list"
+        - Using the Element node method ".prepend()"
+    
+    - Move the child Element node "newLi"
+        - BEFORE the last child Element node of the parent Element node "list"
+        - Use the property ".lastElementChild"
+        - Using the method ".before()"
+
+    - Move the same child Element node "newLi"
+        - AFTER the last child Element node of the parent Element node "list"
+        - Use the property ".lastElementChild"
+        - Use the method ".after()"
+
+    - Replace the 1st child Element node of the parent Element node "list" w/ the Element node "newLi"
+        - Use the property ".firstElementChild"
+        - Use the method ".replaceWith()"
+        - Pass the Element node "newLi" as argument value
+
+    - Create a new Element node
+        - Pass "li" as argument value
+        - Store returned Element node to the constant named "brandnewLi"
+
+    - Set the ".textContent" property of the Element node "brandnewLi"
+        - Assign the value of "Item 4"        
+        
+    - Select the 2nd HTML element <li> of the parent Element node "list"
+        - Use the property ".chidren" w/ the index value of 2
+        - Store the returned Element node to a constant named "secondLi"
+
+    - Append the Element node "brandnewLi" as a child node of the parent Element node "list"
+        - Right AFTER the 2nd child Element node
+        - Use the method ".insertAdjacentElement()"
+        - Pass the following argumetn values
+            - 1st = "afterend"
+            - 2nd = brandnewLi
+
+    - Save the changes
+
+    - Load / reload the browser
