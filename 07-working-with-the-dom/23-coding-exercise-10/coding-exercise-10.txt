@@ -1,0 +1,14 @@
+Coding Exercise 10: Adding Elements
+-----------------------------------
+- You should add new elements to the DOM via JavaScript
+    - Add two (2) HTML element <li> 
+        - To the existing HTML element <ul>
+
+    - The 1st <li> element 
+        - Should contain the text "Learn JavaScript"
+
+    - The 2nd <li> element
+        - Should contain the text "Master JavaScript"
+
+    - IMPORTANT: Put all DOM editing code into the pre-defined "solve()" function
+    
