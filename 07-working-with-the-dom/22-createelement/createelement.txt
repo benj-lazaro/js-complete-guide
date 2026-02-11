@@ -1,0 +1,46 @@
+Adding Element Via createElement()
+----------------------------------
+- Use the "document" object method ".createElement()"
+    - To create a new Element node in the DOM
+        - Takes the HTML tag name of the Element node to be created as argument value
+        
+        - Optionally, accepts a 2nd argument of an object w/ an "is" property
+            - To be tackled the later on the advanced section
+
+        - Returns a "HTMLUnknownElement" object if the tag name is NOT recognized
+
+    - NOTE: ALWAYS call the method ".createElement()" on the "document" object
+        - Do NOT call this method on any other DOM node (object)
+
+    - This method provide direct access to the created Element node that
+        - Allows to set properites (e.g. textContent, className, etc.)
+        - Attach an Event listener
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement)
+
+    Syntax:
+    document.createElement(<tag_name>);
+    document.createElement(<tag_name>, [<options>]);
+
+
+- In the starter project (app.js)
+    - Select the HTML element <ul> using the method ".querySelector()"
+        - Pass the value "ul" as argument value
+        - Store the returned Element node to a constant named "list"
+
+    - Create a new element using the "document" object's method ".createElement()"
+        - Pass the value "li" as argument value
+        - Store the created Element node to a constant named "newLi"
+
+    - Set the property ".textContent" of the created Element node "newLi"
+        - Assign the value of "Item 4"
+
+    - Append the Element node "newLi" as a new child node to the Element node "list"
+        - Call the method ".appendChild()" on the Element node "list"
+        - Pass the Element node "newLi" as argument value
+
+    - Save the changes
+
+    - Load / reload the browser
+        - A new HTML element <li> w/ the content of "Item 4" is rendered on the DOM
+    
