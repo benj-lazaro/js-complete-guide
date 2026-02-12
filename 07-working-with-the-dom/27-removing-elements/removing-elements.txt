@@ -1,0 +1,40 @@
+Removing Elements
+-----------------
+- The Element node method ".remove()"
+    - Removes the selected Element node from the DOM
+
+    - Browser compatibility: Internet Explorer (IE) NOT supported
+        - Use the method ".removeChild()" instead
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/remove)
+
+
+
+- The method ".removeChild()"
+    - Accepts the child DOM node to be delete as argument value
+        - Can be used with the property ".parentElement"
+    
+    - Returns the deleted DOM node
+        - It still exists in memory but NOT part of the DOM anymore   
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild)
+
+
+- In the starter project (app.js)
+    - Select the HTML element <ul> using the method ".querySelector()"
+        - Pass "ul" as argument value
+        - Store the returned Element node to a constant named "list"
+
+    - Remove the Element node "list" from the DOM
+        - Using the method ".remove()"
+
+    - Remove the Element node "list" from the DOM
+        - Use the property ".parentElement" on the Element node "list"
+        - Chain the method ".removeChild()"
+        - Pass the Element node "list" as argument value
+        - Store the removed DOM node in a constant named "removedElement"
+
+    - Save the changes
+
+    - Load / reload the browser
+        - The entire list is removed from the DOM
