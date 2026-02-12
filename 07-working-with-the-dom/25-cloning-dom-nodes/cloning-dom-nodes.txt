@@ -1,0 +1,45 @@
+Cloning DOM Nodes
+-----------------
+- The DOM node method ".cloneNode"
+    - Returns a duplicate of the node that called this method
+    
+    - Passing a boolean value "true" as argument value
+        - Performs a "deep clone" w/c includes ALL child & descendant nodes
+
+    - Passing a boolean value "false" (default) as argument value
+        - Performs a clone of the node itself ONLY
+
+    - NOTE: If an Element node has an "id" attribute set
+        - The method will also clone the original Element node's "id"
+        - Advised to modify the clone's "id" attribute (ASAP) to make it unique
+
+    - Use case:
+        - Instead of creating a new Element node w/ identical properties of an original node
+            - It will save time to simply clone the original Element node
+            - Then update the values of properties accordingly
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Node/cloneNode)
+
+
+- On the starter project (app.js)
+    - Select the HTML element <ul> using the method ".querySelector()"
+        - Store the returned Element node to a constant named "list"
+
+    - Create a new Element node using the method ".createElement()"
+        - Pass the argument value "li"
+        - Store the returned Element node to a constant named "newLi"
+    
+    - Set the property ".textContent" of the Element node "newLi" to the value of "Item4"
+
+    - Deep clone the Element node "newLi" using the method ".cloneNode()
+        - Pass the boolean value "true" as argument value to perform a deep clone
+        - Store the cloned Element node to a constant named "newLi2"
+
+    - Append both Element nodes "newLi" & "newLi2" as child node of the parent Element node "list"
+        - Using the method ".append()"
+
+    - Save the changes
+
+    - Load / reload the browser
+        - The unordered list should have two (2) duplicate "Item 4" items
+
