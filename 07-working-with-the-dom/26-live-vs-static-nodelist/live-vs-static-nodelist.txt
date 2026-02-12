@@ -1,0 +1,28 @@
+Live Node List VS Static Node List
+----------------------------------
+- A "HTMLCollection" (i.e. live "NodeList")
+    - An array-like collection that contains "live" DOM nodes
+    
+    - Any changes in the selected DOM nodes 
+        - Are automatically reflected on the "HTMLCollection"
+
+    - This may lead to higher memory consumption
+        - When managing a lot of "HTMLCollection"
+        - Although this incident would be a niche occurence
+
+    - The following methods return a live "HTMLCollection"
+        - ".getElementsByTagName()"
+        - ".getElementsByClassName()"
+        - ".getElementsByName()"
+
+
+- A static NodeList
+    - Any changes in the DOM (nodes) does NOT update the "NodeList"
+        - An array-like collection that contains a snapshot of the DOM nodes
+
+    - It consumes less memory & offers better performance
+
+    - The following methods return a static "NodeList"
+        - ".querySelector()"
+        - ".querySelectorAll()"
+    
