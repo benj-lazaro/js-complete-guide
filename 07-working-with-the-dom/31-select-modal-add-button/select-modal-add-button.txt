@@ -1,0 +1,20 @@
+Selecting The Modal & "Add" Button
+----------------------------------
+- Select the corresponding Element nodes
+    - HTML element <div> that contains the hidden modal (i.e. pop-up overlay)
+    - HTML element <button> w/ the text content "ADD MOVIE"
+    
+
+- On the practice project (app.js)
+    - Select the HTML <div> w/ the attribute "id" of "add-modal"
+        - Use the method ".getElementById()"
+        - Pass "id" as argument value
+        - Store the returned Element node on a constant named "addMovieModal"
+
+    - Select the HTML element <button> w/in the HTML element <header>
+        - Use the method ".querySelector()"
+        - Pass "header button" as argument value
+        - Store the returned Element node on a constant name "startAddMovieButton"
+
+    - Save the changes
+
