@@ -1,0 +1,19 @@
+Insertion & Removal Method Summary
+----------------------------------
+- A summary on DOM node insertion & removal methods
+    - Older & have broad browser support
+        - ".appendChild()"
+        - ".insertAdjacentElement()"
+        - ".replaceChild()"
+        - ".removeChild()"
+
+
+    - Modern methods
+        - ".append()"
+        - ".prepend()"
+        - ".before()"
+        - ".after()"
+        - ".replaceWith()"
+        - ".remove()"
+
+        - NOTE: NOT supported in ALL browsers (i.e. Internet Explore & Safari)
