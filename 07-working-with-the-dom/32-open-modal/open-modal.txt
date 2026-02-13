@@ -1,0 +1,32 @@
+Opening A Modal By Changing CSS Classes
+---------------------------------------
+- Attach an Event listener to the HTML element <button> w/ content of "ADD MOVIE"
+    - Toggles the modal to be visible & invisible when clicked
+
+
+- Challenge
+    - Enable the dark backdrop when the modal gets rendered
+    - Enable the modal's "Cancel" button    
+
+
+- On the practice project (app.js)
+    - Define an Arrow function
+        - Stored in a constant named "toggleMovieModal"
+
+        - On the Element node "addMovieModal"
+            - Attach the property ".classList"
+        
+        - Chain the method ".toggle()"
+            - Pass the class "visible" as an argument value
+
+    - Define an Event handler on the Element node "startAddMovieButton"
+        - Pass the following argument values
+            - 1st = "click"
+            - 2nd = toggleMovieModal
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Click the "ADD MOVIE" button
+        - Doing so, renders (and hides) the modal
+
