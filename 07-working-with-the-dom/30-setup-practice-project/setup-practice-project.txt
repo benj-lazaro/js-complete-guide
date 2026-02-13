@@ -1,0 +1,14 @@
+Setting Up The Practice Project
+-------------------------------
+- Work on the practice project; a personal movie database web app
+    - Add & remove a favorite movie
+        - Movie title
+        - Image
+        - Personal ratings
+
+    - Render a list of favorate movies
+
+    - Clicking an entry
+        - View movie details
+
+    - Dynamically create & remove elements from the DOM
