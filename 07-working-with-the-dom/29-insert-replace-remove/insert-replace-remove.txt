@@ -1,0 +1,36 @@
+Summary: Insert, Replace, Remove
+--------------------------------
+- Two (2) options for creating & inserting DOM nodes
+    - Provide a HTML snippet via ".innerHTML" property & let the browser render the DOM nodes
+        - Using the method ".insertAdjacentElement()"
+
+    - Create a DOM node in JavaScript & append/insert it manually
+        - Create using the method ".createElement()"
+
+        - Insert the DOM node w/ any of the following methods
+            - ".append()"
+                - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/append)
+
+            - ".appendChild()"
+                - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild)
+
+            - ".prepend()"
+                - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild)
+
+            - ".insertBefore()"
+                - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Node/insertBefore)
+
+            - ".before()"
+                - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/before)
+
+            - ".after()"
+                - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/after)
+
+
+- Two (2) methods for replacing elements in the DOM
+    - ".replaceWith()"
+        - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/replaceWith)
+
+    - ".replaceChild()"
+        - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Node/replaceChild)
+
