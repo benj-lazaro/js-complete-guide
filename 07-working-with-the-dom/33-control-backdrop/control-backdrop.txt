@@ -1,0 +1,17 @@
+Controlling The Backdrop
+------------------------
+- Implement the logic that 
+    - Toggles the backdrop behind the modal in a function
+
+    - Call the function when the
+        - Modal's "Cancel" button is clicked
+        - Modal's backdrop is clicked
+
+
+- On the practice project (assets/scripts/app.js)
+    - Select the HTML element <div> with the attribute "class" of "backdrop"
+        - Using the method ".getElementById()"
+        - Pass "backdrop" as argument value
+        - Store the returned element to the constant named "backdrop"
+
+    - 
