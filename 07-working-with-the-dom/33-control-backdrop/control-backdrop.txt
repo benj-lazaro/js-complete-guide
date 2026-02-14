@@ -9,9 +9,52 @@ Controlling The Backdrop
 
 
 - On the practice project (assets/scripts/app.js)
-    - Select the HTML element <div> with the attribute "class" of "backdrop"
+    - Select the HTML element <div> w/ the attribute "class" of "backdrop"
         - Using the method ".getElementById()"
         - Pass "backdrop" as argument value
         - Store the returned element to the constant named "backdrop"
 
-    - 
+    - Select the HTML element <button> w/ the attribute "class" of "btn--passive"     
+        - Use the method ".querySelector()" on the object "addMovieModal"
+        - Pass "btn--passive" as argument value
+        - Store the returned Element node to the constant named "cancelAddMovieButton"
+        - NOTE: This is the 1st button w/in Element node "addMovieModal"
+
+    - Create an Arrow function stored in a constant named "toggleBackdrop"
+        - On the Element node "backdrop"
+            - Attach the property ".classList"
+
+        - The chain the method ".toggle()"
+            - Pass the class named "visible" as argument value
+
+        - NOTE: This toggles the backdrop ONLY
+
+    - Refactor the arrow function stored in a constant named "toggleMovieModal"
+        - On the last line, call the function "toggleBackdrop()"
+            - Effectively toggles BOTH backdrop & model
+
+        - NOTE: This serves as a callback function for the Element node "startAddMovieButton"
+
+    - Create an Arrow function stored in a constant named "backgroundClickHandler"
+        - Calls the function "toggleMovieModal()"
+            - Effectively toggles BOTH backdrop & model
+
+        - NOTE: This serves as a callback function for the Element node "backdrop"
+
+    - Create an Arrow function stored in a constant named "cancelAddMovie"
+        - Calls the function "toggleMovieModal()"
+            - Effectively toggles BOTH backdrop & modal
+
+        - NOTE: This serves as a callback function for the Element node "cancelAddMovieButton"
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Click the button "ADD Movie"
+            - Closes BOTH modal & backdrop
+
+        - Click the "Cancel" button
+            - Closes BOTH modal & backdrop
+
+        - Click the backdrop
+            - Closes BOTH modal & backdrop

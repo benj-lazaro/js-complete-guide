@@ -10,22 +10,23 @@ const backdrop = document.getElementById("backdrop");
 // Select modal "cancel" button
 const cancelAddMovieButton = addMovieModal.querySelector(".btn--passive");
 
-// Toggle the backdrop visibility
+// Toggles the backdrop visibility
 const toggleBackdrop = () => {
   backdrop.classList.toggle("visible");
 };
 
-// Toggle the modal visibility
+// Callback function for the Element node "startAddMovieButton"
 const toggleMovieModal = () => {
   addMovieModal.classList.toggle("visible");
   toggleBackdrop();
 };
 
-// Toggle both modal & backdrop visibility
+// Callback function for the Element node "backdrop"
 const backgroundClickHandler = () => {
   toggleMovieModal();
 };
 
+// Callback function for the Element node "cancelAddMovieButton"
 const cancelAddMovie = () => {
   toggleMovieModal();
 };
