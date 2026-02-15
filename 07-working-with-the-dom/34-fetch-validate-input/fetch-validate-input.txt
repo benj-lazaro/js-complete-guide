@@ -1,0 +1,61 @@
+Fetching & Validating User Input
+--------------------------------
+- Implement logic that
+    - Fetches user input from the modal's fields
+    
+    - Validate user input & display a warning message when
+        - Fields are empty
+        - Rating is less than 1 & greater than 5
+
+
+- On the practice project (assets/scripts/app.js)
+    - Select the modal's "Add" button
+        - On the Element node "cancelAddMovieButton"
+            - Attach the property ".nextElementSibling"
+            - Save the returned Element node to the constant "confirmAddMovieButton"
+
+    - Select all of the modal's HTML elements <input>
+        - Use the method ".querySelectorAll()" on the Element node "addMovieModal"
+            - Pass "input" as argument value
+            - Save the returned Element node to the constant "userInputs"
+
+    - Create an Event handler for the Element node "confirmAddMovieButton"
+        - Using the method ".addEventListener()"
+        - Pass the arguments
+            - 1st = "click"
+            - 2nd = "addMovieHandler"
+
+    - Create an callback Arrow function for the Element "confirmAddMovieButton"
+        - Store the function to a constant named "addMovieHandler"
+
+        - Access the each NodeList element from the Element node "userInputs"
+            - Using each element's corresponding index value
+            - Using the property ".value"
+
+        - Validate the values of each NodeList element
+            - Using an "if" statement 
+
+            - Use the method ".trim()" on each NodeList element
+                - Removes excess whitespace character(s) before & after the value
+            
+            - Check for empty values
+
+            - Check if the ratings value is < 1 or > 5
+                - NOTE: Use the "+" prefix to coerce conversation to number
+
+            - Use logical OR "||" for each condition
+
+            - Call the function "alert()"
+                - If any of the conditions is met
+            
+                - With the message "Please enter valid value (rating between 1 & 5)"
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Enter invalid values 
+            - To trigger the warning message
+
+        - Enter valid values
+            - NO warning message displayed
+
