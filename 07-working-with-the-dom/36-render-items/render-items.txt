@@ -1,0 +1,74 @@
+Rendering Movie Items On The Screen
+-----------------------------------
+- Implement the logic that renders movie items on the browser
+    - Update the UI
+        - Remove the HTML element <section> w/ an "id" of "entry-text"
+        - Implement an Inline CSS that set the property "display" to "none"
+
+    - Render the movie item (object) on the browser w/in
+        - The HTML element <ul> w/ an "id" of "movie-list"
+
+        - Creating a HTML element <li> w/ a "class" of "movie-element"
+            - Render each movie item on the browser
+
+
+- On the practice project (assets/scripts/app.js)
+    - Select the HTML element <section> w/ an "id" attribute of "entry-text"
+        - Store the returned Element node to a constant named "entryTextSection"
+
+    - Create an Arrow function stored in a constant named "updateUI"
+        - Checks the array "movie" if it is empty or NOT
+        
+        - Implement an Inline CSS using 
+            - The property "style.display" to "none" if NOT empty
+            - Otheriwise, "style.display" to "block"
+
+    - Create an Arrow function stored in a constant named "renderNewMovieElement"
+        - Defines the following parameter variables
+            - title
+            - imageUrl
+            - rating
+
+        - Create a new HTML element <li>
+            - Using the "document" object's method ".createElement()"
+            - Pass "li" as argument value
+            - Stored the created Element node in a constant named "newMovieElement"
+
+        - Set the following properties of the Element node "newMovieElement"
+            - Property ".className" set to "movie-element"
+            - Property ".innerHTML" set to a HTML structure that
+                - Renders a HTML element <div> w/ a "class" of "movie-element__image"
+
+                - Inside the <div>, renders an HTML element <img> w/ the
+                    - Attribute "src" w/ the value from the parameter "imageUrl"
+                    - Attribute "alt" w/ the value from the parameter "title"
+
+                - Render a sibling HTML element <div> w/ a "class" of "movie-element__info"
+
+                - Inside the <div>, render an HTML element <h2>
+                    - W/ content derived from the parameter "title"
+
+                    - Render a HTML element <p> w/ content derived from parameter "rating"
+
+        - Select the HTML element <ul> with the "id" attribute of "movie-list"
+            - Stored in a local constant named "listRoot"
+
+            - Use the method ".append()" on the Element node "listRoot"
+                - Pass the Element node "newMovieElement" as argument value
+
+        - On the arrow function "addMovieHandler"
+            - Right after the call to "clearMovieInput()"
+            
+            - Call the function "renderNewMovieElement()"
+                - Pass the "newMovie.title", "newMovie.image" & "newMovie.rating" as arguments
+
+            - Call the function "updateUI()"
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Add a new movie entry
+
+        - Image, title & rating of the movie item rendered on the browser
+
+        
