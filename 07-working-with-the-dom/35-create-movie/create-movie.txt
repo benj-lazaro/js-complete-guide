@@ -1,0 +1,52 @@
+Creating A Movie In JavaScript & Clearning The Input
+----------------------------------------------------
+- Implement the corresponding logic that
+    - Stores the collected user inputs in memory
+    - Clears the fields after clicking the modal's "Add" button
+    - Clears the fields after clicking the modal's "Cancel" button
+
+
+- On the starter project (assets/scripts/app.js)
+    - Create a new constant named "movies"
+        - Assign it w/ an empty array
+        - Will hold the collection of movie objects in memory
+
+    - Refactor the callback Arrow function "addMovieHandler"
+        - Right after the "if" statement
+            - Declare a new constant named "newMovie"
+
+        - Assign an JavaScript object to the constant "newMovie" 
+            - It contains the following properties
+                - title     = assigned w/ the value stored in "titleValue"
+                - image     = assigned w/ the value stored in "imageUrlValue"
+                - rating    = assigned w/ the value stored in "ratingValue"
+
+        - On the object "movies"
+            - Use the method ".push()"
+            - Pass the object "newMovie" as argument value
+
+        - Call the Arrow function "toggleMovieModal()"
+            - Closes the modal after the button "Add" is clicked
+
+    - Crew a new Arrow function that clears the modal's input fields
+        - Store the function on a constant named "clearMovieInput"
+        - Located above the Arrow function "cancelAddMovieHandler"
+
+        - Use a "for..of" loop on the Element node "userInputs"
+            - Iterate through each NodeList element
+            - Assign an empty string as value
+
+    - On the callback function "cancelAddMovieHandler"
+        - At the last line, call the function "clearMovieInput()"
+
+    - On the callback function "addMovieHandler"
+        - At the last line, call the function "clearMovieInput()"
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Adding or cancelling user inputs on the modal
+            - Should clear ALL fields
+        
+        - Adding a new user input
+            - Displayed as an array element in the browser's JavaScript console
