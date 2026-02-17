@@ -1,0 +1,82 @@
+Showing & Hiding The "Are You Sure" Dialog
+------------------------------------------
+- Implement logic that displays a modal requestion confirmation
+    - Prior to the deletion of a selected movie item from the DOM
+        - Prevents from accidentally deleting a movie item
+
+    - Clicking the backdropClickHandler
+        - Closes the modal
+        - Clears the input fields
+
+
+- In the practice project (assets/scripts/app.js)
+    - Just above the Arrow function "deleteMovieHandler()"
+        - Create a new Arrow function
+            - Stored in a global constant named "deleteMovie"
+            - Define a parameter variable named "movideId"
+
+        - Move the entire codebase of "deleteMovieHandler()"
+            - Into the Arrow function "deleteMovie()"
+
+    - Switch to the Arrow function "deleteMovieHandler()"
+        - Call the Arrow function "deleteMovie()"
+
+        - Select the HTML element <div> w/ an "id" of "delete-modal"
+            - Using the method ".getElementById()"
+            - Pass "delete-modal" as argument value
+            - Store the returned Element node into a local constant named "deleteMovieModal"
+
+        - On the Element node "deleteMovieModal"
+            - Use the property ".classList"
+            - Chain the method "add()"
+            - Pass "visible" as argument value
+
+    - Just beneath the Arrow function "toggleBackdrop()"
+        - Create a new Arrow function
+            - Stored in a global constant named "closeMovieModal"
+
+        - On the Element node "addMovieModal"
+            - Attach the property ".classList"
+            - Attach the method "remove()"
+            - Pass "visible" as argument value
+
+    - Rename the Arrow function "toggleMovieModal()" to "showMovieModal()"
+        - On the Element node "addMovieModal"
+            - Change the chained method from "toggle()" to "add()"
+            - Pass "visible" as argument value
+
+    - On the Arrow function "cancelAddMovieHandler()"
+        - Refactor the call to "toggleMovieModal" into "closeMovieModal()"
+
+    - On the Arrow function "addMovieHandler()"
+        - Refactor the call to "toggleMovieModal" into "closeMovieModal()"
+        - Call the Arrow function "toggleBackdrop()"
+
+    - On the Arrow function "backdropClickHandler()"
+        - Refactor the call to "toggleMovieModal" into "closeMovieModal()"
+
+    - On the in-place callback function of the Element node "startAddMovieButton"
+        - Refactor the call to "toggleMovieModal" into "showMovieModal()"
+
+    - On the Arrow function "deleteMovieHandler()"
+        - Move the local constant "deleteMovieModal" outside of the function
+        - Making it globally available
+
+    - Above the Arrow function "deleteMovieHandler()"
+        - Create an Arrow function
+            - Store in a global constant named "closeMovieDeletionModal"
+
+        - Inside the function
+            - Call "toggleBackdrop()"
+
+            - On the Element node "deleteMovieModal"
+                - Attach the property ".classList"
+                - Chain the method ".remove()"
+                - Pass "visible" as argument value
+    
+    - Switch to the Arrow function "backdropClickHandler()"
+        - Call the Arrow function "closeMovieDeletionModal()"
+
+
+    
+
