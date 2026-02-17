@@ -1,0 +1,92 @@
+Finish The App
+--------------
+- Finish the app by addressing the problems
+    - Click "ADD MOVIE" button w/c renders the Modal
+        - Entering data on the "Movie Title" field
+        - Then click the "Cancel" button
+        - Closes the Modal but the user input remains
+
+    - Click "ADD MOVIE" button w/c renders the Modal
+        - Entering data on the "Movie Title" field
+        - Then click the "Cancel" button
+        - Closes the Modal but the backdrop remains
+
+    - Adding multiple movie items into the list in the DOM
+        - Click a movie item (anywhere in the list) to delete
+            - Followed by clicking the "No (Cancel)" button multiple times
+            
+        - Click a different movie item to delete
+            - Then click the "Yes" button
+
+        - Returns the following error on the brower's JavaScript console
+            
+            "Uncaught TypeError: Cannot read property "remove" of undefined at deleteMovieHandler"
+
+        - Then deletes the entire items from the list
+
+        - NOTE: Issue occurs when deleting multiple items from the list
+            - Deleting the ONLY one (1) movie item does NOT cause a problems
+            
+        - Culprit
+            - Whenever the Arrow function "startDeleteMovieHandler()" executes
+                - Respective Event listeners are attached to the modal's buttons (i.e. No (Cancel) & Yes)
+
+            - When the button "No (Cancel)" is clicked
+                - The modal is closed
+                - The attached Event listeners for both buttons remains
+
+            - When the Arrow function "startDeleteMovieHandler()" is called again
+                - To delete a different (or the same) movie item
+                - A new set of Event listeners are crated w/ the previous ones as well
+                - Causing confusion as the previous Event listeners will be executed
+
+            - The same modal is ALWAYS been re-used w/ the same button for every movie item
+
+        - Solution
+            - Clear the existing Event listeners 
+        
+    - Finishing touch
+        - Render the HTML element <section> w/ an "id" of "entry-text"
+            - When the list in the DOM is empty
+            - Call the Arrow function "updateUI()" whenever a movie item is deleted
+
+
+- On the practice project (assets/scripts/app.js)
+    - On the Arrow function "backdropClickHandler()"
+        - Call the Arrow function "clearMovieInput()"
+
+    - On the Arrow function "cancelMovieHandler()"
+        - After the call to Arrow function "closeMovieModal()"
+        - Call the Arrow function "toggleBackdrop()"
+    
+    - On the Arrow function "deleteMovieHandler()"
+        - At the last line, call the Arrwo function "closeMovieDeletionModal()"
+
+    - On the Arrow function "startDeleteMovieHandler()"
+        - BEFORE adding an Event listener to the Element node "cancelDeletionButton"
+            - Remove previous ones using the method ".removeEventListener()"
+            - Pass the same argument values
+                - 1st = "click"
+                - 2nd = "closeMovieDeletionModal"
+
+        - After the declaration of the Arrow function in the local constant "confirmDeletionButton"
+            - Use the method ".replaceWith()" on the Element node "confirmDeletionButton"
+                - Pass "confirmDeletionButton.cloneNode(true)" as argument
+                - Creates a clone after the declaration
+                - Effectively removes previous Event listner 
+
+            - Change the constant (i.e. const) of "confirmDeletionButton" to a variable (i.e. let)
+
+            - Use the method ".querySelector()" on the clone Element node "confirmDeletionButton"
+                - To re-attach the HTML element to the Element node
+
+    - On the Arrow function "deleteMovieHandler()"
+        - Call the Arrow function "updateUI()" at the last line
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Test if the preivous bugs are still presents
+
+        - If the modal w/ the test "Your personal movie database" is rendered
+            - When the list of movies is empty
