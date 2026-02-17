@@ -77,6 +77,14 @@ Showing & Hiding The "Are You Sure" Dialog
     - Switch to the Arrow function "backdropClickHandler()"
         - Call the Arrow function "closeMovieDeletionModal()"
 
+    - Save the changes
 
-    
+    - Load / reload the browser
+        - Add a movie item into the DOM
+
+        - Click the movie item
+            - Renders the deletion confirmation modal 
+
+        - Click the backdrop
+            - Closes the deleteion confirmation modal
 
