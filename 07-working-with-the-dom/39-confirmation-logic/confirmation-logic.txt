@@ -1,0 +1,50 @@
+Starting With The Confirmation Logic
+------------------------------------
+- Implementing the confirmation logic on the Arrow function "deleteMovieHandler()"
+    - Attach corresponding Event handlers for the buttons 
+        - "No (Cancel)"
+        - "Yes"
+
+
+- In the practice project (assets/scripts/app.js)
+    - On the Arrow function "deleteMovieHandler()"
+        - Select the corresponding child HTML elements <button>
+        
+        - Using the method ".querySelector()" on the Element node "deleteMovieModal"
+            - Pass argument values ".btn--passive" & ".btn--danger"
+    
+            - Respectively save returned Element nodes into local constants 
+                - "cancelDeletionButton" 
+                - "confirmDeletionButton"
+
+        - Attach an Event listener to the Element node "cancelDeletionButton"
+            - Using the method ".addEventListener()"
+            - Pass the argument values
+                - 1st = "click"
+                - 2nd = "closeMovieDeletionModal"
+
+        - Attach an Event listener to the Element node "confirmDeletionButton"
+            - Using the method ".addEventListener()"
+            - Pass the argument values
+                - 1st = "click"
+                - 2nd = "deleteMovie.bind(null, movieId)"
+
+    - Rename the Arrow function "deleteMovie()" to "deleteMovieHandler()"
+
+    - Rename the original "deleteMovieHandler()" to "startDeleteMovieHandler()"
+
+    - On the Arrow fuction "renderNewMovieElement()"
+        - Rename the callback function for the Element node "newMovieElement"
+
+    - Save the changes
+
+    - Load / reload the browser
+
+    - Add multiple movie items in the DOM
+        - Delete a movie item
+
+    - Noted bugs in the code
+        - To be resolved in the following section
+    
+
+        
