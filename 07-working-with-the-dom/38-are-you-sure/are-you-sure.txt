@@ -1,6 +1,6 @@
 Showing & Hiding The "Are You Sure" Dialog
 ------------------------------------------
-- Implement logic that displays a modal requestion confirmation
+- Implement logic that displays a modal
     - Prior to the deletion of a selected movie item from the DOM
         - Prevents from accidentally deleting a movie item
 
