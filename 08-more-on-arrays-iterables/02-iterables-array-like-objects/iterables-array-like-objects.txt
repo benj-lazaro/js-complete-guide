@@ -1,0 +1,32 @@
+What Are "Iterables" & "Array-like Objects"
+-------------------------------------------
+- An Iterable
+    - Technically is an object that implements the "iterable" protocol
+
+    - It has an @@iterator method w/
+        - A Symbol.iterator property  
+
+        - A Symbol is a special data-type in JavaScript that
+            - Will be explored in detail later
+
+    - It is simply an object where
+        - It can be loop through a "for..of" loop
+
+    - NOT every Iterable is an Array
+        - e.g. NodeList, String, Map, Set
+
+
+- An Array-like object
+    - Technically is an object that
+        - Has a property ".length"
+        - Uses an index to access items
+        
+    - NOTE: It is NOT the same as an Iterable
+
+    - NOT every Array-like object is an Array
+        - e.g. NodeList & String
+
+
+- A real array has a couple of behaviors & bunch of methods that
+    - Does NOT exists on an Array-like object & Iterable
+    
