@@ -1,0 +1,47 @@
+Creating Arrays
+---------------
+- Using the bracket notation
+    - The MOST common way of creating an array
+
+    Syntax:
+    const <name> = [<item_1>, ... <item_n> ];
+
+
+- Using the Array constructor
+    - Using the optional keyword "new"
+        - Followed by the constructor function "Array()"
+        - Pass array item(s) as arguments
+
+    Syntax:
+    const <name> = [new] Array(<item_1>, ... <item_n>);
+
+    - IMPORTANT: Passing a single number as argument value
+        - The number is interpreted as the length of the array to be created
+        - Creates an empty array of pre-determined length
+
+    - NOTE: This is slower from a performance perspective
+        - Better use the bracket notation
+
+
+- Using the global Array object w/ the method ".of()"
+    - Chain the method ".of()" to the object Array
+        - Pass an item(s) as argument
+        - Creates a non-empty array of pre-determined length
+
+    Syntax:
+    const <name> = [new] Array.of(<item_1>, ... <item_n>);
+
+    - NOTE: This is slower from a performance perspective
+        - Better use the bracket notation
+
+    
+- Using the global Array object w/ the method ".from()"
+    - Chain the method ".from()" to the object Array
+        - Pass an iterable as argument
+        - Creates an array whose items are taken from an iterable
+
+    Syntax:
+    const <name> = [new] Array(<iterable>);
+
+    - NOTE: This is slower from a performance perspective
+        - Better use the bracket notation
