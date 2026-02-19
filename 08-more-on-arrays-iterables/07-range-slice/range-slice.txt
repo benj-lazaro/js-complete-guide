@@ -1,0 +1,62 @@
+Selecting Ranges & Creating Copies With ".slice()"
+--------------------------------------------------
+- The array method ".slice()"
+    - Returns a brand-new array based on the entire or portion of an existing array
+
+    - This brand-new array is a "shallow copy" of the original array
+        - It has a different reference in memory than the original array
+
+        - Any changes in the original array 
+            - It is NOT reflected on the "shallow copy" & vice-versa
+
+    - This method accepts two (2) arguments
+        - 1st: start index
+        - 2nd: end index (NOT included in the shallow copy)
+
+    - Calling the method w/ one (1) arguments
+        - Returns a "shallow copy" from the specified start index up to the array's end
+
+    - Calling the method w/ NO arguments
+        - Returns a "shallow copy" of the entire original array
+
+    - Calling the method w/ negative index values
+        - BOTH start & end index values MUST be negative values
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
+
+    Syntax:
+    <original_array>.slice();
+    <original_array>.slice(<start_index>, <end_index>);
+
+
+- On the practice project (app.js)
+    - Insert a new element as the 1st of the pre-defined array "testResults"
+
+    - Create a brand-new "shallow copy" of the array "testResults"
+        - Store in on a global constant named "storedResults"
+
+    - Test the "shallow copy"
+        - Insert a new element into the original array "testResults"
+            - Using the method ".push()"
+            - Pass "5.91" as argument values
+
+        - The array "storedResults" should be unchanged
+
+
+    - Create a "shallow copy" array that 
+        - Contains the 1st two (2) elements of the original array "testResults"
+        - Store the returned array in a global constant named "portionResults"
+
+    - Create a "shallow copy" array that
+        - Contains the last two (2) element of the original array "testResults"
+        - Store the returned array in a global constant named "lastResults"
+
+    - Create a "shallow copy" array that
+        - Constains the 3rd element (index position 2) up to the end of the original array
+        - Store the returned array in a global constant named "thirdToEndResult"
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Launch the browser's JavaScript console
+        - View the results 
