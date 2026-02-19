@@ -1,0 +1,99 @@
+The ".splice()" Method
+----------------------
+- The array method ".splice()"
+    - Changes the content of an array by
+        - Adding new element(s) in-place
+        - Removing or replacing existing element(s)
+
+    - Returns removed element(s) from the array
+
+    - It accepts two arguments
+        - Start index
+        - Number of elements to delete starting from the start index
+
+        - NOTE: Passing a 0 on the 2nd argument
+            - NO element(s) will be deleted from the array
+
+    - It accepts an optional arguments
+        - Element(s) to be added into the array
+        - Starting from the specified start index
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice)
+
+
+    Syntax:
+    <array>.splice(<start_index>, <delete_count>);
+    <array>.splice(<start_index>, <delete_count>, [<element_1>, ...]);
+    <array>.splice(<start_index>);
+    
+
+- Passing the <start_index> argument ONLY
+    - Interpreted as the start index value
+    - Deletes ALL elements from the start index value until the end of the array
+
+
+- Passing a negative number as the <start_index> argument value
+    - Interpreted as the index count STARTS at the end of the array
+    
+    - NOTE: Using a negative index value to access an element
+        - Does NOT work on a normal array operation
+        - ONLY works w/ the ".splice()" method
+
+
+- The ".splice()" method is AVAILABLE ONLY on REAL ARRAYS
+    - Both array-like object & iterable are NOT INCLUDED
+
+    - Use the "Array" object's method ".from()"
+        - To convert an array-like object & iterable into a REAL ARRAY
+        - In order to use the method ".splice()"
+        
+
+- On the practice project (app.js)
+    - Insert a new element as the 1st of the pre-defined array "hobbies"
+        - Using the method ".splice()"
+        
+        - Pass the arguments
+            - 1st: 0            = start index
+            - 2nd: 0            = NO deletion
+            - 3rd: "Good Food"  = new element to insert
+
+    - Insert two (2) new elements at the 2nd index position
+        - Using the method ".splice()"
+        
+        - Pass the arguments
+            - 1st: 1            = start index
+            - 2nd: 0            = NO deletion
+            - 3rd: "Good Food", "Coding"  = new elements to insert
+
+    - Delete the element located at index 1
+        - Using the method ".splice()"
+        
+        - Pass the arguments
+            - 1st: 1            = start index
+            - 2nd: 1            = delete one (1) element located at start index
+
+    
+    - Delete the 2nd element to the last element
+        - Using the method ".splice()"
+        
+        - Pass the arguments
+            - 1st: -2           = start index
+            - 2nd: 1            = delete one (1) element located at start index
+
+        - Store the removed element
+            - In a global constant named "removedElement"
+
+    
+    - Delete ALL elements from the array
+        - Using the method ".splice()"
+        
+        - Pass the arguments
+            - 1st: 0            = start index
+
+        - Store the removed elements
+            - In a global constant named "removedElements"
+
+    - Save the Changes
+
+    - Load / reload the brower
+        - Launch the browser's JavaScript console to view results
