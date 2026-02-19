@@ -1,0 +1,65 @@
+".push()", ".pop()", ".shift()", ".unshift()": Adding & Removing Elements
+-------------------------------------------------------------------------
+- The array method ".push()"
+    - Passed argument value(s) is/are added at the end of an array
+    - Returns the (updated) length of the array
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
+
+    Syntax:
+    <array>.push(<new_element, ...>);
+
+
+- The array method ".pop()"
+    - Removes the last element of an array
+    - Returns the removed element
+    - Updates the length of the array
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop)
+
+    Syntax:
+    <array>.pop();
+
+
+- The array method ".shift()"
+    - Removes the 1st element of an array
+    - Returns the removed array element
+    - Updates the length of the array
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift)
+
+    - NOTE: This method has performance issues
+        - Due to the shifting of ALL elements in an array
+        - It is slower than ".push()" & ".pop()" methods
+
+    Syntax:
+    <array>.shift();
+
+
+- The array method ".unshift()"
+    - Passed argument value(s) is/are added at the beginning of an array
+    - Returns the (updated) length of the array
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift)
+
+    - NOTE: This method has performance issues
+        - Due to the unshifting of ALL elements in an array
+        - It is slower than ".push()" & ".pop()" methods
+
+    Syntax:
+    <array>.unshift(<new_element, ...>);
+
+
+- To directly change an element of an array
+    - Place the targeted element's index value (position) w/in a pair of "[ ]"
+    - Then the "=" operator
+    - Followed by the new replacement element
+
+    - NOTE: An array is a zero-indexed data structure
+
+    Syntax:
+    <array>[<element_index>] = <new_element>;
+
+
+- Inserting a new element beyond the current length of an array
+    - The slots between the current last element & inserted new element
+        - Will be filled-in w/ "empty" (or undefined) elements
+
+    - NOTE: Deliberately creating empty slots is RARELY used
+    
