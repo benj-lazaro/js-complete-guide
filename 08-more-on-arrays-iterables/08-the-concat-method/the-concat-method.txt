@@ -1,0 +1,43 @@
+Adding Arrays To Arrays With ".concat()"
+----------------------------------------
+- The array method ".concat()"
+    - Pulls out elements from the array(s) passed as argument values
+        - Merge all elements into a brand new array
+
+    - The arrays passed as arguments remains unmodified
+
+    - Use case:
+        - Combining elements of existing arrays into a new array
+    
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat)
+
+    Syntax:
+    <array>.concat(<array_1>, ..., <array_n>);
+
+
+- On the practice project (app.js)
+    - Declare an array w/ pre-defined elements of number data type
+        - Stored in a global constant named "testResults"
+        - Pass the array as argument value to "console.log()"
+
+    - Use the array method ".concat()" on the array "testResults"
+        - Add two new elements
+        - Pass an array w/ two (2) numbers as argument
+        - Returned new array is stored on a global constant named "storedResults"
+
+        - Pass the array as argument value to "console.log()"
+            - The array "storedResults" have two (2) additional elements than the "testResults"
+
+    - Add a new element in the array "testResults"
+        - Using the array meethod ".push()"
+        - Pass a number as argument value
+        
+        - Pass arrays "testResults" & "storedResults" as argument values to "console.log()"
+            - The array "storedResults" does NOT reflect the changes in "testResults"
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Launch the browser's JavaScript console
+
+        - View the results of the "console.log()" statements
