@@ -1,0 +1,51 @@
+Alternative To "for..of" Loops: The ".forEach()" Method
+-------------------------------------------------------
+- The array method ".forEach()"
+    - An alternative to the "for..of" loop that
+        - Offers the advantage of having access to an element's index value
+
+    - Accepts a callback function as argument
+
+    - The passed callback function can accept up to three (3) arguments
+        - 1st   = singular name of the object element w/in an array
+        - 2nd   = index of the object element
+        - 3rd   = plural name of elements stored w/in the
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
+
+
+    Syntax:
+    <array>.forEach(<callback_function>(<object_element>, <index>, <array_name>));
+
+
+- For the practice project (app.js)
+    - Create a new array w/ priimitive values
+        - Stored in a global constant named "prices"
+
+    - Create a constant named "tax"
+        - Store the value of "0.19"
+
+    - Create a constant named "taxAdjustedPrices"
+        - Store the value of an empty array
+
+    - On the array "prices"
+        - Chain the method ".forEach()"
+
+        - Pass an Array function as argument value w/ the following parameters
+            - 1st   = "person" (singular name of the object element)
+            - 2nd   = "index" 
+            - 3rd   = "persons" (plural name of the object elements)
+
+    - Inside the Arrow function
+        - On the array "taxAdjustedPrices"
+            - Chain the method ".push()"
+
+        - Pass the following expression as argument value
+
+            price * (1 + tax)
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Open the browser's JavaScript console
+        - View the results
