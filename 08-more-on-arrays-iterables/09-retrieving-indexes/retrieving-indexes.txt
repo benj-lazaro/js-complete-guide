@@ -1,0 +1,74 @@
+Retrieving Indexes With ".indexOf()" & ".lastIndexOf()"
+-------------------------------------------------------
+- The array method ".indexOf()"
+    - Returns the index of the 1st matching element passed as an argument value
+        - Returns "-1" if the element searched is NOT found
+
+    - Accepts the following arguments
+        - 1st   = element to search
+        - 2nd   = starting index (optional)
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf)
+
+    Syntax:
+    <array>.indexOf(<search_element>);
+    <array>.indexOf(<search_element>, [<from_index>]);
+
+
+- The array method ".lastIndexOf()"
+    - Returns the index of the last matching element passed as an argument value
+        - Returns "-1" if the element searched is NOT found
+    
+    - NOTE: The array is searched backwards
+    
+    - Accepts the following arguments
+        - 1st   = element to search
+        - 2nd   = starting index (optional)
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/lastIndexOf)
+
+    Syntax:
+    <array>.lastIndexOf(<search_element>);
+    <array>.lastIndexOf(<search_element>, [<from_index>]);
+
+
+- BOTH methods works fine w/ primitive values but NOT w/ reference values
+    - Passing a reference value as argument
+        - Returns the value of "-1" (i.e. element NOT found)
+
+    - JavaScript object is a reference value
+        - Passing an object as argument value to either methods
+        - Creates a brand-new reference address for that object
+
+    - Both methods compares the reference address of the objects
+        - Stored as an element w/in an array
+        - Passed as an argument value to either methods
+
+    - The reference address of the object element w/in an array is NEVER THE SAME
+        - As the reference address of the object passed as argument valuw
+        - Returns the value of "-1" (i.e. element NOT found)
+
+    - NOTE: There is a method that works w/ object elements in an array
+
+
+- On the practice project (app.js)
+    - Create a new array w/ primitive values
+        - Store in a global constant named "testResults"
+
+    - Use the array method ".indexOf()" on the array "testResults"
+        - To search for the 1st instance of the value "1.5"
+
+    - Use the array method ".lastIndexOf()" in the array "testResults"
+        - To search for the last instance of the value "1.5"
+
+    - Create a new array w/ reference values
+        - Stored in a global constant named "personData"
+
+    - Use the array method ".indexOf" on the array "personData"
+        - To search for the 1st instance of the 1st element
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Launch the browser's JavaScript console
+        - View the results
