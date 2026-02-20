@@ -1,0 +1,93 @@
+Finding Stuff With ".find()" & ".findIndex()"
+---------------------------------------------
+- The array method ".find()"
+    - Works with both primitive & reference elements w/in an array
+
+    - Returns the 1st matching element that satisfies
+        - The callback function passed as an argument value
+
+    - The passed callback function can accept up to three (3) arguments
+        - 1st   = singular name of the object element w/in an array
+        - 2nd   = index of the object element
+        - 3rd   = plural name of elements stored w/in the
+
+    - The callback function
+        - Performs a comparison operation to find a match
+        - Stops the operation when a match is found
+        - Returns the matching element
+
+    - NOTE: This method works w/ the same reference address of the object element
+        - Any changes made on the object element will IMMEDIATELY be reflected
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
+
+
+    Syntax:
+    <array>.find(<callback_function>(<element>, [<index_of_element>, <array_name>]));
+
+
+- The array method ".findIndex()"
+    - Returns the index of the 1st matching element that satisfies
+        - The callback function passed as an argument value
+
+    - Returns "-1" if NO match is found
+
+    - The passed callback function can accept up to three (3) arguments
+        - 1st   = singular name of the object element w/in an array
+        - 2nd   = index of the object element
+        - 3rd   = plural name of elements stored w/in the
+
+    - The callback function
+        - Performs a comparison operation to find a match
+        - Stops the operation when a match is found
+        - Returns the matching element
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex)
+
+
+    Syntax:
+    <array>.findIndex(<callback_function>(<element>, [<index_of_element>, <array_name>])));
+
+
+- On the practice project (app.js)
+    - Create a new array w/ reference values
+        - Store in a global constant named "personData"
+
+    - To search for a matching object element w/in the array
+        - Use the method ".find()"
+
+        - Pass an Array function as argument value w/ the following parameters
+            - 1st   = "person" (singular name of the object element)
+            - 2nd   = "index" 
+            - 3rd   = "persons" (plural name of the object elements)
+
+        - Inside the Arrow function
+            - Use a "return" statement on a comparison operation
+
+            - To search through the element object's ".name" property that
+                - Matches the value "Manuel"
+        
+        - Store the returned object in a global constant named "findPerson"
+
+
+    - To search for the index of a matching object element w/in the array
+        - Use the method ".findIndex()"
+
+        - Pass an Array function as argument value w/ the following parameters
+            - 1st   = "person" (singular name of the object element)
+            - 2nd   = "index" 
+            - 3rd   = "persons" (plural name of the object elements)
+
+        - Inside the Arrow function
+            - Use a "return" statement on a comparison operation
+
+            - To search through the element object's ".name" property that
+                - Matches the value "Manuel"
+        
+        - Store the returned index value in a global constant named "findPersonIndex"
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Open the browser's JavaScript console
+        - View the results
