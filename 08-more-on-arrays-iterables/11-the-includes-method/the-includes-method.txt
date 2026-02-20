@@ -1,0 +1,23 @@
+Is It included?
+---------------
+- The array method ".includes()"
+    - Determines whether an array includes a certain value among its elements
+
+    - Accepts a primitive value (to search for) as argument value
+        - Optionally, accept the index value from where to start the search
+
+    - Returns boolean value "true" if there is an element
+        - Otherwise, returns "false" & the value of "-1"
+        
+    - NOTE: Functions similarly to the method ".indexOf()"
+
+    - Use case:
+        - To check for the existence of a specific primitive value in an array
+            - NOT interested in the element's index or the element itself
+    
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)
+
+
+    Syntax:
+    <array>.includes(<search_element>);
+    <array>.includes(<search_element> [,<start_index>]);
