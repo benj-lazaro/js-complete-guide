@@ -1,0 +1,52 @@
+Transforming Data With ".map()"
+-------------------------------
+- The array method ".map()"
+    - Creates a brand-new array
+        - Populates w/ results from the callback function passed as argument value
+        - Leaves the original array remains untouched
+    
+    - The callback function is responsible for
+        - Returns a new array element for every element read from the original array
+
+    - The callback function can accept up to three (3) arguments
+        - 1st   = singular name of the object element w/in an array
+        - 2nd   = index of the object element
+        - 3rd   = plural name of elements stored w/in the    
+
+    - It serves as an easier & shorter alternative to the ".forEach()" method
+        - Removes the need to manage a separate array where
+            - The updated elements are pushed in using the method ".push()"
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+
+
+- On the practice project (app.js)
+    - Create a new array w/ priimitive values
+        - Stored in a global constant named "prices"
+
+    - Create a constant named "tax"
+        - Store the value of "0.19"
+
+    - On the array "prices"
+        - Chain the method ".map()"
+
+        - Pass an Array function as argument value w/ the following parameters
+            - 1st   = "price" (singular name of the object element)
+            - 2nd   = "index" 
+            - 3rd   = "prices" (plural name of the object elements)
+
+    - Inside the Arrow function
+        - Create an object named "priceObj" w/ the following properties
+            - "index"   = assign the value of parameter "index"
+            - "taxAdjPrice" = assign the expression "price * (1 + tax)"
+
+        - Use a "return" statement
+            - To return the object "priceObj"
+
+    - Store the new array on a global constant named "taxAdjustedPrices"
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Open the browser's JavaScript console
+        - View the results
