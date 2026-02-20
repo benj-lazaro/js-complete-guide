@@ -32,9 +32,9 @@ Alternative To "for..of" Loops: The ".forEach()" Method
         - Chain the method ".forEach()"
 
         - Pass an Array function as argument value w/ the following parameters
-            - 1st   = "person" (singular name of the object element)
+            - 1st   = "price" (singular name of the object element)
             - 2nd   = "index" 
-            - 3rd   = "persons" (plural name of the object elements)
+            - 3rd   = "prices" (plural name of the object elements)
 
     - Inside the Arrow function
         - On the array "taxAdjustedPrices"

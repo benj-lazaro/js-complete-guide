@@ -5,8 +5,13 @@ const taxAdjustedPrices = [];
 
 console.log(prices);
 
+// prices.forEach((price, index, prices) => {
+//   taxAdjustedPrices.push(price * (1 + tax));
+// });
+
 prices.forEach((price, index, prices) => {
-  taxAdjustedPrices.push(price * (1 + tax));
+  const priceObj = { index: index, taxAdjustedPrices: price * (1 + tax) };
+  taxAdjustedPrices.push(priceObj);
 });
 
 console.log(taxAdjustedPrices);
