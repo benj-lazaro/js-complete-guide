@@ -1,0 +1,8 @@
+Coding Exercise 11: .map()
+--------------------------
+- Your task is to add the missing logic to the function "transformToObjects()" that
+    - Transforms a list of numbers into a list of JavaScript objects
+
+    - The provided input is [1, 2, 3] 
+    
+    - The transformToObjects() function should return [{val: 1}, {val: 2}, {val: 3}]
