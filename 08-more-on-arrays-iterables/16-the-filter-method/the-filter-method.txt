@@ -1,0 +1,52 @@
+Filtering Arrays With ".filter()"
+---------------------------------
+- The array method ".filter()"
+    - Reduces the amount of elements of an array
+        - Returns a "shallow-copy" of the original array w/ filtered elements
+
+    - Accepts a function as argument
+        - The function implements the filtering on each element of the original array
+
+        - The Arrow function can accept up to three (3) arguments
+            - 1st   = singular name of the object element w/in an array
+            - 2nd   = index of the object element
+            - 3rd   = plural name of elements stored w/in the array
+
+        - If the condition evaluates to a boolean "true"
+            - Add the element to the new array
+            - Otherwise, drop the element
+
+    - Returns the brand-new "shallow-copy" array
+        - The elements of the original array remains UNTOUCHED
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
+
+
+    Syntax:
+    const <new_array> = <array>.filter(<function>);
+
+
+- On the practice project (app.js)
+    - Create a new array w/ priimitive values
+        - Stored in a global constant named "prices"
+    
+    - Use the method ".filter()" on the array "prices"
+        - Pass an Arrow function as argument
+
+    - The Arrow function can accept up to three (3) arguments
+        - 1st   = "price"
+        - 2nd   = "index"
+        - 3rd   = "prices"
+
+    - Inside the function
+        - Declare a "return" statement that
+            - Returns the value if the value in "price" is greater than 6
+
+    - Store the returned brand-new array w/ filtered elements
+        - In a global constant named "filteredPrices"
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Launch the browser's JavaScript console
+        - View the results
