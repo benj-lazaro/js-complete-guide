@@ -1,0 +1,91 @@
+".sort()"ing And ".reverse()"ing
+--------------------------------
+- The array method ".sort()"
+    - Sort elements of an array "in-place" (i.e. no copy is made)
+
+    - Convert elements into strings
+        - Sort by comparing each element's UTF-8 code values
+        - Sort in ascending order (default)
+        - ONLY the 1st character of a string is compared (default)
+
+    - To sort elements of number data type
+        - Pass a callback function as argument
+
+        - Callback function determines the order of the elements
+            - It accepts two (2) arguments
+            - e.g. "a" & "b"
+
+        - Use an "if" statement to compare the values 
+
+        - Return the value
+            - "1"  if "a" is greather than "b"
+            - "0"  if "a" & "b" are equal
+            - "-1" if "a" is less than "b"
+            
+        function compareFn(a, b) {
+            if (a is less than b by some ordering criterion) {
+                return -1;
+            } else if (a is greater than b by the ordering criterion) {
+                return 1;
+            }
+            // a must be equal to b
+            return 0;
+        }
+
+    - NOTE: A two-digit number is read individually
+        - e.g. 10 = read as "1" & "0", NOT as "10"
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
+
+
+    Syntax:
+    <array>.sort();
+    <array>.sort(<callback_function>);
+
+
+- The array method ".reverse()"
+    - Rerverses the elements of an array "in-place" (i.e. no copy is made)
+
+    - Convert elements into strings
+        - Sort by comparing each element's UTF-8 code values
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse)
+
+
+    Syntax:
+    <array>.reverse();
+
+
+- On the practice project (app.js)
+    - Create a new array w/ priimitive values
+        - Stored in a global constant named "prices"
+
+    - Use the array method ".sort()" on the array "prices"
+        - Pass an Arrow function w/ two (2) parameters "a" & "b" as argument value
+
+    - Inside the Arrow function
+        - Use an "if" statement to compare the values of "a" & "b"
+
+        - If the value of "a" is greater than "b"
+            - Return the value of 1
+
+        - If the value of "a" & "b" are equal
+            - Return the value of 0
+
+        - Otherwise, the value of "a" is less than "b"
+            - Return the value of -1
+
+        - Sorts the elements of the array "prices" in-place
+
+        - Save the same reference address of the array "prices"
+            - To the global constant named "sortedPrices"
+
+    - On the array "sortedPrices"
+        - Use the method ".reverse()"
+            - To reverse the elements in place
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Launch the browser's JavaScript console
+        - View the results
