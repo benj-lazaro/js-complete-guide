@@ -3,21 +3,20 @@ Finding Stuff With ".find()" & ".findIndex()"
 - The array method ".find()"
     - Works with both primitive & reference elements w/in an array
 
-    - Returns the 1st matching element that satisfies
-        - The callback function passed as an argument value
+    - Accepts a function as argument that
+        - Returns the 1st mathcing element that satisfies the function's logic
 
-    - The passed callback function can accept up to three (3) arguments
-        - 1st   = singular name of the object element w/in an array
+    - The function can accept up to three (3) arguments
+        - 1st   = singular name of the object element w/in the array
         - 2nd   = index of the object element
-        - 3rd   = plural name of elements stored w/in the
+        - 3rd   = plural name of elements stored w/in the array
 
-    - The callback function
-        - Performs a comparison operation to find a match
-        - Stops the operation when a match is found
-        - Returns the matching element
+    - The function performs the comparision operation in order to find a match
+        - Stops when a match is found
+        - Returns the matched element
 
-    - NOTE: This method works w/ the same reference address of the object element
-        - Any changes made on the object element will IMMEDIATELY be reflected
+    - NOTE: This method works w/ an object element's real (NOT copy) reference address 
+        - Any changes amde w/in the object element is IMMEDIATELY reflected
 
     - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
 
@@ -27,20 +26,18 @@ Finding Stuff With ".find()" & ".findIndex()"
 
 
 - The array method ".findIndex()"
-    - Returns the index of the 1st matching element that satisfies
-        - The callback function passed as an argument value
+    - Accepts a function as argument that
+        - Returns the index of the 1st mathcing element that satisfies the function's logic
+        - Returns "-1" if NO match is found
 
-    - Returns "-1" if NO match is found
-
-    - The passed callback function can accept up to three (3) arguments
-        - 1st   = singular name of the object element w/in an array
+    - The function can accept up to three (3) arguments
+        - 1st   = singular name of the object element w/in the array
         - 2nd   = index of the object element
-        - 3rd   = plural name of elements stored w/in the
+        - 3rd   = plural name of elements stored w/in the array
 
-    - The callback function
-        - Performs a comparison operation to find a match
-        - Stops the operation when a match is found
-        - Returns the matching element
+    - The function performs the comparision operation in order to find a match
+        - Stops when a match is found
+        - Returns the index of the matched element
 
     - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex)
 
