@@ -1,15 +1,15 @@
 Alternative To "for..of" Loops: The ".forEach()" Method
 -------------------------------------------------------
 - The array method ".forEach()"
-    - An alternative to the "for..of" loop that
-        - Offers the advantage of having access to an element's index value
+    - Alternative to the "for..of" loop
+        - Offers the advantage of having access to an element's index
 
-    - Accepts a callback function as argument
+    - Accepts a function as argument
 
-    - The passed callback function can accept up to three (3) arguments
-        - 1st   = singular name of the object element w/in an array
+    - The function can accept up to three (3) arguments
+        - 1st   = singular name of the object element w/in the array
         - 2nd   = index of the object element
-        - 3rd   = plural name of elements stored w/in the
+        - 3rd   = plural name of elements stored w/in the array
 
     - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
 
