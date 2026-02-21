@@ -3,25 +3,29 @@
 - The array method ".sort()"
     - Sort elements of an array "in-place" (i.e. no copy is made)
 
-    - Convert elements into strings
-        - Sort by comparing each element's UTF-8 code values
-        - Sort in ascending order (default)
-        - ONLY the 1st character of a string is compared (default)
+    - By default, converts elements into of string data type
+        - Sort element by comparing their UTF-8 code values
 
-    - To sort elements of number data type
-        - Pass a callback function as argument
+        - Sorts in ascending order (default)
+            - ONLY the 1st character of a string is compared
 
-        - Callback function determines the order of the elements
-            - It accepts two (2) arguments
-            - e.g. "a" & "b"
+   - To sort elements that are numbers
+        - Pass a function as argument value
 
-        - Use an "if" statement to compare the values 
+        - The function accepts two (2) arguments
+            - e.g. "a", "b"
 
-        - Return the value
-            - "1"  if "a" is greather than "b"
-            - "0"  if "a" & "b" are equal
-            - "-1" if "a" is less than "b"
-            
+        - Uses an "if" statement to compare elements by pairs
+            - If the value of "a" is GREATER THAN "b"
+                - Return a 1
+
+            - If the value of "a" & "b" are equal
+                - Return a 0
+
+            - If the value of "a" is LESS THAN "b"
+                - Return a -1
+
+        Example:
         function compareFn(a, b) {
             if (a is less than b by some ordering criterion) {
                 return -1;
@@ -31,9 +35,6 @@
             // a must be equal to b
             return 0;
         }
-
-    - NOTE: A two-digit number is read individually
-        - e.g. 10 = read as "1" & "0", NOT as "10"
 
     - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
 
@@ -45,9 +46,6 @@
 
 - The array method ".reverse()"
     - Rerverses the elements of an array "in-place" (i.e. no copy is made)
-
-    - Convert elements into strings
-        - Sort by comparing each element's UTF-8 code values
 
     - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse)
 
