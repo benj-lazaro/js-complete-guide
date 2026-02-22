@@ -1,0 +1,25 @@
+Where Arrow Functions Shine
+---------------------------
+- Passing an Arrow function as argument to an array method
+    - Helps make the code concise
+
+
+- When working a/ an Arrow function that contains a single-line expression 
+    - Drop the pair of "( )" that holds the parameter variables
+
+    - Drop any unused parameter variables
+        - Keep the ones that is/are used by the single-line expression
+
+    - Drop the pair of "{ }" that contains the body
+
+    - Drop the "return" statement
+        - The result is implicitly returned from the Arrow function
+    
+    - Drop the single-line expression's ";"
+
+
+- On the practice project (app.js)
+    - Refactor the Arrow function that has a single-line expression
+        - Passed as argument to the array method ".filter()"
+
+    
