@@ -1,0 +1,73 @@
+The Important ".reduce()" Method
+--------------------------------
+- The array method ".reduce()"
+    - Reduces the elements of an array into a simplier value 
+        - simplier value = single number or string
+        - e.g. sum of all elements
+
+    - It accepts two (2) argument
+        - 1st   = function
+        - 2nd   = starting or initial value (optional)
+
+    - The passed function can take up to four (4) arguments
+        - 1st   = previousValue
+        - 2nd   = currentValue
+        - 3rd   = currentIndex (optional)
+        - 4th   = plural name of the elements w/in an array (optional)
+
+    - The function executes the logic on every element of the array that
+        - Reduces into a simplier value
+    
+        - Explicitly returns the simplier (reduced) value
+            - Using the "return" statment
+        
+        - NOTE: Elements of the array remains untouched
+
+    - During the 1st execution of the function
+        - The parameter "previousValue" is assigned w/ the starting initial value
+            - If defined, otherwise it is "undefined"
+
+        - The parameter "currentValue" is assigned w/ the 1st element of the array
+
+    - On the succeeding executions
+        - The result of the operation is assigned to the parameter "previousValue"
+
+        - The current element is assigned to the parameter "currentValue"
+
+    
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
+
+
+    Syntax:
+    const <variable> = <array>.reduce(<function>(<prevValue>, <curValue>), <start_value>);
+
+
+- On the practice project (app.js)
+    - Create a new array w/ priimitive values
+        - Stored in a global constant named "prices"
+
+    - Use the method ".filter()" on the array "prices"
+        - Store the reduced value to a global constant named "sum"
+
+        - Pass an Arrow function as the 1st argument
+
+        - Pass the value 0 as the 2nd argument
+            - Initial value that the function will work on
+
+    - On the Arrow function
+        - Define the parameters "prevValue" & "curValue"
+
+    - Inside the Arrow function
+        - Use a "return" statement on the expression
+
+            prevValue + curValue
+    
+    - Save the changes
+
+    - Load / reload the browser
+        - Launch the browser's JavaScript console
+        - View the results
+
+    - Implement a shortened version of the Arrow function
+        - Since it contains a single-line expression
+
