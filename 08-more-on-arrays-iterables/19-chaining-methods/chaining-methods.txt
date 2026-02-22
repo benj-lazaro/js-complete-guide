@@ -1,0 +1,20 @@
+Chaining Methods In JavaScript
+------------------------------
+- Instead of calling array methods separately
+    - Storing their respective return values into several constants
+
+    - Methods can be combined using method chaining
+        - Making the returned value of one method
+        - As input of another method
+        
+
+    Example:
+
+    const originalArray = [{price: 10.99}, {price: 5.99}, {price: 29.99}];
+
+    // BEFORE method chaining
+    const transformedArray = originalArray.map(obj => obj.price);
+    const sum = transformedArray.reduce((sumVal, curVal) => sumVal + curVal, 0);
+
+    // Using method chaining
+    const sum = originalArray.map(obj => obj.price).reduce((sumVal, curVal) => sumVal + curVal, 0);
