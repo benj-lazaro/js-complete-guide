@@ -1,0 +1,102 @@
+The Spread Operator (...)
+-------------------------
+- The spread operator (...)
+    - Pulls out elements of an array
+        - Returns a list of standalone elements
+
+    - This list can be used to
+        - Populate a new array as its own elements
+        - As argument values to a function (built-in or user-defined)
+
+    - When used in populating a new array
+        - Changes made on the source array's elements
+            - Will NOT be reflected on the new array's elements
+
+        - Each array points to different reference address in memory
+    
+    - It is similar to the rest operator (...) but 
+        - The spread operator (...) expands an array into a list of elements
+    
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
+
+
+- IMPORTANT: When working w/ an array of object elements
+    - The pulled out object elements from the source array that
+        - Populates a new array points to the SAME reference address in memory
+
+    - The new & source arrays have DIFFERENT reference address in memory
+        - BUT their object elements points to the SAME reference address
+
+    - To override this INTENDED behavior
+        - Chain the method ".map()" to the spread operator
+            e.g. [...<source_array>.map(<function>)];
+
+            - Pass a function as argument value
+        
+            - The spread operator pulls out the elements of the source array
+
+            - The method ".map()" & the passed function
+                - Maps the list of standalone elements as new object elements
+                - Stored w/in the new array
+            
+            - Returns the new array 
+        
+
+        - Alternatively, call the method ".map()" on the source array
+            - Pass a function as argument value
+
+            - The function accepts a argument
+                - Singular name of the source array's elements
+
+            - Maps the new object element's properties
+                - Assign the corresponding values from the source array
+
+            - Implicitly returns the new array
+
+
+- On the practice project (app.js)
+    - Create a new array stored in a global constant named "copyNameFragments"
+        - Based on the object elements of the existing array "nameFragments"
+        - Using the spread operator (...)
+
+    - Push a new object element into the array "nameFragments"
+        - The changes should NOT be reflected on the new array "copyNameFragments"
+
+    - Modify the 2nd element of the array "nameFragments"
+        - Changes REFLECTED on both arrays "nameFragments" & "copyNameFragments"
+
+
+    - Find the smallest value in the array "prices"
+        - Using the method ".min()" of the "Math" object
+
+        - Use the spread operator on the array "prices"
+            - Pass as argument value to "Math.min()"
+            - e.g. Math.min(...prices);
+
+        - Store the returned value in the global constant "minPrice"
+
+
+    - To override the intended behavior when copying object elements from an array
+        - Create a new array stored in a global constant named "newPersons"
+            - Based on the object elements of existing array "nameFragments"
+
+        - Instead of using the spread operator
+            - Use the method ".map()" on the array "persons"
+
+        - Pass a function as argument
+        
+        - The function accepts the values from the array "persons"
+            - NOTE: singular name of the object element (i.e. person)
+
+        - Inside the function
+            - Maps the properties
+            - Assign the corresponding value taken from the array "persons
+
+        - Implicitly returns the new array
+
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Launch the browser's JavaScript console
+        - View the results
