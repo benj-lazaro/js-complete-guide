@@ -1,0 +1,69 @@
+Arrays & Strings: ".split()" & ".join()"
+----------------------------------------
+- The string method ".split()"
+    - Chained to a string
+
+    - Accepts a separator character as argument value
+
+    - Splits the string into an ordered list of sub-strings
+        - Each separated by the separator character
+
+        - Optionally accepts a limit count as 2nd argument
+            - Limits the number of sub-strings added into the array
+
+    - Stores each sub-string as element of an array
+    
+    - Returns the array
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split)
+
+
+    Syntax:
+    <string>.split();
+    <string>.split(<separator>, [<limit_count>]);
+
+
+- The array method ".join()"
+    - Chained to an array
+
+    - Optionally accepts a separator identifier as argument
+
+    - Concatenates all elements of an array into a string
+        - Converts ALL elements into string
+        - Each element separated by the given separatpr identifier
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
+
+
+    Syntax:
+    <array>.join();
+    <array>.join(<separator>);
+    
+
+- On the practice project (app.js)
+    - Split the string stored in a global constant named "data"
+        - Using the string method ".split()"
+
+    - Pass ";" as argument value
+        - Identifies the separator character w/in the string
+
+    - Store the returned array in a global constant named "tranformedData"
+
+    - NOTE: In the event that an element needs to be an integer
+        - Access the element by its index value
+        - Use the prefix "+" to convert the stored element from string to a number
+
+    - Join the elements of an array stored in a constant named "nameFragments"
+        - Using the array method ".join()"
+
+    - Pass " " (whitespace) as argument value
+        - Identifies the separator character to be placed in-between elements
+
+    - Store the returned string in a global constant named "userName"
+
+    - Save the changes made
+
+    - Load / reload the browser
+        - Launch the browser's JavaScript console
+        - View the results
+        
