@@ -1,0 +1,41 @@
+Array Destructuring
+-------------------
+- A syntax feature known as Array Destructuring
+    - Extract elements of an array
+        - Into invidual constants or variables (i.e. placeholder)
+
+    - Syntax is read from left to right
+        - 1st element assigned to the 1st placeholder
+
+    - Array elements can also be placed in a single placeholder
+        - Using the rest operator (...)
+        
+        - NOT the spread operator (...)
+            - Extracts elements FROM an array
+
+    Syntax:
+    const [<placeholder_1>, ..., <placeholder_n>] = <array>;
+    
+    let [<placeholder_1>, ..., <placeholder_n>] = <array>;
+
+
+- On the practice project (app.js)
+    - Create an array stored in a global constant named "userData"
+        - Populate it w/ primitive values
+
+    - Declare a constant
+        - Intead of using a name, use a pair of "[ ]"
+
+    - Declare the placeholders, w/in the pair of "[ ]"
+        - 1st placeholder = "firstName"
+        - 2nd placeholder = "lastName"
+
+    - Use the rest operator (...) for the 3rd placeholder named "otherInfo"
+        - Stores the remaining elements of the source array
+
+    - Use the operator "="
+        - Assign the source array named "userData"
+
+    - Load / reload the browser
+        - Launch the browser's JavaScript console
+        - View the results
