@@ -1,0 +1,146 @@
+Working With Sets
+-----------------
+- A set is a data structure w/c help manage unique values
+
+
+- To create a set
+    - Use the reserved word "new"
+        - Followed by the function "Set()"
+
+    - Optionally pass any form of iterable as argument (e.g. array)
+        - Will be used to populate a set as its values
+
+    - Store the returned set to a (global or local) constant
+
+    Syntax:
+    const <name> = new Set();
+    const <name> = new Set(<iterable>);
+
+    - Use case:
+        - An complex application that manages logged-in user IDs
+            - A set to keep track of the IDs
+            - A single user ID can NOT be part of a set more than once
+            - It does NOT consume too much memory
+            - Useful when working w/ unique data
+
+
+- To check for the existence of a value  w/in a set
+    - Use the set method ".has()"
+        - Pass the value to search as argument
+
+    - Returns a boolean value "true" if the element exists w/in the set
+        - Otherwise, a "false"
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/has)
+
+    Syntax:
+    const <name> = <set>.has(<value_to_search>);
+
+
+- To add a value to a set
+    - Use the set method ".add()"
+        - Pass the value to be added as argument
+
+    - If the value already exists
+        - It is simply ignored
+        - NO error message will be triggered
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/add)
+
+    Syntax:
+    const <name> = <set>.add(<value_to_add>);
+
+
+- To go through w/ ALL the values of a set
+    - Use the method ".entries()"
+
+    - Returns an itereable that
+        - Can be used w/ a "for..of" loop
+
+    - Working w/ a "for..of" loop
+        - Returns an array w/ two (2) identical elements of a set value
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/entries)
+
+    Syntax:
+    <set>.entries();
+
+
+    - Alternatively, use the method ".values()" that
+        - Returns an iterable that ONLY yields the set values once
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/values)
+
+    Syntax:
+    <set>.values();
+
+
+- To delete a value from a set
+    - Use the method ".delete()"
+        - Pass the value to delete as argument
+
+    - Returns an update set
+
+    - Deleting a non-existent value
+        - It is simply ignored
+        - NO error message will be triggered    
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/delete)
+
+    Syntax:
+    <set>.delete(<value_to_delete>);
+
+
+- On the practice project (setsmaps.js)
+    - Create a set
+        - Use the keyword "new" followed by the function "Set()"
+
+        - Pass an iterable or an array w/ elements as argument
+
+        - Store the returned set to a global constant named "ids"
+
+
+    - Find the value of "2" from the set named "ids"
+        - Use the method ".has()
+
+        - Pass the value "2" as argument
+
+        - Store the returned boolean value to a global constant named "findResult"
+
+
+    - Add the existing value of "2" to the set named "ids"
+        - Use the method ".add()"
+
+        - Pass the value "2" as argument
+
+        - Pass the set "ids" as argument to "console.log()"
+            - Since the value already exists
+                - NO new value is added to the set
+
+            - NO error message was returned
+
+
+    - Go through all of the values of the set "ids"
+        - Using the method ".entries()" w/ the "for..of" loop
+            - Pass the value from the constant "entry" as argument to "console.log()"
+
+        - Displays an array w/ value of the set displayed twice
+
+
+    - Alternatively, go through all of the values of the set "ids"
+        - Using the method ".values()" w/ the "for..of" loop
+        - Displays the values of the set ONLY once
+
+
+    - Delete the existing value of "1" from the set named "ids"
+        - Use the method ".delete()"
+
+        - Pass the value "1" as argument
+
+        - Returns an updated set w/ the delete value gone
+
+    - Save the changes made
+
+    - Load / reload the browser
+        - Launch the browser's JavaScript console
+        - View the result
