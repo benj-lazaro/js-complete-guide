@@ -1,0 +1,46 @@
+Maps & Sets: Overview
+---------------------
+- JavaScript has three (3) iterable data structures
+    - Arrays (the most important)
+    - Maps
+    - Sets 
+
+
+- An array
+    - Stores (nested) data of any kind (type) & length
+
+    - It is an iterable w/ many special methods available
+
+    - Key characteristics
+        - Order of the elements is guaranteed
+        - Duplicate elements allowed
+        - Zero-based index to access elements
+
+
+- A set
+    - Stores (nested) data of any kind (type) & length
+
+    - It is an iterable w/ some special methods available
+        - NOTE: Array methods are NOT supported
+        
+        - Use the method ".from()" of the object "Array"
+            - To convert any iterable into an array
+
+    - Key characteristics
+        - Order of the elements is NOT guaranteed
+        - Duplicate elements NOT allowed
+        - NO zero-based index to access elements
+
+
+- A map
+    - Stores key-value pairs of any kind (type) & length
+        - Any type or value can be used as a key (e.g array, object, etc.)
+            - A JavaScript object ONLY use string, number or symbol value as key
+    
+    - It is an iterable w/ some special methods available
+        - NOTE: Array methods are NOT supported
+
+    - Key characteristics
+        - Order of the elements is guaranteed
+        - Duplicate elements NOT allowed
+        - Key-based access of elements
