@@ -1,0 +1,155 @@
+Working With Maps
+-----------------
+- Stores key-value pairs of any kind (type) & length
+
+
+- To create a map
+    - Use the reserved word "new"
+        - Followed by the function "Map()"
+
+    - Initialize w/ an array of arrays as argument
+        - Each array contains two (2) elements
+            - 1st element   = key (any kind e.g. object, array, primitive)
+            - 2nd element   = value (any type e.g. object, array, primitive)
+
+        - These populates the map that will be created
+
+    - Store the returned map to a (global or local) constant
+
+    Syntax:
+    const <name> = new Map();
+    const <name> = new Map([[<key>, <value>], ...]);
+
+
+- To retrieve a value of a specific key in a map
+    - Use the method ".get()"
+    - Pass the key as argument value
+    - Returns the corresponding value of the key
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/get)
+
+    Syntax:
+    <map>.get(<key>);
+
+
+- To add an entry in a map
+    - Use the method ".set()"
+    - Pass an new array w/ two (2) elements (i.e. key & value)
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/set)
+
+    Syntax:
+    <map>.set([<key>, <value>]);
+
+
+- To access (display) ALL of the entries in a map
+    - Use the method ".entries()" in a "for..of" loop
+    - Returns the entries as arrays w/ two (2) elements
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/entries)
+
+    - NOTE: Alternatively, can use array destructuring to pull out
+        - BOTH key & value from the each array w/ two (2) elements from the map
+
+    Syntax:
+    for (const <entry> of <map>.entries()) {
+        ...
+    }
+    
+    // Alternative
+    for (const [key, value] of <map>.entries()) {
+        ...
+    }
+
+
+- To display ALL of the entries' keys ONLY w/in a map
+    - Use the method ".keys()" in a "for..of" loop
+    - Returns ALL of the entries' keys
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/keys)
+
+    Syntax:
+    for (const <entry> of <map>.keys()) {
+        ...
+    }
+
+
+- To display ALL of the entries' values ONLY w/in a map
+    - Use the method ".values()" in a "for..of" loop
+    - Returns ALL of the entries' values
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/values)
+
+    Syntax:
+    for (const <entry> of <map>.values()) {
+        ...
+    }
+
+
+- To remove ALL entries from a map
+    - Use the method ".clear()"
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/clear)
+
+    Syntax:
+    <map>.clear();
+
+
+- To determine the current size of a map
+    - Use the property ".size"
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/size)
+
+    Syntax:
+    <map>.size;
+
+
+- In the practice project (setsmaps.js)
+    - Create two (2) JavaScript object that
+        - Will serve as keys of a map
+        - Stored each to their corresponding global constant 
+            - Named "person1" & "person2", respectively
+
+
+    - Create a new map
+        - Use the keyword "new" followed by the function "Map()"
+        
+        - Pass an array that contains two (2) elements as argument
+            - 1st element   = JavaScript object "person1"
+            - 2nd element   = Nested array w/ a JavaScript object as its element
+
+        - Store the created map to a global constant named "personData"
+
+
+    - Retrieve the value of the key "person1" from the map
+        - Use the method ".get()"
+        - Pass the key "person1" as argument
+    
+
+    - Add a new entry to the map
+        - Use the method ".set()"
+        
+        - Pass a JavaScript object as the 1st argument
+            - An array w/ a JavaScript object as its element as the 2nd argument
+
+        
+    - Display ALL entries in the map
+        - Use the method ".entries()" w/ a "for..of" loop
+
+        - Alternatively, use array destructuring
+            - To pull elements from each array w/ two (2) element from the map
+
+    
+    - Display ALL the keys in the map
+        - Use the method ".keys()" w/ a "for..of" loop
+
+
+    - Display ALL values (of the keys) in the map
+        - Use the method ".values()" w/ a "for..of" loop
+
+    
+    - Delete ALL entries in the map
+        - Use the method ".cleart()
+
+
+    - Display the current size of the map
+        - Use the property ".size"
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Launch the JavaScript console of the browser
+        - View the results
