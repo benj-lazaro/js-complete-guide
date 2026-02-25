@@ -1,0 +1,41 @@
+Maps VS Objects
+---------------
+- Maps
+    - Can use ANY values & types as keys
+        - e.g. object, number, string as a key
+    
+    - Offers better performance for
+        - Large quantities of key-value data
+
+        - Adding & removing key-value data frequently
+            - Multiple times per second
+
+    - Takes a bit longer when creating new maps
+        - When compared to creating new objects
+
+
+- Objects
+    - Restricted to using ONLY strings, numbers or symbols as keys
+        - Can NOT use array, boolean, object as a key
+
+    - Perfect for small or medium sized sets of data
+    
+    - It can have methods that
+        - Interacts w/ the data in the object
+
+    - Easier & quicker to create
+        - Typically, offers better performance
+
+
+- NOTE: Probably 98% of the time will be working w/ array & objects
+    - BOTH maps & sets have their niche use-case
+
+    - For maps
+        - Work w/ large quantities of fast-changing data that
+        
+        - Using an object as a key
+            - Then add extra data as part of the map
+            - Instead of as part of an (existing) object
+
+    - For sets
+        - Working w/ unique data
