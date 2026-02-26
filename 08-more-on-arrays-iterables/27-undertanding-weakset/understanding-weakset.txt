@@ -1,0 +1,94 @@
+Understanding Weakset
+---------------------
+- A WeakSet is a specialized version of a set that
+    - Requires JavaScript object(s) to be stored in it
+
+    - Stores JavaScript object(s) that
+        - Will eventually be released at a later point in time
+        - Ensures that it will be garbage collected from heap memory
+
+    - It has limited available methods
+        - ".add()"      = adds a JavaScript object into a WeakSet
+        - ".delete()"   = deletes a JavaScript object from the WeakSet
+        - ".has()"      = checks if a JavaScript object exists w/in a WeakSet
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet)
+
+
+- To create a new WeakSet
+    - Use the reserved word "new"
+        - Followed by the function "WeakSet()"
+
+    - Optionally pass a JavaScript object(s) as argument
+        - Will be used to populate a WeakSet as its element(s)
+
+    - Store the returned set to a (global or local) constant
+
+    Syntax:
+    const <name> = new WeakSet();
+    const <name> = new WeakSetSet(<javascript_object>);
+
+
+- To add a new object as element in a WeakSet
+    - Use the method ".add()"
+    - Pass an object as argument
+
+
+- To view the entries w/in a WeakSet
+    - Pass the WeakSet as argument to "console.log()"
+
+
+- To remove an object from a WeakSet
+    - Assign the value of "null" 
+        - To the target object stored w/in a WeakSet
+    
+    - This marks the object for garbage collection
+        - JavaScript Engine removes the object (at its own leisure) from heap memory
+
+
+- Use case:
+    - An application that stores objects w/in an array or set
+        - Requires an unused object to be garbage collected from heap memory
+
+        - Assigning the value of "null" to the target object to be removed
+            - Marks it for garbage collection
+
+        - JavaScript Engine eventually deletes the object from heap memory
+
+
+    - On a normal set
+        - Assign the value of "null" to the target object to be removed
+            - The set still holds the target object's reference address
+        
+        - It is removed from heap memory
+            - When the method ".delete()" is used
+
+
+- On the practice project (setsmaps.js)
+    - Create a JavaScript object
+        - Store in a global variable named "person"
+        - NOTE: a variable is used in order to be assigned w/ "null" for garbage collection
+
+    
+    - Create a new empty WeakSet
+        - Store in a global constant named "persons"
+
+
+    - Add the JavaScript object as a new element of the WeakSet "persons"
+        - Using the method ".add()"
+
+
+    - View the current content of a WeakSet
+        - Pass the WeakSet as argument to "console.log()"
+
+
+    - Mark the object "person" for garbage collection
+        - Assign the value of "null" to the object stored in the variable "person"
+
+        - NOTE: JavaScript Engine performs garbage collection at its own leisure
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Launch the browser's JavaScript console
+        - View the results
