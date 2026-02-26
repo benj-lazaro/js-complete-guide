@@ -1,0 +1,7 @@
+Module Introduction
+-------------------
+- This section focuses on:
+    - A closer look on JavaScript objects
+        - What to do w/ them
+        - Different syntax features
+        - Much more
