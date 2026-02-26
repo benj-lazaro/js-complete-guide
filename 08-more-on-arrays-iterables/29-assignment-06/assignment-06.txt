@@ -1,0 +1,37 @@
+Assignment 06: Time To Practice Arrays & Iterables
+--------------------------------------------------
+- Task #1:
+    - Create an array of numbers (of your choice)
+
+    - Perform three (3) operations
+        - Filter for elements greater than 5
+
+        - Map every element to an object w/c holds the element as value
+            - On some property named "num"
+
+        - Reduce the elements into a single numbers
+
+
+- Task #2:
+    - Write a function named "findMax()" that
+        - Finds the largest number in a list of arguments
+        
+        - Pass the array from Task #1
+            - Split up into multiple arguments to that function
+
+
+- Task #3:
+    - Tweak the function named "findMax()" that
+        - It finds BOTH minimum & maxumum
+            - Returns those as an array
+
+        - Then use destructuring when calling the function
+            - To store the results in separate constants
+
+
+- Task #4:
+    - Create a list
+        - Where you ensure that NO duplicate values can be added
+
+        - Use whichever approach seems approriate
+        
