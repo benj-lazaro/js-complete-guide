@@ -1,0 +1,127 @@
+Understanding WeakMap
+---------------------
+- A WeakMap is a specialized version of a map that 
+    - Stores key-value pairs as entries that
+        - Will be garbage collected from heap memory at a later time
+
+    - Requires the key to be a JavaScript object
+        - The value can be of any type
+
+    - It has limited available methods
+        - ".set()"      = adds a key-value pair of element into a WeakMap
+        - ".get()"      = retrieve the value of a key
+        - ".delete()"   = delete a key-value pair from WeakMap
+        - ".has()"      = checks if a specific key exists w/in a WeakSet
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap)
+
+
+- To create a new WeakMap
+    - Use the reserved word "new"
+        - Followed by the function "WeakMap()"
+
+    - Optionally pass a key & its corresponding value as arguments
+        - Populates the WeakMap as an entry
+
+    - Store the returned set to a (global or local) constant
+
+    Syntax:
+    const <name> = new WeakMap();
+    const <name> = new WeakSetSet(<key>, <value>);
+
+
+- To add a new entry in a WeakMap
+    - Create the key separately
+        - Assigning a JavaScript object to a (global or local) constant
+
+    - Use the method ".set()"
+        - Pass the object along w/ its corresponding value (any type) as arguments
+
+    - Store the WeakMap in a (global or local) constant
+
+
+- To view the current content of a WeakMap
+    - Pass the WeakMap as argument to "console.log()"
+
+
+- To get the assigned value of a key w/in a WeakMap
+    - Use the method ".get()"
+        - Pass the key as argument
+
+    - Returns the assigned value
+
+
+- To check if a key exists w/in a WeakMap
+    - Use the method ".has()"
+        - Pass the key as argument
+
+    - Returns a boolean "true" if it the key is present
+        - Otherwise, returns a "false"
+
+
+- To remove an entry from a WeakMap
+    - Assign the value of "null" to the JavaScript object that 
+        - Serves as a key w/in a WeakMap
+        
+    - Marks the object for garbage collection
+        - JavaScript Engine will remove the entry from heap memory
+
+
+- NOTE: BOTH WeakMap & WeakSet are rarely used
+    - Help manage memory more efficiently in large applications
+    
+    - Whose respective data can be discarded at some point w/o
+        - The need to manually perform garbage collection
+
+
+- On the practice project (setsmaps.js)
+    - Create a JavaScript object that
+        - Will serve as a key in the WeakMap to be created
+        
+        - Store in a global variable named "person"
+            - NOTE: variable is used in order to be assigned a "null" value later
+
+    
+    - Create a new empty WeakMap
+        - Using the keyword "new"
+            - Followed by the function "WeakMap()"
+
+        - Store it in a global constant named "personData"
+
+    
+    - Add a new entry in the WeakMap
+        - Use the method ".set()" on the WeakMap "personData"
+        
+        - Pass as arguments
+            - 1st   = object "person" (key)
+            - 2nd   = "Extra information" (value)
+
+
+    - To retrieve the corresponding value of the key "person"
+        - Use the method ".get()" on the WeakMap "personData"
+        
+        - Pass the key "person" as argument
+            - Returns the corresponding assigned value
+
+
+    - To check for the existence of the key "person" w/in the WeakMap
+        - Use the method ".has()" on the WeakMap "personData"
+        
+        - Pass the key "person" as argument
+            - Returns the boolean value "true" if it exists w/in the WeakMap
+            - Otherwise, returns "false"
+
+
+    - To remove the entry w/ a key "person" from the WeakMap
+        - Assign the value of "null" to the object stored in the constant "person"
+
+        - Marks the object for garbage collection that
+            - Will be performed by the JavaScript Engine at its own leisure
+
+
+    - Save the changes
+
+
+    - Load / reload the browser
+        - Launch the browser's JavaScript console
+        - View the results
