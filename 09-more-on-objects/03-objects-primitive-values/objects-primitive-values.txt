@@ -1,0 +1,25 @@
+Objects & Primitive Values
+--------------------------
+- Objets are reference Values
+    - It is also important to recognize that objects are made up of primitive values
+
+    - In essence
+        - Primitive values are the core building blocks that holds the data
+    
+        - Objects & arrays helps organize & work w/ the data
+
+
+    Example:
+    const complexPerson = {
+        name: 'Max',                        // Primitive value string
+        hobbies: ['Sports', 'Cooking'],     // Primitive value strings w/in an array
+        address: {
+            street: 'Some Street 5',        // Primitive value string
+            stateId: 5,
+            country: 'Germany',
+        phone: {
+            number: 12 345 678 9,           // Primitive value number
+            isMobile: true                  // Primitive value boolean
+            }
+        },
+    };
