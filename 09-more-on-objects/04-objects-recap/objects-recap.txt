@@ -1,0 +1,36 @@
+Objects Recap
+-------------
+- An Object literal notation is expressed as
+
+    const <object_name> = {
+        <property_name>: <value>,
+        <method_name>: function () {
+            ...
+        },
+    };
+
+
+
+- An object's property is a key-value pair that
+    - Stores dynamic or static values
+
+
+- An object's method is a key-value pair property w/in an object that
+    - Stores a function
+
+
+- On the practice project (assets/scripts/object.js)
+    - Create a new object using the object literal notation
+        - Save the object in a global constant named "person"
+
+    - Define the following properties
+        - "name" w/ the value of "Max"
+        - "age" w/ the value of 30
+        - "greet" w/ a user-defined function that call the "alert()"
+
+    - On the method "greet"
+        - Pass "Hi there!" as argument to the built-in function "alert()"
+
+    - Save the changes
+
+    - Load / reload the browser
