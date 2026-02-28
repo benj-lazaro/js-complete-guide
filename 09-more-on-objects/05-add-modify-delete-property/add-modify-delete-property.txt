@@ -32,15 +32,17 @@ Adding, Modifying & Deleting Properties
 
     - Alternatively, assign the value of "undefined" to the property to be removed
         - NOTE: This is considered BAD PRACTICE
-            - Assigning the value of "undefined" to anything is NOT RECOMMENDED
+            - NEVER assign "undefined" to anything
+                - JavaScript assigns the value of "undefined" to uninitialized variables / object properties
                 - This is mentioned for educational purposes ONLY
 
             - Technically, the property still "exists" and informs JavaScript that
                 - The property does NOT matter anymore
 
-            - Using the "delete" operator is the BEST way to good
+            - Using the "delete" operator is THE WAY to go
 
 
     - NOTE: Assigning the property w/ the value of "null"
-        - It resets the assigned value in the property
-        - Does NOT REMOVE the property from the object
+        - Will reset the assigned value in the property
+        - The property remains w/in the object
+
