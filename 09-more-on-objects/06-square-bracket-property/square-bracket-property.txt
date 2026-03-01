@@ -1,0 +1,30 @@
+Special Key Names & Square Bracket Property Access
+--------------------------------------------------
+- Any name that can be used as a variable name can be used as a key for an object's property
+    - NOT every property name (key) can be used as a variable name
+        - e.g. first name
+
+    - A property name (key) is AUTOMATICALLY COERCED into a string data type
+        - An object is technically a dictionary of keys w/c are of string data type
+        - While the value(s) assigned to an object's property can be of ANY data type
+
+    - Wrapping an object's property name (key) w/in a pair of " " allows
+        - Dash character in-bwtween words of a key name
+        - Whitespace character in-bwtween words of a key name
+        - Multiple words w/ either a dash or whitespace in-between words
+            - e.g. "first name", "first-name", "user-first-name", "user first name"
+
+    - To access these type of property names (keys)
+        - Call the object's name
+        - Followed by a "." notation
+        - Then a pair of " " enclosed w/in a pair of [ ]
+        - Lastly the key or property name to access
+            - e.g. person.["first name"], person.["first-name"]
+
+        Syntax:
+        <object>.["<property_name>"];
+
+    
+- NOTE: The square bracket notation can also be used to
+    - Set a CSS property of a selected (DOM) Element node
+        - Using the original CSS property name w/o writing it in camelCase
