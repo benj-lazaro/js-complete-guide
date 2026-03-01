@@ -1,0 +1,35 @@
+Property Types & Order
+----------------------
+- Two (2) data types that can be used as a property name (besides string)
+    - Number
+        - Positive numbers (0 or higher) are allowed
+            - NO negative numbers allowed
+            
+    - Symbol
+        - To be discussed later
+
+    - NOTE: Both of these data types will 
+        - Be AUTOMATICALLY COERCED into string data type
+
+
+- To access number data type property name
+    - Use the bracket notation 
+        - Optionally wrap the property name w/in a pair of " "
+        - e.g. person[1.5] or person["1.5"]
+
+    - NOTE: Using the "." notation
+        - Followed by a number data type property name will NOT WORK
+        - e.g. person.1
+
+
+- The JavaScript object's order of properties
+    - Viewing an object's properties on Chrome's Dev Tools
+        - In expanded mode
+            - Property names are sorted by alphabetical order
+        
+        - In summary mode
+            - Property names are sorted by their insertion order 
+            - (i.e. order how they are added into / defined in the object)
+
+    - Using number data type as property name
+        - They are sorted according to their ascending order 
