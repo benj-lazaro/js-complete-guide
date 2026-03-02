@@ -1,0 +1,68 @@
+Dynamic Property Access & Setting Properties Dynamically
+--------------------------------------------------------
+- The square bracket notation
+    - Also offers a way to dynamically access the current value of an object's property
+        - Retrieving the property name (key) from a constant or variable
+
+        - Passing the constant or variable name as argument to the pair of "[ ]"
+            - Instead of hardcoding the targeted property name
+
+        - NOTE: The constant or variable name should NOT be enclosed w/in a pair of " "
+            - Since the assigned value holds the targeted property name
+
+        Example:
+        const keyName = "<existing_property_name>";
+
+        <object>[keyName];
+
+
+
+    - In addition, it also offers a way to dynamically add a property w/in an object
+        - Store the property to be added in a constant or variable
+        
+        - Inside the object
+            - Enclose the constant or variable name w/in a pair of "[ ]"
+                - NOTE: Do NOT enclose the constant or variable name w/in a pair of ""
+
+            - Assign any value to the added property
+        
+        const <object> = {
+            <property>: <value>,
+            [<constant_or_variable_name>]: null,
+        }
+            
+
+- In the pract project (assets/scripts/objects.js)
+    - Create a new constant named "newProperty"
+        - Store the property name that will be dynamically added into the object "person"
+        - Assign the value "job-title"
+
+        - NOTE: Declare the constant BEFORE the object "person"
+
+    - Inside the object "person"
+        - After the last property
+            - Declare a pair of "[ ]"
+            - Inside pass the constant "newProperty" w/in
+            - Assign the value of "null"
+
+    - Outside the object "person"
+        - Access the property "job-title" using the bracket notation
+        - Assign the value "Full-stack web developer"
+
+    - Pass the object "person" as argument value to the "console.log()"
+        - The new property "job-title" is assigned the value of "Full-stack web developer"
+
+    - Dynamicaly access the property "name"
+        - Create a new constant named "keyName"
+            - Assign the value of "name"
+
+        - On a separate line, pass the following as argument to "console.log()"
+            - Call the object "person"
+            - Followed by a pair of "[ ]"
+            - Pass the constant name "keyName" as argument to the pair of "[ ]"
+    
+    - Save the changes
+
+    - Load / reload the browser
+        - Launch the browser's JavaScript console
+        - View the results
