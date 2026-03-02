@@ -1,0 +1,80 @@
+Demo App & Shorthand Property Syntax
+------------------------------------
+- Work on the demo application
+    - A user can enter a title of their favorite movie
+
+    - Then provide extra information
+        - The user can set the name of the property & its assigned value
+
+    - When the user clicks the button "Add Movie"
+        - The provided information will be rendered on the browser
+        - Rendered as a list of movies
+
+    - The search bar that
+        - Allows to enter a word
+        
+        - Then search for it
+            - If the title of a movie includes that search term
+            - The movie will be rendered in a list
+
+
+- On the practice project (assets/scripts/objects.js)
+    - Fetch a couple of DOM Element nodes
+        - Fetch the HTML element <button> w/ an attribute "id" of "add-movie-btn"
+            - Using the method ".getElementById()"
+            - Store in a global constant named "addMovieBtn"
+
+        - Fetch the HTML element <button> w/ an attribute "id" of "search-btn"
+            - Using the method ".getElementById()"
+            - Store in a global constant named "searchBtn"
+
+    - Create an empty array named "movies"
+    
+    - Create an Arrow callback function
+        - Stored in a global constant named "addMovieHandler"
+
+        - Fetch the values of the HTML element <input> w/ an attribute "id" of "title"
+            - Using the method ".getElementById()"
+            - Chain the property ".value"
+            - Store the value in a local constant named "title"
+
+        - Fetch the values of the HTML element <input> w/ an attribute "id" of "extra-name"
+            - Using the method ".getElementById()"
+            - Chain the property ".value"
+            - Store the value in a local constant named "extraName"
+
+        - Fetch the values of the HTML element <input> w/ an attribute "id" of "extra-value"
+            - Using the method ".getElementById()"
+            - Chain the property ".value"
+            - Store the value in a local constant named "extraValue"
+
+        - Perform a simple input validation
+            - Check the fetched values if they contained a value, NOT "null" or "undefined"
+                - Use the method ".trim()"
+
+            - If any of the three user-provided input does NOT have a value
+                - Return back to the main program using a "return" statement
+
+        - Otherwise, create a new JavaScript object
+            - Store it in a local constant named "newMovie"
+
+        - Inside the object
+            - Define a property named "info"
+                - Assign a nested object as value
+
+            - Inside the nested object
+                - Define a property named "title"
+                    - Assign the value from the local constant named "title"
+                    
+                    - NOTE: Since the property name & the constant have IDENTICAL NAMES
+                        - It a simply be expressed as omitting the ":title" practice
+
+                - Define a property named "[extraName]"
+                    - Assign the value from the local constant "extraValue"
+
+        - Push the object "newMovie" into the array "movies"
+
+        - Save the changes
+
+        - Load / reload the browser
+            - Launch the browser's JavaScript console
