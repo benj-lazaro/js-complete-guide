@@ -1,0 +1,25 @@
+Quiz 16: Object Properties
+--------------------------
+- Which of the following will NOT throw an error
+    - Answer: const person = { "user-name": "Max" };
+
+
+- Will this example work?
+
+    const propKey = 'field 12';
+    const person = {
+        [propKey]: 'Max'
+    };
+
+    console.log(person['field 12']);
+
+    - Answer: Yes, it will work
+
+
+- What would be a use-case for a dynamic property assignment (i.e. for setting a property via [] on the "left side of the colon")?
+    - Answer: You want to set a user-defined property name
+
+
+- How can you delete a property from an object?
+    - Answer: delete someObject.someProp;
+    
