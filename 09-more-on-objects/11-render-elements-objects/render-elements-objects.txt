@@ -1,0 +1,68 @@
+Rendering Elements Based On Objects
+-----------------------------------
+- The next task is to render each object from the array "movies" into
+    - Individual child HTML element <li> of the parent HTML element <ul>
+    
+    - The parent HTML element <ul> has an attribute "id" of "movie-list"
+        - The CSS property "display" is currently set to "none" (hidden)
+
+
+- In the practice project (asssets/scripts/objects.js)
+    - Create an Arrow callback function
+        - Stored in a global constant named "renderMovie"
+
+    - Target the parent HTML element <u> w/ an attribute "id" of "movie-list"
+        - Using the method ".getElementById()"
+        - Store the returned Element node in a local constant named "movieList"
+
+    - Check the length of the array "movies"
+        - If the length === 0
+            - Remove the CSS class "visible" from the parent element's class list
+        
+        - Otherwise
+            - Add the CSS class "visible" to the parent element's class list
+
+    - Set the property ".innerHTML" of the parent element in "movieList"
+        - NOTE: This is NOT an ideal implementation
+            - It removes rendered elements whenever a new one is added
+            - The author choose this approach to save time
+
+    - Render each object in the array "movies" as a child HTML element <li>
+        - Using the method ".forEach()"
+            - Pass the singular name of the object as argument
+
+        - Create new Element node of "li"
+            - Using the method "createElement()
+            - Store the created ELement node in a local constant named "movieElement"
+
+        - For each "movieElement"
+            - Set the property ".textContent"
+                - To the value stored in "movie.info.title"
+            
+            - Append thie "movieElement" as a child of "movieList"
+                - Using the method ".appendChild()"
+
+    - Call the function "renderMovie()" w/in the callback function "addMovieHandler()"
+        - Right after add a "newMovie" object into the array "movies"
+
+    - Save the change
+
+    - Load / reload the browser
+
+
+- NOTE: The following is my own (practice) implementation
+    - Implement the ability to clear the values of the HTML element <input>
+        - Right after adding a movie & before rendering on the DOM
+
+    - Create an Arrow function
+        - Stored in a global constant named "clearUserInput"
+
+    - Target the HTML element <input> w/ the attribute "class" of "control"
+        - Using the method ".querySelectorAll()
+
+    - Use a "for..of" loop on each element stored w/in the constant "userInput"
+        - Set the property ".value" of each "userInput" to ""
+
+    - Call the function "clearUserInput()" w/in the callback function "addMovieHandler()"
+        - Right after add a "newMovie" object into the array "movies"
+        - Before the function "renderMovie()"
