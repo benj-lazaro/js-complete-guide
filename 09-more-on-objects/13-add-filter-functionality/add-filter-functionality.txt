@@ -1,0 +1,51 @@
+Adding The Filter Functionality
+-------------------------------
+- The next task is to implement the logic on filtering the movies by title
+    - Entering a term on the "Filter by Title" field
+    - Render a list of movie(s) that matches the search
+
+
+- In the practice project (asssets/scripts/objects.js)
+    - Create an Arrow callback function
+        - Stored in a global constant named "searchMovieHandler"
+
+    - Inside the function
+        - Query for the HTML element <input> w/ the attribute "id" of "filter-title"
+            - Attach the property ".value" to get the assigned value
+            - Store the returned value in the local constant named "filterTerm"
+
+        - Call the function "renderMovies()"
+            - Pass "filterTerm" as argument
+
+    - Switch to the Arrow function stored in the global constant "renderMovies"
+        - Add a paramter variable named "filter"
+            - Assign the default value of an empty string ""
+
+        - After the line of code of setting the property ".innerHTML" of "movieList"
+            - Create a local constant named "filteredMovie"
+            
+            - Assign a ternary expression
+                - If the value of the paramter variable "filter" is an empty string
+                    - Assign it w/ the array "movies"
+                
+                - Otherwise, assign it w/ a "filtered" array
+                    - Chaining the method ".filter" on the array "movies"
+                        - Pass an array function w/ parameter variable "movie" 
+
+                - Inside the arrow function
+                    - Implicitly return the value of "movie.info.title"
+                        - Using the method ".includes()"
+                        - Passing parameter variable "filter" as arugment
+
+    - At the last line of code
+        - Create a new event handler for the Element node stored in the global constant "searchBtn"
+            - Listens for a "click" event
+            - Calls the function "searchMovieHandler"
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Test implemented logic
+
+
+
