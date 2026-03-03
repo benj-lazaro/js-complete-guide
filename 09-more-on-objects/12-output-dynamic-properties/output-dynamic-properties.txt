@@ -1,0 +1,35 @@
+for-in Loops & Outputting Dynamic Properties
+--------------------------------------------
+- The next task is to render the dynamic properties of the object "newMovie"
+    - As child elements of the parent HTML element <ul>
+
+
+- In the practice project (asssets/scripts/objects.js)
+    - On the function "renderMovie()"
+        - Refactor the arrow function passed as argument in the method "forEach()"
+
+    - Create a local variable named "text"
+        - Assign the returned value of "movie.info.title"
+
+    - Use a "for..in" loop
+        - To iterate through the nested object assigned in the property "info"
+
+        - To retrieve the dynamic property name (key)
+            - Fetch the key that is NOT === "title"
+            
+            - Fetch the corresponding value using the bracket notation
+                - e.g. movie.info[key]
+
+            - Append the retrieved value to the variable "text"
+
+        - Assign the variable text to the property ".textContent" of "movieElement"
+
+        - Refactor the method ".appendChild()" of "movieList" to "append()"
+            - Pass "movieElement" as argument
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Test the implemented changes
+
+
