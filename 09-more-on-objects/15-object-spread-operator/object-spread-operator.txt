@@ -1,0 +1,27 @@
+The Object Spread Operator (...)
+--------------------------------
+- Using the spread operator (...) in combination w/ objects
+    - Extracts the properties & methods of an existing object into a new object
+    
+    Syntax:
+    const <new_object> = { ...<source_object> };
+
+
+    - NOTE: If the source object has a property w/ an assigned reference value (e.g. nested array, object)
+        - The reference value is NOT a deep copy (i.e. shallow copy)
+
+        - It still points to the same reference address of the value in memory
+            - Any changes on the reference value of the source object's property 
+                - Will be reflected on the new object's property
+            
+        - To PREVENT this behavior
+            - When using the spread operator (...) on the source object
+                - Use the spread operator (...) on the source object's property that has a reference value
+                - To perform a deep copy of that property's reference value
+                - That gets assigned it to the corresponding property of the new object
+
+        Syntax:
+        const <new_object> = { ...<source_object>, <new_object>.<property>: [...<source_object>.<property>], }; // Nested array
+
+        const <new_object> = { ...<source_object>, <new_object>.<property>: {...<source_object>.<property>}, }; // Nested object
+
