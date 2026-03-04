@@ -1,0 +1,31 @@
+Understanding Chaining (Property & Method Chaining)
+---------------------------------------------------
+- One of the features of JavaScript that help working w/ objects is
+    - The concept of chaining (object properties & methods)
+
+    - Using the "." notation to chain
+        - An object property or method w/ another
+            - Wherein the returned result of a previous property / method 
+            - Becomes the input of a chained property / method
+        
+        - To perform multiple operations on a single line of code
+
+        - Saves from the hassle of writing multiple lines of code
+            - Working w/ helper variables in-between
+
+    - Examples:
+        let text = movie.info.title;    // Property chaining
+
+        const newMovie = {              // Method chaining
+            ...,
+            id: Math.random().toString,
+        };
+
+
+- In the practice project (asssets/scripts/objects.js)
+    - On the Arrow callback function stored in the global constant "addMovieHandler"
+
+    - Chain the method ".toString()" to the method "Math.random()"
+        - Assigned on the property "id" for the object stored in the local constant "newMovie"
+
+
