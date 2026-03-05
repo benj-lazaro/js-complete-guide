@@ -1,0 +1,50 @@
+Object Destructuring
+--------------------
+- It is similar to array destructuring except this time w/ objects
+    - Using the spread operator (...) 
+        - To pull out properties from an object
+            - Store in a constant based on their existing property name
+
+        - NOTE: The order how properties are pulled does NOT matter
+            - The existing property name (key) matters
+
+    - A REST parameter (...) can be used to collect
+        - Other properties of an object that did NOT get pulled out
+            - By their respective property name
+            - Stored into a single name (e.g. ...otherProps)
+
+    - To use a new (different) property name for the extracted existing property name
+        - On the left-hand side { }
+            - Use the ":" operator right after the existing property name
+            - Followed by the new property name
+
+
+    Syntax:
+    const { <existing_property_name>, ..., <existing_property_name>} = <source_object>;
+
+    const { <existing_property_name>, ...otherProps} = <source_object>;
+
+    const { <existing_property_name>: <new_property_name> } = <source_object>;
+
+
+- In the practice project (asssets/scripts/objects.js)
+    - On the Arrow function stored in the global constant "renderMovies"
+        - On the call for the method ".forEach()" on the object "filteredMovie"
+
+        - Deconstruct the object "movie"
+            - Extract the property "info"
+            - Store the rest into "otherProps"
+
+        - Refactor references to "movie.info" to "info"
+
+        - Deconstruct the property "info"
+            - Extract the nested property "title"
+            - Store it under a new property name "movieTitle"
+
+        - Refactor references to "info.title" to "movieTitle"
+
+    - Save the changes
+
+    - Load / reload the browser
+        - The implemented changes should NOT alter the previous behavior of the web app
+    
