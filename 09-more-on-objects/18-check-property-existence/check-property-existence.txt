@@ -1,0 +1,25 @@
+Checking For Property Existence
+-------------------------------
+- The JavaScript keyword "in" used in conjunction w/ an "if" statement
+    - Checks the existence of a property w/in an object
+
+    Syntax:
+    if ("<property_name>" in <object>) {
+        // Statement(s) to execute if condition evaluates to true
+    }
+
+    if (!("<property_name>" in <object>)) {
+        // Statement(s) to execute if condition evaluates to false
+    }
+
+
+- Alaternatively, use an "if" statement to check
+    - If the target property has the value of "undefined"
+
+    - A non-existent object property
+        - Returns the value of "undefined" in the browser's JavaScript console
+    
+    Syntax:
+    if (<object>.<property_name> === undefined) {
+        // Statement(s) to execute if condition evaluates to true
+    }
