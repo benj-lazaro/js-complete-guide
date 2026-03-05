@@ -4,10 +4,11 @@ const person = {
   hobbies: ["cooking", "sports"],
 };
 
-const person2 = Object.assign({ hobbies: [...person.hobbies] }, person);
-
-person.name = "John Wick";
+const person2 = Object.assign(person);
 person.hobbies.push("pottery");
+
+const person3 = Object.assign({ occupation: "assassin" }, person);
 
 console.log(person);
 console.log(person2);
+console.log(person3);

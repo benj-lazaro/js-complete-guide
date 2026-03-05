@@ -4,7 +4,13 @@ The Object.assign()
     - Copies ALL methods & properties of one (1) or more source object(s)
         - Into a new object
 
-    - It is similar to the spread operator (...) when copying an existing object
+    - If the new object is defined w/ its own methods & properties
+        - Methods & properties copied from the source object(s) will be merged into it
+
+        - Provided that it does NOT have an identical source object property name 
+            - Otherwise, it will be overwritten by the source object property's value
+
+    - Similar to the spread operator (...) when copying an existing object
         - Limited to supporting modern browsers ONLY
 
     - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
