@@ -1,0 +1,36 @@
+Introducting "this"
+-------------------
+- The keyword "this" refers to
+    - The piece of code responsible for calling a method
+
+    - Really easy way to determine who "this" is referring to
+        - It is the thing (object) in front of the method being called 
+        
+        - NOTE: See practice project's line 44 & 89
+
+
+- In the practice project (assets/scripts/objects.js)
+    - On the creation of the object "movie"
+        - Add a new method named "getFormattedTitle"    
+            - Assign an anonymous function as value
+            - NOTE: NOT an Arrow function
+        
+        - The function returns the value of 
+            - The "movie" object's property "info.title" in uppercase format
+            - Using the string method ".toUpperCase()"
+
+            - NOTE: The keyword "this" represents the object "movie"
+
+    - Switch to the helper function stored in the global constant "renderMovies"
+        - Comment the extraction of the property "title"
+            - From the nested object "info"
+
+        - On the variable "text"
+            - Change the assigned expression to:
+
+                movie.getFormattedTitle() + " - ";        
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Test the implemented changes
