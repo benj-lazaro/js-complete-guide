@@ -1,0 +1,35 @@
+The Object.assign()
+-------------------
+- The Object method ".assign()"
+    - Copies ALL methods & properties of one (1) or more source object(s)
+        - Into a new object
+
+    - It is similar to the spread operator (...) when copying an existing object
+        - Limited to supporting modern browsers ONLY
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
+
+
+    Syntax:
+    const <new_object> = Object.assign({}, <source_object>, ..., <source_object>);
+
+
+- The spread operator (...) is RECOMMENDED as it offers
+    - A shorter syntax
+    - Better browser support (includes older ones)
+    - Can perform deep copy of properties w/ reference values
+    
+
+- NOTE: Like w/ that of the spread operator (...)
+    - If the source object's property contains a reference value
+        - A shallow copy of the reference value will be provided to the new object 
+
+    - Any changes on the source object's reference value
+        - Will be reflected on the new object's corresponding property
+
+    - To address this concern
+        - Use the Window method "structuredClone()"
+            - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Window/structuredClone)
+
+        - Use the spread operator (...) instead of the method "Object.assign()"
+            - NOTE: See previous lesson
