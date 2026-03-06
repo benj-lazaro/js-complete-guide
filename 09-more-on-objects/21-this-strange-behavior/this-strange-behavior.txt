@@ -1,0 +1,50 @@
+The "this" Keyword & Its Strange behavior
+-----------------------------------------
+- When a method of an object uses the keyword "this" w/in its body
+    - The keyword "this" refers to the object that called the method
+        - e.g. <object_name>.<method_name>();
+
+
+- When the same method is extracted from an object
+    - Save in a global variable
+        - Then call it as a stand-alone function w/o declaring the associated object
+
+    - In non-strict mode 
+        - The keyword  "this" refers to the global Window object
+
+    - In strict mode
+        - The keyword "this" returns "undefined"
+
+
+- Two (2) ways to prevent confusion on what the keyword "this" is currently referring to
+    - Declare the object that will be calling the method
+        - e.g. <object_name>.<method_name>();
+
+    - If the 1st option is NOT possible
+        - Chain the method ".bind()" to the variable name
+            - To pre-configure the object that the keyword "this" will refer to
+
+        - Pass the object as argument
+            - Explicitly identifies the object that the keyword "this" will refer from hereon
+
+
+- In the practice project (assets/scripts/objects.js)
+    - Refactor the helper function stored in the global constant "renderMovies"
+
+    - Use object deconstructor syntax to extract
+        - The method ".getFormattedTitle" from the object "movie"
+
+        - Store the returned method in a variable "getFormattedTitle"
+
+        - Use the method ".bind()"
+            - Pass the object "movie" as argument value
+            - Ensures that the object "movie" is the one being referred by the keyword "this"
+
+    - Assign the expression to the local variable "text"
+
+        getFormattedTitle() + " - "
+
+    - Save the changes
+
+    - Load / reload the browser
+        - There should be NO behavior changes in the web app
