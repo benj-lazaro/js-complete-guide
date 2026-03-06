@@ -1,0 +1,39 @@
+The Method Shorthand Syntax
+---------------------------
+- A shorthand for defining a method w/in an object
+    - When using an Anonymous function
+        - Remove the keyword "function"
+        - Remove the ":" that seperates the property name & Anonymous function
+        - Place a pair of "( )" RIGHT AFTER the property name
+
+        Syntax:
+        const <object_name> = {
+            ...,
+            <property_name>() {
+                // Method body
+            },
+        };
+
+
+    - When using an Arrow function
+        - Remove the "=>"
+        - Remove the ":" that seperates the property name & Arrow function
+        - Place a pair of "( )" RIGHT AFTER the property name
+
+        Syntax:
+        const <object_name> = {
+            ...,
+            <property_name>() {
+                // Method body
+            },
+        }; 
+
+
+- In the practice project (assets/scripts/objects.js)
+    - Refactor the method of the object stored in the global constant "newMovie"
+        - Use the method shorthand Syntax
+
+    - Save the changes
+
+    - Load / reload the browser
+        - There should be NO changes on the behavior of the web app
