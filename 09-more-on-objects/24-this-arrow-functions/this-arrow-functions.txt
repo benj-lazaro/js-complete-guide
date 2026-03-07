@@ -1,0 +1,61 @@
+"this" And The Arrow Functions
+------------------------------
+- In continuation of the previous lecture 
+    - This time using an Arrow callback function on an event listener
+
+    - When used w/ the method ".bind()"
+        - The keyword "this" refers to the global Window object
+        - NOT to the object that called the triggered the event
+
+    - Every function (Anonymous & normal)
+        - It has its own keyword "this" binding
+        - The function is bound to the object responsible for its execution
+
+    - An Arrow function has a SPECIAL BEHAVIOR
+        - It does NOT have its own keyword "this" binding
+            - NOT bound to the object responsible for its execution
+
+        - It perceives that it is being executed outside of the function
+            - Referencing the global Window object as the value for the keyword "this"
+
+        - Even when running JavaScript on Strict Mode
+            - An Arrow callback function does NOT yield an "undefined" value
+            
+            - An Anonymous or normal function that 
+                - Uses the keyword "function" yields an "undefined" value
+
+
+- In the practice project (script.js)
+    - Define a new object that has the following properties
+        - teamName          = string
+        - people            = an array of string elements
+        - getTeamMembers    = a method 
+
+        - Save the object in the global constant named "members"
+        
+    - The method "getTeamMembers" of the object "members"
+        - Iterates through the values w/in the array of the property "people"
+            - Using the method ".forEach()"
+
+        - Pass an Arrow function w/ the parameter variable "person" as argument value
+            - NOTE: The Arrow function perceives as it is executed outside the method ".forEach()"
+                - References the object "members" for the "this" keyword
+
+        - Renders the individual values from the property "people"
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Open the browser's JavaScript console to view results
+
+    - Switching the Arrow function w/ an Anonymous function
+    
+    - An Anonymous or normal function
+        - It has its own keyword "this" binding
+
+        - The keyword "this" used w/in the method ".forEach()"
+            - Changes the binding 
+
+        - The keyword "this" w/in the method ".forEach()" is
+            - Bound to the one responsible triggering the Anonymous function
+            - Namely the method ".forEach()" w/c under the global Window object
