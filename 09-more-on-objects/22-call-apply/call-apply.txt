@@ -1,0 +1,79 @@
+.call() And .apply()
+--------------------
+- The method ".bind()"
+    - Returns a pre-configure function object that will be executed later
+
+    - If a function needs to change the value that the keyword "this" refers to
+        - Then execute the function right away
+        
+        - The methods ".apply()" or ".call()" are better suited for this task
+
+
+- The method ".call()" 
+    - Does NOT return a new function object
+        - It executes the function object it is attached to IMMEDIATELY
+
+    - It takes multiple arguments
+        - 1st           = The object that the keyword "this" references to
+        - Succeeding    = Infinite values that the function will work on (optional)
+        
+        - NOTE: Argument values are individually separated by a ","
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call)
+
+
+    Syntax:
+    <function>.call(<this_object>, <arg_1>, ..., <arg_n>);
+
+    
+- The method ".apply()"
+    - Does NOT return a new function object
+        - It executes the function object it is attached to IMMEDIATELY
+
+    - It takes multiple arguments
+        - 1st           = The object that the keyword "this" references to
+        - Succeeding    = Values in an array that the function will work on (optional)   
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply)
+
+    Syntax:
+    <function>.call(<this_object>, [<arg_1>, ..., <arg_n>]);
+
+
+- In the practice project (assets/scripts/objects.js)
+    - Refactor the helper function stored in the global constant "renderMovies"
+
+    - Comment the line where the method ".bind()" is chained to the
+        - Function object "getFormattedTitle"
+
+        - It does it job but requires 
+            - The function object "getFormattedTitle" to pre-configure itself
+            
+            - By passing the object as argument that
+                - The keyword "this" wil be reference to
+            
+            - Returns a new function object back to itself
+
+            - Executes the function object on the latter part of the code
+                - Instead of executing at the same line of code
+
+    - On the following line of code where
+        - The new function object "getFormattedTitle" is called
+            - Then saves the returned value to the local variable "text"
+
+        - Chain the method ".call()"
+            - To the function object "getFormattedTitle"
+                - Pass the object "movie" as argument to ".call()"
+
+            - This pre-configures the function object "getFormattedTitle"
+                - W/o returning a new function object
+                - Executes the function object at the same line of code
+
+        - NOTE: Since there are NO additional argument value passed
+            - The method ".apply()" can also be used
+
+    - Save the changes
+
+    - Load / reload the browser
+        - NO changes on the web app's behaviors are expected
+    
