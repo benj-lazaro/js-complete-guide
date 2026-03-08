@@ -1,0 +1,138 @@
+Getters & Setters
+-----------------
+- A JavaScript feature that controls how
+    - To set (assign) a value to an object's property (i.e Setter)
+    - To retrieve the assigned value from an object's property (i.e. Getter)
+
+    - NOTE: BOTH or either one is NOT necessary for every single property of an object
+    
+    - Use case:
+        - To create READ-ONLY properties
+        - Add extra validtion on a property w/ a fallback value
+        - Setup default transformations to a property's value
+
+
+- To define a Getter w/in an object
+    - Use the keyword "get"
+        - Followed by a property (method) name (of your choice)
+        - Next a pair of "( )"
+        - Then a pair of "{ }" that contains the Getter's logic
+
+        - NOTE: This will be accessed like a property, NOT a method
+            - Do NOT use a pair of "( )" when calling the Getter
+
+    - Inside the Getter
+        - Use the keyword "return"
+            - Followed by the object that called the Getter using the "this" keyword
+            - Next is the internal property defined in the Setter      
+
+    Syntax:
+    <object> = {
+        ...,
+        get <method_name>() {
+            return this._<internal_property>;
+        },
+        ...
+    };
+
+
+- To define a Setter w/in an object
+    - Use the keyword "set"
+        - Then the property (or method) name w/ a pair of "( )"
+
+        - W/in the pair of "( )"
+            - Define the paraemter variable(s) that will be worked on w/in the Setter
+
+            - NOTE: This will be accessed like a property, NOT a method
+                - Do NOT user a pair of "( )" when calling the Setter
+
+        - Then a pair of "{ }" to contain the logic 
+
+        - Inside the Setter
+            - Target the object that called the Setter using the keyword "this"
+
+            - Then a "." followed by a property name
+                - NOTE: Use a "_" prefix to indicate that it is an internal property
+            
+            - Next is the "=" operator
+                - To store the value taken from the paraemter variable        
+
+    Syntax:
+    <object> = {
+        ...,
+        set <method_name>(<args>) { 
+            // Validation check logic w/ default value assignment here
+            ...
+            this._<property_name> = <arg>;
+        },
+        ...
+    }; 
+
+
+- In the practice project (script.js)
+    - Refactor the Arrow callback function stored in the global constant "addMovieHandler()"
+        - Remove the input validtion for the constant named "title"
+
+        - On the object stored in the local constant named "newMovie"
+            - Remove the existing property "title"
+            
+            - Create a Setter
+                - Use the keyword "set"
+                    - Followed by a property name "title" w/ pair of "( )"
+                        - Define the paraemter variable "value"
+
+                    - Next is a pair of "{ }"
+                        - To contain the logic of the Setter
+
+                - Inside the Setter's logic
+                    - Use an "if" statetment to perform some validation check
+                        - Assign the value "DEFAULT" if validation fails
+                        - Then call a "return" statetment
+
+                    - Otheriwse, assign the value from paraemter variable "value"
+                        - Using the "=" operator to the internal property "_title"
+
+
+            - Create a Getter
+                - Use the keyword "get"
+                    - Followed by a property name "title" w/ a pair of "( )"
+                    
+                    - Next is a pair of "{ }"
+                        - To contain the logic of the Getter
+
+                - Inside the Getter's logic
+                    - Use a "return" statement
+                    - Followed by the keyword "this" & the property name "_title"
+
+
+        - After the creation of the object "newMovie"
+            - Call the Setter from w/in the object "newMovie"
+                - Assign the value from the local constant "title"
+
+                newMovie.info.title = title;
+                           
+            - Call the Getter by passing the following as argument to "console.log()"
+
+                console.log(newMovie.info.title);
+
+
+    - On the helper function stored in the global constant "renderMovies"
+        - On the "for..in" loop that iterates through the dynamic property name
+
+        - Refactor the condition of the "if" statement 
+
+            if (key !== "title" && key !== "_title") {
+                ...
+            }
+
+        - To prevent the internal property "_title" from being rendered on the DOM
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Launch the browser's JavaScript console
+
+        - NO changes on the web app is expected
+
+    
+
