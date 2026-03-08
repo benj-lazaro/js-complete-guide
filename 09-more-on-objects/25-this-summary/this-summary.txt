@@ -1,0 +1,19 @@
+"this" Summary
+--------------
+- The keyword "this" can refer to different things depending on
+    - Where it is used
+    - How (if used w/in a function) a function is called
+
+
+- It generally refers to the "thing" w/c
+    - Called a function (if "this" is used w/in a function)
+
+    - It can refer to
+        - The global context
+        - An object
+        - Some bounda data or object ("this" binds to an element that triggered an event)
+
+    - NOTE: When in doubt what "this" is currently referring, use:
+
+        console.log(this);
+
