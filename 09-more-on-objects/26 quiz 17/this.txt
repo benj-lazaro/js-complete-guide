@@ -1,0 +1,85 @@
+Quiz 17: this
+-------------
+- What's the purpose of "this" inside of an object method (in non-arrow functions)?
+    - Answer: Provide you access to whatever called the method
+
+
+- What will "this" refer to in the below example?
+
+    const person = {
+        name: 'Max',
+        greet() {
+            console.log(this); // ???
+            console.log(this.name);
+        }
+    };
+    
+    person.greet();
+
+    - Answer: "this" refers to the "person" object
+
+
+- What will "this" refer to in the below example?
+
+    const person = {
+        name: 'Max',
+        greet() {
+            console.log(this); // ???
+            console.log(this.name);
+        }
+    };
+    
+    const admin = { age: 30 };
+    
+    admin.greet = person.greet;
+    admin.greet();
+
+    - Answer: "this" refers to the "admin" object
+
+
+- What will "this" refer to in the below example?
+
+    const person = {
+        name: 'Max',
+        greet() {
+            console.log(this); // ???
+            console.log(this.name);
+        }
+    };
+    
+    const { greet } = person;
+    greet();
+
+    - Answer: The global object (or undefined)
+
+
+- What will "this" refer to in the below example?
+
+    const person = {
+        name: 'Max',
+        greet() {
+            console.log(this); // ???
+            console.log(this.name);
+        }
+    };
+    
+    const { greet } = person;
+    greet.call(this);
+
+    - Answer: "this" refers to the global object
+
+
+- What will "this" refer to in the below example?
+
+    const person = {
+        name: 'Max',
+        greet() {
+            console.log(this); // ???
+            console.log(this.name);
+        }
+    };
+    
+    const { greet } = person;
+    greet.call(person);
+
+    - Answer: "this" will refer to the "person" object
