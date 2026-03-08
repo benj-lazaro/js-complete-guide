@@ -1,0 +1,33 @@
+What Is Object-Oriented Programming (OOP)
+-----------------------------------------
+- OOP is a way of thinking, structuring & writing code
+    - To work w/ real-life entities in the code
+
+
+- An example of objects used in a simple online shop 
+    - The "ProductList" object
+        - Have methods that
+            - Renders a product list
+
+            - Fetches data from a server (database)
+                - Works w/ the "Product" object
+            
+        - Have properties that 
+            - Stores the fetched data
+
+
+    - The "Product" object
+        - Reflects a single product 
+
+        - Have methods that
+            - Render details about a single product
+            
+            - Add product to a cart
+                - Works w/ the "ShoppingCart" object
+
+
+    - The "ShoppingCart" object
+        - Have methods that
+            - Render the cart products & total amout
+            - Allows users to place an order (server communication logic)
+
