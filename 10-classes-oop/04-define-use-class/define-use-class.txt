@@ -1,0 +1,77 @@
+Defining & Using A First Class
+------------------------------
+- A class allows to build an object in an easier way
+    - It serves as a blueprint for an object (theoretical definition)
+        - Defines how an object will look like (i.e. properties & methods)
+
+    - It can create multiple, similar looking objects much easier
+        - Where the data (values) of an object differs but retains identical structure
+     
+    - An object created from a class is
+        - Referred as an "instance" of that class
+
+    - NOTE: Class-based object creation serves an ALTERNATIVE to
+        - Using object literals (i.e. object literal notation)
+
+
+- To create a class
+    - Use the keyword "class"
+
+    - Followed by a name
+        - Uppercase the 1st letter of EVERY WORD in the name
+
+    - Then a pair of "{ }"
+        - Define the fields (properties in an object)
+            - To assign a default value
+                - Use the operator "="
+                - Followed by a default value
+            
+            - NOT assigning a default value
+                - Implictly defaults to "undefined"
+
+            - NOTE: Each field ends w/ a ";"
+
+    Syntax:
+    class <name> {
+        <field_name> = <default_value>;
+        <field_name>;
+    }
+
+
+- To create an object from (instance of) a class
+    - Use the keyword "new"
+
+    - Followed by the name of the class w/ a pair of "()"
+
+    - Returns a new object (instance)
+
+    Syntax:
+    new <class_name>();
+
+
+- On the practice project (assets/scripts/app.js)
+    - Refactor the code to implement a class-based system
+
+    - Create a class named "Product"
+    
+    - Define the following fields in the class "Product"
+        - "title" w/ default value of "DEFAULT"
+        - "imageUrl" w/ NO default value
+        - "price" w/ NO default value
+        - "description" w/ NO default value
+
+    - Create an instance (object) of the class "Product"
+        - Use the keyword "new"
+            - Followed by the class name "Product"
+            - Then a pair of "()"
+        
+        - Pass it as argument value to "console.log()"
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Launch the browser's JavaScript console
+
+        - Displays a "Product" object w/ its properties & correponding values that
+            - Were defined in the class
+
