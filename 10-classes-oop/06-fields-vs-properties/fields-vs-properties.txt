@@ -1,0 +1,38 @@
+Fields VS Properties
+--------------------
+- A Class Field
+    - Located w/in a Class declaration
+
+    - Defines the properties that an object will contain
+        - AFTER the object creation process (i.e. instantiaion)
+
+    - In terms of visibility
+        - It is public (by default)
+
+    - NOTE: Defining Class Fields can be skipped
+        - The Constructor Method can
+            - Define the Class Properties
+            - Assign their corresponding values
+
+    - Defining Class Fields are for those that
+        - Are NOT initialized w/in the Constructor Method
+
+
+- A Class Property
+    - Located w/in the Constructor Method of a class
+        - Initialized w/ the values passed as arguments to the method
+
+    - A Class Field becomes a Class Property
+        - DURING the object creation process (i.e. instantiation)
+
+    - In terms of visibility
+        - It is public (by default)
+
+
+- On the practice project (assets/scripts/app.js)
+    - Remove the Class Fields from the Class definition
+
+    - Save the changes
+
+    - Load / reload the browser
+        - The behavior of the web application should remain the same sa before
