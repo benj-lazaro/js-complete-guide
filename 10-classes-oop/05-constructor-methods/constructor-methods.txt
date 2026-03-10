@@ -1,0 +1,74 @@
+Working With Constructor Methods
+--------------------------------
+- A Constructor method of a class
+    - Allows to instantiate an object w/ different values
+
+    - Accepts values as arguments
+        - Then assign them to the corresponding class fields (properties)
+    
+    - Instantiates a new object w/ the passed values assigned
+        - To the corresponding properties
+    
+    - Helps prevent the occurrence of mistyping or missing out property name(s)
+        - A common incident when using object literal notation
+
+
+- To define a constructor method w/in a class
+    - Use the keyword "constructor" followed by a pair of "( )"
+        - Define the parameter variable(s) w/in the pair of "( )"
+        - Then a pair of "{ }" to contain the constructor method's body
+
+        - IMPORTANT: Do NOT place a ";" at the end
+
+    - W/in the constructor method's body
+        - Prefix each class field w/ "this."
+            - Followed by a "=" operator
+            - Then the corresponding parameter variable
+            - End the statement w/ a ";"
+
+    Syntax:
+    class <name> {
+        // Fields...
+
+        constructor(<parameter_variable>, ..., <parameter_variable>) {
+            this.<field_name> = <parameter_variable>;
+            ...
+        }
+    }
+
+
+- To call a class constructor
+    - Use the keyword "new"
+        - Followed by the class name w/ a pair of "()"
+        - Pass the corresponding values as arguments
+
+    Syntax:
+    new <class_name>(<arg1>,..., <arg_n>);
+     
+
+- On the practice project (assets/scripts/app.js)
+    - Implement a construtor method for the class "Product"
+
+    - Use the keyword "new"
+        - Followed by the class name "Product" w/ a pair of "( )"
+        - Define the paratmeter variable w/in the pair of "( )"
+        - Then a pair of "{ }"
+
+    - W/in the construtor method's body
+        - Assign the parameter variables to their correponding class fields
+        
+        - NOTE: Prefix each class field w/ the keyword "this"
+            - Referring to the current object being instantiated (created)
+
+    - Moving on to the object stored w/in the global constant "prodList"
+        - On the array assigned to the property "products"
+        
+        - Replace each element (object literal) w/ a call to the
+            - Constructor method of the class "Product"
+            - Pass the corresponding values as argument
+    
+    - Save the changes
+
+    - Load / reload the browser
+        - The behavior of the web application should remain the same sa before
+
