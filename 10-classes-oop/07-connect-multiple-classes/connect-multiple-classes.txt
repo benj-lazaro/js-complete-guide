@@ -1,0 +1,106 @@
+Using & Connecting Multiple Classes
+-----------------------------------
+- A Class can also be used to
+    - Create an object w/c contains logic
+
+    - Splits up the application logic into multiple classes w/c
+        - Gets connected in some clever way
+
+        - The order of these classes does NOT matter
+            - JavaScript parses the entire code BEFORE they are executed
+
+        - IMPORTANT: Classes MUST be DEFINED first 
+            - BEFORE they're executed to instantiate an object
+
+    - A method is defined w/in the Class definition
+        - Simply declare the method name w/ a pair of "( )"
+        - Followed by a pair of "{ }" w/c contains the body
+
+    Syntax:
+    class <name> = {
+        // Class fields
+
+        constructor() {
+            // Constructor body
+        }
+
+        <method_name>() {
+            // Method body
+        }
+    }
+
+
+- To call the Method
+    - Instantiate the Class into an object
+        - Saved to a (global or loca) constant
+
+    - Chain the method to the constant
+        - Followed by a pair of "( )"
+        - e.g. <constant_name>.<method_name>()
+
+    Syntax:
+    const <constant_name> = new <class_name>();
+
+    <constant_name>.<method_name>();
+
+
+- On the practice project (assets/scripts/app.js)
+    - Create a new class named "ProductList"
+
+    - Create a new field named "products"
+        - Cut the array from the object in the global constant "productList"
+        - Paste it as the assigned value for the field "products"
+
+    - Create a new method named "render" w/ a pair of "()"
+        - Cut the method from the object in the global constant "productList"
+        - Paste it w/in the body of the method "render"
+
+
+    - Delete the global constant "productList"
+
+    - Instantiate the class "ProductList" into an object
+        - Store the created object in the global constant "productList"
+
+    - Call the method "render" of the class "ProductList"
+        - Chain the method ".render() to the constant "productList"
+
+        - Renders each object "Product" stored w/in
+            - The array of the object "ProductList" on the DOM
+
+    - Next outsource the logic for rendering a single object "Product"
+        - Instead of the logic embedded w/in the method of class "ProductList"
+
+
+    - Create a new class named "ProductItem"
+        - Create a Constructor Method
+            - Define a parameter variable named "product"
+
+        - Define a field named "products"
+            - NOTE: Prefix it w/ "this."
+            - Assign the value stored in the parameter variable "product"
+
+        - Create a local method (also) named "render" w/ a pair of "()"
+            - Cut the logic from "for..of" loop from the class "ProductList"
+                - Paste it w/in the body of this method
+
+            - Refactor the fields "this." into "this.product."
+                - NOTE: "this" refers to the object "ProductItem"
+
+        - Return the value stored in the local constant "prodEl"
+
+    
+    - Switch to the class "ProductList"
+        - On the "for..of" loop of the method "render"
+        
+        - Create a local constant named "prductItem"
+            - Store the instantiated object from the class "ProductItem"
+
+        - Pass "prod" as argument value to the class "ProductItem"
+
+        - Create another local constant named "prodEl"
+            - Store the returned object from the method ".render()" of the object "ProductItem"
+
+    - Save the changes
+
+    - Load / reload the browser
+        - The behavior of the web application should remain the same sa before
