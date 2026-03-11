@@ -1,0 +1,42 @@
+Binding Class Methods & Working With "this"
+-------------------------------------------
+- Implement the logic for the HTML element <button> labeled "Add to Cart"
+    - Located w/in the method "render()" of the class "ProductItem"
+
+    - When the HTML element is clicked
+        - Displays the following on the browser's JavaScript console
+            - Message "Adding to cart"
+            - Clicked instance (object) of the class "ProductItem"
+
+    
+- On the practice project (assets/scripts/app.js)
+    - On the method "render()" of the class "ProductItem"
+        - Select the HTML element <button> stored w/in the local constant "prodEl"
+            - Using the method ".querySelector()"
+            - Pass "button" as argument
+
+            - Store the returned Element node w/in the local constant "addCartButton"
+
+        - Create a new method named "addToCart()"
+            - Located outside the method "render()"
+
+            - Pass "Adding to cart" as argument to "console.log()"
+            - Pass "this.product" as argument to "console.log()"
+
+        - Switch back to the method "render()"
+            - Hook-up an event listener to the constant "addCartButton"
+                - Using the method ".querySelector()"
+
+            - Pass the arguments
+                - 1st = "click"
+                - 2nd = this.addCartButton.bind(this)
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Launch the JavaScript console
+        
+        - Clicking a product item's "Add to Cart" button
+            - Displays the message "Adding to cart"
+            - Display details of the clicked "ProductItem" object
+
