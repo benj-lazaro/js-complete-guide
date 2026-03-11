@@ -1,0 +1,108 @@
+Adding A Cart & Shop Class
+--------------------------
+- Create a new class "ShoppingCart"
+    - Contains selected "ProductItem" objects
+    - Render to total amount
+    - Render a button labeled "Order Now!" 
+
+
+- Create a new class "Shop"
+    - Renders the shopping cart in the DOM
+
+    - Combines the classes "ProductList" & "ShoppingCart"
+        - Moves the instantiation of the class "ProductList" into this class
+        - Instantiates the class "ShoppingCart"
+
+
+- On the practice project (assets/scripts/app.js)
+    - Create a new class "ShoppingCart"
+        - Located right BEFORE the class "ProductItem"
+
+        - Add a new field named "items"
+            - Assign an empty array
+
+        - Add a new method named "render()"
+            - Create a HTML element <section>
+                - Using the method "document.createElement"
+                - Pass "section" as argument
+                - Save the returned Element node in the local constant "prodEl"
+
+            - Chain the method ".innerHTML" to the constant "prodEl"
+                - Add the HTML elements that renders the total & button
+
+            - Add the attribute "class" to the HTML element <section>
+                - Chaining the method ".className" to the local constant "prodEl"
+
+            - Return the Element node in the local constant "prodEl"
+                - Using a "return" statement
+
+
+    - Create a new class "Shop"
+        - Located right AFTER the class "ProductList"
+
+        - Define a method named "render()"
+            - Instantiate the class "ShoppingCart"
+                - Save the returned object in the local constant named "cart"
+
+                - Call the method "render()" of the constant "cart"
+                    - Save the rendered Element node in the local constant "cartEl"
+            
+            - Instantiate the class "ProductList"
+                - Save the returned "ProductList" object in the local constant "prodList"
+            
+                - Call the method "render()" on the local constant "prodList"
+                    - Save the returned Element node in the local constant "prodListEl"
+
+                - NOTE: Delete the duplicate code (global context)
+
+    
+    - Switch to the class "ProductList"
+        - Cut the declaration of the local constant "renderHook" from the method "render()"
+
+    
+    - Switch back to the class "Shop"
+        - Paste the code on the 1st line of code w/in the method "render()"
+
+    
+    - Switch back to the class "ProductList|
+        - On the line:
+
+            renderHook.append(prodList);
+
+        - Replace it w/:
+
+            return prodList;
+
+    
+    - Switch back to the class "Shop"
+        - Chain the method ".append()" on the local constant "renderHook"
+            - Pass the local constant "cartEl" as argument
+            - Renders the Element node of a "ProductItem" object in the DOM
+
+        - On the follow line
+            - Chain another method ".append()" to the local constant "renderHook"
+            - Pass the local constant "prodListEl" as argument
+            - Renders the Element node of the "ProductList" object in the DOM
+
+
+    - Outside the Class "Shop"
+        - Instantiate the class "Shop"
+            - Save the returned object in the global constant "shop"
+            - Call the method "render()" on the constant "shop"
+            - Renders the shopping cart in the DOM
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Launch the browser's JavaScript console
+
+    - The shopping cart is rendered above the list of product items
+        - Clicking the "Order Now!" button does NOTHING
+
+    - On the list of product items
+        - Clicking the "Add to Cart" button 
+            - Displays on the following on the browser's JavaScript console
+                - The message "Adding to cart"
+                - Details of the selected "Product" object 
+
+    
