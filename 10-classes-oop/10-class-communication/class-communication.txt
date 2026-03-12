@@ -1,0 +1,54 @@
+Communication Can Be Challenging
+--------------------------------
+- Implement the communication logic between the
+    - The method "addToCart()" of the class "ProductItem"
+        - Call back method for the event handler of the button "Add to Cart"
+
+    - The class "ShoppingCart"
+        - Instance created w/in the class "Shop"
+        - Renders the shopping cart in the DOM
+        - Updates the "Total" amount for every item added into the cart
+
+
+- On the practice project (assets/scripts/app.js)
+    - On the class "ShoppingCart"
+        - Add a new method named "addProduct()"
+            - Define a parameter variable named "product"
+
+        - Access the field "items"
+            - Prefixed w/ "this."
+            - Chain the method ".push()"
+            - Pass the parameter variable "product" as argument
+
+        - On the method "render()"
+            - Prior to returning the local constant "cartEl"
+
+            - Dynamically add a new field named "totalOutput"
+                - Assign the local constant "cartEl"
+                - Chain the method ".querySelector()"
+                - Pass the argument "h2"
+                - NOTE: This accesses the HTML markup w/in "cartEl"
+        
+        - Back on the method "addProduct()"
+            - Access the field "totalOutput"
+            - Copy & assign as value
+                - The HTML element <h2> markup of "cartEl"
+                    - Located w/in the method "render()"
+                
+                - NOTE: Use template literal
+                    - Manually change the value of 0 to 1 (for now)
+
+            - This method supposedly should update the shopping cart
+                - Updates the "Total" for every item added into the cart
+
+    - Save the changes
+
+    - As of the moment, there is NO way (yet)
+        - To call the method "addProduct()" of class "ShoppingCart"
+        - From w/in the class "ProductItem"
+
+    - To address this concern
+        - Use static methods & properties that offers the syntax:
+
+            <class_name>.<method_name>();    
+
