@@ -1,0 +1,86 @@
+Getters & Setters
+-----------------
+- Implement logic that updates the amount of "Total"
+    - Using Getters & Setters w/in the class "ShoppingCart"
+
+    - Use a Getter
+        - To get the sum of the items in the cart 
+
+    - Use a Setter
+        - To update the value of "Total" in the DOM
+
+
+- On the practice project (assets/scripts/app.js)
+    - On the class "ShoppingCart"
+        - Before the declaration of the method "addProduct()"
+            - Create a getter named "totalAmount"
+
+        - In the getter "totalAmount()"
+            - Create a local constant named "sum"
+                - Assign it w/ the class field "items"
+                - Chained w/ the method ".reduce()"
+
+            - On the method ".reduce()", pass the arguments
+                - 1st   = arrow function
+                - 2nd   = initial value of 0
+
+            - On the arrow function parameter field, pass the arguments
+                - 1st   = previousValue
+                - 2nd   = currentItem
+
+            - Inside the arrow function
+                - Return the sum of "previousValue" & "currentItem.price"
+        
+            - Return the value stored in the local constant "sum"
+
+
+        - On the method "addProduct()"
+            - On the class field "totalOutput"
+                - Update the template literal value of the property ".innerHTML"
+                - Replace the value of 1 w/ a call to the getter "totalAmount"
+
+
+        - Create a setter named "cartItems()"
+            - Define a parameter variable named "value"
+
+            - In the setter "cartItems()"
+                - Access the class field "items"
+                    - Assign w/ the value passed in the parameter "value"        
+                   
+                - NOTE: Overwrites the previous value in "items"
+
+
+        - Switch to the method "addProduct()"
+            - Cut the class field "outputTotal"
+
+
+        - Swtich back to the setter "cartItems()"
+            - Paste the class field "outputTotal"
+
+            - Chain the method ".toFixed()" on the getter "totalAmount"
+                - Pass the value of 2 as argument
+                - NOTE: This ensures a product item's price has two (2) decimal places
+
+
+        - Switch back to the method "addProduct()"
+            - Delete the remaining line of code
+
+            - Declare a new constant named "updateItems"
+                - Assign it w/ a copy of the class field "items"
+                    - Using a spread operator (...)
+
+                - Push the value in the parameter "product"
+                    - Into the field "updateItems"
+                    - Using the method ".push()"
+                    - Pass "product" as argument
+
+                - Access the setter "cartItems"
+                    - Assign it w/ the local constant "updateItems"
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Clicking the "Add to Cart" button of a product
+        - Updates the value of "Total"             
+
+                
