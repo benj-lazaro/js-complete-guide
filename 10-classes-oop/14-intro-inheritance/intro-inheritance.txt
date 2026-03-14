@@ -1,0 +1,14 @@
+Introducing Inheritance
+-----------------------
+- The concept of inheritance 
+    - To conveniently share code amongst classes
+
+    - Requires writing a Base class that
+        - Contains properties & methods that are needed by other classes
+
+    - Extends the base class into a specialized sub-class
+        - Sub-class inherits ALL of the base class' properties & methods
+        - Add extra properties & methods that are specific to the specialized class
+        
+    - Building multiple classes w/
+        - Code duplication (properties & methods) is sub-optimal
