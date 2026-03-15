@@ -21,7 +21,13 @@ What Is An Object
         - Numbers, Strings, Booleans, null, undefined, Symbol
 
     - Reference value (i.e. objects)
-        - Everything else (that is NOT a primitive value)
-        - User-defined object(s) using the Object literal notation {...}
-        - Arrays, Functions, DOM nodes, built-in objects
+        - Everything else that is NOT a Primitive value
+            - e.g. Arrays, built-in Objects, DOM nodes, Functions, etc.
+
+            - An Array is a special type of object wherein
+                - It's property ".length" can automaticallty adjusts
+                - Stored elements can be iterated using a "for..of" loop
+
+        - A user-defined object is created using
+            - The Object literal notation {...}
 
