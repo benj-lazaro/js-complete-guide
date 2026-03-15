@@ -1,30 +1,55 @@
 Special Key Names & Square Bracket Property Access
 --------------------------------------------------
-- Any name that can be used as a variable name can be used as a key for an object's property
-    - NOT every property name (key) can be used as a variable name
-        - e.g. first name
+- On naming an object's property
+    - Any name that can be used as a variable name
+        - HOWEVER, NOT every property name can be used as a variable name
 
-    - A property name (key) is AUTOMATICALLY COERCED into a string data type
-        - An object is technically a dictionary of keys w/c are of string data type
-        - While the value(s) assigned to an object's property can be of ANY data type
-
-    - Wrapping an object's property name (key) w/in a pair of " " allows
-        - Dash character in-bwtween words of a key name
-        - Whitespace character in-bwtween words of a key name
-        - Multiple words w/ either a dash or whitespace in-between words
-            - e.g. "first name", "first-name", "user-first-name", "user first name"
-
-    - To access these type of property names (keys)
-        - Call the object's name
-        - Followed by a "." notation
-        - Then a pair of " " enclosed w/in a pair of [ ]
-        - Lastly the key or property name to access
-            - e.g. person.["first name"], person.["first-name"]
-
-        Syntax:
-        <object>.["<property_name>"];
-
+    - A property name is MORE FLEXIBLE than a variable name
     
-- NOTE: The square bracket notation can also be used to
-    - Set a CSS property of a selected (DOM) Element node
-        - Using the original CSS property name w/o writing it in camelCase
+    - Enclosing the property name w/in a pair of " " allows 
+        - A "-", whitespace or both placed in-between words of a property name
+        
+        - NOTE: This is exclusive ONLY to objects
+
+    - A property name is AUTOMATICALLY COERCED as a String data type
+        - Assigned value can be of any data type
+
+
+- To access a special property name
+    - Use the Square bracket notation
+    - Pass the special property name enclosed w/in a " " as arguement
+        
+    Syntax:
+    <object>.["<property-name>"];
+    <object>.["<property name>"];
+
+
+- The Square bracket notation can also be used to
+    - Set a CSS property of a selected Element node
+    
+    - Using the original CSS property name wrapped w/in a pair of " "
+        - Instead of it's camelCase equivalent 
+
+
+- On the practice project (assets/scripts/object.js)
+    - Refactor the property name "name" into "first name"
+
+    - Access the special property name "first name"
+        - Using the Square bracket notation
+
+    - Select the HTML element <ul> w/ the id of "movie-list" from the HTML document
+        - Save the returned Element node in the global constant "movieList"
+
+        - Access the Element node's property "style.display"
+            - Assign the value "block"
+
+        - Access the element node's property "background-color"
+            - Using the Square bracket notation
+            - Assign the value "purple"
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Launch the browser's JavaScript console
+
+        - A rectangle w/ a purple background is rendered on the DOM
