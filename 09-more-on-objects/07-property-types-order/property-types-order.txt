@@ -1,35 +1,34 @@
 Property Types & Order
 ----------------------
-- Two (2) data types that can be used as a property name (besides string)
+- Besides strings, two (2) data type that can be used as a property name
     - Number
         - Positive numbers (0 or higher) are allowed
-            - NO negative numbers allowed
-            
+        - NO negative numbers
+
     - Symbol
         - To be discussed later
-
-    - NOTE: Both of these data types will 
-        - Be AUTOMATICALLY COERCED into string data type
-
-
-- To access number data type property name
-    - Use the bracket notation 
-        - Optionally wrap the property name w/in a pair of " "
-        - e.g. person[1.5] or person["1.5"]
-
-    - NOTE: Using the "." notation
-        - Followed by a number data type property name will NOT WORK
-        - e.g. person.1
+    
+    - NOTE: Both of these data type property name will AUTOMATICALLY COERCED into String
 
 
-- The JavaScript object's order of properties
-    - Viewing an object's properties on Chrome's Dev Tools
-        - In expanded mode
-            - Property names are sorted by alphabetical order
-        
-        - In summary mode
-            - Property names are sorted by their insertion order 
-            - (i.e. order how they are added into / defined in the object)
+- To access a property of Number data type
+    - Use the Square bracket notation
+        - Optionally enclose the number w/in a pair of " "
 
-    - Using number data type as property name
-        - They are sorted according to their ascending order 
+    - IMPORTANT: When accessing a property of Number data type
+        - Using the "." notation w/o the Square bracket will NOT WORK
+        - e.g. <object>.1, <objec>.357
+
+
+- On the JavaScript object's order of properties
+    - When viewing an object's properties using Chrome's Dev Tools
+        - On Expanded mode
+            - Property names are sorted alphabetically
+
+        - On Summary mode
+            - Property names are sorted by their insertion order
+            - The order is based on how each property is added or defined w/in the object
+
+    - NOTE: On an object w/c ONLY consists of Number data type properties
+        - Properties are sorted according to their numerical ascending order
+            - On BOTH Chrome Dev Tools' Expande & Summary mode 
