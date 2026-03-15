@@ -1,48 +1,63 @@
 Adding, Modifying & Deleting Properties
 ---------------------------------------
-- To add a new property to an existing JavaScript object
-    - On a separate line of code
-        - Call the existing JavaScript object by its name
-        - Followed by a "."
-        - Next the name of the new property
-        - Then the "=" operator
-        - Lastly, the value assigned to the new property
+- To add a property (on-the-fly) to an existing object
+    - Use the Dot notation "."
+        - Call the object name 
+        - Followed by a "." (dot notation)
+        - Next the property name (to be added)
+        - Then by a "=" operator
+        - And the assigned value
 
-    - This is referred to as adding a new property "on-the-fly"
-
-    - NOTE: If the property ALREADY EXISTS
-        - The previous assigned value will be overwriten by the new one
-
+    - IMPORTANT: If the property ALREADY EXISTS
+        - The previous value will overwritten (modified) by the new value
 
     Syntax:
-    <object_name>.<new_property_name> = <value>;
+    <object>.<new_property> = <assigned_value>;
 
 
-- To remove a property from an existing JavaScript object
-    - Use the "delete" operator
-        - Next the name of the object
+- To remove an existing property from an object
+    - Use the keyword "delete"
+        - Next the object name
         - Followed by a "."
-        - Lastly, the existing property name to be removed
+        - Then the property name to be removed
+
+    Syntax:
+    delete <object_name>.<property_name>;
+
+    - NOTE: Accessing a deleted property, returns a value of "undefined"
 
     - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete) 
 
-    Syntax:
-    delete <object_name>.<existing_property_name>;
+
+    - Assigning the value of "undefined" to the property to be removed
+        - This approach technically works
+            - The property still exists until it is garbage collected
+            
+        - NOTE: This is NOT ENCOURAGED
+            - NEVER actively assign "undefined" as a value
+            
+            - ONLY JavaScript assigns "undefined" (by default) as a value
+                - To an uninitialized variable or object property
+        
+        - Using the keyword "delete" is the WAY TO GO
+            - When intending to delete an existing property
 
 
-    - Alternatively, assign the value of "undefined" to the property to be removed
-        - NOTE: This is considered BAD PRACTICE
-            - NEVER assign "undefined" to anything
-                - JavaScript assigns the value of "undefined" to uninitialized variables / object properties
-                - This is mentioned for educational purposes ONLY
-
-            - Technically, the property still "exists" and informs JavaScript that
-                - The property does NOT matter anymore
-
-            - Using the "delete" operator is THE WAY to go
+    - Assigning the value of "null" to the property
+        - Does NOT REMOVE the property
+        - It simply resets the its assigned value
 
 
-    - NOTE: Assigning the property w/ the value of "null"
-        - Will reset the assigned value in the property
-        - The property remains w/in the object
+- On the practice project (assets/scripts/object.js)
+    - On the object "person"
+        - Add a new property "isAdmin" on-the-fly
+            - Assign a boolean value "true"
 
+        - Delete the existing property "age"
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Open the browser's JavaScript console
+        - The new property "isAdmin" is added to the object "person"
+        - The property "age" is removed from the object "person"
