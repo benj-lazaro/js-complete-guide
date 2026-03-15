@@ -1,22 +1,21 @@
-// Dynamically add a new property using bracket notation
-const newProperty = "job-title";
+// Assign a new property name to a constant
+const userChosenKeyName = "level";
 
-// Object literal notation
+// Dynamically add new property using Square bracket notation & a constant
 const person = {
-  name: "Max",
+  "first name": "Max",
   age: 30,
+  hobbies: ["Sports", "Cooking"],
   greet: function () {
     alert("Hello there!");
   },
-  1.5: "Hello there!",
-  [newProperty]: null,
+  [userChosenKeyName]: null,
 };
 
-// Assign a value to the added property "job-title"
-person["job-title"] = "Full-stack Web Developer";
-
-console.log(person);
-
-// Dynamically access an existing property using bracket notation
-const keyName = "name";
+// Dynamically access the assigned value of property "name" using Square bracket notation
+const keyName = "first name";
 console.log(person[keyName]);
+
+// Access & update the assigned value of the property "job-title"
+person["level"] = "Administrator";
+console.log(person);

@@ -1,65 +1,62 @@
 Dynamic Property Access & Setting Properties Dynamically
 --------------------------------------------------------
-- The square bracket notation
-    - Also offers a way to dynamically access the current value of an object's property
-        - Retrieving the property name (key) from a constant or variable
+- The Square bracket notation
+    - Offers a way to dynamically access the assigned value of an object's property
+        - Assigning an existing object property name to a constant or variable
+        - Pass the constant or variable as argument to the Square bracket notation
+        
+        - IMPORTANT: The constant or variable name MUST NOT be enclosed w/in a " "
 
-        - Passing the constant or variable name as argument to the pair of "[ ]"
-            - Instead of hardcoding the targeted property name
-
-        - NOTE: The constant or variable name should NOT be enclosed w/in a pair of " "
-            - Since the assigned value holds the targeted property name
-
-        Example:
-        const keyName = "<existing_property_name>";
-
-        <object>[keyName];
+    Syntax:
+    const <key_name> = "<existing_property_name>"
+    
+    <object_name>[<key_name>];
 
 
-
-    - In addition, it also offers a way to dynamically add a property w/in an object
-        - Store the property to be added in a constant or variable
+    - Offers a way to dynamically add a new property to an object
+        - Assign the new property name (to be added) in a constant or variable 
         
         - Inside the object
-            - Enclose the constant or variable name w/in a pair of "[ ]"
-                - NOTE: Do NOT enclose the constant or variable name w/in a pair of ""
+            - Place the Square bracket notation (property name side)
+            - Pass the constant or variable name as argument
+            - Then assign the value to the property
 
-            - Assign any value to the added property
+        - IMPORTANT: The constant or variable name MUST NOT be enclosed w/in a " "
+
+    Syntax:
+    const <key_name> = "<new_property_name>";
+
+    const <object_name> = {
+        <property_name>: <value>,
+        [<constant_or_variable_name>]: <value>,
+    };
         
-        const <object> = {
-            <property>: <value>,
-            [<constant_or_variable_name>]: null,
-        }
-            
 
-- In the pract project (assets/scripts/objects.js)
-    - Create a new constant named "newProperty"
-        - Store the property name that will be dynamically added into the object "person"
-        - Assign the value "job-title"
+- On the practice project (assets/scripts/object.js)
+    - Create a new global constant named "userChosenKeyName"
+        - Assign the value "level"
 
-        - NOTE: Declare the constant BEFORE the object "person"
+        - NOTE: Declaration of the constant "userChosenKeyName" 
+            - MUST be positioned BEFORE the object "person" declaration
 
-    - Inside the object "person"
-        - After the last property
-            - Declare a pair of "[ ]"
-            - Inside pass the constant "newProperty" w/in
-            - Assign the value of "null"
+        - Inside the object "person"
+            - Use the Square bracket notation (property name side)
+            - Pass the constant "userChosenKeyName" as argument
+            - Then assign the initial value of "null"
 
-    - Outside the object "person"
-        - Access the property "job-title" using the bracket notation
-        - Assign the value "Full-stack web developer"
+        - Outside the object "person"
+            - Use the Square bracket notation to access the property "level"
+            - Assign the value "Full-stack web developer"
 
-    - Pass the object "person" as argument value to the "console.log()"
-        - The new property "job-title" is assigned the value of "Full-stack web developer"
-
-    - Dynamicaly access the property "name"
-        - Create a new constant named "keyName"
+    - Dynamically access the assigned value of an existing property
+        - Create a new global constant named "keyName"
             - Assign the value of "name"
 
-        - On a separate line, pass the following as argument to "console.log()"
-            - Call the object "person"
-            - Followed by a pair of "[ ]"
-            - Pass the constant name "keyName" as argument to the pair of "[ ]"
+        - Call the object "person"
+            - Followed by a Square bracket notation
+            - Pass the constant "keyName" as argument 
+
+            - IMPORTANT: The constant or variable name MUST NOT be enclosed w/in a " "
     
     - Save the changes
 
