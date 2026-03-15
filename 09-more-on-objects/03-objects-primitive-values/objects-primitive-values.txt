@@ -1,5 +1,13 @@
 Objects & Primitive Values
 --------------------------
+- An Object is a Reference value
+    - Important to recognize that an Object is made up of Primitive values
+
+    - In essence
+        - Primitive values are the core building blocks that hold data
+        - Object & Arrays help organize & work w/ data
+
+
 - Objets are reference Values
     - It is also important to recognize that objects are made up of primitive values
 
