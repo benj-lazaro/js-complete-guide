@@ -17,16 +17,19 @@ const renderMovies = (filter = "") => {
     movieList.classList.add("visible");
   }
 
-  // This line is NOT an ideal implementation
+  // Clears the existing HTML mark-up content
+  // NOTE: This line is NOT an ideal implementation
   movieList.innerHTML = "";
 
+  // Select movie titles that matches the filter word
+  // If NO "filter" is passed, it renders ALL movies
   const filteredMovie = !filter
     ? movies
     : movies.filter((movie, index, movies) =>
         movie.info.title.includes(filter),
       );
 
-  // Render each object as a child <li> of the parent HTML element <ul>
+  // Iterate through the "filtered" movies, render each as a child <li> of the parent <ul>
   filteredMovie.forEach((movie, index, movies) => {
     const movieElement = document.createElement("li");
 
@@ -36,6 +39,7 @@ const renderMovies = (filter = "") => {
     // Iterate through the dynamic property
     for (const key in movie.info) {
       if (key !== "title") {
+        // Append the dynamic property & its assigned value w/ "title"
         text = text + `${key}: ${movie.info[key]}`;
       }
     }
@@ -45,6 +49,8 @@ const renderMovies = (filter = "") => {
   });
 };
 
+// Clears the input fields after the button "Add Movie" is clicked
+// NOTE: This is my implementation
 const clearUserInput = () => {
   const userInputs = document.querySelectorAll(".control input");
 
