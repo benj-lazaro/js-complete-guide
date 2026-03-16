@@ -17,7 +17,8 @@ const renderMovie = () => {
     movieList.classList.add("visible");
   }
 
-  // This line is NOT an ideal implementation
+  // Clears the existing HTML mark-up content
+  // NOTE: This line is NOT an ideal implementation
   movieList.innerHTML = "";
 
   // Render each object as a child <li> of the parent HTML element <ul>
@@ -30,6 +31,7 @@ const renderMovie = () => {
     // Iterate through the dynamic property
     for (const key in movie.info) {
       if (key !== "title") {
+        // Append the dynamic property & its assigned value w/ "title"
         text = text + `${key}: ${movie.info[key]}`;
       }
     }
@@ -39,6 +41,8 @@ const renderMovie = () => {
   });
 };
 
+// Clears the input fields after the button "Add Movie" is clicked
+// NOTE: This is my implementation
 const clearUserInput = () => {
   const userInputs = document.querySelectorAll(".control input");
 

@@ -15,7 +15,7 @@ for-in Loops & Outputting Dynamic Properties
         - To iterate through the nested object assigned in the property "info"
 
         - To retrieve the dynamic property name (key)
-            - Fetch the key that is NOT === "title"
+            - Fetch the key that does have the property name "title"
             
             - Fetch the corresponding value using the bracket notation
                 - e.g. movie.info[key]
