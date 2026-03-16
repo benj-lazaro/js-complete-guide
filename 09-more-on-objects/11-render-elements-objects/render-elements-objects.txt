@@ -24,8 +24,8 @@ Rendering Elements Based On Objects
 
     - Set the property ".innerHTML" of the parent element in "movieList"
         - NOTE: This is NOT an ideal implementation
-            - It removes rendered elements whenever a new one is added
-            - The author choose this approach to save time
+            - As it re-renders the entire list whenever a new movie is added
+            - This approach was chosen (by the author) to save time
 
     - Render each object in the array "movies" as a child HTML element <li>
         - Using the method ".forEach()"
