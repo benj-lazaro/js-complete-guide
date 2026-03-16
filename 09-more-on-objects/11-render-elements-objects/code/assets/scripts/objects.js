@@ -21,7 +21,7 @@ const renderMovie = () => {
   // NOTE: This line is NOT an ideal implementation
   movieList.innerHTML = "";
 
-  // Itereates through & renders each object as a child <li> of parent HTML element <ul>
+  // Iterates through & renders each object as a child <li> of parent HTML element <ul>
   movies.forEach((movie, index, movies) => {
     const movieElement = document.createElement("li");
 
