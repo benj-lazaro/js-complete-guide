@@ -27,5 +27,5 @@ Understanding Chaining (Property & Method Chaining)
 
     - Chain the method ".toString()" to the method "Math.random()"
         - Assigned on the property "id" for the object stored in the local constant "newMovie"
-
-
+        
+        - NOTE: Everything in JavaScript has access to the method ".toString()"
