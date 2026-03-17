@@ -6,28 +6,30 @@ const person = {
 console.log(person);
 console.log("----------");
 
-// Perform a deep copy of the object "person" into "person2"
-// NOTE: The reference value assigned on the "person" object's property "hobbies" is a shallow copy
+// Performs a deep-copy of "person" object to "person2"
+// NOTE: The assigned reference value to the property "hobbies" of the "person2" object is a shallow copy
 const person2 = { ...person };
 
-// Add a new property "age" to object "person2"
+// Add a new property "age" on-the-fly to the object "person2"
 person2.age = 40;
 
-// Update "person" object's property "hobbies"
+// Update the property "hobbies" of the object "person"
+// NOTE: This also updates the reference value of the property "hobbies" of the object "person2"
 person.hobbies.push("hacking");
 console.log(person);
 console.log(person2);
 console.log("----------");
 
-// Perform a deep copy of the object "person" into "person2" & add a new property "age"
-// Prevent a shallow copy on the reference value assigned on "person" object's property "hobbies"
+// Performs a deep-copy of "person" object to "person3"
+// Performs a deep-copy on the reference value assigned to the property "hobbies" of the object "person"
 const person3 = {
   ...person,
   age: 50,
   hobbies: [...person.hobbies],
 };
 
-// Update "person" object's property "hobbies" again
+// Update the property "hobbies" of the object "person" by popping an element from that reference value
+// NOTE: The property "hobbies" of objects "person" & "person2" updates but NOT the object "person3"
 person.hobbies.pop();
 
 // Check the difference on the objects' respective properties & assigned values

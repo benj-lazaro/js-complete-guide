@@ -7,21 +7,20 @@ The Object Spread Operator (...)
     const <new_object> = { ...<source_object> };
 
 
-    - NOTE: If the source object has a property w/ an assigned reference value (e.g. nested array, object)
-        - The reference value is NOT a deep copy (i.e. shallow copy)
+- NOTE: If the source object has a property w/ an assigned reference value (e.g. array, object)
+    - That (reference) value will NOT be a deep copy (i.e. shallow copy)
 
-        - It still points to the same reference address of the value in memory
-            - Any changes on the reference value of the source object's property 
-                - Will be reflected on the new object's property
-            
-        - To PREVENT this behavior
-            - When using the spread operator (...) on the source object
-                - Use the spread operator (...) on the source object's property that has a reference value
-                - To perform a deep copy of that property's reference value
-                - That gets assigned it to the corresponding property of the new object
+    - The assigned reference value still points to the same (reference) address in memory
+        - Any changes on that reference value (source object) will be reflected on the new object's property
+        
+        - NOTE: This is a normal behavior of a reference value
 
-        Syntax:
-        const <new_object> = { ...<source_object>, <new_object>.<property>: [...<source_object>.<property>], }; // Nested array
+    - To PREVENT this behavior
+        - Use the spread operator (...) on the assigned reference value on a source object's property 
+        - This will perform a deep-copy of that reference value to the new object's property
+    
+    Syntax:
+    const <new_object> = { ...<source_object>, <new_object>.<property>: [...<source_object>.<property>], }; // Nested array
 
-        const <new_object> = { ...<source_object>, <new_object>.<property>: {...<source_object>.<property>}, }; // Nested object
+    const <new_object> = { ...<source_object>, <new_object>.<property>: {...<source_object>.<property>}, }; // Nested object
 
