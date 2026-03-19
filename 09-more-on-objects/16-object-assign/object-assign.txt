@@ -4,6 +4,11 @@ The Object.assign()
     - An older way of copying properties & methods of
         - One (1) or more source object(s) into a new object 
 
+    - To create a deep-copy of an existing object
+        - Pass the following arguments to the method ".assign()"
+            - 1st = "{}"
+            - 2nd = source object
+            
     - NOTE: If the new object contains its own properties & methods
         - The properties & methods from the source object(s) will be merged into it
 
@@ -36,14 +41,17 @@ The Object.assign()
 
         - Store the object on a global constant named "person"
 
-    - Create a copy of the object "person"
+    - Create a deep-copy of the object "person"
         - Using the method ".assign()" of the global object "Object"
         - Store the object on a global constant named "person2"
 
-    - Push a new element into the reference value of object "person"
-        - BOTH objects "person" & "person2" updates
-            - The reference value of their respective property "hobbies"
+    - Update the assigned primitive value assign on the object "person"
+        - Then push a new element into the reference value of object "person"
 
+    - BOTH objects "person" & "person2" have
+        - Different primitive values
+        - Identical reference values
+        
     - Create another copy of the object "person"
         - Using the method ".assign()" of the global object "Object"
         
@@ -53,7 +61,8 @@ The Object.assign()
 
         - Store the object on a global constant named "person3"
 
-        - Only the object "person3" has the property "occupation"
+    - The object "person3" has the property "occupation"
+        - Inherits the assigned primitive & reference values of object "person"
 
     - Save the changes
 
