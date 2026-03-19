@@ -24,3 +24,46 @@ The Object Spread Operator (...)
 
     const <new_object> = { ...<source_object>, <new_object>.<property>: {...<source_object>.<property>}, }; // Nested object
 
+
+- In the practice example (scripts.js)
+    - Create a new object using Object literal notation
+        - Declare the following propertiies
+            - Property "name" assigned w/ a primitive value
+            - Property "hobbies" assigned w/ a reference value (array)
+
+        - Store the object on a global constant named "person"
+
+    - Create a deep-copy of the object "person"
+        - Using the spread operator (...)
+        - Store the new object on a global constant named "person2"
+
+    - Add a new property on-the-fly named "age" on the object "person2" 
+        - Assign a primitive value
+
+    - Push a new element in the property "hobbies" of the object "person"
+        - Using the method ".push()"
+
+        - This updates the proerty "hobbies" of both objects "person" & "person2"
+
+    - Create a new object using Object literal notation
+        - Based on a deep-copy of object "person"
+            - Using the spread operator (...)
+        
+        - Declare a new property "age"
+            - Assign w/ a primitive value
+
+        - Perform a deep-copy of the proerty "hobbies" of object "person"
+            - Using the spread operator (...)
+
+    - Remove the last element from the property "hobbies" of object "person"
+        - Using the method ".pop()"
+
+        - Changes reflected on BOTH objects "person" & "person2"
+            - BUT NOT on object "person3"
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Launch the brower's JavaScript console
+
+        - View the results
