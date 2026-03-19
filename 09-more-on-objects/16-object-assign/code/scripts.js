@@ -11,8 +11,11 @@ const person2 = Object.assign(person);
 person.hobbies.push("pottery");
 
 // Copy source object "person" & add a new property "occupation" into a new object "person3"
-const person3 = Object.assign({ occupation: "assassin" }, person);
+const person3 = Object.assign({ occupation: "cook" }, person);
 
+// Contains identifical properties
 console.log(person);
 console.log(person2);
+
+// Contains an additional property "occupation"
 console.log(person3);

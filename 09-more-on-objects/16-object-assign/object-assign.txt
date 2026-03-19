@@ -1,16 +1,23 @@
 The Object.assign()
 -------------------
 - The Object method ".assign()"
-    - Copies ALL methods & properties of one (1) or more source object(s) into a new object
+    - An older way of copying properties & methods of
+        - One (1) or more source object(s) into a new object 
 
-    - If the new object is defined w/ its own methods & properties
-        - Methods & properties copied from the source object(s) will be merged into it
+    - NOTE: If the new object contains its own properties & methods
+        - The properties & methods from the source object(s) will be merged into it
 
-        - Provided that it does NOT have an identical source object property name 
-            - Otherwise, the new value will OVERWRITE the previous value of the source object's property
+    - NOTE: If the new object contains an identical property w/ the source object
+        - The value from the source object's property OVERWRITES the pre-existing value
 
-    - Works similarly like the spread operator (...) when copying an existing object
-        - EXCEPT limited to being supported by modern browsers ONLY
+    - In order to perform deep-copy of properties w/ reference values
+        - Requires using the method "structuredClone()" of the object "Window"
+        - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Window/structuredClone)
+
+    - The spread operator (...) is still favored as it offers
+        - A shorter syntax
+        - Better browser support
+        - The ability to perform deep-copy of properties w/ reference values
 
     - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
 
@@ -19,21 +26,41 @@ The Object.assign()
     const <new_object> = Object.assign({}, <source_object>, ..., <source_object>);
 
 
-- The spread operator (...) is RECOMMENDED as it offers
-    - A shorter syntax
-    - Better browser support (includes older ones)
-    - Can perform deep copy of properties w/ reference values
-    
+- In the practice example (scripts.js)
+    - Declare a new object
+        - Using the Object literal notation
+            
+        - Declare the following propertiies
+            - Property "name" assigned w/ a primitive value
+            - Property "hobbies" assigned w/ a reference value (array)
 
-- NOTE: Like w/ that of the spread operator (...)
-    - If the source object's property contains a reference value
-        - A shallow copy of the reference value will be provided to the new object 
+        - Store the object on a global constant named "person"
 
-    - Any changes on the source object's reference value
-        - Will be reflected on the new object's corresponding property
+    - Create a copy of the object "person"
+        - Using the method ".assign()" of the global object "Object"
+        - Store the object on a global constant named "person2"
 
-    - To address this concern
-        - Use the Window method "structuredClone()"
-            - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Window/structuredClone)
+    - Push a new element into the reference value of object "person"
+        - BOTH objects "person" & "person2" updates
+            - The reference value of their respective property "hobbies"
 
-        - BETTER solution is to use the spread operator (...) instead
+    - Create another copy of the object "person"
+        - Using the method ".assign()" of the global object "Object"
+        
+        - Declare a new property "occupation" 
+            - Assigned w/ a primitive value
+            - Passed as argument to the method
+
+        - Store the object on a global constant named "person3"
+
+        - Only the object "person3" has the property "occupation"
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Launch the browser's JavaScript console
+
+        - BOTH objects "person" & "person2" have identical properties & values
+
+        - Object "person3" has an additional property "occupation" that
+            - Is NOT present on BOTH objects "person" & "person2"
