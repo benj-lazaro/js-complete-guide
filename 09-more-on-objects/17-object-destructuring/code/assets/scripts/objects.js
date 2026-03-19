@@ -17,26 +17,29 @@ const renderMovies = (filter = "") => {
     movieList.classList.add("visible");
   }
 
-  // This line is NOT an ideal implementation
+  // Clears the existing HTML mark-up content
+  // NOTE: This line is NOT an ideal implementation
   movieList.innerHTML = "";
 
+  // Select movie titles that matches the filter word
+  // If NO "filter" is passed, it renders ALL movies
   const filteredMovie = !filter
     ? movies
     : movies.filter((movie, index, movies) =>
         movie.info.title.includes(filter),
       );
 
-  // Render each object as a child <li> of the parent HTML element <ul>
+  // Iterate through the "filtered" movies, render each as a child <li> of the parent <ul>
   filteredMovie.forEach((movie, index, movies) => {
     const movieElement = document.createElement("li");
 
-    // Deconstruct the object "movie"
-    // Extract the property "info" & store the rest in "otherProps"
+    // Deconstruct the object "movie" & extract the property "info"
+    // Store the remaining properties in "otherProps" using the REST parameter
     const { info, ...otherProps } = movie;
     console.log(otherProps);
 
     // Deconstruct the nested object stored in the property "info"
-    // Extract the property "title" & store it under a new name "movieTitle"
+    // Extract the property "title" & assign the new property name "movieTitle"
     const { title: movieTitle } = info;
 
     // Fetch the property  "movieTitle" (formerly referred as "title")
@@ -45,6 +48,7 @@ const renderMovies = (filter = "") => {
     // Iterate through the dynamic property
     for (const key in info) {
       if (key !== "title") {
+        // Append the dynamic property & its assigned value w/ "title"
         text = text + `${key}: ${info[key]}`;
       }
     }
@@ -54,6 +58,8 @@ const renderMovies = (filter = "") => {
   });
 };
 
+// Clears the input fields after the button "Add Movie" is clicked
+// NOTE: This is my implementation
 const clearUserInput = () => {
   const userInputs = document.querySelectorAll(".control input");
 

@@ -1,29 +1,30 @@
 Object Destructuring
 --------------------
-- It is similar to array destructuring except this time w/ objects
-    - Using the spread operator (...) 
-        - To pull out properties from an object
-            - Store in a constant based on their existing property name
+- Functions similarly to array destructuring EXCEPT this time w/ objects
+    - Uses the spread operator (...)
+        - Pulls out a property (or properties) from an object
+        - Store in a constant whose name is based on their existing property name
 
-        - NOTE: The order how properties are pulled does NOT matter
-            - The existing property name (key) matters
-
-    - A REST parameter (...) can be used to collect
-        - Other properties of an object that did NOT get pulled out
-            - By their respective property name
-            - Stored into a single name (e.g. ...otherProps)
-
-    - To use a new (different) property name for the extracted existing property name
-        - On the left-hand side { }
-            - Use the ":" operator right after the existing property name
-            - Followed by the new property name
-
+        - NOTE: The order how properties are pulled from the object DOES NOT MATTER
+            - The name of existing property w/in an object DOES MATTER
 
     Syntax:
     const { <existing_property_name>, ..., <existing_property_name>} = <source_object>;
 
+
+- A REST parameter (...) is used to collect other properties of an object that
+    - Did NOT get pulled from the object by their respective property name
+    - They will be COLLECTIVELY STORED under a single name (e.g. ...otherProps)
+
+    Syntax:
     const { <existing_property_name>, ...otherProps} = <source_object>;
 
+
+- To assign a new property name for the pulled property
+    - Use the operator ":" in-between
+        - The existing property name & the new property name
+
+    Syntax:
     const { <existing_property_name>: <new_property_name> } = <source_object>;
 
 
@@ -33,15 +34,15 @@ Object Destructuring
 
         - Deconstruct the object "movie"
             - Extract the property "info"
-            - Store the rest into "otherProps"
+            - Store the remaining properties into "otherProps"
 
-        - Refactor references to "movie.info" to "info"
+        - Refactor references of the property "movie.info" into "info"
 
-        - Deconstruct the property "info"
+        - Deconstruct the nested object value assigned to the property "info"
             - Extract the nested property "title"
             - Store it under a new property name "movieTitle"
 
-        - Refactor references to "info.title" to "movieTitle"
+        - Refactor references of the property "info.title" into "movieTitle"
 
     - Save the changes
 
