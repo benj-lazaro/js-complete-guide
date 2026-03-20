@@ -17,7 +17,7 @@ Checking For Property Existence
     - If the target property has the value of "undefined"
 
     - A non-existent object property
-        - Returns the value of "undefined" in the browser's JavaScript console
+        - Returns the value of "undefined"
     
     Syntax:
     if (<object>.<property_name> === undefined) {
