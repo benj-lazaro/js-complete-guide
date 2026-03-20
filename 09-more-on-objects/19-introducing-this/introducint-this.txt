@@ -6,29 +6,28 @@ Introducting "this"
     - Really easy way to determine who "this" is referring to
         - It is the thing (object) in front of the method being called 
         
-        - NOTE: See practice project's line 44 & 89
+        - NOTE: See practice project's line 47 & 95
 
 
-- In the practice project (assets/scripts/objects.js)
-    - On the creation of the object "movie"
-        - Add a new method named "getFormattedTitle"    
-            - Assign an anonymous function as value
-            - NOTE: NOT an Arrow function
-        
-        - The function returns the value of 
-            - The "movie" object's property "info.title" in uppercase format
-            - Using the string method ".toUpperCase()"
+- On the practice project (assets/scripts/objects.js)
+    - In the creation of the object "movie" using Object literal notation
+        - Define a new method named "getFormattedTitle"
+            - Assign an anonymous (NOT an Arrow) function as value
+
+        - The anonymous function
+            - Returns the value of the "this" object's property "info.title"
+            - Chains the string method ".toUpperCase()" to format in uppercase
 
             - NOTE: The keyword "this" represents the object "movie"
 
     - Switch to the helper function stored in the global constant "renderMovies"
-        - Comment the extraction of the property "title"
-            - From the nested object "info"
+        - Comment the line that extracts the property "title" from
+            - The nested reference value assigned in the property "info"
 
-        - On the variable "text"
-            - Change the assigned expression to:
-
-                movie.getFormattedTitle() + " - ";        
+        - On the following line of code
+            - Change the assigned expression to the local variable "text" to:
+    
+                let text = movie.getFormattedTitle() + " - ";        
 
     - Save the changes
 
