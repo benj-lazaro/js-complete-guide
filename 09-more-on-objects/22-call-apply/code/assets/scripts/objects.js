@@ -17,21 +17,24 @@ const renderMovies = (filter = "") => {
     movieList.classList.add("visible");
   }
 
-  // This line is NOT an ideal implementation
+  // Clears the existing HTML mark-up content
+  // NOTE: This line is NOT an ideal implementation
   movieList.innerHTML = "";
 
+  // Select movie titles that matches the filter word
+  // If NO "filter" is passed, it renders ALL movies
   const filteredMovie = !filter
     ? movies
     : movies.filter((movie, index, movies) =>
         movie.info.title.includes(filter),
       );
 
-  // Render each object as a child <li> of the parent HTML element <ul>
+  // Iterate through the "filtered" movies, render each as a child <li> of the parent <ul>
   filteredMovie.forEach((movie, index, movies) => {
     const movieElement = document.createElement("li");
 
-    // Deconstruct the object "movie"
-    // Extract the property "info" & store the rest in "otherProps"
+    // Deconstruct the object "movie" & extract the property "info"
+    // Store the remaining properties in "otherProps" using the REST parameter
     const { info, ...otherProps } = movie;
     console.log(otherProps);
 
@@ -45,13 +48,13 @@ const renderMovies = (filter = "") => {
     // Bind the method "getFormattedTitle" w/ the object "movie"
     // getFormattedTitle = getFormattedTitle.bind(movie);
 
-    // Calls the method ".getFormattedTitle"
-    // Uses either ".call()" or ".apply()" to identify the object that "this" refers to
+    // Use the method ".call()" to reference "this" w/ the ovject "movie"
     let text = getFormattedTitle.call(movie) + " - ";
 
     // Iterate through the dynamic property
     for (const key in info) {
       if (key !== "title") {
+        // Append the dynamic property & its assigned value w/ "title"
         text = text + `${key}: ${info[key]}`;
       }
     }
@@ -61,6 +64,8 @@ const renderMovies = (filter = "") => {
   });
 };
 
+// Clears the input fields after the button "Add Movie" is clicked
+// NOTE: This is my implementation
 const clearUserInput = () => {
   const userInputs = document.querySelectorAll(".control input");
 

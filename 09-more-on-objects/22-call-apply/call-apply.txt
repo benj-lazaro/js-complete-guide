@@ -3,15 +3,16 @@
 - The method ".bind()"
     - Returns a pre-configure function object that will be executed later
 
-    - If a function needs to change the value that the keyword "this" refers to
-        - Then execute the function right away
-        
-        - The methods ".apply()" or ".call()" are better suited for this task
+    - If a function that needs to change the value that the keyword "this" is referring to
+        - Executes that function right way & does NOT return a new function object
+
+        - The methods ".apply()" or ".call()" are better suited for this task than ".bind()"
 
 
 - The method ".call()" 
-    - Does NOT return a new function object
-        - It executes the function object it is attached to IMMEDIATELY
+    - It does NOT return a new function object
+
+    - It immediately executes the function object it is attached to
 
     - It takes multiple arguments
         - 1st           = The object that the keyword "this" references to
@@ -27,12 +28,13 @@
 
     
 - The method ".apply()"
-    - Does NOT return a new function object
-        - It executes the function object it is attached to IMMEDIATELY
+    - It does NOT return a new function object
+
+    - It immediately executes the function object it is attached to
 
     - It takes multiple arguments
         - 1st           = The object that the keyword "this" references to
-        - Succeeding    = Values in an array that the function will work on (optional)   
+        - Succeeding    = Values in stored in an array that the function will work on (optional)   
 
     - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply)
 
