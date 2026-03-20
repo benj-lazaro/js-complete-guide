@@ -1,31 +1,46 @@
 The "this" Keyword & Its Strange behavior
 -----------------------------------------
-- When a method of an object uses the keyword "this" w/in its body
+- When a method of an object uses the keyword "this" w/in own its body
     - The keyword "this" refers to the object that called the method
-        - e.g. <object_name>.<method_name>();
+    - e.g. <object_name>.<method_name>();
 
 
-- When the same method is extracted from an object
-    - Save in a global variable
-        - Then call it as a stand-alone function w/o declaring the associated object
+- When the same method is extracted from an object & stored in a global variable
+    - Calls the method as a stand-alone function w/o declaring its associated object
 
-    - In non-strict mode 
-        - The keyword  "this" refers to the global Window object
+    - On non-strict mode
+        - The keyword "this" refers to the global Window object
 
-    - In strict mode
-        - The keyword "this" returns "undefined"
+    - On strict mode
+        - The keyword "this" returns the value "undefined"
 
 
-- Two (2) ways to prevent confusion on what the keyword "this" is currently referring to
-    - Declare the object that will be calling the method
-        - e.g. <object_name>.<method_name>();
+- To prevent help identify which object that the keyword "this" is currently referreing to
+    - Declare the name of the object that calls the method
+        - Prefixing the object's name
+        - A "." notation
+        - Then the method name w/ a pair of "( )"
 
-    - If the 1st option is NOT possible
-        - Chain the method ".bind()" to the variable name
-            - To pre-configure the object that the keyword "this" will refer to
+        Syntax:
+        <object_name>.<method_name>();
 
-        - Pass the object as argument
-            - Explicitly identifies the object that the keyword "this" will refer from hereon
+
+    - On the variable that stores the extracted object's method
+        - Chain the method ".bind()"
+            - Pass the intended object to be associated w/ the keyword "this" as argument
+
+        - This explicitly identifies the object that
+            - The keyword "this" will refer to
+            - When calling the extracted method 
+
+        Syntax:
+        let {<extracted_method>} = <object>;
+        <variable> = <extracted_method>.bind(<object>);
+
+
+    - NOTE: BOTH approaches reduces the chance of the keyword "this"
+        - Referring to the global Window object
+        - Returning the value "undefined
 
 
 - In the practice project (assets/scripts/objects.js)
