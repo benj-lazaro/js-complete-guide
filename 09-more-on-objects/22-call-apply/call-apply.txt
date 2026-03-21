@@ -1,20 +1,24 @@
 .call() And .apply()
 --------------------
 - The method ".bind()"
-    - Returns a pre-configure function object that will be executed later
+    - Prepares a function for future execution
 
-    - If a function that needs to change the value that the keyword "this" is referring to
-        - Executes that function right way & does NOT return a new function object
+    - Returns a new (pre-configured) function object
+        - Stored in a local variable 
 
-        - The methods ".apply()" or ".call()" are better suited for this task than ".bind()"
+
+- However, if a function (extracted method from an object) needs to be executed right away
+    - After changing what the keyword "this" is referring to
+    
+    - BOTH methods ".apply()" and ".call()" are better suited for this task
 
 
 - The method ".call()" 
-    - It does NOT return a new function object
+    - Does NOT return a new function object
 
-    - It immediately executes the function object it is attached to
+    - Executes the function object right away
 
-    - It takes multiple arguments
+    - Takes multiple arguments
         - 1st           = The object that the keyword "this" references to
         - Succeeding    = Infinite values that the function will work on (optional)
         
@@ -28,13 +32,13 @@
 
     
 - The method ".apply()"
-    - It does NOT return a new function object
+    - Does NOT return a new function object
 
-    - It immediately executes the function object it is attached to
+    - Executes the function object right away
 
-    - It takes multiple arguments
-        - 1st           = The object that the keyword "this" references to
-        - Succeeding    = Values in stored in an array that the function will work on (optional)   
+    - Takes multiple arguments
+        - 1st   = The object that the keyword "this" references to
+        - 2nd   = Values in stored in an array that the function will work on (optional)   
 
     - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply)
 
