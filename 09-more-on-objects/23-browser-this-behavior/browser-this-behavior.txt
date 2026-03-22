@@ -1,22 +1,25 @@
 What The Browser (Sometimes) Does To "this"
 -------------------------------------------
-- One use case where the object in front of a function object will NOT work
+- A use case where the object in front of a function object will NOT work
     - Using the method ".bind()" on an event listener
 
     - The object in front of a function object ONLY works
         - If it is executing the function object on its own (i.e. NOT by an event)
 
 
-- One use case where the object in front of a function object will NOT work (as expected)
+- Another use case where the object in front of a function object will NOT work
     - Using the method ".bind()" on an event listener
 
     - An event listener using an Anonymous callback function
         - Browser binds the keyword "this" to the DOM Element node that triggered the event
 
+    - NOTE: An event listener using an Arrow callback function
+        - Browser binds the keyword "this" to the global Window object
+
 
 - In the practice project (assets/scripts/objects.js)
-    - Refactor the Arrow callback function stored in the global constant "searchMovieHandler"
-        - Change it into an Anonymous function
+    - On the callback function stored in the global constant "searchMovieHandler"
+        - Change it from an Arrow function into an Anonymous function
 
     - Save the changes
 
@@ -24,7 +27,8 @@ What The Browser (Sometimes) Does To "this"
         - Launch the browser's JavaScript console
 
         - Click the button "Search"
-
-        - The value assigned to the keyword "this" refers to
-            - The Element node stored in the global constant "searchBtn"
-
+        
+        - On the JavaScript console 
+            - The browser refers the value of the keyword "this"
+            - To the selected Element node that is stored in the global constant "searchBtn"
+            - (i.e. HTML element <button> w/ the "id" of "search-bth")
