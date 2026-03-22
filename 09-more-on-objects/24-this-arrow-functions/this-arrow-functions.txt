@@ -1,61 +1,92 @@
 "this" And The Arrow Functions
 ------------------------------
-- In continuation of the previous lecture 
-    - This time using an Arrow callback function on an event listener
-
-    - When used w/ the method ".bind()"
-        - The keyword "this" refers to the global Window object
-        - NOT to the object that called the triggered the event
-
-    - Every function (Anonymous & normal)
-        - It has its own keyword "this" binding
-        - The function is bound to the object responsible for its execution
-
-    - An Arrow function has a SPECIAL BEHAVIOR
-        - It does NOT have its own keyword "this" binding
-            - NOT bound to the object responsible for its execution
-
-        - It perceives that it is being executed outside of the function
-            - Referencing the global Window object as the value for the keyword "this"
-
-        - Even when running JavaScript on Strict Mode
-            - An Arrow callback function does NOT yield an "undefined" value
-            
-            - An Anonymous or normal function that 
-                - Uses the keyword "function" yields an "undefined" value
+- In continuation of the previous lecture
+    - An event listener using an Arrow callback function
+        - Browser binds the keyword "this" to the global Window object
+        - Instead of the DOM Element node that triggered the event
 
 
-- In the practice project (script.js)
-    - Define a new object that has the following properties
+    - An advantage of an Arrow function as a callback function
+        - It does NOT bind the keyword "this" to ANY object
+
+        - It has a SPECIAL BEHAVIOR
+            - Perceiving to be executed outside its own function body
+            - Referencing the keyword "this" to the global Window object
+
+
+    - Every callback function (Anonymous & normal) 
+        - Created w/ the keyword "function" has its own keyword "this" binding
+        
+        - Binds the keyword "this" to the object responsible
+            - For the function object's (i.e. method) execution
+        
+
+- In the example code (script.js)
+    - Define a new object using Object literal notation
+        - Save the object in the global constant named "members"
+
+    - Define the following properties of the object
         - teamName          = string
         - people            = an array of string elements
         - getTeamMembers    = a method 
 
-        - Save the object in the global constant named "members"
+    - The method "getTeamMembers"
+        - Renders the individual value of the property "people" w/ the value of "teamName"
+
+    - On the method "getTeamMembers"
+        - Iterate through the property "people" using the method ".forEach()"
+            - Prefix the keyword "this" to the property "people
+            - The keyword "this" references the object "members"
+
+        - Pass an Arrow function as argument to the method ".forEach()"
+            - The Arrow function has a parameter variable named "person"
+
+        - On the Arrow function's body
+            - Pass the keyword "this" as argument to "console.log()"
+
+            - Next, pass a string that concatenates the values of
+                - The object's properties "people" & "teamName"
+                
+            - Prefix the keyword "this" to the property "teamName'
+                - The keyword "this" references the object "members"
+            
+    - Outside the object "members"
+        - Call the method ".getTeamMembers()"
         
-    - The method "getTeamMembers" of the object "members"
-        - Iterates through the values w/in the array of the property "people"
-            - Using the method ".forEach()"
+        - Browser references the keyword "this" to object "members"
+            - Render the individual names w/ the team name 
 
-        - Pass an Arrow function w/ the parameter variable "person" as argument value
-            - NOTE: The Arrow function perceives as it is executed outside the method ".forEach()"
-                - References the object "members" for the "this" keyword
+        - The Arrow function does NOT bind the keyword "this" to ANY object
+            - Preceives that it is execute outside of its own function body
 
-        - Renders the individual values from the property "people"
+            - It "executes" w/in the method "getTeamMembers"
+                - Where the keyword "this" references the object "members"
 
-    - Save the changes
 
-    - Load / reload the browser
-        - Open the browser's JavaScript console to view results
+    - Define a new object using Object literal notation
+        - Save the object in the global constant named "members2"
+            - Copy & paste the properties & method of object "members"
 
-    - Switching the Arrow function w/ an Anonymous function
-    
-    - An Anonymous or normal function
-        - It has its own keyword "this" binding
+        - On the method "getTeamMembers"
+            - Swap the Arrow function w/ an Anonymous function
 
-        - The keyword "this" used w/in the method ".forEach()"
-            - Changes the binding 
+        - Leave everything as it is
 
-        - The keyword "this" w/in the method ".forEach()" is
-            - Bound to the one responsible triggering the Anonymous function
-            - Namely the method ".forEach()" w/c under the global Window object
+    - Outside of the object "members2"
+        - Execute the method "getTeamMembers()" of the object "members"
+
+        - Renders the individual values of the property "people" 
+            - BUT returns the value of "undefined" for the property "teamName"
+
+    - The reason behind the "undefined" value for the property "teamName"
+        - The keyword "function" used by the Anonymous function
+            - Binds the keyword "this" to the object that executes the Anonymous function
+
+        - The Anonymous function is triggered by the method ".forEach()"
+            - It is NOT triggered by the object "member2"
+
+            - Since the method ".forEach()" is NOT a method of the object "member2"
+                - JavaScript binds the keyword "this" to the global Window object
+            
+        - The global Window object does NOT have a property named "teamName"
+            - This leads to returning the value "undefined"
