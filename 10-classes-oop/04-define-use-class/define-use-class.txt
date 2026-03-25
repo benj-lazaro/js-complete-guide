@@ -1,77 +1,74 @@
-Defining & Using A First Class
+Defining & Using A First Class 
 ------------------------------
-- A class allows to build an object in an easier way
-    - It serves as a blueprint for an object (theoretical definition)
-        - Defines how an object will look like (i.e. properties & methods)
+- A Class allows to easily build an object
+    - Serves as a theoretical blueprint of an object
+        - Defines the object's properties & methods
 
-    - It can create multiple, similar looking objects much easier
-        - Where the data (values) of an object differs but retains identical structure
-     
-    - An object created from a class is
-        - Referred as an "instance" of that class
+    - Allows to easily create multiple & similar "looking" objects
+        - Data or values of an object differs BUT retains identical structure
+        
 
-    - NOTE: Class-based object creation serves an ALTERNATIVE to
-        - Using object literals (i.e. object literal notation)
+- An object created from a Class is referred as an "instance" of that Class
+    - NOTE: This serves as an ALTERNATIVE to Object literal notation
 
 
-- To create a class
+- To create a Class
     - Use the keyword "class"
+        - Followed by a name
+            - UPPERCASE the 1st LETTER of EVERY WORD of the name
+            - Whitespace in-between words is NOT allowed
 
-    - Followed by a name
-        - Uppercase the 1st letter of EVERY WORD in the name
+        - Then a pair of "{ }" 
+            - To contain the fields
+            - NOTE: A Class field becomes an object property after instantiation
 
-    - Then a pair of "{ }"
-        - Define the fields (properties in an object)
-            - To assign a default value
-                - Use the operator "="
-                - Followed by a default value
-            
-            - NOT assigning a default value
-                - Implictly defaults to "undefined"
+        - W/in the pair of "{ }"
+            - Define the Class field name
+            - Followed by a "=" operator
+            - Then a default value
+            - Terminate EACH FIELD w/ a ";"
 
-            - NOTE: Each field ends w/ a ";"
+            - NOTE: NOT assigning a default value, implicitly assigns "undefined"
 
     Syntax:
-    class <name> {
+    class <class_name> {
         <field_name> = <default_value>;
+        ...
         <field_name>;
     }
 
 
-- To create an object from (instance of) a class
+- To create an instance (i.e. object) of a Class
     - Use the keyword "new"
-
-    - Followed by the name of the class w/ a pair of "()"
-
-    - Returns a new object (instance)
+        - Followed by the Class name w/a pair of "( )" & a ";"
+        - Implictly returns a Class-based object
 
     Syntax:
-    new <class_name>();
+    new <class_name>()
+
+    const <constant_name> = new <class_name>();
 
 
 - On the practice project (assets/scripts/app.js)
-    - Refactor the code to implement a class-based system
-
     - Create a class named "Product"
-    
-    - Define the following fields in the class "Product"
-        - "title" w/ default value of "DEFAULT"
-        - "imageUrl" w/ NO default value
-        - "price" w/ NO default value
-        - "description" w/ NO default value
+        - Based on the properies of the object (array) elements assigned 
+            - As values in the property "products" of the object "productList" 
 
-    - Create an instance (object) of the class "Product"
-        - Use the keyword "new"
-            - Followed by the class name "Product"
-            - Then a pair of "()"
-        
-        - Pass it as argument value to "console.log()"
+    - Define the following fields
+        - "title"       = default string value "DEFAULT"
+        - "imageUrl"    = NO assigned default value (i.e. undefined)
+        - "price"       = NO assigned default value (i.e. undefined)
+        - "description" = NO assigned default value (i.e. undefined)
+
+    - Create an instance (i.e. object) of the Class "Product"
+        - Pass the returned object as argument to "console.log()"
 
     - Save the changes
 
     - Load / reload the browser
         - Launch the browser's JavaScript console
 
-        - Displays a "Product" object w/ its properties & correponding values that
-            - Were defined in the class
+    - An object "Product" is returned
+        - Along with its properties & assigned (default) values
+
 
