@@ -1,102 +1,120 @@
 Getting Started With OOP
 ------------------------
-- Build a simply dummy shop
-    - Build the front-end part of the shop
-        - List of products
+- Build a simple online dummy shop that holds the following components
+    - A list of products that
+        - Includes product name, price, an image & a short description
 
-        - Click an "Add To Cart" button
-            - Increments the total amount in a shopping cart
+    - An "Add to Cart" button that
+        - Increments the Total Amount value in a shopping cart
 
-    - Implement the code using the object literal notation (for now)
-        - Demonstrates the problem of using this notation
-            - Showcase the need of a reusable "blueprint" in creating an object
+    - NOTE: Focuses on the front-end part ONLY
+        - A fully functional web app requires a server w/ a database
 
-        - Object literal notation is create for
-            - Creating an object "on-the-fly"
-            - Grouping some (related) data together
 
-        - Using the notation
-            - Hard to write reusable OOP code
+- Implement the app using the Object literal notation to showcase
+    - The problem (limitation) using this approach
+    - The need for a reusable "blueprint" in creating an object
+
+    - The Object literation notation is best used in
+        - Creating an object "on-the-fly"
+        - Grouping related data together
+
+        - BUT difficult to write reusable OOP code
 
 
 - On the practice project (assets/scripts/app.js)
-    - Create an object & store it in a global constant named "products"
-        - Assign an array w/c contains objects as elements
+    - Create an object using the Object literal notation
+        - Store it in a global constant named "productList"
 
-        - Each object has the following properties:
-            - "title"       = string
-            - "imageUrl"    = string
-            - "price"       = number
-            - "description" = string
+    - Define a property named "products"
+        - Assign it w/ a value of an array
 
-    - Create another object & store it in a global constant named "productList"
-        - Move the object "products" w/in the "productList"
+    - The objects w/in the array has the following properties
+        - "title"       = assigned w/ a String value
+        - "imageUrl"    = assigned w/ a String value
+        - "price"       = assigned w/ a Number value
+        - "description" = assigned w/ a String value
 
-        - Refactor the object "products" into a property of "productList" that
-            - Contains an array of objects
+    - Create two (2) sample objects w/ the following values:
+        - "title"       = "A Pillow"
+        - "imageUrl"    = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%2Fid%2FOIP.9UtdOxfFxHcVNKnkblTIBwHaHa%3Fpid%3DApi&f=1&ipt=8654694e58dc9093f53aa36c0b06801410e65dccbb6a013dbbbcb1e2c2f0d02c"
+        - "price"       = 19.99
+        - "description" = "A soft pillow!"
 
-        - Create a method named "render"
-            - NOTE: Use the method shorthand notation
+        - "title"       = "A Carpet"
+        - "imageUrl"    = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.teahub.io%2Fphotos%2Ffull%2F200-2004153_carpet.jpg&f=1&nofb=1&ipt=32f5c6713ceed3de746e30c05ed5e48ddf8e99f1fa57abb0a6f6a42b68d91928"
+        - "price"       = 89.99
+        - "description" = "A carpet which you might like - or not."
 
-        - Inside the method "render"
-            - Select the HTML element <div> w/ an attribute "id" of "app"
-                - Using the method "document.getElementById()"
+    - Define a method named "render"
+        - NOTE: Use the Method shorthand notation
+    
+    - Inside the method "render"
+        - Select the HTML element <div> w/ an attribute "id" of "app"
+            - Using the method "document.getElementById()"
                 - Pass "app" as argument value
-                - Store the returned Element node to the local constant named "renderHook"
-
-            - Creata a new HTML element <ul>
-                - Using the method "document.createElement()"
+                - Store the returned Element node in a local constant named "renderHook"
+        
+        - Create a new HTML element <ul>
+            - Using the method "document.createElement()"
                 - Pass "ul" as argument value
-                - Store the returned Element node to the local constant named "prodList"
+                - Store the created Element node in a local constant named "prodList"
 
-            - Add an HTML attribute "class" to the created HTML element <ul>
-                - Chain the property ".className" to the constant "prodList"
+            - Add an HTML attribute "class" to the Element node "prodList"
+                - Chain the property ".className"
                 - Assign the value "product-list"
 
-            - Iterate through the each element of this object's property "products"
-                - Using a "for..of" loop
-                    - Create a local constant named "prod"
-                        - Stores an object that is read from the array
+        - Iterate through each array element of the property "products"
+            - Using a "for..of" loop
+                - Define a local constant named "prod" that 
+                    - Holds the current object element read from the array
 
                 - Create a new HTML element <li>
                     - Using the method "document.createElement()"
-                    - Pass "li" as argument value
-                    - Store the returned Element node to the local constant named "prodEl"
+                        - Pass "li" as argument value
+                        - Store the created Element node in a local constant named "prodEl"
 
-                - Add an HTML attribute "class" to the created element <li>
-                    - Chain the property ".className" to the constant "prodEl"
+                - Add an HTML attribute "class" to the Element node "prodEl"
+                    - Chain the property ".className"
                     - Assign the value "product-item"
 
-                - Chain the method ".innerHTML" to the constant "prodEl"
-                    - NOTE: Use backticks
+                - Chain the method ".innerHTML" to the ELement node "prodEl"
+                    - Use backticks to implement the following HTML mark-up
 
-                    - Implement an HTML element <div>
-                        - Next an HTML element <img>
-                            - Declare a HTML attribute "src"
-                                - Assign the value of "${prod.imageUrl}
+                    - An HTML element <div>
 
-                            - Declare a HTML attribute "alt"
-                                - Assign the value of "${prod.title}"
+                    - A child HTML element <img> w/ an HTML attribute "src"
+                        - Assigned w/ the value "${prod.imageUrl}"
 
-                        - Next is an HTML element <div> w/ a attribute "class" of "product-item__content"
+                        - Add an HTML attribute "alt"
+                            - Assign the value "${prod.title}"
 
-                        - Next is an HTML element <h2>
-                            - Assign the content of "${prod.title}"
+                    - A child HTML element <div> w/ an HTML attribute "class"
+                        - Assigned w/ the value "product-item__content"
 
-                        - Next is an HTML element <h3>
-                            - Assign the content of "${prod.price}"
+                        - A child element <h2> w/ the content "${prod.title}"
 
-                        - Next is an HTML element <p>
-                            - Assign the content of "${prod.description}"
+                        - A sibling child element <h2> w/ the content "\$ ${prod.price}"
+                            - NOTE: "\$" to render a dollar sibling
 
-                        - Lastly is an HTML element <button>
-                            - Assign the text content "Add to Cart"
+                        - A sibling child element <p> w/ the content "${prod.description}"
 
-                - Append the created element <li> to the element <ul>
-                    - Chain the method ".append()" on the constant "prodList"
-                    - Pass the constant "prodEl" as argument value
+                        - A sibling child element <button" w/ the content "Add to Cart"
 
-            - Chain the method ".append" to the constant "renderHook"
-                - Pass "prodList" as argument value
+                - Append the Element node "prodEl" as a child of Element node "prodList"
+                    - Using the method ".append()"
+                    - Pass the Element node "prodEl" as argument
+
+            - Append the Elemet node "prodList" to the Element node "renderHook"
+                - Using the method ".append()"
+                - Pass the Element node "prodList" as argument
+
+                - NOTE: This renders the product list as a (child) content of 
+                    - The HTML element <div> w/ the attribute "id" of "app"
 
     - Call the method "render()" of the object "productList"
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Renders the object elements of the property "products" in the DOM
