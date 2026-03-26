@@ -1,74 +1,72 @@
 Working With Constructor Methods
 --------------------------------
-- A Constructor method of a class
+- A Constructor method of a Class
     - Allows to instantiate an object w/ different values
 
-    - Accepts values as arguments
-        - Then assign them to the corresponding class fields (properties)
-    
-    - Instantiates a new object w/ the passed values assigned
-        - To the corresponding properties
-    
-    - Helps prevent the occurrence of mistyping or missing out property name(s)
-        - A common incident when using object literal notation
+    - It accepts values as arguments
+        - These values are then assigned to the correponding fields of that Class
+
+    - Help prevent the occurrence of mistyping or missing out a Class' field (or an object's property)
+        - This is a common issue when using Object literal notation
 
 
-- To define a constructor method w/in a class
-    - Use the keyword "constructor" followed by a pair of "( )"
-        - Define the parameter variable(s) w/in the pair of "( )"
-        - Then a pair of "{ }" to contain the constructor method's body
+- To define a Constructor method of a Class
+    - Use the keyword "constructor"
+        - Followed by a pair of "( )"
+        - Then a pair of "{ }"
 
-        - IMPORTANT: Do NOT place a ";" at the end
+        - IMPROTANT: DO NOT terminate the statement w/ a ";"
 
-    - W/in the constructor method's body
-        - Prefix each class field w/ "this."
+    - W/in the Constructor method's body
+        - Prefix each Class field w/ the keyword "this."
             - Followed by a "=" operator
             - Then the corresponding parameter variable
-            - End the statement w/ a ";"
+            - End each statement w/ a ";"
 
     Syntax:
     class <name> {
-        // Fields...
+        // Class field
+        ...
 
-        constructor(<parameter_variable>, ..., <parameter_variable>) {
+        constructor(<parameter_variable>, ...) {
             this.<field_name> = <parameter_variable>;
             ...
         }
     }
 
 
-- To call a class constructor
+- To call a Class' Constructor method
     - Use the keyword "new"
-        - Followed by the class name w/ a pair of "()"
-        - Pass the corresponding values as arguments
+        - Followed by the Class' name
+        - Then a pair of "( )"
+        - Pass values as arguments
+        - End the statement w/ a ";"
 
     Syntax:
-    new <class_name>(<arg1>,..., <arg_n>);
-     
+    new <class_name>(<argument_value>, ...);
+
 
 - On the practice project (assets/scripts/app.js)
-    - Implement a construtor method for the class "Product"
+    - On the Class "Product"
+        - Implement a Constructor method 
 
-    - Use the keyword "new"
-        - Followed by the class name "Product" w/ a pair of "( )"
-        - Define the paratmeter variable w/in the pair of "( )"
-        - Then a pair of "{ }"
+        - Define the following parameter variables
+            - title
+            - image
+            - price
+            - Description
 
-    - W/in the construtor method's body
-        - Assign the parameter variables to their correponding class fields
-        
-        - NOTE: Prefix each class field w/ the keyword "this"
-            - Referring to the current object being instantiated (created)
+        - Assign the values passed as arguments to the correponding Class' fields
 
-    - Moving on to the object stored w/in the global constant "prodList"
-        - On the array assigned to the property "products"
-        
-        - Replace each element (object literal) w/ a call to the
-            - Constructor method of the class "Product"
-            - Pass the corresponding values as argument
+    
+    - On the object stored in the global constant "productList"
+        - Replace each object element assigned as value in the property "products" w/ 
+            - A call to the Constructor method of the Class "Product"
+            - Pass the previous object's values as arguments
+
     
     - Save the changes
 
     - Load / reload the browser
-        - The behavior of the web application should remain the same sa before
+        - The behavior of the web application should remain the same as before
 
