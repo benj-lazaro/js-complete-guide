@@ -17,7 +17,7 @@ class Product {
 // Instantiate an object from Class "Product"
 // console.log(new Product());
 
-// An object that contains product related data & logic
+// Use the Constructor method to create object of the same structure but of different values
 const productList = {
   products: [
     new Product(
