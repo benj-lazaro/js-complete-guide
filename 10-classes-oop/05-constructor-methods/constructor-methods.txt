@@ -23,6 +23,8 @@ Working With Constructor Methods
             - Then the corresponding parameter variable
             - End each statement w/ a ";"
 
+        - NOTE: The keyword "this" references the Class of the Constructor method
+
     Syntax:
     class <name> {
         // Class field
