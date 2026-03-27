@@ -1,7 +1,7 @@
+// Define a Class
 class Product {
-  // Constructor method
+  // Using a Constructor method to define Class properties
   constructor(title, image, price, description) {
-    // Define Class Properties & assign their values
     this.title = title;
     this.imageUrl = image;
     this.price = price;
@@ -9,9 +9,7 @@ class Product {
   }
 }
 
-console.log(new Product());
-
-// Use a Constructor method to instantiate new Product objects
+// Use the Constructor method to create object of the same structure but of different values
 const productList = {
   products: [
     new Product(
@@ -28,14 +26,17 @@ const productList = {
     ),
   ],
   render() {
+    // Select HTML element <div> w/ attribute "id" of "app"
     const renderHook = document.getElementById("app");
-    const prodList = document.createElement("ul");
 
+    // Create a Element node "ul" w/ attribute "class" of "product-list"
+    const prodList = document.createElement("ul");
     prodList.className = "product-list";
 
+    // Iterate through the object elements of the property "products"
     for (const prod of this.products) {
+      // Create a corresponding Element node "li" for each object read
       const prodEl = document.createElement("li");
-
       prodEl.className = "product-item";
       prodEl.innerHTML = `
         <div>
@@ -50,11 +51,14 @@ const productList = {
         </div>
       `;
 
+      // Append the Element node "li" as a child of the Element node "ul"
       prodList.append(prodEl);
     }
 
+    // Append the Element node "ul" w/in the Element node "div"
     renderHook.append(prodList);
   },
 };
 
+// Render the values of the property "products" from the object "productList" in the DOM
 productList.render();
