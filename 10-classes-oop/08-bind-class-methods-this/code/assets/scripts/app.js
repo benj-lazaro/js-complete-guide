@@ -1,6 +1,6 @@
-// Class for defining a single product; groups related data together
+// Class that defines a single "Product" object
 class Product {
-  // Constructor method
+  // Using a Constructor method to define Class properties
   constructor(title, image, price, description) {
     this.title = title;
     this.imageUrl = image;
@@ -9,22 +9,29 @@ class Product {
   }
 }
 
-// Class that holds the logic for rendering a single product
+// Class that renders the HTML markup & content of a single "Product" object
 class ProductItem {
-  // Constructor method
+  // Constructor
   constructor(product) {
     this.product = product;
   }
 
-  // Methods
+  // Public method
+  // Callback function / method for the local constant "addCartButton"
   addToCart() {
     console.log("Adding to cart");
     console.log(this.product);
   }
 
+  // Prepares the HTML markup & content of single "Product" object for rendering in the DOM
   render() {
+    // Create an HTML element <li> for each "Product" object
     const prodEl = document.createElement("li");
+
+    // Set the HTML element's attribute "class" to "product-item"
     prodEl.className = "product-item";
+
+    // Set HTML markup & access the properties in the Class field "product"
     prodEl.innerHTML = `
         <div>
             <img src="${this.product.imageUrl}" alt="${this.product.title}">
@@ -38,16 +45,20 @@ class ProductItem {
         </div>
       `;
 
-    // Select the "Add to Cart" button
+    // Select the HTML element <button> stored w/in the constant "prodEl"
     const addCartButton = prodEl.querySelector("button");
+
+    // Chain an Event listener & bind Class "ProductItem" to the callback function (method) "addToCart"
     addCartButton.addEventListener("click", this.addToCart.bind(this));
 
+    // Return the Element node "li" w/ a "Product" object's data
     return prodEl;
   }
 }
 
-// Class collects individual products in an array & renders them
+// Class that stores a collection of "Product" objects & renders in the DOM
 class ProductList {
+  // Field(s)
   products = [
     new Product(
       "A Pillow",
@@ -63,24 +74,37 @@ class ProductList {
     ),
   ];
 
-  // Constructor method = NO need since the field "products" is initialized
+  // Constructor; empty as Class field "products" is already initialized
   constructor() {}
 
-  // Method that renders the value assigned to the field "products"
+  // Method
   render() {
+    // Select HTML element <div> w/ attribute "id" of "app"
     const renderHook = document.getElementById("app");
-    const prodList = document.createElement("ul");
 
+    // Create a Element node "ul" w/ attribute "class" of "product-list"
+    const prodList = document.createElement("ul");
     prodList.className = "product-list";
 
+    // Iterate through the object elements of the property "products"
     for (const prod of this.products) {
+      // Instantiate Class "ProductItem" into an object
       const productItem = new ProductItem(prod);
+
+      // Store the Element node "li" w/ content of a single "Product" object
       const prodEl = productItem.render();
+
+      // Append the Element node "li" as a child of the Element node "ul"
       prodList.append(prodEl);
     }
+
+    // Append the Element node "ul" w/in the Element node "div"
     renderHook.append(prodList);
   }
 }
 
+// Instantiate the Class "ProductList" into an object
 const productList = new ProductList();
+
+// Renders the list of "Product" objects in the DOM
 productList.render();

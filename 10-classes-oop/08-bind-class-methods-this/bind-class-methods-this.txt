@@ -1,35 +1,39 @@
 Binding Class Methods & Working With "this"
 -------------------------------------------
-- Implement the logic for the HTML element <button> labeled "Add to Cart"
-    - Located w/in the method "render()" of the class "ProductItem"
+- Implement the logic for the HTML element <button> w/ the content "Add to Cart"
+    - Located w/in the method "render" of the Class "ProductItem"
 
-    - When the HTML element is clicked
-        - Displays the following on the browser's JavaScript console
-            - Message "Adding to cart"
-            - Clicked instance (object) of the class "ProductItem"
+    - When the button is clicked
+        - Displays the message "Adding to Cart" on the browser's JavaScript console
 
-    
+  
 - On the practice project (assets/scripts/app.js)
-    - On the method "render()" of the class "ProductItem"
-        - Select the HTML element <button> stored w/in the local constant "prodEl"
-            - Using the method ".querySelector()"
+    - In the method "render()" of the Class "ProductItem"
+    
+    - Select the HTML element <button> currently stored w/in the local constant "prodEl"
+        - Using the method ".querySelector()" on the constant "prodEl"
             - Pass "button" as argument
+            - Store the returned Element node in a local constant "addCartButton"
 
-            - Store the returned Element node w/in the local constant "addCartButton"
+        - Chain an Event listener to the local constant "addCartButton"
+            - Using the method ".addEventListner()"
+                - Pass the event "click"
+                - Pass the callback function "this.addToCart"
 
-        - Create a new method named "addToCart()"
-            - Located outside the method "render()"
+            - NOTE: The keyword "this" references the Class "ProductItem"
+                - The callback function / method "addToCart" will be created next
 
-            - Pass "Adding to cart" as argument to "console.log()"
-            - Pass "this.product" as argument to "console.log()"
+    - Outside the method "render()" of the Class "ProductItem"
+        - Create a new method named "addToCart()" w/in the Class "ProductItem"
+        - Pass the string value "Adding to cart" to "console.log" as argument
+        - Pass the field "this.product" to "console.log" as argument
 
-        - Switch back to the method "render()"
-            - Hook-up an event listener to the constant "addCartButton"
-                - Using the method ".querySelector()"
+    - Switch back to the method "render()" of the Class "ProductItem"
+        - Refactor the callback function "this.addToCart" by
+            - Chaining the method ".bind()"
+            - Passing "this" as argument
 
-            - Pass the arguments
-                - 1st = "click"
-                - 2nd = this.addCartButton.bind(this)
+            - NOTE: The keyword "this" references the Class "ProductItem"
 
     - Save the changes
 
