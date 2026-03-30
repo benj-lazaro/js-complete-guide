@@ -1,54 +1,68 @@
 Communication Can Be Challenging
 --------------------------------
-- Implement the communication logic between the
-    - The method "addToCart()" of the class "ProductItem"
-        - Call back method for the event handler of the button "Add to Cart"
+- Next is to implement the logic that allow Classes to communicate
+    - The method "addToCart()" w/in the Class "ProductItem"
+        - When the triggered displays the following on the browser's JavaScript console
+            - The Message "Adding to cart"
+            - Properties of the selected "Product" object
 
-    - The class "ShoppingCart"
-        - Instance created w/in the class "Shop"
-        - Renders the shopping cart in the DOM
-        - Updates the "Total" amount for every item added into the cart
+    - The "${0}" embedded HTML markup save on the local constant "cartEl" w/in
+        - The method "render()" of the Class "ShoppingCart"
+
+    - In order to dynamically increment (or re-render) the value of "${0}" 
+        - EVERYTIME the method "addToCart()" of the Class "ProductItem" is triggered
 
 
 - On the practice project (assets/scripts/app.js)
     - On the class "ShoppingCart"
-        - Add a new method named "addProduct()"
-            - Define a parameter variable named "product"
+        - Create a new method named "addProduct"
+            - Define the parameter variable "product"
 
-        - Access the field "items"
-            - Prefixed w/ "this."
+    - On the method "addProduct()"
+        - Access the Class field "items"
+            - Prefixed w/ the keyword "this"
+
             - Chain the method ".push()"
-            - Pass the parameter variable "product" as argument
+                - Pass the parameter variable "product" as argument
 
-        - On the method "render()"
-            - Prior to returning the local constant "cartEl"
+    - On the method "render()" of the Class "ShoppingCart"
+        - Dynamically create a new Class Field named "totalOutput"
+            - Located BEFORE the last line of code
 
-            - Dynamically add a new field named "totalOutput"
-                - Assign the local constant "cartEl"
+            - Assign the local constant "cartEl"
                 - Chain the method ".querySelector()"
-                - Pass the argument "h2"
-                - NOTE: This accesses the HTML markup w/in "cartEl"
-        
-        - Back on the method "addProduct()"
-            - Access the field "totalOutput"
-            - Copy & assign as value
-                - The HTML element <h2> markup of "cartEl"
-                    - Located w/in the method "render()"
-                
-                - NOTE: Use template literal
-                    - Manually change the value of 0 to 1 (for now)
+                - Pass "h2" as argument
 
-            - This method supposedly should update the shopping cart
-                - Updates the "Total" for every item added into the cart
+            - Selects the HTML element <h2> 
+                - From the HTML markup w/in the local constant "cartEl"
+
+            - Assign the returned Element node "h2" as value
+                - To the dynamically created Class field "outputTotal"
+
+    - Switch back to the method "addProduct()" of Class "ShoppingCart"
+        - Access the dynamically created Class field "outputTotal"
+            - Prefixed w/ the keyword "this"
+
+            - Assign an updated HTML markup for the Element node "h2"
+                - (i.e. `<h2>Total: \$ ${1}</h2>`) 
+
+        - NOTE: This line of code supposedly update (or re-render) the value of "Total"
+            - EVERYTIME the method "addToCart()" of the Class "ProductItem" is triggered
+
+            - Calling the method "addToCart()" of the Class "ShoppingCart"
+                - Inside the Class "ProductItem" will NOT WORK
+                - i.e. "ShoppingCart.addToCart()"
+
+            - The Class "ShoppingCart" is NOT instantiated w/in the Class "ProductItem"
+
+            - To address this concern
+                - A similar syntax needs to be implement in the form of
+                    - Static methods & properties
+                    - e.g. <class_name>.<method_name>()
+
+                - To be discussed on the next section               
 
     - Save the changes
-
-    - As of the moment, there is NO way (yet)
-        - To call the method "addProduct()" of class "ShoppingCart"
-        - From w/in the class "ProductItem"
-
-    - To address this concern
-        - Use static methods & properties that offers the syntax:
-
-            <class_name>.<method_name>();    
-
+    
+    - Load / reload the browser
+        - There is NO changes in the behavior of the application
