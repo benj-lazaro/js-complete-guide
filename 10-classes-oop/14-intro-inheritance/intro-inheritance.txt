@@ -15,3 +15,15 @@ Introducing Inheritance
     - Inheritance is better than building multiple Classes that
         - Contains code duplication (i.e. properties & methods) w/c is sub-optimal
 
+
+- On the practice project
+    - The Classes "ProductItem", "ProductList" & "ShoppingCart" have
+        - Their own method "render()" w/c possess the same logic (i.e. behavior)
+            - Create an Element node
+
+            - Configure the Element node
+                - Add "stuff" (e.g. ".class", ".innerHTML" properties) to the Element node
+
+            - Return the Element node
+
+    - This is a good opportunity to apply the concept of inheritance
