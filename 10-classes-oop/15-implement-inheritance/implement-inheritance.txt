@@ -1,0 +1,159 @@
+Implementing Inheritance
+------------------------
+- Next is to start implementing inheritance on the practice project 
+    - Create a Base Class named "Component"
+        - This will output different components or parts of the web app
+
+    - Implement inheritance on the (now) Sub-Class "ShoppingCart"
+        - Using the keyword "extends"
+        - Followed by the Base Class "Component"
+
+    - NOTE: Inheriting from multiple Classes is NOT available in JavaScript
+        - It can ONLY inherit from a single Class
+
+
+- On the practice project (assets/scripts/app.js)
+    - Create a Base Class named "Component"
+        - Just below the Class "Product"
+        - Above the rest of the other (specialized) Classes
+
+
+    - Create an Instance method named "createRootElement"
+        - Define the parameter variables
+            - "tag"         = expects a string value
+            - "cssClasses"  = expects a string value
+            - "attributes"  = expects an array of objects as value
+
+
+    - Inside the Instance method "createRootElement()"
+        - Create an Element node
+            - Using the method "document.createRootElement()"
+            - Pass the parameter variable "tag" as argument
+            - Store the created Element node into the local constant "rootElement"
+
+        - Check if the parameter variable "cssClasses" is truthy (i.e. NOT empty)
+            - Chain the property ".className" to the local constant "rootElement"
+            - Assign the value of the parameter variable "cssClasses"
+
+        - Check if the parameter variable "argument" is truthy & have a length greater than 0
+            - Use a "for..of" loop to go through the values in the parameter "attributes"
+                - Define a local constant "attribute" to hold the current attribute "name" & "value" pair
+
+            - Chain the method ".setAttribute()" on the local constant "rootElement"
+                - Pass "attribute.name" & "attribute.value" as arguments
+
+
+    - Outside the Base Class "Component"
+        - Create a Class named "ElementAttribute"
+
+        - Create a Constructor method
+            - Define two (2) parameter variables
+                - "attributeName"
+                - "attributeValue"
+
+        - Inside the Constructor method
+            - Define an Instance field "name"
+                - Prefixed w/ the keyword "this"
+                - Assign the value of "attributeName"
+
+            - Define an Instance field "value"
+                - Prefixed w/ the keyword "this"
+                - Assign the value of "attributeValue"
+
+
+    - Back to the Base Class "Component"
+        - Create a Constructor method
+            - Define a parameter variable "renderHookId"
+
+
+        - Inside the Constructor method
+            - Define an Instance field "hookId"
+                - Prefixed w/ the keyword "this"
+                - Assign the value of "renderHookId"
+
+        - Outside the Constructor method
+            - Just below the "for..of" loop
+
+            - Call the method "document.getElementById()"
+                - Pass "this.hookId" as argument
+
+            - Chain the method ".append()"
+                - Pass the local constant "rootElement" as argument
+
+        - Return the Element node stored w/in the local constant "rootElement"
+            - Using a "return" statement
+
+
+    - Switch to the Class "ShoppingCart"
+        - Inherit the properties & methods of the Base Class "Component"
+            - Using the keyword "extends"
+            - Followed by the Base Class "Component"
+
+        - On the Instance method "render()"
+            - Remove the creation of the local constant "cartEl"
+            - Remove the chained property ".className"
+
+            - Replace those lines w/ a call to the Instance method "createRootElement" of the Base Class "Component"
+                - Prefixed w/ the keyword "this"
+
+                - Pass the arguments"
+                    - 1st   = "section"
+                    - 2nd   = "cart"
+
+                - Store the created Element node in the local constant "cartEl"
+
+            - Save the changes
+                - Browser reports an "Uncaught TypeError: Cannot read property "append" of null at ShoppingCart.createRootElement"
+
+                - This is due the Instance field "hookId" defined w/in the Constructor method of the Base Class "Component"
+                    - JavaScript does NOT know the value to pass for the parameter variable "hookId"
+                
+                - If a Sub-Class does NOT have a Constructor method
+                    - The Constructor method of the Base Class is IMPLICTLY called
+
+                - If a Sub-Class does have its own Constructor method
+                    - Its Constructor method will be called & NOT of the Base Class
+
+            - To address this concern
+                - In the Sub-Class "ShoppingCart"
+                    - Create a Constructor method
+                        - Located below the defined Getter & Setter
+
+                    - Inside the Constructor method
+                        - Call the Constructor method of the Base Class "Component"
+                        - Using the keyword "super"
+                        - Execute it like a function
+
+                    - IMPORANT: Ensure that your current code is NOT DEPENDENT
+                        - On any Class field w/in the Base Class' Constructor method
+
+                        - Adding Instance fields w/in the Sub-Class' Constructor method
+                            - Do this ONLY AFTER calling the Base Class' Constructor method using "super()"
+
+
+    - Switch to the Class "Shop"
+        - Refactor the declaration of the local constant "cartEl" w/
+            - A call to the method "render()" of the Sub-Class "ShoppingCart"
+
+        - Remove the line that appends the Element node "section" in HTML element <div>
+
+            renderHook.append(cartEl);
+
+
+    - Switch back to the Sub-Class "ShoppingCart"
+        - On the Constructor method
+            - Define a parameter variable named "renderHookId"
+
+        - Pass the parameter variable "renderHookId" as argument to "super()"
+            - The Constructor method of the Base Class "Component"
+
+        - On the method "render()"
+            - Remove the line that returns the value in the local constant "cartEl"
+
+    
+    - Save the changes
+        - Load / reload the Browser
+        
+        - The behavior of the web app remains unchanged
+
+        
