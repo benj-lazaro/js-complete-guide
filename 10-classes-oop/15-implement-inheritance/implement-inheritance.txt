@@ -2,7 +2,7 @@ Implementing Inheritance
 ------------------------
 - Next is to start implementing inheritance on the practice project 
     - Create a Base Class named "Component"
-        - This will output different components or parts of the web app
+        - This Class will produce components or parts of the web app
 
     - Implement inheritance on the (now) Sub-Class "ShoppingCart"
         - Using the keyword "extends"
