@@ -14,7 +14,7 @@ class ElementAttribute {
   // Constructor
   constructor(attributeName, attributeValue) {
     this.name = attributeName;
-    this.previousValue = attributeValue;
+    this.value = attributeValue;
   }
 }
 
