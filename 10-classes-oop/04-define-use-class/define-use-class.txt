@@ -30,7 +30,6 @@ Defining & Using A First Class
             - JavaScript implicitly assigns an "undefined" value
 
     Syntax:
-    Syntax:
     class <class_name> {
         <field_name> = <default_value>;
         ...
