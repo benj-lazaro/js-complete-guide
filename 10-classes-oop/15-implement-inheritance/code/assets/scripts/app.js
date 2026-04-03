@@ -22,6 +22,7 @@ class ElementAttribute {
 class Component {
   // Constructor
   constructor(renderHookId) {
+    // Store the passed HTML element's tag name in the Instance field "hookId"
     this.hookId = renderHookId;
   }
 
@@ -32,16 +33,18 @@ class Component {
     const rootElement = document.createElement(tag);
 
     if (cssClasses) {
+      // Set the attribute "class" for the created Element node
       rootElement.className = cssClasses;
     }
 
     if (attributes && attributes.length > 0) {
       for (const attribute of attributes) {
+        // Set the HTML attributes for the created Element node
         rootElement.setAttribute(attribute.name, attribute.value);
       }
     }
 
-    // Append the configured Element node to the HTML element stored in the Instance field "hookId"
+    // Append the created Element node to the HTML element w/in the Instance field "hookId"
     document.getElementById(this.hookId).append(rootElement);
 
     return rootElement;
@@ -96,6 +99,9 @@ class ShoppingCart extends Component {
   // Render HTML markup & content of the shopping cart
   render() {
     // const cartEl = document.createElement("section");
+
+    // Calls the method "createRootElement()" of the Base Class "Component"
+    // Stores the crated Element node "section" in the local constant "cartEl"
     const cartEl = this.createRootElement("section", "cart");
 
     cartEl.innerHTML = `
@@ -103,12 +109,11 @@ class ShoppingCart extends Component {
       <button>Order Now!</button>
     `;
 
-    // Dynamically creates a Class field named "outputTotal"
-    // Select the Element node "h2" from the HTML markup w/in the local constant "cartEl"
+    // Dynamically creates the Instance field "outputTotal"
+    // Selects the Element node "h2" from the HTML markup stored in the local constant "cartEl"
     this.outputTotal = cartEl.querySelector("h2");
 
-    // Return the Element node "section"
-    return cartEl;
+
   }
 }
 

@@ -8,8 +8,15 @@ Implementing Inheritance
         - Using the keyword "extends"
         - Followed by the Base Class "Component"
 
-    - NOTE: Inheriting from multiple Classes is NOT available in JavaScript
-        - It can ONLY inherit from a single Class
+    Syntax:
+
+    class <sub-class_name> extends <base_class> {
+        ...
+    }
+
+    
+    - NOTE: JavaScript does NOT support a Class inheriting from multiple Classes
+        - A Class can ONLY inherit from a SINGLE Class
 
 
 - On the practice project (assets/scripts/app.js)
@@ -60,6 +67,18 @@ Implementing Inheritance
                 - Prefixed w/ the keyword "this"
                 - Assign the value of "attributeValue"
 
+        - NOTE: The parameter variable "attributes" of the method "createRootElement()"
+            - For the Base Class "Components" is expected to store an array
+            - Full objects based on the Class "ElementAttribute"
+
+        - PERSONAL NOTE: This Class is not instantiated anywhere w/in
+            - The method "createRootElement()" of the Base Class "Component"
+
+            - Commenting the Class "ElementAttribute" in the code base does NOT
+                - Change the behavior or break the web app
+
+            - Probably will be called or instantiated in the succeeding lessons
+
 
     - Back to the Base Class "Component"
         - Create a Constructor method
@@ -93,8 +112,9 @@ Implementing Inheritance
             - Remove the creation of the local constant "cartEl"
             - Remove the chained property ".className"
 
-            - Replace those lines w/ a call to the Instance method "createRootElement" of the Base Class "Component"
-                - Prefixed w/ the keyword "this"
+            - Replace those lines w/ a call 
+                - To the Instance method "createRootElement" of the Base Class "Component"
+                    - Prefixed w/ the keyword "this"
 
                 - Pass the arguments"
                     - 1st   = "section"
@@ -103,32 +123,47 @@ Implementing Inheritance
                 - Store the created Element node in the local constant "cartEl"
 
             - Save the changes
-                - Browser reports an "Uncaught TypeError: Cannot read property "append" of null at ShoppingCart.createRootElement"
 
-                - This is due the Instance field "hookId" defined w/in the Constructor method of the Base Class "Component"
-                    - JavaScript does NOT know the value to pass for the parameter variable "hookId"
+            - The browser reports
                 
-                - If a Sub-Class does NOT have a Constructor method
-                    - The Constructor method of the Base Class is IMPLICTLY called
+                "Uncaught TypeError: Cannot read property "append" of null at ShoppingCart.createRootElement" 
 
-                - If a Sub-Class does have its own Constructor method
-                    - Its Constructor method will be called & NOT of the Base Class
+            - This is triggered by the Instance field "hookId" w/in 
+                - The Constructor method of the Base Class "component" 
+                - JavaScript does NOT know the value w/in the parameter variable "hookId"
 
-            - To address this concern
-                - In the Sub-Class "ShoppingCart"
-                    - Create a Constructor method
-                        - Located below the defined Getter & Setter
+        - IMPORTANT: Two (2) rules regarding Constructor method
+            - If a Sub-Class do NOT have a Constructor method
+                - The Constructor method of the Base Class will be called
 
-                    - Inside the Constructor method
-                        - Call the Constructor method of the Base Class "Component"
-                        - Using the keyword "super"
-                        - Execute it like a function
+            - If a Sub-Class does have a Constructor method
+                - It's own Constructor method will be called
+                - The Constructor method of the Base Class will NOT be called
 
-                    - IMPORANT: Ensure that your current code is NOT DEPENDENT
-                        - On any Class field w/in the Base Class' Constructor method
+        - To address this concern
+            - In the Sub-Class "ShoppingCart"
+                
+            - Create a Constructor method
+                - Located below the defined Getter & Setter
+                - Define the parameter variable "renderHookId"
 
-                        - Adding Instance fields w/in the Sub-Class' Constructor method
-                            - Do this ONLY AFTER calling the Base Class' Constructor method using "super()"
+            - Inside the Constructor method
+                - Use the keyword "super"
+                    - To execute like a function (i.e. "super()")
+                    - Pass the parameter variable "renderHookId" as argument
+
+                - Effectively calls the Constructor method of the Base Class "Component"
+
+        - IMPORTANT: When using the keyword "super" w/in a Sub-Class' Constructor method
+            - Ensure that the code is NOT DEPENDENT on any Instance field(s) w/in
+                - The Base Class' Constructor method
+
+            - To define (& use) Instance field(s) w/in a Sub-Class' Constructor method
+                - Define the Instance field(s) ONLY AFTER the call to
+                - The Base Class' Constructor method using the keyword "super"
+
+            - Remember, call the Base Class' Constructor method FIRST
+                - BEFORE using Instance fields w/in the Sub-Class' Constructor method
 
 
     - Switch to the Class "Shop"
