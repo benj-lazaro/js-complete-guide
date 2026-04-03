@@ -1,48 +1,55 @@
 Working With Constructor Methods
 --------------------------------
 - A Constructor method of a Class
-    - Allows to instantiate an object w/ different values
+    - Allows to instantiate an object w/ different values 
+        - But retains the same structure
 
-    - It accepts values as arguments
-        - These values are then assigned to the correponding fields of that Class
+    - Accepts values as arguments
+        - These values are assigned to the correponding Class fields
 
-    - Help prevent the occurrence of mistyping or missing out a Class' field (or an object's property)
-        - This is a common issue when using Object literal notation
+    - This helps prevent the occurrence of
+        - A mistype or miss out a Class field w/c is a common occurrence
+            - When using Object literal notation
 
 
-- To define a Constructor method of a Class
+- To create a Constructor method in a Class
     - Use the keyword "constructor"
         - Followed by a pair of "( )"
+            - To define parameter variables
+        
         - Then a pair of "{ }"
+            - To contain the logic or body of the Constructor method
 
-        - IMPROTANT: DO NOT terminate the statement w/ a ";"
+        - NOTE: Do NOT terminate the Constructor method statement w/ a ";"
 
-    - W/in the Constructor method's body
-        - Prefix each Class field w/ the keyword "this."
-            - Followed by a "=" operator
-            - Then the corresponding parameter variable
-            - End each statement w/ a ";"
+    - Inside the body of the Constructor method
+        - Prefix each Class field w/ the keyword "this"
+            - NOTE: Keyword "this" refers to the Class of the Constructor method
 
-        - NOTE: The keyword "this" references the Class of the Constructor method
+        - Use the operator "=" to
+            - Assign the correponding parameter variable 
+
+        - Terminate each statement w/ a ";"
 
     Syntax:
-    class <name> {
-        // Class field
+    class <class_name> {
+        <field_name> = <default_value>;
         ...
+        <field_name>;
 
         constructor(<parameter_variable>, ...) {
             this.<field_name> = <parameter_variable>;
             ...
+            this.<field_name> = <parameter_variable>;
         }
     }
 
 
-- To call a Class' Constructor method
-    - Use the keyword "new"
-        - Followed by the Class' name
+- To call the Constructor method of a Class
+    - Use the keyword "new" followed by the Class name
         - Then a pair of "( )"
         - Pass values as arguments
-        - End the statement w/ a ";"
+        - Terminate the statement w/ a ";"
 
     Syntax:
     new <class_name>(<argument_value>, ...);
@@ -50,25 +57,25 @@ Working With Constructor Methods
 
 - On the practice project (assets/scripts/app.js)
     - On the Class "Product"
-        - Implement a Constructor method 
+        - Create a Constructor method
+            - Define the following parameter variables
+                - title
+                - image
+                - price
+                - description 
 
-        - Define the following parameter variables
-            - title
-            - image
-            - price
-            - Description
+        - Inside the Constructor method
+            - Assign the argument values to the correponding Class fields
+            - Prefix each Class field w/ the keyword "this"
+        
 
-        - Assign the values passed as arguments to the correponding Class' fields
-
-    
     - On the object stored in the global constant "productList"
-        - Replace each object element assigned as value in the property "products" w/ 
-            - A call to the Constructor method of the Class "Product"
-            - Pass the previous object's values as arguments
+        - Replace each object element in the property "products" w/
+            - An instance of the Class "Product"
 
-    
-    - Save the changes
+            - Pass the (previous) object's property values as arguments
+                - Implicitly calls the Constructor method of the Class "Product"
 
-    - Load / reload the browser
-        - The behavior of the web application should remain the same as before
 
+    - Save the changes & load / reload the browser
+        - The behavior of the web application should remains unchanged
