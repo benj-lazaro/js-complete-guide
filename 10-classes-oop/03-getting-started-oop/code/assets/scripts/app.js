@@ -1,4 +1,4 @@
-// An object that contains product related data & logic
+// Create an object using Object literal notation
 const productList = {
   products: [
     {
@@ -17,16 +17,16 @@ const productList = {
     },
   ],
   render() {
-    // Select HTML element <div> w/ attribute "id" of "app"
+    // Selects the Element node "div" w/ an attribute "id" of "app"
     const renderHook = document.getElementById("app");
 
-    // Create a Element node "ul" w/ attribute "class" of "product-list"
+    // Create Element node "ul" & set its attribute "class"
     const prodList = document.createElement("ul");
     prodList.className = "product-list";
 
-    // Iterate through the object elements of the property "products"
+    // Iterate through each object element in the property "products"
     for (const prod of this.products) {
-      // Create a corresponding Element node "li" for each object read
+      // Create an Element node "li" for each object element read
       const prodEl = document.createElement("li");
       prodEl.className = "product-item";
       prodEl.innerHTML = `
@@ -42,14 +42,14 @@ const productList = {
         </div>
       `;
 
-      // Append the Element node "li" as a child of the Element node "ul"
+      // Append the created Element node "li" as child of the Element node "ul"
       prodList.append(prodEl);
     }
 
-    // Append the Element node "ul" w/in the Element node "div"
+    // Append the created Element node "ul" as child of the Element node "div"
     renderHook.append(prodList);
   },
 };
 
-// Render the values of the property "products" from the object "productList" in the DOM
+// Render the objects elements w/in the property "products" of the object "productList"
 productList.render();
