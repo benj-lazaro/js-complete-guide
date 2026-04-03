@@ -1,35 +1,35 @@
-Defining & Using A First Class 
+Defining & Using A First Class
 ------------------------------
 - A Class allows to easily build an object
-    - Serves as a theoretical blueprint of an object
-        - Defines the object's properties & methods
+    - It serves as a theoretical "blueprint" of an object
+        - Defines an object's properties & methods
 
-    - Allows to easily create multiple & similar "looking" objects
-        - Data or values of an object differs BUT retains identical structure
-        
+    - Easily creates multiple, similar "looking" objects
+        - Contains different data (values)
+        - Retains identical structures
+
 
 - An object created from a Class is referred as an "instance" of that Class
-    - NOTE: This serves as an ALTERNATIVE to Object literal notation
+    - It serves as an alternative (NOT REPLACEMENT) for Object literal notation
 
 
 - To create a Class
-    - Use the keyword "class"
-        - Followed by a name
-            - UPPERCASE the 1st LETTER of EVERY WORD of the name
-            - Whitespace in-between words is NOT allowed
+    - Use the keyword "class" followed by a name
+        - The 1st letter of EVERY WORD MUST be in UPPERCASE
+        - Whitespace characters in-between words is NOT allowed
+    
+    - Followed by a pair of "{ }"
 
-        - Then a pair of "{ }" 
-            - To contain the fields
-            - NOTE: A Class field becomes an object property after instantiation
-
-        - W/in the pair of "{ }"
-            - Define the Class field name
-            - Followed by a "=" operator
+    - Inside the pair of "{ }"
+        - Define the Class field name (i.e. property)
+            - Followed by a "=" operatpr
             - Then a default value
-            - Terminate EACH FIELD w/ a ";"
+            - Terminate each field name w/ a ";"
 
-            - NOTE: NOT assigning a default value, implicitly assigns "undefined"
+        - NOTE: NOT assigning a default value to a Class field
+            - JavaScript implicitly assigns an "undefined" value
 
+    Syntax:
     Syntax:
     class <class_name> {
         <field_name> = <default_value>;
@@ -38,37 +38,33 @@ Defining & Using A First Class
     }
 
 
-- To create an instance (i.e. object) of a Class
-    - Use the keyword "new"
-        - Followed by the Class name w/a pair of "( )" & a ";"
-        - Implictly returns a Class-based object
+- To create an instance (instantiate) of a Class
+    - Use the keyword "new" followed by the Class name w/ a pair of "( )"
+        - Terminated w/ a ";"
+        - JavaScript implicitly returns a Class-based object 
+
+        - NOTE: Often the returned object is assigned to a constant 
 
     Syntax:
-    new <class_name>()
-
+    new <class_name>();
     const <constant_name> = new <class_name>();
 
 
 - On the practice project (assets/scripts/app.js)
-    - Create a class named "Product"
-        - Based on the properies of the object (array) elements assigned 
-            - As values in the property "products" of the object "productList" 
+    - Create a Class named "Product" w/ the
+        - Following Class fields
+            - "title"       = default string value "DEFAULT"
+            - "imageUrl"    = NO assigned default value (i.e. undefined)
+            - "price"       = NO assigned default value (i.e. undefined)
+            - "description" = NO assigned default value (i.e. undefined)
 
-    - Define the following fields
-        - "title"       = default string value "DEFAULT"
-        - "imageUrl"    = NO assigned default value (i.e. undefined)
-        - "price"       = NO assigned default value (i.e. undefined)
-        - "description" = NO assigned default value (i.e. undefined)
-
-    - Create an instance (i.e. object) of the Class "Product"
+    - Instantiate the Class "Product"
         - Pass the returned object as argument to "console.log()"
 
     - Save the changes
-
+    
     - Load / reload the browser
         - Launch the browser's JavaScript console
 
-    - An object "Product" is returned
-        - Along with its properties & assigned (default) values
-
-
+        - The object "Product" is displayed 
+            - Including its properties & default values
