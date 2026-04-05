@@ -1,4 +1,4 @@
-// Class that defines the "Product" object's properites
+// Class that defines the properties of the "Product" object
 class Product {
   // These fields can now be removed as they're initialized w/in the Constructor method
   title = "DEFAULT";
