@@ -25,16 +25,16 @@ const productList = {
     ),
   ],
   render() {
-    // Selects the Element node "div" w/ an attribute "id" of "app"
+    // Selects the Element node "div" from the "index.html" w/ an attribute "id" of "app"
     const renderHook = document.getElementById("app");
 
     // Create an Element node "ul" & then set its attribute "class"
     const prodList = document.createElement("ul");
     prodList.className = "product-list";
 
-    // Iterate through each object element in the property "products"
+    // Iterate through each "Product" object element stored in the property "products"
     for (const prod of this.products) {
-      // Create an Element node "li" for each object element read
+      // Create an Element node "li" for each "Product" object read
       const prodEl = document.createElement("li");
       prodEl.className = "product-item";
       prodEl.innerHTML = `
@@ -59,5 +59,5 @@ const productList = {
   },
 };
 
-// Render the objects elements w/in the property "products" of the object "productList"
+// Render "Product" object elements stored in the property "products" of the object "productList"
 productList.render();

@@ -1,45 +1,54 @@
 Using & Connecting Multiple Classes
 -----------------------------------
-- A Class can also create an object w/c contains logic 
-    - An application's logic can be split into 
-        - Multiple Classes that gets connected in some clever way
+- A Class can also create an object w/call
+    - Contains logic that can be split into multiple Classes
+        - Then get these Classes in some clever way
 
-    - NOTE: The order of these Classes DO NOT MATTER
-        - JavaScript reads the entire code BEFORE execution 
-    
-    - IMPORTANT: A Class MUST be defined FIRST
-        - BEFORE it is instantiated into an object 
+    - NOTE: The order of the Classes does NOT MATTER
+        - JavaScript parses through the entire codebase BEFORE execution
+
+    - IMPORTANT: A Class MUST be DEFINED FIRST
+        - BEFORE instantiated into a Class-based object 
 
 
 - To define a method of a Class
-    - Declare the method name
-        - Followed by a pair of "( )"
-        - Then a pair of "{ }"
-        - NOTE: Do NOT terminate the statement w/ a ";"
+    - Declare the name of the method
+        - Followed by a pari of "()"
+            - Define the parameter variable(s) here (if there is/are any)
+
+        - Next is a pair of "{ }"
+            - Contain the body of the method
+
+        - Just like w/ defining a Constructor method
+            - Do NOT terminate the method w/ a ";"
 
     Syntax:
-    class <name> {
-        // Class field
+    class <class_name> {
+        <field_name> = <default_value>;
         ...
+        <field_name>;
 
         constructor(<parameter_variable>, ...) {
-            this.<field_name> = <parameter_variable>;
+            this.<property_name> = <parameter_variable>;
             ...
+            this.<property_name> = <parameter_variable>;
         }
 
         <method_name>() {
-            // Method body
             ...
-        }
+        }        
     }
 
 
-- To call a Class' method
-    - Instantiate a Class into an object 
-        - Store the created object in a global or local constant
+- To call a method of a Class
+    - Instantiate the Class into an object
+
+    - Store the Class-based object in a global or local constant
 
     - Chain the method name to the constant
-        - Followed by a pair of "( )"
+        - Followed by a pair of "()"
+            - Pass argument value(s)
+
         - Terminate the statement w/ a ";"
     
     Example:
@@ -49,108 +58,87 @@ Using & Connecting Multiple Classes
 
 
 - On the practice project (assets/scripts/app.js)
-    - Define a new Class named "ProductList"
-        - Define a Class field named "products"
+    - Create a new Class named "ProductList"
+        - This Class stores an array of "Product" objects
 
-    - Switch to the global constant "productList"
-        - Cut the object elements assigned as value to the property "products"
-        - Leaving an empty array
+    - Inside the Class "ProductList"
+        - Define a Class field named "products"
+        - Assign an empty array as value
+
+    - Switch to the object stored in the global constant "productList"
+        - Cut the objects stored as array elements in the property "products"
+        - Leaving an empty array behind
 
     - Switch back to the Class "ProductList"
-        - Paste the array as value to the field "products"
+        - Paste the array elements as value to the Class field "products"
 
-    - Create a Constructor method
-        - Leave it empty as the Class field "products" is already initialiazed
+    - Create a Constructor method named "render()" w/in the Class "ProductList"
+        - Leave it empty as the Class field "products" had already been initialiazed
 
-    - Create a method named "render()"
-    
-    - Switch to the global constant "productList"
-        - Cut the logic of its method "render()"
-        - Leaving an empty method
-        - Remove the global constant "productList"
+    - Switch back to the object stored in the global constant "productList"
+        - On its method "render()"
+            - Select & cut the logic
+            - Leaving an empty method behind
 
-    - Before the last line of code (see below)
-        
-        productList.render();
-
-    - Instantiate the Class "ProductList"
-        - Store the created object into the global constant "productList"
-
-    - Switch back to the Class "ProdutList"
+    - Switch back to the Class "ProductList"
         - On the method "render()"
-        - Paste the logic taken from the global constant "productList"
+            - Paste the logic taken from the global constant "productList"
+
+    - Delete the global constant "productList" from the codebase
+
+    - Instantiate the Class "ProductList" into a Class-based object
+        - Store the created object into a global constant named "productList"
+        - Call the method "render()" of the Class "ProductList"
+
+    - Save the chanages
+        - Load / reload the browser
+        - The behavior of the web app remains unchanged
     
-    - Save the changes
 
-    - Load / reload the browser
-        - The behavior of the web application should remain the same as before
-
-
-    - Define a new Class named "ProductItem" that
-        - Renders the HTML markup & content of a single "Product" object
-
+    - Create another Class named "ProductItem"
+        - This Class handles the HTML markup & specific data of a "Product" object
+            - Effectively outsources the logic for a single "Product" object
+    
     - Create a Constructor method
         - Define a parameter variable named "product"
-        - This parameter variable will hold a single "Product" object
+
+        - NOTE: This parameter variable holds the current "Product" object that is
+            - Read from the field named "product" of the Class "ProductList"
 
     - Inside the Constructor method
-        - Iniitialize the Class property "product" w/ passed argument value
-        - NOTE: Implicitly creates a Class property "product"
-    
-    - Create a method named "render()"
-        - Contains the logic that renders the HTML markup & content of a "Product" object
-
-    - Switch to the Class "ProductList"
-        - On the method "render()"
-            - Cut the logic of the "for..of" loop
-            - Leaving the following single statement behind
-
-                prodList.append(prodEl);
-
-    - Switch back to the Class "ProductItem"
-        - On the method "render()"
-            - Paste the code taken from the method "render()" of the Class "ProductList" 
-
-    - Inside the method "render()"
-        - Create an HTML element <li>
-            - Using the method "document.createElement()"
-            - Pass "li" as argument
-            - Store the Element node in the local contant "prodEl"
-
-        - Set the HTML element's attribute "class"
-            - Using the property ".className"
-            - Assign the value "product-teim"
-
-        - Set the HTML element's markup & content
-            - Using the property ".innerHTML"
-            - Assign the HTML markup w/in a pair of ` `
-
-        - To access the values stored in the properties of a "Product" object
-            - Access the Class field "product"
-            
-            - NOTE: As mentioned earlier, "product" holds a single "Product" object
-
-            - Refactor the HTML markup
-                - Update references to "prod" w/ "this.product"
+        - Define a Class property named "product"
+            - Prefixed w/ the keyword "this"
         
-        - Returns the Element node "li" stored in the local constant "prodEl"
-            - Using a "return" statement
+        - Assign the value stored w/in the parameter variable "product"
 
-    - Switch to the Class "ProductList"
-        - On the "for..of" loop w/in the method "render()'
+    - Create a method named "render()"
+        - For the moment, leave it empty
 
-        - Instantiate the Class "ProductItem" into an object
-            - Store the created object in a local constant "productItem"
-            - Pass the local constant "prod" as argument
-            - NOTE: The local constant "prod" contains the current "Product" object read
+    - Switch to the method "render()" of the Class "ProductList"
+        - Cut the entire logic of the "for..of" loop statement
+        
+        - Leave the following statement behind 
 
-        - Call the method "render()" of Class "ProductItem" that is
-            - Currently stored in the local constant "productItem"
+            prodList.append(prodEl);
 
-            - Store the returned Element node "li" to the local constant "prodEl"
+    - Switch back to the method "render()" of the Class "ProductItem"
+        - Paste the cut lines of code from the method "render" of the Class "ProductList"
 
-    - Save the changes
+        - On the embedded String literal templates in the HTML markup
+            - Rename references to the Class field "prod" to "this.product"
 
-    - Load / reload the browser
-        - The behavior of the web application should remain the same as before
-        - After splitting the application's logic into classes
+    - Switch back to the method "render()" of the Class "ProductList"
+        - Inside the "for..of" loop 
+
+        - Instantiate the Class "ProductItem" into a Class-based object
+            - Store the object in a local constant named "productItem"
+            - Then pass the local constant "prod" (of the "for..of" loop) as argument
+
+        - Create a local constant named "prodEl"
+            - Assigned w/ a call to the method "render()" of the Class "ProductItem"            
+            
+            - Store the returned Element node "li" w/ the "Product" object's specific data
+
+    - Save the chanages
+        - Load / reload the browser
+        - The behavior of the web app remains unchanged
