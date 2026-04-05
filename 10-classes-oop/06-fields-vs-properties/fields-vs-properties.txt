@@ -1,51 +1,51 @@
 Fields VS Properties
 --------------------
 - A Class field
-    - Located w/in a Class declaration
+    - Located inside a Class declaration
 
-    - It defines the properties that an object will contain
-        - After a Class is instantiated into an object (i.e. object creation process)
+    - Defines the properties of a Class-based object
+        - After a Class instantiates to an object
 
     - In terms of visibility
-        - By default, it is "public"
+        - It is "public" by default
         - Referred as a public Class field
 
-    - NOTE: Defining Class field(s) can be SKIPPED
-        - Use the Constructor method to
-            - Define a Class field (NOW referred as Class property)
-            - Assign the corresponding passed argument value
+    - Defining a Class field can be SKIPPED
+        - Use a Constructor method to define a Class property
+        - Assign the corresponding value of a parameter variable
 
-    - The Class fields are for fields that 
-        - Are NOT INITIALIZED w/in the Class' Constructor method
+    - Class fields are foe those (fields) that are
+        - NOT INITIALIZED w/in the Constructor method of a Class
 
 
 - A Class property
-    - Located w/in the Constructor method of a Class
+    - Located inside the Constructor method of a Class
 
-    - Initializes properties w/ values that
-        - Are passed as arguments to the Constructor method
+    - Defines & initializes the properties of a Class-based object
+        - With the values from the corresponding parameter variables
 
     - In terms of visibility
-        - By default, it is "public"
-        - Referred as a public Class property
+        - It is "public" by default
+        - Referred as a public Class property        
 
-    - Values of Class fields of the same name
-        - Will be overwritten by the assigned values w/in the Constructor method
+    - The values assign to a Class field will be overwritten
+        - By a Class property (of the same name) w/in the Constructor method
 
-    - NOTE: A new Class property can also be defined
-        - For the 1st time w/in the Constructor method
+    - IMPORTANT: A Class property can be defined for the 1st time
+        - Inside a Constructor method
 
 
-- The different between a Class field & property is simply theoretical
-    - A Class field becomes a property
-        - Due to the Constructor method being called during instantiaion
-        - Instantiating a Class into an object
-    
+- The difference between Class field & Class property is simply theoretical
+    - A Class field becomes a Class property 
+        - When the Constructor method of a Class is called (triggered)
+        - During the instantiaion of a Class into a Class-based object
+
 
 - On the practice project (assets/scripts/app.js)
-    - Remove the fields of the Class "Product"
+    - Simply remove the defined Class fields from the Class "Product"
+        - They have been defined & initialized w/in the Constructor method
 
     - Save the changes
 
     - Load / reload the browser
-        - The behavior of the web app remains unchanged
+        - NO changes on the web app's behavior
