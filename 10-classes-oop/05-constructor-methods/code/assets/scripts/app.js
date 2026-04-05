@@ -1,5 +1,6 @@
-// Create a Class
+// Class that defines the "Product" object's properites
 class Product {
+  // These fields can now be removed as they're initialized w/in the Constructor method
   title = "DEFAULT";
   imageUrl;
   price;
@@ -7,6 +8,7 @@ class Product {
 
   // Constructor method
   constructor(title, image, price, description) {
+    // Properties
     this.title = title;
     this.imageUrl = image;
     this.price = price;
@@ -14,7 +16,7 @@ class Product {
   }
 }
 
-// Assign an instance of the Class "Product" as elements of the property "products"
+// Assign a "Product" object as element of the array stored w/in the property "products"
 const productList = {
   products: [
     new Product(
@@ -34,7 +36,7 @@ const productList = {
     // Selects the Element node "div" w/ an attribute "id" of "app"
     const renderHook = document.getElementById("app");
 
-    // Create Element node "ul" & set its attribute "class"
+    // Create an Element node "ul" & then set its attribute "class"
     const prodList = document.createElement("ul");
     prodList.className = "product-list";
 
@@ -56,11 +58,11 @@ const productList = {
         </div>
       `;
 
-      // Append the created Element node "li" as child of the Element node "ul"
+      // Append the Element node "li" as a child of the Element node "ul"
       prodList.append(prodEl);
     }
 
-    // Append the created Element node "ul" as child of the Element node "div"
+    // Append the Element node "ul" as a child of the Element node "div"
     renderHook.append(prodList);
   },
 };

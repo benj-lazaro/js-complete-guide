@@ -1,35 +1,49 @@
 Working With Constructor Methods
 --------------------------------
 - The Constructor method of a Class
-    - Allows to create an object from a Class w/ different values
-        - BUT retain the same structure
+    - Allows the creation of a Class-based object that contains
+        - Different values but retain the same structure (i.e. properties)
+    
+    - Accepts values passed as arguments that are
+        - Assigned as initial values to the corresponding Class fields
+        
+        - IMPORTANT: A Class field w/in a Constructor method is 
+            - Now referred as a Class property
 
-    - It accepts values that are passed as arguments then
-        - Assign these values to corresponding propeerties w/in the Constructor method
+        - Remove Class fields from the Class that are used w/in the Constructor method
+            - As they will be overwritten by their Class property counterpart
 
-    - This prevent occurrences of 
-        - Mistyping or missing out a property w/c is a common occurrence w/ Object literal notation
+        - Leave behind those that are NOT initialized w/in the Constructor method
 
-    - JavaScript automatically calls the Constructor method
-        - When a Class is instantiated into an object
+    - JavaScript automatically executes a Constructor method during
+        - The instantiation of its Class into an object
+
+    - Prevents the occurrences of mistyping or forgetting
+        - A Class property w/c can happen when using Object literal notation
 
 
-- To create a Constructor method w/in a Class
-    - Use the keyword "constructor" followed by a pair of "( )"
-        - Define parameter variable(s) here
-        - Then a pair of "{ }" to contain the body
-        - NOTE: Do NOT temrinate the statement w/ ";"
+- To create a Constructor method in a Class
+    - Use the Keyword "constructor" 
+        - Followed by a pair of "( )"
+        - Where the parameter variables are defined
 
-    - Inside the body of the Constructor method
-        - Prefix each property w/ the keyword "this"
-            - NOTE: Keyword "this" refers to the Class where the Constructor method resides
+    - Then by a pair of "{ }" that holds
+        - The body of the Constructor method
+    
+    - NOTE: Do NOT terminate the Constructor method w/ a ";"
+
+    - Inside the Constructor method's body
+        - Define a Class property
+            - Prefixed w/ the keyword "this"
 
         - Followed by a "=" operator
-            - Then the argument value to be assigned
-        
-        - Terminate each statement w/ a ";"
 
-        - NOTE: A Class field w/in a Constructor method becomes a Class property
+        - Next assign the argument variable whose value will be used
+            - To initialize the correponding Class property
+
+        - Terminate each statement (of the property) w/ a ";"
+        
+        - NOTE: Keyword "this" refers to the Class of the Constructor method
 
     Syntax:
     class <class_name> {
@@ -46,10 +60,13 @@ Working With Constructor Methods
 
 
 - To call the Constructor method of a Class
-    - Use the keyword "new" followed by the Class name
-        - Then a pair of "( )"
+    - Use the keyword "new"
+        - Followed by the Class name (where the Constructor method resides)
+    
+    - Then a pair of "( )"
         - Pass values as arguments
-        - Terminate the statement w/ a ";"
+    
+    - Terminate the statement w/ a ";"
 
     Syntax:
     new <class_name>(<argument_value>, ...);
@@ -58,24 +75,34 @@ Working With Constructor Methods
 - On the practice project (assets/scripts/app.js)
     - On the Class "Product"
         - Create a Constructor method
-            - Define the following parameter variables
-                - title
-                - image
-                - price
-                - description 
+        
+        - Define the following parameter variables w/in the pair of "( )"
+            - title
+            - image
+            - price
+            - description 
 
         - Inside the Constructor method
             - Assign the argument values to the correponding Class fields
             - Prefix each Class property w/ the keyword "this"
         
 
-    - On the object stored in the global constant "productList"
-        - Replace each object element w/in the property "products" w/ an
-            - Instance of the Class "Product"
+    - Switch to the object that is stored in the global constant "productList"
+        - On the property "products"
+            - Replace hard-coded object w/ a "Product" object
 
-            - Pass the object's property values as arguments
-                - This triggers the Constructor method of the Class "Product"
+            - Pass the (previous) object's value as arguments
+                - To trigger the Constructor method of the Class "Product"
 
+    
+    - Save the chanages
+        - Load / reload the browser
 
-    - Save the changes & load / reload the browser
-        - The behavior of the web application should remains unchanged
+        - The behavior of the web app remains unchanged
+        
+        - The hard-coded objects w/in the property "products" are
+            - Replaced w/ Class-based objects (i.e. instances) of the Class "Product"
+            
+        - This ensures the consistency of each object's structure (i.e. properties)
+            - Despite the assigment of different values to the correponding properties
+        
