@@ -1,110 +1,138 @@
 Adding A Cart & Shop Class
 --------------------------
-- Next is to create new Classes in the web app
-    - Class "ShoppingCart"
-        - Contains "ProductItem" object(s) to be checked out
-        - Calculate the total amount
-        - Render an HTML element <button> w/ the content "Order Now!"
+- For this lesson, create two (2) new Classes
+    - A Class named "ShoppingCart"
+        - Contains a list of checked-out "ProductItem" objects
+        - Calculates the sum (total amount) of selected "ProductItem" objects
+        - Render a HTML element <button> w/ the content "Order Now!"
 
-    - Class "Shop"
+    - A Class named "Shop"
         - Renders the objects "ProductList" & "ShoppingCart" in the DOM
 
 
 - On the practice project (assets/scripts/app.js)
     - Create a new Class named "ShoppingCart"
+
+    - Inside the Class "ShoppingCart"
         - Define a Class field named "items"
-            - Assign w/ an empty array
+        - Initialize it w/ an empty array
 
-        - Define a method named "render"
-            - Create an HTML element <section>
-                - Using the method "document.createElement()"
-                - Pass "section" as argument
-                - Store the returned Element node in the local constant "cartEl"
+        - NOTE: Stores "ProductItem" objects that have been "added to cart" (i.e. checked-out)
 
-            - Chain the property ".className"
-                - Assign the value "cart"
+    - Create a method named "render"
 
-            - Chain the property ".innerHTML"
-                - Assign the following HTML mark-up enclosed w/ a pair of ` `
-                    - An HTML element <h2> w/ the content of "Total: \$${0}"
-                    - An HTML element <button> w/ the content of "Order Now!"
-
-                - NOTE: The "${0}" is tentaive placeholder for the total amount of items
-                    - The logic to make this value dynamic will be later implemented
-
-        - Return the Element node "section" stored in 
-            - The local constant "cartEl" using a "return" statement
-
+    - Inside the method "render()"
+        - Create an Element node "section"
+            - Using the method "document.createElement()"
+            - Pass "section" as argument
         
-    - Create another Class named "Shop"
-        - Define a method named "render"
+        - Store the created Element node in the local constant "cartEl"
 
-        - Instantiate the Class "ShoppingCart"
-            - Store the returned object in the local constant "cart"
+        - On the local constant "cartEl"
+            - Chain the property ".className"
+            - Assign the value "cart"
 
-        - Call the method "render()" stored in the local constant "cart"
-            - Store the returned Element node "section" in the local constant "cartEl"
+        - On the local constant "cartEl"
+            - Chain the property ".innerHTML"
+            
+            - Assign the following HTML markup as value
 
+            - An HTML element <h2> w/ 
+                - The content "Total: \$${0}"
+                - NOTE: The "${0}" is a dummy placeholder (for now) of the total amount
 
-    - On the last line of code; outside the Class "Shop" 
-        - Select & cut the lines of code that
-            - Instantiates the Class "ProductList"
-                - Stores the created object in the constant "productList"
+            - A sibling HTML element <button> w/
+                - The content "Order Now!"
 
-            - Calls the method "render()" stored in the constant "productList"
+        - NOTE: The created Element node "section" represents the shopping cart
 
-
-    - Switch back to the method "render()" of the Class "Shop"
-        - Paste the lines of code
-
-        - Save the returned Element node "ul" from the method "render()" in "productList"
-            - To the local constant "prodListEl"
-
-
-    - Switch to method "render()" of the Class "ProductList"
-        - Select & cut the declaration of the local constant "renderHook"
-
-
-    - Switch back to the method "render()" of the Class "Shop"
-        - Paste the line of code above the declaration of the local constant "cart"
-
-
-    - Switch to method "render()" of the Class "ProductList"
-        - Refactor the line of code where the 
-            - (removed) local constant "renderHook" chains the method ".append()"
-
-        - To return the Element node "ul" stored in the local constant "prodList"
+        - Return the Element node "section" (i.e. shopping cart)
             - Using a "return" statement
 
 
+    - Create another Class named "Shop"
+        - NOTE: This Class does NOT have any field
+
+    - Create a method named "render"
+
+    - Inside the method "render()"
+        - Instantiate the Class "ShoppingCart"
+            - Store the "ShoppingCart" object in the local constant "cart"
+
+        - Call the method "render()" of the Class "ShoppingCart" that is
+            - Currently stored w/in the local constant "cart"
+
+        - Store the returned Element node "section" in the local constant "cartEl"
+            - NOTE: This Element node represents the shopping cart
+
+
+    - Outside the Class "Shop" at the bottom of the web app's codebase
+        - Select & cut the two (2) lines of code:
+        
+        - Instantiates the Class "ProductList"
+            - Stores the "ProductList" object to the local constant "productList"
+
+        - Calls the method "render()" of the Class "ProductList"
+
+
     - Switch back to the method "render()" of the Class "Shop"
-        - Chain the method ".append()" to the local constant "renderHook"
-            - Pass "cartEl" as argument
-            - Renders the shopping cart in the DOM
+        - Paste the two (2) lines of code
 
-        - Chain the method ".append()" to the local constant "renderHook"
-            - Pass "prodListEl" as argument
-            - Renders the product list in the DOM
+        - Refactor the line of code that
+            - Calls the method "render()" of the Class "ProductList"
+            - Stores the returned Element node "ul" in the local constant "prodListEl"
 
-
-    - Move outside the Class "Shop" & at the last line of code
-        - Instantiate the Class "Shop"
-            - Store the created object in the global constant "shop"
-
-        - Call the method "render()" stored in the global constant "shop"
+        
+    - Switch to the method "render()" of the Class "ProductList"
+        - Select & cut the line of code that
+            - Declares the local constant "renderHook"
 
 
-    - Save the changes
+    - Switch back to the method "render()" of the Class "Shop"
+        - Paste the line of code
+            - Above the declaration of the local constant "cart"
+    
 
-    - Load / reload the browser
-        - Launch the browser's JavaScript console
+    - Switch back to the method "render()" of the Class "ProductList"
+        - Refactor the last line of code
 
-    - NOTE: Application behavior
-        - Clicking the button "Order Now!" in the rendered shopping cart 
-            - Does NOTHING
+            renderHook.append(prodList)
 
-        - Clicking the button "Add to Cart" in the rendered product list 
-            - Displays "Adding to cart" on the browser's JavaScript console
-            - Displays the object of the selected "Product" object
-            
-            - The value of "Total" in the rendered shopping cart does NOT change
+        - Instead of appending the Element node "ul" as a child of the
+            - Element node "div" stored w/in the (now gone) local constant "renderHook"
+
+            - Return Element node "ul" stored w/in local constant "prodList"
+                - Using a "return" statement
+
+    
+    - Switch back to the method "render()" of the Class "Shop"
+        - Append the Element nodes "section" & "ul" (individually) as a child to the
+            - Element node "div" stored w/in the local constant "renderHook"
+
+        - Pass the local constant "cartEl" as argument
+            - To the method ".append()"
+            - NOTE: This holds the Element node "section"
+        
+        - pass the local constant "prodListEl" as argument
+            - To the method ".append()"
+            - NOTE: This contains the Element node "ul"
+
+
+    - At the bottom of the web app's codebase
+        - Instantiate the Class "shop"
+            - Store the "Shop" object in the global constant "shop"
+
+        - Call the method "render()" of the Class "shop"
+            - Renders the "ShoppingCart" & "ProductList" objects individually in the DOM
+
+    
+    - Save the chanages
+        - Load / reload the browser
+    
+        - Click the "Add to Cart" button of a product item
+            - Renders the message "Adding to cart"
+            - Renders the clicked "ProductItem" object
+
+            - The value of "Total" in the shopping cart does NOT change
+
+        - Clicking the "Order Now!" button does NOTHING
