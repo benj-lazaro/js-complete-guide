@@ -1,68 +1,77 @@
 Communication Can Be Challenging
 --------------------------------
-- Next is to implement the logic that allow Classes to communicate
-    - The method "addToCart()" w/in the Class "ProductItem"
-        - When the triggered displays the following on the browser's JavaScript console
-            - The Message "Adding to cart"
-            - Properties of the selected "Product" object
+- For this lesson
+    - Implement the logic that allows Classes to communicate
 
-    - The "${0}" embedded HTML markup save on the local constant "cartEl" w/in
-        - The method "render()" of the Class "ShoppingCart"
+    - Calling the callback method "addToCart()" of the Class "ProductItem"
+        - Updates the HTML markup w/in the local constant "cartEl"
+            - Located w/in the method "render()" of the Class "ShoppingCart"
 
-    - In order to dynamically increment (or re-render) the value of "${0}" 
-        - EVERYTIME the method "addToCart()" of the Class "ProductItem" is triggered
+        - Change the static value of "Total" from 0 to 1
 
 
 - On the practice project (assets/scripts/app.js)
-    - On the class "ShoppingCart"
+    - On the Class "ShoppingCart"
         - Create a new method named "addProduct"
-            - Define the parameter variable "product"
+        - Define the parameter variable "product"
+        - NOTE: This holds the clicked "ProductItem" object added to the cart
+
 
     - On the method "addProduct()"
         - Access the Class field "items"
             - Prefixed w/ the keyword "this"
 
-            - Chain the method ".push()"
-                - Pass the parameter variable "product" as argument
+        - Chain the method ".push()"
+            - Pass "product" as argument
+            - Pushes the "ProductItem" object into the Class field "items"
+
 
     - On the method "render()" of the Class "ShoppingCart"
-        - Dynamically create a new Class Field named "totalOutput"
-            - Located BEFORE the last line of code
-
-            - Assign the local constant "cartEl"
-                - Chain the method ".querySelector()"
-                - Pass "h2" as argument
-
-            - Selects the HTML element <h2> 
-                - From the HTML markup w/in the local constant "cartEl"
-
-            - Assign the returned Element node "h2" as value
-                - To the dynamically created Class field "outputTotal"
-
-    - Switch back to the method "addProduct()" of Class "ShoppingCart"
-        - Access the dynamically created Class field "outputTotal"
+        - Dynamically create a Class property named "outputTotal"
             - Prefixed w/ the keyword "this"
 
-            - Assign an updated HTML markup for the Element node "h2"
-                - (i.e. `<h2>Total: \$ ${1}</h2>`) 
+        - Grab & assign as value the Element node "h2" taken from
+            - The HTML markup stored w/in the local constant "cartEl"
+            
+            - Chaining the method ".querySelector()" on the constant "cartEl"
+                - Passing "h2" as argument
+            
+            - Then assign the returned Element node "h2" as initial value
+                - To the Class property "outputTotal"
 
-        - NOTE: This line of code supposedly update (or re-render) the value of "Total"
-            - EVERYTIME the method "addToCart()" of the Class "ProductItem" is triggered
+        - NOTE: JavaScript ALLOWS to create a Class property anywhere in
+            - Anywhere w/in the Class
+            - Does NOT have to be w/in a Constructor method
 
-            - Calling the method "addToCart()" of the Class "ShoppingCart"
-                - Inside the Class "ProductItem" will NOT WORK
-                - i.e. "ShoppingCart.addToCart()"
 
-            - The Class "ShoppingCart" is NOT instantiated w/in the Class "ProductItem"
+    - Back to the method "addProduct()"
+        - Access the created Class property "outputTotal"
+            - Prefixed w/ the keyword "this"
 
-            - To address this concern
-                - A similar syntax needs to be implement in the form of
-                    - Static methods & properties
-                    - e.g. <class_name>.<method_name>()
+        - Overwrite the (previous) HTML markup w/ an updated markup
+            
+            `<h2>Total: \$ ${1}</h2>`
 
-                - To be discussed on the next section               
+        - NOTE: Will implement the logic to dynamically change the value
 
-    - Save the changes
-    
-    - Load / reload the browser
-        - There is NO changes in the behavior of the application
+
+    - The intention of the implemented changes is 
+        - To have the value of "Total" updated
+            - EVERYTIME the method "addToCart()" of the Class "ProductItem" is called 
+
+        - For the moment
+            - Calling the method "addProduct()" of the Class "ShoppingCart" w/in
+                - The Class "ProductItem" will NOT WORK
+
+                - e.g. "ShoppingCart.addProduct()"
+            
+            - As the Class "ShoppingCart" is NOT instantiated w/in the Class "ProductItem"
+
+
+    - To address this concern
+        - Requires the use of Static methods & properties
+
+
+    - Save the chanages
+        - Load / reload the browser
+        - There are NO changes in the behavior of the web app
