@@ -1,79 +1,102 @@
 Static Methods & Properties 
 ---------------------------
-- Static methods & properties (fields)
-    - Defined w/in a Class 
+- A Static method & property (field) of a Class
+    - Defined w/in a Class
         - Using the keyword "static"
 
     - ONLY accessible on the Class itself
+        - Does NOT REQUIRE instantiating a Class
+        - In order to access a Static method or property
 
-    - Does NOT REQUIRE to instantiate the Class
-        - In order to access the Static method or property
-
-    - Use case:
-        - Helper Classes
+    - Use case
+        - Helper Class
         - Global configuration
-        - Working w/ object(s) of the same data & structure
+        - Works w/ objects that have the same data & structure
 
 
-- Instance methods & properties (fields)
-    - Defined w/in a Class 
+- An Instance method or property (field) of a Class
+    - Defined w/in a Class
         - NOT using the keyword "static"
 
-    - ONLY accessible on an instance (i.e. object) of a Class
+    - ONLY accessible on an instance of a Class
+        - REQUIRES instantiating a Class
+        - In order to access a Static method or property
 
-    - Use case:
+    - Use case
         - Core reusable logic
-        - Working w/ object(s) of different data but have the same structure 
-    
+        - Works w/ objects that have different data but the same structure
+
     
 - On the practice project (assets/scripts/app.js)
-    - Create a new Class named "App"
-        - Create a Static Class field (property) named "cart"
-        - Create a Static Class method named "init"
+    - Crete a new Class named "App"
+        - Define a Static field named "cart"
+        - Define a Static method named "init"
 
-    - Outside the Class "App"
-        - Cut the two (2) lines of code
-            - Instantiation of the Class "shop"
-            - Call to its Instance method "render()"
+    
+    - At the bottom of the codebase, outside of the Class "App" 
+        - Cut the two (2) lines of code that
+            - Instantiates the Class "Shop"
+            - Calls its Instance method "render()"
 
-    - Inside the method "init()" of the Class "App"
-        - Paste the two (2) lines of code
+        - Replace it w/ a call to the Static method "init()" of the Class "App"
 
-    - Outside the Class "App"
-        - Call the Static method "init()" of the Class "App"
+
+    - Back at the Static method "init()" of the Class "App"
+        - Paste the lines of code
+
+
+    - Switch to the method "render()" of the Class "Shop"
+        - Change the local constant "cart" into a Class Instance field "cart"
+            - Remove the keyword "const"
+            - Prefix the constant "cart" w/ the keyword "this"
+
+        - NOTE: This Instance field stores a "ShoppingCart" object
+
 
     - Switch to the Class "Shop"
         - Refactor the local constant "cart" into an Instance Class field
             - Prefix w/ the keyword "this"
 
         - NOTE: Refactor references to the local constant "cart"
-            - Prefixing it w/ the keyword "this"
+            - Prefix w/ the keyword "this"
 
-    - Switch back to the Class "App"
-        - Assign the Instance field "cart" of the Class "Shop"
-            - As value to the Static field "cart" (of Class "App")
 
-        - Create a Static Class method named "addProductToCart"
-            - Define the parameter variable "product"
+    - Save the chanages
+        - Load / reload the browser
+        - There are NO changes in the behavior of the web app
+
+
+    - Back to the Class "App"
+        - Create a Static method named "addProductToCart"
+            - Define a parameter variable named "product"
+            - NOTE: This variable is expected to hold a "Product" object 
 
         - Inside the Static method "addProductToCart()"
             - Access the Instance method "addProduct()" of the Class "ShoppingCart"
-                - Stored w/in the Static field "cart"
+            - Pass "product" as argument 
 
-            - Pass the parameter variable "product" as argument
+        - NOTE: This Static method works as a proxy for calling the
+            - Instance method "addProduct()" of the Class "ShoppingCart"
+
 
     - Switch to the Instance method "addToCart()" of the Class "ProductItem"
-        - Remove the entire body
-        - Make a call to the Static method "addProductToCart() of the Class "App"
-        - Pass the Instance field "product" of the Class "ProductItem" as argument
+        - Delete the entire body of code
 
+        - Call the Static method "addProductToCart()" of the Class "App"
+
+        - Pass the Instance field "product" as argument
+            - Prefix w/ the keyword "this"
+
+    
     - Switch to the Instance method "addProduct()" of the Class "ShoppingCart"
-        - Chain the property ".innerHTML" to the Instance field "outputTotal"
+        - Refactor the Instance field "this.outputTotal"
+            - By chaining the property ".innerHTML"
 
-    - Save the changes
 
-    - Load / reload the browser
-        - Clicking a product item's "Add to Cart" button
-            - Changes the value of "Total" from 0 to 1
+    - Save the chanages
+        - Load / reload the browser
+
+        - Clicking the "Add to Cart" button of a product item
+            - Updates the "Total" value of the shopping cart from 0 to 1
         
-        - NOTE: The value of "Total" is NOT dynamically incrementing (yet)
+        - NOTE: The value does NOT increment dynamically (yet)
