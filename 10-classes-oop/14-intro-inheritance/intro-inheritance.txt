@@ -1,29 +1,31 @@
 Introducing Inheritance
 -----------------------
 - The concept of Inheritance
-    - To conviniently share code amongst Classes
+    - To conveniently share code amongst Classes of an app
 
     - Create a Base Class that
-        - Contains properties & methods that are needed by other Classes
+        - Contains properties & methods needed by other Classes
 
     - Extend the Base Class into a specialized Sub-Class(es)
     
-    - A Sub-Class inherits the properties & methods of the Base Class
-        - In addition, it can have its own specific properties & methods
-        - NOTE: It can also OVERRIDE the inherited properties & methods from the Base Class
-    
-    - Inheritance is better than building multiple Classes that
-        - Contains code duplication (i.e. properties & methods) w/c is sub-optimal
+    - A Sub-Class inherits the Base Class' properties & methods
+        - It can have its own specific properties & methods
+        - It has the ability to OVERRIDE inherited properties & methods 
+
+    - Inheritance is better than creating multiple Classes wherein
+        - Each Class contains code duplication (properties & methods) w/c is sub-optimal
 
 
 - On the practice project
-    - The Classes "ProductItem", "ProductList" & "ShoppingCart" have
-        - Their own method "render()" w/c possess the same logic (i.e. behavior)
+    - The Classes "ProductItem", "ProductList" & "ShoppingCart" of the web app
+        - Have their own method "render()" that perform different things
+        - BUT exhibits an identical behavior (i.e. general logic)
             - Create an Element node
 
             - Configure the Element node
-                - Add "stuff" (e.g. ".class", ".innerHTML" properties) to the Element node
+                - Chaining properties such as ".class" & ".innerHTML"
 
-            - Return the Element node
+            - Return the new & configured Element node
 
-    - This is a good opportunity to apply the concept of inheritance
+    
+    - This offers a good opportunity to utilize inheritance
