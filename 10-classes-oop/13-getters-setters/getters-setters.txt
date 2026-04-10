@@ -1,97 +1,102 @@
 Getters & Setters
 -----------------
-- Next is to implement the logic that
-    - Update the HTML markup w/in the method "addProduct()" of the Class "ShoppingCart"
-        - Using Getters & Setters as an elegant solution
+- For this lesson
+    - Implement the logic that updates the HTML markup of "Total" w/in
+        - The method "addProduct()" of the Class "ShoppingCart"
+        - Using a Getter & a Setter as an elegant solution
 
-    - A Getter in the Class "ShoppingCart"
-        - Retrieves the sum of the selected items placed in the cart
+    - A Getter that
+        - Returns the total price of "ProductItem" objects placed in the cart
+        - Retrieve the sum of the price of each "ProductItem" object added to the cart
 
-    - A Setter on the other hand
-        - Updates the rendered value of "Total" in the DOM
+    - A Setter that
+        - Updates the HTML markup of "Total" w/ the current sum
 
 
 - On the practice project (assets/scripts/app.js)
     - On the Class "ShoppingCart"
         - Create a Getter named "totalAmount"
+        - Using the keyword "get"
 
-        - In the Getter "totalAmount()"
-            - Create a local constant named "sum"
 
-            - Assign the Instance field "items"
-                - Prefixed w/ the keyword "this"
+    - Inside the Getter "totalAmount()"
+        - Define a local constant named "sum"
 
-            - Chain the method ".reduce()"
-                - Pass the arguments
-                    - 1st = an arrow function
-                    - 2nd = initial value 0
+        - Assign the Class field "items" as value to the local constant "sum"
+            - Chain the method "reduce()" to the Instance field "items"
 
-            - On the arrow function's parameter field
-                - Define the parameter variables
-                    - 1st = previousValue
-                    - 2nd = currentItem
+        - On the method "reduce()" pass the following arguments
+            - 1st = An Arrow function
+            - 2nd = Initial value of 0
 
-            - Inside the arrow function
-                - Return the sum of "previousValue" & "currentItem.price"
-                    - Using a "return" statement
+        - On the Arrow function, define the parameter variables
+            - 1st = previousValue
+            - 2nd = currentItem
 
-                - NOTE: The "currentItem" holds the "ProductItem" object stored w/in
-                    - The Instance field "items" that has a property ".price"
+        - Inside the Arrow function
+            - Use the "+" operator for the parameter variables
+                - "previousValue"
+                - "currentItem.price"
 
             - Return the sum stored in the local constant "sum"
                 - Using a "return" statement
 
 
-        - On the Instance method "addProduct()"
-            - On the property ".innerHTML" of the Instance field "outputTotal"
-                - Replace the value 1 w/ a call to the Getter "totalAmount"
-                    - Prefixed w/ the keyword "this"
+    - On the method "addProduct()"
+        - On the HTML markup value assigned to the Class field "totalAmount"
+            - Change the string literal template "${1}" w/
+            - A call to the Getter "totalAmount"
 
-                - NOTE: Treat a Getter like a property when calling it
+        - Chain the method "toFixed()" to the Getter "totalAmount"
+            - Pass 2 as arguments
+            - NOTE: Ensures that the total contains two (2) decimal places
 
-
-        - Create a Setter named "cartItems"
-            - Define a parameter variable named "value"
-            
-        - In the Setter "cartItems()"
-            - Access the Instance field "items"
-                - Assign w/ the value of the parameter "value"
-            
-            - NOTE: Overwrites previous "ProductItem" objects w/in the Instance field "items"
-
-
-        - Switch back to the Instance method "addProduct()"
-            - Cut the Instance field "outputTotal"
-
-        - Switch to the Setter "cartItems()"
-            - Paste the code
-                - Right below the Instance field "items"
-
-            - Chain the method ".toFixed()"
-                - On the call to the Getter "totalAmount()"
-                - Pass 2 as argument
+        - NOTE: Execute the Getter like accessing a Class field that is
+            - Prefixed w/ the keyword "this"
 
         
-        - Switch back to the Instance method "addProduct()"
-            - Replace the remaining line of code w/ 
-                - Creating a new local constant named "updateItems"
-                
-                - Assign a copy of the Instance field "items" contents as value
-                    - Using a spread operator (...)
+    - Create a Setter named "cartItems"
+        - Using the keyword "set"
+            - Located above the Getter "totalAmount()"
 
-            - Access the Instance field "updatedItems"
-                - Chain the method ".push()"
-                - Pass the parameter variable "product" as argument
+        - Define a parameter variable named "value"
 
-            - Then assign the Instance field "updatedItems" as value
-                - To the Setter "cartItems"
+    
+    - Inside the Setter "cartItems()"
+        - Access the Class field "items" then
+            - Assign the value stored w/in the parameter variable "value"
 
-                - NOTE: This triggers the Setter "cartItems()"
+        - NOTE: This overwrites the previously stored "ProductItem" objects stored w/in
+            - The Class field "items"
 
-    - Save the changes
 
-    - Load / reload the browser
-        - Clicking the "Add to Cart" button of a product
-        - Updates the value of "Total"             
+    - On the method "addProduct()"
+        - Cut the declaration of the Class field "outputTotal"
 
-                
+        - Delete the remaining line of code
+            - Leaving it an empty method (for now)
+
+
+    - Back on the Setter "cartItems()"
+        - Paste the code beneath the line that access the Class field "items"
+
+    
+    - Switch back to the method "addProdut()"
+        - Create a new local constant named "updateItems"
+            - Assign it w/ the value of the Class field "items"
+            - Using a Spread operator (...)
+
+        - Push a "ProductItem" object stored in the parameter variable "product"
+            - To the array stored w/in the local constant "updateItems"
+
+        - Assign the "ProductItem" object w/in the local constant "updatedItems"
+            - Triggers the Setter "cartItems"
+
+            - Updates the HTML markup of the shopping cart's "Total"
+            
+
+    - Save the chanages
+        - Load / reload the browser
+
+        - Clicking the "Add to Cart" button of a product item
+            - Dynamically updates the value of "Total"
