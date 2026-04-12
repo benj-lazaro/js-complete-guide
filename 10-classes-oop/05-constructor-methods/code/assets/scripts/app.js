@@ -1,14 +1,11 @@
-// Class that defines the properties of the "Product" object
+// Class that defines a "Product" object
 class Product {
-  // These fields can now be removed as they're initialized w/in the Constructor method
   title = "DEFAULT";
   imageUrl;
   price;
   description;
 
-  // Constructor method
   constructor(title, image, price, description) {
-    // Properties
     this.title = title;
     this.imageUrl = image;
     this.price = price;
@@ -16,7 +13,7 @@ class Product {
   }
 }
 
-// Assign a "Product" object as element of the array stored w/in the property "products"
+// Create & store "Product" objects as elements of the array in the property "products"
 const productList = {
   products: [
     new Product(
@@ -33,16 +30,16 @@ const productList = {
     ),
   ],
   render() {
-    // Selects the Element node "div" from the "index.html" w/ an attribute "id" of "app"
+    // Selects the Element node "div" w/ an attribute "id" of "app"
     const renderHook = document.getElementById("app");
 
-    // Create an Element node "ul" & set its attribute "class"
+    // Create Element node "ul" & set its attribute "class"
     const prodList = document.createElement("ul");
     prodList.className = "product-list";
 
-    // Iterate through each "Product" object element stored in the property "products"
+    // Iterate through each object element in the property "products"
     for (const prod of this.products) {
-      // Create an Element node "li" for each "Product" object read
+      // Create an Element node "li" for each object element read
       const prodEl = document.createElement("li");
       prodEl.className = "product-item";
       prodEl.innerHTML = `
@@ -58,14 +55,14 @@ const productList = {
         </div>
       `;
 
-      // Append the Element node "li" as a child of the Element node "ul"
+      // Append the created Element node "li" as child of the Element node "ul"
       prodList.append(prodEl);
     }
 
-    // Append the Element node "ul" as a child of the Element node "div"
+    // Append the created Element node "ul" as child of the Element node "div"
     renderHook.append(prodList);
   },
 };
 
-// Render "Product" object elements stored in the property "products" of the object "productList"
+// Render the objects elements w/in the property "products" of the object "productList"
 productList.render();
