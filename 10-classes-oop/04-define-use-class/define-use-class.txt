@@ -1,18 +1,20 @@
 Defining & Using A First Class
 ------------------------------
-- A Class allows to easily build an object
-    - It serves as a theoretical "blueprint" of an object
-        - Defines an object's properties & methods
+- A Class allows to easily create an object
+    - Serves as a theoretical "blueprint" of an object where
+        - An object's properties & methods are defined
 
-    - Easily creates multiple, similar "looking" objects
-        - Contains different data (values)
+
+    - Easily create multiple & similar "looking" objects that
+        - Contains different data (or values)
         - Retains identical structures
 
+    - Serves as an alternative (NOT REPLACEMENT) for the Object literal notation
 
-- An object created from a Class is referred as an "instance" of that Class
-    - It serves as an alternative (NOT REPLACEMENT) for Object literal notation
+    - An object created from a Class is referred as
+        - An "instance" of a Class or a Class-based object
 
-
+    
 - To create a Class
     - Use the keyword "class" followed by a name
         - The 1st letter of EVERY WORD MUST be in UPPERCASE
@@ -37,12 +39,14 @@ Defining & Using A First Class
     }
 
 
-- To create an instance (instantiate) of a Class
-    - Use the keyword "new" followed by the Class name w/ a pair of "( )"
-        - Terminated w/ a ";"
-        - JavaScript implicitly returns a Class-based object 
+- To create an instance of (or instantiate) a Class
+    - Use the keyword "new" followed by the Class name w/ a pair of "( )" 
+        - The statement is terminated w/ a ";"
+    
+    - JavaScript IMPLICTLY returns a Class-based object 
 
-        - NOTE: Often the returned object is assigned to a constant 
+    - Often the object is assigned to a (global or local) constant as value
+
 
     Syntax:
     new <class_name>();
@@ -50,20 +54,23 @@ Defining & Using A First Class
 
 
 - On the practice project (assets/scripts/app.js)
-    - Create a Class named "Product" w/ the
-        - Following Class fields
+    - Create a Class named "Product"
+
+
+    - Inside the Class "Product"
+        - Define the following Class fields
             - "title"       = default string value "DEFAULT"
             - "imageUrl"    = NO assigned default value (i.e. undefined)
             - "price"       = NO assigned default value (i.e. undefined)
             - "description" = NO assigned default value (i.e. undefined)
 
-    - Instantiate the Class "Product"
-        - Pass the returned object as argument to "console.log()"
 
-    - Save the changes
+    - Instantiate the Class "Product" into an object
+        - Pass the implicitly returned object as argument to "console.log()"
+
     
-    - Load / reload the browser
+    - Save the chanages
+        - Load / reload the browser
         - Launch the browser's JavaScript console
 
-        - The object "Product" is displayed 
-            - Including its properties & default values
+        - The details of the "Product" object is displayed

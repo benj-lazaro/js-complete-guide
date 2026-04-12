@@ -1,4 +1,4 @@
-// Create a Class
+// Class that defines the fields of a "Product" object
 class Product {
   title = "DEFAULT";
   imageUrl;
