@@ -14,7 +14,7 @@ Fields VS Properties
         - Use a Constructor method to define a Class property
         - Assign the corresponding value of a parameter variable
 
-    - Class fields are foe those (fields) that are
+    - Class fields are for those (fields) that are
         - NOT INITIALIZED w/in the Constructor method of a Class
 
 
@@ -42,10 +42,13 @@ Fields VS Properties
 
 
 - On the practice project (assets/scripts/app.js)
-    - Simply remove the defined Class fields from the Class "Product"
-        - They have been defined & initialized w/in the Constructor method
+    - On the Class "Product"
+        - Remove the defined Class fields
 
-    - Save the changes
+        - These Class fields have been defined & initialized as Class properties w/in
+            - The Constructor method of the Class
 
-    - Load / reload the browser
-        - NO changes on the web app's behavior
+
+    - Save the chanages
+        - Load / reload the browser
+        - The behavior of the web app remains unchanged
