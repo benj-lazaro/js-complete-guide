@@ -10,7 +10,7 @@ class Product {
 
 // Class that renders the HTML markup & unique data of each "Product" object read
 class ProductItem {
-  // Parameter variable "product" holds the "Product" object forwarded by Class "ProductList"
+  // Parameter variable "product" holds a "Product" object forwarded by Class "ProductList"
   constructor(product) {
     this.product = product;
   }
@@ -83,6 +83,6 @@ class ProductList {
   }
 }
 
-// Instantiate Class "ProductList" & renders a list of "ProductItem" objects
+// Instantiate Class "ProductList" & render a list of "ProductItem" objects
 const productList = new ProductList();
 productList.render();
