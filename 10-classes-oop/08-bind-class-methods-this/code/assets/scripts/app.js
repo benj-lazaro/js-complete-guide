@@ -1,4 +1,4 @@
-// Class that defines the properties of the "Product" object
+// Class that defines the "Product" object
 class Product {
   constructor(title, image, price, description) {
     this.title = title;
@@ -8,21 +8,22 @@ class Product {
   }
 }
 
-// Class that handles the HTML markup & specific data of a "Product" object
+// Class that renders the HTML markup & unique data of each "Product" object read
 class ProductItem {
+  // Parameter variable "product" holds a "Product" object forwarded by Class "ProductList"
   constructor(product) {
     this.product = product;
   }
 
-  // Method that handles the "click" Event listener of a "Product" object
+  // Callback method for a "click" event
   addToCart() {
     console.log("Adding to cart");
     console.log(this.product);
   }
 
-  // Method that handles the HTML markup & specific data of a "Product" object
+  // Method that handles the HTML markup & unique data of a "Product" object
   render() {
-    // Create an Element node "li" for each "Product" object
+    // Create an Element node "li" for each "Product" object read
     const prodEl = document.createElement("li");
     prodEl.className = "product-item";
     prodEl.innerHTML = `
@@ -38,14 +39,12 @@ class ProductItem {
         </div>
       `;
 
-    // Select the Element node "button" from the HTML markup w/in local constant "prodEl"
+    // Select the HTML element <button> from the HTML markup in the local constant "prodEl"
     const addCartButton = prodEl.querySelector("button");
 
-    // Chain a "click" Event listener & assign a callback method
-    // Bind the callback method to the Class "ProductItem"
+    // Chain an Event listener for a "click" event & its callback method
     addCartButton.addEventListener("click", this.addToCart.bind(this));
 
-    // Return the Element node "li" containing specific data of a "Product" object
     return prodEl;
   }
 }
@@ -67,34 +66,35 @@ class ProductList {
     ),
   ];
 
-  // Intentionally left empty (for now) as the field "products" have already been initialized
+  // Intentionally left empty as Class field "product" had been initialized
   constructor() {}
 
+  // Method that renders a list of "ProductItem" objects in the DOM
   render() {
-    // Selects the Element node "div" from the "index.html" w/ an attribute "id" of "app"
+    // Selects the Element node "div" w/ an attribute "id" of "app"
     const renderHook = document.getElementById("app");
 
-    // Create an Element node "ul" & set its attribute "class"
+    // Create Element node "ul" & set its attribute "class"
     const prodList = document.createElement("ul");
     prodList.className = "product-list";
 
-    // Iterate through each "Product" object element stored in the property "products"
+    // Iterate through each object element in the property "products"
     for (const prod of this.products) {
-      // Create a "ProductItem" object for each "Product" object read
+      // Instantiate the Class "ProductItem" & pass the "Product" object read as argument
       const productItem = new ProductItem(prod);
 
-      // Call method "render()" of the Class "ProductItem"; store returned Element node "li"
+      // Call method "render()" of Class "ProducItem" & store returned Element node "li"
       const prodEl = productItem.render();
 
-      // Append the Element node "li" as a child of the Element node "ul"
+      // Append the created Element node "li" as child of the Element node "ul"
       prodList.append(prodEl);
     }
 
-    // Append the Element node "ul" as a child of the Element node "div"
+    // Append the created Element node "ul" as child of the Element node "div"
     renderHook.append(prodList);
   }
 }
 
-// Instantiate Class "ProductList" & call its method "render()"
+// Instantiate Class "ProductList" & render a list of "ProductItem" objects
 const productList = new ProductList();
 productList.render();

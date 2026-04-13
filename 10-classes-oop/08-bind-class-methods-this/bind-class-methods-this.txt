@@ -1,95 +1,107 @@
 Binding Class Methods & Working With "this"
 -------------------------------------------
 - For this lesson
-    - Access the HTML element <button> from the HTML markup w/in
-        - The method "render()" of the Class "ProductItem"
+    - Create the callback method for the "click" event of the
+        - HTML element button w/ the content "Add to Cart"
 
-    - Create the corresponding callback method for a "click" event
-    
-    - When the HTML element <button> is clicked
-        - Renders the following on the browser's JavaScript console
+        - When clicked, renders the following on the browser's JavaScript console
             - Message "Adding to cart"
-            - Details of the corresponding "ProductItem" object 
-    
- 
-- On the practice project (assets/scripts/app.js)
-    - On the method "render()" of the Class "ProductItem"
-        - Select the HTML element <button>
-            - From the HTML markup stored w/in the local constant "prodEl"
+            - "ProductItem" object details
 
-        - Use the method ".querySelector()" on the local constant "prodEl"
-            - Pass "button" as argument
-        
-        - Store the returned Element node "button" in a local constant named "addCartButton"
+
+- On the practice project (assets/scripts/app.js)
+    - In the method "render()" of the Class "ProductItem"
+        - Before the last line of code
+
+
+    - Select the HTML element <button> from the HTML markup in the local constant "prodEl"
+        - Chain the method ".querySelector()" to the local constant "prodEl"
+        - Pass "button" as argument
+        - Store the returned Element node "button" in the local constant "addCartButton"
+
 
     - On the local constant "addCartButton"
-        - Chain an Event listener for a "click" event
-            - Using the method ".addEventListener()"
-            
+        - Chain the method ".addEventListener()"
+        
         - Pass the arguments
-            - 1st = "click"
-            - 2nd = "this.addToCart"
+            1st = "click"
+            2nd = "this.addToCart"
 
-        - NOTE: The keyword "this" refers to the Class "ProductItem"
+        - NOTE: The method "addToCart()" will be implemented next
 
-    - Create a new (callback) method named "addToCart"
+
+    - Create a method named "addToCart"
+        - Located above the method "render()"
+
+        - NOTE: This serves as the callback method 
+            - For the "click" event w/in the Class "ProductItem"
+
 
     - Inside the method "addToCart()"
-        - Pass the string value "Adding to cart"
-            - As argument to "console.log()"
+        - Pass the string value "Adding to cart" as argument to "console.log()"
 
-        - Pass the Class field "product"
-            - Prefixed w/ the keyword "this" 
-            - As argument to "console.log()"
-        
-        - NOTE: The keyword "this" refers to the Class "ProductItem"
-
-
-    - Save the chanages
-        - Load / reload the browser
-            - Launch the browser's JavaScript console
-
-        - Click the "Add to Cart" button of a product item
-            - Renders the message "Adding to cart"
-
-            - Does NOT render the clicked "ProductItem" object
-                - Returns an "undefined" value instead
-
-
-        - Click the "Add to Cart" button of a product item
-            - The messsage "Adding to cart" is rendered on the browser's JavaScript console
-            
-            - HOWEVER, NO "ProductItem" object was rendered
-                - Instead an "undefined" value was returned
-
-        - The reason
-            - Executing the (callback) method "this.addToCart" from the
-                - Event handler of the local constant "addCartButton"
-
-            - JavaScript IMPLICITLY binds the keyword "this" 
-                - To the source of the event
-
-            - The source of the "click" event happens to be the Element node "button"
-                - NOT the Class "ProductItem"
-
-        - To address this concern
-            - Bind the Class "ProductItem" to the (callback) method "this.addToCart"
-                - Using the method ".bind()"
-                - Pass "this" as argument
-
+        - Pass the Class property "product" as argument to "console.log()"
+            - Prefixed w/ the keyword "this"
             - NOTE: The keyword "this" refers to the Class "ProductItem"
 
 
-    - Back to the method "render()"  
-        - On the Event listener of the local constant "addCartButton"
-            - Chain the method ".bind()" to the (callback) method ".addToCart
+    - Save the chanages
+        - Load / reload the browser
+        
+        - Launch the browser's JavaScript console
+
+        - Click the button "Add to Cart" of a product item
+
+        - On the browser's JavaScript console
+            - The message "Adding to cart" is rendered
+
+            - HOWEVER, does NOT render a "ProductItem" object
+                - Instead the value "undefined" is returned
+
+
+    - Explanation of the problem
+        - The method "addToCart()" is triggered by the Event handler 
+            - Stored w/in the local constant "addCartButton"
+
+        - JavaScript IMPLICITLY BINDS the keyword "this" to the source of an event
+
+        - The source of the "click" event is the Event listener for the
+            - Element node "button" stored in the local constant "addCartButton"
+            - NOT the Class "ProductItem"
+        
+        - Thus, JavaScript returns the value "undefined"
+
+
+    - To address this concern
+        - Bind the method "addToCart()" w/ the Class "ProductItem"
+        
+        - On the Event listener's parameter field
+            - Chain the method ".bind()" to the method "addToCart()"
+            - Pass "this" as argument to the method ".bind()"
+
+        - Doing so, JavaScript binds the keyword "this" argument to method ".bind()"
+            - To what the keyword "this" refers w/in the method "addToCart()"
+
+            - To the same thing to what the keyword "this" refers to 
+                - The entire Class "ProductItem"
+
+            - Assuming that the method "render()" is called 
+                - On an instance of the Class "ProductItem"
+
+
+    - Back on the method "render()"
+        - Refactor the 2nd argument of the method ".addEventListener()"
+            - Chain the method ".bind()" to the method "this.addToCart"
             - Pass the keyword "this" as argument
 
-        - NOTE: The keyword "this" refers to the Class "ProductItem"
 
     - Save the chanages
         - Load / reload the browser
-    
-        - Click the "Add to Cart" button of a product item
-            - Renders the message "Adding to cart"
-            - Renders the clicked "ProductItem" object
+
+        - Launch the browser's JavaScript console
+
+        - Click the button "Add to Cart" of a product item
+
+        - On the browser's JavaScript console
+            - The message "Adding to cart" is rendered
+            - Details of the "ProductItem" object is rendered
