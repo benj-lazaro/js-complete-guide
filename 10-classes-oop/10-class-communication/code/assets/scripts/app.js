@@ -1,4 +1,4 @@
-// Class that defines the properties of the "Product" object
+// Class that defines the "Product" object
 class Product {
   constructor(title, image, price, description) {
     this.title = title;
@@ -8,21 +8,22 @@ class Product {
   }
 }
 
-// Class that handles the HTML markup & specific data of a "Product" object
+// Class that renders the HTML markup & unique data of each "Product" object read
 class ProductItem {
+  // Parameter variable "product" holds a "Product" object forwarded by Class "ProductList"
   constructor(product) {
     this.product = product;
   }
 
-  // Method that handles the "click" Event listener of a "Product" object
+  // Callback method for a "click" event
   addToCart() {
     console.log("Adding to cart");
     console.log(this.product);
   }
 
-  // Method that handles the HTML markup & specific data of a "Product" object
+  // Method that handles the HTML markup & unique data of a "Product" object
   render() {
-    // Create an Element node "li" for each "Product" object
+    // Create an Element node "li" for each "Product" object read
     const prodEl = document.createElement("li");
     prodEl.className = "product-item";
     prodEl.innerHTML = `
@@ -38,14 +39,12 @@ class ProductItem {
         </div>
       `;
 
-    // Select the Element node "button" from the HTML markup w/in local constant "prodEl"
+    // Select the HTML element <button> from the HTML markup in the local constant "prodEl"
     const addCartButton = prodEl.querySelector("button");
 
-    // Chain a "click" Event listener & assign a callback method
-    // Bind the callback method to the Class "ProductItem"
+    // Chain an Event listener for a "click" event & its callback method
     addCartButton.addEventListener("click", this.addToCart.bind(this));
 
-    // Return the Element node "li" containing specific data of a "Product" object
     return prodEl;
   }
 }
@@ -67,88 +66,83 @@ class ProductList {
     ),
   ];
 
-  // Intentionally left empty (for now) as the field "products" have already been initialized
+  // Intentionally left empty as Class field "product" had been initialized
   constructor() {}
 
+  // Method that renders a list of "ProductItem" objects in the DOM
   render() {
-    // Create an Element node "ul" & set its attribute "class"
+    // Create Element node "ul" & set its attribute "class"
     const prodList = document.createElement("ul");
     prodList.className = "product-list";
 
-    // Iterate through each "Product" object element stored in the property "products"
+    // Iterate through each object element in the property "products"
     for (const prod of this.products) {
-      // Create a "ProductItem" object for each "Product" object read
+      // Instantiate the Class "ProductItem" & pass the "Product" object read as argument
       const productItem = new ProductItem(prod);
 
-      // Call method "render()" of the Class "ProductItem"; store returned Element node "li"
+      // Call method "render()" of Class "ProducItem" & store returned Element node "li"
       const prodEl = productItem.render();
 
-      // Append the Element node "li" as a child of the Element node "ul"
+      // Append the created Element node "li" as child of the Element node "ul"
       prodList.append(prodEl);
     }
 
     // Return the Element node "ul"
     return prodList;
-
-    // Append the Element node "ul" as a child of the Element node "div"
-    renderHook.append(prodList);
   }
 }
 
-// Class that contains a list pf checked-out "ProductItem" objects
+// Class that contains the HTML markup & logic of the shopping cart
 class ShoppingCart {
-  // Store "ProductItem" objects that are "added to cart" (i.e. checked-out)
+  // Shopping cart that holds "ProductItem" objects
   items = [];
 
-  // Push the clicked "ProductItem" object into the Class field "items"
+  // Method that adds a "ProductItem" object into the shopping cart
   addProduct(product) {
     this.items.push(product);
 
-    // Access Class field "outputTotal" & overwrite the previous HTML markup of Element node "h2"
+    // Overwrite previous HTML markup assigned by the method "render()"
     this.outputTotal = `<h2>Total: \$ ${1}</h2>`;
   }
 
+  // Method that renders the HTML markup of the shopping cart
   render() {
-    // Create an Element node "section" & set its attributes
     const cartEl = document.createElement("section");
     cartEl.className = "cart";
     cartEl.innerHTML = `
       <h2>Total: \$ ${0}</h2>
       <button>Order Now!</button>
-    `;
+      `;
 
-    // Dynamically create the Class field "outputTotal" then grab & assign as value
-    // The Element node "h2" from the HTML markup stored w/in the local constant "cartEl"
+    // Dynamically create properyt "outputTotal" & assign Element node "h2" as value
     this.outputTotal = cartEl.querySelector("h2");
 
-    // Return the Element node "section" (i.e. shopping cart)
+    // Return the Element node "section"
     return cartEl;
   }
 }
 
-// Class that renders "ProductList" & "ShoppingCart" objects in the DOM
+// Class that renders the "ShoppingCart" & "ProductList" objects in the DOM
 class Shop {
+  // Method that renders "ShoppingCart" & "ProductList" objects & attach to DOM
   render() {
-    // Selects the Element node "div" from the "index.html" w/ an attribute "id" of "app"
+    // Select & store Element node "div" taken from the "index.html" file
     const renderHook = document.getElementById("app");
 
-    // Instantiate the "ShoppingCart" Class & call its method "render()"
-    // The returned Element node "section" represents the shopping cart
+    // Instantiate Class "ShoppingCart" & store returned Element node "section"
     const cart = new ShoppingCart();
     const cartEl = cart.render();
 
-    // Instantiate the Class "ProductList" & call its method "render()"
-    // The returned Element node "ul" represents the list of "ProductItem" objects
+    // Instantiate Class "ProductList" & store returned Element node "ul"
     const productList = new ProductList();
-    const prodListEl = productList.render();
+    const prodlistEl = productList.render();
 
-    // Append the Element nodes "section" & "ul" as children to the Element node "div"
-    // Effectively renders the "ShoppingCart" & "ProductList" objects in the DOM
+    // Append Element nodes "section" & "ul" as children of Element node "div"
     renderHook.append(cartEl);
-    renderHook.append(prodListEl);
+    renderHook.append(prodlistEl);
   }
 }
 
-// Instantiate Class "Shop" & render the "ShoppingCart" & "ProductList" objects in the DOM
+// Instantiate Class "Shop" & render "ShoppingCart" & "ProductList" objects in the DOM
 const shop = new Shop();
 shop.render();

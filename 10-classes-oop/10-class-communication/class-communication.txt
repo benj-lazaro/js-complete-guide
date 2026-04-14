@@ -1,75 +1,83 @@
 Communication Can Be Challenging
 --------------------------------
 - For this lesson
-    - Implement the logic that allows Classes to communicate
+    - Implement the logic that allows communication between Classes "ShoppingCart" & "ProductItem"
 
-    - Calling the callback method "addToCart()" of the Class "ProductItem"
-        - Updates the HTML markup w/in the local constant "cartEl"
-            - Located w/in the method "render()" of the Class "ShoppingCart"
-
-        - Change the static value of "Total" from 0 to 1
-
+    - The HTML markup stored as value to the Class property "outputTotal" of the Class "ShoppingCart"
+        - Will be replaced with an updated HTML markup (i.e. changing the value of "Total" from 0 to 1)
+        - EVERYTIME the Class method "addToCart()" of the Class "ProductItem" is called
+    
 
 - On the practice project (assets/scripts/app.js)
     - On the Class "ShoppingCart"
-        - Create a new method named "addProduct"
-        - Define the parameter variable "product"
-        - NOTE: This holds the clicked "ProductItem" object added to the cart
+        - Create a new Class method named "addProduct"
+            - Located above its sibling Class method "render()"
+        
+        - Define a parameter variable named "product"
+            - NOTE: Parameber variable holds the "ProductItem" object added to the cart 
+    
+
+    - Inside the Class method "addProduct()"
+        - Access the Class field "items" prefixed w/ the keyword "this"
+            - Chain the method ".push()"
+            - Pass the parameter variable "product" as argument
 
 
-    - On the method "addProduct()"
-        - Access the Class field "items"
+    - On the Class method "render()"
+        - Before the last line of code
+            - Returning the local constant "cartEl"
+
+        - Dynamically create a new Class property named "outputTotal"
             - Prefixed w/ the keyword "this"
 
-        - Chain the method ".push()"
-            - Pass "product" as argument
-            - Pushes the "ProductItem" object into the Class field "items"
-
-
-    - On the method "render()" of the Class "ShoppingCart"
-        - Dynamically create a Class property named "outputTotal"
-            - Prefixed w/ the keyword "this"
-
-        - Grab & assign as value the Element node "h2" taken from
-            - The HTML markup stored w/in the local constant "cartEl"
-            
-            - Chaining the method ".querySelector()" on the constant "cartEl"
+            - Assign w/ the returned Element node "h2" from the local constant "cartEl"
+                - Using the method ".querySelector()"
                 - Passing "h2" as argument
+
+            - NOTE: The Class property "outputTotal" now contains the HTML markup & 
+                - The "sum" of "ProductItem" objects' prices
+
+        - IMPORANT: JavaScript allows the creation of a Class property 
+            - Anywhere w/in a Class
+            - It does NOT have to be done inside the Constructor method
+
+    
+    - Back on the Class method "addProduct()"
+        - Access the Class property "outputTotal" prefixed w/ the keyword "this"
+
+        - Copy the HTML markup of the Element node "h2" that was assigned as value
+            - To the ".innerHTML" property of the local constant "cartEl"
+            - Located w/in the Class method "render()"
+        
+        - Paste the copied Element node "h2" as assigned value
+            - Overwrites previous HTML markup assigned by the Class method "render()"
             
-            - Then assign the returned Element node "h2" as initial value
-                - To the Class property "outputTotal"
+        - Change the embedded string template literal "${0}" to "${1}"
 
-        - NOTE: JavaScript ALLOWS to create a Class property anywhere in
-            - Anywhere w/in the Class
-            - Does NOT have to be w/in a Constructor method
+        - NOTE: The logic for the dynamic update of the string template literal
+            - Will be implemented in the succeeeding lessons
 
 
-    - Back to the method "addProduct()"
-        - Access the created Class property "outputTotal"
-            - Prefixed w/ the keyword "this"
 
-        - Overwrite the (previous) HTML markup w/ an updated markup
-            
-            `<h2>Total: \$ ${1}</h2>`
-
-        - NOTE: Will implement the logic to dynamically change the value
+    - As mentioned, the intention of the implementation is to 
+        - Update the assigned HTML markup in the Class "ShoppingCart" property "outputTotal"
+        - EVERYTIME the Class "ProductItem" method "addToCart()" is called
 
 
-    - The intention of the implemented changes is 
-        - To have the value of "Total" updated
-            - EVERYTIME the method "addToCart()" of the Class "ProductItem" is called 
-
-        - For the moment
-            - Calling the method "addProduct()" of the Class "ShoppingCart" w/in
-                - The Class "ProductItem" will NOT WORK
-
-                - e.g. "ShoppingCart.addProduct()"
-            
-            - As the Class "ShoppingCart" is NOT instantiated w/in the Class "ProductItem"
-
+    - Based on the codebase' current state
+        - Directly calling the Class "ShoppingCart" method "addProduct()" from inside
+            - The Class "ProductItem" will NOT WORK
+        
+        - Due to the Class "ShoppingCart" NOT being instantiated w/in the Class "ProductItem"
+        
 
     - To address this concern
         - Requires the use of Static methods & properties
+
+        - This allows to call the Class "ShoppingCart" method "addProduct()"
+            - Using the following syntax
+
+                ShoppingCart.addProduct(this.product);
 
 
     - Save the chanages
