@@ -1,102 +1,93 @@
-Static Methods & Properties 
+Static Methods & Properties
 ---------------------------
 - A Static method & property (field) of a Class
-    - Defined w/in a Class
-        - Using the keyword "static"
+    - It is defined w/in a Class using the keyword "static"
 
-    - ONLY accessible on the Class itself
-        - Does NOT REQUIRE instantiating a Class
-        - In order to access a Static method or property
+    - It is ONLY accessible on the Class itself
+        - Does NOT require an instance of a Class
+        - To access a Static method or property
 
-    - Use case
-        - Helper Class
-        - Global configuration
-        - Works w/ objects that have the same data & structure
+    - Common use case
+        - A helper Class
+        - For global configuration
+        - Work w/ objects that have the same data & structure
 
 
-- An Instance method or property (field) of a Class
-    - Defined w/in a Class
-        - NOT using the keyword "static"
+- An Instance method or property of a Class
+    - It is defined w/in a Class NOT using the keyword "static"
 
-    - ONLY accessible on an instance of a Class
-        - REQUIRES instantiating a Class
-        - In order to access a Static method or property
+    - It is ONLY accessible on an instance of a Class
+        - REQUIRE to instantiate a Class into an object
+        - To access an Instance method or property
 
-    - Use case
+    - Common use case
         - Core reusable logic
-        - Works w/ objects that have different data but the same structure
+        - Work w/ objects that have different data but the same structure
+        
 
-    
+   
 - On the practice project (assets/scripts/app.js)
-    - Crete a new Class named "App"
+    - Create a Class named "App"
         - Define a Static field named "cart"
         - Define a Static method named "init"
 
     
-    - At the bottom of the codebase, outside of the Class "App" 
-        - Cut the two (2) lines of code that
-            - Instantiates the Class "Shop"
-            - Calls its Instance method "render()"
+    - At the bottom of the codebase
+        - Cut the two (2) lines of code
+            - Instantation of the Class "Shop"
+            - Calling its method "render()"
 
-        - Replace it w/ a call to the Static method "init()" of the Class "App"
-
-
-    - Back at the Static method "init()" of the Class "App"
-        - Paste the lines of code
+        - Replace it w/ a call to the Class "App" Static method "init()"
+            - Effectively "starts" the web app
 
 
-    - Switch to the method "render()" of the Class "Shop"
-        - Change the local constant "cart" into a Class Instance field "cart"
-            - Remove the keyword "const"
-            - Prefix the constant "cart" w/ the keyword "this"
+    - Back on the Class "App" Static method "init()"
+        - Paste the two (2) lines of code
 
-        - NOTE: This Instance field stores a "ShoppingCart" object
+    
+    - On the Class "Shop" method "render()"
+        - Change the local constant "cart" to a Class property "cart"
+            - Prefixed w/ the keyword "this"
+            - NOTE: The Class property will hold a "ShoppingCart" object
 
-
-    - Switch to the Class "Shop"
-        - Refactor the local constant "cart" into an Instance Class field
-            - Prefix w/ the keyword "this"
-
-        - NOTE: Refactor references to the local constant "cart"
-            - Prefix w/ the keyword "this"
+        - Refactor references to the constant "cart"
+            - Into a Class property "this.cart"
 
 
-    - Save the chanages
+    - Save the changes
         - Load / reload the browser
         - There are NO changes in the behavior of the web app
 
 
-    - Back to the Class "App"
-        - Create a Static method named "addProductToCart"
+    - Back on the Class "App"
+        - Create another Static method named "addProductToCart"
             - Define a parameter variable named "product"
-            - NOTE: This variable is expected to hold a "Product" object 
+            - NOTE: The parameter variable will hold a "ProductItem" object 
 
         - Inside the Static method "addProductToCart()"
-            - Access the Instance method "addProduct()" of the Class "ShoppingCart"
-            - Pass "product" as argument 
+            - Access the Class "ShoppingCart" method "addProduct()"
+            - Pass the parameter variable "product" as argument
 
-        - NOTE: This Static method works as a proxy for calling the
-            - Instance method "addProduct()" of the Class "ShoppingCart"
-
-
-    - Switch to the Instance method "addToCart()" of the Class "ProductItem"
-        - Delete the entire body of code
-
-        - Call the Static method "addProductToCart()" of the Class "App"
-
-        - Pass the Instance field "product" as argument
-            - Prefix w/ the keyword "this"
-
-    
-    - Switch to the Instance method "addProduct()" of the Class "ShoppingCart"
-        - Refactor the Instance field "this.outputTotal"
-            - By chaining the property ".innerHTML"
+            - NOTE: This Static method works as a proxy
+                - For calling the Class "ShoppingCart" method "addProduct()"
 
 
-    - Save the chanages
+    - On the Class "ProductItem" method "addToCart()"
+        - Delete the method's body of code
+
+        - Call the Class "App" Static method "addProductToCart()"
+            - Pass the Class "ProductItem" property "this.product" as argument
+
+
+    - On the Class "ShoppingCart" method "addProduct()"
+        - Chain the property ".innerHTML" to the Class property "this.outputTotal"
+        
+
+    - Save the changes
         - Load / reload the browser
 
-        - Clicking the "Add to Cart" button of a product item
-            - Updates the "Total" value of the shopping cart from 0 to 1
-        
-        - NOTE: The value does NOT increment dynamically (yet)
+        - Clicking the button "Add to Cart" of an item
+            - Updates the value of the shopping cart's "Total"
+            - From the static value of 0 to 1
+
+        - NOTE: For now, the value will NOT increment dynamically
