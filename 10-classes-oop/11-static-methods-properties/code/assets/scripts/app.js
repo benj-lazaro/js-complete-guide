@@ -19,6 +19,9 @@ class ProductItem {
   addToCart() {
     // Calls the Class "App" Static method "addProductTocart()"
     App.addProductToCart(this.product);
+
+    // For debugging
+    console.log(this.product);
   }
 
   // Method that handles the HTML markup & unique data of a "Product" object
@@ -45,6 +48,7 @@ class ProductItem {
     // Chain an Event listener for a "click" event & its callback method
     addCartButton.addEventListener("click", this.addToCart.bind(this));
 
+    // Return Element node "li"
     return prodEl;
   }
 }
@@ -102,7 +106,7 @@ class ShoppingCart {
     this.items.push(product);
 
     // Overwrite previous HTML markup assigned by the method "render()"
-    this.outputTotal = `<h2>Total: \$ ${1}</h2>`;
+    this.outputTotal.innerHTML = `<h2>Total: \$ ${1}</h2>`;
   }
 
   // Method that renders the HTML markup of the shopping cart
