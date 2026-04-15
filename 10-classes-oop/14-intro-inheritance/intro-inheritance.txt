@@ -3,29 +3,30 @@ Introducing Inheritance
 - The concept of Inheritance
     - To conveniently share code amongst Classes of an app
 
-    - Create a Base Class that
-        - Contains properties & methods needed by other Classes
+    - It is implmented by first creating a Base Class that
+        - Contain properties & methods that are needed by other Classes
 
-    - Extend the Base Class into a specialized Sub-Class(es)
-    
-    - A Sub-Class inherits the Base Class' properties & methods
+    - Then extend the Base Class into specialized Sub-Class(es)
+
+    - A Sub-Class inherits the properties & methods of the Base Class
         - It can have its own specific properties & methods
-        - It has the ability to OVERRIDE inherited properties & methods 
+        - It can OVERRIDE inherited properties & methods from the Base Class
 
-    - Inheritance is better than creating multiple Classes wherein
-        - Each Class contains code duplication (properties & methods) w/c is sub-optimal
+    - Inheritance is BETTER than creating multiple Classes wherein
+        - Each Class contain duplicated properties & methods
+        - Doing so is sub-optimal
+
+    - IMPORTANT: A Sub-Class can NOT inherit from multiple Base Classes
+        - In JavaScript, a Sub-Class can ONLY inherit from a single Base Class
 
 
 - On the practice project
-    - The Classes "ProductItem", "ProductList" & "ShoppingCart" of the web app
-        - Have their own method "render()" that perform different things
-        - BUT exhibits an identical behavior (i.e. general logic)
+    - The Classes "ProductItem", "ProductList" & "ShoppingCart"
+        - Noted to have their own Class method "render()" that perform different things
+        
+        - However, exhibit identical behavior (or general logic)
             - Create an Element node
-
             - Configure the Element node
-                - Chaining properties such as ".class" & ".innerHTML"
+            - Return the configured Element node
 
-            - Return the new & configured Element node
-
-    
-    - This offers a good opportunity to utilize inheritance
+        - This provide a good opportunity to utilize inheritance
