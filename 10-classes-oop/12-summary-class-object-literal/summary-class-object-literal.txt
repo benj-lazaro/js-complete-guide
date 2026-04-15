@@ -1,29 +1,27 @@
 First Summary & Class VS Object Literal
 ---------------------------------------
-- A Class that contain Static methods & properties (fields)
-    - Share functionality & data accross different parts of an app
-
-    - To serve as "glue" (i.e. communication interface) between Classes
-
-
-- Instantiating a Class to an object is
-    - Identical to using an Object literal notation
-
-    - BOTH approaches yields an object
+- A Class w/ Static methods & properties (fields)
+    - Share data & functionality across different parts of an app
+    - Serving as a "glue" (or communication interface) between Classes
 
 
-- When to use a Class to create an object
-    - Create an object multiple times over that
-        - Contain the same internal structure (i.e. methods & properties)
-        - BUT each instance contains different (unique) data
-
-    - Initially comes w/ an overhead
-        - However, offers an easy way to duplicate objects
+- Instantiang a Class to an object is identical to
+    - Using the Object literal notation
+    - BOTH approaches yield an object 
 
 
-- When to use Object literation notation to create an object
-    - Create an object ONCE that
-        - Groups related data
+- When to use a Class
+    - Creating an object multiple times over that
+        - Contain the same structure (i.e. properties & methods)
+        - BUT each instance contain different (unique) data
+
+    - Initially comes w/ an overhead but 
+        - Offers an easy way to duplicate objects
 
 
-    - Offers an easy & quick way to create an object w/ NO overhead
+- When to use the Object literal notation
+    - Creating an object ONLY ONCE
+        - To group related data
+
+    - Does NOT come w/ an overhead
+        - Offers an easy & quick way to create an object
