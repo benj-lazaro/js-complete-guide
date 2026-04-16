@@ -22,11 +22,10 @@ Introducing Inheritance
 
 - On the practice project
     - The Classes "ProductItem", "ProductList" & "ShoppingCart"
-        - Noted to have their own Class method "render()" that perform different things
-        
-        - However, exhibit identical behavior (or general logic)
+        - Have their own Class method "render()" that 
+        - Perform different things BUT the general logic is the same
             - Create an Element node
             - Configure the Element node
-            - Return the configured Element node
+            - Return the Element node
 
-        - This provide a good opportunity to utilize inheritance
+    - This provide a good opportunity to utilize inheritance
