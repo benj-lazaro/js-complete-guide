@@ -1,4 +1,4 @@
-// Class that defines the properties of the "Product" object
+// Class that defines the "Product" object
 class Product {
   constructor(title, image, price, description) {
     this.title = title;
@@ -8,18 +8,19 @@ class Product {
   }
 }
 
-// Class that define the structure for the created Element node's attributes
+// Class that defines the attribute structure of an Element node
 class ElementAttribute {
+  // Assign the value to the corresponding Element node attributes
   constructor(attributeName, attributeValue) {
     this.name = attributeName;
     this.value = attributeValue;
   }
 }
 
-// Base Class that output different "components" of the web app
+// Class that creates & configures an Element node needed by a Sub-Class
 class Component {
+  // Identifies the HTML element where the Element node will be rendered
   constructor(renderHookId) {
-    // Identifies the HTML element where the created Element node will be attached to
     this.hookId = renderHookId;
   }
 
@@ -37,32 +38,33 @@ class Component {
       }
     }
 
-    // Append the created Element node stored in the local constant "rootElement"
-    // To the HTML element stored in the Class property "hookId"
+    // Append the Element node as a child to the identified HTML element in "hookId"
     document.getElementById(this.hookId).append(rootElement);
 
-    // Return the created & configured Element node
+    // Return Element node
     return rootElement;
   }
 }
 
-// Class that handles the HTML markup & specific data of a "Product" object
+// Class that renders the HTML markup & unique data of each "Product" object read
 class ProductItem {
+  // Parameter variable "product" holds a "Product" object forwarded by Class "ProductList"
   constructor(product) {
     this.product = product;
   }
 
-  // Method that handles the "click" Event listener of a "Product" object
+  // Callback method for a "click" event
   addToCart() {
-    // Calls the Static method "addProductToCart()" of the Class "App"
+    // Calls the Class "App" Static method "addProductTocart()"
     App.addProductToCart(this.product);
 
+    // For debugging
     console.log(this.product);
   }
 
-  // Method that handles the HTML markup & specific data of a "Product" object
+  // Method that handles the HTML markup & unique data of a "Product" object
   render() {
-    // Create an Element node "li" for each "Product" object
+    // Create an Element node "li" for each "Product" object read
     const prodEl = document.createElement("li");
     prodEl.className = "product-item";
     prodEl.innerHTML = `
@@ -78,14 +80,13 @@ class ProductItem {
         </div>
       `;
 
-    // Select the Element node "button" from the HTML markup w/in local constant "prodEl"
+    // Select the HTML element <button> from the HTML markup in the local constant "prodEl"
     const addCartButton = prodEl.querySelector("button");
 
-    // Chain a "click" Event listener & assign a callback method
-    // Bind the callback method to the Class "ProductItem"
+    // Chain an Event listener for a "click" event & its callback method
     addCartButton.addEventListener("click", this.addToCart.bind(this));
 
-    // Return the Element node "li" containing specific data of a "Product" object
+    // Return Element node "li"
     return prodEl;
   }
 }
@@ -107,49 +108,47 @@ class ProductList {
     ),
   ];
 
-  // Intentionally left empty (for now) as the field "products" have already been initialized
+  // Intentionally left empty as Class field "product" had been initialized
   constructor() {}
 
+  // Method that renders a list of "ProductItem" objects in the DOM
   render() {
-    // Create an Element node "ul" & set its attribute "class"
+    // Create Element node "ul" & set its attribute "class"
     const prodList = document.createElement("ul");
     prodList.className = "product-list";
 
-    // Iterate through each "Product" object element stored in the property "products"
+    // Iterate through each object element in the property "products"
     for (const prod of this.products) {
-      // Create a "ProductItem" object for each "Product" object read
+      // Instantiate the Class "ProductItem" & pass the "Product" object read as argument
       const productItem = new ProductItem(prod);
 
-      // Call method "render()" of the Class "ProductItem"; store returned Element node "li"
+      // Call method "render()" of Class "ProducItem" & store returned Element node "li"
       const prodEl = productItem.render();
 
-      // Append the Element node "li" as a child of the Element node "ul"
+      // Append the created Element node "li" as child of the Element node "ul"
       prodList.append(prodEl);
     }
 
     // Return the Element node "ul"
     return prodList;
-
-    // Append the Element node "ul" as a child of the Element node "div"
-    renderHook.append(prodList);
   }
 }
 
-// Sub-Class that contains a list of checked-out "ProductItem" objects
+// Class that contains the HTML markup & logic of the shopping cart
 class ShoppingCart extends Component {
-  // Store "ProductItem" objects that are "added to cart" (i.e. checked-out)
+  // Shopping cart that holds "ProductItem" objects
   items = [];
 
-  // Setter that updates the HTML markup w/ the sum returned by the Getter "totalAmount"
+  // Setter that updates the HTML markup stored in the property "outputTotal"
   set cartItems(value) {
-    // Override the existing array in Class field "items'"
+    // Overwrite stored objects w/ "ProductItems" objects from method "addProduct()"
     this.items = value;
 
-    // Update the HTML markup of "Total" w/ the sum returned by the Getter "totalAmount"
+    // Overwrite HTML markup w/ the returned sum from Getter "totalAmount"
     this.outputTotal.innerHTML = `<h2>Total: \$ ${this.totalAmount.toFixed(2)}</h2>`;
   }
 
-  // Getter that returns the total price of "ProductItem" objects placed in the cart
+  // Getter that calculates the sum of "ProductItem" objects' ".price" property
   get totalAmount() {
     const sum = this.items.reduce((previousValue, currentItem) => {
       return previousValue + currentItem.price;
@@ -158,82 +157,79 @@ class ShoppingCart extends Component {
     return sum;
   }
 
-  // Calls the Constructor method of the Base Class "Component"
+  // Calls the Base Class "Component" Constructor method
   constructor(renderHookId) {
     super(renderHookId);
   }
 
-  // Push the clicked "ProductItem" object into the Class field "items"
+  // Method that adds a "ProductItem" object into the shopping cart
   addProduct(product) {
-    // Copy current content of Class field "items"
-    const updatedItems = [...this.items];
+    // Assign copy of array stored in the field "items"
+    const updateItems = [...this.items];
 
-    // Add a new "ProductItem" object into the array
-    updatedItems.push(product);
+    // Push a new "ProductItem" object into the array stored in the local constant "updateItems"
+    updateItems.push(product);
 
-    // Trigger the Setter "cartItems()" to update HTML markup & sum of "Total"
-    this.cartItems = updatedItems;
+    // Assign the updated array as value to the Setter "cartItems"
+    this.cartItems = updateItems;
   }
 
+  // Method that renders the HTML markup of the shopping cart
   render() {
-    // Create an Element node using the inherited method "createRootElement" of
-    // The Base Class "Component" & set its "Class" attribute
+    // Create Element node "section" w/ an attribute "class" of "cart"
     const cartEl = this.createRootElement("section", "cart");
 
     cartEl.innerHTML = `
       <h2>Total: \$ ${0}</h2>
       <button>Order Now!</button>
-    `;
+      `;
 
-    // Dynamically create Class field "outputTotal" & then
-    // Grab Element node "h2" from HTML markup stored w/in local constant "cartEl"
+    // Dynamically create property "outputTotal" & assign Element node "h2" as value
     this.outputTotal = cartEl.querySelector("h2");
   }
 }
 
-// Class that renders "ProductList" & "ShoppingCart" objects in the DOM
+// Class that renders the "ShoppingCart" & "ProductList" objects in the DOM
 class Shop {
+  // Method that renders "ShoppingCart" & "ProductList" objects & attach to DOM
   render() {
-    // Selects the Element node "div" from the "index.html" w/ an attribute "id" of "app"
+    // Select & store Element node "div" taken from the "index.html" file
     const renderHook = document.getElementById("app");
 
-    // From a constant into an Class field that stores a "ShoppingCart" object
-    // Forward the attribute "id" value of the HTML element where
-    // The "ShoppingCart" object will be rendered on
+    // Instantiate the Sub-Class "ShoppingCart"; pass the HTML attribute "id" value of
+    // The HTML element where the Element node "section" will be rendered
     this.cart = new ShoppingCart("app");
 
-    // Calls the method "render()" of the Sub-Class "ShoppingCart"
+    // Call the Sub-Class "ShoppingCart" method "render()"
     this.cart.render();
 
-    // Instantiate the Class "ProductList" & call its method "render()"
-    // Store the returned Element node "ul" (a list of "ProductItem" objects)
+    // Instantiate Class "ProductList" & store returned Element node "ul"
     const productList = new ProductList();
-    const prodListEl = productList.render();
+    const prodlistEl = productList.render();
 
-    // Append the Element node "ul" as child of the Element node "div"
-    renderHook.append(prodListEl);
+    // Append Element node "ul" as child of the Element node "div"
+    renderHook.append(prodlistEl);
   }
 }
 
 class App {
   static cart;
 
-  // Static method that instantiates Class "Shop" then
-  // Renders the "ShoppingCart" & "ProductList" objects in the DOM
+  // Method that "starts" the web app
   static init() {
+    // Instantiate Class "Shop" & render "ShoppingCart" & "ProductList" objects in the DOM
     const shop = new Shop();
     shop.render();
 
-    // Copies the value stored w/in the property "cart" of the Clsss "Shop"
-    // To the Static field "cart"
+    // Access the CLass "ShoppingCart" field "cart" & store to the Static field "cart"
     this.cart = shop.cart;
   }
 
+  // Proxy for the Class "ShoppingCart" method "addProduct()"
   static addProductToCart(product) {
-    // Proxy calls the method "addProduct()" of the Class "ShoppingCart"
     this.cart.addProduct(product);
   }
 }
 
-// Call the Static method "init()" of the Class "App"
+// Call the Class "App" Static method "init()"
 App.init();
