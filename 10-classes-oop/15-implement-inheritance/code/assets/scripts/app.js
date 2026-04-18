@@ -10,7 +10,6 @@ class Product {
 
 // Class that defines the attribute structure of an Element node
 class ElementAttribute {
-  // Assign the value to the corresponding Element node attributes
   constructor(attributeName, attributeValue) {
     this.name = attributeName;
     this.value = attributeValue;
@@ -19,7 +18,7 @@ class ElementAttribute {
 
 // Class that creates & configures an Element node needed by a Sub-Class
 class Component {
-  // Identifies the HTML element where the Element node will be rendered
+  // Identifies the HTML element where the Element node (to be created) will be rendered
   constructor(renderHookId) {
     this.hookId = renderHookId;
   }
@@ -38,7 +37,7 @@ class Component {
       }
     }
 
-    // Append the Element node as a child to the identified HTML element in "hookId"
+    // Append the Element node as a child to the HTML element in Class property "hookId"
     document.getElementById(this.hookId).append(rootElement);
 
     // Return Element node
