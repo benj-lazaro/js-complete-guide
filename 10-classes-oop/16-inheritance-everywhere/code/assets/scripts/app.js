@@ -23,7 +23,7 @@ class Component {
     this.hookId = renderHookId;
   }
 
-  // Create & configure an Element node
+  // Method that create & configure an Element node
   createRootElement(tag, cssClasses, attributes) {
     const rootElement = document.createElement(tag);
 
@@ -87,7 +87,7 @@ class ProductItem extends Component {
   }
 }
 
-// Class that holds an array of "Product" objects
+// Sub-Class that holds an array of "Product" objects
 class ProductList extends Component {
   products = [
     new Product(
@@ -127,7 +127,7 @@ class ProductList extends Component {
   }
 }
 
-// Class that contains the HTML markup & logic of the shopping cart
+// Sub-Class that contains the HTML markup & logic of the shopping cart
 class ShoppingCart extends Component {
   // Shopping cart that holds "ProductItem" objects
   items = [];
@@ -202,6 +202,7 @@ class Shop {
   }
 }
 
+// Class that represents the web app
 class App {
   static cart;
 
@@ -211,11 +212,11 @@ class App {
     const shop = new Shop();
     shop.render();
 
-    // Access the CLass "ShoppingCart" field "cart" & store to the Static field "cart"
+    // Access the Sub-Class "ShoppingCart" field "cart" & store to the Static field "cart"
     this.cart = shop.cart;
   }
 
-  // Proxy for the Class "ShoppingCart" method "addProduct()"
+  // Proxy for the Sub-Class "ShoppingCart" method "addProduct()"
   static addProductToCart(product) {
     this.cart.addProduct(product);
   }
