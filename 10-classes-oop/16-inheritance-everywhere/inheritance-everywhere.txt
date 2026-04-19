@@ -1,101 +1,115 @@
 Using Inheritance Everywhere
 ----------------------------
-- Next is to implement inheritance
-    - On the (now) Sub-Classes "ProductItem", "ProductList"
+- For this lesson
+    - Implement the concept of inheritance on the Class "ProductItem" & "ProductList"
 
 
 - On the practice project (assets/scripts/app.js)
-    - Refactor the Class "ProductItem" to become
-        - A Sub-Class of the Base Class "Component"
+    - On the Class "ProductItem"
+        - Convert it to a Sub-Class of the Base Class "Component"
 
-    - On the method "render()"
-        - Replace the creation of the Element node "li" 
-            - Using the method "document.createElement()" w/ a call to
-                - The method "createRootElement()" of the Base Class "Component"
+    - On the Class method "render()"
+        - Delete two (2) lines of code
+            - Declaration of the local constant "prodEl"
 
-            - Pass the arguments
+            - Chaining of the property ".className" to the local constant "prodEl"
+                - Assigning of the value "product-item"
+
+            - Leave the line of code where property ".innerHTML"
+                - Chained to the loacl constant "prodEl" behind
+
+        - Replace those lines w/ a call 
+            - To the Base Class "Component" method "createRootElement()"
+            
+            - Pass the following arguments
                 - 1st = "li"
                 - 2nd = "product-item"
 
-            - Remove the line that chains the property ".className"
-                - To the local constant "prodEl"
+            - Store the returned Element node "li" 
+                - As value to the (new) local constant "prodEl"
 
-        - Remove the line that returns the local constant "prodEl"
-            - Since this functionality is already handled by
-                - The method "createRootElement()" of the Base Class "Component"
+        - Delete the line of code that 
+            - Returns the local constant "prodEl" using a "return" statement
 
 
-    - Switch to the method "render()" of the Class "ProductList"
-        - In the "for..of" loop
-            - Remove the declaration of the local constant "prodEl"
-            
-            - Leave the call to the method "render()" of the (now) Sub-Class "ProductItem"
-                - Stored w/in the local constant "productItem"
+    - On the Class "ProductList" method "render()"
+        - Inside the method's "for..of" loop
+            - Delete the line of code that chains the method "append()"
+                - To the local constant "prodList"
 
-            - Below the creation of the local constant "prodList"
-                - Create an Instance field on-the-fly named "id"
-                    - Assign the value "prod-list"
+            - Delete the keyword "const" & constant "prodEl"
+                - Leaving the call to the Class "ProductItem" method "render()" behind
 
-            - Remove the line of code that
-                - Chains the method ".append()" to the local constant "prodList"
+        - Outside the method's "for..of" loop
+            - Chain a new property named "id" to the local constant "prodList"
+                - Assign it w/ the value of "prod-list"
 
-            - On the instantiation of the Class "ProductItem"
-                - Pass "prod-list" as a 2nd argument value
+                - Located right after the chaining of the property ".className"
+                    - To the local constant "prodList"
 
-    
-    - Switch to the Constructor method of the Sub-Class "ProductItem"
+        - Back inside the method's "for..of" loop
+            - On the local constant "productItem" where it is assigned w/
+                - The instantiation of the Sub-Class "ProductItem"
+                - Pass the value "prod-list" as 2nd argument  
+
+
+    - On the (now) Sub-Class "ProductItem" Constructor method
         - Define a 2nd parameter variable named "renderHookId"
 
-        - Before the declaration of the Instance field "product"
-            - Use the keyword "super" to call the Constructor method of the Base Class "Component"
-                - Pass "renderHookId" as argument
+        - On the 1st line of code
+            - Use the keyword "super()"
+            - Pass the parameter variable "renderHookId" as argument
+
+        - NOTE: Remember Base Class properties is REQUIRED to come FIRST 
+            - BEFORE any of the Sub-Class propertie
 
 
-    - Switch to the Class "ProductList"
-        - Change it to a Sub-Class of the Base Class "Component"
+    - On the Class "ProductList"
+        - Convert it to a Sub-Class of the Base Class "Component"
 
-        - On the method "render()"
-            - Replace the creation of the Element node "ul" using
-                - The method "document.createElement()" w/ a call to
-                - The method "createRootElement()" of the Base Class "Component"
+        - On the Class method "render()"
+            - Refactor the assignment of the local constant "prodList" to calling
+                - The Base Class "Component" method "createRootElement()"
 
                 - Pass the arguments
                     - 1st = "ul"
                     - 2nd = "product-list"
                     - 3rd = "[new ElementAttribute("id", "prod-list")]"
 
-                    - NOTE: Finally, the instantiation of the Class "ElementAttribute"
+                - Delete the keyword "const" & constant "prodList"
+                
+            - Delete the lines of code that chains 
+                - The property ".id" to the local constant "prodList"
+                - The property ".className" to the local constant "prodList"
 
-                - Remove the piece of code "const prodList"
-                    - Leaving the call to the method "createRootElement" of 
-                        - The Base Class "Component" behind
-
-            - Delete the line that returns the local constant "prodList"
-
+            - Delete the line of code that 
+                - Returns the local constant "prodList" using a "return" statement
 
         - On the Constructor method
-            - Define the parameter variable "renderHookId"
+            - Define the parameter variable named "renderHookId"
 
-            - Call the Constructor method of the Base Class "Component"
-                - Using the keyword "super"
-
+        - Inside the Constructor method
+            - Use the keyword "super()"
             - Pass the parameter variable "renderHookId" as argument
-        
-    
-    - Switch to the method "render()" of the Class "Shop"
-        - Remove the piece of code "const prodListEl"
-            - Leave the call to the method "render()" of the Sub-Class "ProductList"
 
-        - Remove the line of code that
-            - Chains the method ".append()" to the local constant "renderHook"
-            
-        - Remove the creation of the local constant "renderHook"
 
-        - On the instantiation of the Class "ProductList"
+    - On the Class "Shop" method "render()"
+        - Remove the declaration of the local constant "prodListEl"
+            - Leaving behind the call to the Sub-Class "ProductList" method "render()"
+
+        - Delete the line of code that
+            - Chain the method "append()" to the local constant "renderHook"
+
+        - Delete the declaration of the local constant "renderHook"
+
+        - On the instantiation of the Sub-Class "ProductList"
             - Pass "app" as argument
-    
+
+            - NOTE: The value of "app" refers to the HTML element attribute "id"
+                - Where the Element node "ul" will be rendered
+
+
     - Save the changes
 
     - Load / reload the browser
         - No changes in the behavior of the app
-
