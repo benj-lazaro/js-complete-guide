@@ -1,0 +1,92 @@
+Overriding Methods & The super() Constructor
+--------------------------------------------
+- For this lesson
+    - Improve the codebase after implementing the concept of inheritance
+        - On the web app's Classes
+
+    - On the Class "Shop"
+        - It is observed to have redundant calls to the Class method "render()" of
+            - The Sub-Class "ShoppingCart" & "ProductList"
+
+        - Wherein after the instantiation of said Class
+            - It manually calls their respective Class method "render()"
+
+    - For improvement
+        - Calls to the respective Class method "render()"
+            - Should be part of the creation process (i.e. Base Class)
+
+    - NOTE: There are several ways to implement improvements
+        - On this lesson, the following are the instructor's own implementation
+
+
+- On the practice project (assets/scripts/app.js)
+    - On the Class "Shop" method "render()"
+        - Remove ALL manual calls to the respective Class method "render()" of
+            - The Sub-Class "ShoppingCart" & "ProductList"
+
+        - Remove the keyword "const" & local constant "productList"
+            - Leaving the instantiation of the Sub-Class "ProductList" behind
+
+        
+    - On the Class "App" method "init()"
+        - Remove the call to the Class "Shop" method "render()"
+
+
+    - On the Sub-Class "ProductList" method "render()"
+        - On the "for..of" loop
+            - Remove the call to the Sub-Class "ProductItem" method "render()"
+
+            - Remove the keyword "const" & local constant "productItem"
+                - Leaving the instantiation of the Sub-Class "ProductItem" behind
+
+        
+    - On the Base Class "Component" Constructor method
+        - Create a Class method named "render"
+            - Leave it empty
+
+        - On the Constructor method
+            - Call the Class method "render()" prefixed w/ the keyword "this"
+
+            - This calls the Sub-Class method "render()"
+                - NOT the Base Class "Component" method "render()"
+
+            - NOTE: All Sub-Classes have their own Class method "render()" that
+                - Override the Base Class "Component" method "render()"
+
+            - IMPORTANT: The keyword "this" inside a Constructor method
+                - Refers to the object being instantiated from a Class or Sub-Class
+                
+                - This is what the keyword "new" does on a Class or Sub-Class
+                    - e.g. "ShoppingCart", "ProductList", ProductItem"
+                    - NOT the Base Class "Component"
+
+    
+    - On the Class "Shop"
+        - Convert it to a Sub-Class of the Base Class "Component"
+
+        - Create a Constructor method
+        
+        - Inside the Constructor method
+            - Use the keyword "super()"
+
+        - NOTE: Alternatively, instead of making the Class "Shop" a Sub-Class
+            - Create a Constructor method
+            
+            - Inside the Constructor method
+                - Call the Class method "render()" prefixed w/ the keyword "this"
+
+            - Since there is NOTHING needed from the Base Class "Component" &
+                - Doing so is unnecessary
+
+
+    - Save the changes
+        - Load / reload the browser
+
+        - On the browser
+            - The shopping cart part is rendered 
+            - But the list of "ProductItem" objects is NOT
+
+        - On the browser's JavaScript console reports
+
+            "Uncaught TypeError: this.products is not iterable at ProductList.render"
+
