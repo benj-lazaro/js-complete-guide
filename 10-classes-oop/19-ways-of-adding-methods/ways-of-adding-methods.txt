@@ -1,0 +1,108 @@
+Different Ways Of Adding Methods
+--------------------------------
+- For this lesson
+    - Implement the logic that enables the "Order Now!" button
+        - Located w/in the Sub-Class "ShoppingCart" method "render()"
+        - Stored w/in the local constant "cartEl"
+
+    - When the button is clicked
+        - Display the message "Ordering..."
+            - On the browser's JavaScript console
+
+        - Display the content of the shopping cart 
+            - By accessing the Class field "items"
+
+
+- On the practice project (assets/scripts/app.js)
+    - On the Sub-Class "ShoppingCart" method "render()"
+        - Select the HTML element <button> using the method "querySelector()"
+            - On the local constant "cartEl"
+            - Pass "button" as argument
+        
+        - Store returned Element node "button" to the local constant "orderButton"
+
+        - Chain the method "addEventListener()" to the local constant "orderButton"
+            - Pass the arguments
+                - 1st = "click"
+                - 2nd = "orderProduct"
+
+        - Create a callback Method named "orderProducts"
+            - Pass the string "Ordering..." as argument to "console.log()"
+            - Pass the Class field "this.items" as argument to "console.log()"
+
+
+    - Save the changes
+        - Load / reload the browser
+
+        - Add a "ProductItem" object into the shopping cart
+            - By clicking the button "Add to Cart"
+
+        - Click the button "Order Now!"
+            - On the JavaScript console
+                - The message "Ordering..." is displayed
+                - However the content of the Class property "items" returns "undefined"
+
+            - This is due to the keyword "this" refers to the Element node "button"
+                - NOT the Sub-Class "ShoppingCart"
+            
+            - Based on previous lessons, one solution by 
+                - Chaining the method "bind()" to the 2nd argument value 
+                    - i.e. "this.orderProduct" of the method "addEventListener()"
+                
+                - Then pass "this" as argument value to the method "bind()"
+        
+            - However, this lesson focus on alternatives to the method "bind()"
+
+
+    - 1st alternative solution
+        - To replace the method "orderProducts()" as the 2nd argument value for
+            - The chained method "addEventListener()" to the local constant "cartEl"
+
+        - With an Anonymous function (in-place) that
+            - Calls the callback method "this.orderProducts()" 
+
+        - NOTE: The keyword "this" w/in an Anonymous function will NOT be bound
+            - To the Element node "button" that triggered the Event "click"
+            - Instead refers to the context of the Sub-Class that it resides in
+
+    
+    - Save the changes
+        - Load / reload the browser
+        - Click the button "Add to Cart" of any rendered "ProductItem" object
+        - Then click the button "Order Now!" of the shopping cart
+            - The message "Ordering..." & content of the Class property "items" are
+            - Displayed on the browser's JavaScript console
+    
+
+    - 2nd alternative solution
+        - Convert the callback method "orderProducts()" into a Class field
+            - Then assigning (storing) an Arrow function as value
+
+        - On the Constructor method
+            - Pass as "false" as a 2nd argument to "super()"
+                - To prevent the Base Class "Component" Constructor method from
+                    - Triggering the Sub-Class "ShoppingCart" method "render()"
+        
+            - Move the Class field "orderProduct" into the Constructor method
+                - Making it a Class property "orderProduct" prefixed w/ the keyword "this"
+
+                - Located right AFTER the call to "super()"
+
+                - Then manually call the Class method "this.render()"
+
+        - NOTE: This approach is more of a workaround for this specific use changes
+
+
+    - Save the changes
+        - Load / reload the browser
+        - Click the button "Add to Cart" of any rendered "ProductItem" object
+        - Then click the button "Order Now!" of the shopping cart
+            - The message "Ordering..." & content of the Class property "items" are
+            - Displayed on the browser's JavaScript console
+
+
+- NOTE: There is a difference between
+    - Storing an Anonymous function w/in a Class property
+    - Adding a method w/in a Class
+
+    - This will be discussed in detail on the next module
