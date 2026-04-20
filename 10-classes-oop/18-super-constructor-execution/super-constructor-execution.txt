@@ -1,0 +1,92 @@
+super() Constructor Execution, Order & "this"
+---------------------------------------------
+- For this lesson
+    - Address the reported error encountered on the previous lesson
+
+        "Uncaught TypeError: this.products is not iterable at ProductList.render"
+
+    - Root cause:
+        - The Sub-Class "ProductList" field "products" is inaccessible when
+            - The Constructor method calls the Base Class "Component" Constructor method
+
+        - The Base Class "Component" Constructor method
+            - Calls the Sub-Class "ProductList" method "render()"
+
+        - The Sub-Class "ProductList" method "render()" relies on data provided by
+            - The Class field "products" w/c happens to be NOT created yet until
+            - The call to the Base Class "Component" Constructor method finished execution
+            
+        - NOTE: This is a case where the Sub-Class "ProductList" field "products" is
+            - Created ONLY AFTER the call to "super()" w/in the Constructor method
+
+        - IMPORTANT: The keyword "this" w/in a Sub-Class' Constructor method is
+            - Accessible ONLY AFTER the parent Class' Constructor method finished execution
+            - Also include Class method(s) invoked by the parent Class Constructor method
+        
+
+- On the practice project (assets/scripts/app.js)
+    - On the Sub-Class "ProductList" field "products"
+        - Select & cut the assigned hardcoded array
+        - Leave it assigned w/ an empty array
+    
+
+    - Create a new Class method named "fetchProducts"
+        - Define a Class field named "products" prefixed w/ the keyword "this"
+        - Paste the hardcoded array as value
+
+
+    - On the Constructor method
+        - Call the Class method "fetchProducts()" prefixed w/ the keyword "this"
+            - At the last line of code
+
+
+    - On the Class method "render()"
+        - Cut the entire "for..of" loop
+
+
+    - Create a new Class method named "renderProducts"
+        - Paste the "for..of" loop
+
+
+    - Back on the Class method "render()"
+        - Check the Class property "products" prefixed w/ the keyword "this"
+            - Using an "if" statement
+
+        - If the Class property "products" is truthy & its ".length" property > 0
+            - Call the Class method "renderProducts()" prefixed w/ keyword "this"
+
+    
+    - Back on the Class method "fetchProducts()"
+        - Call the method "renderProducts()" prefixed w/ the keyword "this"
+            - At the last line of code 
+
+    
+    - On the Base Class "Component" Constructor method
+        - Define a 2nd parameter variable named "shouldRender"
+            - Assign a defult value of "true"
+
+        - BEFORE the call to a Sub-Class' method "render()"
+            - Check if the parameter variable "shouldRender" is truthy
+            - Using an "if" statement
+            
+        - If truthy
+            - Call the Sub-Class' method "render()"
+            - Otherwise, do NOTHING
+
+
+    - On the Subl-Class "ProductItem" Constructor method
+        - On the keyword "super()"
+            - Pass "false" as 2nd arguemnt value
+
+            - NOTE: This prevent the Class method "render()" from 
+                - Being executed by the Base Class' Constructor method
+                - Since the Class property "products" is NOT created yet
+
+        - After a "ProductItem" object is assigned as value to the Class property "product"
+            - Manually call the Class method "render()" prefixed w/ the keyword "this"
+
+
+    - Save the changes
+
+    - Load / reload the browser
+        - The behavior of the app is restored
