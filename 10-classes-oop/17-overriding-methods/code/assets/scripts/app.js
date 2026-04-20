@@ -187,8 +187,8 @@ class ShoppingCart extends Component {
 
 // Class that renders the "ShoppingCart" & "ProductList" objects in the DOM
 class Shop {
-  // Simply trigger Constructor method upon instantiation into an object
   constructor() {
+    // Trigger Class method "render()" upon instantation of Class into an object
     this.render();
   }
 
