@@ -1,0 +1,30 @@
+Pseudo Private Properties
+-------------------------
+- In addition to private Class fields & properties
+    - Pseudo Class fields & properties
+    
+    - Instead of prefix a Class field or property w/ a "#"
+        - It is prefixed w/ a "_" instead
+
+    Syntax:
+    class <class_name> {
+        _<field_name> = <default_value>;
+
+        constructor(<parameter_variable>, ...) {
+            ...
+        }
+
+        <method_name>() {
+            ...
+        }        
+    }
+
+
+    - IMPORTANT: This is just a NAMING CONVENTION
+        - Intended to "signal" something to a developer
+            - A hint that a developer SHOULD respect
+
+        - It does NOT prevent a Class field / property from
+            - Being accessed outside of the Class 
+
+        - It is NOT as strict as the "real" private Class field / property
