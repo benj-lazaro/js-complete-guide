@@ -216,6 +216,7 @@ class ShoppingCart extends Component {
     // Dynamically create property "outputTotal" & assign Element node "h2" as value
     this.outputTotal = cartEl.querySelector("h2");
 
+    // Select the Element node "button" from HTML element in local constant "cartEl"
     const orderButton = cartEl.querySelector("button");
     // orderButton.addEventListener("click", () => this.orderProducts());
     orderButton.addEventListener("click", this.orderProducts);
@@ -231,12 +232,9 @@ class Shop {
 
   // Method that renders "ShoppingCart" & "ProductList" objects & attach to DOM
   render() {
-    // Instantiate the Sub-Class "ShoppingCart" & pass the value of HTML attribute "id"
-    // Where the Element node "section" will be rendered
+    // Instantiate objects & pass the HTML attribute "id" value where
+    // The respective Element nodes "section" & "ul" will be rendered
     this.cart = new ShoppingCart("app");
-
-    // Instantiate Sub-Class "ProductList" & pass the value of HTML attribute "id"
-    // Where the Element node "ul" will be rendered
     new ProductList("app");
   }
 }
