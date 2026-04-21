@@ -1,0 +1,89 @@
+Private Properties
+------------------
+- For this lesson
+    - Focuses on Private Class fields, properties & methods
+        - A brand-new JavaScript feature
+        - Fow now, it has limited browser support (except for Chrome)
+
+    - Public Class properties & methods
+        - Accessible OUTSIDE of a Class (or object)
+        
+        - Making it accessible to other Classes (or objects)
+            - e.g. product.buy()
+            - Class method "buy()" is called outside of its Class
+
+    - Private Class properties & methods
+        - Accessible ONLY INSIDE of a Class (or object)
+
+        - Making it accessible w/in a Class
+            - To split / re-use code
+            - e.g. hard-coded values, re-used Class-specific logic
+
+        - Accessing a private Class property 
+        
+            "Uncaught SyntaxError: Private fields "..." must be declared in an enclosing class"
+
+
+- To set a Class property or method as private
+    - When defining a Class property & method as private
+        - Prefix the name w/ a "#"
+
+    - On a statement, a private Class property & method is 
+        - Expressed as having a prefix "#"
+        - e.g. #products, this.#fetchProducts()
+
+    Syntax:
+    class <class_name> {
+        #<field_name> = <default_value>;
+
+        constructor(<parameter_variable>, ...) {
+            ...
+        }
+
+        #<method_name>() {
+            ...
+        }        
+    }
+
+
+- On the practice project (assets/scripts/app.js)
+    - On the Sub-Class "ProductList" field "products"
+        - Convert it to a private Class field
+            - Prefixing it w/ a "#"
+
+        - Refactor ALL references of the Class field "property"
+            - To "#products" w/in the Sub-Class
+
+        - NOTE: Class field "products" is ONLY accessed w/in the Sub-Class
+
+    
+    - Save the changes
+        - Load / reload the browser 
+        
+        - Browser reports 
+
+            "Uncaught TypeError: Cannot read private member #products from
+             an object whose class did not declare it"
+
+        - Root cause
+            - The Base Class "Component" does NOT have access to
+                - The Sub-Class "ProductList" private Class field "#products"
+    
+
+    - On Constructor method
+        - Pass the "false" as 2nd argument value to "super()"
+            - Prevents the Base Class' Constructor method from
+            - Triggering the Sub-Class method "render()" 
+
+        - Manually call the Class method "this.render()"
+            - Located before the Class method "this.fetchProducts()"          
+                - Since it calls the Class method "this.renderProducts()" 
+                
+            - The Class method "this.renderProducts()"
+                - Access & iterates through the values that are stored in
+                - The (now) private Class field "#products"
+
+    
+    - Save the changes
+        - Load / reload the browser
+        - The behavior of the app is restored
