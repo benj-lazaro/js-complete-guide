@@ -1,0 +1,46 @@
+Assignment 07: Time To Practice Classes & OOP
+---------------------------------------------
+- Task #1:
+    - Create a "Course" Class that has 3 properties
+        - Namely "title", "length" & "price"
+        - All set up w/in the Constructur method
+    
+    - Instantiate the Class twice w/
+        - Two (2) dummary courses of your choice
+        - Output the objects to the console
+
+
+- Task #2:
+    - Add two (2) methods
+        - A method that calculates the length / price value
+
+        - A method that outputs a nice course summary
+            - Including title, length & price
+
+    - Call these methods thereafter
+        - Output the result to the browser JavaScript console
+
+
+- Task #3:
+    - Create two (2) specialized or Sub-Classes
+        - Class "PracticalCourse"
+        - Class "TheorethicalCourse"
+
+        - NOTE: Inherits from the Base Clss "Course"
+
+    - The Class "PracticalCourse" have a Class property "numOfExercises"
+
+    - The Class "TheorethicalCourse" have a Class method "publish()"
+        - The method just prints something to the JavaScript console
+
+    - Instantiate BOTH Classes & use new & old properties & methods
+
+
+- Task #4:
+    - Use Getters & Setters to ensure that the Base Class "Course" property "price"
+        - Can ONLY BE set to a positive value
+        - Returns w/ a "$" in front of Instantiate
+
+
+- Task #5:
+    - Use private Class fields to harden the Getter / Setter approach from Task #4
