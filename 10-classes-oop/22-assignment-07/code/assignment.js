@@ -1,52 +1,34 @@
 class Course {
+  #price = 0;
+
+  // Task #4
+  get price() {
+    return "$" + this.#price;
+  }
+
+  set price(value) {
+    if (value < 0) {
+      throw "Invalid value!";
+    }
+
+    // Task #5
+    this.#price = value;
+  }
+
   constructor(title, length, price) {
     this.title = title;
     this.length = length;
     this.price = price;
   }
 
-  set coursePrice(price) {
-    if (price < 0) {
-      this.price = Math.abs(price);
-    }
+  calculateValue() {
+    return (this.length / this.#price).toFixed(2);
   }
 
-  get coursePriceTag() {
-    this.coursePrice = this.price;
-    return `\$${this.price}`;
-  }
-
-  lengthPriceValue() {
-    return (this.length / this.price).toFixed(2);
-  }
-
-  courseSummary() {
+  printSummary() {
     console.log(
-      `The ${this.title} course has ${this.length} hours runtime, priced at ${this.coursePriceTag}`,
+      `Title: ${this.title}, Length: ${this.length}, Price: ${this.price}`,
     );
-  }
-}
-
-class PracticalCourse extends Course {
-  constructor(title, length, price, exerciseCount) {
-    super(title, length, price);
-    this.numOfExercises = exerciseCount;
-  }
-
-  courseSummary() {
-    console.log(
-      `The ${this.title} course has ${this.length} hours runtime, with ${this.numOfExercises} exercises priced at ${this.coursePriceTag}`,
-    );
-  }
-}
-
-class TheoreticalCourse extends Course {
-  constructor(title, length, price) {
-    super(title, length, price);
-  }
-
-  publish() {
-    console.log(`The ${this.title} was released on April 2026.`);
   }
 }
 
@@ -56,14 +38,37 @@ const phpCourse = new Course("PHP", 55, 50);
 console.log(jsCourse, phpCourse);
 
 // Task #2
-console.log(jsCourse.lengthPriceValue());
-console.log(phpCourse.lengthPriceValue());
-jsCourse.courseSummary();
-phpCourse.courseSummary();
+console.log(jsCourse.calculateValue());
+console.log(phpCourse.calculateValue());
+jsCourse.printSummary();
+phpCourse.printSummary();
+
+// Task #3
+class PracticalCourse extends Course {
+  constructor(title, length, price, exerciseCount) {
+    super(title, length, price);
+    this.numOfExercises = exerciseCount;
+  }
+}
+
+class TheoreticalCourse extends Course {
+  publish() {
+    console.log(`${this.title} Release Date: April 2026.`);
+  }
+}
 
 const linuxCourse = new PracticalCourse("Linux operations", 70, 60, 400);
-const algorithmCourse = new TheoreticalCourse("Algorithms", 100, 20);
+console.log(linuxCourse);
+linuxCourse.printSummary();
 
-linuxCourse.courseSummary();
-algorithmCourse.courseSummary();
+const algorithmCourse = new TheoreticalCourse("Algorithms", 100, 20);
+console.log(algorithmCourse);
+algorithmCourse.printSummary();
 algorithmCourse.publish();
+
+// Using the Base Class' Setter
+algorithmCourse.price = 1000;
+console.log(algorithmCourse);
+
+// Directly accessing the Base Class' private field
+// algorithmCourse.#price = 6000;
