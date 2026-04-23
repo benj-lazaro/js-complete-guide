@@ -1,0 +1,46 @@
+Understanding Object Descriptors
+--------------------------------
+- Object descriptors allows to make an object's properties
+    - To be unwritable, undeletable, unconfigurable or 
+        - Excluded from a "for..in" loop
+
+    - Every property of an object has a descriptor
+        - These descriptors influences how an object's property can be used
+
+
+- To view an object's (property) descriptors
+    - Use the Class "Object" method "getOwnPropertyDescriptors()"
+        - Pass the object as argument
+
+    - Returns metadata stored behind-the-scenes
+
+    Syntax:
+    Object.getOwnPropertyDescriptors(<object>);
+
+
+    - Each object property has the following descriptors
+        - configurable  = can be deleted
+        - enumerable    = appear in a "for..in" loop
+        - value         = assigned value of property
+        - writable      = can be assigned w/ a new value
+
+        - NOTE: Each descriptor is assigned w/ a boolean "true" or "false"
+
+    - Use case:
+        - Lock down an object's property
+        - Make a property undeletable or unwritable
+
+
+- To set an object's (property) descriptors
+    - Use the Class "Object" method "defineProperty()"
+
+    Syntax:
+    Object.defineProperty(<object>, <property_name>, {
+        configurable: <boolean_value>,
+        enumerable: <boolean_value>,
+        value: <object.property_name>,
+        writable: <boolean_value>,
+        });
+
+    - NOTE: A descriptor that is NOT set will be assigned a value of "false"
+    
