@@ -1,0 +1,13 @@
+The "instanceof" Operator
+-------------------------
+- The "instanceof" operator
+    - Checks if an object is created based on a certain Class
+    
+    - Returns a boolean value of "true" if the object is
+        - An instance of the stated Class
+        - Otherwise, returns a "false"
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/instanceof)
+
+    Syntax:
+    <object_name> instanceof <class_name>;
