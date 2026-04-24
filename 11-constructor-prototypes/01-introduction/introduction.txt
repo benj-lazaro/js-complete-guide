@@ -1,15 +1,15 @@
 Module Introduction
 -------------------
 - This section focuses on:
-    - What happens behind-the-scenes of Classes & objects
+    - Behind-the-scene of Classes & objects
 
-    - Explore Constructor functions (w/o Classes)
-        - Building objects based on blueprints w/o a Class
+    - Explore Constructor function w/o Classes
+        - Build objects based on blueprints w/o a Class
 
     - Look on prototypes & prototypical inheritance
-        - This is what the keyword "extends" does 
-            - When using inheritance w/ Classes behind-the-scenes
+        - What the keyword "extends" do when using inheritance w/ a Class
 
-    - NOTE: It is important to understand these concepts in this module
-        - These are the core (i.e. important part) of JavaScript
-        - Every JavaScript developers should understand it
+    - NOTE: Important to understand these concepts
+        - These are the important part of JavaScript
+        
+        - Every JavaScript developer should understand these concepts
