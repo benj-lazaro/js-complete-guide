@@ -1,0 +1,27 @@
+Wrap Up
+-------
+- Classes are blueprints 
+    - Blueprints used to create objects based on them
+    
+    - Using the keyword "new"
+        - Executing the Class like a function
+
+        new <class_name>();
+
+
+- Data & logic can be added inside of a Class
+    - Use public & private properties
+
+    - Add a Constructor method that 
+        - Gets executed right away when an object is created
+
+    - Group any logic into a Class
+
+
+- Use inheritance to share common functionalities w/ other Classes
+    - Allows to split code into reasonable units where
+        - Classes & objects are the uints that holds logic & data
+        - Build an app from these units
+
+    - Helps structure code in a clearner, easier to understand way
+
