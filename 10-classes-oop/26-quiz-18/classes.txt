@@ -1,0 +1,23 @@
+Quiz 18: Classes
+----------------
+- What's the purpose of a Class?
+    - Answer: Classes are blueprints for JavaScript objects
+
+
+- What's a class "field"?
+    - Answer: In the end a property defined outside of the Constructor method
+        - (Directly inside the class body)
+
+
+- What's the purpose of inheritance?
+    - Answer: Classes can be based on other Classes & hence share functionality
+
+
+- Which of the following statements about inheritance is correct?
+    - Answer: super() NEEDS to be called before you use "this" in the
+        - Inherting Class (i.e. sub-Class)
+
+
+- What would be a good use-case for a private property?
+    - Answer: A property should be used internally only
+    
