@@ -1,0 +1,24 @@
+Introducing Constructor Functions
+---------------------------------
+- When a Class instantiates into an object
+    - Behind-the-scenes the Class will be written as a Constructor function
+    
+
+- A Constructor function is a special function that
+    - Acts as blueprint for objects
+        - Can hold properties & methods 
+    
+    - Creates an object using the keyword "new"
+
+    - IMPORTANT: Capitalize the 1st letter of the Constructor function's name
+        - In the same naming convention of a Class
+
+    - NOTE: This was JavaScript's way of creating an object
+        - Back when Classes weren't supported
+        
+        - Still exists today
+            - For web apps that need to run on older browsers
+            - Browser that didn't support JavaScript Classes
+
+    
+
