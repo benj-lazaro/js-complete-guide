@@ -1,0 +1,31 @@
+Constructor Functions VS Classes & Understanding "new"
+------------------------------------------------------
+- The keyword "new" is responsible behind a Constructor function
+    - To return an object it created
+
+    - NOT using the keyword "new" on a Constructor function
+        - It executes the Constructor function like a normal function
+        - Returns an "undefined" value due to the absence of a "return" statement
+
+
+- What the keyword "new" does behind-the-scene on a Constructor function
+    - The keyword "this" is assigned w/ an empty object
+    - Next, it adds defined properties and/or methods to the empty object
+    - Returns the keyword "this"
+
+    - NOTE: The same thing happens behind-the-scenes on a Class 
+
+
+- JavaScript Class is a "syntatic sugar" for the Constructor function
+    - As the latter can be both cumbersome & confusing 
+
+    - The Class offers an easy way to write a "blueprint" of an object
+        - As well as help w/ the concept called "prototypes"
+
+
+- The Constructor method w/in a Class is similar to what a Constructor function does
+    - It executes ALL the code inside of it
+        - Upon the creation of (instantiation of a Class to) an object
+    
+    - However, methods are treated differently
+        - To be further elaborated on succeeding lessons
