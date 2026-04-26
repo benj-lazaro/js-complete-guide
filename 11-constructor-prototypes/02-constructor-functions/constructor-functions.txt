@@ -1,24 +1,48 @@
 Introducing Constructor Functions
 ---------------------------------
 - When a Class instantiates into an object
-    - Behind-the-scenes the Class will be written as a Constructor function
+    - Behind-the-scenes the Class is written as a Constructor function
     
 
-- A Constructor function is a special function that
-    - Acts as blueprint for objects
-        - Can hold properties & methods 
-    
-    - Creates an object using the keyword "new"
+- A Constructor function is a special function that acts as a blueprint for objects
+    - It can hold properties & methods
 
-    - IMPORTANT: Capitalize the 1st letter of the Constructor function's name
-        - In the same naming convention of a Class
+    - This was JavaScript way of creating an object before
+        - Classes were implemented
 
-    - NOTE: This was JavaScript's way of creating an object
-        - Back when Classes weren't supported
-        
-        - Still exists today
-            - For web apps that need to run on older browsers
-            - Browser that didn't support JavaScript Classes
+        - Still exists today on web apps that runs on older browsers that
+            - Does NOT support JavaScript Classes
 
-    
 
+- On the example code (app.js)
+    - Create a Class named "Person"
+        - Define a Class field "name"
+            - Assign w/ the value of "Max"
+
+        - Define a Constructor method
+            - Dynamnically create a Class property "age"
+            - Assign w/ the value of 40
+
+        - Define a Class method "greet()"
+            - Pass a string template literal as argument to "console.log"
+            - String temlate literal accesses the Class field "name" & property "age"
+
+        - Instantiate the Class into an object
+
+
+    - Create a Constructor function named "Person1"
+        - Define the following object properties
+            - "this.name" assigned w/ the value of "Manu"
+            - "this.age" assigned w/ the value of 40
+            - "this.greet" assigned w/ an Anonymous function
+
+        - The Anonymous function
+            - Pass a string template literal as argument to "console.log"
+            - String temlate literal accesses the Class field "name" & property "age"
+
+
+    - Save the changes
+        - Load / reload the browser
+        - Launch the browser's JavaScript console
+
+        - Two (2) objects created & respective methods launched

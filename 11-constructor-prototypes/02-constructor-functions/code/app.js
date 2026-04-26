@@ -1,4 +1,4 @@
-// Create an object using a Class
+// Creating an object using a Class
 class Person {
   name = "Max";
 
@@ -14,7 +14,7 @@ class Person {
 const person = new Person();
 person.greet();
 
-// Create an object using a Constructor function
+// Creating an object using a Constructor function
 function Person1() {
   this.name = "Manu";
   this.age = 40;
