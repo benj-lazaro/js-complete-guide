@@ -1,4 +1,4 @@
-// Constructor function
+// Create an object using Constructor function
 function Person() {
   this.name = "Max";
   this.age = 40;
@@ -7,32 +7,39 @@ function Person() {
   };
 }
 
-// Assign a fallback object to the property "prototype" of the "Person" object
-// This object becomes part of the created object's property "__proto__"
 Person.prototype = {
   printAge() {
     console.log(this.age);
   },
+  course: "JavaScript",
 };
 
-// Create an object using a Constructor function
-const person = new Person();
-person.greet();
-console.log(person);
-console.log("----------");
+const person1 = new Person();
+console.log(person1);
+person1.greet();
+console.log("-----");
 
-// Access the "Person" object's property "__proto__"
-console.log(person.__proto__);
-console.log("----------");
+// The "prototype object" assigned to the property ".__proto__" of
+// The Constructor function & created object based on it
+console.log(Person.__proto__);
+console.log(person1.__proto__);
+console.log("-----");
 
-// Access the Constructor function "Person" property "prototype"
+// The "prototype object" assigned to the property ".prototype" of
+// Constructor function & property ".__proto__" of the created object based on it
 console.log(Person.prototype);
-console.log("----------");
+console.log(person1.__proto__);
+console.log("-----");
 
-// Check if property "__proto__" & "prototypes" references the same object
-console.log(person.__proto__ === Person.prototype);
-console.log("----------");
+// Create an object using Object literal notation
+const person2 = {
+  name: "John Wick",
+  age: 60,
+  greet: function () {
+    console.log(`Hi! My name is ${this.name}, I'm ${this.age} years old`);
+  },
+};
 
-// Access the fallback method printAge()
-person.printAge();
-console.log("----------");
+console.log(person2);
+person2.greet();
+console.log("-----");

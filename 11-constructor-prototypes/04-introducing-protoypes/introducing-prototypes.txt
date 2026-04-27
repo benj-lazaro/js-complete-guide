@@ -1,80 +1,134 @@
 Introducing Prototypes
 ----------------------
-- JavaScript is a prototype-based language that uses prototypical inheritance
-    - The concept of inheritance on a Constructor function is implemented
-        - Through the concept of prototypes
+- JavaScript is a prototype-based language that use prototypical inheritance
 
 
-- Every object created by a Constructor function
-    - Automatically creates a special property "__proto__"
-        - Upon its creation using the keyword "new"
-
-    - NOTE: On Chrome, the property "__proto__" is displayed as "[[Prototype]]"
-
-    - Every JavaScript object has a property "__proto__" 
-        - Assigned w/ an object that also has its own property "__proto__"
-        - This is how JavaScript shared code w/ other objects
-
-    - IMPORTANT: The property "__proto__" is present on EVERY JavaScript object
-        - Regardless of how the object is created 
-        - (e.g. class, Constructor function, Object literal notation)
+- The keyword "class" is basically just a syntatic sugar for 
+    - Constructor functions
+    - Working w/ the prototypes
 
 
-- The object assigned as value to the property "__proto__" is a Base object
-    - It is the object that the created object inherits from using a Constructor function
-        - Gains access to properties / methods that are NOT defined w/in the created object
+- Instantiating an object using a Construction function & the keyword "new"
+    - The created object contains ALL properties & methods
+        - Defined w/in that Construction function
 
-
-- The object assigned as value to the property "__proto__" serves as a "fallback object"
-    - When an object is built using a Constructor function or a Class
-
-    - If a method is called on the created object
-        - JavaScript checks if the method is part (defined w/in) of the object
-
-    - If the method is part of the created object
-        - JavaScript executes it
-
-    - If the method is NOT part of the created object
-        - JavaScript accesses the object assigned as value to the property "__proto__"
-        - Searches for the method 
-
-    - If the method is NOT found w/in that object
-        - JavaScript accesses the object assigned as value to the nested property "__proto__"
-        - Searches for the method again
-
-    - This process repeats on ALL nested property "__proto__" until
-        - The matching method is found & executes it
+    - In order to share properties & methods available to ALL objects
+        - Created from the same Construction function
         
-        - It reaches the last nested property "__proto__" of the Global "Object" object
-            - Returns an "undefined" value
-            - Flags an error message
-
-    - NOTE: This process is referred as the "Prototype Chain"
+    - This is implement through the concept of prototypes
+        - Specifically, the Construction function's property ".prototype"
 
 
-- An object's properties & methods defined w/in a Constructor function
-    - Gets assigned as part of the object assigned as value to the property "prototype"
+- By default, a Constructor function has a property named ".prototype"
+    - The property ".prototype" is NOT added to the objects it creates
+
+    - Instead, the object that is assigned as value to the property ".prototype" is
+        - Automatically assigned as a prototype to the object created
+        - When instantiating a Constructor function
+        
+
+- A prototype is an object itself (i.e. "prototype object")
+    - Every JavaScript object has a prototype
+        - It is how JavaScript shares code in the end
+
+    - It is basically a connected object w/c 
+        - Serves as a "fallback object"
+
+    - JavaScript looks at a chain of "prototype objects" when
+        - Searching for a certain property or method that
+            - It can NOT find on the object it started looking at
+
+        - It searches through the "prototype object" of the "prototype object" 
+            - All the way until it either           
+                - Finds the certain property or method
+
+                - Reaches the end of the chain w/ NO success
+                    - Returns "undefined" if a property
+                    - Throws an error if a method
     
-    - NOTE: On Chrome, the property "prototype" is displayed as "constructor"
-
-    - IMPORTANT: The property "prototype" (or "constructor") is added
-        - When an object is created using a Constructor function
-        
-        - The property "__proto__" exists on ALL JavaScript objects
-
-    - The properties & methods defined w/in a Constructor function
-        - Becomes part of the object assigned as value to the nested property "__proto__" of
-            - The created object's property "prototype" (or "constructor")
-
-    - NOTE: The object's property "__proto__" & the nested property "__proto__"
-        - Located w/in the property "prototype" (or "constructor") references 
-        - The exact SAME object (NOT copies) in memory
+    - NOTE: A "prototype object" has its own prototype
 
 
-- The property "prototype" (or "constructor") can be used to assign an object that
-    - Will be assigned as value to the property "__proto__" of any object built
-    - Based on the Constructor function that performs this task
+- On the created object by a Constructor function (as well as in every object)
+    - It has a special property named ".__proto__"
+
+        - On Chrome' Dev Tools, 
+            - The property ".__proto__" is viewed as "[[Prototype]]"
+
+        - On Firefox's Dev Tools
+            - The property ".__proto__" is viewed as "<prototype>"
+
+    - The property ".__proto__" is assigned w/ a "prototype object"
+        - Think of the "prototype object" like a Base Class
+
+        - A connected object to w/c JavaScript reaches out to
+            - In order to find properties or methods that
+            - Does NOT exists on the created object itself
+
+    - NOTE: Every created object is based on the "base prototype object"
+        - Referring to an object's last nested (chained) property ".__proto__"
 
 
-- The keyword "this" w/in an object assigned as value to the property "prototype"
-    - ALWAYS refers to the object on w/c a method is called
+- The Protype Chain
+    - The idea behind it is when a blueprint is built w/ a Constructor function
+        - Then creates an object based on that Constructor function
+
+    - When accessing a property or method that is NOT defined 
+        - On the blueprint of that object's Constructor function
+
+    - JavaScript first checks if the property or method is part of the created object
+        - If YES
+            - JavaScript access or execute the property or method, respectively
+
+        - If NO
+            - JavaScript looks at the "prototype object" assigned as value
+                - To the property ".__proto__" of the created object
+
+        - If the property or method is still NOT found
+            - JavaScript looks at the "prototype object" assigned as value
+            - To the property ".__proto__" of the earlier assigned "prototype object"
+
+        - Search continues until either
+            - The property or method is found
+            - Reaches the last property ".__proto__" (i.e. end of the Prototype Chain)
+
+
+- An object created by a Constructor function
+    - By default, the property ".__proto__" is assigned w/ a default object that
+        - Conains two (2) properties
+            - "constructor" = assigned w/ a function
+            - ".__proto__"  = assigned or points to another object
+
+
+- In order to tweak or set the "prototype object" assigned as value to
+    - The created object's property ".__proto__"
+    
+    - Requires the use of the Constructor function's property ".prototype"
+
+    - Properties & methods set w/in the object assigned as value to the property ".prototype"
+        - Becomes the "protoype object" assigned to the property ".__proto__" of
+        - The created object based on that Constructor function
+
+    - This is why the "prototype object" assigned to 
+        - The property ".prototype" of the Constructor function &
+        - The property ".__proto__" of the created object
+        - References (points to) the SAME (NOT copied) object in memory
+
+    - IMPORTANT: The "prototype object" assigned to the property ".__proto__" of
+        - The Constructor function points to a different object
+
+        - It is NOT te same "prototype object" assigned to the property ".__proto__" of
+            - The created object based on that Construction function
+
+    - The keyword "this" inside the "prototype object" assigned as value to
+        - The property ".protoype" of a Constructor function 
+        - ALWAYS refers to the object object w/c accessed the property or called the method
+
+
+- Prototypes is what Class and the keyword "extends" does
+    - When a Class is created
+        - Then extends from a Base Class
+
+        - This informs JavaScript behind-the-scenes
+            - To set the "prototype object" to a new object
+            - Add new methods and/or properties to that "prototype object"
