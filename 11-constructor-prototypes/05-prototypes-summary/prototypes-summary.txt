@@ -1,0 +1,47 @@
+Prototypes Summary
+------------------
+- A prototype is an object that is
+    - Linked to another object (i.e. prototype object)
+
+    - It acts as a "fallback object" to w/c a created object can
+        - Reach out when it tries to work w/ a property of method that is
+        - NOT defined on the created object itself
+
+    - Every object in JavaScript by default has a "prototype object"
+
+
+- It can be confusing when looking how to configure
+    - The "prototype object" for the "to be created" object
+        - Based on the Constructor functions 
+
+    - This is done via the property ".prototype" of the Constructor functions
+
+
+- On the example code (app.js)
+    - Create a Constructor function named "User"
+        - Define a property named "name"
+        - Assign a string value
+
+
+    - Outside the Constructor function
+        - Access the property ".prototype"
+        - Assign an object that contains two (2) properties
+            - "age"     = assigned w/ a Number value
+            - "status"  = assigned w/ a String value
+
+
+    - Instantiate the Constructor function "User"
+        - Save the created object into a global constant "person"
+
+
+    - Pass the object "person" as argument to "console.log()"
+        - Expand the prorperty ".__proto__"
+        
+        - Contains the properties defined in the object that
+            - Was passed as value to the property ".prototype" of the Constructor function
+
+
+    - To verify that both properties point to the same "prototype object" in memory
+        - Use the "===" operator on the
+            - Property ".prototype" of the Constructor function
+            - Property ".__proto__" of the created object from the Constructor function
