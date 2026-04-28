@@ -1,0 +1,41 @@
+The Prototype Chain & The Global "Object"
+-----------------------------------------
+- The Prototype Chain does NOT end
+    - After reaching out to the "prototype object" of the created object
+
+
+- Even after tweaking the "prototype object" assigned as default value to
+    - The property ".__proto__" of the created object
+
+    - The Prototype Chain does NOT end w/ the default "prototype object" 
+        - The assigned "prototype object" has its own property ".__proto__" that is
+        - Linked to the Base object "Object"
+
+    - The Base object "Object" is a global Constructor function w/
+        - Built-in pre-defined Static methods & properties that can be called
+
+    - Every Constructor function can be found on the Global Object Constructor function
+
+    - Properties & methods can be dynamically added to the Constructor function
+        - Get assigned to the property ".constructor" of the "prototype object"
+            - Assigned as value of the created object's property ".__proto__"
+
+
+- The Constructor function "Object" is NOT the "fallback object" that
+    - All other objects can come back to (i.e. end of the Prototype Chain)
+
+    - The real "fallback object" of ALL other objects points to
+    
+        Object.prototype
+
+    - Evident due to the property ".__proto__" does NOT contain a value (i.e. object)
+        - Accessing the property ".__proto__" returns a value of "null"
+
+        Object.prototype.__proto__
+
+    - Every object created using a Constructor function or Object literal notation
+        - By default uses the Global Object Constructor function
+        
+        - JavaScript will use "Object.prototype" as its "fallback object"
+            - Including the default "prototype object" created 
+                - By one's own Constructor function
