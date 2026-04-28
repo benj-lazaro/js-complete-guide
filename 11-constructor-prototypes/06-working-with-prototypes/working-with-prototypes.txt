@@ -1,0 +1,48 @@
+Working With Prototypes
+-----------------------
+- When working Base & Sub-Classes
+    - JavaScript creates an object based on the Base Class
+        - The Base Class is set as a "prototype object" assigned to
+            - The created object property ".__proto__"
+
+        - The Sub-Class is set to the property ".constructor" of the "prototype object"
+            - Assigned to the created object
+
+    - When viewing details of the created object's "prototype object" in "console.log()"
+        - The property ".__proto__" is set to the Base Class
+        - The property ".constructor" of the "prototype object" is set to the Sub-Class
+
+
+- When working with Constructor functions
+    - Assigning a new object to the Constructor function's property ".prototype"
+        - OVERWRITES the default "prototype object" of the (to be) created object
+
+        <Constructor_function>.prototype = {<new_prototype_object>};
+
+    - A better approach is to refrain from OVERWRITING the default "prototype object"
+        - Access the Constructor function property ".prototype"
+            - Chain a new property name
+            - Followed by a "=" operator
+            - The a value (if a property) or an anonymous function (if a method)d)
+
+        <Constructor_function_name>.prototype.<property_name> = <value_or_function>;
+
+
+    - This preserves the property ".constructor" of the "prototype object" that is
+        - Assigned as value to the property ".__proto__" of the created object
+
+        - This points to the Constructor function that created the object
+
+
+    - The property ".constructor" of the "prototype object" of a created object allows
+        - The creation of a new object where access to
+            - The original Constructor function is NOT available
+
+        - Use the keyword "new"
+            - Then the name of the created object
+            - Chain the property ".__proto__"
+            - Followed by the property ".constructor"
+            - Add a pair of "()" to execute the Constructor function
+
+        const <new_object> = new <created_object>.__proto__.constructor();
+
