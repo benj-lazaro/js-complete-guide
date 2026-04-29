@@ -1,0 +1,29 @@
+Quiz 19: Constructor Functions & Prototypes
+-------------------------------------------
+- What's a "Constructor Function"?
+    - Answer: A function w/c can be called together w/ 
+        - The "new" keyword to create an object based on it
+
+
+- Is this a valid constructor function?
+
+    function adminUser(usrName) {
+        this.name = usrName;
+    }
+
+    - Answer: Yes. 
+        - Please note that it is absolutely recommended to start a name w/ an uppercase character
+
+
+- What's the idea behind "Prototypical Inheritance"?
+    - Answer: Functionality can be shared amongst objects 
+        - (objects can "fall back" to prototype methods & properties)
+
+
+- What's the difference between someObj.__proto__ vs SomeFunction.prototype?
+    - Answer: __proto__ points at the prototype object of "someObj"
+        - "prototype" at the prototype object that will be assigned as prototype
+        - To objects created based on "SomeFunction"
+        
+
+-
