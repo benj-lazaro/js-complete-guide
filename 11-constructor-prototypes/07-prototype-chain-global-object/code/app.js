@@ -18,9 +18,13 @@ Person.describe = function () {
   console.log("Creating a Person object...");
 };
 
+Person.who = "hey";
+console.dir(Person);
+
 const person = new Person();
+person.greet();
+person.printAge();
 console.log(person);
-console.log(person.__proto__);
 
 // Access method that is NOT defined in the created object's Constructor function
 console.log(person.toString());
@@ -30,7 +34,7 @@ Person.describe();
 
 // View details of the Global Object Constructor function
 console.dir(Object);
-console.dir(Object.prototype);
+// console.dir(Object.prototype);
 
 // The end of the Prototype Chain
 console.dir(Object.prototype.__proto__);
