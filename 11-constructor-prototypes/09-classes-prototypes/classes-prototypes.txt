@@ -1,73 +1,84 @@
 Classes & Prototypes
 --------------------
 - The Constructor function property ".prototype"
-    - Configures what will be added into the default "prototype object" of 
-        - Objects that are created based on that Constructor function
+    - Configures what will be added to the "prototype object" that
+        - Will be assigned to the property ".__proto__" of the created object
+        - Based on that Constructor function
+
+    - EVERY JavaScript object has a property ".__proto__" points to
+        - The "prototype object" that has been assigned to the object
+        - Serves as a "fallback object"
     
-    - The property ".__proto__" w/c is available on EVERY JavaScript object
-        - Points to the "prototype object" that has been assigned to an object
-        
-    - NOTE: It is important to understand the difference between the two
-        - This is the idea behind prototypes
+    - Important to understand the difference
+        - As this is the core idea behind prototypes
 
 
-- Using Classes & the keyword "extend"
-    - Makes prototypical inheritance easier
+- Using Classes & the keyword "extend" for inheritance
+    - Makes handling "prototype object" much easier
 
-    - It is important to understand what happens behind-the-scenes (i.e. prototype)
-        - As JavaScript is based on it
-            - A prototype-based language that use prototypical inheritance
+    - It is super important to understand what happens behind-the-scenes
+        - JavaScript is a prototype-based language
 
-        - It is a core concept in JavaScript that has been around forever
-
-
-- A Constructor function is NOT a perfect replacement for a Class
-    - A Class Constructor method code is implemented directly on a Constructor function
-        - Except for the call to a Base Class Constructor method using "super()"    
-        - Performs exactly like a Class would
-
-    - A Class field is translated as a property in a Constructor function
+    - Useful to special case code implementations where Classes are NOT allowed
     
-    - The difference between a Class & a Constructor function 
-        - Lies on how a method is added
+
+- A Constructor is NOT a perfect replacement for a Class
+    - Code inside a Class Constructor method
+        - Can go directly into a Constructor function
+        - Except for the call to a Base Class Constructor method using "super()"
+        - Performs like a Class would
+
+    - Class fields are translated as properties in a Constructor function
+
+    - Class methods are treated differently when compared to a Constructor function
 
 
 - On the example code (app.js)
-    - The Base Class "AgedPerson" has a method "printAge()" that
-        - Access an object's instance property ".age"
+    - The Base Class "AgedPerson"
+        - Contains a Class method named "printAge"
+        - It access the created object's instance property ".age"
         - Pass it as an argument value to "console.log()"
 
 
     - The Sub-Class "Person"
-        - Use the keyword "extends" to inherit from the Base Class "AgedPerson"
-        - Defined w/ properties named "name" & "age"
-        - Defined w/ a method named "greet()"
+        - Inherits from the Base Class "AgedPerson" using the keyword "extends"
 
+        - Contains 
+            - Two Class fields "name" & "age"
 
-    - Instantiate the Sub-Class "Person" using the keyword "new"
-        - Stored the created object in the global constant "p"
-
-        - Pass the constant "p" as argument to "console.log()"
-            - To view the assigned "prototype object" to the property ".__proto__"
+            - A Class method named "greet()" that 
+                - Accesses the Class field "age"
+                - Embedded it w/ in a string literal 
+                - Passed as argument value to "console.log()"
 
     
-    - The "prototype object" assigned on the created "Person" object property ".__proto__"
+    - Sub-Class "Person" instantiated into a Class-object
+        - Stored in a global constant named "p"
+
+        - Pass the global constant "p" as argument to "console.log()"
+            - To view the "prototype object" assigned as value to the property ".__proto__"
+
+
+    - The "prototype object" assigned to the "p" object
         - Points to the Sub-Class "Person"
-            - Evident on the property ".constructor"
-            - Despite the "prototype object" labeled as "AgedPerson"
+            - Evident on the "prototype object" property ".constructor"
+            - Although the "prototype object" is labeled as "AgedPerson"
 
-        - The "prototype object" has its own property ".__proto__" that
+        - The assigned "prototype object" has its own property ".__proto__" that
             - Points to the Base Class "AgedPerson"
+                - Evident on the "prototype object" property ".constructor"
 
-        - JavaScript added an extra "prototype object" when working w/ Classes
+        - JavaScript have added an extra "prototype object"
+            - When working w/ Classes
 
     
-    - The Sub-Class Person properties "name" & "age" where
-        - Directly added as properties of the created object
+    - As for the Sub-Class "Person" fields "name" & "age"
+        - They are directly added as properties to the created object "p"
 
-        - The reason behind is that
-            - The Sub-Class properties are added ONLY into the (to be) created object
-            - After a call to the Base Class using "super()" inside a Constructor method
+        - These Class fields are added to the (to be) created object
+            - Right after a call to te Base Class using "super()"
+            - Inside the Sub-Class "Person" Constructor method
 
-        - Methods however are treated differently
-            - To be discussed on the next lesson
+
+    - However, Class treats methods differently
+        - To be discussed on the next lesson
