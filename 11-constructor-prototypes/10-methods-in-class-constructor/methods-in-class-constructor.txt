@@ -1,0 +1,113 @@
+Methods In Classes & In Constructors
+------------------------------------
+- A Class method is NOT part of the created instance (i.e. object)
+    - It is assigned as part of the "prototype object" shared by ALL instances of a Class
+
+    - Being part of the "prototype object"
+        - A Class method is shared across ALL created instances from the same Class
+        - Created ONLY ONCE
+        - NOT re-created per instance 
+
+
+- The idea behind this implementation
+    - A Class field
+        - It is assigned w/ a different value on every created instance 
+
+    - A Class method
+        - The function logic remains the same across ALL created instances
+
+    - JavaScript optimizes
+        - By assigning Class methods as part of the "prototype object" that is
+            - Assigned to ALL created instances of the same Class
+
+        - This translates to
+            - Less created objects
+            - Less memory consumption
+            - Less performance impact (as creating objects cost perforamnce) 
+        
+
+- To prove that ALL created instances share the same Class methods
+    - Use the "===" operator to compare every created instance's "prototype object"
+        - Assigned as value to their respective property ".__proto__"
+
+            <object_name>.__proto__ === <object_name>.__proto__;
+
+        - Or more specifically:
+
+            <object_name>.__proto__.<method_name> === <object_name>.__proto__.<method_name>;
+
+    - BOTH statement evaluates to "true"
+        - Indicates that created instances points to the same Class methods in memory
+
+
+- To replicate this method behavior on a Constructor function
+    - Assign a method to the Constructor function property ".prototype"
+
+        <constructor_function>.prototype.<property_name> = function () {...};
+    
+    - The method becomes part of the created instance's "prototype object"
+        - Assign on its property ".__proto__"
+
+    - The method is ONLY created ONCE
+        - Shared across ALL instances of the same Cosntructor function
+
+
+- To make a Class method part of EVERY created instance
+    - NO longer part of the "prototype object" that is shared across ALL instances
+
+    - Option #1
+        - Define a Class property inside a Class' Construtor method
+        - Assign an Anonymous function as value
+
+    - Option #2
+        - Define a Class field 
+        - Assign an Anonymous (or Arrow) function as value
+        - NOTE: Method shorthand is NOT available for Arrow functions
+
+    - Common-use case
+        - A Class method in the form of an Arrow function assignedto a Class field
+            - Used as a callbak method of an Evern listener
+        
+        - An Arrow function does NOT know the value of the keyword "this"
+            - When used inside of an Arrow function
+            - The keyword "this" implicitly assigns the surrounding CLass name as value
+
+        - This offers better readability than using the method ".bind()"
+            - When working w/ normally defined Class methods
+                - Although offers "marginal" performance penalty
+                - Provided that NOT instantiating "thousands" of instances
+
+        - However, the method ".bind()" working w/ a method shorthand (normal Class method)
+            - Offers better performance
+            - Although, readability is something to be desired
+
+        - NOTE: Boils down to personal preference
+
+
+- Summary:
+    - Class method defined using Method shorthand
+        - Becomes part of the "prototype object" that is 
+            - Shared by ALL instances of a Class
+            
+        - The Class method is NOT re-created per instance 
+
+
+    - Method defined as an Anonymous function that is 
+        - Assigned as value to a Class Constructor method property
+
+        - Method is assigned to EVERY created instance
+            - The method is re-created per instance
+            - The keyword "this" refers to what called the method
+
+        - NOTE: Unnecessary re-creations of methods can cost performance
+
+
+    - Method defined as an Arrow function that is 
+        - Assigned as value to a Class field
+
+        - Method is assigned to EVERY created instance
+            - The method is re-created per instance
+            - The keyword "this" ALWAYS refers to the created instance
+
+        - NOTE: Can cost performance when creating thousands of instances
+            -  Otherwise, it is fine in most applications
