@@ -1,0 +1,35 @@
+Wrap Up
+-------
+- In modern JavaScript
+    - Typically work w/ Classes than of Constructor functions
+        - Extend Base Class to Sub-Classes
+
+    - Syntactical sugar for
+        - Prototypes
+        - Constructor functions
+
+    - Under-the-hood
+        - Embraces the concept of prototyping
+
+    - This knowledge that is useful 
+        - For implementing performance optimizations    
+        - Ace job interviews
+        - Get a feeling for the JavaScript language
+
+
+- Understand differences between Constructor functions & Classes
+    - Constructor function
+        - Blueprint for objects
+        - Contains properties & methods
+        - ALL propertyes & methods are enumerable (by default)
+        - Can be called w/ the keyword "new"
+        - Does NOT use "strict mode" by default
+
+
+    - Class
+        - Blue print for objects
+        - Contains properties & method
+        - Methods are NON-enumerable (by default)
+        - MUST be called w/ the keyword "new"
+        - Uses "strict mode" by default
+    
