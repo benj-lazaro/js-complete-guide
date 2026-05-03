@@ -1,0 +1,139 @@
+Setting & Getting Prototypes
+----------------------------
+- To change (i.e. set) the assigned "prototype object" of
+    - An object that has been already created
+    - A new object that is NOT created by a user-defined Constructor function
+
+        - NOTE: Both of these cases are (advanced) niche
+            - Likely NOT to encounter on a daily basis
+            - Except for some scenarios where it can be useful
+
+
+- The global Constructor function "Object" method "getPrototypeOf()" 
+    - Access & returns the property ".__proto__" of an object 
+
+    - Requires an object as argument
+
+    - NOTE: This is the official way
+        - To access the property ".__proto__" of an object
+            - View the assigned "prototype object"
+            - When this logic is part of an app's execution
+
+        - Otherwise, directly accessing the property ".__proto__" would suffice
+            - To view an object's assigned "prototype object" during development
+
+
+- The global Constructor function "Object" method "setPrototypeOf()"
+    - Sets a new "prototype object" to an existing object
+
+    - Requires two arguments
+        - The object where the new "prototype object" will be assigned (set) to
+        - The "prototype object" that will be assigned
+
+        - NOTE: The 2nd argument overwrites the previous assigned "prototype object"
+
+    - To keep the original "prototype object"
+        - On the 2nd argument of the method "setPrototypeOf()"
+            - Use the spread operator (...) on 
+                - The global Constructor function "Object" method "getPrototypeOf()"
+                - Pass the object "course" as argument
+
+            - A comma
+
+            - Then a new property that will be included w/ the
+                - Original "prototype object" of an object
+
+
+- To create a new object & change the "prototype object"
+    - NOT using a Constructor function or Object literal notation
+        - But of using the object "Object" method "create()"
+
+    - It takes a new object as argument value
+
+    - This object will become the "prototype object" of
+        - The (to be) created object
+
+    - NOTE: It has an optional 2nd argument that allows
+        - To set each defined property's descriptor map
+
+
+- On the practice code (app.js)
+    - Create a new object using the Object literal notation
+        - Store on a global constant named "course"
+    
+        - Define Class properties
+            - "title"   = assigned w/ a string value
+            - "rating"  = assigned w/ a number value
+
+
+    - Call the object's method "printRating()"
+        - A method NOT defined w/in the object
+        - Currently NOT part of the assigned "prototype object"
+        - Returns an error
+
+            "Uncaight TypeError: course.printRating() is not a function
+
+
+    - Use the global Constructor function "Object" method ".getPrototypeOf()"
+        - Pass the object "course" as argument
+
+        - Returns the assigned "prototype object" 
+            - Taken from the object's property ".__proto__"
+
+    
+    - Use the global Constructor function "Object" method ".setPrototypeOf()"
+        - Pass the the object "course" as the 1st argument
+
+        - Pass the following "prototype object" as 2nd argument
+
+            {
+                printRating: function () {
+                    console.log(`${this.rating}/5`);
+                },
+            }
+
+        - NOTE: Overwrites the preivous assigned "prototype object" of the object "course"
+
+    
+    - To keep the original "prototype object" of the object "course"
+        - Refactor the 2nd argument of the method ".setPrototypeOf()"
+
+        - Use the spread operator (...) on the method ".getPrototypeOf()"
+            - Pass the object "course" as argument
+
+        - A comma & then the new property "printRating" 
+
+        - NOTE: This "prototype object" will have its own property '.__proto__"
+            - That points of the "prototype object" of the global object "Object"
+
+
+    - Create a new object using object "Object" method ".create()"
+        - Pass an object as argument
+
+        - The object has a property named "printProgress"
+            - Assigned with an Anonymouse function as value
+
+        - The Anonymouse function
+            - Pass the property "progress" (non-existent) as argument to "console.log()"
+
+        - Save the created object to the global constant "student"
+            - Pass the global constant "student" to "console.log()"
+
+            - Renders an empty object assigned with a "prototype object" that
+                - Contains a method named "printProgress()"
+
+
+    - To add a new property to the object "student"
+        - Using object "Object" method ".defineProperty()"
+
+        - Pass the arguments
+            - 1st = target object "student"
+            - 2nd = property named "progress"
+            - 3rd = property descriptor map
+                - "configurable"    = true
+                - "enumerable"      = true
+                - "writable"        = true
+                - "value"           = 0.8
+
+        - Pass the object "student" as argument to "console.log()"
+
