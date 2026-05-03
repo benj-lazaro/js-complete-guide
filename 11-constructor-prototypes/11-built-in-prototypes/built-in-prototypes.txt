@@ -1,0 +1,35 @@
+Built-in Prototypes In JavaScript
+---------------------------------
+- Prototypes in JavaScript are essentially everywhere
+    - They are a core part of JavaScript
+    - It is how shared code is managed in JavaScript
+
+
+- An example would be the built-in methods of an Array
+    - Built-in methods are part of the "array.prototype"
+
+    - Located on the "prototype object" that
+        - Every array is connected to 
+
+
+- When an Array is created
+    - It automatically returns an array object that 
+        - Does NOT know the built-in methods
+    
+    - Then it is assigned w/ a "prototype object" that
+        - Holds the built-in methods
+
+    - NOTE: This is why built-in Array methods on MDN are
+        - Labeled as "prototype.<built-in_method>()"
+    
+
+- The same applies with Strings
+    - Stirng is a Primitive value that behave like an object
+        - When calling a built-in method on it
+
+    - NOTE: Built-in String methods on MDN are also
+        - Labeled as "prototype.<built-in_method>()"
+
+
+- There are a bunch of built-in objects used as prototypes
+    - For other built-in objects
