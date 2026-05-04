@@ -1,0 +1,12 @@
+Module Introduction
+-------------------
+- This section focuses on:
+    - Practice programming w/ Classes
+    - Practice OOP approach on build a Project Planner app demo
+
+    - On the Project Planner app
+        - Clicking the button "Finish" on the "Active Projects" window
+            - Moves a course to the "Finished Project" window
+
+        - Clicking the button "Activate" on the "Finished Project" window
+            - Moves a course to the "Active Projects" window
