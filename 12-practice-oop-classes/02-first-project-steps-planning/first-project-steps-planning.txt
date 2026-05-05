@@ -1,0 +1,43 @@
+First Project Steps & Planning
+------------------------------
+- The goal is to
+    - Take the OOP approach & define Classes that
+        - List & manages ALL projects of one box (i.e. Active / Finished Projects)
+    
+        - Reprsents a single project item
+
+        - Manages the app overall
+
+        - Displays "tool tips" when a user 
+            - Clicks the a project item's button "More Info"
+
+    - The app comes with a HTML document that
+        - Contains rendered content
+
+        - Depicts content rendered & retrieved from a remote (backend) server
+        
+        - Simulalting a real-life use case
+            - Work w/ pre-generted content
+            - Use JavaScript to implement interactions w/ the content
+
+    - Data of interest from the HTML document
+        - HTML element <section> attribute "id"
+
+        - Implement logic that
+            - Parses the HTML element <section>
+            - Identify w/c projects that are Active & Finished
+
+
+- On the practice project (assets/scripts/app.js)
+    - Use the OOP approach
+
+    - Define Classes based on their use case
+        - Class "Toolip" handles a "ProjectItem" object's "More Info" button
+
+        - Class "ProjectItem" represent a project item
+
+        - Class "ProjectList" manages a list of "ProjectItem" objects
+
+        - Class "App" manages the app overall
+
+    - Save the changes
