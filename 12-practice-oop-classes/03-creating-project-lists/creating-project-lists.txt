@@ -1,0 +1,59 @@
+Creating Project Lists & Parsing Element Data
+---------------------------------------------
+- For this lesson
+    - On the Class "App"
+        - Create a Static method that 
+            - Instantiates the Class "ProjectList" twice
+
+        - To create an object "ProjectList"
+            - For "Active Projects" & "Finished Projects", respectively
+            
+
+    - On the Class "ProjectList"
+        - Implement the logic that parses the HTML document 
+            - On the Class Constructor method
+
+        - Select ALL HTML elements <li> based on the attribute "id" of
+            - Their respective parent element <section>
+
+            - Save the Element nodes to their respective local constants
+
+
+- On the practice project (assets/scripts/app.js)
+    - On the Class "ProjectList"
+        - Create a Constructor method
+            - Define a parameter variable named "type"
+
+        - In the Constructor method
+            - Use "document.querySelectorAll()"
+            - Pass "#${type}-projects li" as argument
+            - Store the returned Element nodes to the local constant "projectItems"
+
+        - Pass the local constant "projectItems" as argument to "console.log()"
+
+
+    - On the Class "App"
+        - Create a Static method "init()"
+
+        - Instantiate the Class "ProjectList"
+            - Pass "active" as argument value
+            - Store created object to the local constant "activeProjectsList"
+
+        - Instantiate the Class "ProjectList" again
+            - Pass "finished" as argument value
+            - Store created object to the local constant "finishedProjectsList"
+
+
+    - Outside the Class "App"
+        - Call the Static method "init()" of the Class "App"
+
+
+    - Save the changes
+
+    - Load / reload the browser
+        - Launch the browser's JavaScript console
+
+        - Displays two (2) NodeLists
+            - 1st NodeList contain elements w/ HTML attribute "id" of "p1" & "p2"
+            - 2nd NodeList contain an element w/ HTML attribute "id" of "p3"
+    
