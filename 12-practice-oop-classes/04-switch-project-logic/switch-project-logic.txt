@@ -1,0 +1,121 @@
+Starting With The "Switch Project" Logic
+----------------------------------------
+- For this lesson
+    - On the Class "ProjectList"
+        - Implement the logic that iterates through the fetched NodeLists
+            - Currently stored in the local constant "projectItems"
+            - Instantiate the Class "ProjectItem" for each element read
+
+    - On the Class "ProjectItem"
+        - Define a Class property that
+            - Identifies the created "ProjectItem" object 
+
+        - Implement an Event listener to 
+            - The buttons "More Info" & "Finish" of each "ProjectItem" object
+
+
+- On the practice project (assets/scripts/app.js)
+    - On the Class "ProjectList"
+        - Create a Class field named "projects"
+            - Assign an empty array as value
+
+        - In the Constructor method
+            - Use a "for..of" loop to iterate through every NodeList element
+                - Create an instance of the class "ProjectItem"
+                - Pass "projectItem.id" as argument value
+
+            - Push the created "ProjectItem" object into the array
+                - Stored in the Class field "projects"
+                - Using the Array method ".push()"
+
+
+    - On the Class "ProjectItem"
+        - Create a Constructor method
+            - Define a parameter variable "id"
+
+        - In the Constructor method
+            - Define a Class property named "id"
+            - Assign the value of the parameter variable "id"
+
+        - Create a method named "connectSwitchButton"
+
+        - Create another method named "connectMoreInfoButton"
+
+        - Back in the Constructor method
+            - Define two (2) Class methods 
+                - "connectSwitchButton()"
+                - "moreInfoButton()"
+
+        - In the Class method "connectSwitchButton()"
+            - Access the Element node from the attached HTML document
+                - Using the method "document.getElementById()"
+                - Pass the proerty "this.id" as arugment value
+
+            - Store the returned Element node "li" 
+                - To the local constant "projectItemElement"
+
+            - Fetch the last Element node "button" from the local constant "projectItemElement"
+                - Using the method ".querySelector()"
+                - Passing "button:last-of-type" as argument value
+
+            - Store the returned Element node "button"
+                - To the local constant "switchBtn"
+
+            - Add an Event listener to the local constant "switchBtn"
+                - Using the method ".addEventListener()"
+                - Passing the arguments
+                    - 1st = "click"
+                    - 2nd = trick part; this should be past of the Class "ProjectList"
+
+        - To address this concern
+            - A "ProjectItem" object needs to switch between the lists
+                - "Active Projects" & "Finished Projects" 
+
+            - To achieve this functionality by using a Callback function
+                       
+        - On the Class "ProjectList"
+            - Define two (2) Class methods
+                - "addProject()"
+                - "switchProject()"
+                
+            - In the Class method "switchProject()"
+                - Define the parameter variable "projectId"
+
+            - Option #1: Longer implementation
+                - Retrieve the index of the "ProjectItem" object 
+                    - From the Class field "projects"
+
+                - Use the method ".findIndex()" on the Class field "projects"
+                    - Pass an Arrow function as argument value
+                
+                - The Arrow function has a parameter variable named "p"
+                    - Checks if the property "id" of the "ProjectItem" object 
+                        - Stored in "p" is STRICTLY EQUAL to the parameter variable "projectId"
+                    
+                    - Store the index value of the "ProjectItem" object
+                        - On the local constant "projectIndex"
+
+                - Use the method ".splice()" on the Class field "projects"
+                    - Pass the arguments values
+                        - 1st = "projectIndex"
+                        - 2nd = 1
+
+            - Option #2: Shorter version
+                - Use the method ".filter()" on the Class field "projects"
+                    - Pass an Arrow function as argument value
+
+                - The Arrow function has a parameter variable named "p"
+                    - Checks if the property "id" of the "ProjectItem" object 
+                        - Stored in "p" is STRICTLY NOT EQUAL to 
+                            - The parameter variable "projectId"
+
+                        - Effectively removes the "ProjectItem" object
+                            - From the array stored in the Class field "projects"
+                            
+                    - Store the new created array
+                        - Back to the Class field "projects"
+
+
+            - Implementation of the Class method "addProject()"
+                - To be continued on the next lesson
+        
