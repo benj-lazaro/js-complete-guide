@@ -4,8 +4,8 @@ class Tooltip {}
 // Class that represents a project item
 class ProjectItem {}
 
-// Class that handles multiple instances of "ProjectItem" objects
+// Class that manages "ProjectItem" objects
 class ProjectList {}
 
-// Class that manages the app overall
+// Class that manages the app
 class App {}
