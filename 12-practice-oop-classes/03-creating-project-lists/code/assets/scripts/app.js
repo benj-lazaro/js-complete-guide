@@ -4,21 +4,24 @@ class Tooltip {}
 // Class that represents a project item
 class ProjectItem {}
 
-// Class that handles multiple instances of "ProjectItem" objects
+// Class that manages "ProjectItem" objects
 class ProjectList {
-  // Fetch ALL HTML elements <li> based on the attribute "id" of their parent element <section>
   constructor(type) {
+    // Store NodeList elements containing Element nodes "li"
     const projectItems = document.querySelectorAll(`#${type}-projects li`);
+
     console.log(projectItems);
   }
 }
 
-// Class that manages the app overall
+// Class that manages the app
 class App {
   static init() {
+    // Instantiate two (2) Class "ProjectList"
     const activeProjectsList = new ProjectList("active");
     const finishedProjectsList = new ProjectList("finished");
   }
 }
 
+// Initialize & start the app
 App.init();

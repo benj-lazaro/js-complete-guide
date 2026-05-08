@@ -1,59 +1,70 @@
 Creating Project Lists & Parsing Element Data
 ---------------------------------------------
-- For this lesson
-    - On the Class "App"
-        - Create a Static method that 
-            - Instantiates the Class "ProjectList" twice
+- On the Class "App"
+    - Create a Static method that 
+        - Instantiates two (2) instances of the Class "ProjectList"
+        - Representing a list of "Active Projects" & "Finished Projects"
+        
 
-        - To create an object "ProjectList"
-            - For "Active Projects" & "Finished Projects", respectively
-            
+- On the Class "ProjectList"
+    - Create a Constructor method that 
+        - Parses through the attached HTML document      
+            - Identifies w/c project list a project item belongs to
+        
+        - Select child HTML elements <li> based on the attribute "id" of their
+            - Respective parent HTML element <section>
 
-    - On the Class "ProjectList"
-        - Implement the logic that parses the HTML document 
-            - On the Class Constructor method
-
-        - Select ALL HTML elements <li> based on the attribute "id" of
-            - Their respective parent element <section>
-
-            - Save the Element nodes to their respective local constants
+        - The value being either "active-projects" or "finished-projects"
 
 
 - On the practice project (assets/scripts/app.js)
-    - On the Class "ProjectList"
-        - Create a Constructor method
-            - Define a parameter variable named "type"
-
-        - In the Constructor method
-            - Use "document.querySelectorAll()"
-            - Pass "#${type}-projects li" as argument
-            - Store the returned Element nodes to the local constant "projectItems"
-
-        - Pass the local constant "projectItems" as argument to "console.log()"
-
-
     - On the Class "App"
-        - Create a Static method "init()"
+        - Create a Static method named "init"       
 
+
+    - On the Static method "init()"
         - Instantiate the Class "ProjectList"
             - Pass "active" as argument value
-            - Store created object to the local constant "activeProjectsList"
+            - Store the created object to the local constant "activeProjectsList"
 
-        - Instantiate the Class "ProjectList" again
+        - Instantiate the Class "ProjectList"
             - Pass "finished" as argument value
-            - Store created object to the local constant "finishedProjectsList"
+            - Store the created object to the local constant "finishedProjectsList"
 
 
     - Outside the Class "App"
-        - Call the Static method "init()" of the Class "App"
+        - Call the Static method "init()"
+
+
+    - On the Class "ProjectList"
+        - Create a Constructor method w/ a parameter variable named "type"
+
+        - The parameter variable "type"
+            - Holds a part of the HTML element <section> attribute "id"
+            - Identifying whether it is "active-projects" or "finished-projects"
+
+
+    - On the Constructor method
+        - Select ALL HTML elements <li> using the method "document.querySelectorAll()"
+
+        - Pass the literal string template "#${type}-projects li" 
+            - As an argument value to the method
+
+        - The part "#${type}-projects" of the string template
+            - Identifies the attribute "id" value of the parent HTML element <section>
+            - (e.g. "active-projects" or "finished-projects")
+
+        - Store the returned Element nodes "li" as part of a NodeList to 
+            - Tthe local constant "projectItems"
+            
+        - Pass the local constant "projectItems" as argument value to "console.log()"
 
 
     - Save the changes
+        - Load / reload the browser
 
-    - Load / reload the browser
         - Launch the browser's JavaScript console
 
         - Displays two (2) NodeLists
-            - 1st NodeList contain elements w/ HTML attribute "id" of "p1" & "p2"
-            - 2nd NodeList contain an element w/ HTML attribute "id" of "p3"
-    
+            - 1st w/ two (2) Element nodes "li" w/ attribute "id" of "p1" & "p2"
+            - 2nd w/ an Element node "li" w/ attriute "id" of "p3"
