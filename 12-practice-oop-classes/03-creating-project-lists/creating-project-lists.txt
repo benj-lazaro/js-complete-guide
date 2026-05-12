@@ -2,19 +2,28 @@ Creating Project Lists & Parsing Element Data
 ---------------------------------------------
 - On the Class "App"
     - Create a Static method that 
-        - Instantiates two (2) instances of the Class "ProjectList"
-        - Representing a list of "Active Projects" & "Finished Projects"
+        - Instantiate two (2) Class "ProjectList" objects
         
+        - Each object represents the
+            - "Active Projects"
+            - "Finished Projects"
+
+        - Defined as Static method since it will ONLY be called once
+
 
 - On the Class "ProjectList"
     - Create a Constructor method that 
-        - Parses through the attached HTML document      
-            - Identifies w/c project list a project item belongs to
-        
-        - Select child HTML elements <li> based on the attribute "id" of their
-            - Respective parent HTML element <section>
+        - Accepts the HTML attribute "id" to search for
+            - (i.e. "active-projects" or "finished-projects")
 
-        - The value being either "active-projects" or "finished-projects"
+        - Parse through the attached HTML document
+            - Select HTML element <li>
+            - Based on the parent element <section> attribute "id"
+            - (i.e. "active-projects" or "finished-projects")
+
+        - Stores returned Element node "li" to a local constant then
+            - Pass the local constant to "console.log()"
+            - To display project items w/in each "ProjectList" object
 
 
 - On the practice project (assets/scripts/app.js)
@@ -22,49 +31,56 @@ Creating Project Lists & Parsing Element Data
         - Create a Static method named "init"       
 
 
-    - On the Static method "init()"
-        - Instantiate the Class "ProjectList"
+    - On Class "App" Static method "init()"
+        - Instantiate a Class "ProjectList" object
             - Pass "active" as argument value
             - Store the created object to the local constant "activeProjectsList"
 
-        - Instantiate the Class "ProjectList"
+        - Instantiate a Class "ProjectList" object
             - Pass "finished" as argument value
             - Store the created object to the local constant "finishedProjectsList"
 
 
     - Outside the Class "App"
-        - Call the Static method "init()"
+        - Call the Static method "init()" of the Class "App"
+            - In order to instantiate two (2) "ProjectList" objects
 
 
     - On the Class "ProjectList"
-        - Create a Constructor method w/ a parameter variable named "type"
+        - Create a Constructor method w/ 
+            - A parameter variable named "type"
 
-        - The parameter variable "type"
-            - Holds a part of the HTML element <section> attribute "id"
-            - Identifying whether it is "active-projects" or "finished-projects"
+        - NOTE: The parameter variable "type"
+            - Holds the HTML element <section> attribute "id" that
+            - Identifies if it is an "Active Projects" or a "Finished Projects"
+    
 
+    - On the Class "ProjectList" Constructor method
+        - Select the HTML element <li> from the HTML document
+            - Using the method "document.querySelectorAll()"
 
-    - On the Constructor method
-        - Select ALL HTML elements <li> using the method "document.querySelectorAll()"
+            - Pass the literal string template "#${type}-projects li" as argument value
 
-        - Pass the literal string template "#${type}-projects li" 
-            - As an argument value to the method
+            - Parses through HTML elements w/ the matching attribute "id" value
 
-        - The part "#${type}-projects" of the string template
-            - Identifies the attribute "id" value of the parent HTML element <section>
-            - (e.g. "active-projects" or "finished-projects")
+            - NOTE: The part #${type}-projects" refers to the value of the 
+                - HTML element <section> attribute "id"
+                - (i.e. "active-projects" or "finished-projects")
 
-        - Store the returned Element nodes "li" as part of a NodeList to 
-            - Tthe local constant "projectItems"
-            
-        - Pass the local constant "projectItems" as argument value to "console.log()"
+            - Store the returned NodeList containing Element node(s) "li" to
+                - The local constant "projectItems"
 
+        - Pass the local constant "projectItems" as argument to "console.log()"
+        
 
     - Save the changes
         - Load / reload the browser
 
         - Launch the browser's JavaScript console
 
-        - Displays two (2) NodeLists
-            - 1st w/ two (2) Element nodes "li" w/ attribute "id" of "p1" & "p2"
-            - 2nd w/ an Element node "li" w/ attriute "id" of "p3"
+        - Displays two (2) Class "ProjectList" objects
+            - 1st contains a NodeList w/ two (2) Element nodes "li"
+                - Each assigned w/ an HTML attribute "id" of "p1" & "p2"
+
+            - 2nd contains a Nodelist w/ one (1) Element node "li"
+                - Assigned w/ an HTML attribute "id" of "p3"

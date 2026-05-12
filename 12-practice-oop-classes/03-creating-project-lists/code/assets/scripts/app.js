@@ -7,7 +7,7 @@ class ProjectItem {}
 // Class that manages "ProjectItem" objects
 class ProjectList {
   constructor(type) {
-    // Store NodeList elements containing Element nodes "li"
+    // Select ALL HTML elements <li> w/ the matching attribute "id" value
     const projectItems = document.querySelectorAll(`#${type}-projects li`);
 
     console.log(projectItems);
@@ -17,7 +17,7 @@ class ProjectList {
 // Class that manages the app
 class App {
   static init() {
-    // Instantiate two (2) Class "ProjectList"
+    // Instantiate two (2) "ProjectList" objects
     const activeProjectsList = new ProjectList("active");
     const finishedProjectsList = new ProjectList("finished");
   }
