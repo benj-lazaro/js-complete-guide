@@ -1,11 +1,11 @@
 Starting With The "Switch Project" Logic
 ----------------------------------------
 - On the Class "ProjectList"
-    - Iterates through the selected Element node(s) "li"
-        - From the local constant "projectItems"
+    - Iterate through the selected Element node(s) "li"
+        - Stored on the local constant "projectItems"
 
     - For each Element node "li" read
-        - Instantiate the Class "ProjectItem"
+        - Instantiate a Class "ProjectItem" object
         - Access the Element node "li" property "id" & pass it as an argument value 
 
     
