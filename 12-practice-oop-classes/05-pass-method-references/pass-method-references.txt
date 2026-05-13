@@ -1,67 +1,99 @@
-Passing Method References Around
+Passing Method References Around 
 --------------------------------
-- For this lesson
-    - Implement the logic of the Class "ProjectList" method "addProject()"
-    
-    - Call the method "addProject()" 
-        - From another instance of the Class "ProjectList"
-        - Using a callback function
-        
+- Implement the logic for the callback function of
+    - The Class "ProjectItem" method "connectSwitchButton"
+
+    - On the Class "ProjectList" Constructor method
+        - Create a new parameter variable that accepts the switchHander 
+            - Points to the callback function of a "ProjectItem" object that
+            - Would allow it to switch to another instance of the Class "ProjectList"
+
 
 - On the practice project (assets/scripts/app.js)
     - On the Class "ProjectList" Constructor method
-        - Define a new parameter variable "type"
-        
-        - Define a new Class property "this.type"
-            - Assign as value the parameter variable "type"
+        - Create a Class property "this.type"
+            - Assign the parameter variable "type" as value
+
+          
+    - On the Class "ProjectList" method "switchProject()"
+        - Call the Class property "this.switchHander" like a method
+
+        - Pass the Class field "projects" as an argument value
+            - Chain the method ".find()"
+                - Pass an Arrow function as argument value
+
+            - The Arrow function comes w/ a parameter variable "p"
+                - Stores the current Element node "li" read
+
+                - Compare the Element node "li" property "id" w/
+                    - The parameter variable "projectId"
+
+                - Check if BOTH are STRICTLY EQUAL then
+                    - Assign the matching Element node "li" to
+                    - The Class property "switchHandler"
 
 
     - On the Class "ProjectList"
-        - Define a new Class method "setSwitchHandlerFunction"
-            - Define a parameter variable "switchHandlerFunction" that
-            - Serves as a pointer to a callback function
+        - Create a new Class method "setSwitchHandlerFunction" w/
+            - The parameter variable "switchHandlerFunction"
 
-
-    - On the Class "ProjectList" method "setSwitchHandlerFunction()"
-        - Define a parameter variable "switchHandlerFunction"
-
-        - Define a new Class property "this.switchHandler"
+        - Create a new Class property "this.switchHandler"
             - Assign the parameter variable "switchHandlerFunction" as value
+            - NOTE: This serves as a pointer to the callback function of a "ProjectItem" object
 
 
-    - On the Class "ProjectList" method "switchProject()"
-        - Access the Class property "this.switchHandler"
-            - Treat it like a method by adding a pair of "( )"
+    - On the Class "App"
+        - Call the method ".setSwitchHandlerFunction()" on the local constant "activeProjectList"
+            - Pass the Class "ProjectList" instance where the "ProjectItem" object will switch to
+                - As argument value (i.e. finishedProjectList)
 
-        - Access the Class field "this.projects"
-            - Chain the method ".find()"
-                - Pass an Anonymous function as argument value
+            - Chain the method ".addProject()"
 
-            - On Anonymous function 
-                - Define the parameter variable "p"
+            - Then the method ".bind()"
+                - To bind the keyword "this" inside of the method ". addProject()"
 
-                - Check if the property "id" of "p" ("ProjectItem" object ) is 
-                    - STRICTLY EQUAL to that of the parameter variable "projectId"
+            - Pass "finishedProjectList" as argument value
+
+
+        - Call the method ".setSwitchHandlerFunction()" on the local constant "finishedProjectList"
+            - Pass the Class "ProjectList" instance where the "ProjectItem" object will switch to
+                - As argument value (i.e. activeProjectList)
+
+            - Chain the method ".addProject()"
+
+            - Then the method ".bind()"
+                - To bind the keyword "this" inside of the method ". addProject()"
+
+            - Pass "finishedProjectList" as argument value
+
+
+    - On the Class "ProjectList" method "addProject()"
+        - Pass the keyword "this" as argument value to "console.log()"
 
 
     - On the Class "ProjectItem" Constructor method
-        - Define a new parameter variable "updateProjectListsFunction"
+        - Create an additional parameter variable "updateProjectListsFunction"
 
-        - Define a new Class property "updateProjectListsHandler"
+        - Create a new Class property "updateProjectListsHandler"
             - Assign the parameter variable "updateProjectListsFunction" as value
+            
+            - NOTE: This points to corresponding callback function
 
 
     - On the Class "ProjectList" Constructor method
-        - On the instantiation of the Class "ProjectItem"
-            - Pass the Class method "switchProject" as the 2nd argument value
-            
+        - Refactor the instantiation of the Class "ProjectItem"
+
+        - Pass the Class method "switchProject()" as a 2nd argument value
             - Chain the method ".bind()"
-                - Pass the keyword "this" as argument value
+            - Pass the keyword "this" as argument value
+            
+            - NOTE: The keyword "this" refers to the corresponding Class "ProjectList"
+                - NOT the "ProjectItem"
 
 
     - On the Class "ProjectItem" method "connectSwitchButton()"
-        - Pass the class property "updateProjectListsHandler" as
-            - The callback function for the Event listener of the local constant "switchBtn"
+        - Pass the Class property "this.updateProjectListsHandler" as the callback function
+            - For the attached Event listener of the local constant "switchBtn"
 
 
     - Save the changes

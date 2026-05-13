@@ -6,70 +6,80 @@ class ProjectItem {
   constructor(id, updateProjectListsFunction) {
     this.id = id;
     this.updateProjectListsHandler = updateProjectListsFunction;
-    this.connectMoreInfoButton();
+    this.moreInfoButton();
     this.connectSwitchButton();
   }
 
-  // Method that handles the "More Info" button
-  connectMoreInfoButton() {}
+  // Method that handles the button "More Info" of a "ProjectItem" object
+  moreInfoButton() {}
 
-  // Method that handles the Event listener that triggers the switch between projects
+  // Method that triggers the move of a "ProjectItem" object to a different "ProjectList" object
   connectSwitchButton() {
-    // Retrieve the Element node "li" based on its attribute "id"
+    // Access the corresponding DOM of the Element node "li" attribute "id"
     const projectItemElement = document.getElementById(this.id);
 
-    // Retrieve the last Element node "button" from the local constant "projectItemElement"
+    // Access the Element node "li" button "Finish" or "Activate"
     const switchBtn = projectItemElement.querySelector("button:last-of-type");
+
+    // Attach Event listner for a "click" Event & the corresponding callback function
     switchBtn.addEventListener("click", this.updateProjectListsHandler);
   }
 }
 
-// Class that handles multiple instances of "ProjectItem" objects
+// Class that manages "ProjectItem" objects
 class ProjectList {
-  // Stores "ProjectItem" objects
+  // Stores an array of "ProjectItem" objects
   projects = [];
 
   constructor(type) {
     this.type = type;
 
-    // Selects ALL Element nodes <li> based on the Parent node <section> attribute "id"
+    // Select ALL HTML elements <li> w/ the matching attribute "id" value
     const projectItems = document.querySelectorAll(`#${type}-projects li`);
 
-    // Iterate through every element in the NodeList & instantiate a new "ProjectItem" object
+    // Instantiate a "ProjectItem" object for each Element node "li" read
     for (const projectItem of projectItems) {
       this.projects.push(
         new ProjectItem(projectItem.id, this.switchProject.bind(this)),
       );
     }
+
+    console.log(this.projects);
   }
 
-  // Method that sets the corresponding callback function of a "ProjectItem" object
+  // Method that sets the callback function of a "ProjectItem" object
   setSwitchHandlerFunction(switchHandlerFunction) {
     this.switchHandler = switchHandlerFunction;
   }
 
-  // Method that adds an entry to the Class field "projects"
+  // Method that adds a "ProjectItem" object to a new instance of the Class "ProjectList"
   addProject() {
     console.log(this);
   }
 
-  // Method that removes an entry from Class field "projects"
+  // Method that switches a "ProjectItem" object to a different instance of the Class "ProjectList"
   switchProject(projectId) {
-    // Set the callback function of the matching "ProjectItem" object
+    // Find matching "ProjectItem" object
     this.switchHandler(this.projects.find((p) => p.id === projectId));
 
-    // Remove the matching "ProjectItem" object; replace existing array w/ a new one
-    this.projects = this.projects.filter((p) => p.id !== this.id);
+    // Solution #1
+    // const projectIndex = this.projects.findIndex((p) => p.id === projectId);
+    // this.projects.splice(projectIndex, 1);
+
+    // Solution #2
+    // Removes the matching "ProjectItem" object from the Class "ProjectList" instance it initially belongs to
+    this.projects = this.projects.filter((p) => p.id !== projectId);
   }
 }
 
 // Class that manages the app
 class App {
   static init() {
+    // Instantiate two (2) "ProjectList" objects
     const activeProjectsList = new ProjectList("active");
     const finishedProjectsList = new ProjectList("finished");
 
-    // Set the corresponding callback function of each "ProjectItem" object
+    // Set the opposite Class "ProjectList" instance where a "ProjectItem" object can switch to
     activeProjectsList.setSwitchHandlerFunction(
       finishedProjectsList.addProject.bind(finishedProjectsList),
     );
@@ -80,4 +90,5 @@ class App {
   }
 }
 
+// Initialize & start the app
 App.init();
