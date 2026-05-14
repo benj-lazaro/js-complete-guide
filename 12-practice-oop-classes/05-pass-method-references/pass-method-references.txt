@@ -3,97 +3,106 @@ Passing Method References Around
 - Implement the logic for the callback function of
     - The Class "ProjectItem" method "connectSwitchButton"
 
-    - On the Class "ProjectList" Constructor method
-        - Create a new parameter variable that accepts the switchHander 
-            - Points to the callback function of a "ProjectItem" object that
-            - Would allow it to switch to another instance of the Class "ProjectList"
+
+- On the Class "ProjectList" Constructor method
+    - Create a new Class property named "type"
+        - Assign the parameter variable "type" as value
+        - Identifies the "ProjectList" instance that a "ProjectItem" object belongs to
 
 
 - On the practice project (assets/scripts/app.js)
     - On the Class "ProjectList" Constructor method
-        - Create a Class property "this.type"
-            - Assign the parameter variable "type" as value
-
-          
-    - On the Class "ProjectList" method "switchProject()"
-        - Call the Class property "this.switchHander" like a method
-
-        - Pass the Class field "projects" as an argument value
-            - Chain the method ".find()"
-                - Pass an Arrow function as argument value
-
-            - The Arrow function comes w/ a parameter variable "p"
-                - Stores the current Element node "li" read
-
-                - Compare the Element node "li" property "id" w/
-                    - The parameter variable "projectId"
-
-                - Check if BOTH are STRICTLY EQUAL then
-                    - Assign the matching Element node "li" to
-                    - The Class property "switchHandler"
+        - Create a Class property named "type"
+        - Assign the parameter variable "type" as value
 
 
     - On the Class "ProjectList"
-        - Create a new Class method "setSwitchHandlerFunction" w/
-            - The parameter variable "switchHandlerFunction"
+        - Create a Class method named "setSwitchHandlerFunction" w/
+            - A parameter variable named "switchHandlerFunction"
 
-        - Create a new Class property "this.switchHandler"
-            - Assign the parameter variable "switchHandlerFunction" as value
-            - NOTE: This serves as a pointer to the callback function of a "ProjectItem" object
+
+    - On the Class method "setSwitchHandlerFunction()"
+        - Create a Class property named "switchHander"
+        - Assign the parameter variable "switchHandlerFunction" as value
+        - NOTE: Points to the callback function of the selected "ProjectItem" object
+
+
+    - On the Class "ProjectList" method "switchProject()"
+        - Access the Class property "switchHander" like a method
+            - NOTE: Located w/in the Class method "setSwitchHandlerFunction()"
+
+        - Pass the Class field "projects" as an argument value
+            - Chain the method ".find()"
+            - Pass an Arrow function as argument value
+
+        - The Arrow function has a parameter variable "p" that
+            - Holds the current Element node "li" read from the Class field "projects"
+
+            - Compares the Element node "li" property "id" w/
+                - The value of the parameter variable "projectId"
+
+            - If BOTH are STRICTLY EQUAL, the matching Element nde "li"
+                - Will be assignd as value to the Class property "switchHander"
 
 
     - On the Class "App"
-        - Call the method ".setSwitchHandlerFunction()" on the local constant "activeProjectList"
-            - Pass the Class "ProjectList" instance where the "ProjectItem" object will switch to
-                - As argument value (i.e. finishedProjectList)
+        - Chain the method ".setSwitchHandlerFunction()" to 
+            - The local constant "activeProjectList"
+            - NOTE: Holds an instance of the Class "ProjectList"
+        
+        - Pass the local constant "finishedProjectList" as argument value
+            - Chain the method ".addProject"
+            - Chain the method ".bind()"
+            - Pass the same local constant "finishedProjectList as argument value
 
-            - Chain the method ".addProject()"
+        - Repeat the same for the local constant "finishedProjectList" w/
+            - The local constant "activeProjectList" as argument value
+        
+        - NOTE: This sets the switch switchHander of the corresponding Class "ProjectList" objects
+            - Binds the keyword "this" of the Class method "addProject()"
+                - To the Class "ProjectList" instance passed as argument value to ".bind()"
 
-            - Then the method ".bind()"
-                - To bind the keyword "this" inside of the method ". addProject()"
-
-            - Pass "finishedProjectList" as argument value
-
-
-        - Call the method ".setSwitchHandlerFunction()" on the local constant "finishedProjectList"
-            - Pass the Class "ProjectList" instance where the "ProjectItem" object will switch to
-                - As argument value (i.e. activeProjectList)
-
-            - Chain the method ".addProject()"
-
-            - Then the method ".bind()"
-                - To bind the keyword "this" inside of the method ". addProject()"
-
-            - Pass "finishedProjectList" as argument value
+            - Identifies the Class "ProjectList" instance that a "ProjectItem" object
+                - Will eventually switch over to
 
 
     - On the Class "ProjectList" method "addProject()"
         - Pass the keyword "this" as argument value to "console.log()"
 
+        - NOTE: The keyword "this" holds the "ProjectList" instance that
+            - A "ProjectItem" object will switch over to
+
 
     - On the Class "ProjectItem" Constructor method
-        - Create an additional parameter variable "updateProjectListsFunction"
+        - Add a new parameter variable named "updateProjectListsFunction"
 
         - Create a new Class property "updateProjectListsHandler"
             - Assign the parameter variable "updateProjectListsFunction" as value
+
+        - NOTE: The Class property "updateProjectListsHandler" points to
+            - The Class "ProjectList" method "switchProject()"
+
+            - Evident on how a Class "ProjectItem" is instantiated w/in
+                - The Class "ProjectList" Constructor method
+
             
-            - NOTE: This points to corresponding callback function
-
-
     - On the Class "ProjectList" Constructor method
-        - Refactor the instantiation of the Class "ProjectItem"
+        - Refactor the line of code that instantiates the Class "ProjectItem"
 
-        - Pass the Class method "switchProject()" as a 2nd argument value
+        - Add a 2nd argument value
+            - Pass the Class method "switchProject"
+                - NOTE: Omit the pair of "( )"
+
             - Chain the method ".bind()"
-            - Pass the keyword "this" as argument value
-            
-            - NOTE: The keyword "this" refers to the corresponding Class "ProjectList"
-                - NOT the "ProjectItem"
+                - Pass the keyword "this" as argument value
+
+            - NOTE: The keyword "this" refers to the current Class "ProjectList" instance
+                - NOT the "ProjectItem" object being instantiated
 
 
     - On the Class "ProjectItem" method "connectSwitchButton()"
-        - Pass the Class property "this.updateProjectListsHandler" as the callback function
-            - For the attached Event listener of the local constant "switchBtn"
+        - Pass the Class property "updateProjectListsHandler" as the callback function
+            - To the Event listener attached on the local constant "switchBtn"
 
 
     - Save the changes
@@ -102,11 +111,12 @@ Passing Method References Around
         - Clicking the button "Finish" of a "ProjectItem" object
             - Under the group "Active Projects"
 
-            - Displays a "ProjectList" object w/ 
-                - The value of the property "type" set to "finished"
+            - Returns a "ProjectList" object w/
+                - The property "type" set to "finished"
+
 
         - Clicking the button "Activate" of a "ProjectItem" object
             - Under the group "Finished Projects"
             
             - Displays a "ProjectList" object w/ 
-                - The value of the property "type" set to "active"
+                - The property "type" set to "active"

@@ -32,6 +32,7 @@ class ProjectList {
   projects = [];
 
   constructor(type) {
+    // Identifies the Class "ProjectList" instance that a created "ProjectItem" object belongs to
     this.type = type;
 
     // Select ALL HTML elements <li> w/ the matching attribute "id" value
@@ -48,18 +49,19 @@ class ProjectList {
   }
 
   // Method that sets the callback function of a "ProjectItem" object
-  setSwitchHandlerFunction(switchHandlerFunction) {
+  setSwitchHandler(switchHandlerFunction) {
     this.switchHandler = switchHandlerFunction;
   }
 
   // Method that adds a "ProjectItem" object to a new instance of the Class "ProjectList"
   addProject() {
+    // For now, displays the passed Class "ProjectList" instance
     console.log(this);
   }
 
-  // Method that switches a "ProjectItem" object to a different instance of the Class "ProjectList"
+  // Method that switches a "ProjectItem" object to another Class "ProjectList" instance
   switchProject(projectId) {
-    // Find matching "ProjectItem" object
+    // Find the matching "ProjectItem" object from its current "ProjectList" instance
     this.switchHandler(this.projects.find((p) => p.id === projectId));
 
     // Solution #1
@@ -67,7 +69,7 @@ class ProjectList {
     // this.projects.splice(projectIndex, 1);
 
     // Solution #2
-    // Removes the matching "ProjectItem" object from the Class "ProjectList" instance it initially belongs to
+    // Remove the matching "ProjectItem" object from its current "ProjectList" instance
     this.projects = this.projects.filter((p) => p.id !== projectId);
   }
 }
@@ -79,12 +81,12 @@ class App {
     const activeProjectsList = new ProjectList("active");
     const finishedProjectsList = new ProjectList("finished");
 
-    // Set the opposite Class "ProjectList" instance where a "ProjectItem" object can switch to
-    activeProjectsList.setSwitchHandlerFunction(
+    // Set the switch handler for the corresponding "ProjectList" instances
+    activeProjectsList.setSwitchHandler(
       finishedProjectsList.addProject.bind(finishedProjectsList),
     );
 
-    finishedProjectsList.setSwitchHandlerFunction(
+    finishedProjectsList.setSwitchHandler(
       activeProjectsList.addProject.bind(activeProjectsList),
     );
   }
