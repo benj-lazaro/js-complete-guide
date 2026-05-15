@@ -48,7 +48,8 @@ class ProjectList {
     console.log(this.projects);
   }
 
-  // Method that sets the callback function of a "ProjectItem" object
+  // Method that sets the Class "ProjectList" instance & method that
+  // A "ProjectItem" object switches to
   setSwitchHandler(switchHandlerFunction) {
     this.switchHandler = switchHandlerFunction;
   }
