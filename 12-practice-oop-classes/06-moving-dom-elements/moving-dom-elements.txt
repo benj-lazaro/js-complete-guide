@@ -1,0 +1,170 @@
+Moving DOM Elements
+-------------------
+- Implement the logic on the Class "ProjectList" method "addProject()"
+    - Moves a "ProjectItem" object to the other Class "ProjectList" instance
+    - Along w/ its corresponding DOM element
+
+
+- On the practice project (assets/scripts/app.js)
+    - On the Class "ProjectList" method "addProject()"
+        - Define a parameter variable named "project"
+
+        - Access the Class field "projects" of the other Class "ProjectList" instance
+            - Chain the method ".push()"
+            - Pass the parameter variable "project" as argument value
+
+        - NOTE: Effectively adds the "ProjectItem" object to the
+            - Other Class "ProjectList" instance
+        
+    
+    - Create a new Class named "DOMHelper"
+        - Responsible for moving the DOM elements of a "ProjectItem" object that
+            - Has been transferred to the other Class "ProjectList" instance
+
+        - Define a Static method named "moveElement" w/
+            - The following parameter variables
+                - "elementId"
+                - " newDestinationSelector"
+
+
+    - On the Class "DOMHelper" Static method "moveElement()"
+        - Create a local constant named "element"
+            - Assign the method "document.getElementById()"
+                - Pass the parameter variable "elementId" as argument value
+
+            - NOTE: Fetches & stores the corresponding Element node "ul"
+                - Based on the property "id" of the "ProjectList" object
+                - (i.e. "active-projects" or "finished-projects")
+
+        - Create a local constant named "destinationElement"
+            - Assign the method "document.querySelector()"
+            - Pass the parameter variable "newDestinationSelector" as argument value
+
+            - Stores the Element node "ul" that the "ProjectItem" object will switch to
+
+        - On the local constant "destinationElement"
+            - Chain the method ".append()"
+            - Pass the local constant "element" as argument value
+
+            - NOTE: Effectively move the DOM elements of a "ProjectItem" object
+                - To the destination project list (i.e. Active Projects or Finished Projects)
+
+        
+    - On the Class "ProjectList" method "addProject()"
+        - Call the Class "DOMHelper" Static method "moveElement()"
+            - Pass the following argument values
+                - 1st = "project.id"
+                - 2nd = `#${this.type}-projects ul`
+
+        
+    - On the Class "ProjectItem" method "connectSwitchButton()"
+        - Refactor the callback function stored in the 
+            - Class property "this.updateProjectListsHandler"
+
+        - Chain the method ".bind()" & pass the following argument values
+            - 1st = null
+            - 2nd = "this.id"
+
+    
+    - On the Class "ProjectList" method "addProject()"
+        - Access the parameter variable "project"
+            - Chain the method ".update()"
+
+            - Pass "this.switchProject.bind(this)" as the 1st argument value
+                - Taken from the Class "ProjectList" Constructor method
+
+            - NOTE: Updates the switch handler of the switches "ProjectItem" object
+                - Assigns a new Class "ProjectList" instance
+
+            - Pass Class property "this.type" as the 2nd argument value
+            
+            - NOTE: Holds information of the new "ProjectList" that
+                - The moved "ProjectItem" belongs to
+
+        
+    - On the Class "ProjectItem"
+        - Create a new Class method named "update" w/ the parameter variables
+            - "updateProjectListsFn"
+            - "type"
+
+    
+    - On the Class "ProjectItem" Class method "update()"
+        - Access the Class property "this.updateProjectListsHandler"
+            - Assign the parameter variable "updateProjectListsFn" as value
+
+        - Call the Class method "this.connectSwitchButton()"
+    
+
+    - On the Class "DOMHelper"
+        - Create a new Static method named "clearEventListeners" w/
+            - A parameter variable named "element"
+
+        - NOTE: Responsible for clearing the previous Event listener assigned
+            - To a "ProjectItem" object
+
+
+    - On the Class "DOMHelper" Static method "clearEventListeners()"
+        - Create a local constant named "clonedElement"
+        
+        - Assign the parameter variable "element" as argument value
+            - Chain the method ".cloneNode()"
+            - Pass a boolean value "true" as argument value
+
+            - NOTE: Create a deep clone of the DOM elements of the "ProjectItem" object
+
+        - Access the parameter variable "element"
+            - Chain the method ".replaceWith()"
+            - Pass the local constant "clonedElement" as argument value
+
+            - NOTE: Effectively replaces the previous DOM elements of 
+                - The "ProjectItem" object w/ a brand new one (copy of itself)
+                - Ditches previously connected Event listners & to be garbage collected
+                - Reducing risk of a memory leak
+
+        - Return the local constant "clonedElement"
+            
+        
+    - On the Class "ProjecItem" method "connectSwitchButton()"
+        - Refactor the local constant "switchBtn" into a variable
+
+        - Call the Class "DOMHelper" Static method "clearEventListeners()"
+            - Pass the local variable "switchBtn" as argument value
+            - Store the returned "clean" DOM element to the local variable "switchBtn"
+
+
+    - On the Class "ProjecItem" method "connectSwitchButton()"
+        - Add a new parameter variable named "type"
+            - Assign a ternary operator as value
+
+        - The ternary operator checks
+            - If the parameter variable "type" is EQUAL to "active"
+                - Assign the value "Finished"
+                - Oterhwise, assign the value "Activate"
+
+
+    - On the Class "ProjecItem" method "update()"
+        - On the call to the Class method "this.connectSwitchButton()"
+        - Pass the parameter variable "type" as argument value
+
+
+    - On the Class "ProjecItem" Constructor method
+        - Add a parameter variable named "type"
+
+        - Pass the parameter variable "type" as argument value
+            - To the Class method "this.connectSwitchButton()"
+
+
+    - On the Class "ProjectList" Constructor method
+        - On the instantiation of the Class "ProjectItem"
+            - Pass the Class property "this.type" as the 3rd argument value
+            
+
+    - Save the changes
+        - Load / reload the browser
+
+        - Clicking a "ProjectItem" objects button (i.e. Finish or Activate)
+            - Moves the "ProjecItem" object to 
+                - The corresponding project list (Active or Finished)
+                - Without generating errors on the brower's JavaScript console
+
+            - Updates the text content of the "ProjecItem" button accordingly
