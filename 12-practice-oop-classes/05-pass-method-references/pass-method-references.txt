@@ -1,4 +1,4 @@
-Passing Method References Around 
+Passing Method References Around
 --------------------------------
 - Implement the logic for the callback function of
     - The Class "ProjectItem" method "connectSwitchButton"
@@ -69,12 +69,10 @@ Passing Method References Around
         - Repeat the same for the local constant "finishedProjectList" w/
             - The local constant "activeProjectList" as argument value
         
-        - NOTE: Sets the switch handler of a Class "ProjectList" instance 
-            - Binds the keyword "this" on the Class method "addProject()" to
-                - The Class "ProjectList" instance passed as argument value to ".bind()"
-
-            - Identifies the Class "ProjectList" instance that a "ProjectItem" object
-                - Switches to when its DOM button (i.e. "Finish" or "Activate") is clicked
+        - NOTE: This sets a switch handler for the instantiated Class "ProjectList"
+            - It contains the method & other "ProjectList" instance that allows its
+            - Own "ProjectItem" object(s) to switch over to when its corresponding
+            - DOM button (i.e. "Finish" or "Activate") is clicked
 
 
     - On the Class "ProjectList" method "addProject()"
@@ -96,7 +94,7 @@ Passing Method References Around
 
             - This is evident on the refactored line of code on how the
             - Class "ProjectList" Constructor method instantiates a "ProjectItem" object
-            - As seen on the next step
+            - As seen on the following step
 
 
     - On the Class "ProjectList" Constructor method
@@ -105,18 +103,19 @@ Passing Method References Around
         - On the "for..of" loop
             - Pass the Class method "switchProject()" as 2nd argument value
                 - When instantiating a Class "ProjectItem"
-                - NOTE: Omit the pair of "( )"
+                    - NOTE: Omit the pair of "( )"
 
-            - Chain the method ".bind()"
-                - Pass the keyword "this" as argument value
+                - Chain the method ".bind()"
+                    - Pass the keyword "this" as argument value
 
-        - NOTE: The keyword "this" refers to the Class "ProjectList" instance & method that
-            - A "ProjectItem" object will switch to when its DOM button is clicked
+            - NOTE: The keyword "this" refers to the Class "ProjectList" instance & method 
+                - That a "ProjectItem" object will switch to when its DOM button is clicked
                 - (i.e. "Finish" or "Activate") 
-            
-            - Passed as the 2nd argument value to the Class "ProjectItem"
-                - Parameter variable "updateProjectListsFunction" then stored as value
-                - The Class "ProjectItem" property "updateProjectListsHandler"
+
+                - Assigned as the 2nd argument value of the Class "ProjectItem"
+                    - On the parameter variable "updateProjectListsFunction"
+
+                - Stored on the Class "ProjectItem" property "updateProjectListsHandler"
 
 
     - On the Class "ProjectItem" method "connectSwitchButton()"

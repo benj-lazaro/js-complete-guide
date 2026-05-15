@@ -54,7 +54,8 @@ class ProjectList {
     this.switchHandler = switchHandlerFunction;
   }
 
-  // Method that adds a "ProjectItem" object to a new instance of the Class "ProjectList"
+  // Method that receives a "ProjectItem" object & then adds it to the other
+  // Instance of the Class "ProjectList"
   addProject() {
     // For now, displays the passed Class "ProjectList" instance
     console.log(this);
@@ -82,7 +83,8 @@ class App {
     const activeProjectsList = new ProjectList("active");
     const finishedProjectsList = new ProjectList("finished");
 
-    // Set the switch handler for the corresponding "ProjectList" instances
+    // Sets the method & the other Class "ProjectList" instance that
+    // Its "ProjectItem" objects can switch to when its corresponding DOM button is clicked
     activeProjectsList.setSwitchHandler(
       finishedProjectsList.addProject.bind(finishedProjectsList),
     );
