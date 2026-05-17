@@ -1,21 +1,26 @@
-// Class that handles the move of a "ProjectItem" object's DOM elements
+// Class that handles the switching of a "ProjectItem" object's DOM elements
 class DOMHelper {
-  // Static method that clears previous Event listener assigned to a "ProjectItem" object
+  // Static method that clears previous Event listener attached to a "ProjectItem" object
   static clearEventListeners(element) {
-    // Create a deep clone
+    // Create a deep clone of the current Element node "li" of a "ProjectItem" object
     const clonedElement = element.cloneNode(true);
 
-    // Replace w/ a deep clone & ditches previously attached Event listeners
+    // Replace original ELement node "li" w/ its deep clone
     element.replaceWith(clonedElement);
+
+    // Return a cleaned Element node "li" of a "ProjecItem" object
     return clonedElement;
   }
 
-  // Static method that moves the DOM elements of a switched "ProjectItem" object
+  // Static method that moves a "ProjectItem" object's DOM elements
   static moveElement(elementId, newDestinationSelector) {
+    // Fetch the current Element node "li" of a "ProjectItem" object based on its property "id"
     const element = document.getElementById(elementId);
+
+    // Fetch the Element node "ul" that a "ProjectItem" object's DOM will switch to
     const destinationElement = document.querySelector(newDestinationSelector);
 
-    // Move the DOM elements of a "ProjectItem" object
+    // Move a "ProjectItem" object's DOM elements to the new Element node "ul"
     destinationElement.append(element);
   }
 }
@@ -43,13 +48,13 @@ class ProjectItem {
     // Access the Element node "li" button "Finish" or "Activate"
     let switchBtn = projectItemElement.querySelector("button:last-of-type");
 
-    // Clear previous Event listner attached to the "button" element of a "ProjectItem" object
+    // Clear previous Event listener attached to the DOM elements of a "ProjectItem" object
     switchBtn = DOMHelper.clearEventListeners(switchBtn);
 
-    // Update the property "textContent" of the "button" element
+    // Update the text of the "ProjectItem" object's DOM "button"
     switchBtn.textContent = type === "active" ? "Finish" : "Activate";
 
-    // Attach a new Event listener & callback function
+    // Attach an Event listner for a "click" Event & the corresponding callback function
     switchBtn.addEventListener(
       "click",
       this.updateProjectListsHandler.bind(null, this.id),
@@ -98,13 +103,15 @@ class ProjectList {
   // Method that receives a "ProjectItem" object & then adds it to the other
   // Instance of the Class "ProjectList"
   addProject(project) {
-    // Add a "ProjectItem" object to the property "projects" of the other "ProjectList" instance
+    // Add passed "ProjectItem" object to the Class field "projects" of the other
+    // Class "ProjectList" instance
     this.projects.push(project);
 
-    // Move the DOM elements of the "ProjectItem" object
+    // Move the corresponding DOM elements of the "ProjectItem" object to the
+    // New element node "ul" identified by its HTML attribute "id"
     DOMHelper.moveElement(project.id, `#${this.type}-projects ul`);
 
-    // Update the switch handler of the "ProjectItem" object
+    // Update the "ProjectItem" object's switch handler after moving its DOM elements
     project.update(this.switchProject.bind(this), this.type);
   }
 
@@ -130,8 +137,8 @@ class App {
     const activeProjectsList = new ProjectList("active");
     const finishedProjectsList = new ProjectList("finished");
 
-    // Sets the method & the other Class "ProjectList" instance that
-    // Its "ProjectItem" objects can switch to when its corresponding DOM button is clicked
+    // Sets the method & the other Class "ProjectList" instance that it's own
+    // "ProjectItem" object will switch to after the object's DOM button is clicked
     activeProjectsList.setSwitchHandler(
       finishedProjectsList.addProject.bind(finishedProjectsList),
     );
