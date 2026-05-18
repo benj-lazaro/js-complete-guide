@@ -1,0 +1,148 @@
+Adding A Tooltip
+----------------
+- Implement the logic for the 
+    - Class "ProjectItem" method "connectMoreInfo()" 
+    - Class "Tooltip"
+
+
+- On the practice project (assets/scripts/app.js)
+    - On the Class "ProjectItem" method "connectMoreInfo()"
+        - Create a local constant named "projectItemElement"
+            - Assign the method "document.getElementById()" as value
+            - Pass "this.id" as argument value
+
+        - Create a local constant named "moreInfoBtn"
+            - Assign the local constant "projectItemElement" as value
+            - Chain the method ".querySelector"
+            - Pass "button:first-of-type" as value
+
+        - Access the local constant "moreInfoBtn"
+            - Chain ".addEventListener()"
+            - Pass the parameters
+                - 1st = "click"
+                - 2nd = "this.showMoreInfoHandler"
+
+        - Create a new Class method named "showMoreInfoHandler"
+            - Create a local constant named "tooltip"
+                - Assign a new instance of the Class "Tooltip"
+
+            - Access the local constant "tooltip"
+                - Chain the method ".attach()"
+
+    
+    - On the Class "Tooltip"
+        - Create two (2) Class methods
+            - "attach()"
+            - "detach()"
+
+
+    - On the Class "Tooltip" method "attach()"
+        - Create a local constant named "tooltipElement"
+            - Assign the method "document.createElement()" as value
+            - Pass "div" as argument value
+
+        - Access the local constant "tooltipElement"
+            - Chain the property ".className"
+            - Assign "card" as value
+
+        - Access the local constant "tooltipElement"
+            - Chain the property ".textContent"
+            - Assign "DUMMY!" as value
+
+        - Access the local constant "tooltipElement"
+            - Chain the method ".addEventListener()"
+            - Pass the argument values
+                - 1st = "click"
+                - 2nd = "this.detach"
+
+            - NOTE: Allows the tooltip to close just by clicking on it
+
+        - Create a new Class property (on-the-fly) named "element"
+            - Assign the local constant "tooltipElement" as value
+
+        - Access the "document.body"
+            - Chain the method ".append()"
+            - Pass the local constant "tooltipElement" as argument value
+
+        - NOTE: Create the Element node "div" that contains a tooltip
+
+    
+    - On the Class "Tooltip" method "detach()"
+        - Treat it like a Class field
+            - Assign an Arrow function
+
+        - Inside the Arrow function
+            - Access the Class property "element"
+            - Chain the method ".remove()"
+
+        - NOTE: Removes the tooltip from the DOM when it is clicked
+
+
+    - On the Class "ProjectItem"
+        - Create a new Class field named "hasActiveTooltip"
+            - Assign a boolean "false" as value
+
+        
+    - On the Class "ProjectItem" method "showMoreInfoHandler()"
+        - Access the Class field "hasActiveTooltip" (as a property)
+            - Assign a boolean "true" as value
+
+        - Implement a "if" statement at the beginning of the method
+            - Check if the Class field "hasActiveTooltip" has a value of "true"
+            - If yes, return the call
+            - Otherwise, instantiate a Class "Tooltip" object
+
+
+    - On the Class "Tooltip" method "attach()"
+        - Refactor the callback function from "this.detach" to "this.closeTooltip"
+
+
+    - On the Class "Tooltip" method "detach()"
+        - Refactor into a normal method
+
+
+    - On the Class "Tooltip"
+        - Create a new method named "closeTooltip"
+
+        - Create a Constructor method
+
+
+    - On the Class "Tooltip" method "closeTooltip()"
+        - Treat it like a Class field
+            - Assign an Arrow function as value 
+
+        - Inside the Arrow function
+            - Calls the Class method "detach()"
+
+            - Access the Class property "closeNotifier" 
+                - Calls it like a method
+
+        - NOTE: Responsible to closing a "ProjectItem" object's tooltip from the DOM
+
+
+    - On the Class "Tooltip" Constructor method
+        - Define a parameter variable named "closeNotifierFunction"
+
+        - Create a Class property named "closeNotifier"
+            - Assign the parameter variable "closeNotifierFunction"
+
+        
+    - On the Class "ProjectItem" method "showMoreInfoHandler()"
+        - Pass an Arrow function when instantiating the Class "Tooltip"
+
+        - Inside the Arrow function
+            - Access the Class field "hasActiveTooltip"
+            - Assign a boolean "false" as value
+
+    
+    - Save the changes
+        - Load / reload the browser
+
+        - Clicking the "More Info" button
+            - Renders a simple "tooltip" DOM w/ the text message "DUMMY!"
+            
+            - Clicking the button repeatedly 
+                - Does NOT create multiple DOM element
+
+            - Clicking on the DOM element
+                - Closes the DOM
