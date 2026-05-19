@@ -1,0 +1,113 @@
+Adding Inheritance
+------------------
+- Create a Base Class that
+    - Reuse the Class "Tooltip" methods "attach()" & "detach()"
+    - For adding or removing elements dynamically from the DOM
+
+
+- On the practice project (assets/scripts/app.js)
+    - Create a Base Class named "Component"
+
+
+    - On the Class "Tooltip"
+        - Cut the Class methods "attach()" & "detach()"
+
+
+    - On the Base Clsss "Component"
+        - Paste the methods "attach()" & "detach()"
+
+    
+    - Make the Class "Tooltip" a Sub-Class of the Class "Component"
+        - Using the keyword "extends"
+
+    
+    - On the Class "Component" method "attach()"
+        - Cut ALL of the code
+        - Leave the last line behind 
+        - (i.e. "document.body.append(tooltipElement)")
+
+
+    - On the Sub-Class "Tooltip"
+        - Create a new Class method named "create"
+        - Paste the cut codebase from the Class "Component" method "attach()"
+
+
+    - On the Sub-Class "Tooltip" Constructor method
+        - Call the keyword "super()"
+
+        - Add the created Class method "create()"
+            - NOTE: This ensures that the method ALWAYS run
+            - When the Class "Tooltip" is instantiated
+
+
+    - On the Class "Component" method "attach()"
+        - Refactor the argument value "tooltipElement" to
+            - The Class property "element"
+
+    
+    - On the Class "Component" method "detach()"
+        - Use an "if" statement to check
+            - If the Class property "element" is defined
+
+            - If "true"
+                - Remove the selected Node Element from the DOM
+                - Using the method ".remove()"
+
+
+    - On the Class "Component"
+        - Create a Constructor method
+
+        - Define the parameter variables
+            - 1st = "hostElementId"
+            - 2nd = "insertBefore = false"
+
+
+    - On the Class "Component" Constructor method
+        - Use an "if" statement to check
+            - If the parameter variable "hostElementId" is set (NOT falsy)
+
+            - If "true"
+                - Create a Class property "hostElement"
+                - Assign the method "document.getElementById()"
+                - Pass the parameter variable "hostElementId" as argument value
+
+            - If "false"
+                - Create a Class property "hostElement"
+                - Assign the property "document.body"
+            
+            - NOTE: Fallback to use "document.body" as the location where
+                - An Element node will be attached to or detached from
+
+    
+        - Create a Class property "insertBefore"
+            - Assign the parameter variable "insertBefore" as value
+
+            - NOTE: Identifies to location of the Element node to be created
+                - Whether it will be attached BEFORE or AFTER the selected DOM element
+
+
+    - On the Class "Component" method "attach()"
+        - Refactor the code Base
+            - Access the Class property "hostElement"
+                - Chain the method ".insertAdjacentElement()"
+
+            - Pass the following argument values
+                - 1st = ternary expression
+                - 2nd = "this.element"
+
+        - On the ternary expression
+            - Check if the property "insertBefore" is truthy
+
+            - If "true"
+                - Returns the value "afterbeing" as argument value
+
+            - If "false"
+                - Return the value "beforeend" as argument value
+
+            
+    - Save the changes
+        - Load / reload the browser
+
+        - NO significant changes on the behavior of the web app
+            - Despite of the implementation of the Base Class "Component"
+            
