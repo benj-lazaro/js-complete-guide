@@ -1,0 +1,15 @@
+Wrap Up
+-------
+- Working w/ Classes
+    - Taking the OOP approach
+
+    - Good practice on 
+        - How to think about OOP
+        - How to structure an app
+        - Working w/ the DOM & Event listeners
+
+    - New callback pattern
+        - Passing functions to other Class instances
+        
+        - To call functions from inside of those instances
+            - Call upon certain Events 
