@@ -2,8 +2,14 @@ Module Introduction
 -------------------
 - This section focuses on:
     - Attaching data to DOM elements
-    - Working w/ element coordinates & sizes
-    - Working w/ templates & dynamic scripts
-    - Look on the "navigator", "location" & "window.history" objects
 
-    - Working on the previous section's practice project
+    - Work w/ element coodinates & sizes
+
+    - Work w/ templates & dynamic scripts
+
+    - Look on various objects
+        - "navigator"
+        - "location"
+        - "window.history"
+
+    - Practice on the previous section's practice project
