@@ -1,0 +1,77 @@
+Using "dataset" (data-* Attributes)
+-----------------------------------
+- To attach data to DOM elements
+    - The HTML attribute "data-<name>" is a special attribute that
+        - Allows to attach any kind of data to an HTML element 
+
+    - To read data from a HTML attribute "data-<name>"
+        - JavaScript uses the property ".dataset"
+
+    - NOTE: ALL attributes "data-<name>" attached to an HTML element are
+        - Merged together in the JavaScript property ".dataset"
+
+
+- On the practice project (assets/scripts/app.js)
+    - On the Class "ProjectItem" method "showMoreInfoHandler()"
+        - Create a local constant named "projectElement"
+
+        - Assign the method "document.getElementById()" as value
+            - Pass "this.id" as argument value
+
+        - Access the local constant "projectElement"
+            - Chain the property ".dataset"
+
+        - NOTE: This provides access to the text assigned to the
+            - HTML attribute "data-<name>" of the Element node "li"
+
+            - JavaScript automatically converts the name into camelCase
+                - Makes is accessible as a property
+                - (e.g. "data-extra-info" converted to "extraInfo")
+
+        - NOTE: To set a new attribute "data-<name>" to a HTML element
+            - Access the property ".dataset"
+            - Chain a new name 
+            - Then the "=" operator
+            - Followed by a new text value
+                - (e.g. <selected_element>.dataset.<new_name> = "<data>";)
+
+
+    - On the Class "ProjectItem" method "connectMoreInfoButton()"
+        - Refactor the callback method assigned to
+            - The local constant "moreInfoBtn"
+            
+            - Chain the method ".bind()"
+                - Pass the keyword "this" as argument value
+
+
+    - On the Class "ProjectItem" method "showMoreInfoHandler()"
+        - Create a local constant "tooltipText"
+            - Assign the property "projectElement.dataset.extraInfo"
+
+        - Pass the local constant "tooltipText"
+            - As a 2nd argument value to the instantiation of the Class "Tooltip"
+
+
+    - On the Class "Tooltip" Constructor method
+        - Add a new parameter variable named "text"
+
+        - Add a new Class property named "text"
+            - Assign the parameter variable "text" as value
+
+
+    - On the Class "Tooltip" method "create()"
+        - On the property "tooltipElement.textContent"
+            - Assign the Class property "text" as value
+
+        - NOTE: Assigns the extracted attribute "data-*" of the
+            - Selected Element node "li"
+
+            - This serves as the associated "More Info" text that
+                - Gets rendered on the DOM
+
+
+    - Save the changes
+        - Load / reload the browser
+
+        - Clicking the "More Info" button
+            - Renders the corresponding text on the DOM
