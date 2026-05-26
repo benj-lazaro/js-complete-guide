@@ -1,0 +1,72 @@
+Work With Element Sizes & Positions
+-----------------------------------
+- To work w/ specific data using the following DOM element properties
+    - ".offsetTop"
+        - Returns the distance (in pixels)
+            - Between the element's top-most point
+            - To the start of the two-dimensional coordinate system (0,0)
+            - NOT the viewport
+        
+        - Provides the "outer positioning" 
+
+    - ".offsetLeft"
+        - Returns the distance (in pixels)
+            - Between the element's left-most point
+            - To the start of the two-dimensional coordinate system (0,0)
+            - NOT the viewport
+
+    - ".clientTop" & ".clientLeft"
+        - Returns the distance (in pixels)
+            - Between the element's top-most & left-most point
+            - To the top-most & left-most point of the content of the element's box
+
+        - Provides the "inner positioning"
+
+        - The content refers to
+            - The entire content w/out any borders & potential scroll bars
+
+    - ".offsetWidth" & ".offsetHeight"
+        - Returns the entire width & height of the element's box
+            - Includes ALL borders & scroll bars
+
+    - ".clientWidth" & ".clientHeight"
+        - Return the inner width & height
+            - W/out the borders & scroll bars
+
+    - ".scrollHeight"
+        - Returns the entire height of the content
+        - Including the part w/c is currently NOT visible in the box
+
+    - ".scrollTop"
+        - Returns information on how much content in the box 
+            - That have been scrolled (down)
+        
+        - NOTE: The value of 0 meant that
+            - The content has NOT been scrolled (down) yet
+
+    - NOTE: To view related properties
+        - HTMLElement Reference (https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement)
+        - Element Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element)
+
+
+- To retrieve the height & width of the entire HTML document
+    - The methods 
+        - "window.innerWidth()"
+        - "window.innerHeight()"
+
+        - Returns the width & height of the document w/in  the "window" object
+            - It excludes the browser's URL bar
+
+        - NOTE: If the browser has a visible scroll bar (e.g. Internet Explorer or Windows)
+            - The return values will include the size of the scroll bar
+            - Instead of subtracting it from the value of the width & height
+
+    - The methods 
+        - "document.documentElement.clientWidth"
+        - "document.documentElement.clientHeight"
+
+        - These methods returns RELIABLE values
+            - Returns the "real" width & height of the HTML document
+            - Deducts the size of the visible scroll bar (if any) from the width & height
+            
+        - NOTE: The "documentElement" refers to the root element w/c includes the head & body
