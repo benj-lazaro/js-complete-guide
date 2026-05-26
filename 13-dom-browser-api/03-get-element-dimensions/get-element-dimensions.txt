@@ -1,0 +1,51 @@
+Getting Element Box Dimensions
+------------------------------
+- To position the text of a "More Info" button at a preferred location
+    - Requires identifying the exact coordinates of 
+        - A "ProjectItem" object's "More Info" button in the DOM
+
+
+- The Element method ".getBoundingClientRect()"
+    - Returns a "DOMRect" object
+        - It describes the size (weight, height) & position (x, y) of a rectangle
+        - Reference (https://developer.mozilla.org/en-US/docs/Web/API/DOMRect)
+
+    - Provides information on an element's
+        - Size
+        - Position relative to the viewport
+        
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect)
+
+
+- The browser renders a web page in a two-dimensional coordinate system where
+    - The x-axis refers to the left & right
+    - The y-axis refers to the top & bottom
+
+    - The coordinates starts at the top-left corner of the browser
+        - Specifically at coordinates (0, 0) wherein
+            - The x-axis has a value of 0 
+            - The y-axis has a value of 0
+
+        - Thinks (measurement expressed) in pixels
+
+    - A web page is rendered from
+        - Top to bottom
+        - Left to right   
+
+
+- On the practice project (assets/scripts/sizes.js)
+    - On the browser's JavaScript console
+
+    - Select the HTML element <div> using the method "document.getElementById()"
+        - Pass "main-box" as argument value
+
+    - Store the returned Element node "div" on
+        - The local constant "targetElement"
+
+    - Access the local constant "targetElement"
+        - Chain the method ".getBoundingClientRect();
+
+    - Returns a "DOMReact" object that contains properties that
+        - Describes the size & coordinates of an Element in the DOM
+
+    
