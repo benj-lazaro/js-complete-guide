@@ -11,103 +11,99 @@ Positioning The Tooltip
         - Pass the parameter variable "hostElementId" as
             - An argument value to "super()"
 
-        - NOTE: This will be used for identifying the position of the host element
-            - i.e. Element node "li" w/ the attribute "data-extra-info" w/c
-            - Contains the corresponding tooltip content
+        - NOTE: Identifies the corresponding Element node of a "ProjectItem"
+            - Where the tooltip content resides c/o the attribute "data-extra-info"
 
 
     - On the Sub-Class "Tooltip" method "create()"
-        - Prior to adding an Event listener that closes a "Tooltip" object
-            - Fetch the current position of the "More Info" button
+        - Prior to adding an Event listener to the local constant "tooltipElement"
+            - Fetch the position of the inherited Class property "hostElement"
+            - Chain the method ".getBoundingClientRect()"
+            - Pass the statement as an argument value to "console.log()"
 
-            - Access the Class property "hostElement"
-                - Chain the method ".getBoundingClientRect()"
-
-            - Pass it as argument value to "console.log()"
+        - NOTE: Returns a "DOMRect" object that contains position-related information of
+            - The selected host element stored in the local constant "hostElement" w/c
+            - Includes height, width, x-coordinates, y-coordinates & more 
 
         
     - On the Class "ProjectItem" method "showMoreInfoHandler()"
-        - Pass the Class property "id" as the 3rd argument value
+        - Pass the Class property "id" as the 3rd argument value 
             - When instantiating the Class "Tooltip"
 
-            - NOTE: Identifies the "ProjectItem" object 
-                - Whose "More Info" button has been clicked
-            
-
-    - Clicking a "ProjectItem" object's "More Info" button
-        - Returns a "DOMRect" object on the browser's JavaScript console
-            - Contains position-related information of the clicked "More Info" button
-                - Includes height, width, x-coordinates, y-coordinates & more 
-
-            - NOTE: Values are dependent on how the browser renders the "More Info" button
-
-        - Renders the tooltip text
-            - Below the clicked "More Info" button 
+        - NOTE: Identifies the "ProjectItem" object whose "More Info" button is clicked
+            - Renders the tooltip content just below the "More Info" button
 
 
     - On the Sub-Class "Tooltip" method "create()"
-        - Comment out the recent "console.log()"
+        - Comment out the recent "console.log()" of the Class property "hostElement"
+            - Chained w/ the method ".getBoundingClientRect()"
 
         - Create a local constant named "hostElPosLeft"
             - Access the Class property "hostElement"
-                - Chain the property ".offsetLeft"
-                - Pass as an assigned value 
+            - Chain the property ".offsetLeft"
+            - Pass it as an assigned value 
 
-            - NOTE: This refers to the distance from start of the coordinate system (0,0)
-                - To the leftmost point of the host element
+            - NOTE: Refers to the distance of the host element's leftmost-point
+                - From the start of the coordinate system (0,0)
     
         - Create a local constant named "hostElPosTop"
             - Access the Class property "hostElement"
-                - Chain the property ".offsetTop"
-                - Pass as an assigned value 
+            - Chain the property ".offsetTop"
+            - Pass it as an assigned value 
 
-            - NOTE: This refers to the distance from start of the coordinate system (0,0)
-                - To the top point of the host element
+            - NOTE: Refers to the distance of the host element's topmost-point
+                - From the start of the coordinate system (0,0)
 
         - Create a local constant named "hostElHeight"
             - Access the Class property "hostElement"
-                - Chain the property ".clientHeight"
-                - Pass as an assigned value
+            - Chain the property ".clientHeight"
+            - Pass it as an assigned value
 
-            - NOTE: This refers to the height of the host element 
-                - Excluses borders and/or possible scroll bars
-
+            - NOTE: Refers to the host element's height
+                - Excluding borders and/or possible scroll bars 
+                
         - Create a local constant named "parentElementScrolling"
             - Access the Class property "hostElement"
-                - Chain the property ".parentElement"
-                - Followed by the property ".scrollTop"
-                - Pass as an assigned value
+            - Chain the property ".parentElement"
+            - Followed by the property ".scrollTop"
+            - Pass it as an assigned value
 
-            - NOTE: Identfies how much of the host element's parent has been scrolled down
+            - NOTE: Holds a numeric value on how much of the host element's 
+                - Parent (element) that has been scrolled down from its top-most point
 
+        - Renders the tooltip content just below a "ProjectItem" object's "More Info" button
 
-    - Next is to adjust the position of the tooltip content
+        - Next is to adjust the position of the tooltip content
+
         - Create a local constant named "x"
             - Assign the local constant "hostElPosLeft" as value
-            - Then add the value of 20 (i.e. 20 pixels)
+            - Then add the numeric value of 20 (i.e. 20 pixels)
 
         - Create a local constant named "y"
             - Assign the local constant "hostElPosTop" as value
             - Add the local constant "hostElHeight"
-            - Then minus the local constant "parentElementScrolling"
-            - Also subtract the value of 10 (i.e. 10 pixels)
+            - Subtract the local constant "parentElementScrolling" &
+            - The numeric value of 10 (i.e. 10 pixels)
 
-        - Access the local constant "tooltipElement"
+        - To apply the style changes on the tooltip content
+            - Access the local constant "tooltipElement"
             - Chain the property ".style"
             - Followed by the property ".position"
             - Assign the value "absolute"
 
-        - Access the local constant "tooltipElement"
+            - Access the local constant "tooltipElement"
             - Chain the property ".style"
             - Followed by the property ".left"
-            - Assign the local constant "x" w/ the string "px" as value
+            - Assign the local constant "x" w/ the string "px" as value (e.g. x + "px")
+            
             - NOTE: This mimics assigning values to CSS Selectors
 
-        - Access the local constant "tooltipElement"
+            - Access the local constant "tooltipElement"
             - Chain the property ".style"
             - Followed by the property ".top"
-            - Assign the local constant "y" w/ the string "px" as value
-            - NOTE: This mimics assigning values to CSS Selectors
+            - Assign the local constant "y" w/ the string "px" as value (e.g. y + "px")
+
+            - NOTE: This mimics assigning values to CSS Selector properties
         
     
     - Save the changes

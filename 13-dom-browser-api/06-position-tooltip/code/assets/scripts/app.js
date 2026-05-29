@@ -129,18 +129,16 @@ class ProjectItem {
 
   // Methos that handles the mechanism behind a "ProjectItem" object's "More Info" button
   showMoreInfoHandler() {
-    // Check if a "ProjectItem" object's tooltip had been rendered
+    // Check if a "ProjectItem" object's tooltip is already rendered
     if (this.hasActiveTooltip) {
+      // Prevents from instantiating the same "Tooltip" object
       return;
     }
 
-    // Access the Element node "li" of a "ProjectItem" object
+    // Otherwise, instantiate the Class "Tooltip"
     const projectElement = document.getElementById(this.id);
-
-    // Access the text value of the attribute "data-extra-info"
     const tooltipText = projectElement.dataset.extraInfo;
 
-    // Otherwise, instantiate the Class "Tooltip"
     const tooltip = new Tooltip(
       () => {
         this.hasActiveTooltip = false;
@@ -150,7 +148,6 @@ class ProjectItem {
     );
 
     tooltip.attach();
-
     this.hasActiveTooltip = true;
   }
 
