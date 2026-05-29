@@ -1,0 +1,74 @@
+Handling Scrolling
+------------------
+- Implement the logic that
+    - Allows for a "ProjectItem" object that is switched over to the other group
+        - Get to be scrolled into view w/out having to manually scroll to it
+
+    - Smoothly scrolls to the "ProjectItem" object that switched over
+        - Instead of immediately "jumping" into view
+
+    - NOTE: A useful feature to make sure that 
+        - Users intentionally see the content you want them to see
+
+
+- The method ".scrollTo()"
+    - Accepts two (2) number values as argument values
+        - Representing the x & y coordinates that states the absolute value (in pixels) that
+        - A selected element will scroll down/up and/or left/right
+
+    - Repeatedly calling this method on the selected element using the same absolute values
+        - Does NOT scroll the selected element any further from its initial scroll
+
+    - NOTE: Scrolls the selected element to a specific position in the DOM
+
+    - Alternatively, can accept an object w/ the following properties
+        - "top"         = how many pixels to scroll from the top
+        - "left"        = how many pixels to scroll from the left
+        - "behavior"    = scroll behavior (e.g. "smooth")
+
+
+- The method ".scrollBy()"
+    - Similar to the method ".scrollTo()" except that
+        - It works w/ relatives values (in pixels) rather than absolute values
+
+    - Repeatedly calling this method on the selected element using the same relatives values
+        - Scrolls the selected element accordingly to the passed relative values
+
+    - NOTE: Scrolls the selected element relatively based on the given amount of pixels
+
+    - Alternatively, can accept an object w/ the following properties
+        - "top"         = how many pixels to scroll from the top
+        - "left"        = how many pixels to scroll from the left
+        - "behavior"    = scroll behavior (e.g. "smooth")
+
+
+- The method ".scrollIntoView()"
+    - Accepts an object w/c contain the property "behavior"
+        - Assigned with the text value of "smooth"
+        
+        - Default value is "auto" w/c provide the "jump into" effect
+
+    - Automatically puts a "ProjectItem" object that switched over into view
+
+    - IMPORTANT: This method is ONLY supported in Chrome & Firefox browsers
+        - NOT supported by Internet Explorer & Safari
+
+
+- On the practice project (assets/scripts/app.js)
+    - On the Class "DOMHelper" Static method "moveElement()"
+        - Access the local constant "element"
+
+        - Chain the method ".scrollIntoView()"
+
+        - Pass an object as argument value w/c contains
+            - The property "behavior"
+            - Assigned with the value of "smooth"
+
+        - NOTE: Smoothly scrolls a "ProjectItem" object (that switched over) into view
+
+    - Save the changes
+        - Load / reload the browser
+
+        - Clicking a "ProjectItem" object's button "Finish" or "Activate"
+            - Smoothly switches the "ProjectItem" into view
+
