@@ -1,0 +1,69 @@
+Working With Template Tags
+--------------------------
+- When working w/ the tooltip content
+    - It is best to separate HTML markup from JavaScript code
+        - Setup the content w/in the HTML docuemnt
+        - Using the HTML element <template>
+
+    - NOTE: The content of the HTML element <template>
+        - By default, does NOT get rendered on the browser at the beginning
+        - Remains part of the DOM where it can be selected & work on using JavaScript
+
+    - Set the HTML element <template> attribute "id" 
+    
+    - Use the method "document.selectElementbyId()"
+        - To select the HTML element <template> & work on using JavaScript
+
+
+- On the practice project (index.html)
+    - On the 1st line after the HTML element <body>
+        - Place an HTML element <template>
+        - Assign an HTML attribute "id" w/ the value of "tooltip"
+
+
+    - Inside the HTML element <template>
+        - Place an HTML element <h2> w/ the content of "More Info"
+        - Followed by an empty HTML element <p>
+        
+
+    - Switch to the "app.js" file (assets/scripts/app.js)
+
+
+    - On the Sub-Class "Tooltip" method "create()"
+        - Create a local constant named "tooltipTemplate"
+            - Assign the method "document.getElementById()" as assigned value
+            - Pass the value "tooltip" as argument value
+
+            - NOTE: Selects the HTML element <template> from the HTML document
+
+        - Create a local constant named "tooltipBody"
+            - Assign the method "document.importNode()" as assigned value
+            - Pass the local constant "tooltipTemplate.content" & "true" as an argument values
+
+            - NOTE: Selects the content of the HTML element <template> (i.e. <h2> & <p>)
+                - Creates a new & deep import of the content
+        
+        - Access the local constant "tooltipBody"
+            - Chain the method ".querySelector()"
+                - Pass "p" as argument value
+
+            - Chain the property ".textContent"
+                - Assign the property "this.text" as assigned value
+
+        - Access the local constant "tooltipElement"
+            - Chain the method ".append()"
+            - Pass the local constant "tooltipBody" as argument value
+
+            - NOTE: Appends the tooltip content to the tooltip element
+
+    
+    - Save the changes
+        - Load / reload the browser
+
+        - Clicking the "More Info" button
+            - Renders the corresponding tooltip content
+
+        - This allows the tooltip content
+            - To manage its corrresponding HTML markup w/in the HTML document            
+            - To be customized at a later time using JavaScript
+            - To follow the "separation of concerns" approach
