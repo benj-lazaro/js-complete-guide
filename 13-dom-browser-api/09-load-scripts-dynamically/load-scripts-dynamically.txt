@@ -1,0 +1,77 @@
+Loading Scripts Dynamically
+---------------------------
+- JavaScript allows to loads a separate script from inside
+    - Executed at a later point in time or triggered by an Event
+
+    - IMPORTANT: When loading scripts dynamically
+        - It should be done w/ care particularly when working on user-input content
+            - As it can be prone to attacks (e.g. XSS attacks)
+
+        - If inevitable to work w/ user-input content 
+            - Sanitize & validate user-input data
+            - BEFORE working on it & executing the corresponding script
+
+
+- On the practice project (assets/scripts/app.js)
+    - On the sub-folder "assets?scripts"
+        - Create a new JavaScript file named "analytics.js"
+
+
+    - On the JavaScript file "analytics.js"
+        - Use "console.log()"
+        - Passing the string value "Sending analytics..." as argument value
+
+
+    - On the Class "App"
+        - Create a new Static method named "startAnalytics"
+
+
+    - On the Class "App" Static method "startAnalytics()"
+        - Create a local constant named "analyticsScript"
+            - Assign the method "document.createElement()" as assigned value
+            - Pass "script" as argument value
+
+            - NOTE: Dynamically creates a HTML element <script>
+
+        - Access the local constant "analyticsScript"
+            - Chain the property ".src"
+            - Assign the file path of "analytics.js" as value
+
+        - Access the local constant "analyticsScript"
+            - Chain the property ".defer"
+            - Assign the boolean "true" as assigned values
+
+            - NOTE: Configures the attribute "src" & "defer" of the HTML element <script>
+
+        - Access the "document.head"
+            - Chain the method ".append()"
+            - Pass the local constant "analyticsScript" as argument value
+
+    
+    - On HTML document (index.html)
+        - At the bottom of the HTML element <body>
+            - Create a HTML element <footer>
+
+
+        - Inside the HTML element <footer>
+            - Create a HTML element <button>
+                - Set the content to "Start Analytics"
+
+            - Set the HTML attribute "id" to "start-analytics-btn"
+
+
+    - On the Class "App" Static method "init()"
+        - At the last line of code
+            - Call the method "document.getElementById()"
+                - Pass "start-analytics-btn" as argument value
+
+            - Chain the method ".addEventListener()"
+                - Pass "click" as the 1st argument
+                - Pass "startAnalytics" as the 2nd argument
+        
+    
+    - Save the changes
+        - Load / reload the browser
+
+        - Clicking the button "Start Analytics"
+            - Dynamically loads & executes the JavaScript file "analytics.js"
