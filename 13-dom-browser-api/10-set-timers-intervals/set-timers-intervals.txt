@@ -1,0 +1,148 @@
+Setting Timers & Intervals
+--------------------------
+- The method "window.setTimeout()" of the "window" instance
+    - Sets a timer w/c executes a function or code when the timer expires
+
+    - It accepts two arguments
+        - A callback function (i.e. TimerHandler)
+        - An optional delay timer (i.e. timeout)
+
+    - The "delay" argument is a non-negative integer
+        - Indicates how long (in milliseconds) the timer should WAIT
+        - BEFORE the specified code or function is executed
+
+        - NOTE: The delay has a maximum value of 2147483647 ms
+            - A larger value may result to an overflow or the value of 0 is used
+            - The value of 0 IMMEDIATELY EXECUTES the corresponding code or function
+            
+            - Passing a negative value for timer behaves the same as 0
+
+        - IMPORTANT: Passing a non-numeric value (i.e. string) for timer
+            - JavaScript performs an implicit type coercion
+            - This can lead to unexpected or suprising results
+
+    - Returns a positive integer
+        - Often referred as a "timout ID"
+
+        - NOTE: To stop the execution of the method "setTimeout()"
+            - Pass the "timeout ID" as argument value to the method "clearTimeout()"
+            - It MUST be executed BEFORE the method "setTimeout()" starts
+            - Otherwise, it will NOT be stopped
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Window/setTimeout)
+
+
+Syntax:
+setTimeout(<code>);
+setTimeout(<function>);
+
+setTimeout(<code>, <delay>);
+setTimeout(<code>, <delay>, <parameter>);
+
+setTimeout(<function>, <delay>);
+setTimeout(<function>, <delay>, <parameter>);
+
+
+- The method "window.setInterval()" of the "Window" instance
+    - Repeatedly calls a function or executes a code snippet w/
+        - A fixed time delay between each call
+
+    - Returns a positive integer
+        - Often referred as a "internval ID"        
+
+    - IMPORTANT: As long as the "Window" instance is open / active
+        - This method "window.setInterval()" will continue to run
+
+    - NOTE: Two (2) ways stop the method "setInterval()"
+        - Pass the "internval ID" as argument value to the method "clearInterval()"
+            
+        - Manually close the corresponding "Window" instance or active browser tab (window)
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Window/setInterval)
+
+
+Syntax:
+setInterval(<code>)
+setInterval(<code>, <delay>)
+
+setInterval(<function>)
+setInterval(<function>, <delay>)
+setInterval(<function>, <delay>, <parameter>)
+setInterval(<function>, <delay>, <parameter>)
+
+
+- On the practice project (assets/scripts/app.js)
+    - On the Class "App" Static method "init()"
+        - Remove the call to the method "document.getElementById()" that
+            - Fetches the Element node "button" from the HTML document
+
+        - Replace it w/ a local constant named "timerId"
+            - Assign the "Window" method "setTimeout()" as value
+            - Pass the following argument values
+                - 1st = "this.startAnalytics"
+                - 2nd = 3000 (milliseconds)
+
+        - NOTE: Implicitly executes the Static method "startAnalytics()" after 3 milliseconds
+
+
+    - On the "index.html" HTML element <footer>
+        - Change the HTML element <button> attribute "id" value to "stop-analytics-btn"
+        - Change the content text to "Stop Analytics"
+
+
+    - On the Class "App" Static method "init()"   
+        - Call the method "document.getElementById()
+            - Pass "stop-analytics-btn" as argument value
+
+        - Chain the method ".addEventListener()"
+            - Pass the argument values
+                - 1st = "click"
+                - 2nd = an Arrow function
+
+            - Inside the Arrow function
+                - Calls the "Window" method "clearTimeout()"
+                - Pass the local constant "timerId" as argument value
+
+            - NOTE: This stops the execution of the method "setTimeout()"
+                - HOWEVER, this MUST be called PRIOR the aforementioned method starts
+                - Simply because the timer had ALREADY EXPIRED
+
+    
+    - On the file "analytics.js"
+        - Cut the "console.log()" statement
+        
+        - Create a local constant "intervalId"
+            - Assign the "Window" method "setInterval()" as value
+            
+            - Pass the argument values
+                - 1st = an Arrow function
+                - 2nd = 2000 (milliseconds)
+
+            - Inside the Arrow function
+                - Paste the "console.log()" statement
+
+        - Call the method "document.getElementById()
+            - Pass "stop-analytics-btn" as argument value
+
+        - Chain the method ".addEventListener()"
+            - Pass the argument values
+                - 1st = "click"
+                - 2nd = an Arrow function
+
+            - Inside the Arrow function
+                - Calls the "Window" method "clearInternval()"
+                - Pass the local constant "intervakId" as argument value
+
+            - NOTE: This stops the execution of the method "setInterval()"
+                - The "Window" method "clearTimeout()" can also be used
+                - However, using the "clearInternval()" is explicit & clear of intention
+
+    - Save the changes
+        - Load / reload the browser
+
+        - Clicking the button "Stop Analytics"
+            - Prior to the execution of the mock-up analytics
+                - Prevents from starting it
+
+            - During the execution of the mock-up analytics
+                - Stops the analytics on its tracks
