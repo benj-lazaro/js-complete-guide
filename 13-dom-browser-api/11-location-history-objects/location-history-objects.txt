@@ -1,0 +1,51 @@
+The "location" & "history" Objects
+----------------------------------
+- The "location" object of the "Window" instance contains properties & methods
+    - Related to the URL & current HTML document rendered on the browser
+    
+    - The property ".href"
+        - Accepts a URL (string) as value
+        - Immediately transports a user to the specified URL
+        - e.g. location.href="<destination_URL>"
+
+    - The method ".replace()"
+        - Works the same as the property ".href"
+        - EXCEPT it does NOT allow a user to go back to the previous page / URL
+        - Effectively replaces the previous URL w/ the current one
+
+    - The method ".assign()"
+        - Identical to & interchangably work w/ the property ".href"
+
+    - The property ".host"
+        - Returns the hostname where a page is hosted w/out the "https://" part
+        - A local file returns "127.0.0.1:<port_number>" or an empty string
+
+    - The property ".origin"
+        - Returns the fullname domain including the protocol used (e.g. https://)
+
+    - The property ".pathname"
+        - Returns the (relative) file path of the current HTML document
+
+    
+- The "history" object of the "Window" instance contains properties & methods that
+    - Interacts w/ browser's history
+
+    - The method ".back()"
+        - Returns a user to the previously loaded HTML document or website
+
+    - The method ".forward()"
+        - Returns a user to the previously loaded (forward-facing) HTML document
+
+    - The property ".length"
+        - Returns the number of "steps" (pages) visited on the current browser tab
+
+    - The method ".go()"
+        - Accepts a number as argument that allows a user to "jump" to
+            - The specified step number URL based on it's
+            - Current numerical posittion returned by the property ".length"
+
+    - NOTE: Moving users "around" a website does NOT guarantee a best user experience (UX)
+        - Implement this feature w/ care
+
+
+    
