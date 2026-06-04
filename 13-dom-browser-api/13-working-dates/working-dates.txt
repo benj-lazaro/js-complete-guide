@@ -1,0 +1,44 @@
+Working With Dates
+------------------
+- The "Date" object
+    - Represents a single moment in time in a platform-independent format
+    
+    - It encapsulates an integral number that
+        - Represents milliseconds since the midnight of 01/01/1970 UTC
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+
+
+- To create a new "Date" object
+    - Instantiate the Class "Date" using the keyword "new"
+        - Returns an object w/ the current (local) timestamp
+        - e.g. new Date();
+
+    - Storing the returned object on a local constant
+        - Provide access to a number of methods
+
+    - Passing an argument value (e.g. string to describe a date)
+        - JavaScript parses the argument value &
+        - Returns a "Date" object based on the provided argument value
+        - e.g. new Date("06/04/2026");
+
+    - Often used to calculate the difference between two dates 
+        - Then divide the difference
+            - By 1000 (difference in seconds)
+            - By 60 (difference in minutes)
+            - By 60 (difference in hours)
+            - By 24 (difference in days)
+
+
+- The method "getDate()"
+    - Returns the current day of month
+
+
+- The method "getDay()"
+    - Returns the numerical day of the week
+
+
+- The method "getTime()"
+    - Returns the current milliseconds since 01/01/1970 UTC
+
+
