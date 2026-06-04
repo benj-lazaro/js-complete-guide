@@ -1,0 +1,16 @@
+Useful Resources & Links
+------------------------
+- DOM getBoundClientRect()
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect)
+
+
+- "Location" object
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Location)
+
+
+- "Window" object
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Window)
+
+
+- "Navigator" object
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Navigator)
