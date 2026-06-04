@@ -1,0 +1,23 @@
+The "Error" Object & Constructor Function
+-----------------------------------------
+- The Constructor function "Error"
+    - Creates an "Error" object using the keyword "new"
+        - It accepts a string argument value that
+        - Becomes the error message content
+        - e.g. "Error: <error_message_content> at <anonymous>:1:1"
+    
+    - An "Error" object is thrown when a runtime error occurs
+
+    - Common use-case
+        - Creating a custom error message w/ a stack trace
+        - Offers information where in the codebase that the error was thrown
+
+    - Often used on error handling using
+        - The "try..catch" statement
+        - The keyword "throw"
+
+    - Being an object, grants access to properties that 
+        - Would further customize error handling
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
+
