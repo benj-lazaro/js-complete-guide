@@ -1,0 +1,59 @@
+The "navigator" Object
+----------------------
+- The "navigator" object allows to interact w/ 
+    - The user's browser & OS in a LIMITED WAY
+
+
+- The READ-ONLY property "navigator" of the "Window" instance
+    - Returns a reference to a "navigator" object w/c
+    - Contains properties & methods about the app (i.e. browser) running the script
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Window/navigator#Example_1_Browser_detect_and_return_a_string)
+
+
+- The property ".userAgent" 
+    - Formerly used on identifying a user's browser that
+        - Grants access to a browser-specific website
+    
+    - Web developers back then "fake" a browser's identity
+        - By assigning a string of known browsers
+
+    - Since then browser vendors assign a stirng of ALL known browsers
+        - As value to the property ".userAgent"
+        - Enabling a browser to "fake" its own identify
+
+    - There are ways that could identify a browser w/ the property ".userAgent"
+        - Although it returns some "vague" information
+
+        - A better approach is to
+            - Check if a browser support certain features
+            - Doing so, narrows down the browser's "real" identity
+            
+        - Reference (https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Browser_detection_using_the_user_agent)
+
+
+- The property ".clipboard"
+    - Grants access to the clipboard API
+    
+    - It allows to 
+        - Add something to the clipboard
+        - Paste something into some input field
+
+
+- The property ".geolocation"
+    - Grants access to a user's geolocation
+
+    - Often chained with the method ".getCurrentPosition()"
+        - Requires a function as an argument 
+
+        - The function requires one (1) argument named "data"
+        
+    - Executing it
+        - Browser's asks a user's permission to grant access to its current location
+
+        - Once permission granted
+            - Returns a "GeolocationPosition" object
+            
+        - It contains a "coords" object w/c contains
+            - Properties "latitude" & "longitude" that points to a user's location
+   
