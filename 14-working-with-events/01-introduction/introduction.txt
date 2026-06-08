@@ -1,0 +1,7 @@
+Module Introduction
+-------------------
+- This section focuses on:
+    - A Closer Look at Events
+    - Event Propagation
+    - Example: Drag & Drop
+    
