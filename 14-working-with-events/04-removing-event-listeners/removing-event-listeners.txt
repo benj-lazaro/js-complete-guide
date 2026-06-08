@@ -1,0 +1,57 @@
+Removing Event Listeners
+------------------------
+- The interface "EventTarget" method ".removeEventListener()"
+    - Removes an Event listeners previously registered using 
+        - The interface "EventTarget" method ".addEventListener()"
+
+    - The Event listener is identified using a combination of
+        - Event type (e.g. "click")
+        - Event handler (callback) function
+
+    - IMPORTANT: Ensure that the call back function to be removed is IDENTICAL
+        - To the callback function that was registered
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener)
+
+    
+- Common pitfalls
+    - Directly passing an Anonymous function as 2nd argument to BOTH
+        - Methods ".addEventListener()" & ".removeEventListener()"
+
+        - JavaScript interprets BOTH Anonymous functions as DIFFERENT function objects
+            - Despite looking identical to each other
+
+        - IMPORTANT: The callback function MUST be STORED in a constant that
+            - Ensures that it references the same function object in memory
+
+
+    - Chaining the method "bind()" to the callback function passed as 2nd argument value
+        - To BOTH methods ".addEventListener()" & ".removeEventListener()"
+            - Passing the keyword "this" as argument value
+
+        - The method ".bind()"
+            - Creates a new function object
+
+            - The passed callback functions to 
+                - The methods ".addEventListener()" & ".removeEventListener()" are considered
+                - Different function objects despite having the same callback function
+
+        - WORKAROUND:
+            - Create a local constant
+
+            - Assign the callback function as assigned value
+                - Chain the method ".bind()"
+                - Pass the keyword "this" as argument value
+
+            - Pass the created constant as 2nd argument value to BOTH
+                - Methods ".addEventListener()" & ".removeEventListener()"
+
+            - This ensures that the keyword "this" references to
+                - The same defined callback function
+                - NOT a new function object 
+
+
+Syntax:
+<element_node>.removeEventListener(<type>, <listener>);
+<element_node>.removeEventListener(<type>, <listener>, <options>);
+<element_node>.removeEventListener(<type>, <listener>, <use_capture>);
