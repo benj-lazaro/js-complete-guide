@@ -1,0 +1,46 @@
+Introduction To Events In JavaScript
+------------------------------------
+- Events exists NOT only in JavaScript but on other programming languages as well
+    - It basically run code upon a certain event
+
+
+- Exact implementation on how it is handled differs
+    - NOT only w/ programming languages but on JavaScript as well
+    - JavaScript browser-side & server-side use different methods
+        - e.g. ".addEventListener()" & ".on()" respectively
+
+
+- Events typically transport data (or metadata)
+    - Desctibe an Event
+    - How to interact w/ that Event
+    - Run some code based on that Event
+
+    - NOTE: This module focuses on browser-side JavaScript
+        - Easier to visually see results
+        - However the rough idea behind it is the same w/ the server-aide JavaScript
+
+
+- The Event Constructor function (i.e. Event) is a core "Event" object that
+    - Comes w/ core functionalities shared among ALL Events
+
+
+- Based on the Event Constructor function
+    - Comes specialized Event Constructor functions that
+        - Contain additional information w/c ONLY makes sense on specific Events
+        - e.g. MouseEvent, DragEvent, etc.
+
+    - A MouseEvent contains data on
+        - Coordinates 
+        - Event Target
+
+    - A DragEvent contains data on
+        - Extra data (for drag & drop interaction )
+        - Event Target
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Event)
+
+
+- NOTE: The Event Target is a common data share among specialized Event Constructor functions
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/EventTarget)
+    
+    
