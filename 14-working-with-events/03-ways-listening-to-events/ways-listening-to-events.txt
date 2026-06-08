@@ -1,0 +1,57 @@
+Different Ways Of Listening To Events
+-------------------------------------
+- The old (NOT recommended) way of implementing an Event listener
+    - On an HTML element <button> is done through the use of
+        - The HTML attribute "onclick"
+        - Assigned w/ an inline or external JavaScript code
+
+    - STRONGLY DISCOURAGED
+        - Hard to maintain
+        - Unexpected to find inline JavaScript code w/in the HTML markup
+        - Violates the "separation of concerns"
+
+
+- Another way of implementing an Event listener
+    - Define a callback function (Event handler)
+        - Anonymous or Arrow function
+        - Stored in a local constant
+
+    - Select the HTML element <button> using either methods
+        - "document.getElementById()"
+        - "document.querySelector()"
+
+    - Pass the HTML element's attribute "id" or tag name as argument value
+        - Save the returned Element node on a local constant
+
+    - Chain the property ".onclick" on the local constant
+        - Assign the callback function as value
+
+        - NOTE: Drop the pair of "( )"
+            - Prevents immediately execution
+
+    - This implementation is limited
+        - It is tied to a single callback function
+
+        - Assigning a succeeding callback function to the local constant
+            - Overwrite the previous callback function (Event handler)
+
+        - Workaround
+            - Call the earlier Event handlers w/in a 3rd callback function
+            - Quickly gets cubersome to maintain
+            - Offers NO fine grain control on when to use w/c Event handler
+
+        - It is tricky to add / remove an Event handler
+
+        - It is ONLY good for small & simple projects
+            - Overall it is NOT RECOMMENDED
+
+
+- It is RECOMMENDED to use
+    - The method ".addEventListener()" to add an Event listener
+        - It can add multiple Event handlers to the selected HTML element
+
+    - The method ".removeEventListener()" to remove an Event listener
+        - It removes a specific Event handler from the selected HTML element
+
+    - Suitable for more complex apps wherein under certain circumstances that
+        - Require adding, removing or re-adding an Event listener to/from a selected HTML element
