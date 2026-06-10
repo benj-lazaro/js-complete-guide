@@ -1,0 +1,70 @@
+Example: Infinite Scrolling
+---------------------------
+- Exploring the "scroll" event
+    - Create a list that scrolls indefinitely
+
+
+- On the practice code (assests/scripts/events.js)
+    - Create a global constant named "curElementNumber"
+        - Assign it w/ a value of 0
+
+
+    - Create a function named "scrollHandler()"
+
+
+    - Inside the function "scrollHandler()"
+        - Create a local constant named "distanceToBottom"
+            - Call the method "document.body.getBoundingClientRect()"
+            - Chain the property ".bottom"
+            - Assign it as value
+
+            - NOTE: Measures the total distance between the viewport & the end of the page
+
+        - Use an "if" statement, to compare 
+            - If the constant "distanceToBottom" is less than 
+                - The "document.documentElement.clientHeight + 150"
+
+            - NOTE: Compares the distance to the bottom (of the overall content)
+                - To the "Window" height + a certain thershold (e.g. 150)
+
+                - The property ".clientHeight" is used as it respects 
+                    - The potential scroll bars while the property ".innerHeight" does NOT
+
+            - If the condition evaluates to "true"
+                - Create a local constant named "newDataElement"
+                    - Call the method "document.createElement()"
+                    - Pass "div" as argument value
+                    - Assign it as value
+
+                - Increment the global constant "curElementNumber" by 1
+                    - Using an (post) increment operator
+
+                - Access the local constant "newDataElement"
+                    - Chain the property ".innerHTML"
+                    - Assign the following string literal as value
+
+                        `<p>Element ${curElementNumber}</p>`
+
+                - Access "document.body"
+                    - Chain the method ".append()"
+                    - Pass "newDataElement" as argument value
+
+
+        - Access "Window" object
+            - Chain the method ".addEventListener()"
+            - Pass the following argument values
+                - 1st = "scroll"
+                - 2nd = scrollHandler
+
+            - NOTE: Hooks up the corresponding Event handler for the "scroll" event
+            
+
+    - Save the changes
+        - Load / reload the browser
+
+        - Scrolling down the web app
+            - A new HTML element <div> is created
+
+            - It is populated w/ HTML element <p>
+                - Outputs an increamenting counter value
+                - e.g. ("Element 1... Element nn")
