@@ -1,0 +1,90 @@
+The "Event" Object
+-------------------
+- The "Event" object
+    - Generated automatically by the browser
+    - Then passed to an Event handler
+    - NOTE: This is the core idea behind event-driven code
+    
+    - Whatever triggered an event, it (typically) provide
+        - Data (metadata) to descibe it
+        - Methods to control how it behaves
+
+
+- The "Event" object property "target"
+    - Describes the Element node that triggered an event (e.g. "click")
+    - Identifies & grants direct access to the said Element node
+
+
+- The "Event" object property "target.disabled"
+    - Disables the Element node triggered by an event
+
+
+- On the practice code (scripts/events.js)
+    - On the Arrow function stored in the global constant "buttonClickHandler"
+        - Define a parameter variable named "event"
+
+        - Inside the Arrow function body
+            - Remove the "alert()" statement
+            - Replace it w/ a "console.log()" statement
+            - Pass the parameter variable "event" as an argument value
+        
+    - Save the changes
+        - Click the button "Click me"
+
+        - Returns an "Event" object
+            - Specifically a "MouseEvent" or (recently renamed) "PointerEvent"
+            - Contains a bunch of properties w/c describes the event
+
+
+    - Delete the global constant "anotherButtonClickHandler" statement
+
+    - Delete the global constant "boundFn" statement
+    
+    - Delete the "setTimeout" statement
+
+    - Refactor the global constant "button" to "buttons"
+        - Refactor the method "document.querySelect()" tot ".querySelectAll()"
+
+    - On the HTML document (events.html)
+        - Duplicate the HTML element <button>
+        - Set the content to "Click me too"
+
+
+    - On the practice code (/scripts/events.js)
+        - Access the global constant "buttons"
+            - Chain the method ".forEach()"
+        
+        - Pass an Arrow function as argument value
+            - Define the parameter variable "btn"
+
+        - Inside the Arrow function
+            - Access the parameter variable "btn"
+                - Chain the method ".addEventListener()
+
+            - Pass the argument values
+                - 1st = "click"
+                - 2nd = "buttonClickHandler"
+
+        - NOTE: Registers an Event handler for a "click" event on ALL Element node "button"
+
+
+    - Save the changes
+        - Load / reload the browser
+            - Browser renders two (2) button
+
+        - Clicking any of the buttons
+            - Returns a "PointerEvent" object
+
+    
+    - On the local constant "buttonClickHandler"
+        - Access the parameter variable "event"
+        - Chain the property ".target.disabled"
+
+
+    - Save the changes
+        - Load / reload the browser
+
+        - Clicking any of the buttons
+            - Returns a "PointerEvent" object
+            - Gets disabled after the 1st Click
+    
