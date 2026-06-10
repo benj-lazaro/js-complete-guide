@@ -1,0 +1,73 @@
+Supported Event Types
+---------------------
+- The event "mouseenter"
+    - Triggers whenever a mouse cursor enters a target Element node (e.g. button)
+
+
+- The "Event" object property "relatedTarget"
+    - Identifies the Element node that a mouse cursor was on
+        - BEFORE it triggers an event (e.g. "mouseenter")
+
+    - NOTE: Moving the mouse cursor fast enough
+        - Returns the entire document (i.e. "html") instead of an Element node
+        
+        - The browser does NOT check the mouse cursor multiple times
+
+
+- The event "scroll"
+    - Triggers when the scroll bar of the "Window" object gets scrolled down/up
+    
+    - NOTE: Handle this event w/ care as it gets triggered easily
+        - May affect the overall performance of a web app when perfoming heavy calculations
+
+    - Use case
+        - Calculate how far a user is from the bottom of the (active) HTML document
+
+
+- Almost ALL DOM elements support ALL event types
+    - However, best to check & verify the support event on MDN 
+        - Reference (https://developer.mozilla.org/en-US/)
+
+    - Look at the "DOM Interface" link on every DOM element page
+        - If NOT found, look at the next associated Constructor function (e.g. HTMLElement)
+
+
+- On the practice code (events.html)
+    - Below the HTML element <div>
+        - Create a new HTML element <section>
+        - Declare an HTML attribute "id" w/ the value of "long-one"
+
+
+    - On the correspoding CSS file (assests/styles/events.css)
+        - Declare an ID Selector named "#long-one"
+
+        - Declare the CSS property "height"
+            - Assign the value of 3000px
+
+        - Save the changes
+
+
+    - On the practice code (assests/scripts/events.js)
+        - Access the "Window" object
+            - Chain the method ".addEventListener()"
+
+            - Pass the following argument values
+                - 1st = "scroll"
+                - 2nd = an Arrow function
+
+
+        - On the Arrow function
+            - Declare the parameter variable "event"
+
+
+        - Inside the Arrow function
+            - Pass the parameter variable "event" as argument value to "console.log()"
+
+    
+    - Save the changes
+        - Load / reload the browser
+            - Launch the JavaScript console
+
+        - Scroll (down/up) the window of the web app
+            - Returns an "Event" object
+            - Specifically a "scroll" type event
