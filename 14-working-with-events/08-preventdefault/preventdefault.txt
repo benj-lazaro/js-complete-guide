@@ -1,0 +1,75 @@
+Working With "preventDefault()"
+-------------------------------
+- The object "Event" method "preventDefault()"
+    - Informs the browser that an event is EXPLICITLY HANDLED
+        - Prevents a corresponding default behavior from being taken
+        - Implement a replacement behavior
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault)
+
+
+Syntax:
+<event_variable>.preventDefault();
+
+
+- On the practice code (assests/scripts/events.js)
+    - Clear out previous code base
+
+
+    - On the HTML document (events.html)
+        - Add a HTML element <form> right after <div>
+
+        - Add a child HTML element <label>
+            - Declare the HTML attribute "for"
+                - Assign the value of "title"
+
+            - Use "Title" as content
+
+        - Add a sibling HTML element <input>
+            - Declare the HTML attribute "type"
+                - Assign the value of "text"
+
+            - Declare the HTML attribute "id"
+                - Assign the value of "title"
+
+        - Add a sibling HTML element <button>
+            - Declare the HTML attribute "type"
+                - Assign the value of "submit"
+
+            - Use "Submit" as content
+    
+
+    - On the practice code (assests/scripts/events.js)
+        - Create a global constant named "form"
+            - Assign the method "document.querySelector()" as value
+            - Pass "form" as argument value
+
+        - Access the global constant "form"
+            - Chain the method ".addEventListener()"
+
+            - Pass the following argument values
+                - 1st = "submit"
+                - 2nd = an Arrow function
+
+        - On the Arrow function
+            - Declare the parameter variable named "event"
+
+        - Inside the Arrow function
+            - Access the parameter variable "event"
+                - Chain the method ".preventDefault()"
+
+            - NOTE: Prevents the default behavior of the Element node "form"
+                - From submitting form data to a local / remote server
+
+            - Pass the parameter variable "event" to "console.log()"
+
+
+    - Save the changes
+        - Load / reload the browser
+            - Launch the browser's JavaScript console
+
+        - Click the "Submit" button
+            - A "SubmitEvent" object is displayed
+
+
+    
