@@ -1,0 +1,150 @@
+Event Propagation & "stopPropagation()"
+---------------------------------------
+- In the browser-side JavaScript
+    - By default, an Event listener is registered in the "Bubbling" phase
+
+    - When an Event listener is chained to a selected Element node
+        - JavaScript executes it 1st
+            - The "Capturing" phase that runs 1st is ignored
+
+        - JavaScript then checks the ancestors for Event listeners
+            - If there is one
+            - JavaScript executes it
+
+    - This default behavior can be switched
+        - By passing "true" as the 3rd argument value
+            - To the method ".addEventListener()"
+            - By default, the value of "false" is IMPLICITLY passed
+
+        - JavaScript executes the ancestor's Event listener 1st
+            - Before the selected Element node's Event listener
+
+            - Effectively executing the "Capturing" phase 1st
+            - Then the "Bubbling" phase
+
+
+- Propagation refers to an Event that
+    - NOT only triggers the Event listener of the selected Element node
+        - But also of ALL of its ancestors w/ an Event listener
+        - The trigger "bubbles" up from the selected Element node to its ancestors
+
+
+- The "Event" method ".stopPropagation()"
+    - Prevents the registered Event listener of the selected Element node's ancestor
+        - From being triggered alonside w/ the Element node's Event listener
+
+    - NOTE: Does NOT PREVENT selected Element node's default behavior from executing
+        - It still allows for the default behavior ro run
+
+    - IMPORTANT: ONLY prevents the ancestor's Event listener but does NOT prevent
+        - Multiple Event listeners registered on the same Element node from being triggered
+
+
+- The "Event" method ".stopImmediatePropagation)"
+    - Useful if a selected Element node has multiple registered Event listeners
+
+    - It immediately stops other registered Event listener from execution
+        - After it executed the current one
+
+
+- To determine of an Event object will propagate or NOT
+    - Pass the Event object as argument value to "console.log()"
+
+    - Check the property "bubbles"
+        - If "false" the Event object will NOT propagate
+        - Otherwise, it will & may require to use the method ".stopPropagation()"
+
+
+- On the practice code (assests/scripts/events.js)
+    - Select the 1st HTML element <button> from the HTML document (events.html)
+        - Using the method "document.querySelector()"
+        - Passing "button" as argument value
+        - Store the returned Element node on the global constant named "button"
+
+
+    - Access the global constant "button"
+        - Chain the method ".addEventListener()"
+        - Pass the argument values
+            - 1st = "click"
+            - 2nd = an Arrow function
+
+        - On the Arrow function
+            - Declare the parameter variable named "event"
+
+        - Inside the Arrow function
+            - Pass the string "Clicked <button>..." as argument value to "console.log()"
+            - Pass the parameter variable "event" as argument value to "console.log()"
+
+        - NOTE: The Event listener of the Element node "button" is
+            - Registered on the "Bubbling" phase
+            - By default, JavaScript browser-side executes this 1st
+
+
+    - Select the HTML element <div> from the HTML document (events.html)
+        - Using the method "document.querySelector()"
+        - Passing "div" as argument value
+        - Store the returned Element node on the global constant named "div"
+
+
+    - Access the global constant "div"
+        - Chain the method ".addEventListener()"
+        - Pass the argument values
+            - 1st = "click"
+            - 2nd = an Arrow function
+
+        - On the Arrow function
+            - Declare the parameter variable named "event"
+
+        - Inside the Arrow function
+            - Pass the string "Clicked <div>..." as argument value to "console.log()"
+            - Pass the parameter variable "event" as argument value to "console.log()"
+
+        - NOTE: The Event listener of the Element node "button" is
+            - Registered on the "Capturing" phase
+            - By default, JavaScript browser-side executes this last
+
+    
+    - To switch the default behavior of the JavaScript browser-side that
+        - Enables the "Capturing" phase to run 1st BEFORE the "Bubbling" phase
+        
+        - Pass the value of "true" as the 3rd argument value to the method ".addEventListener()"
+
+
+    - To prevent the registered Event listener of the selected Element node's ancestor
+        - From being executed right after the Element node's own Event listener
+        
+        - Use the Event method ".stopPropagation()"
+
+
+    - To prevent multiple registered Event listeners on the same Element node
+        - From being executed right after the current one 
+
+        - Use the Event method ".stopImmediatePropagation()"
+
+
+    - On the callback Arrow function (Event handler) of the constant "button"
+        - Access the parameter variable "event"
+        - Chain the method ".stopPropagation()"
+
+        - Prevents the Event listener of the constant "button" from propagating
+            - Triggering the registered Event listener of the constant "div"
+
+
+    - Save the changes
+        - Load / reload the browser
+        - Launch the btowser's JavaScript console
+
+        - Clicking the button "Click me"
+            - Returns its own "PointerEvent" object
+            - Does NOT include the "PointerEvent" object of its ancestor (i.e. Element node "div")
+
+
+        - Clicking the area around the button
+            - Returns a "PointerEvent" object
+            - Does NOT include the "PointerEvent" object of the Element node "button"
+
+
+        - Expanding the either "PointerEvent" object
+            - Shows that the property "bubbles" is assigned w/ the value of "true"
+            
+            - This meant that the Event type "PointerEvent" propagates
