@@ -1,0 +1,20 @@
+Understanding "Capturing" & "Bubbling" Phases
+---------------------------------------------
+- An Event in the browser-side JavaScript have two (2) phases
+    - Capturing
+        - 1st phase
+        
+        - It goes from outside to inside
+        
+        - Checks for Event listeners to the parent or ancestor Element nodes
+
+    - Bubbling
+        - 2nd phase
+        
+        - It goes from inside to outside
+        
+        - Refers to the chained Event listener on a selected Element node
+            - An Event listener on the selected Element node gets to run 1st
+            
+        - If an Event listener exists on a parent or ancestor Element node exits
+            - It will run 2nd or after the 1st Event listener
