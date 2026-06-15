@@ -1,0 +1,34 @@
+Event Handler Functions & "this"
+--------------------------------
+- The keyword "this" inside of an Event listener is
+    - Bound to the Event's source
+
+    - Uses the method ".bind()" or an Arrow function
+        - To ensure that "this" refers at the right thing
+
+
+- On the practice code (assets/scripts/events.js)
+    - On the Event handler registered for the global constant "button"
+        - Change it from an Arrow to an Anonymous function
+        
+        - At the last line of the function block
+            - Pass the keyword "this" as argument value to "console.log()"
+
+
+    - On the Event handler registered for the global constant "list"
+        - Change it from an Arrow to an Anonymous function
+
+        - At the last line of the function block
+            - Pass the keyword "this" as argument value to "console.log()"
+
+
+    - Save the changes
+        - Load / reload the browser
+            - Launch the browser's JavaScript console
+
+        - Clicking the button "Click me"
+            - Displays the HTML element "<button>"
+
+        - Click any list items
+            - Displays the HTML element "<ul>" & its corresponding "<li>"
+
