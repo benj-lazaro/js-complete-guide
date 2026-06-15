@@ -1,0 +1,93 @@
+Using Event Delegation
+----------------------
+- Event delegation is a pattern that often implement on HTML lists that
+    - Takes advantage of Event propagation ("Bubbling" phase)
+    
+    - Provides a pattern of registering an Event listener
+        - ONLY on the parent Element node instead of on every child list element
+        - Enables a child list item to trigger an Event
+
+
+- The property "event.target"
+    - Refers to the child list element that triggers an event
+
+    - HOWEVER, if a child list element contains its own child element(s)
+        - ALL of those child elements will be referred by the property "target.event"
+
+    - To address this concern
+        - Use the combination of the property "event.target" & DOM travel method ".closeest()"
+            - Pass the child list element as argument
+
+        - Esnures that the property "event.target" ALWAYS refers to the child list item
+
+
+- The property "event.currentTarget"
+    - Refers to the Element node where an Event listener is registered (added)
+        - In the Event delegation pattern, this refers to the parent list element
+
+
+- On the practice code (events.html)
+    - Add an unordered list after the HTML element <form>
+        - Add five (5) list 
+        
+        - Each list item contains
+            - An HTML element <h2> w/ the content "Item <number"
+            - A HTML element <p> w/ the content "Some text"
+
+
+    - Define CSS styles for the unordered list & its items (assests/styles/events.css)
+        - Element selector "li"
+            - Property "padding" of "1rem"
+            - Property "border" of "1px solid #ccc"
+
+        - Element selector "ul"
+            - Property "list-style" of "none"
+
+        - Class selector ".highlight"
+            - Property "background-color" of "red"
+            - Property "color" of "white"
+
+    
+    - Implement Event delegation (assets/scripts/events.js)
+        - Create a global constant named "listItems"
+            - Call the method "document.querySelectorAll()"
+            - Pass "li" as argument value
+            - Assign as value
+
+        - Create a global constant named "list"
+            - Call the method "document.querySelector()"
+            - Pass "ul" as argument value
+            - Assign as value
+
+        - Access the global constant "list"
+            - Chain the method ".addEventListener()"
+            - Pass the following argument values
+                - 1st = "click"
+                - 2nd = an Arrow function
+
+            - On the Arrow function
+                - Define the parameter variable "event"
+
+            - Inside the Arrow function
+                - Access the property "event.target"
+                
+                - Chain the method ".closest()"
+                    - Pass "li" as argument
+
+                - Chain the property ".classList"
+
+                - Followed by the method ".toggle()"
+                    - Pass "highlight" as argument value
+
+
+    - NOTE: This ensures that the property "event.target"
+        - Will ALWAYS be referred to the Element node "li"
+            - NOT any of its own child elements (i.e. <h2> & <p>)
+
+        - Changing its background color to "red" & text color to "white"
+            - When the Element node "li" is clicked 
+
+        - This pattern requires ONLY the parent Element node "ul"
+            - To registered an Event listner for a "click" &
+            - Call the corresponding Event handler (i.e. Arrow function)
+
