@@ -1,0 +1,40 @@
+Triggering DOM Elements Programatically
+---------------------------------------
+- Triggering an Event programatically
+    - Using the method ".submit()" on a selected Element node (e.g. "form")
+        - Simulates a form submission 
+
+        - The registered Event listener for an Event "submit" is skipped
+
+        - NOTE: This method is available on any DOM element
+
+
+    - Using the method ".click()" on a selected Element node (e.g. "button")
+        - Simulates a mouse click
+
+        - The registered Event listener for an Event "click" gets executed
+        
+        - Retuns a "MouseEvent" w/ the following properties
+            - Property "clientX", "clientY", "screenX" &" screenY" is to 0
+
+    - IMPORTANT: Triggering an Event programmatically is NOT exactly
+        - The same on every Event and DOM element
+        - Some skips the registered Event listener
+
+
+- On the practice code (assets/scripts/events.js)
+    - Inside the method ".addEventListener()" 
+        - Chained to the global constant "list"
+
+        - Access the global constant "button"
+            - Chain the method ".click()"
+            - Programmatically simulates a mouse click or an Event "click"
+
+    
+    - Save the changes
+        - Load / reload the browser
+
+        - Clicking any of the Element node "li"
+            - Triggers a form submission
+            - It programatically clicks the "Submit" button
+
