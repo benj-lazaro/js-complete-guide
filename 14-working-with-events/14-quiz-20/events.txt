@@ -1,0 +1,22 @@
+Quiz 20: Events
+---------------
+- Is the concept of "Events" exclusive to JavaScript?
+    - Answer: No
+
+
+- Why is addEventListener('click', function() { ... }) preferable 
+    - Over someElement.onclick = function() { ... } ?
+    
+    - Answer: addEventListener can be used to add multiple listeners to 
+        - The same Event w/c can be removed
+
+
+- What's inside of the "Event" object you get when listening to DOM events?
+    - Answer: Depends on the kind of Event.
+        - Some properties & methods (e.g. event.target) ALWAYS exists though
+
+
+- What's the difference between someEvent.preventDefault() and someEvent.stopPropagation()?
+    - Answer: preventDefault() stops the browser from going ahead w/ its default behavior
+        - stopPropagation() ensures NO other Event handlers can handle the same Event
+
