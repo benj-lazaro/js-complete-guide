@@ -1,0 +1,85 @@
+Configuring Draggable Elements
+------------------------------
+- To make selected DOM elements in the web page draggablee
+    - Add the HTML attribute "draggable"
+        - Assign the value of "true"
+
+    - Listen to the Event "dragstart"
+        - On the DOM element being dragged
+
+    - Configure the Event object
+        - Use the property ".dataTransfer" & method ".setData()"
+            - To set additional data on the DOM element being dragged
+
+            - NOTE: The method ".setData()" supports various data types
+            - Reference (https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/setData)
+
+            - Reference (https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API/Drag_data_store)
+
+        - Use the properties ".dataTransfer" & ".effectAllowed"
+            - To set the drag & drag operation to be performed
+
+            - Reference (https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/effectAllowed)
+
+
+- On the practice code (assets/scripts/app.js)
+    - On the Class "App" Static method "init()"
+        - Tentatively disable sending mock-up analytics
+            - Comment the local constant "timerId"
+            - Comment the Event listner for the Static method "startAnalytics()"
+
+    
+    - On the attached HTML document (index.html)
+        - Add the HTML attribute "draggable" & assign the value of "true"
+            - On ALL HTML element <li>
+
+        - NOTE: This enable each "ProjectItem" object to be draggable
+
+
+    - On the Class "ProjectItem"
+        - Create a new method named "connectDrag"
+
+
+    - On the Class "ProjectItem" Constructor method
+        - Add the call to the method "this.connectDrag()"
+
+
+    - Inside the Class "ProjectItem" method "connectDrag()"
+        - Call the method "document.getElementById()"
+            - Pass "this.id" as argument value
+
+        - Chain an Event listener for a "dragtstart" Event
+            - Using the method ".addEventListener()"
+            
+            - Pass the following argument values
+                - 1st = "dragstart"
+                - 2nd = an Arrow function
+
+            - On the Arrow function
+                - Declare the parameter variable "event"
+
+        - Inside the Arrow function
+            - Access the parameter variable "event"
+                - Chain the property ".dataTransfer"
+                - Chain the method ".setData()"
+
+                - Pass the following argument values
+                    - 1st = "text/plain"
+                    - 2nd = this.id
+
+                - NOTE: This adds the "ProjectItem" object's ID to the draggable DOM element
+
+            - Access the parameter variable "event" (again)
+                - Chain the property ".dataTransfer"
+                - Chain the property ".effectAllowed"
+                - Assign the value "move"
+
+                - NOTE: This configures the drag & drop operation of the draggable DOM element
+        
+    
+    - Save the changes
+        - Load / reload the browser
+
+        - The "ProjectItem" object in the DOM is now draggable
+            - Holding the left-mouse down on a "ProjectItem"
+            - Dragging them around the web page
