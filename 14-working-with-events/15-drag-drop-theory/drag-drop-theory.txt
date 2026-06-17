@@ -1,65 +1,77 @@
 Drag & Drop Theory
 ------------------
-- How to implement drag & drop behavior in a web page
-    - Mark elements as "draggable"
-        - Adding or setting the property "draggable" on the DOM elements to "true"
+- Steps to make elements draggable & can be dropped somewhere on the web page
+    - Mark elements (to be dragged) as draggable
+        - Add or set the property "draggable" on elements
+        - Assign to the property "draggable" the value of "true"
 
-    - Listen to a "dragStart" Event
-        - On the element w/c is draggable
-            - Triggered when a user starts dragging
 
-        - Describe the operation (i.e. copying or moving) & append data to the Event
-            - Configure the Event
+    - Listen to a "dragstart" Event 
+        - On the draggable element
+            - Event is triggered when the element is being dragged around
 
-        - Inform JavaScript where the dragged item can be dropped
-            - Mark areas an an item can be dropped
-            - By adding an Event Listener on the element to receive the dropped item
+        - In the Event listener, allow to interface w/ the Event object
+            - Desctibe the drag operation (i.e. copying or moving)
+            - Append data to the Event object that will be passed to related Events
 
-    - Accept drop via Events "dragenter" & "dragover"
-        - The Event "dragenter" can be OMITTED
-            - Definite NEED the Evern 'dragover"
+        - Tell JavaScript where the dragged item can be dropped
+            - Adding an Event listener to the element w/c receives the item to be dropped
+            - Effectively marking a drop area in the web page
 
-        - BOTH Events triggered whenever an item is dragged over onto that element
+
+    - Accept the dropped item via Events "dragenter" & dragover"
+        - The Event "dragenter" can be OMITTED but NOT the "dragover"
+
+        - BOTH are triggered
+            - When an item is dragged over the element that receives the dropped item
+
+        - The difference between the two (2) Events
             - Event "dragover"
-                - Triggers child elements of the element where an item is dropped
+                - Triggers the child elements of the elements the receives the dropped item
 
             - Event "dragenter"
-                - Does NOT trigger child elements
+                - Does NOT trigger the child elements
 
-        - Use the method "preventDefault()" on both Events
-            - The browser default behavior is to cancel a drop operation
-        
-    - OPTIONALLY, listen to an Event "dragleave"
-        - Useful for updating the UI's styles
-        - When an item is dragged away from element w/c it was dragged over
+        - On the corresponding Event listener for "dragenter" or "dragover"
+            - Requires to call the method ".preventDefault()"
 
-    - Listen to an Event "drop" on the same element where 
-        - Events "dragenter" & "dragover" are listened to
+            - Prevents the browser's default behavior
+                - CANCEL a drop operation on the element that receives the dropped item
+                - The drag & drop operation is NOT allowed on any element
 
-        - Event "drop" will ONLY be triggered if the default behavior of
-            - The Events "dragenter" & "dragover" are prevented
+            - Doing so, allows a drop operation to occur
+
+
+    - OPTIONAL, listen to a "dragleave" Event
+        - Before implementing code that reacts to an item drop
+
+        - Update UI styles
+            - When a dropped item is dragged away
+
+
+    - Listen to a "drop" Event on the element that
+        - Listens to a "dragenter" or "dragover" Event
+
+        - The Event "drop" gets triggered by the following:
+            - If the browser's default behavior for 
+                - Events "dragenter" or "dragover" is prevented
+
+            - Item dropped on the marked element that receives a dropped item 
+
+        - On the "drop" Event
+            - Update some data 
+            - Updated UI
+            - Anything that provide visual feedback
+
+
+    - OPTIONAL, listen to a "dragend" Event
+        - NOT on the element that received a dropped item
+            - BUT on the dragged element itself
+
+        - Then update some data or the associated UI 
+
+        - IMPORTANT: The Event "dragend" is ALWAYS TRIGGERED
+            - Even if the drop operation is cancelled or dropped in an invalid area       
             
-            - The item is dropped onto the same element
-
-        - On the Event "drop"
-            - Update some data or the associated UI
-
-            - Provides a visual feedback
-
-    - OPTIONALLY, listen to Event "dragend"
-        - On the dragged element itself
-            - NOT on the place where an item is dropped
-
-        - Update some data or the associated UI
-
-        - NOTE: The Event "dragend" is ALWAYS triggered
-            - Even if the drop is cancelled or dropped in an invalid area
-
-
-
-
-        
-        
-
-
-
+            - There is an "Event" object property (to be revealed later) that
+                - Tells whether a drop operation was successful or NOT
