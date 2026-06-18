@@ -1,0 +1,111 @@
+Marking The Drop Area
+---------------------
+- Marking the element in the web page as a drop area (drop zone) that
+    - Receives a draggable element
+    - Finishes a "drag" Event
+
+    - Update the corresponding "ProjectList" UI
+        - By changing its background color
+
+
+- On the practice code (assets/scripts/app.js)
+    - On the Class "ProjectList"
+        - Create a new method named "connectDroppable"
+
+
+    - On the Class "ProjectList" Constructor method
+        - Call the method "this.connectDroppable()"
+
+
+    - On the Class "ProjectList" method "connectDroppable()"
+        - Create a new local constant named "list"
+            - Call the method "document.querySelector()"
+            - Pass "#${type}-projects ul" as argument value
+
+        - Access the local constant "list"
+            - Chain the method ".addEventListener()"
+                - Pass the following argument values
+                - 1st = "dragenter"
+                - 2nd = an Arrow function
+
+            - On the Arrow function
+                - Declare the parameter variable "event"
+
+            - Inside the Arrow function
+                - Access the local constant "list"
+                    - Chain the property ".parentElement.classList"
+                    - Chain the method ".add()"
+                    - Pass "droppable" as argument value
+
+                - Access the parameter variable "event"
+                    - Check if the property ".dataTransfer.types[0]" === "text/plain"
+                    - If truthy, chain the method ".preventDefault()"
+
+        - Access the local constant "list"
+            - Chain the method ".addEventListener()"
+                - Pass the following argument values
+                - 1st = "dragover"
+                - 2nd = an Arrow function
+
+            - On the Arrow function
+                - Declare the parameter variable "event"
+
+            - Inside the Arrow function
+                - Access the local constant "list"
+                    - Chain the property ".parentElement.classList"
+                    - Chain the method ".add()"
+                    - Pass "droppable" as argument value
+
+                    - NOTE: Change background color for the "drop area"
+
+                - Access the parameter variable "event"
+                    - Check if the property ".dataTransfer.types[0]" === "text/plain"
+                    - If truthy, chain the method ".preventDefault()"
+
+
+    - On the app.css
+        - Declare a Class selector named "droppable"
+        
+        - Declare the property "background"
+            - Assign the value "#ffe0ec" (slight rose)
+
+        - NOTE: Serves as a visual cue for the "drop area"
+        
+
+    - On the Class "ProjectList" method "connectDroppable()"
+        - Access the local constant "list"
+            - Chain the method ".addEventListener()"
+                - Pass the following argument values
+                - 1st = "dragleave"
+                - 2nd = an Arrow function
+
+            - On the Arrow function
+                - Declare the parameter variable "event"
+
+            - Inside the Arrow function
+                - Check if the parameter variable "event"
+                    - Chain the property ".relatedTarget"
+                    - Chain the method ".closest()"
+                    - Pass "#${type}-projects ul" as argument value
+
+                - If it is strictly equal to the local constant "list"
+                    - Access the local constant "list"
+                    - Chain the property ".parentElement.classList"
+                    - Chain the method ".remove()"
+                    - Pass "droppable" as argument value
+
+                   - NOTE: REmoves background color for the "drop area"
+
+
+    - Save the changes
+        - Load / reload the browser
+
+        - Select & dragging a "ProjectItem" object
+            - Background color of the corresponding "ProjectList" changes
+
+        - As the draggable "ProjectItem" object leaves its "ProjectList"
+            - Background color returns to normal
+
+        - As the draggable "ProjectItem" object enter a new "ProjectList"
+            - Background color of the new "ProjectList" changes
+        
