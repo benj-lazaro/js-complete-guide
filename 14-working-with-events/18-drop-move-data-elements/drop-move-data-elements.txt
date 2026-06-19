@@ -1,0 +1,104 @@
+Dropping & Moving Data + Elements
+---------------------------------
+- Dropping & moving a draggable "ProjectItem" object to a new "ProjectList" object
+    - Listening & reacting to an Event "drop"
+
+
+- On the practice code (assets/scripts/app.js)
+    - On the Class "ProjectList" method "connectDroppable()"
+        - Access the local constant "list"
+        
+        - Chain the method ".addEventListener()"
+            - Pass the following argument values
+            - 1st = "drop"
+            - 2nd = an Arrow function
+
+        - On the Arrow function
+            - Declare the parameter variable "event"
+
+        - Inside the Arrow function
+            - Create a new local constant named "prjId"
+
+            - Access the parameter variable "event"
+                - Chain the property ".dataTransfer"
+                - Chain the method ".getData()"
+                - Pass "text/plain" as argument value
+
+            - NOTE: Extracts the added data to the "Event" object performed
+                - By the Class "ProjectItem" method "connectDrag()"
+                - Triggered by the Event "dragstart"
+
+            - Use an "if" statement to check if the dragged "ProjectItem" object
+                - Already exists w/in the "ProjectList" object it is dropped On
+
+                - Access the local constant "this.projects"
+                    - Chain the method ".find()"
+                    - Pass the Arrow function as argument value
+
+                    (p) => p.id === prjId
+
+                - If the Arrow function returns "true"
+                    - Execute a "return" statement
+
+                - Otherwise, similuate a button (Activate/Finish) on the "ProjectItem" object
+                    - Call method "document.getElementById()"
+                    - Pass the local constant "prjId" as argument value
+                    - Chain the method ".querySelector()"
+                    - Pass "button:last-of-type" as argument value
+                    - Chain the method ".click()"
+
+            - Access the local constant "list"
+                - Chain the property "parentElement.classList"
+                - Chain the method "remove()"
+                - Pass "droppable" as argument value
+
+            - Access the parameter variable "event"
+                - Chain the method ".preventDefault()"
+                
+                - NOTE: This is NOT required UNLESS
+                    - There a related Event(s) that trigger a default behavior
+
+
+    - Save the changes
+        - Load / reload the browser
+
+        - Select a "ProjectItem" from a "ProjectList" object
+            - Drag it to a neighboring "ProjectList" object
+            - Drop the dragged "ProjectItem" object
+            - The "ProjectItem" object joins the new "ProjectList" object
+            - The "droppable" UI gets cleared
+
+
+- Demo on the Event "dragend" implemented on the practice code
+    - Refactor the Class "ProjectItem" method "connectDrag()"
+
+    - Create a local constant named "item"
+        - Assign "document.getElementById(this.id)" as value
+
+    - Access the local constant "item"
+        - Chain the previous declared method ".addEventListener()" that
+        - Handles the Event "dragstart"
+
+    - Access the local constant "item" (again)
+        - Chain the method ".addEventListener()"
+        - Pass the following arguments
+            - 1st = "dragend"
+            - 2nd = an Arrow function
+
+        - On the Arrow function
+            - Declare a parameter variable named "event"
+
+        - Inside the Arrow function
+            - Pass the parameter variable "event" to "console.log()"
+
+        - NOTE: Displays valuable "Event" object information
+            - The property "target"
+                - Refers to the Element node of the dragged "ProjectItem" object
+
+            - The property "dropEffect" under "dataTransfer" 
+                - Check if a "drop" Event is successsful
+
+                - Returns "move" if successsful
+                
+                - Otherwise, returns "none"
+                    - Dragged item is NOT dropped on a desinated "drop area"
