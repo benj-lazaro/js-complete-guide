@@ -1,0 +1,21 @@
+Firefox Adjustments
+-------------------
+- To address strange behaviors / errors when using Firefox
+    - On the Class "ProjectList" method "connectDroppable()"
+
+    - Implement changes on the following Event listeners
+        - On the Event "drop"
+            - On the 1st line of code, access the parameter variable "event"
+            - Chain the method "preventDefault()"
+
+        - On the Event "dragleave"
+            - On the "if" statement
+
+            - Add the following statement
+                "event.relatedTarget.closest"
+
+            - Followed by a "&&" operator
+
+            - Then the previous statement
+
+    - Save the changes
