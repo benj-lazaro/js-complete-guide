@@ -1,0 +1,7 @@
+Module Introduction
+-------------------
+- This section focuses on:
+    - Pure Functions & Side Effects
+    - Factory Functions
+    - Closures (& Scope Revisited)
+    - Recursion
