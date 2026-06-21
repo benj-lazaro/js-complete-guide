@@ -1,0 +1,79 @@
+Pure Functions & Side-Effects
+-----------------------------
+- A "pure function" is a function that
+    - ALWAYS produces the same output based on the same input(s) (i.e. arguments)
+    
+    - Does NOT trigger any side-effects
+        - It does NOT CHANGE anything OUTSIDE of the function
+
+    
+- An "impure function" is a function that
+    - Produce a different output despite having the same input(s) (i.e. arguments)
+
+    - Does trigger side-effects
+        - Changing a value outside of the function
+
+        - Changes an array or object that is passed in a function
+
+
+- On the practice code (app.js)
+    - Create a function named "add"
+        - Declare two (2) parameter variables named "num1" & "num2"
+        - Return the statement 
+        
+            "num1 + num2"
+
+        - NOTE: This is a pure function that ALWAYS return the same output
+            - Based on the same input (i.e. argument values)
+
+
+    - Create a function named "addRandom"
+        - Declare a parameter variable named "num"
+        - Return the statement
+
+            num + Math.random()
+
+        - NOTE: This is an impure function that ALWAYS return a different output
+            - Despite having the same input (i.e. argument value)
+
+
+    - Create a variable named "previousResult"
+        - Assign the value of 0
+
+        - Create a function named "addMoreNumbers()
+            - Declare the parameter variables "num1" & "num2"
+
+        - Inside the function
+            - Create a local constant named "sum"
+                - Assign the sum of parameter variables "num1" & "num2"
+
+            - Access the variable "previousResult"
+                - Assign the value stored in the local constant "sum"
+                
+                - NOTE: This is a side-effect as it updates a variable OUTSIDE of the function
+
+
+    - Create a global constant named "hobbies"
+        - Assign an array that contains the elements "sports" & "cooking"
+
+        - Create a function named "printHobbies"
+            - Declare the parameter variable "hobby"
+
+        - Inside the function
+            - Access the parameter variable "hobby"
+                - Chain the method ".push()"
+                - Pass "New Hobby" as argument value
+
+            - Call "console.log()"
+                - Pass the parameter variable "hobby" as argument value
+
+            - NOTE: This is a side-effct as it changes the array OUTSIDE of the function
+                - The passed array as argument value
+                    - References to the address of the actual array in memory
+    
+                - The method ".push()" directly updates the elements of the array
+                    - Successfully changing the array located OUTSIDE of the function
+
+
+    - Save the changes
+
