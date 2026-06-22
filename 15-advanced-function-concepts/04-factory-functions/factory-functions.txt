@@ -1,0 +1,37 @@
+Factory Functions
+-----------------
+- A Faction function
+    - It is a concept of a function that produces (returns) another function
+        - Returns a pointer to the inner function it produces
+
+    - It allows to configure the inner function ONCE that is
+        - Called multiple times in different parts of the app
+        - Work w/ the same passed argument value
+
+    - It is a convenient way to save time & code
+
+    - NOTE: Pretty UNRELATED to Pure functions
+
+
+- On the practice code (app.js)
+    - Create a Factory function named "createTaxCalculator"
+        - Declare a parameter variable named "tax"
+
+    - Inside the function
+        - Create a function named "calculateTax"
+            - Declare a parameter variable named "amount"
+
+            - Return the product of 
+                - The outer function parameter variable "tax"
+                - The local parameter variable "amount"
+
+            - NOTE: Due to scope
+                - The outer parameter variable "tax" is accessible 
+                - Inside the inner function "calculateTax()"
+
+        - Return the function "calculateTax"
+            - IMPORTANT: The pair of "( )" is OMITTED
+            - It returns a pointer to the inner function "calculateTax()"
+
+
+    
