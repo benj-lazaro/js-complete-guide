@@ -1,0 +1,29 @@
+Impure VS Pure Functions
+------------------------
+- Aim for writing pure functions w/o side-effects
+    - It is predictable
+    
+    - It is reliable
+        - Can call even w/out reading the function's definition
+        - Expect to provide the same output
+        - Does NOT do anything strange behind the scenes
+
+
+- However, when building an application
+    - It will be IMPOSSIBLE 
+        - To avoid introducing side-effects at some point in time
+
+    - A function might need to
+        - Setup an Event listener
+        - Send data to a remote server
+
+
+- The REAL GOAL is
+    - To aim to write more pure functions
+        - Less impure functions that might introduce sid-effects
+
+    - Try to keep a function predictable & pure
+
+    - To be clear in naming a function
+        - Hint if a function will do something as a side-effect
+        - e.g. sendDataToServer()
