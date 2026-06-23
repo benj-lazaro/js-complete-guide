@@ -1,0 +1,23 @@
+Closures & Memory Management
+----------------------------
+- On memory consumption & usage
+    - If every function memorizes ALL surrounding variables
+        - Wouldn't that lead to bad effect on memory
+
+        - Particular on big apps where it many have lots of variables
+            - A function may "lock in" variables that may never be used or called
+            
+        - JavaScript does NOT easily get rid of these variables
+            - Due to the possibility of being used by a function that it yet to be called
+    
+
+    - In theory, it is a concern BUT
+        - JavaScript Engines are pretty smart
+
+        - It keeps track variable usage
+
+        - If a variable is NOT getting used by any function
+            - JavaScript Engine will eventually gets rid of it in a safe way
+            - Prevents the possibility of accidentally crashing the app
+
+        - Removes the to manually reset unused variables
