@@ -1,0 +1,51 @@
+Closures
+--------
+- Every JavaScript function is a Closure
+    - A function "closes over" the variable(s) defined w/in its own environment
+        - Registers local variable(s)
+        - Memorize (locks in) assigned values
+
+    - Each function has its own "lexical environment"
+        - An inner function (w/in a Factory function) has access to
+            - ALL parameters & variables defined on the outer function
+            - ALL variables defined globally
+
+        - An outer function has NO access to
+            - Constants, parameters & varibales defined w/in an inner function
+
+        - NOTE: Every call to the outer function
+            - Locks in the assigned values (parameters and/or variables)
+            - A new (detached) inner function is created & then executed
+
+        - A global variable is accessed by the outer and/or inner function
+            - It does NOT get "locked in" by either functions
+            - Any changes in the assigned value
+            - Either functions (inner or outer) picks up the latestt assigned value
+
+
+- On the practice code (app.js)
+    - Define a global variable named "multipler"
+        - Assign the value of 1.1
+
+
+    - Inside the inner function "calculateTax()"
+        - Pass the global variable "multipler" as argument value to "console.log()"
+
+        - Refactor the return statement to include the global variable "multipler"
+
+            return amount * tax * multiplier;
+
+    
+    - Prior to calling the outer function "createTaxCalculator()" for the 3rd time
+        - Assign the value of 1.2 to the variable "multipler"
+
+
+    - Save the changes
+        - Load / reload the browser
+
+        - Launch the browser's JavaScript console
+            - Displays the value of the variable "multipler"
+            - Displays the returned results based on the initial value of "multipler"
+
+            - Displays the changed assigned value of the variable "multipler"
+            - Displays the updated results based on the new value of "multipler"
