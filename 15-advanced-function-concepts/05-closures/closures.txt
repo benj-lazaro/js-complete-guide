@@ -5,7 +5,7 @@ Closures
         - Registers local variable(s)
         - Memorize (locks in) assigned values
 
-    - Each function has its own "lexical environment"
+    - Each function has its own "lexical environment" (i.e. scope)
         - An inner function (w/in a Factory function) has access to
             - ALL parameters & variables defined on the outer function
             - ALL variables defined globally
