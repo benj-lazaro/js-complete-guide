@@ -1,0 +1,23 @@
+Optional: IIFEs
+---------------
+- IIFE stands for "Immediately Invoked Function Expression"
+    - It is an old JavaScript pattern that
+        - Immediately executes a function expression enclosed w/in a pair of "( )"
+
+
+    - It follows the pattern:
+
+        (function() {
+            // function body
+
+        })();
+
+
+    - It is a function expression that calls itself 
+        - Evident at the trailing pair of "( )" at the end of the expression
+    
+
+    - It is NOT a function declaration
+        - Evident of the expression being wrapped inside a pair of "( )"
+
+        - IMPORTANT: A function declaration can NOT be executed immediately
