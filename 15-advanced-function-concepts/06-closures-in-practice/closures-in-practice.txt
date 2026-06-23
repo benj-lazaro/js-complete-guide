@@ -1,0 +1,40 @@
+Closures In Practice
+--------------------
+- Explore in more detail on closures & functions
+
+
+- On the practice code (app.js)
+    - Create a global variable named "userName"
+        - Assign the value of "Max"
+
+    
+    - Create a new function named "greetUser"
+
+
+    - Inside the function "greetUser()"
+        - Pass the following string literal template as argument value to "console.log()"
+        
+            `Hello ${userName}!`
+            
+
+    - Call the function "greetUser()"
+        - Returns the string "Hi Max!"
+
+
+    - Inside the function "greetUser()"
+        - Create a local variable named "userName"
+            - Assign the value of "Anna"
+
+
+    - Outside the function "greetUser()"
+        - Assign a new value "John Wick" to the global variable "userName"
+    
+
+    - Call the function "greetUser()"
+        - Returns the string "Hi Anna!"
+
+    - NOTE: The local variable "userName" w/in the function "greetUser()"
+        - Takes PRECEDENCE over the global variable "userName"
+
+        - The new assigned value (e.g. "John Wick") will ONLY be considered
+            - If the local variable "userName" w/in the function "greetUser()" does NOT exists
