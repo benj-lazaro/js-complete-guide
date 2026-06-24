@@ -1,0 +1,25 @@
+Quiz 21: Advanced Functions
+---------------------------
+- Is the following function a pure function?
+
+    let defaultValue = 10;
+
+    function addNumber(num) {
+        return num + defaultValue;
+    }
+
+    - Answer: No - it does NOT reliably yield the same output
+
+
+- When does a function have a "side effect"?
+    - Answer: A function interacts w/ something outside of the function or does something that
+        - Is NOT directly related to its internal calculation
+
+
+- What is every function a "closure"?
+    - Answer: Because it memorizes the surrounding environment & the variables of that environment
+
+
+- When is a function a recursive function?
+    - Answer: If it calls itself
+
