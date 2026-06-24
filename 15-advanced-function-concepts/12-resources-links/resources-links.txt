@@ -1,0 +1,8 @@
+Useful Resources & Links
+------------------------
+- Closures
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
+
+
+- Recursion
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions#Recursion)
