@@ -1,0 +1,58 @@
+Advanced Recursion
+------------------
+- Recursion can also be used on complex data structure whose
+    - Levels of depth can NOT be determined ahead of time
+
+    - IMPORTANT: ALWAYS REQUIRE an exit condition
+        - To avoid an unintentional infinite call stack
+
+
+- On the practice code (app.js)
+    - Create a global const named "myself"
+        - Assign an object that contains the properties
+            - "name"    = string value
+            - "friends" = array of objects
+
+    
+    - Create a function named "getFriendNames"
+        - Declare the parameter variable named "person"
+
+
+    - Inside the function "getFriendNames()"
+        - Create a local constant named "collectedNames"
+            - Assign an empty array
+
+        - Access the property ".friends" of the parameter variable "person"
+            - If does NOT contain anything
+            - Return an empty array
+
+        - Use a "for..of" loop to iterate through "person.friends"
+            - Create a local constant "person" to hold individual "friends" objects
+
+        - Inside the "for..of" loop
+            - Access the array "collectedNames"
+                - Chain the method ".push()"
+                - Pass "friend.name" as argument value
+
+            - Access the array "collectedNames" again
+                - Chain the method ".push()"
+
+                - Pass a call to "getFriendNames()"
+                    - Pass "friend" as argument value
+
+                - Use the spread operator (...) on the recursion call to "getFriendNames()"
+                    - To spread out the collected value of the property "name"
+                    - Instead nested objects
+
+        - Return the array stored in the local constant "collectedNames"
+
+        
+    - Call the function "getFriendNames()"
+        - Pass the object "myself" as argumen value
+
+
+    - Save the changes
+        - Load / reload the browser
+        - Launch the browser's JavaScript console
+        - Displays all of the names stored on the property "friends"
+        - Including those that are stored on nested objects
