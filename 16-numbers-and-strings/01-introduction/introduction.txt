@@ -1,0 +1,7 @@
+Module Introduction
+-------------------
+- This section focuses on:
+    - More about Numbers
+    - Working w/ Number & Math objects
+    - More about Strings & Template Literals
+    
