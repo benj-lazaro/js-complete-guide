@@ -1,0 +1,39 @@
+Introducing Recursion
+---------------------
+- It is a pattern of a functin calling itself
+    - Offers as a shorter alternative to a "for" loop & do more
+
+
+- On the practice code (app.js)
+    - Create a function named "powerOf()"
+        - Define two parameter variables
+            - numValue = number
+            - numOfTimes = number of times "numValue" will be multiplied to itself
+
+    - Inside the function
+        - Use an "if" statement to check
+            - If the parameter variable "numOfTimes" is STRICTLY EQUAL to 1
+            - Return "numValue" if it is
+
+        - Otherwise
+            - Return the product of "numValue" & a call to "powerOf()" w/
+                - The following argument values
+                - 1st = "numValue"
+                - 2nd = "numOfTimes - 1"
+
+    - Save the changes
+        - Load / reload the browser
+        - Launch the browser's JavaScript console
+        - Displays the value of 8
+
+
+- A shorter (one-line) version
+    - Returns a ternary expression
+        - Checks if the parameter variable "numOfTimes" is STRICTLY EQUAL to 1
+            - If true, return the "numValue"
+
+        - Otherwise
+            - Return the product of "numValue" & a call to "powerOf()" w/
+                - The following argument values
+                - 1st = "numValue"
+                - 2nd = "numOfTimes - 1"
