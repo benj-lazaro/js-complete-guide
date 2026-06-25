@@ -1,0 +1,46 @@
+Numbers In JavaScript
+---------------------
+- In JavaScript, every number is stored as a float
+    - It does NOT have a special integer type
+        - e.g. 5, -3 & 12 is stored as 5.0, -3.0 & 12.0
+
+    - Each individual number is internally stored as a 64-bit floating point
+        - 1-bit     = sign (positive/negative)
+        - 63-bits   = number & decimal separator location
+
+
+- The property ".MAX_SAFE_INTEGER" of the "Number" object
+    - Returns the highest possible integer that JavaScript can work with
+        - The value is "9007199254740991" or 9 quadrillion
+
+    - The same value returned by the "Math" object
+        - Using the method ".pow()"
+
+        - Passing the argument values
+            - 1st = 2
+            - 2nd = 53
+
+        - Subtract 1 from the returned value
+        
+        - Results to "9007199254740991"
+
+
+- The property ".MIN_SAFE_INTEGER" of the "Number" object
+    - Returns the smallest possible integer that JavaScript can work with
+        - The value is "-9007199254740991" or -9 quadrillion
+
+    
+- The property ".MAX_VALUE" of the "Number" object
+    - Returns the highest floating-point that JavaScript can work with
+        - The value is "1.7976931348623157e+308"
+
+
+- The property ".MIN_VALUE" of the "Number" object
+    - Returns the lowest floating-point that JavaScript can work with
+        - The value is "5e-324"
+
+
+- NOTE: Exceeding the range (i.e. highest/lowest) of a number in JavaScript
+    - Returns an imprecise number
+    - NO error message generated
+
