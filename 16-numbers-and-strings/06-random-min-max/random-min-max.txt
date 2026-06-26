@@ -1,0 +1,34 @@
+Example: Generate Random Number Between Min/Max
+-----------------------------------------------
+- A demo that demonstrates a few of the "Number" object's methods
+    - ".random()"   = random number between 0 & 1; value of 1 is excluded
+    - ".floor()"    = rounds down a value to the nearest integer
+
+
+- On the practice code (app.js)
+    - Create a function named "randomInBetween()"
+        - Declare two (2) parameter variables named "min" & "max"
+        - "min" = represents the lowest value limit
+        - "max" = represents the highest value limit
+
+    
+    - Inside the function "randomInBetween()"
+        - Call the method "Math.random()"
+            - Multiply it against the expression "(max - min + 1) + min"
+        
+        - Pass the expression as argument value to "Math.floor()"
+            - Rounds down the floating-point result down to the nearest integer
+
+
+    - Call the function "randomInBetween()"
+        - Pass two (2) numbers representing the lowest & highest limit
+        - Pass the function as argument value to "console.log()"
+
+
+    - Save the changes
+        - Load / reload the browser
+        - Launch the JavaSript console
+
+        - Every reload of the browser
+            - Generates a random number between the declared lowest & highest limit
+
