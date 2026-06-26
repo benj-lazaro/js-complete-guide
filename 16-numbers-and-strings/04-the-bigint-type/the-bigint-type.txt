@@ -1,0 +1,66 @@
+The BigInt Type
+---------------
+- The BigInt is an alternative primitive value that
+    - Represent numbers greater than what "Number.MAX_SAFE_INTEGER" offers
+
+    - This is implemented 
+        - By simply adding a suffix of "n" to a number
+
+    - BitInt numbers are internally stored as a string 
+        - Instead of as a 64-bit floating-point number like most numbers do
+
+    - Use-case:
+        - Perfect for working w/ very large signed & unsigned numbers
+
+    - Calculation between BigInt numbers is straight-forward
+        - Does NOT require any explicit conversions using the function "BigInt()"
+
+    - BigInt numbers can NOT be DIRECTLY MIXED w/ other numbers
+        - Requires EXPLICIT CONVERSION using either "BigInt()" or "parseInt()" functions
+        - BEFORE performing any calculations
+
+    - NOTE: Please be aware that BigInt has NO SUPPORT
+        - For floating-point calculations 
+        - For decimal places
+            
+    - IMPORTANT: When performing division between BitInt numbers
+        - JavaScript OMITS the remainder
+
+
+- The function "parseInt()"
+    - Explicitly converts a BigInt number into a normal number
+    - Passing the BigInt number as an argument value
+
+
+- The function "BigInt()"
+    - Explicitly converts a non-BigInt number into a BigInt
+    - Passing the non-BigInt number as argument value
+
+
+- On the practice code (app.js)
+    - Create a global variable named "largerNumber"
+        - Assign a very large value of "9007199254740991234234234"
+        - Add a "n" suffix
+        - Implicitly converts the number as a BigInt type
+        - Pass the variable "largerNumber" as argument value to "console.log()"
+
+
+    - Perform a calculation between two BigInt numbers (e.g. 10n & 4n)
+        - Pass the expression as argument value to "console.log()"
+
+    
+    - Perform calculation between a BigInt & non-BigInt number
+        - Explicitly covert the BigInt into a normal number
+            - Pass the BigInt number as argument value to the function "parseInt()"
+            - Then perform calculation w/ a non-BigInt number
+
+        - Alternatively:
+            - Explicitly convert a non-BigInt number into a BitInt
+            - Pass the non-BigInt number as argument value to the function "BigInt()"
+            - Then perform calculation between two (2) BigInt numbers
+    
+
+    - Perform a division operation between "5n" & "2n"
+        - Returns the value of "2n"
+        - Omits the remainder ".5" since it is ONLY working w/ integers
+    
