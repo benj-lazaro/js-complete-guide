@@ -1,0 +1,72 @@
+The Global "Number" & "Math" Objects
+------------------------------------
+- Exploring other constants (properties) & methods of the global object "Number"
+    - The constant "Infinity" & "-Infinity"
+        - Returns a special value of "Infinity" or "-Infinity", respectively
+
+        - Often returned as a value when a number is divided by 0
+            - Instead of an error message as it approximates the result
+
+    - The method ".isFinite()"
+        - Acceps a number as argument value
+        
+        - Checks if a number is finite or NOT (i.e. "Infinity")
+            - Returns "true" if it is finite
+            - Otherwise, returns "false"
+
+
+- Other constants (properties) & methods of the global object "Math"
+    - The property ".E"
+        - Returns the value of E (2.718281828459045)
+
+    - The property ".PI"
+        - Returns the value of PI (3.141592653589793)
+
+    - The method ".sqrt()"
+        - Calculates the square root value of a number
+
+    - The method ".sin()"
+        - Calculates the sin value of a number
+
+    - The method ".abs()"
+        - Calculates the absolute value of a number
+
+    - The method ".random()"
+        - Returns a random number between 0 & 1
+
+
+- On the practice code (app.js)
+    - Pass the constant "Infinity" & "-Infinity" as argument values
+        - To "console.log()", respectively
+        - Returns "Infinity" & "-Infinity", respectively
+
+    - Call the method "Number.isFinite()"
+        - Pass the value of "Infinity" as argument value
+        - Pass the entire statement as argument value to "console.log()"
+        - Returns "false"
+
+    - Call the method "Number.isFinite()"
+        - Pass the value of 10 as argument value
+        - Pass the entire statement as argument value to "console.log()"
+        - Returns "true"
+
+    - Call the property "Math.E"
+        - Returns the value of 2.718281828459045
+
+    - Call the property "Math.PI"
+        - Returns the value of 3.141592653589793
+
+    - Call the method "Math.sqrt()"
+        - Pass the value of 5 as argument value
+        - Returns the value of 2.23606797749979
+
+    - Call the method "Math.sin()"
+        - Pass the value of 10 as argument value
+        - Returns the value of -0.5440211108893698
+
+    - Call the method "Math.abs()"
+        - Pass the value of -5 as argument value
+        - Returns the value of 5
+
+    - Call the method "Math.random()"
+        - Returns a different value between 0 & 1 everytime is it called
