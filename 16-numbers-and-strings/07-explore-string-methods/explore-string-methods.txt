@@ -1,0 +1,33 @@
+Exploring String Methods
+------------------------
+- A JavaScript string can be created in three (3) ways:
+    - Single quotes ' '
+    - Double quotes " "
+    - Backticks ` `
+
+    - NOTE: Regardless on how a string is created
+        - It will ALWAYS have access to a number of methods & properties
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+
+
+- The property ".length"
+    - Returns the number of characters a string has
+
+
+- The method ".toUpperCase()"
+    - Converts ALL characters of a string to uppercase
+
+
+- The method ".toLowerCase()"
+    - Converts ALL characters of a string to lowercase
+
+
+- The method ".startsWith()"
+    - Checks if a string starts w/ a specific sequence of characters
+    - Based on the passed pattern as argument value
+
+
+- The method ".trim()"
+    - Removes execess whitespace characters from a string
+
