@@ -1,0 +1,95 @@
+Floating Point (Im)Precision
+----------------------------
+- JavaScript stores every number as a floating-point
+    - Internally converts numbers to binary 
+        - When performing mathematical operations
+        - Then converts the result back to decimal (for human consumption)
+
+    - Generally, imprecision is NOT a problem
+        - JavaScript "behind-the-scenes" rounds the imprecision just fine
+        - There are methods & workarounds that addresses this concern
+    
+    - IMPORTANT: On certain use-cases (e.g. payment systems)
+        - Need to be aware of the existence of such imprecision
+
+
+- The method ".toString()"
+    - Offers a conveninent way to see how numbers are represented in binary
+
+    - Chain the method ".toString()" to a number
+        - Pass "2" an an argument (radix) value
+        - Representing "base 2" or binary 
+    
+    - Returns the binary representation of the number
+
+    - Example:
+        (1).toString(2);   // integer
+        (1/2).tostring(2); // fraction
+        (0.2).toString(2); // floating-point
+
+
+- The method ".toFixed()"
+    - Sets a certain amount of digits to output
+        - Address the imprecision (extra trailing digits) on certain numbers
+
+    - Chain the method ".toFixed()" to a number
+        - Pass the number of digits (decimal places) to be displayed
+
+    - NOTE: On payment systems, the method may introduce small errors
+        - Unintentionally rounding up or down an imprecise number
+        - These small error adds up over time
+        - Ends up charging little or too much on every transaction
+
+    - Example:
+        (0.2).toFixed(2);  // 0.20
+        (20.2).toFixed(20) // 20.2 unintentionally rounded down to 20.19999999999999928946
+
+
+- Perfect precision workaround
+    - One & common workaround is to multiply a number w/ 100
+        - Converting the number to an integer
+
+    - While there is NO integer in JavaScript
+        - The number is stored as a floating-point number w/ a ".0" trailing digit
+        - NO imprecision (long trailing digits)
+        - e.g. 20.2 * 100 = 202 or 2020 (stored as 2020.0)
+
+    - The converted number is representedly perfectly in binary
+        - e.g. 20.2 * 100 = 202 or 2020 (11001010 in binary)
+
+    - Other solutions:
+        - 3rd-party JavaScript packages & libraries that can be integrated w/ the app
+            - Offers tools that addresses imprecision
+
+        - 3rd-party service that interacts w/ the app
+            - Offers services that handles imprecision
+
+
+- On the practice code (app.js)
+    - Create a global variable named "sum"
+        - Add two floating point numbers, 0.2 & 0.4
+        - Store the sum
+        - Pass the variable "sum" as argument value to "console.log()"
+        - Returns the value "0.6000000000000001"
+
+    - On the next line, pass the expression "0.2 + 0.4 === 0.6"
+        - As an argument value to "console.log()"
+
+        - Supposedly work since in decimal (base 10)
+            - Both sides of the "===" operator are equal
+
+        - However, JavaScript returns a value of "false"
+            - Due to the floating-point imprecision in JavaScript
+            - When the sum of "0.6000000000000001" & "0.6" are represented differently in binary
+
+    - As a workaround on JavaScript's floating-point imprecision
+        - Multiply each floating-point number to 100
+            - Converting them to an integer
+            - NOTE: They are still stored as a floating-point 
+
+        - Perform the same addition operation
+            - Store the sum to the same global variable "sum"
+
+    - On the next line, pass the expression "0.2 * 100 + 0.4 * 100 === sum"
+        - As an argument value to "console.log()"
+        - JavaScript returns a value of "true"
