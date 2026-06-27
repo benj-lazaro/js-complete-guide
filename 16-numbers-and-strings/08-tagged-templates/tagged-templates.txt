@@ -1,0 +1,77 @@
+Tagged Templates
+----------------
+- It refers to a function that works together w/ a template literal
+    - Dynamically generate a new string
+        - Based on a string input
+        - Implement logic to alter the generated string
+
+    - A better alternative to using ternary expression w/in a template literal
+        - Offers less space & more readable code
+
+    - Besides generating a new string
+        - It can also return an object literal instead
+        - Effectively converts a string input to an object
+
+
+Syntax:
+<function_name>`<string_value>(${<variable>}...)`;
+
+
+- On the practice code (app.js)
+    - Create a function named "productDescription"
+        - Define three (3) parameter variables
+            - "strings"         = an array of string values
+            - "productName"     = a string
+            - "productPrice"    = a number
+
+    
+    - Inside the function "productDescription()"
+        - Pass the parameter variables as argument values to "console.log()"
+            - NOTE: To view the passed argument values
+
+        - Create a local variable named "priceCategory"
+            - Assign a string as value
+
+        - Use an "if" statement to check the parameter variable "productPrice"
+            - If it is greater than 20
+            - Update the string value of the local variable "priceCategory"
+
+        - Return a template literal
+            - Conbines parts of the parameter variable 
+                - "strings"
+                - "productName"
+                - "priceCategory"
+
+
+    - Create a global constant named "prodName"
+        - Assign the value of "JavaScript Complete Course"
+
+
+    - Create another global constant named "prodPrice"
+        - Assign the value of 29.99
+    
+
+    - Call the function "productDescription"
+        - EXCEPT w/out the pair of "( )"
+        - INSTEAD followed by a string template literal instead
+
+        - The string template literal is embedded w/ two (2) placeholders
+            - For the constant "prodName" & "prodPrice"
+
+        - The entire string template literal EXCEPT for the two (2) placeholders
+            - Assigned as argument value for the parameter variable "strings"
+
+        - The placeholder for the local constant "prodName"
+            - Assigned as argument value for the parameter variable "productName"
+
+        - The placeholder for the local constant "prodPrice"
+            - Assigned as argument value for the parameter variable "productPrice"
+
+
+    - Save the changes
+        - Load / reload the browser
+        - Launch the browser's JavaScript console
+
+        - A new string is dynamically generated
+            - When the assigned value to the global constant "prodPrice" is changed
+
