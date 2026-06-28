@@ -1,0 +1,127 @@
+More On Regular Expressions
+---------------------------
+- Regular expression is case-sensitive
+    - To create a string pattern that is case-insensitive
+        - Wrap the specific pattern w/in a pair of "( )"
+        - Inside place both lowercase & uppercase pattern, separated by a "|"
+
+
+- To implement a wildcard character
+    - Replace the target character of the string pattern w/ a "."
+        
+    - Allows to accepts ANY character in-place
+        - Evaluates the string pattern to be "true"
+
+    - Absense of a character in-place
+        - Evaluates the string pattern to be "false"
+
+
+- To escape characters
+    - Prefix a backslash character on the character to be escaped
+        - e.g. \. = to treat "." literally as it is & NOT as a wildcard character
+        - e.g. \S = to search for any word & NOT a literal uppercase "S" character
+
+
+- The method ".exec()"
+    - Chained to a regular expression
+        - Pass string pattern as an argument value
+        - Returns an array w/ some information about the string
+    
+    - The "index" identifies where exactly in the string the regular expression pattern matches
+
+
+- The method ".match()"
+    - Chained to a string
+        - Pass regular expression as an argument value
+        - Returns an array w/ some information about the string
+
+    - The "index" identifies where exactly in the string the regular expression pattern matches
+
+
+- IMPORTANT: Learning & writing complex regular expressions takes time to master
+    - It is not needed that often
+    - Best to lookup online for the best pattern for specific use-cases
+    - Particularly when doubtful the stirng pattern created is the best one
+
+
+- Regular expression deep dive series
+    - Reference (https://www.youtube.com/watch?v=0LKdKixl5Ug&list=PL55RiY5tL51ryV3MhCbH8bLl7O_RZGUUE)
+
+
+- On the practice code (app.js)
+    - Create a global variable named "regex"
+        - Assign the string pattern "/hello/"
+
+    
+    - Access the global variable "regex"
+        - Chain the method ".test()"
+            - Pass the following string values, respectively
+                - "hello"
+                - "hi... hello"
+                - "Hello"
+
+        - Pass as argument value to "console.log()"
+
+    
+    - Assign a new string pattern "/(h|H)ello/" to the global variable "regex"
+        - NOTE: Makes the targeted character case-insensitive
+
+
+    - Access the global variable "regex"
+        - Chain the method ".test()"
+            - Pass the following string values, respectively
+                - "hello"
+                - "hi... hello"
+                - "Hello"
+                - "ello"
+
+        - Pass as argument value to "console.log()"    
+        
+
+    - Assign a new string pattern "/.ello/" to the global variable "regex"
+        - NOTE: Makes the targeted character accept ANY character (i.e. wildcard)
+
+    
+    - Access the global variable "regex"
+        - Chain the method ".test()"
+            - Pass the following string values, respectively
+                - "hello"
+                - "hi... hello"
+                - "yello"
+                - "Jello"
+
+        - Pass as argument value to "console.log()" 
+
+
+    - Create a global constant named "regexEmail"
+        - Assign the string pattern "/^\S+@\S+\.\S+$/"
+
+    
+    - Access the global variable "regex"
+        - Chain the method ".test()"
+            - Pass the following string "test@test.com"
+
+        - Pass as argument value to "console.log()"
+
+
+    - Access the global variable "regex"
+        - Chain the method ".exec()"
+            - Pass "Hi! jello" as argument value
+
+        - Pass as argument value to "console.log()"
+            - Returns an array
+            - The "index" identifies where the string pattern matched
+
+
+    - Pass the string "Hi! jello" chained w/ the method ".match()"
+        - Pass the global variable "regex" as argument value
+
+        - Pass the statement as argument value to "console.log()"
+            - Returns an array
+            - The "index" identifies where the string pattern matched
+
+
+    - Save the changes
+        - Load / reload the browser
+        - Launch the browser's JavaScript console
+        - View the results
