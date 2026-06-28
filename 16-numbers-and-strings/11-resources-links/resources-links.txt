@@ -1,0 +1,8 @@
+Useful Resources & Links
+------------------------
+- Numbers
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)
+
+
+- Tagged Templates
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#Tagged_templates)
