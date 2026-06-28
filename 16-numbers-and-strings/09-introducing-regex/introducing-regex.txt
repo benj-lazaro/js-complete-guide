@@ -1,0 +1,56 @@
+Introducing Regular Expressions (Regex)
+---------------------------------------
+- Regular expressions help search for patterns in strings
+
+
+- Two (2) ways to create a regular expression in JavaScript
+    - Use the Constructor method "RegExp()"
+        - Pass the string pattern to search as an argument value
+        - Enclosed in a pair of single or double-quotes
+
+    - Use a pair of "/ /"
+        - Inside declare the string pattern to search
+
+
+Syntax:
+const <name> = new RegExp("<string_pattern>");
+const <name> = /<string_pattern>/;
+
+
+- Use the method ".test()"
+    - Chain it to a constant or variable containing the string to be tested
+        - Pass the regular expression as an argument value
+        - Tests if the string pass the regular expression
+        - Returns the value of "true" if it pass
+        - Otherwise, returns "false"
+
+
+- On the practice code (app.js)
+    - Create a global constant named "userInput"
+        - Assign a dummy email address
+        - 1st test = "test@test.com"
+        - 2nd test = "testtest.com"
+
+    
+    - Create a global constant named "regex"
+        - Use either the Constructor method "RegExp()" or a pair of "/ /"
+        
+        - Define the string pattern "/^\S+@\S+\.\S+$/"
+
+        - String pattern translates to
+            - ^\S   = At the beginning, match any kind of word
+            - +@    = Followed by an "@" symbol
+            - \S    = Match any kind of word
+            - +\.   = Followed by a "." symbol
+            - \S+$  = Match any kind of word at the end
+
+    
+    - Create a global variable named "result"
+        - Access the global constant "regex"
+        - Chain the method ".test()"
+        - Pass the global constant "userInput" as argument value
+
+    
+    - Pass the global variable "result" as argument value to "console.log()"
+        - If the string w/in the "userInput" passes the test
+        - Returns the value of "true", otherwise "false"
