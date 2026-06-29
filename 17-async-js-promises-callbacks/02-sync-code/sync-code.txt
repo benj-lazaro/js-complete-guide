@@ -1,0 +1,40 @@
+Understanding Synchronous Code Execution (Sync Code)
+----------------------------------------------------
+- JavaScript is single-threaded
+    - It ONLY execute one (1) task at a time
+    
+    - Code executes in sequence (NOT simultaenously) & in order
+        - Succeeding tasks will NOT execute until the current task is NOT complete
+
+
+- On the practice code (app.js)
+    - Create a global constant named "button"
+        - Call method "document.querySelector()"
+        - Pass "button" as argument value
+        - Assign statement as value
+
+
+    - Create a global constant named "output"
+        - Call method "document.querySelector()"
+        - Pass "p" as argument value
+        - Assign statement as value
+
+
+    - Create a (callback) function named "trackUserHandler"
+
+
+    - Inside the function "trackUserHandler()"
+        - Pass the string "Clicked" as argument value to "console.log()"
+
+
+    - Access the global constant "button"
+        - Chain the method ".addEventListener()"
+        - Pass the following argument values
+            - 1st = "click"
+            - 2nd = "trackUserHandler"
+
+
+    - Save the changes
+        - Load / reload the browser
+        - Launch the browser's JavaScript console
+
