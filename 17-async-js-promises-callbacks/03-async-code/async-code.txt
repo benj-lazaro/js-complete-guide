@@ -1,0 +1,49 @@
+Understanding Asynchronous Code (Async Code)
+--------------------------------------------
+- The downside of Synchronous code
+    - If a task (operation) takes a bit longer to complete
+        - The remaining tasks are left pending until said task is downside
+
+    - There are certain task w/c can NOT be finished immediately
+        - Examples of such tasks:
+            - HTTP request (waiting a response from a remote server)
+            - Getting a user's location
+
+    - Typically, the entire code base should NOT be "blocked" (pending)
+        - Until said task finishes
+
+        - NOT ONLY the app will do nothing while waiting
+            - None of the succeeding code will be executed
+
+
+- JavaScript addresses this concern through "Asynchronous code execution"
+    - Hands-over time-consuming task(s) to the browser (w/c uses multiple threads)
+    
+    - By calling "setTimeout()"
+        - The browsers manages the task, each w/ its own thread until its completion
+
+    - Detaches task(s) from the JavaScript's thread
+        - Allowing succeeding JavaScript code to execute
+
+    - A callback function is used by the browser to communicate w/ the JavaScript thread
+        - When the task it was managing is complete
+        - Hands over the task back to the JavaScript thread
+
+
+- On the practice code (app.js)
+    - Accessing the global constant "button"
+        - Chaining w/ the method ".addEventListener()"
+
+        - Hands-over the task of listening for a "click" Event to the browser
+            - Freeing the JavaScript thread to work on succeeding code that needed to execute
+            - NOTE: There is NO succeeding code in the practice code; just imagine there is
+
+        - When a "click" Event occurred
+            - The browser knows w/c callback function to call (i.e. trackUserHandler())
+
+        - Inside the callback function "trackUserHandler()"
+            - The browser hands-over the task back to the JavaScript thread
+            - Executes the "console.log()"
+
+        - Then hands over the waiting for a "click" Event back to the browser
+
