@@ -1,0 +1,52 @@
+Sync + Async Code: The Execution Order
+--------------------------------------
+- The execution order between synchronous & asynchronous code
+    - Sycn code gets executed first
+
+    - Async code get executed second 
+        - Despite how fast it completes its task
+
+
+- On the practice code (app.js)
+    - Remove the "for" loop
+
+
+    - Refactor the function "trackUserHandler()"
+        - Remove the call to "console.log()"
+
+        - Replace it w/ an access to the "navigator" object
+            - Chain the property ".geolocation"
+            - Chain the method ".getCurrentPosition"
+
+        - On the method ".getCurrentPosition()"
+            - Pass two (2) Arrow functions as argument values
+            
+            - 1st Arrow function
+                - Declare the parameter variable "positionData"
+
+            - Inside the function
+                - Pass the parameter variable "positionData" as argument value to "console.log()"
+
+            - 2nd Arrow function
+                - Declare the parameter variable "error"
+
+            - Inside the function
+                - Pass the parameter variable "error" as argument value to "console.log()"
+
+        - Pass the string value "Getting user position..." as argument value to "console.log()"
+
+
+    - Save the changes
+        - Load / reload the browser
+            - Launch the browser's JavaScript console
+        
+        - Clicking the button "Track Me!"
+            - Browser asks permission to fetch location data
+
+        - If allowed to fetch location
+            - Browser 1st renders the string "Getting user position..."
+            - BEFORE successfully fetching a user's location
+
+        - If NOT allowed to fetch location
+            - Browser 1st renders the string "Getting user position..."
+            - BEFORE rendering an error message for NOT being permitted to fetch location
