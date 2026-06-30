@@ -1,0 +1,25 @@
+Quiz 22: Asynchronous Code
+--------------------------
+- What's the difference between synchronous and asynchronous code?
+    - Answer: Synchronous code executes line-by-line
+        - Asynchronous code executes once some operation (e.g. a timer) completed
+
+
+- What will this code output in the console?
+    console.log('Starting!);
+
+    setTimeout(() => {
+        console.log('Timer completed!');
+    }, 10);
+    
+    console.log('Finished!');
+
+    - Answer: The order is as follows
+        - Starting!
+        - Finished!
+        - Timer completed!
+
+
+- How does JavaScript handle asynchronous code execution?
+    - Answer: It's single-threaded but offloads longer-taking tasks
+        - To the browser w/c uses multiple threads
