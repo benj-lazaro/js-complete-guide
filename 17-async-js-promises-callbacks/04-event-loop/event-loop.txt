@@ -1,0 +1,36 @@
+Blocking Code & The Event Loop
+------------------------------
+- An Event Loop is built into the browser that
+    - Synchronizes w/ the JavaScript Engine's call stack using messages from it's Message Queue
+        - NOTE: A message refers to a callback function offloaded by JavaScript to the browser
+
+    - Perpetually runs in the background, performing the following tasks
+        - Checks if an Event being listened to has occurred
+        - Checks if the JavaScript call stack is currently empty
+        - Checks if its Message Queue has pending message(s)
+
+    - When ALL conditions evaluates to true
+        - Event Loop pushes a message from it's Message Queue to the JavaScript call stack
+        - JavaScript call stack then executes the callback function until its completion
+
+    - This is a pattern typically used in Asynchronous operations
+
+
+- On the practice code (app.js)
+    - After JavaScript registers the callback function "trackUserHandler()"
+        - It gets offloaded to the browser's Event Loop
+        - Event Loop then perpetually listens for a "click" Event to occur
+
+    - JavaScript immediately works through the rest of the code base
+        - The remaining code is treated as one big Anonymous function by the JavaScript call stack
+
+    - When a "click" Event occurs
+        - Event Loop checks if the JavaScript Engine's call stack is empty
+            - If NOT, registers the callback function as a pending message on it's Message Queue
+
+        - Once the JavaScript Engine is empty
+            - Event Loop pushes the pending message to the JavaScript Engine's call stack
+            - Call stack then executes the callback function until its completion
+
+    - This is the explains why the "for" loop's output
+        - Gets rendered first in the browser's JavaScript console BEFORE the callback function's output
