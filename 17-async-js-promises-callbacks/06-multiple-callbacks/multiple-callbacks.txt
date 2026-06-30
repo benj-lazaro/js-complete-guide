@@ -1,0 +1,34 @@
+Multiple Callbacks & setTimeout(0)
+----------------------------------
+- The function "setTimeout()" gets offloaded to the browser
+    - Even it is passed w/ the value of 0 (timeout period in ms)
+
+    - It is considered part of the Asynchronous code
+
+
+- In the practice code (app.js)
+    - Refactor the 1st Arrow function passed to the method ".getCurrentPosition()"
+        - Call the function "setTimeout()"
+            - Move the statement "console.log(positionData)" as the 1st argument value
+            - Then 2000 (2 seconds) as the 2nd argument value
+
+        - Call another "setTimeout()" BEFORE the "console.log()" statement at the end of the block
+            - Pass the statement "console.log(Timer done...)" as the 1st argument value
+            - Then 0 as the 2nd argument value
+
+    
+    - Save the changes
+        - Load / reload the browser
+            - Launch the browser's JavaScript console
+
+        - Clicking the button "Track Me!"
+            - Renders the message "Getting user position..." 1st
+                - Due to being part of the synchronous code
+
+            - Then the message "Timer done..."
+                - Due to being offloaded to the browser 
+                - Despite having 0ms wait period
+                - Making it part of the asynchronous code
+
+            - Lastly the position data of the user
+                - Due to being part of the asynchronous code
