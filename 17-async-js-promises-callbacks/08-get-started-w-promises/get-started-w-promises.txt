@@ -1,0 +1,133 @@
+Getting Started With Promises
+-----------------------------
+- The concept of Promises
+    - Help address "callback hell"
+        - Callback function nested into each other
+        - Resulting to cubersome code that is hard to read & maintain
+
+    - Employs the method ".then()"
+            - Pass a corresponding callback function as argument
+        
+        - Succeeding tasks dependent on the 1st
+            - Simply chain another method ".then()"
+            - Pass a corresponding callback function as argument
+
+        - Offers ONLY one (1) level of nesting
+            - Instead of multiple levels
+            - Making the code easier to read & maintain
+
+    - A promise is simply an object w/
+        - The functionality that allows to chain a method ".then()"
+
+
+- To create a "Promise" object
+    - Use the keyword "new" & the built-in Constructor method "Promise()"
+        - Takes a function as argument 
+        - NOTE: The passed function will execute RIGHT AWAY
+        - Store the "Promise" object to a constant
+
+    - The passed function takes two (2) arguments wherein each argument is a function
+        - 1st argument = resolve function (from the JavaScript Engine)
+        - 2nd argument = reject function
+
+    - Inside the body of the passed function (NOT the arguments)
+        - Define what should happen
+
+    - NOTE: Calling the "resolve" function internally marks
+        - The created "Promise" object as "resolved"
+        - Once the intended task of the passed function is complete
+
+    - Use the keyword "return"
+        - To return the created "Promise" object
+
+    - Call the constant like a function
+        - Chain the method ".then()"
+        - Pass a function that
+            - Receives & process the returned data by the "Promise" object
+
+
+- On the practice code (app.js)
+    - NOTE: BOTH the function "setTimeout()" & method ".getCurrentPosition()" 
+        - Does NOT have a "promise" version
+        - Unable to natively chain the method ".then()" to them
+        - HOWEVER, they can be wrapped w/in a promise
+
+
+    - Create a global constant named "setTimer"
+        - Assign an Arrow function as value
+            - Define a parameter variable named "duration"
+
+        - Inside body of the Arrow function
+            - Create a local constant named "promise"
+                - Assign a new "Promise" object
+                - Using the keyword "new" & Constructor method "Promise()"
+
+            - On the Constructor method "Promise()"
+                - Pass an Arrow function as argument
+                - NOTE: This Arrow function will IMMEDIATELY execute
+
+            - On the Arrow function
+                - Pass the arguments
+                    - 1st = "resolve"
+                    - 2nd = "reject"
+
+            - Inside the body of the Arrow function
+                - Call the function "setTimeout()"
+
+                - Pass the following argument values
+                    - 1st = Arrow function
+                    - 2nd = parameter variable "duration"
+
+            - Inside the Arrow function passed to the function "setTimeout()"
+                - Call the built-in function "resolve()"
+                    - Pass the string "Done!" as argument value
+
+                - NOTE: Any data can be passed as argument value w/c
+                    - Will be included w/ the returned "Promise" object
+
+        - Return the created "Promise" object
+            - Stored w/in the local constant "promise"
+
+    
+    - On the function "trackUserHandler()"
+        - Replace the call to the function "setTimeout()" w/
+            - A call to the function "setTimer()"
+                - Pass the value 2000 as an argument value
+
+            - Chain the method ".then()"
+                - Pass an Arrow function as argument
+
+            - On the Arrow function
+                - Declare the parameter variable "data"
+                    - Receives the included data from the returned "Promise" object
+
+            - Inside the Arrow function
+                - Pass the parameter variables "data" & "positionData"
+                - As argument values to "console.log()"
+
+
+    - Replace the 2nd call to the function "setTimeout()"
+        - Replace it w/ a call to the function "setTimer()"
+            - Pass the value 0 as an argument value
+
+        - Chain the method ".then()"
+            - Pass an Arrow function as argument
+
+        - On the Arrow function
+            - Declare the parameter variable "data"
+
+        - Inside the Arrow function
+            - Pass the parameter variable "data"
+            - As an argument value to "console.log()"
+
+
+    - Save the changes
+        - Load / reload the browser
+        - Launch the browser's JavaScript console
+
+        - Clicking the button "Track Me!"
+            - Performs the same execution as before
+            - EXCEPT this time a "Promise" object is used instead
+            
+            - Making the corresponding code easier to read & maintain
+            
