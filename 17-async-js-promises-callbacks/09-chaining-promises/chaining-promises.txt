@@ -1,0 +1,105 @@
+Chaining Multiple Promises
+--------------------------
+- Explores on "Promise Chaining"
+    - As an answer to "Callback Hell"
+
+    - Create a new "Promise" object
+        - Chain the method ".then()"
+            - Works on the returned data from the resolved "Promise" object
+            - Assigns the returned data to a local variable
+            - Starts (returns) a new inner "Promise" object
+
+        - Chain the method ".then()"
+            - Accepts & works on the returned data from the resolved inner "Promise" object
+            - Optionally access the returned data from the outer "Promise" object stored in a variable
+
+
+- On the practice code (app.js)
+    - Wrap the method ".getCurrentPosition" in a "Promise" object
+
+    - Create a global constant named "getPosition"
+        - Assign an Arrow function as value
+
+    - On the Arrow function
+        - Define the parameter variable named "options"
+
+    - Inside the Arrow function
+        - Create a local constant named "promise"
+        - Assign a new "Promise" object as value
+
+    - On the "Promise" object's Arrow function
+        - Define the parameter variables "resolve" & "reject"
+
+    - Inside the "Promise" object's Arrow function
+        - Call the method "navigator.geolocation.getCurrentPosition()"
+            - Pass two (2) Arrow functions & the parameter variable "options" as argument values
+
+        - On the 1st Arrow function
+            - Define the parameter variable "success"
+
+        - Inside the 1st Arrow function
+            - Access the parameter variable "resolve" like a function
+            - Pass the parameter variable "success" as an argument value
+
+        - On the 2nd Arrow function
+            - Define the parameter variable "error"
+
+        - Inside the 2nd Arrow function
+            - Intentionally left blank for now
+
+    - Return the created "Promise" object
+        - Using the keyword "return"
+
+
+    - On the function "trackUserHandler()"
+        - Delete the call to the method "navigator.geolocation.getCurrentPosition()"
+
+        - Create a local variable named "position"
+            - NOTE: This will chain the returned position data 
+
+        - Access the global constant "getPosition" like a function
+            - Chain the method ".then()"
+                - Pass an Arrow function as an argument value
+
+            - On the Arrow function
+                - Define the parameter variable "positionData"
+                - NOTE: Stores the returned data from the resolved "Promise" object (i.e. "getPosition")
+
+            - Inside the Arrow function
+                - Assign the parameter variable "positionData" to the local variable "position"
+
+                - Access & return the global constant "setTimer" like a function
+                    - NOTE: This creates a new "Promise" object
+                        - JavaScript waits for this object to resolve BEFORE moving forward
+
+            - Chain another method ".then()"
+                - Pass an Arrow function as an argument value
+
+            - On the Arrow function
+                - Define the parameter variable "data"
+                - NOTE: Stores the returned data from the resolved "Promise" object (i.e. "setTimer()")
+
+            - Inside the Arrow function
+                - Pass the parameter variable "data" & local variable "position"
+                    - As argument values to "console.log()"
+
+            - IMPORTANT: This implementation is referred as "Promise Chaining"
+
+
+        - On the succeeding call to the global constant "setTimer()"
+            - Pass a new argument value of 1000
+
+    
+    - Save the changes
+        - Load / reload the browser
+        - Launch the browser's JavaScript console
+
+        - Clicking the button "Track Me!"
+            - Renders the message "Getting user position..."
+
+            - After a 1 second delay 
+                - Renders the message "Timeout Done!"
+
+            - After another second delay
+                - Renders the message "Timeout Done!"
+                - Renders the GeolocationPosition data
