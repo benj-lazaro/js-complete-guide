@@ -1,0 +1,55 @@
+Promise Error Handling
+----------------------
+- Focus on the argument "reject" of the created "Promise" object
+    - Marks a "Promise" object as failed (rejected)
+
+    - On a chained method ".then()"
+        - The corresponding function that handles a failed "Promise" object is passed as a 2nd argument
+
+    - Alternatively, chain a method ".catch()" Instead
+        - Pass the corresponding function as an argument value that
+            - Works on the failed "Promise" object
+            - Removes the 2nd argument value from the chained method ".then()"
+
+        - It catches ANY errors (rejections) produced anywhre in the "Promise Chain"
+            - PRIOR to the declaration of the chained method ".catch()"
+
+            - Allows succeeding chained method ".then()" to execute
+                - Instead of cancelling the entire "Promise Chain"
+
+        - IMPORTANT: Position of the chained method ".catch()" MATTERS
+            - To cancel the entire "Promise Chain" due to a failed "Promise" object
+            - Position it at the end of the "Promise Chain"
+
+
+- On the practice code (app.js)
+    - Inside the 2nd Arrow function passed as argument to the method ".getCurrentPosition()"
+        - Access the Promise function "reject"
+        - Pass the parameter variable "error" as argument value
+
+
+    - On the chained method ".next()" to the global constant "getPosition"
+        - Chain the method ".catch()"
+            - Pass an Arrow function as argument value
+
+        - On the Arrow function
+            - Declare the parameter variable "error"
+
+        - Inside the Arrow function
+            - Pass the parameter variable "error" as argument value to "console.log()"
+                - Displays the returned error message from the failed "Promise" object
+
+            - Return the string ""Execution continues..."
+                - Rendered after the displaying the error message
+
+        - The succeeing chained method ".then()" will be executed
+
+    
+    - Save the changes
+        - Load / reload the browser
+        - Launch the browser's JavaScript console
+
+        - Clicking the button "Track Me!"
+            - The browser asks if it will permit the app to fetch the user's current location
+            - Denying the request will trigger the chained method ".catch()" 
+            - Otherwise, it will behave as it has in the previous lessson
