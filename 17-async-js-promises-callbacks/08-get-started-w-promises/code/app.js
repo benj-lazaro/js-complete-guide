@@ -29,7 +29,7 @@ function trackUserHandler() {
     console.log(data);
   });
 
-  // Immediately executes BEFORE the ".getCurrentPosition()" & "setTimeout()" is done
+  // Immediately executes BEFORE the two (2) promise calls
   console.log("Getting user position...");
 }
 
