@@ -1,0 +1,45 @@
+Promise States & "finally"
+--------------------------
+- Promise has the following states:
+    - Pending
+        - Promise is doing work
+            - Neither method ".then()" nor ".catch()" executes at this moment
+
+        - A method ".then()" after ".catch()"
+            - Promise re-enters pending state
+        
+        - IMPORTANT: Methods ".catch()" & ".then()" ALWAYS return a new "Promise" object
+            - Either is NOT resolving to anything or what is returned from inside them
+
+    - Resolved
+        - Promise is resolved
+            - The method ".then()" executes
+
+    - Rejected
+        - Promise is rejected
+            - The method ".catch()" executes
+
+    - Settled
+        - Promise is settled
+            - There are NO more chained method ".then()"
+        
+        - The method ".finally()"
+            - Performs final clean-up work
+            - NO matter if a Promise is resolved or rejected
+
+        - NOTE: The method ".finally()" is OPTIONAL
+
+
+- Example:
+    somePromiseCreatingCode()
+        .then(firstResult => {
+            return 'done with first promise';
+        })
+        .catch(err => {
+            // would handle any errors thrown before
+            // implicitly returns a new promise - just like then()
+        })
+        .finally(() => {
+            // the promise is settled now - finally() will NOT return a new promise!
+            // you can do final cleanup work here
+    });
