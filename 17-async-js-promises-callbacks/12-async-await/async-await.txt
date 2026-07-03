@@ -1,0 +1,62 @@
+Async / Await
+-------------
+- Both "async" & "await" serves as an alternative to Promises
+    - Utilizes normal Promise
+    - Omits the need to use of methods ".then()" & ".catch()"
+    
+
+- Place the keyword "async" in front of a function name (or function declarations)
+    - Enables a function to return a "Promise" object
+        - This also effectively wraps the entire function in a "Promise" object
+
+    - NOTE: On function expressions, the keyword "async" is placed
+        - On the right-hand side of the "=" operator
+
+
+- Inside of the async function
+    - Place the keyword "await" in front of any inner "Promise" object
+        - It waits for the inner "Promise" object to be resolved or rejected
+
+        - Returns the corresponding data or error
+            - NOTE: Save the returned value to a local constant
+
+        - Executes the succeeding line of code
+
+
+- NOTE: They "async" & "await" keywords does NOT change the way JavaScript works
+    - It still utilizes the normal Promise
+    - Although performs the method ".then()" behind-the-scenes
+
+
+- On the practice code (app.js)
+    - Delete the entire content of the function "trackUserHandler()"
+
+
+    - Place the keyword "async" in front of the function "trackUserHandler()"
+        - NOTE: Hovering mouse over the function name, confirms that it returns a "Promise" object
+
+
+    - Inside the (now) async function "trackUserHandler()"
+        - Create a local constant named "positionData"
+            - Place the keyword "await" in front of the global constant "getPosition"
+            - NOTE: Contains a "Promise" object
+
+        - Create another local constant named "timerData"
+            - Place the keyword "await" in front of the global constant "setTimer"
+
+        - Pass the constants "timerData" & "positionData" as arguments values to "console.log()"
+
+    
+    - NOTE: For the moment, the async function loses error handling
+        - It offers a more concise way of writing "Promise Chaining"
+        - Still utilizes the method ".then()" behind-the-scenes
+    
+
+    - Save the changes
+        - Load / reload the browser
+            - Launch the browser's JavaScript console
+        
+        - Clicking the button "Track Me!"
+            - Renders the message "Timeout Done!"
+            - Renders the returned "GeoLocationPosition" object
+        
