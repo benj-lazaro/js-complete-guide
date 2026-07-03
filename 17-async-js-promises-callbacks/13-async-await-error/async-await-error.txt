@@ -1,0 +1,42 @@
+Async / Await Error Handling
+----------------------------
+- Use "try..catch" to implement error handling w/ "async" & "await"
+    - If the 1st "Promise" object failed
+        - Succeeding "Promise" object(s) will NOT execute
+
+    - Any statement(s) AFTER the "catch" clause will run
+        - Regardless whether "Promise" object(s) in the "try" clause is/are resolved or rejected
+
+
+- On the practice code (app.js)
+    - On the async function "trackUserHandler"
+        - Convert the local constants "positionData" & "timerData" to variables
+
+
+    - In the "try" clause
+        - Call "getPosition()" & "getTimer()", respectively
+        - Save the returned "Promise" object to their corresponding local variables
+
+
+    - On the "catch" clause
+        - Declare the parameter variable "error"
+
+
+    - In the "catch" clause
+        - Assign the value "No data..." to the local variables "positionData" & "timerData"
+        - Pass the parameter variable "error" as argument value to "console.log()"
+
+
+    - Save the changes
+        - Load / reload the browser
+        - Launch the browser's JavaScript console
+
+        - Clicking the button "Track Me!"
+            - Asks if the browser is allowed to collect geolocation data
+
+            - If allowed
+                - Renders the message "Timeout Done!" & the user's current geolocation data
+
+            - If NOT allowed
+                - Renders the message "No data..." twice
+
