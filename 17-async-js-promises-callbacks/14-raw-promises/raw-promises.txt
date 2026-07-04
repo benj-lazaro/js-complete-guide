@@ -1,0 +1,59 @@
+Async / Await VS "Raw Promises"
+-------------------------------
+- The pros of using "async" / "await" over raw "Promises"
+    - A bit better than raw "Promise"
+        - From a performance perspective on modern browsers
+
+
+- The cons of using "async" / "await"
+    - NOT great if an "async" function needs to run multiple tasks simultaneously
+        - It requires an "await" to be resolved / rejected
+            - BEFORE a task is allowed to execute
+
+        - Raw "Promise" can run tasks simultaneously
+            - Does NOT wait for the method ".then()" to be resolved / rejected
+            - Immediately executes succeeding tasks(s)
+
+        - A workaround
+            - Offload succeeding task(s) on a separate function
+            - Switch from "async" / "await" to raw "Promise" 
+
+
+    - Keywords "async" & "await" is ONLY available on functions
+        - Can NOT use "await" on a "Promise" based code OUTISDE of an "async" function
+
+        - A workaround
+            - Place the "await" statement w/in an Anonymous "async" function 
+            - Switch from "async" / "await" to raw "Promise" 
+
+
+- On the practice code (app.js)
+    - On the "async" function "trackUserHandler()"
+        - Call the global constant "setTime" as a function
+            - Pass 1000 as an argument value
+
+            - Chain the method ".then()"
+                - Pass an Arrow function as an argument value
+
+            - Inside the Arrow function
+                - Pass "Timer done!" as an argument value to "console.log()"
+
+        - Pass "Getting user location..." as an argument value to "console.log()"
+
+    
+    - Save the changes
+        - Load / reload the browser
+        - Launch the browser's JavaScript console
+
+        - Click the button "Track Me!"
+            - If granted the browser access to current location
+            - Returns the "GeolocationPosition" 1st
+            - Then the string "Getting user position..."
+            - Lastly the string "Timer done!"
+
+        - Demonstrates how an "async" function is 
+            - Unable to run multiple tasks simultaneously
+            - It has to wait for an "await" to get resolved / rejected 1st
+            - BEFORE any succeeding tasks is allowed to be executed
+        
+    
