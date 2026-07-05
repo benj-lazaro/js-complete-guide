@@ -1,0 +1,7 @@
+Module Introduction
+-------------------
+- This section focuses on:
+    - What & Why
+    - XMLHttpRequest & "fetch()" API
+    - JSON Data & FormData
+    - GETting Data, POSTing Data
