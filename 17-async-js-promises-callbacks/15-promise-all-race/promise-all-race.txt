@@ -1,0 +1,103 @@
+Promise.all(), Promise.race(), etc.
+-----------------------------------
+- The Promise Static method ".race()"
+    - Accepts an array of "Promise" objects
+        - Starts the passed "Promise" objects at the same time
+        - Returns the fastest "Promise" object
+
+    - Chains a method ".then()"
+        - To display the returned data from the fastest "Promise" object
+
+
+- The Promise Static method ".all()"
+    - Accepts an array of "Promise" objects
+        - Returns an array containing results of the passed "Promise" objects
+
+    - Chains a method ".then()"
+        - To display the returned data from the passed "Promise" objects
+        
+    - Useful if there is a requirement to wait for ALL "Promise" objects to finish
+        - Then have their corresponding data returned as an array
+
+    - NOTE: If one of the "Promise" object fails or get rejected
+        - Succeeding "Promise" object(s) will NOT be executed
+        - ONLY the error of the failed "Promise" object gets returned
+
+
+- The Promise Static method ".allSettled()"
+    - Accepts an array of "Promise" objects
+        - Returns an array of "Promise" objects
+
+    - Each returned "Promise" object contains
+        - Object status (i.e. "fulfilled" or "rejected" )
+        - Returned value
+
+    - Chains a method ".then()"
+        - To display the returned "Promise" objects w/ its status & returned data (value)
+        
+        - Promise object property "status"
+            - Contains the "Promise" object's status ("fulfilled" or "rejected") 
+                    
+        - Promise object property "value"
+            - Contains the "Promise" object's returned data
+
+        - Promise object property "reason"
+            - ONLY appears on a rejected "Promise" object 
+            - Contains the error message
+
+    - NOTE: If ANY of the "Promise" object fails or get rejected
+        - The rest of the passed "Promise" object(s) continues to be executed
+
+
+- On the practice code (app.js)
+    - Access the Promise Static method ".race()"
+        - Pass an array of "Promise" objects (i.e. getPostion() & setTimer()) as argument values
+
+        - Chain the method ".then()"
+            - Pass an Arrow function as an argument value
+
+        - On the Arrow function
+            - Declare the parameter variable "data"
+
+        - Inside the Arrow function
+            - Pass the parameter variable "data" as an argument value to "console.log()"
+
+        - Returns the fastest "Promise" object's data
+
+    
+    - Access the Promise Static method ".all()"
+        - Pass an array of "Promise" objects (i.e. getPostion() & setTimer()) as argument values
+
+        - Chain the method ".then()"
+            - Pass an Arrow function as an argument value
+
+        - On the Arrow function
+            - Declare the parameter variable "data"
+
+        - Inside the Arrow function
+            - Pass the parameter variable "data" as an argument value to "console.log()"    
+
+        - Returns an array of returned data from the passed "Promise" objects
+            - NOTE: If a "Promise" object failed, succeeding "Promise" ojects are NOT executed
+
+    
+    - Access the Promise Static method ".allSettled()"
+        - Pass an array of "Promise" objects (i.e. getPostion() & setTimer()) as argument values
+
+        - Chain the method ".then()"
+            - Pass an Arrow function as an argument value
+
+        - On the Arrow function
+            - Declare the parameter variable "data"
+
+        - Inside the Arrow function
+            - Pass the parameter variable "data" as an argument value to "console.log()"    
+
+        - Returns an array of "Promise" objects that contains
+            - The status & value returned from each respective "Promise" Object
+
+
+    - Save the changes
+        - Load / reload the browser
+        - Launch the browser's JavaScript console
+        - Displays the results of the Promise Static methods
