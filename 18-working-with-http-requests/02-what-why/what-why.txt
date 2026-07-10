@@ -1,0 +1,14 @@
+What & Why
+----------
+- This module focuses on JavaScript client-side code's network request to a remote web server
+    - Accessing a web server's exposed backend API endpoints (URLs)
+        - NOTE: API = Application Programming Interface
+
+    - Sending configured HTTP requests to a specific backend API endpoint w/
+        - The required data included to perform a specific task (e.g. fetch, submit) behind-the-scenes
+
+        - Preventing the browser's default behavior from being triggered
+            - Reloading (refreshing) of the entire web page
+
+    - The developers & engineers responsible for the web server's (server-side) logic are
+        - The ones who decides w/c API endpoints are being offered (& supported) for consumption
