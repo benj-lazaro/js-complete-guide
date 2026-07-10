@@ -1,0 +1,11 @@
+How The Web Works
+-----------------
+- Summarized events on the moment the URL is entered & the ENTER button is pressed
+    - The URL gets resolved
+    - A (HTTP) request is sent to the server of the website
+    - The server responds & the reponse is parsed
+    - The page is rendered & displayed (on the browse)
+
+    - Reference (https://academind.com/articles/how-the-web-works)
+
+
