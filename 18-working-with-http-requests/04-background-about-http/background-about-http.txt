@@ -1,0 +1,59 @@
+More Background About HTTP
+--------------------------
+- The client-side is where the script is located & runs in the browser
+    - Referred to as the "frontend"
+        - Detached from the "backend" (server)
+        - What the user sees & works w/ on their browser
+
+    - Responsible for
+        - Fetching persistent data from the "backend"
+        - Sending data to the "backend"
+
+
+- The server-side runs on a different server (or domain) than the client-side
+    - Referred as the "backend"
+
+    - Responsible For
+        - Retrieving requested (persistent) database from a database
+        - Storing submitted data to a database
+
+        - NOTE: The database could be local to the backend or on another remote server
+
+    - IMPORTANT: Client-side JavaScript should NOT DIRECTLY connected to a database server
+        - It EXPOSES database credentials in the code
+
+        - Best to communicate w/ the backend web server instead
+            - Web server handles communication w/ the database server
+
+
+- Communication between the client-side & the server-side is
+    - Made possible w/ the help of HTTP requests & responses 
+
+    - HTTP requests have to be configured & setup in a certain way to works
+        - Needs to know the URL (domain + path)
+            - e.g. URL: https://my-page.com/posts
+            - Domain: my-page.com
+            - Path: /posts
+
+        - Needs to know which HTTP method used by the request
+            - i.e. GET, POST, PATCH, PUT, DELETE
+
+            - NOTE: The server decides w/c among the HTTP methods are supported
+                - Often exposes endpoints (named after HTTP methods) that are available
+                - Returns a HTTP error in response for unsupported HTTP methods
+
+        - Needs to know the HTTP headers
+            - Extra metadata attached to the HTTP request
+
+        - Needs to know the HTTP body (dependent on HTTP method used)
+            - Extra data attached to the HTTP request
+
+    - On supported data format
+        - The server decies w/c data format it supports for w/c 
+            - "HTTP method + URL" combination used by the HTTP request
+
+        - JSON (JavaScript Object Notation) is the most common data format
+
+        - Other data formats
+            - FormData (supported in JavaScript)
+            - Binary, etc.
