@@ -6,9 +6,10 @@ How The Web Works
     - A (HTTP) request is sent to the server of the website
         - HTTP request methods (https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Methods)
 
-    - The server responds & the reponse is parsed
+    - The server responds
+        - The response is received & parsed by the browser
     
-    - The page is rendered & displayed (on the browse)
+    - The (requested) page is displayed by the browser
 
     - Reference (https://academind.com/articles/how-the-web-works)
 
