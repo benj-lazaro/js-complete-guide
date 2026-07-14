@@ -1,0 +1,21 @@
+Getting Started With HTTP
+-------------------------
+- Working on the attached practice project that
+    - Sends data to & fetches data from a remote server via HTTP requests
+    
+    - Using JSONPlaceholder
+        - A free fake REST API web service that works w/ the client-side code
+            - Website (https://jsonplaceholder.typicode.com/)
+
+        - ALL submitted data is NOT permanently stored
+
+        - Documentation includes
+            - Sample starter code
+            - Supported HTTP request methods (i.e. Routes)
+            - Resources (i.e. paths)
+
+
+- On the practice project (app.js)
+    - NOTE: The HTML element <template> serves as a mechanism
+        - For holding HTML fragments w/c can be used later via JavaScript
+        - Reference (https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/template)
