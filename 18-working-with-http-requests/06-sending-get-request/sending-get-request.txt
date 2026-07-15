@@ -1,0 +1,57 @@
+Sending A GET Request
+---------------------
+- Before sending a HTTP request
+    - An "XMLHttpRequest" object is required
+        - Created using the Constructor method "XMLHttpRequest()"
+        - Reference (https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
+
+    - Configure the "XMLHttpRequest" object
+        - Chaining the method ".open()"
+            - Requires two (2) argument values
+                - 1st = HTTP method (e.g. "GET")
+                - 2nd = URL (string) where the request will be forwarded 
+
+            - NOTE: This method does NOT open a connection
+                - It is just the 1st step in configuring the object
+
+    - Send the request
+        - Chaining the method ".send()"
+            - This method send the HTTP request to the server
+
+
+- On the practice project (app.js)
+    - Create an "XMLHttpRequest" object
+        - Use the keyword "new"
+        - Call the Constructor method "XMLHttpRequest()"    
+        - Save returned object to the global constant "xhr"
+
+
+    - Configure the "XMLHttpRequest" object
+        - Access the global constant "xhr"
+        - Chain the method ".open()"
+        - Passing two (2) argument values
+            - 1st = "GET"
+            - 2nd = "https://jsonplaceholder.typicode.com/posts"
+
+
+    - Send the HTTP request to the remote server (JSONPlaceholder)
+        - Access the global constant "xhr"
+        - Chain the method ".send()"
+
+
+    - Save the changes
+        - Load / reload the browser
+        - Launch the browser's Chrome Dev Tools
+
+        - NO HTTP response is visually rendered on the browser
+            - However, the server did sent a HTTP response
+
+
+    - To view the server's HTTP response (along w/ the requested data)
+        - Click the "Network" tab of the Chrome Dev Tools
+
+        - On the left-hand panel
+            - Click the "posts"
+
+        - On the right-hand panel
+            - Click the "Response" tab (or the "Preview" tab)
