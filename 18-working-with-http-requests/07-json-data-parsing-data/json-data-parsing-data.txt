@@ -1,0 +1,133 @@
+JSON Data & Parsing Data
+------------------------
+- The format of the data being exchanged between the client & the server is IMPORTANT
+    - Technically, there are NO restrictions regarding the data format
+    
+    - The data format could be
+        - Plain text
+        - HTML mark-up
+        - XML mark-up
+        - CSV (Command Separated Values)
+        - JSON (JavaScript Object Notation)
+
+    - JSON format looks like a JavaScript object EXCEPT
+        - It is unable to store methods
+
+        - Property name is wrapped w/in a pair of double quotes ONLY
+            - Single quotes are NOT allowed
+
+        - Assigned values can use numbers, booleans, stirngs, objects, arrays & null
+
+
+- To parse the JSON data from the HTTP response
+    - Wait for the "load event"
+        - This automatically runs once the HTTP request is complete 
+
+    - Setup an Event Listener on the "XMLHttpRequest" object
+        - The "XMLHttpRequest" object does NOT ALWAYS support Event Listeners
+            - Particularly on old browsers (e.g. Internet Explorer)
+
+        - A workaround
+            - Assign a function that handles the incoming HTTP request as value
+            - To the property ".onload" of the "XMLHttpRequest" object
+
+    - Inside the function
+            - Extract the JSON data from the HTTP response by accessing
+            - The property ".response" of the returned "XMLHttpRequest" object
+
+    - Manually convert JSON data into JavaScript data type
+        - Using the Class "JSON" Static methods:
+            - ".parse()"        = Convert JSON data to JavaScript data types
+            - ".stringify()"    = Convert JavaScript data types to JSON data
+
+        - Pass the "XMLHttpRequest" object's property ".response" as argument value
+
+    - IMPORTANT: Accessing the property ".responseType" of the "XMLHttpRequest" object
+        - Assigning the value of "json"
+        - Automatically extracts & converts JSON data into a JavaScript data type
+    
+    - Use a "for..of" loop to iterate through the converted JSON data
+        - Choose relevant properties that will be rendered on the web page
+
+        - Use the "document" object method "importNode()"
+            - To create a deep clone of the selected HTML element where
+            - The converted JSON data will be rendered
+
+
+- To render the extracted & converted JSON data to the HTML document
+    - Select the HTML element where the JSON data will be rendered
+        - Using the method ".querySelector()"
+
+
+- On the practice project (app.js)
+    - Select the HTML element <ul> w/ the attribute "id" of "posts"
+        - Using the "document" object method ".querySelector()"
+        - Pass ".posts" as argument value
+        - Store the returned Element node "ul" to the global constant "listElement"
+
+
+    - On the HTML document (index.html)
+        - Add the attribute "id" of "single-post" to the HTML element <template>
+
+
+    - Select the HTML element <template> w/ the attribute "id" of "single-post"
+        - Using the "document" object method ".getElementById()"
+        - Pass "single-post"
+        - Store the returned Element node "template" to the global constant "postTemplate"
+
+
+    - After the call to the "XMLHttpRequest" object method ".open()"
+        - Configure the expected data format of the HTTP response
+        
+        - Access the global constant "xhr"
+            - Chain the property ".responseType"
+            - Assign the value "json"
+
+        - NOTE: Automatically converts JSON data to JavaScript data types
+
+
+    - Setup an Event Listener
+        - Access the global constant "xhr"
+            - Chain the property ".onload"
+            - Assign an Anonymous function as value
+
+
+    - Inside the Anonymous function
+        - Create a local constant named "listOfPosts"
+            - Assign the automatically converted JSON data
+
+        - Use a "for..of" loop to iterate each entry of the JSON data
+
+        - Create a deep clone of the HTML element <template> stored in global constant "postTemplate"
+            - Using the method ".importNode()"
+
+            - Passing the argument values
+                - 1st = "postTemplate.content"
+                - 2nd = true
+
+            - Store clones HTML element <template> in the local constant "postEl"
+
+        - Select the HTML element <h2> from the local constant "postEl"
+            - Using the method ".querySelector()"
+                - Pass "h2" as argument value
+                - Chain the property ".textContent"
+
+            - Assign the converted JSON data property ".title" as value
+                - Chain the method ".toUpperCase()"
+
+        - Select the HTML element <p> from the local constant "postEl"
+            - Using the method ".querySelector()"
+                - Pass "p" as argument value
+
+            - Assign the converted JSON data property ".body" as value
+
+        - Access the global constant "listElement"
+            - Chain the method ".append()"
+            - Pass the local constant "postEl" as argument value
+
+
+    - Save the changes
+        - Load / reload the browsers
+
+        - Converted JSON data extracted from the server's HTTP response
+            - Rendered individually on the web page
