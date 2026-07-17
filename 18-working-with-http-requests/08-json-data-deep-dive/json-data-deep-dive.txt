@@ -1,0 +1,30 @@
+JSON Data Deep Dive
+-------------------
+- JSON data supports the following JavaScript data types
+    - Array
+    - Boolean (NO quotes)
+    - Number (NO quotes)
+    - Object
+    - String (MUST be in double quotes)
+
+
+- ALL JSON object keys (i.e. names)
+    - MUST be wrapped in double quotes
+    - Single quotes or NO quotes are NOT ALLOWED
+
+
+- The JSON data "object" is wrapped in quotes
+    - It is simply just a string that contains data
+
+
+- The "JSON" object method ".stringify()"
+    - Converts a normal JavaScript data structure (e.g. object) into JSON data
+
+
+- The "JSON" object method ".parse()"
+    - Converts JSON data into a normal JavaScript data structure (e.g. array, object, etc.)
+
+
+- JSON data is preferred
+    - Easy to parse for machines
+    - Quite readable for humans
