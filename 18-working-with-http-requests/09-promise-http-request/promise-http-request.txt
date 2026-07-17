@@ -1,0 +1,98 @@
+Promisifying HTTP Request (With XMLHttpRequest)
+-----------------------------------------------
+- Prior to implementing logic for submitting data to the remote server
+    - Refactor the current codebase
+        - Defining a reusable function
+        - For sending HTTP requests & receiveing HTTP response
+
+    - Promisify the HTTP request
+        - Encasing it inside of a "Promise" object
+
+    - The "Promise" object contains
+        - The creation & configuration of the  "XMLHttpRequest" object
+        - Sending the HTTP request
+        - Resolving the HTTP response
+
+
+- On the practice code (app.js)
+    - Creation a new function named "sendHttpRequest()"
+        - Define two (2) parameter variables
+            - 1st = "method"
+            - 2nd = "url"
+
+    - Inside the function "sendHttpRequest()"
+        - Create a "Promise" object
+            - Pass an Arrow function as argument
+            - Store the created "Promise" object on a local constant named "promise"
+
+        - On the Arrow function
+            - Define two (2) parameter variables
+                - 1st = "resolve"
+                - 2nd = "reject"
+
+        - Inside The Arrow function
+            - Create a local constant named "xhr"
+                - Assign the creation of a "XMLHttpRequest" object
+
+            - Access the local constant "xhr"
+                - Chain the method ".open()"
+                - Pass the parameter variables "method" & "url" respectively as argument values
+
+            - Access the local constant "xhr"
+                - Chain the property ".responseType"
+                - Assign the value "json"
+
+            - Access the local constant "xhr"
+                - Chain the property ".onload"
+                - Assign an Anonymous function as value
+                - NOTE: Executes the Anonymous function after the HTTP request is complete
+
+            - Inside the Anonymous function
+                - Call "resolve()"
+                - Pass "xhr.response" as argument value
+                - NOTE: Resolves the HTTP response from the server
+
+            - Access the local constant "xhr"
+                - Chain the method ".send()"
+                - NOTE: Sends the HTTP request to the server 
+
+        - Return the "Promise" object stored in local constant "promise" 
+        
+    
+    - Create an Async function named "fetchPosts()"
+        - Create a local constant named "responseData"
+            - Assign an "await" call to the function "sendHttpRequest()"
+            - Pass the argument values
+                - 1st = "GET"
+                - 2nd = "https://jsonplaceholder.typicode.com/posts"
+
+        - Create a local constant named "listOfPosts"
+            - Assign the local constant "responseData" as value
+            - NOTE: Stores the returned JSON data via HTTP response
+
+        - Use a "for..of" loop to iterate through the JSON data
+            - Create a local constant "postEl"
+                - Assign a deep clone of the Element node stored in the global constant "postTemplate"
+                - Using the method"document.importNode()"
+            
+            - Pass the argument values
+                - 1st = "postTemplate.content"
+                - 2nd = true
+
+            - Select child Element nodes of the Element node "template" in the constant "postEl"
+                - Using the method ".querySelector()"
+                - Chain the property ".textContent"
+                - Assign specific properties of the JSON data as value (i.e. .title & .body)
+
+            - Append the Element node "template" as a child node of Element node "ul"
+                - Using the method ".append()" on the global constant "listElement"
+
+
+    - Call the Async function "fetchPosts()"
+
+
+    - Save the changes
+        - Load / reload the browser
+
+        - Performs the HTTP request "GET"
+            - Renders the individual JSON data on the DOM
