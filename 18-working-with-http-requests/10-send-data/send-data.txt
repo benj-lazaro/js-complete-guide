@@ -1,0 +1,64 @@
+Sending Data With POST Request
+------------------------------
+- Implementing the logic for sending a POST" HTTP request to the server
+
+
+- On the practice project (app.js)
+    - Create an Async function named "createPost()"
+        - Define the parameter variables "title" & "content"
+
+
+    - Inside the Async function "createPost()"
+        - Create a local constant named "userId"
+            - Assign the "Math" object method ".random()" as value
+
+        - Create a local constant named "post"
+            - Assign an object literal as value
+
+        - Inside the object literal
+            - Create a property named "title"
+                - Assign the parameter variable "title" as value
+
+            - Create a property named "body"
+                - Assign the parameter variable "content" as value
+
+            - Create a property named "userId"
+                - Assign the local constant "userId" as value
+
+        - Call the function "sendHttpRequest()"
+            - Pass the argument values
+                - 1st = "POST"
+                - 2nd = "https://jsonplaceholder.typicode.com/posts"
+                - 3rd = "post"
+
+
+    - Refactor the function "sendHttpRequest()"
+        - Add a 3rd parameter variable named "data"
+
+        - On the call to the "XMLHttpRequest" object method ".send()"
+            - Call the "JSON" object method ".stringify()"
+            - Pass the parameter variable "data" as argument value
+
+            - NOTE: Converts the data to submit into JSON data
+
+    
+    - Call the Async function "createPost()"
+        - Pass the following argument values (i.e. dummy post)
+            - 1st = "Test Entry"
+            - 2nd = "This is a test post."
+
+        - Sends a "POST" HTTP request to the remote server
+    
+
+    - Save the changes
+        - Load / reload the browser
+            - Launch the browser's JavaScript console
+        
+        - Click the "Network" tab
+            - Click the last "posts" entry on the left-hand side panel
+
+            - Click the "Headers" tab
+                - Returns a Status Code of "201 (Created)"
+
+            - Click the "Payload" tab
+                - Displays the submitted post to the remote server
