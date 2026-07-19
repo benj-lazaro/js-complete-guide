@@ -1,0 +1,11 @@
+The "Fetch" Button Always Appends
+---------------------------------
+- A quick note regarding the practice project
+    - Clicking the "FETCH POSTS" button 
+        - ALWAYS append data w/out clearing the previous content
+
+    - Clicking the button multiple times
+        - Results to appending the latest data w/ the previous content
+
+    - The code can be adjusted to clear previous content first
+        - BEFORE fetching new content
