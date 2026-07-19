@@ -1,0 +1,84 @@
+Triggering Requests Via The UI
+------------------------------
+- Link the previous lessons' HTTP requests to the web app's UI
+
+
+- On the practice project (app.js)
+    - Delete the last two (2) line of code that
+        - Call the functions "fetchPosts()" & "createPost()"
+        
+    
+    - Create a local constant named "form"
+        - Use the "document" object method ".querySelector()"
+        - Pass "#new-post form" as argument value
+        
+        - NOTE: Selects the HTML element <section> that houses the form
+            - To be used for HTTP request "GET"
+
+    
+    - Create a local constant named "fetchButton"
+        - Use the "document" object method ".querySelector()"
+        - Pass "#available-posts button" as arugment value
+
+        - NOTE: Selects the HTML element <button> labeled "FETCH POSTS" 
+            - To be used for HTTP request "POST"
+
+    
+    - Access the global constant "fetchButton"
+        - Chain the method ".addEventListener()"
+
+        - Pass the following argument values
+            - 1st = "click"
+            - 2nd = "fetchPosts"
+
+
+    - Access the global constant "fetchButton"
+        - Chain the method ".addEventListener()"
+
+        - Pass the following argument values
+            - 1st = "submit"
+            - 2nd = Arrow function
+
+        - On the Arrow function
+            - Define the parameter variable named "event"
+
+        - Inside the Arrow function
+            - Access the parameter variable "event"
+                - Chain the method ".preventDefault()"
+
+            - Create a local constant named "enteredTitle"
+                - Assign the parameter variable "event" as value
+                - Chain the property ".currentTarget"
+                - Chain the method ".querySelector()"
+                - Pass "#title" as argument value
+                - Chain the property ".value"
+
+            - Create a local constant named "enteredContent"
+                - Assign the parameter variable "event" as value
+                - Chain the property ".currentTarget"
+                - Chain the method ".querySelector()"
+                - Pass "#content" as argument value
+                - Chain the property ".value"
+
+            - Call the Async function "createPost()"
+                - Pass the following argument values
+                    - 1st = local constant "enteredTitle"
+                    - 2nd = local constant "enteredContent"
+
+
+    - Save the changes
+        - Load / reload the browser
+
+        - Clicking the button "FETCH POSTS"
+            - Performs a HTTP request "GET"
+            - Renders the fetched posts from the remote server on the document
+
+        - Entering data on the text fields "Title" & "Content"
+            - Clicking the button "ADD"
+            - Performs a HTTP request "POST"
+
+        - To verify submitted post
+            - Launch the browser's Chrome Dev Tools
+            - Click the "Network" tab
+            - Click the last "posts" on the left-hand side panel
+            - Click the "Payload" tab to view submitted post to the remote server
