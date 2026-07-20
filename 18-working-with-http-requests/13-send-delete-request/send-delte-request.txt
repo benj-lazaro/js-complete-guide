@@ -1,0 +1,81 @@
+Sending A DELETE Request
+------------------------
+- Implementing the logic on sending a HTTP request "DELETE"
+    - Triggered by to the button "DELETE" located on each post fetched from the remote server
+
+
+- On the practice project (app.js)
+    - Refactor the Async function "fetchPosts()"
+        - Select the Element node "li" stored in the local constant "postEl"
+        - Assign the property "id" from the JSON data as value
+        - Helps identify w/c among the fetched JSON data will be deleted
+
+        - NOTE: Adds an HTML attribute "id" to every child HTML element <li>
+
+    
+    - Use Event delegation that
+        - Uses a single Event listner for ALL fetched JSON data
+        - Identify w/c to delete based on the HTTP attribute "id"
+
+
+    - Create a local constant named "postList"
+        - Use the "document" object method ".querySelector()"
+        - Pass "ul" as argument value
+
+        - NOTE: Selects the HTML element <ul> that 
+            - Holds ALL of the fetched JSON data, each on their respective HTML element <li>
+
+
+    - Access the local constant "postList"
+        - Chain the method ".addEventListener()"
+            - Pass the argument values
+                - 1st = "click"
+                - 2nd = An Arrow function
+
+        - On the Arrow function
+            - Define the parameter variable named "event"
+
+        - Inside the Arrow function
+            - Use an "if" statement to check the prorperty "event.target.tagName" is
+                - STRICTLY EQUAL to "BUTTON"
+
+            - Create a local constant "postId"
+                - Assign the property "event.target.closest("li").id" as value
+
+                - NOTE: Fetch the HTML attribute "id" value of the HTML element <li> to be deleted
+
+            - Create a local constant "postElement
+                - Assign the property "event.target.closest("li")" as value
+
+                - NOTE: To be used for updating the UI after sending a "DELETE" HTTP request
+
+            - Call the function "sendHttpRequest()"
+                - Pass the argument values
+                    - 1st = "DELETE"
+                    - 2nd = `https://jsonplaceholder.typicode.com/posts/${postId}`
+            
+                - Chain the method ".then()"
+                    - Pass an Arrow function as argument
+
+                - Inside the Arrow function
+                    - Access the local constant "postElement"
+                    - Chain the method ".remove()"           
+            
+
+    - Save the changes
+        - Load / reload the browser
+
+        - Click the button "FETCH POSTS"
+
+        - Select a post & click the button "DELETE"
+            - The UI gets updated, removing the deleted post from the DOM
+        
+        - Launch the browser's Chrome Dev Tools
+
+            - Click the "Network" tab
+
+            - Select the delete post by its id number on the left-hand side panel
+
+            - Click the "Headers" tab, look at
+                - The "Request Method"  = DELETE
+                - The "Status Code"     = "200 OK"
