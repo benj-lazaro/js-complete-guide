@@ -1,0 +1,74 @@
+Handling Errors
+---------------
+- Implement logic that handles errors brought about by a failed HTTP request
+
+
+- The "XMLHttpRequest" object property ".onerror"
+    - Handles network-related errors that prevent a HTTP request from being sent
+
+    - Pass a new "Error" object w/ a customized message as argument value to the function "reject()"
+
+
+- The "XMLHttpRequest" object property ".status"
+    - Handles errors where the HTTP request is sent & received a HTTP response containing an error
+        - Called w/in the property ".onload"
+
+        - Use an "if" statement to check the HTTP status code
+            - Stored w/in the returned HTTP response property ".status"
+    
+        - HTTP status code between 200 & 300 meant
+            - Pass the returned "XMLHttpRequest" object as argument value to the function "resolve()"
+
+        - Otherwise
+            - Pass a new "Error" object w/ a customized message as argument value
+                - To the function "reject()"
+
+
+- On the practice project (app.js)
+    - On the function "sendHttpRequest()"
+        - Refactor the Anonymous function assigned 
+            - To the "XMLHttpRequest" object property ".onload"
+
+
+    - Inside the Anonymous function
+        - Use an "if" statement to check the property ".status" of the returned "XMLHttpRequest" object
+            - If the HTTP status code is between 200 & 300
+                - Move the "resolve(xhr.response)" statement Inside
+            
+            - On the "else" clause
+                - Call the function "reject()"
+                - Pass a new "Error" object w/ the text "Something went wrong!" as argument value
+
+        - Access the local constant "xhr"
+            - Chain the property ".onerror"
+            - Assign an Anonymous function as value 
+        
+        - Inside the Anonymous function
+            - Call the function "reject()"
+            - Pass a new "Error" object w/ the text "Failed to send request!" as argument value
+
+
+    - On the Async function "fetchPosts()"
+        - Implement a "try..catch" block
+
+        - Move the entire codebase w/in the "try" block
+
+        - On the "catch" block
+            - Declare a parameter variable named "error"
+
+        - Inside the "catch" block
+            - Call the function "alert()"
+            - Pass the parameter variable "error.message" as argument value
+
+        - Deliberately change the URL passed as value to the call on the function "sendHttpRequest()"
+            - To mimic a HTTP request error
+
+
+    - Save the changes
+        - Load / reload the browser
+
+        - Click the button "FETCH POSTS"
+            - An alert w/ the content "Something went wrong!" appears
+
+        - On the browser's JavaScript console
+            - Returns an error "GET <URL> 404 (Not Found)"
