@@ -1,0 +1,87 @@
+Using The fetch() API
+---------------------
+- XMLHttpRequest is the older method of sending HTTP request
+    - Intentially to send & fetch XML data
+    - Nowadays replaced w/ JSON data but the named remains the same
+    
+    - Deep dive (https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest_API/Using_XMLHttpRequest)
+
+
+- The fetch API is the modern alternative to XMLHttpRequest
+    - It works around a globally available function named "fetch()"
+        - Built-in on modern browsers
+        - NOT supported on older browsers (specifically Internet Explorer)
+
+    - The function "fetch()" is a promise-based function
+        - Removes the need to manually wrap a function w/in a promise object
+        - Uses a promise object on its own
+        
+
+- To perform a GET HTTP request
+    - Call the function "fetch()"
+        - Pass a URL (string) as argument value
+
+    - Prefix the function w/ a "return" keyword
+        - Returns the HTTP reponse as a promise object
+    
+    - NOTE: Returns a streamed response
+        - It does NOT hold the HTTP response body
+            - Unlike the XMLHttpRequest that returns a parsed response (i.e. xhr.response)
+        
+        - Requires chaining a ".then()" method
+            - Pass an Arrow function w/ a parameter variable "response" as argument
+
+        - Inside the Arrow function
+            - Call the method ".json()" chained to the parameter variable "response"
+                - Transforms the streamed HTTP response into a snapshot 
+                - Parses the HTTP response body stored w/in the object returned by the function "fetch()"
+                - Transforms the JSON data content into a normal JavaScript array or object 
+        
+            - Prefix the statement w/ the keyword "return" 
+                - To return the snapshot parsed HTTP response body
+          
+        - NOTE: The method ".text()" chained to the parameter variable "response"
+            - Transforms the streamed HTTP response into a snapshot
+            - Parses the HTTP response body
+            - Transforms (and return) content into plain text
+
+        - NOTE: The method ".blob()" chained to the parameter variable "response"
+            - Transforms the streamed HTTP response into a snapshot
+            - Parses the HTTP response body
+            - Transforms (and return) content into a downloadable file
+
+
+- On the practice project (app.js)
+    - Refactor the function "sendHttpRequest()"
+        - Remove the XMLHttpRequest implementation
+        - Replace it w/ a call to the API function "fetch()"
+
+
+    - Call the function "fetch()"
+        - Pass the parameter variable "url" as argument value
+            - Chain the method ".then()"
+            - Pass an Arrow function as argument value
+
+        - Prefix the statement with the keyword "return"
+            - Returns the promised object to the calling function
+            - Contains the transformed HTTP response body into a normal JavaScript array or object
+
+
+    - On the Arrow function
+        - Define a parameter variable named "response"
+
+
+    - Inside the Arrow function
+        - Chain the method ".json()" to the parameter variable "reponse"
+            - NOTE: Converts the streamed HTTP response into a parsed one
+        
+        - Prefix the statement with the keyword "return"
+            - Returns the promised parsed HTTP response body
+
+
+    - Save the changes
+        - Load / reload the browsers
+
+        - Clicking the button "FETCH POSTS"
+            - Performs a GET HTTP request
+            - Renders the HTTP response body as a list in the DOM
