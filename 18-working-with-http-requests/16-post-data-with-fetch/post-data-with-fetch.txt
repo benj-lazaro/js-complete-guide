@@ -1,0 +1,55 @@
+Posting Data With The fetch() API
+---------------------------------
+- Implement the API function "fetch()" to create & submit a post
+
+
+- On the practice project (app.js)
+    - Refactor the function "sendHttpRequest()"
+        - On the call to the function "fetch()"
+        - Pass an object literal as 2nd argument value
+
+
+    - Inside the object literal
+        - Declare the property named "method"
+            - Assign the parameter variable "method" as value
+            
+            - NOTE: Identifies the HTTP request method to be used
+                - By default, uses the "GET" method
+
+        - Declare the property named "body"
+            - Assign the method "JSON.stringify()"
+            - Pass the parameter variable "data" as argument value
+        
+            - NOTE: Converts normal JavaScript data into JSON data
+
+
+    - Create a new post
+        - Click the button "ADD"
+        
+        - Launch the browser's Chrome Dev Tools
+            - Click the "Network" tab
+            
+            - Click the latest "posts" entry on the left-hand side panel
+            
+            - Click the "Headers" tab
+                - Request Method    = "POST"
+                - Status Code       = "201 Created"
+
+            - Click the "Payload" tab
+                - To view the (simulated) submitted post to the remote server
+
+    
+    - Delete fetched posts from the remote server
+        - Click on the button "FETCH POSTS"
+
+        - Click the button "DELETE" on a post
+
+        - Launch the browser's Chrome Dev Tools
+            - Click the "Network" tab
+            
+            - Click the deleted post by it's id (e.g. 1) on the left-hand side panel
+            
+            - Click the "Headers" tab
+                - Request Method    = "DELETE"
+                - Status Code       = "200 OK"        
+
