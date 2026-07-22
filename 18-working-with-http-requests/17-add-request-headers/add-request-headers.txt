@@ -1,0 +1,52 @@
+Adding Request Headers
+----------------------
+- Headers are basically metadata attached to the going HTTP request
+    - Describes w/c type of data being sent
+    - On other APIs requires authentication data
+
+
+- To send a header along w/ the HTTP request
+    - Inside the object literal passed as argument to th function "fetch()"
+    
+    - Declare the property named "headers"
+        - Assign an object literal as value
+
+    - Inside the object literal
+        - Declare the property named "Content-Type"
+        - Assign the type of the content attached to the HTTP request
+        - e.g. "application/json"
+
+
+- On the "XMLHttpRequest" way of sending HTTP requests
+    - To send headers along with the HTTP request
+    - Requires the use of the method ".setRequestHeader()"
+    - Pass the type of content attached to the HTTP request
+    - e.g. "application/json"
+
+
+- On the practice project (app.js)
+    - Inside the function "sendHttpRequest()"
+        - Refactor the object literal passed as argument value to the function "fetch()"
+        - Add a 3rd property named "headers"
+        - Assign an object literal as value
+
+
+    - Inside the object literal
+        - Declare the property named "Content-Type"
+        - Assign the value of "application/json"
+        - NOTE: Since the API expects to work w/ JSON data
+
+
+    - Save the changes
+        - Load / reload the browser
+            - Launch the browser's Chrome Dev Tools
+        
+        - Click the button "FETCH POSTS"
+            - Requested data rendered on the DOM
+
+        - Click the tab "Network"
+            - Select the 1st "posts" on the left-hand side panel
+        
+        - Click the tab "Headers"
+            - Look at the field named "Content-Type"
+            - Among the listed values is "application/json"
