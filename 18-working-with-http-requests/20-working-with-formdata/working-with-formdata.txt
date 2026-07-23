@@ -1,0 +1,100 @@
+Working With FormData
+---------------------
+- Besides sending HTTP requests
+    - There are other different data (in theory) that can be sent however
+        - This is DEPENDENT on the type of data that the remote server supports
+
+    - The JSONPlaceholder works w/ JSON data ONLY
+        - Evident on the header "Content-type: application/json" included in the HTTP request
+
+    - A popular type of data sent in the HTTP request besides JSON data is "FormData"
+        - IMPORTANT: NOT all 3rd-party APIs support it
+
+    - A FormData can automatically parse the a (HTML) form
+        - Instead of manually defining the key-value pairs of FormData
+
+
+- On the practice project (app.js)
+    - In the Async function "createPost()"
+        - Right after the declaration of the local constant "post"
+        
+        - Create a new local constant named "formData"
+            - Call the Constructor Method "FormData()" & assign it as a value
+
+            - NOTE: Creates a new object w/c key-value pairs can be added
+                - The type of data sent to the server is of FormData, NOT JSON data
+
+        - Chain the method ".append()" to the local constant "formData"
+            - Pass the string value "title" & parameter variable "title" as argument value
+            - BOTH are separated w/ a ","
+
+        - Chain the method ".append()" to the local constant "formData"
+            - Pass the string value "body" & parameter variable "content" as argument value
+            - BOTH are separated w/ a ","
+
+        - Chain the method ".append()" to the local constant "formData"
+            - Pass the string value "id" & parameter variable "userId" as argument value
+            - BOTH are separated w/ a ","
+
+        - On the call to the function "sendHttpRequest()"
+            - Replace the passed argument value "post" w/ "formData"
+
+
+    - On the function "sendHttpRequestRequest()"
+        - In the object literal passed as 2nd argument value to the function "fetch()"
+            - Delete out the "headers" property
+        
+            - Refactor the assigned value to the prorperty "body"
+                - To the value of "data"
+
+            - NOTE: The API function "fetch()" automatically sends the right headers
+        
+
+    - Save the changes
+        - Load / reload the browser
+            - Launch the browser's JavaScript console
+
+        - Send a test post and click the button "ADD"
+
+        - Click the tab "Network"
+            - Select the "posts" entry on the left-hand side panel
+        
+        - Click the tab "Payload"
+            - Shows the key-value pairs of "FormData"
+        
+        - Click the tab "Headers"
+            - Under "Request Headers", the field "Content-Type" has the value "multipart/form-data"
+            
+            - NOTE: This allows to send a mixture of txt, content-text, key/value pairs & files 
+                - To the remote server via HTTP request
+    
+
+    - To automatically parse the (HTML) form
+        - Comment out the 1st two (2) formData.append() statements
+
+        - Pass the global constant "form" as argument to the Constructor method "FormData()"
+            - Points to the HTML element <form> selected earlier & stored in the constant "form"
+            - JavaScript AUTOMATICALLY collect ALL the data from the form
+
+        - On the index.html
+            - Add the HTML attribute "name" to the HTML element <input> & <textarea>
+            - Assig the values "name" & "body", respectively
+
+    
+    - Save the changes
+        - Load / reload the browser
+            - Launch the browser's JavaScript console
+
+        - Send a test post and click the button "ADD"
+
+        - Click the tab "Network"
+            - Select the "posts" entry on the left-hand side panel
+        
+        - Click the tab "Payload"
+            - Shows the key-value pairs of "FormData"
+        
+        - Click the tab "Headers"
+            - Under "Request Headers", the field "Content-Type" has the value "multipart/form-data"
+
+        - The same as before EXCEPT
+            - Contents of the FormData came from the values collected from the HTML <form>
