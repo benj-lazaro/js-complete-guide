@@ -1,0 +1,111 @@
+fetch() & Error Handling
+------------------------
+- The API function "fetch()" ability to handle server-side errors is
+    - A big annoyance requiring to implement a Promise w/in a Promise (NOT ideal)
+    - Specifically HTTP status codes 400 or 500
+
+
+- On the promise project (app.js)
+    - On the Async function "fetchPosts()"
+        - Intentionally "break" the URL to simulate a server-side error
+            - To return a HTTP status code of 404
+
+
+    - Save the changes
+        - Load / reload the browser
+            - Launch the browser's Chrome Dev Tools
+            - Click the tab "Console"
+
+        - Click the button "FETCH POSTS"
+            - An alert w/ the message "listOfPost is not iterable"
+                - Expected as the streamed HTTP response does NOT contain data
+
+            - Switch to the browser's JavaScript console
+                - Returns a "GET <url> 404 (Not Found)"
+
+
+    - On the function "sendHttpRequest()"
+        - Chaining the method ".catch()" on the Promise chain of the function "fetch()"
+            - The passed Arrow function does NOT get reached for server related issues
+                - ONLY network related issues
+
+            - Generated error was triggered from inside the Async function "fetchPosts()"
+                - NOT w/in the function "sendHttpRequest()"
+
+        - Inside the chained method ".then()"
+            - Use an "if" statement to check the value of "response.status"
+                - Move the statement that calls & returns "response.json()"
+
+            - On the "else" clause
+                - Throw a new "Error" object w/ the argument value "Something went wrong server-side"
+
+
+    - Save the changes
+        - Load / reload the browser
+            - Launch the browser's Chrome Dev Tools
+            - Click the tab "Console"
+
+        - Click the button "FETCH POSTS"
+            - An alert w/ the message "Something went wrong!"
+
+            - Switch to the browser's JavaScript console
+                - Returns a "Error: Something went wrong server-side"
+
+        - However, the current code is NOT capable of looking into the HTTP response body
+            - Some APIs attach extra information w/ regards to the generated error
+
+            - NOTE: In the "XMLHttpResponse" object
+                - Extra information is accessed through the property "response"
+
+                - On the API function "fetch()"
+                    - The returned HTTP response is streamed, NOT parsed
+                    - It does NOT provide direct access to the HTTP response body
+                
+
+    - Back on the "else" clause
+        - Call "response.json()" as the 1st line of code
+            - To parse the streamted HTTP response
+            - NOTE: The method ".json()" yields a Promise
+
+        - Then chain the method ".then()"
+            - Pass an Arrow function as argument value
+
+            - NOTE: NOT a great idea to implement a Promise c/o the method ".then()"
+                - Inside of another Promise c/o the function "fetch()"
+
+            - On the Arrow function
+                - Declare the parameter variable "errorData" that
+                    - Contains extra error information included in the parsed HTTP response
+
+            - Inside the Arrow function
+                - Pass the parameter variable "errorData" as argument value to "console.log()"
+                - Move the statements that throws a new "Error" object
+
+        - Add the "return" keyword in front of the "response.json()"
+            - To return the inner Promise chain
+            - To merge w/ the outer Promise chain
+    
+
+    - Save the changes
+        - Load / reload the browser
+
+        - Clicking the button "FETCH POSTS"
+            - An alert w/ the message "Something went wrong"
+            
+            - On the JavaScript console
+                - An empty Object Literal is returned
+                    - Could contain additional error information
+
+                - Displays the message "Error: Something went wrong server-side"
+
+            - This demonstrates proper error propagation
+
+    
+    - NOTE: NOT a beautiful error handling code
+        - This is how to implement error handling with API "fetch()"
+        
+        - Grants access to the HTTP response body that may contain extra information
+
+
+    - Restoring the property URL w/in the function "sendHttpRequest()"
+        - Resumes the normal operation when the button "FETCH POSTS" is clicked
