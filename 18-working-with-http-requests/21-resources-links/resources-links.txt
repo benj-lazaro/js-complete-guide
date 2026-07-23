@@ -1,0 +1,16 @@
+Useful Resources & Links
+------------------------
+- How the web works
+    - Reference (https://academind.com/tutorials/how-the-web-works)
+
+
+- XMLHttpRequest
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest)
+
+
+- fetch()
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+
+
+- Uploading files
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/File_API/Using_files_from_web_applications)
