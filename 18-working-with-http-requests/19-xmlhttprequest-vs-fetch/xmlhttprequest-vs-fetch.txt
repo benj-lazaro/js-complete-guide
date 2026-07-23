@@ -1,0 +1,30 @@
+XMLHttpRequest VS fetch()
+-------------------------
+- The "fetch()" API
+    - Modern approach on sending HTTP requests
+        - NOT supported by modern browsers
+
+    - Generally easy to use
+        - Use Promises out of the box
+    
+    - Although error handling is clunky
+        - Offers NOT a beautiful way of writing error handling code
+        - i.e. Writing a Promise w/in a Promise
+
+
+- The XMLHttpRequest
+    - Offers better support for older browsers
+
+    - Error handling may be a bit clunky
+        - Although hiding it behind a custom function can make it more easier to understand
+
+
+- Either approach on sending HTTP requests are fine
+    - Boils down to personal preference or project requirements (e.g. legacy browser support)
+
+    - An alternative to both is the use of 3rd-party library that
+        - Wraps either "fetch()" API or XMLHttpRequest w/in a nicer API
+        - W/out worrying about its internal implementation
+
+    - NOTE: It is IMPORTANT to understand
+        - How to natively implement "fetch()" or XMLHttpRequest
