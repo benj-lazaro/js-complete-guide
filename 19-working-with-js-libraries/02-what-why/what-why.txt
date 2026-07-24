@@ -1,0 +1,10 @@
+What & Why
+----------
+- JavaScript third party libraries
+    - Packages of code written in JavaScript
+    
+    - Contains pre-defined functions
+        - Adds utility functions to an existing project
+    
+    - Provide an "easier life" as a developer
+        - Takes away complexities unrelated to a project's core business logic
