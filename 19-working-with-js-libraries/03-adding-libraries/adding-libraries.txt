@@ -1,0 +1,63 @@
+Adding Libraries
+----------------
+- Two (2) methods of adding an external JavaScript library on a project
+    - Download & locally install the library w/in the same folder as the web app's JavaScrpit files
+        - Get the minified (optimized) version if available
+
+    - Use CDN (Content Delivery Network) URL of the library
+        - Preferred as it removes the need for manual installation
+
+        - The downside of this approach
+            - When the CDN server hosting the library goes offline
+
+
+- Load the 3rd party JavaScript library
+    - Using the HTML element <script> w/ the attribute "defer"
+
+    - IMPORTANT: Loading order is vital
+        - Load the 3rd-party JavaScript library 1st
+        - Load the web application's JavaScript file last
+
+
+- On the practice project (index.html)
+    - Get the full, minified and CDN version of the Lodash library
+        - Website (https://lodash.com/)
+
+    
+    - Open the HTML file (index.html)
+        - Manually load the minified version (loadash.min.js)
+        
+        - Using the HTML element <script> w/ the attribute "defer"
+            - Place it BEFORE loading the JavaScript file "app.js"
+
+
+    - On the JavaScript file (app.js)
+        - Create a global constant named "customers"
+            - Create & assign an array
+            - Contains three (3) elements of string data type
+
+        - Create another global constant named "activeCustomers"
+            - Create & assign an array
+            - Contains two (2) identical elements of the array "customers"
+
+        - Create another global constant named "inactiveCustomers"
+            - Call the lodash (i.e. "_") object method ".difference()"
+            - Assign the returned array as value
+
+        - NOTE: The "_" object method ".difference()" 
+            - Accepts two (2) arrays as argument values
+
+            - Creates & returns a new array
+                - Contains elements of the 1st array that are NOT included in the 2nd array
+                - Order & references of (the new array) elements are determined by the 1st array
+                
+            - Reference (https://lodash.com/docs/4.18.1#difference)
+           
+        - Call "console.log()"
+            - Pass the global constant "inactiveCustomers" as argument value
+
+
+    - Save the changes
+        - Load / reload the browser
+        - Launch the browser's JavaScript console
+        - The value of the 1st array that does NOT exists on the 2nd array gets displayed
