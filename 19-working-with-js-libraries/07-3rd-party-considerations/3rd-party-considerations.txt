@@ -1,0 +1,35 @@
+Third Party Considerations
+--------------------------
+- Things to consider when choosing & working w/ a library
+    - Library comes w/ a lot of overhead
+        - Features that may NOT be utilized by the app
+            - Slows down the app's initial loading time
+        
+        - Although some allows to
+            - Download ONLY the core features (i.e. smaller size)
+            - Import ONLY parts that are needed
+            - NOTE: NOT all libraries offer these capabilities
+
+    - Choose libraries that are secure & actively maintained
+        - Popular open-source libraries are preferred
+        - Continuously improves code quality & security
+   
+    - Quality indicators based on a library's Github repository
+        - Last commit
+            - Tells how recent the codebase is update
+            - Last commit of 2 years = NOT actively maintained
+
+        - "Release" page
+            - Tells how often a new version is released
+            - Release of once or twice / year = actively maintained
+
+        - "Issues" page
+            - Overview of current bugs or issues
+
+            - NOTE: Number of reported issues does NOT
+                - Directly translates to serious bugs 
+                - The more popular a library is, the more issues are reported
+
+        - "Stars" count
+            - Indicates the popularity of a library
+
