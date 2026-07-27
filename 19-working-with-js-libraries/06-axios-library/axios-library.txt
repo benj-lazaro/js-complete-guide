@@ -1,0 +1,139 @@
+Axios Library & HTTP Requests
+-----------------------------
+- Axios library is a Promise-based HTTP client for the browser & Node.js
+    - A great ALTERNATIVE to "fetch()" API or XMLHttpRequest for HTTP requests
+
+    - Importing the library via CDN
+        - Using the HTML element <script>
+        - Enables Axios to be globally available 
+    
+    - Offers methods named after HTTP requests
+        - ".get()"      = Sends a HTTP request "GET"
+        - ".post()"     = Sends a HTTP request "POST"
+        - ".put()"      = Sends a HTTP request "PUT"
+        - ".delete()"   = Sends a HTTP request "DELETE"
+
+    - Eliminates the manual setup of HTTP headers
+        - Axios automatically analysizes submitted data
+        - Transforms submitted data accordingly (e.g. FormData, JSON, ...)
+        - Chooses the appropriate "Content-Type" value
+
+    - Better error handling on HTTP status code 400 or 500 (server-side)
+
+
+- The method ".get()"
+    - Requires one (1) argument value
+        - API endpoint (URL) for HTTP request GET
+
+    - Returns an Axios object that contains the property
+        - ".data"       = ready-to-use parsed HTTP response body
+        - ".headers"    = HTTP headers
+        - ".status"     = HTTP request status code
+
+    - In the event of HTTP status code 400 or 500
+        - Successfully sent a HTTP request but encountered as server-side error
+            - Axios throws an error 
+        
+        - Unlike using the "fetch()" API or XMLHttpRequest
+            - Axios does NOT require extra work /code
+            - To capture status code 400 or 500
+
+        - NOTE: Details of the error is stored in "error.response"
+
+
+- The method ".post()"
+    - Requires two (2) argument values
+        - API endpoint (URL) for HTTP request POST
+        - Constant where the data to be submitted is stored
+
+    - Automatically analysize the data submitted
+        - Determines what data type to convert it into (e.g. JSON or FormData)
+        - Set up the appropriate value for the HTTP header "Content-Type"
+
+    - Returns an Axios object that contains the property
+        - ".data"       = submitted data
+        - ".headers"    = HTTP headers
+        - ".status"     = HTTP request status code
+
+
+- The method ".delete()"
+    - Requires one (1) argument value
+        - API endpoint (URL) for HTTP request DELETE
+
+    - Returns an Axios object that contains the property
+        - ".data"       = deleted data
+        - ".headers"    = HTTP headers
+        - ".status"     = HTTP request status code    
+
+
+- Using the practice project of the previous section
+    - Refactor the JavaScript code of the web app
+        - Use the Axios library for sending HTTP request 
+
+        - Rendering the function "sendHttpRequest()" depricated
+            - Leaving as it is for now
+
+    
+    - Import the Axios library on the HTML file (index)
+        - Using the HTML element <script>
+            - Assign the recommended CDN link
+
+        - Place it BEFORE the web app's own JavaScript file (app.js)
+            - Include the HTML attribute "defer"
+                
+    
+    - On the JavaScript file (app.js)
+        - Delete the function "sendHttpRequest()"
+
+        - On the Async function "fetchPosts()"
+            - Replace the call to the function "sendHttpRequest()" w/ 
+                - A call to "axios.get()"
+                - Remove the argument value "GET"
+                            
+            - Rename the constant "responseData" to "response"
+                - NOTE: Stores the Axios object containing the HTTP Response
+
+            - On the local constant "listsOfPost"
+                - Change the value "responseData" to "response.data"
+
+                - NOTE: The property ".data" contains the parsed HTTP response body
+
+            - On the "catch" clause
+                - Call "console.log()"
+                - Pass "error.response" as argument value
+
+                - NOTE: Returns an Axios object that
+                    - Contain details of the encountered HTTP response error
+
+        
+        - On the Async function "createPost()"
+            - Create a local constant named "response"
+            
+            - Replace the call to the function "sendHttpRequest()" w/
+                - A call to "axios.post()"
+                    - Remove the argument value "POST"
+                
+                - Prefix the call w/ "await"
+                    - Assign as value to the local constant "response"
+
+            - Call "console.log()"
+                - Pass the local constant "response" as argument value
+
+                - NOTE: Returns an Axios object that
+                    - Contains submitted data & HTTP response status code
+                
+
+        - On the Event handler (i.e. Arrow function) chained
+            - To the global constant "postList"
+
+            - Replace the call to the function "sendHttpRequest()" w/
+                - A call to "axios.delete()"
+                    - Remove the argument value "DELETE"
+
+        
+        - Save the changes
+            - Load / reload the browser
+
+            - The behavior of the HTTP requests remains the same
+                - As w/ the earlier implementations using "fetch()" API or XMLHttpRequest         
+   
