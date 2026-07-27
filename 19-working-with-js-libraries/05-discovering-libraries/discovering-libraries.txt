@@ -1,0 +1,17 @@
+Discovering Libraries
+---------------------
+- The npmjs.com is a repository of JavaScript libraries BUT
+    - Works as a lookup resource
+    - Assumed that you already know an existing library
+    - NOT a straight-forward website for actively searching for new libraries
+    - Website (https://www.npmjs.com/)
+
+
+- To discovery other JavaScript libraries
+    - Perform a manual search on required functionality
+    
+    - Check return hits of preferred search engine
+        - Developer blogs
+        - Stack Overflow posts
+
+    - Check recommended libraries' GitHub repository
