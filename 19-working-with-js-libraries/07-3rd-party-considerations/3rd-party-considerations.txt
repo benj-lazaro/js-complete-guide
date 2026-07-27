@@ -5,30 +5,37 @@ Third Party Considerations
         - Features that may NOT be utilized by the app
             - Slows down the app's initial loading time
         
-        - Although some allows to
+        - Some libraries allows to
             - Download ONLY the core features (i.e. smaller size)
-            - Import ONLY parts that are needed
+            - Import ONLY parts that are needed            
             - NOTE: NOT all libraries offer these capabilities
 
-    - Choose libraries that are secure & actively maintained
-        - Popular open-source libraries are preferred
-        - Continuously improves code quality & security
-   
-    - Quality indicators based on a library's Github repository
+
+    - Choose a library that is secure & actively maintained
+        - Open-source libraries are preferred
+            - Codebase is open for review
+            - Continuously improve code security & quality
+
+
+    - Avoid a library that is NOT well-maintained
+        - Unintentionally open a security hole on the app
+
+        - Risk of breaking the app due
+            - To the existence of an unresolved bug(s)
+
+
+    - Indicators of a goog quality library based on its Github repository
         - Last commit
-            - Tells how recent the codebase is update
-            - Last commit of 2 years = NOT actively maintained
+            - How recent the codebase was update
+            - Last commit of 2 years ago = NOT ACTIVELY MAINTAINED
 
         - "Release" page
-            - Tells how often a new version is released
-            - Release of once or twice / year = actively maintained
+            - How often a new version is released
+            - Release of once or twice / year = ACTIVELY MAINTAINED
 
         - "Issues" page
-            - Overview of current bugs or issues
-
-            - NOTE: Number of reported issues does NOT
-                - Directly translates to serious bugs 
-                - The more popular a library is, the more issues are reported
+            - The more popular a library is, the more issues are reported
+            - The issues count does NOT translate to serious bugs
 
         - "Stars" count
             - Indicates the popularity of a library
