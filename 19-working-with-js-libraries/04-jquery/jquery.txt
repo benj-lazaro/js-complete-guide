@@ -1,0 +1,14 @@
+Example: jQuery
+--------------
+- jQuery is a popular open-source JavaScript library
+    - Designed to simplify HTML DOM tree traversals, manipulation
+        - As well as Event handling, CSS animation & AJAX
+    
+    - The features jQuery offers are now made available on
+        - The core JavaScript APIs
+
+    - Website (https://jquery.com/)
+
+    - Integrated on a website the same way as the previous Lodash library
+        - Using the HTML element <script>
+        - jQuery CDN (https://cdnjs.com/libraries/jquery)
