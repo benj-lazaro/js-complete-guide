@@ -1,0 +1,67 @@
+Splitting Code In A Sub-Optimal Way
+-----------------------------------
+- Demonstrates making a project's codebase modular
+    - Splitting & importing each file in a sub-optimal way 
+
+    - Working w/ the Project Planner app taken from Section 14 (Working With Events)
+        - Entire application logic is placed on a single file (app.js)
+        - Finding stuff & mainting the codebase is NOT easy
+
+    - Splitting the codebase where
+        - Each Class is stored on its own separate file
+            - Leaving the Class "App" behind in the file (app.js)
+
+        - NOTE: This is a standard practice for most projects 
+
+    - Each file is then manually imported in the HTML document (index.html)
+        - Using the HTML element <script> w/ the attribute "defer"
+
+    - NOTE: This is a sub-optimal way of importing individual Classes
+        - For every new file added into the project
+            - It needs to be manually imported in the HTML document (index.html)
+            - Then micromanage the order on how each file is imported to prevent breaking the app
+
+
+- On the practice project
+    - Remove the following files from the project folder
+        - "events.html"
+        - "assets/scripts/events.js"
+        - NOTE: These files were ONLY used to test Events
+
+
+    - Inside the folder "scripts"
+        - Create two sub-folders named "App" and "Utility"
+
+        - Inside the folder "App"
+            - Create the following empty JavaScript files:
+                - "Component.js"
+                - "ProjectItem.js"
+                - "ProjectList.js"
+                - "Tooltip.js"
+
+        - NOTE: Naming convention is preferred by the course author
+            - Any naming convention can be used as long as it remains consistent
+
+        - Inside the folder "Utility"
+            - Create the following empty JavaScript files:
+                - "Analytics.js"
+                - "DOMHelper.js"
+
+
+    - Switch to the "app.js" file
+        - Select and cut each defined Class
+            - Paste the code to their respective file
+
+        - Leaving the Class "App" behind
+
+        - On the assigned value of "analyticsScript.src"
+            - Refactor it to "assets/scripts/Utility/analytics.js"
+
+        - Delete the empty file "analytics.js" from the root folder
+    
+
+    - On the "index.html"
+        - Import the files using the HTML element <script> w/ the attribute "defer"
+
+        - IMPORTANT: Import each file in the proper order to make it run as expected
+
