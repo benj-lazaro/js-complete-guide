@@ -1,0 +1,50 @@
+First Step Towards JavaScript Modules
+-------------------------------------
+- Current state of the project app
+    - Classes are "imported" in the "index.html" file
+        - Using HTML element <script> w/ the attribute "defer"
+        - Results to the Class being added to the Global "Object"
+        - However, a mistake on the import order results to breaking the app
+
+    - To address this concern
+        - Have a Class w/ dependent Classes to export themselves globally
+        - Removes the risk of the app breaking
+
+
+- For a Class w/ dependent Classes
+    - Prefix the keyword "export"
+        - Automatically makes the Class available globally
+
+    - Removes the need to manually "import" 
+        - It's corresponding JavaScript file in the "index.html" file
+
+
+- To switch to using JavaScript modules
+    - On the app's starting "root" script (app.js)
+        - Add the HTML attribute "type"
+        - Asisgn the value of "module"
+
+    - This informs the browser that the "app.hs" & ALL JavaScript files
+        - Referenced by "app.js" will be using JavaScript modules
+
+
+- On the practice project
+    - On the "index.html"
+        - Comment out the "import" statement for the Class "Component"
+    
+        - On the "import" statement for the Class "App"
+            - Add the HTML attribute "type"
+            - Assign the value of "module"
+
+
+    - On the file "assets/scripts/App/Component.js"
+        - Prefix the keyword "export" to the Class "Component"
+
+
+    - Save the changes
+        - Load / reload the browser
+        - Launch the browser's JavaScript console
+
+        - The Project Planner app is tentatively broken
+            - Reported errors on the JavaScript console
+            - To be addressed on the next lesson
