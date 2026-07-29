@@ -1,0 +1,37 @@
+First Import/Export Work
+------------------------
+- To address the reported "Uncaught ReferenceErrorL Component is not defined"
+    - Requires importing the said Class w/in the dependent Class "Tooltip"
+    
+    - Using the keyword "import"
+        - Followed by the name of the Class enclosed w/in a pair of { }
+        - Followed by the keyword "from"
+        - Relative path of the file "Component.js"
+
+        - NOTE: Optionally, can use the file extension ".mjs"
+            - The "m" stands for "module"
+
+    - The corresponding HTML element <script> of the Class "Tooltip"
+        - Requires adding the HTML attribute "type"
+        - Assigning w/ the value of "module"
+        - NOTE: Informs the browser that the file "Tooltip.js" is using JavaScript module
+
+
+- On the practice project
+    - On the "assets/scripts/App/Tooltip.js"
+        - Use the keyword "import" to import the Class "Component"
+
+        import { Component } from "./Component.js";
+
+
+    - On the HTML file (index.html)
+        - On the HTML element <script> of the Class "Tooltip"
+        - Add the HTML attribute "type"
+        - Assign the value of "module"
+
+    
+    - Save the changes
+        - Load / reload the browser
+        - Launch the browser's JavaScript console
+        
+        - The error "Uncaught ReferenceErrorL Component is not defined" has been addressed
