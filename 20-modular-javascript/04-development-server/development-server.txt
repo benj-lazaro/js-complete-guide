@@ -1,0 +1,46 @@
+We Need A Development Server
+----------------------------
+- Serving the practice project directly from the filesystem
+    - Generates CORS (Cross Origin Resource Sharing) policy errors
+
+    - A CORS policy 
+        - Prevents a script to reference another script from another domain (i.e. cross domain)
+            - It ONLY allows access (download) scripts from the same domain
+
+            - To ensure that a script will NOT access (download) a potentially malicious script
+                - e.g. compromised 3rd-party library
+
+            - It requires an app to be served using a web server
+                - NOT using the local filesystem protocol  (i.e. "file://...")
+
+    - To address the generated CORS errors
+        - The Project Planner app needs to be served using a web server
+            - Have the app's JavaScript files made available under the same domain 
+            
+        - A 3rd party JavaScript package named "serve"
+            - It is a lightweight local web server that can be run locally
+            - Github repository (https://github.com/vercel/serve)
+            - npmjs (https://www.npmjs.com/package/serve)
+
+            - NOTE: Requires Node.js 14 (or higher) to install & run
+
+
+- To install & run the JavaScript package "serve"
+    - Launch VS Code's integratd terminal
+
+        npm install -g serve
+
+
+    - To locally run the package
+
+        serve
+
+        - NOTE: Prompts two URLs (Local & Network)
+            - Copy the Local URL & paste it on the browser's address field
+            - Serves the app through this web server
+            - Addresses the encountered CORS errors
+
+
+    - To gracefully shutdown the package
+
+        CTRL + C
