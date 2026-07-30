@@ -1,0 +1,86 @@
+More Named Export Syntax Variations
+-----------------------------------
+- When importing more than one (1) Class, function, constant from a single source file
+    - Import the exported name into the dependent file w/in the pair of "{ }"
+    - Each exported name is separated by a ","
+    
+        import { <import_item>, <import_item>, ... } from "<file_path>/<file>.js";
+
+
+- Imported items can be bundled into a single named object
+    - The single object is referenced as "*"
+    - Followed by the keyword "as"
+    - Then an alias name for the bundled items
+
+        import * as <object_name> from "<file_path>/<file>.js";
+
+
+- The keyword "as"
+    - Can also be used to assigning a new name to the exported items
+
+        import {<exported_item> as <alias_name> } from "<file_path>/<file>.js";
+    
+    
+    - IMPORTANT: The alias name will ONLY be relevant w/in the same file
+
+    - Common use-case
+        - Name clash (confilcit) between a local constant & of the exported named item
+
+
+- On the practice project
+    - Open the file "assets/scripts/Utility/DOMHelper.js"
+        - Copy the Static methods "clearEventListeners" & "moveElement"
+        
+        - Paste them outside of the Class "DOMHelper"
+            - Convert the Static methods as normal functions
+            - Prefix the function names w/ the keyword "export"
+
+
+    - On the file "assets/scripts/App/ProjectList.js"
+        - Refactor the "import" statement 
+            - Include the two (2) exported functions w/in the pair of "{ }"
+            - Remove the Class "DOMHelper" from the pari of "{ }"
+
+        - Inside the method "connectDroppable()
+            - Refactor the call to the method "DOMHelper.moveElement"
+            - Change it to a call to the exported function "moveElement"
+
+        - Save the changes
+            - Load / reload the browser
+            - Test the app
+            - It behaves as it was before
+
+    
+    - On the file "assets/scripts/App/ProjectList.js"
+        - Refactor the "import" statement 
+            - Replace the pair of "{ }" w/ a "*"
+            - Followed by the keyword "as"
+            - Then the object name of "DOMH"
+
+        - Inside the method "connectDroppable()
+            - Refactor the call to the function "moveElement"
+            - Prefix the function call w/ the object name "DOMH"
+
+            - NOTE: Looks like calling a method "moveElement" 
+                - But actually calling the function "moveElement"
+                - Stored w/in the object "DOMH"
+
+        - Save the changes
+            - Load / reload the browser
+            - Test the app
+            - It behaves as it was before
+
+
+    - On the "import" statement for the Class "ProjectItem"
+        - Use the keyword "as"
+            - Followed by the alias name of "PrjItem"
+
+        - On the "for..of" loop w/in the Constructor method
+            - Refactor the line of code that instantiates a new "ProjectItem" object
+            - From "ProjectItem" to the alias name "PrjItem"
+
+        - Save the changes
+            - Load / reload the browser
+            - Test the app
+            - It behaves as it was before
+        
