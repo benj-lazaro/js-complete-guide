@@ -1,0 +1,34 @@
+Switching All Files To Modules
+------------------------------
+- Switching to use a module ONLY setup on the practice project
+
+
+- On the practice project (index.html)
+    - Comment out ALL HTML element <script> 
+        - EXCEPT for the "app.js"
+
+
+    - Add the prefix keyword "export" on the following Classes & their corresponding Files
+        - "App/ProjectItem.js"
+        - "App/ProjectList.js"
+        - "App/Tooltip.js"
+        - "Utility/DOMHelper.js"
+
+    - On the file "App/ProjectItem.js"
+        - Import the Class "DOMHelper"
+
+
+    - On the file "App/ProjectList.js"
+        - Import the Classes "ProjectItem" & "DOMHelper"
+
+
+    - On the file "App/Tooltip.js"
+        - Import the Class "Component"
+
+
+    - Save the changes
+        - Load / reload the browser
+        - Launch the browser's JavaScript console
+
+        - The behavior of the app remains the same
+            - NO error(s) reported on the JavaScript console
