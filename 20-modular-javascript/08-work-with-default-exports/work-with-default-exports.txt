@@ -1,0 +1,66 @@
+Working With Default Exports
+----------------------------
+- To set a default export (item)
+    - Use the keyword "default" RIGHT AFTER the keyword "export"
+        - The name of the item can be retained or removed
+    
+    - IMPORTANT: Each file is limited to ONLY one (1) default item to be exported
+
+
+- The disadvantage of using a default export
+    - Working w/ a team, anyone could assign & use their own preferred name
+        - Ends up w/ a codebase having different names referring to the same default export item
+
+    - Using a named import (export) over the default export is a better & safe choice
+        - NOTE: The default export serves as an optional feature that can be used
+        
+
+- To import a default (export) item
+    - After the keyword "import"
+        - Assign ANY name to represent the default item
+        - The name is NOT placed w/in the pair of "{ }"
+        - NOTE: Omit the pair "{ }" is the source file ONLY contains the default (exported) item
+
+        import <default_name> from "<file_path>/<file>.js";
+
+
+- To import a default (export) item along w/ named items
+    - After the keyword "import"
+        - Assign ANY name to represent the default item
+        - The name is NOT placed w/in the pair of "{ }"
+        - Followed by a ","
+        - Named items are placed w/in the pair of "{ }"
+
+        import <default_name>, {<named_import_item>, ...} from "<file_path>/<file>.js";
+
+
+- On the practice project
+    - Open the file "assets/scripts/App/Component.js"
+        - Make the class "Component" a default export item
+            - Add the keyword "default" RIGHT AFTER "import"
+            - Remove the Class name "Component"
+
+        - Create a function named "doSomething()" outside the Class "Component"
+            - Leave the function body empty
+        
+        - Export the function "doSomething()" as a named item
+            - Prefix the function w/ the keyword "export"
+
+        - Save the changes
+
+        
+    - On the file "assets/scripts/App/Tooltip.js"
+        - Refactor the "import" statement for the "Component.js"
+            - Remove "Component" from the pair of "{ }"
+            - Assign the name "Cmp" to represent the default export item
+            - Followed by a ","
+            - Import the named export item "doSomething" w/in the pair of " {}"
+
+        - On the Class definition of "Tooltip"
+            - Change the referece to "Component" after the "extends" to "Cmp"e
+        
+        - Save the changes
+
+
+    - Load / reload the browser
+        - The behavior of the app should be the same as before
