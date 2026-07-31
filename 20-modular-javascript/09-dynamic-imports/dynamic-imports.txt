@@ -1,0 +1,45 @@
+Dynamic Imports & Code Splitting
+--------------------------------
+- The dynamic import syntax
+    - Speeds up the loading time of an app
+    - By reducing the files requested from the server
+    - Best for loading import (export) items ONLY when needed
+
+
+- The function "import()"
+    - Accepts the JavaScript file to be imported dynamically as argument value
+    
+    - It returns a Promise object
+        - When the method ".then()" can be chained
+        - Pass the code as argument value that works on the dynamically imported item
+
+
+- On the practice project
+    - On the file "assets/scripts/App/ProjectItem.js"
+        - The Class "Tooltip" is ONLY called when the function "showMoreInfo()" is accessed
+
+        - Call the function "import()"
+            - Pass the path of the "Tooltip.js" as argument value
+            - The imported item is stored in the parameter variable name "module"
+
+        - Chain the method ".then()"
+            - Pass an Arrow function as argument value
+
+        - On the Arrow function
+            - Define the parameter variable named "module"
+
+        - Inside the Arrow function
+            - Cut the code that calls & uses the Class "Tooltip"
+                - Paste the code w/in the body of the Arrow function
+
+            - On the instantiation of the Class "Tooltip"
+                - Refactor "Tooltip" to "module.Tooltip"
+        
+        - Save the changes
+            - Launch the browser's Chrome Dev Tools
+            - Click the "Network" tab
+            - Load / reload the browser
+            - The files "Tooltip.js" & "Component.js" are NOT requested from the server
+
+        - Clicking the button "More Info"
+            - The said files are ONLY then requested from server
