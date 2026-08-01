@@ -1,0 +1,52 @@
+When Does Module Code Execute
+-----------------------------
+- The behavior of a code w/in a module file that is NOT a Class
+    - It runs ONLY ONCE when
+        - The correponding module file is loaded AND used for the 1st time
+
+    - Succedding imports of the same module
+        - The code will NOT run again
+
+
+- On the practice project
+    - On the file "assets/scripts/App/ProjectItem.js"
+        - Prior to the declaration of the Class "ProjectItem"
+        - Call the "console.log()"
+        - Pass the string "Project item created." as argument value
+
+
+    - Save the changes
+        - Launch the browser's JavaScript console
+        - Load / reload the browser
+
+        - The message "Project item created." appears ONLY ONCE
+            - Regardless how many times the module "ProjectItem.js" is imported
+        
+    
+    - On the file "assets/scripts/Utility/DOMHelper.js"
+        - Prior to the declaration of the Class "DOMHelper"
+        - Call the "console.log()"
+        - Pass the string "DOM Helper executing."
+
+
+    - Save the changes
+        - Launch the browser's JavaScript console
+            - Load / reload the browser
+
+        - The message "DOM Helper executing." appears ONLY ONCE
+            - Regardless how many times the module "DOMHelper.js" is imported
+
+
+    - On the file "assets/scripts/App/Tooltip.js"
+        - Prior to the declaration of the Class "DOMHelper"
+        - Call the "console.log()"
+        - Pass the string "Tooltip running."
+
+    
+    - Save the changes
+        - Launch the browser's JavaScript console
+            - Load / reload the browser
+
+        - The message "Tooltip running." appears ONLY ONCE
+            - When the button "More Info" is clicked for the 1st time
+            - Regardless how many times the module "Tooltip.js" is dynamically imported
