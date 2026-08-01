@@ -1,0 +1,60 @@
+Module Scope & globalThis
+-------------------------
+- JavaScript modules runs on "Strict Mode" out-of-the-box
+    - The keyword "this" w/in a module file
+        - Does NOT point to the "Window" object
+        - Returns the value of "undefined"
+
+    - Due to the scope of JavaScript modules
+        - Anything defined at the top-level (& outside export)
+        - It does NOT get shared w/ other module
+        - It remains w/in the module file ONLY
+
+
+- To share data where exporting is NOT an option
+    - Manually add the data as a property of the "Window" object 
+
+        window.<constant_variable> = "<data_to_share>";
+
+    - NOTE: The "Window" object is a global object that spans across the entire app
+        - This WAS JavaScript method of sharing data across module files
+
+
+    - A better approach is using "globalThis" instead
+
+        globalThis.<constant_variable> = "<data_to_share>";
+
+    - NOTE: The "globalThis" when used w/in a module file
+        - Replaces the keyword "this" as a pointer to the "Window" object
+
+    - IMPORTANT: Treat BOTH approaches as a LAST resort
+        - It is better to export the data to be shared w/ other module
+
+
+- On the practice code
+    - Open the file "app.js"
+        - At the top-level of the module, define a costant named DEFAULT_VALUE"
+            - Assign the value of "MAX"
+
+        - To share data stored in the constant "DEFAULT_VALUE"
+            - Drop the keyword "const"
+            - Prefix "DEFAULT_VALUE" w/ "globalThis"
+
+        - NOTE: Effectively adds "DEFAULT_VALUE" as a property of the "Window" object
+
+    
+    - Open the file "assets/scripts/App/ProjectList.js"
+        - On the Class "ProjectList" method "connectDroppable()"
+        - Pass "DEFAULT_VALUE" as an argument value to "console.log()"
+
+        - NOTE: Accesses the "shared data" by the file "apps.js" that is NOT exported
+
+
+    - Save the changes
+        - Launch the browser's JavaScript console
+            - Load / reload the browser
+
+        - The shared data "MAX" is displayed twice
+            - Due to the Class "ProjectList" being called twice
+
+        
