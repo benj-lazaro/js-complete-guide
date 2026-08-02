@@ -1,0 +1,26 @@
+Quiz 24: Modules
+----------------
+- Why are JavaScript modules better than using multiple HTML <script src=""> imports?
+    - Answer: Each file specifies its dependencies
+        - You don't need to manually micro-manage the correct order
+
+
+- What's true about this export statement?
+
+    export const myName = 'Max';
+
+    - Answer: It's a so-called "named export"
+        - Exporting the constant w/ the value of "Max" under the name "myName"
+
+
+- How can you import the following exports?
+
+    export const myName = 'Max';
+    export function greet() { ... }
+
+    - Answer: import * as personData from "./file.js";
+
+
+- When and how often does non-exported code in a module execute?
+    - Answer: Upon the 1st time a module gets imported into another file
+
