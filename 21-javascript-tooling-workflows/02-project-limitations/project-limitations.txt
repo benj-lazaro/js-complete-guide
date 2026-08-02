@@ -1,0 +1,64 @@
+Project Limitations & Why We Need Tools
+---------------------------------------
+- The limitations of basic JavaScript projects
+    - Requires micro-managing manual imports or have lots of unncessary HTTP requests
+        - As the project grows either (or BOTH at the same time)
+            - More the need to manually micro-manage imports
+            - Live w/ the unncessary HTTP requests
+
+    - Code is NOT really optimized
+        - NOT as small as it could possibly be
+        
+        - Contains features that help the code to be readable for humans
+            - But w/c are NOT important to the computer
+
+        - Stripping out these features
+            - Ship it as a small code bundle as possible
+            - Results to loading the app faster
+            - Requiring the browser to download less bytes
+
+    - Potentally sub-optimized browser support
+        - NOT ALL of the latest & greatest JavaScript features are supported by ALL browsers
+
+        - Need a tool that could translates modern code into an older code
+            - For the use cases of uploading a (mondern code) project on a older web server
+            - To ensure compatibility on more browsers
+
+    - Need to constantly reload pages manually
+        - After updating the code in order to immediately see the implemented changes
+
+        - Need a development server that automatically reloads the page
+            - Whenever the code changes
+
+    - Code quality is NOT checked
+        - Need a tool that could be configured w/ rules on good code quality
+        - Automatically checks if the code is properly writtten & followed established rules
+
+
+- JavaScript tooling that helps address aforementioned limitations
+    - Development server tool
+        - Serve web pages under realistic circumstances
+        - Automatically reloads pages when their corresponding code is updated
+        - Tool: webpack-dev-server or serve (stand-alone tool that has NO auto reload feature)
+
+    - Bundling tool
+        - Analyzes (ALL of the code's) imports & exports using JavaScript modules
+        - Combines ALL of these files into a couple of file bundles
+        - Removes unncessary HTTP requests, effectively reduces requests
+        - Tool: Webpack
+
+    - Code optimization tool
+        - Automatically optimizes code post development
+        - Building it for production (deployment to real web server)
+        - Shorten function names, removes excess whitespace
+        - Removes everything that does NOT break the app
+        - Tool: Webpack Optimizer Plugins
+
+    - Code compilation tool
+        - Write modern code & able ship code that is supproted by older browsers
+        - Transpiles modern code into code that works on older browsers
+        - Tool: Babel
+
+    - Code quality checker
+        - Ensures that code follows certain conventions & patterns
+        - Tool: ESLint
