@@ -1,0 +1,44 @@
+Workflow Overview
+-----------------
+- There are two (2) workflows
+    - Development workflow
+        - Starts when changes are save to the code
+
+    - Production workflow
+        - Starts explicitly using a certain command
+        - This should NOT run whenever changes in the code are saved
+    
+    - NOTE: BOTH workflows require the use of Node.js & npm
+        - These tools should be installed globally
+        - Used by the tools (behind-the-scenes) from either workflow
+
+
+- Development workflow
+    - Linting (using ESLint)
+        - Checks the code for quality issues
+
+    - Bundling (using Webpack)
+        - Combine different files into a couple of (bigger) files
+        - Reduces HTTP requests
+
+    - Auto-reload Dev Server (using Webpack-dev-server)
+        - Auto-reloads the app whenever changes in the code are saved
+ 
+
+- Production workflow
+    - Linting (using ESLint)
+        - Last "minute" checks despite having already been done during development
+
+    - Bundling (using Webpack)
+        - Combine different files into a couple of (bigger) files to be shipped
+
+    - Compiling / Transpiling (using Babel)
+        - Translates modern JavaScript code into JavaScript that runs on old browsers
+
+    - Optimizing (using Webpack Optimizer Plugins)
+        - Shorten function names, removes excess whitespace
+        - Removes everything that does NOT break the app
+        - Outputs production-ready code
+
+    - Uploading / shipping
+        - Uploads the app to a production (live) server
