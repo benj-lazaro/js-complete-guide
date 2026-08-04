@@ -1,0 +1,12 @@
+Configuring ESLint
+------------------
+- To fully understand ALL options to configure
+    - Configure ESLint (https://eslint.org/docs/latest/use/configure/)
+
+
+- To explore available rules & what they mean
+    - Rules Reference (https://eslint.org/docs/latest/rules/)
+
+
+- General ESLint documents in general
+    - Getting Started (https://eslint.org/docs/latest/use/getting-started)
