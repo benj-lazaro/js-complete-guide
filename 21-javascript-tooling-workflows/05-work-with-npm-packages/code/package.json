@@ -1,0 +1,14 @@
+{
+  "name": "project-planner",
+  "version": "1.0.0",
+  "description": "A simple project planner app",
+  "author": "Benj Lazaro",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "eslint": "^10.8.0"
+  }
+}

@@ -1,0 +1,50 @@
+Working With npm Packages
+-------------------------
+- To download & locally install a npm package as a development dependency of a project
+
+    npm install --save-dev <package_name>
+
+    - NOTE: To know more about a package's installation process using npm
+        - Search online using "npm <package_name>"
+
+
+- For every package installed
+    - The "package.json" file's property "devDependencies" field updated
+        - Lists the name & version number of the package installed
+
+    - When executing the aforementioned npm command for the 1st time
+        - Creates a file named "package-lock.json"
+            - Contains information of the npm package & its dependencies
+
+        - Creates a folder named "node_modules"
+            - Contains the files of the package, its dependencies
+                - As well as dependencies of its dependencies
+
+            - IMPORTANT: DO NOT TOUCH the code of these files
+
+            - NOTE: When sharing your code, exclude this folder 
+                - A project's "package.json" will re-create the "node_modules"
+            
+            - NOTE: To re-create a project's "node_modules" folder using npm
+
+                npm install
+
+    - Otherwise, the file "package-lock.json" & folder "node_modules" gets updated
+
+
+- On the pratice project
+    - Launch the integrated terminal inside the project folder
+
+
+    - Install the npm package eslint locally as a development dependency
+
+        npm install --save-dev eslint
+
+
+    - Open the "package.json" file to confirm installation
+        - Look at the property "devDependencies"
+
+            "devDependencies": {
+                "eslint": "^<version_number>"
+            }
+    
