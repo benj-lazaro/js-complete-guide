@@ -1,0 +1,26 @@
+Setting Up npm Project
+----------------------
+- Install the ESLint extension in VS Code
+    - ESLint (Microsoft formerly by Dirk Baeumer)
+        - Restart VS Code after it is installed
+    
+    - After VS Code restarts, launch the Command Palette (CTRL + SHIFT + P)
+        - Type "eslint" to check if it has been enabled
+        - If enabled, there will be no menu item asking to enable ESLint
+
+
+- Create a local npm project
+    - Open the Project Planner app in VS Code
+        - Launch the integrated terminal
+    
+    - Type "npm init" to create (initialize) a npm project
+    
+    - Press ENTER to accept default value(s)
+        - Can provide any information you want
+
+    - At the last prompt "Is this OK? (yes)"
+        - Type "yes" & press ENTER
+    
+    - A "package.json" file is created
+        - Contains settings that allows npm to manage the Project Planner app
+        - IMPORTANT: DO NOT DELETE this file
