@@ -1,0 +1,48 @@
+Linting With ESLint
+-------------------
+- Setup the npm package ESLint
+    - Launch the integrated terminal from the project's folder 
+
+    - Use the following command to initialize ESLint
+
+        npx eslint --init
+    
+    - Prompts the following questions:
+        - "What do you want to link?"
+            - Select "JavaScript"
+
+        - "How would you like to use ESLint?"
+            - Select "To check syntax, find problems"
+
+        - "What type of modules does your project use?"
+            - Select "JavaScript modules (import/export)"
+
+        - "Which framework does your project use?"
+            - Select "None of these"
+
+        - "Does your project use TypeScript"
+            - Select "No"
+
+        - "Where does your code run?"
+            - Select "Browser"
+
+        - "The config that you've selected requires the following dependencies:
+            eslint, @eslint/js, globals. Would you want to install them now?"
+            - Select "Yes"
+
+        - "Which package manager do you want to use?"
+            - Select "npm"
+       
+        - Creates a file "eslint.config.mjsn"
+            - Contains the configuration details & rules
+
+
+- PERSONAL NOTE: There have been significant changes w/ ESLint 
+    - Followed the updated 2025 instructions from Udemy's Q&A
+    
+    - Using the npx instead of npm to initialize ESLint
+
+        npx eslint --init
+
+    - The generated file "eslint.config.mjs"
+        - Does NOT provide anything to change styling rules
