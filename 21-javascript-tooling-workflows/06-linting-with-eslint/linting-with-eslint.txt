@@ -5,7 +5,7 @@ Linting With ESLint
 
     - Use the following command to initialize ESLint
 
-        npx eslint --init
+        npm init @eslint/config@latest
     
     - Prompts the following questions:
         - "What do you want to link?"
@@ -38,11 +38,11 @@ Linting With ESLint
 
 
 - PERSONAL NOTE: There have been significant changes w/ ESLint 
-    - Followed the updated 2025 instructions from Udemy's Q&A
-    
-    - Using the npx instead of npm to initialize ESLint
+    - Followed the installation instructions from ESLint's website
+        - Website (https://eslint.org/)
 
-        npx eslint --init
+    - Implement rules based on ESLint's online documentation
+        - Getting Started (https://eslint.org/docs/latest/use/getting-started)
 
-    - The generated file "eslint.config.mjs"
-        - Does NOT provide anything to change styling rules
+    - Added the two (2) rules that the author provided as example
+        - Added the rules to the "defineConfig" of the "eslint.config.mjs" file.
