@@ -1,0 +1,55 @@
+Important: Webpack Version & Configuring npm Scripts
+----------------------------------------------------
+- This section details downloading the pre-requisite npm packages
+    - clean-webpack-plugin
+    - cross-env
+    - webpack
+    - webpack-cli
+    - webpack-dev-server
+
+
+- However, this section NEEDS an UPDATE
+    - The content uses Webpack 4 (very old)
+        - There have been too many breaking changes w/ Webpack 5
+
+    - The workaround provided by the Teaching Assistant (Joel) in 2023
+        - Reported 33 vulnerabilities (19 high)
+        - Unable to get ESLint running properly
+
+    - The content of the workaround "package.json" file:
+
+    {
+        "name": "javascript-complete-guide",
+        "version": "1.0.0",
+        "description": "JavaScript - The Complete Guide",
+        "main": "index.js",
+        "scripts": {
+            "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider && webpack",
+            "build:dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider && webpack-dev-server",
+            "build:prod": "cross-env NODE_OPTIONS=--openssl-legacy-provider && webpack --config webpack.config.prod.js"
+        },
+        "author": "Maximilian Schwarzmueller",
+        "license": "ISC",
+        "devDependencies": {
+            "clean-webpack-plugin": "^3.0.0",
+            "cross-env": "^7.0.3",
+            "eslint": "^6.4.0",
+            "webpack": "^4.40.2",
+            "webpack-cli": "^3.3.9",
+            "webpack-dev-server": "^3.11.3"
+        },
+        "dependencies": {
+            "lodash": "^4.17.15"
+        }
+    }    
+    
+
+- PERSONAL NOTE: Decided to ditch the 2023 workaround
+    - Instead installed the latest version of the listed npm packages
+
+        npm i clean-webpack-plugin cross-env webpack webpack-cli webpack-dev-server --save-dev
+
+
+    - The installed npm packages didn't break the current ESLint installation
+        - Although have yet to learn if the next lecture based on Webpack 4 will run w/o problems
+
