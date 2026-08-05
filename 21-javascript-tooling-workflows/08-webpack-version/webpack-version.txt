@@ -53,3 +53,7 @@ Important: Webpack Version & Configuring npm Scripts
     - The installed npm packages didn't break the current ESLint installation
         - Although have yet to learn if the next lecture based on Webpack 4 will run w/o problems
 
+    - NOTE: Removed npm package clean-webpack-plugin after receiving warning
+        - On deprecated dependencies "inflight", "rimraf" & "glob" 
+    
+        npm i cross-env webpack webpack-cli webpack-dev-server --save-dev
