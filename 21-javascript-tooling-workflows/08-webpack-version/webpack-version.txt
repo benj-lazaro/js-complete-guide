@@ -50,10 +50,11 @@ Important: Webpack Version & Configuring npm Scripts
         npm i clean-webpack-plugin cross-env webpack webpack-cli webpack-dev-server --save-dev
 
 
-    - The installed npm packages didn't break the current ESLint installation
-        - Although have yet to learn if the next lecture based on Webpack 4 will run w/o problems
-
-    - NOTE: Removed npm package clean-webpack-plugin after receiving warning
-        - On deprecated dependencies "inflight", "rimraf" & "glob" 
+    - The installed the latest version of the npm packages
+        - Noted on three warnings on the following deprecated dependencies
+        - All related to "clean-webpack-plugin" namely "inflight", "rimraf" & "glob" 
     
-        npm i cross-env webpack webpack-cli webpack-dev-server --save-dev
+    
+    - Uninstalled npm package "clean-webpack-plugin" for now
+
+        npm uninstall clean-webpack-plugin
