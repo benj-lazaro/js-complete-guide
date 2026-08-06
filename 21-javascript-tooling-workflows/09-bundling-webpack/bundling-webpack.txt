@@ -1,0 +1,232 @@
+Bundling With Webpack
+---------------------
+- Webpack is a bundling tool that also help orchestrate
+    - A project's entire build workflow
+    
+
+- Webpack can be configured manually
+    - Creating a file named "webpack.config.js"
+        - Placed at the project's root folder 
+
+    - The contents of this file will be read & worked on by Node.js 
+
+    - Reference (https://webpack.js.org/configuration)
+
+
+- Inside the file "webpack.config.js"
+    - Use "module.exports" to export the configuration outside of the file
+        - Assign a JavaScript object literal as value
+
+            module.exports = {
+                // Webpack configuration
+            };
+
+    - This object literal will contain
+        - Information on how Webpack will be configured
+    
+
+- PERSONAL NOTE: Unable to follow the lesson based on Webpack 4
+    - Due to the breaking changes of Webpack 5
+        
+    - Decided to use parts of the 2023 workaround
+        - Installed Webpack 4, related Webpack packages & devDependencies
+        
+        - Kept the latest ESlint (version 10.8.0)
+            - The version 6.8.0 that came w/ the workaround ceased working
+
+        - The "package.json" used for this lesson:
+
+        {
+            "name": "project-planner",
+            "version": "1.0.0",
+            "description": "A simple project planner app",
+            "author": "Benj Lazaro",
+            "main": "index.js",
+            "scripts": {
+                "test": "echo \"Error: no test specified\" && exit 1",
+                "build": "webpack"
+            },
+            "devDependencies": {
+                "@eslint/js": "^10.0.1",
+                "clean-webpack-plugin": "^3.0.0",
+                "cross-env": "^7.0.3",
+                "eslint": "^10.8.0",
+                "globals": "^17.9.0",
+                "webpack": "^4.40.2",
+                "webpack-cli": "^3.3.9",
+                "webpack-dev-server": "^3.11.3"
+            }
+        }
+
+
+    - Checked the Q&A section for the current lesson
+        - NO one has successfully implemented Webpack 5 for this lesson
+
+        - A 3 years old post that suggested using Vite instead for modern bundling
+            - Teaching assitant Joel concurred and advised to
+            - Use the workaround despite vulnerabilities
+            - Solely to learn the lessons of this section
+            - Use Vite or Webpack 5 for real-world development
+
+        - Sadly despite requests (3 years ago) to have this section update
+            - This request remained unaddressed
+
+
+- On the practice project
+    - Open the file "eslint.config.mjs"
+        - Add a new rule named "no-undef"
+        - Assign the value of "off"
+        - Save the changes
+        
+        - NOTE: This prevents ESLint from getting triggered
+            - When working w/ an undefined constant / variable
+            - While building Webpack's configuration file
+
+
+    - Reorganize the project's folder structure
+        - Create a new folder named "src" at the project's root folder
+        
+        - On the "src" folder
+            - Move the sub-folders "App" & "Utility"
+            - Move the file "app.js"
+
+        - Leaving the sub-folder "scripts" empty
+
+
+    - Create a new file named "webpack.config.js" 
+        - Saved at the project's root folder
+
+
+    - Inside the file "webpack.config.js"
+        - Import the Node.js' built-in module "path"
+            - Call the function "require()"
+            - Pass "path" as argument value
+
+        - Define "module.exports"
+            - Assign an empty JavaScript object literal as value
+
+        - Inside the JavaScript object literal
+            - Define the key "entry"
+                - Assign "./src/app.js" as value
+                - NOTE: This specifies Webpack's entry (input) point
+
+            - Define the key "output"
+                - Assign an empty JavaScript object literal as value
+                - NOTE: This specifies Webpack's output point
+
+            - Inside the JavaScript object literal
+                - Define the key "filename"
+                    - Assign "app.js" as value
+                    - NOTE: This "app.js" will contain the bundled code
+
+                - Define the key "path"
+                    - Assign "path.resolve(__dirname, "assets", "scripts")" as value
+                    - NOTE: This method contructs (& returns) an absolute path
+
+        - Save the changes
+            - This file now contains a basic Webpack configuration
+
+    
+    - Open the file "package.json"
+        - On the property "scripts"
+            - Place a "," after the script "test"
+            - Then add a new script named "build"
+            - Assign "webpack" as value
+            - Save the changes
+
+        - NOTE: This calls npm package "webpack-cli" that triggers the package "webpack"
+            - The package "webpack" automatically searches for the file "webpack.config.js"       
+
+    
+    - Test the recently created script "build" using npm
+
+        npm run build
+
+        - Encountered a warning in configuration wherein
+            - The "mode" option has NOT been set
+            - Webpack will fallback to "production"
+            - NOTE: To be addressed on succeeding lessons
+
+        - Encountered an error "Module parse failed: Unexpected token"
+            - Triggered by the syntax of the line w/in the file "/src/App/ProjectList.js"
+
+                projects = [];
+
+            - The syntax is relatively new
+                - Supported by Chrome but NOT all browsers support it
+                - NOT part of the JavaScript specifications recognized by Webpack 4
+
+            - To address this concern
+                - Copy & then comment this line of code
+                - Paste the copy inside the Constructor Method
+                - Rename it to "this.project"
+
+            - Save the changes
+
+
+    - Run the npm script "build" again
+        - Encountered an error "Module parse failed: Unexpected token"
+            - Triggered by the syntax of the line w/in the file "/src/App/ProjectItem.js"
+
+                hasActiveTooltip = false;
+
+            - The syntax is relatively new
+                - Supported by Chrome but NOT all browsers support it
+                - NOT part of the JavaScript specifications recognized by Webpack 4
+
+            - To address this concern
+                - Copy & then comment this line of code
+                - Paste the copy inside the Constructor Method
+                - Rename it to "this.hasActiveTooltip"
+
+            - Save the changes
+
+
+    - Run the npm script "build" again
+        - Encountered an error "Module parse failed: Unexpected token"
+            - Triggered by the syntax of the line w/in the file "/src/App/Tootip.js"
+
+                closeTooltip = () => {
+                    ...
+                }
+
+            - The syntax is relatively new
+                - Supported by Chrome but NOT all browsers support it
+                - NOT part of the JavaScript specifications recognized by Webpack 4
+
+            - To address this concern
+                - Cut this line of code
+                - Paste the copy inside the Constructor Method
+                - Rename it to "this.closeTooltip"
+
+            - Save the changes        
+
+
+    - Remove the ".js" extensions from ALL "import" statements
+        - Webpack by default automatically adds the ".js" filename extension
+        - Prevents from generating an error caused by ".js.js"
+        - Save the changes
+
+
+    - Run the npm script "build" again
+        - Webpack successfully bundled the files w/in the folder "src"
+        
+        - Outputs two (2) files on the folder "assets/scripts/"
+            - "app.js" contains bundled files from:
+                - "./src/app.js"
+                - "./src/App/ProjectList.js"
+                - "./src/Utility/DOMHelper.js"
+                - "./src/App/ProjectItem.js"
+
+            - "1.app.js" contains bundled files from:
+                - "./src/App/Tooltip.js"
+                - "./src/App/Component.js"
+
+        - NOTE: The file "1.app.js" ONLY gets loaded when needed
+            - Due to the implementation of the "lazy loading" feature
+            - On the Class "ProjectItem" wherein it imports "Tooltip" ONLY
+            - When the method "showMoreInfoHandler()" is called
+
+            - This file bundles the Class "Component" w/c is a dependency of "Tooltip"
+
+        - NOTE: BOTH files are optimized for production

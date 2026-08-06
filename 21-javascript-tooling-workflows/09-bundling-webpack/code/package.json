@@ -1,0 +1,21 @@
+{
+  "name": "project-planner",
+  "version": "1.0.0",
+  "description": "A simple project planner app",
+  "author": "Benj Lazaro",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "clean-webpack-plugin": "^3.0.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^10.8.0",
+    "globals": "^17.9.0",
+    "webpack": "^4.40.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.11.3"
+  }
+}
