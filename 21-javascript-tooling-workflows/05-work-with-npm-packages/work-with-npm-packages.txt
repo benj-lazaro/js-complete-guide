@@ -1,50 +1,52 @@
 Working With npm Packages
 -------------------------
-- To download & locally install a npm package as a development dependency of a project
+- To download & locally install a npm package as a "development dependency" of a project via npm
 
     npm install --save-dev <package_name>
 
-    - NOTE: To know more about a package's installation process using npm
-        - Search online using "npm <package_name>"
+
+- To know more about a npm package's installation process
+    - Search online using the keywords "npm <package_name>"
 
 
-- For every package installed
-    - The "package.json" file's property "devDependencies" field updated
-        - Lists the name & version number of the package installed
+- For every npm package installed:
+    - The "package.json" file's "devDependencies" property gets updated w/
+        - The installed package's name & version number
 
-    - When executing the aforementioned npm command for the 1st time
-        - Creates a file named "package-lock.json"
-            - Contains information of the npm package & its dependencies
+    - When installing packages for the 1st time
+        - The file "package-lock.json" is created that
+            - Contains information about the package & its dependencies
 
-        - Creates a folder named "node_modules"
-            - Contains the files of the package, its dependencies
-                - As well as dependencies of its dependencies
+        - The folder "node_modules" is created that
+            - Contains the package's files, its dependencies & dependencies of its dependencies
 
-            - IMPORTANT: DO NOT TOUCH the code of these files
+            - IMPORTANT: Do NOT TOUCH the code of any of these files
 
-            - NOTE: When sharing your code, exclude this folder 
-                - A project's "package.json" will re-create the "node_modules"
+            - IMPORTANT: EXLUDE this folder when sharing the project                
+                - INCLUDE the project's "package.json" file
             
-            - NOTE: To re-create a project's "node_modules" folder using npm
-
-                npm install
-
-    - Otherwise, the file "package-lock.json" & folder "node_modules" gets updated
+                - Running the following npm command will install the npm packages used by the project
+    
+                    npm install
 
 
 - On the pratice project
-    - Launch the integrated terminal inside the project folder
+    - Launch the Integrated Terminal at the project's root folder
+        - Install the npm package "eslint" as a development dependency
+
+            npm install --save-dev eslint
 
 
-    - Install the npm package eslint locally as a development dependency
+        - NOTE: The old ESLint used in this lesson have already been reported to be broken in 2023
+            - Requests for updating this lesson have been filed but currently left unchaged
 
-        npm install --save-dev eslint
+            - Installed the latest ESLint instead
 
 
-    - Open the "package.json" file to confirm installation
+    - Open the "package.json" file to view & confirm installation
         - Look at the property "devDependencies"
 
             "devDependencies": {
-                "eslint": "^<version_number>"
+                "eslint": "^10.8.0"
             }
     
