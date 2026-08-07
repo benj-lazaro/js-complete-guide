@@ -1,60 +1,61 @@
 Important: Webpack Version & Configuring npm Scripts
 ----------------------------------------------------
-- This section details downloading the pre-requisite npm packages
-    - clean-webpack-plugin
-    - cross-env
-    - webpack
-    - webpack-cli
-    - webpack-dev-server
+- This short lesson provided details regarding packages that
+    - Needed to be installed prior to the next lesson
+
+    - Packages to be installed:
+        - "cross-dev"
+        - "webpack"
+        - "webpack-cli"
 
 
-- However, this section NEEDS an UPDATE
-    - The content uses Webpack 4 (very old)
-        - There have been too many breaking changes w/ Webpack 5
+- PERSONAL NOTE: Webpack 4 used for this lesson is already old as of 2023
+    - The lesson's Q & A section
+        - Students have been requested for an update since 2023
+        
+        - Teaching Assistant Joel provided a "package.json" workaround in 2023
+            - Contained a LOT of packages w/c unfortunately have "high" vulnerabilities
+            - The included ESLint package was also unresponsive
 
-    - The workaround provided by the Teaching Assistant (Joel) in 2023
-        - Reported 33 vulnerabilities (19 high)
-        - Unable to get ESLint running properly
-
-    - The content of the workaround "package.json" file:
-
-    {
-        "name": "javascript-complete-guide",
-        "version": "1.0.0",
-        "description": "JavaScript - The Complete Guide",
-        "main": "index.js",
-        "scripts": {
-            "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider && webpack",
-            "build:dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider && webpack-dev-server",
-            "build:prod": "cross-env NODE_OPTIONS=--openssl-legacy-provider && webpack --config webpack.config.prod.js"
-        },
-        "author": "Maximilian Schwarzmueller",
-        "license": "ISC",
-        "devDependencies": {
-            "clean-webpack-plugin": "^3.0.0",
-            "cross-env": "^7.0.3",
-            "eslint": "^6.4.0",
-            "webpack": "^4.40.2",
-            "webpack-cli": "^3.3.9",
-            "webpack-dev-server": "^3.11.3"
-        },
-        "dependencies": {
-            "lodash": "^4.17.15"
-        }
-    }    
+            {
+                "name": "javascript-complete-guide",
+                "version": "1.0.0",
+                "description": "JavaScript - The Complete Guide",
+                "main": "index.js",
+                "scripts": {
+                    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider && webpack",
+                    "build:dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider && webpack-dev-server",
+                    "build:prod": "cross-env NODE_OPTIONS=--openssl-legacy-provider && webpack --config webpack.config.prod.js"
+                },
+                "author": "Maximilian Schwarzmueller",
+                "license": "ISC",
+                "devDependencies": {
+                    "clean-webpack-plugin": "^3.0.0",
+                    "cross-env": "^7.0.3",
+                    "eslint": "^6.4.0",
+                    "webpack": "^4.40.2",
+                    "webpack-cli": "^3.3.9",
+                    "webpack-dev-server": "^3.11.3"
+                },
+                "dependencies": {
+                    "lodash": "^4.17.15"
+                }
+            }    
     
+        - Decided to do the following:
+            - Installed the latest version of the listed Packages
 
-- PERSONAL NOTE: Decided to ditch the 2023 workaround
-    - Instead installed the latest version of the listed npm packages
+            - Encountered three (3) warning w/ regards to the package "clean-webpack-plugin"
+                - It has three (3) deprecated dependencies namely "inflight", "rimraf" & "glob"
+            
+                - Checked the package's GitHub page
+                    - This issue still remains unresolved as of today (2026)
 
-        npm i clean-webpack-plugin cross-env webpack webpack-cli webpack-dev-server --save-dev
+                - Removed the package "clean-webpack-plugin"
 
+                    npm uninstall clean-webpack-plugin
 
-    - The installed the latest version of the npm packages
-        - Noted on three warnings on the following deprecated dependencies
-        - All related to "clean-webpack-plugin" namely "inflight", "rimraf" & "glob" 
-    
-    
-    - Uninstalled npm package "clean-webpack-plugin" for now
+            - The latest ESLint is working
+                - Successfully reported violations of implemented user-defined rules
 
-        npm uninstall clean-webpack-plugin
+            - The Webpack 5 packages reported NO warning & vulnerabilities
