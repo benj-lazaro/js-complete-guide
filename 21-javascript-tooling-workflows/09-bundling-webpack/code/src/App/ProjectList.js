@@ -1,4 +1,4 @@
-import { ProjectItem as PrjItem } from "./ProjectItem";
+import { ProjectItem as PrjItem } from "./ProjectItem.js";
 // import { clearEventListeners, moveElement } from "../Utility/DOMHelper.js";
 
 // Bundled exported items, stored as a single object reference by the alias name "DOMH"
@@ -7,12 +7,11 @@ import * as DOMH from "../Utility/DOMHelper.js";
 // Class that manages "ProjectItem" objects
 export class ProjectList {
   // Stores an array of "ProjectItem" objects
-  // projects = [];
+  projects = [];
 
   constructor(type) {
     // Identifies the Class "ProjectList" instance that a created "ProjectItem" object belongs to
     this.type = type;
-    this.projects = [];
 
     // Select ALL HTML elements <li> w/ the matching attribute "id" value
     const projectItems = document.querySelectorAll(`#${type}-projects li`);

@@ -1,4 +1,4 @@
-import { ProjectList } from "./App/ProjectList";
+import { ProjectList } from "./App/ProjectList.js";
 
 // Class that manages the app
 class App {

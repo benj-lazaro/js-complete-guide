@@ -1,5 +1,5 @@
 // Import the Class Component (as default) & a named export item as JavaScript modules
-import Cmp, { doSomething } from "./Component";
+import Cmp, { doSomething } from "./Component.js";
 
 // Sub-Class that handles the button "More Info" of a "ProjectItem" object
 export class Tooltip extends Cmp {
@@ -7,20 +7,14 @@ export class Tooltip extends Cmp {
     super(hostElementId);
     this.closeNotifier = closeNotifierFunction;
     this.text = text;
-
-    this.closeTooltip = () => {
-      this.detach();
-      this.closeNotifier();
-    };
-
     this.create();
   }
 
   // Method that closes a "ProjectItem" object's tooltip & resets it to "false"
-  // closeTooltip = () => {
-  //   this.detach();
-  //   this.closeNotifier();
-  // };
+  closeTooltip = () => {
+    this.detach();
+    this.closeNotifier();
+  };
 
   // Method that renders a "ProjectItem" object's tooltip on the DOM
   create() {

@@ -1,141 +1,106 @@
 Bundling With Webpack
 ---------------------
-- Webpack is a bundling tool that also help orchestrate
-    - A project's entire build workflow
-    
+- Webpack is a popular bundling tool
+    - It also helps orchestrate a project's entire build workflow
 
-- Webpack can be configured manually
-    - Creating a file named "webpack.config.js"
-        - Placed at the project's root folder 
+    - It can be configured manually
+        - By creating a file named "webpack.config.js", placed at the project's root folder 
 
-    - The contents of this file will be read & worked on by Node.js 
+        - File's contents will be read by Node.js & excute it
+            - Based on the user-defined npm script on the project's "package.json" file
 
-    - Reference (https://webpack.js.org/configuration)
+    - Inside the "webpack.config.js" file
+        - The "module.export" is declared & assigned w/ a JavaScript object literal
+            - The object literal contains information how Webpack will be configured
 
+        - This allows the Webpack configuration to be exported outside of the file
+            - Read & worked on by Node.js
 
-- Inside the file "webpack.config.js"
-    - Use "module.exports" to export the configuration outside of the file
-        - Assign a JavaScript object literal as value
-
-            module.exports = {
-                // Webpack configuration
-            };
-
-    - This object literal will contain
-        - Information on how Webpack will be configured
-    
-
-- PERSONAL NOTE: Unable to follow the lesson based on Webpack 4
-    - Due to the breaking changes of Webpack 5
-        
-    - Decided to use parts of the 2023 workaround
-        - Installed Webpack 4, related Webpack packages & devDependencies
-        
-        - Kept the latest ESlint (version 10.8.0)
-            - The version 6.8.0 that came w/ the workaround ceased working
-
-        - The "package.json" used for this lesson:
-
-        {
-            "name": "project-planner",
-            "version": "1.0.0",
-            "description": "A simple project planner app",
-            "author": "Benj Lazaro",
-            "main": "index.js",
-            "scripts": {
-                "test": "echo \"Error: no test specified\" && exit 1",
-                "build": "webpack"
-            },
-            "devDependencies": {
-                "@eslint/js": "^10.0.1",
-                "clean-webpack-plugin": "^3.0.0",
-                "cross-env": "^7.0.3",
-                "eslint": "^10.8.0",
-                "globals": "^17.9.0",
-                "webpack": "^4.40.2",
-                "webpack-cli": "^3.3.9",
-                "webpack-dev-server": "^3.11.3"
-            }
-        }
-
-
-    - Checked the Q&A section for the current lesson
-        - NO one has successfully implemented Webpack 5 for this lesson
-
-        - A 3 years old post that suggested using Vite instead for modern bundling
-            - Teaching assitant Joel concurred and advised to
-            - Use the workaround despite vulnerabilities
-            - Solely to learn the lessons of this section
-            - Use Vite or Webpack 5 for real-world development
-
-        - Sadly despite requests (3 years ago) to have this section update
-            - This request remained unaddressed
+        - Requires importing the built-in package "path" & function "require()" of Node.js
+            - To point & resolve the absolute path of a project's entry point for Webpack
 
 
 - On the practice project
-    - Open the file "eslint.config.mjs"
-        - Add a new rule named "no-undef"
-        - Assign the value of "off"
-        - Save the changes
+    - Update the ESLint rules in the file "eslint.config.mjs"
+        - Add a new rule "no-undef"
+            - Assign the value "off"
+
+        - Prevents ESLint from getting triggered 
+            - By an undefined constant, variable or function
         
-        - NOTE: This prevents ESLint from getting triggered
-            - When working w/ an undefined constant / variable
-            - While building Webpack's configuration file
+        - Save the changes
 
 
     - Reorganize the project's folder structure
-        - Create a new folder named "src" at the project's root folder
-        
-        - On the "src" folder
-            - Move the sub-folders "App" & "Utility"
-            - Move the file "app.js"
+        - On the project's root folder
+            - Create a sub-folder named "src"
 
-        - Leaving the sub-folder "scripts" empty
+        - On the sub-folder "src"
+            - Move the sub-folders "assets/scripts/App" & "assets/scripts/Utility"
+            - Move the file "assets/scripts/app.js"
+            - Leaving the sub-folder "assets/scripts" empty
 
 
     - Create a new file named "webpack.config.js" 
-        - Saved at the project's root folder
+        - Saved it at the project's root folder
 
 
     - Inside the file "webpack.config.js"
-        - Import the Node.js' built-in module "path"
-            - Call the function "require()"
+        - Create a global constant named "path"
+            - Assign the built-in module "path" of Node.js as value
+            - Call the built-in function "require()"
             - Pass "path" as argument value
+            
+            - NOTE: This imports the Node.js module "path"
+                - This needed to resolve the absolute path of 
+                    - The project's entry point needed by Webpack
 
         - Define "module.exports"
             - Assign an empty JavaScript object literal as value
 
-        - Inside the JavaScript object literal
-            - Define the key "entry"
-                - Assign "./src/app.js" as value
-                - NOTE: This specifies Webpack's entry (input) point
+            - NOTE: This will used to export the Webpack configuration that
+                - Will be defined w/in the object literal outside to the file
+                - To be read & worked on by Node.js
 
-            - Define the key "output"
-                - Assign an empty JavaScript object literal as value
-                - NOTE: This specifies Webpack's output point
+        - Inside the empty JavaScript object literal
+            - Define the key named "entry"
+                - Assign the path (relative to the config file) "./src/app.js" as value
+                - NOTE: This specifies Webpack's entry point (input) to the project
 
-            - Inside the JavaScript object literal
-                - Define the key "filename"
+            - Define the key named "output"
+                - Assign an empty object literal as value 
+                - NOTE: This specifies the Webpack's output point where the bundled files will be placed
+
+            - Inside the object literal
+                - Define the key named "filename"
                     - Assign "app.js" as value
-                    - NOTE: This "app.js" will contain the bundled code
+                    - NOTE: This "app.js" will contain the bundled files by Webpack
 
                 - Define the key "path"
                     - Assign "path.resolve(__dirname, "assets", "scripts")" as value
-                    - NOTE: This method contructs (& returns) an absolute path
+                    - NOTE: The "path" object method "resolve()" constructs & 
+                        - Returns an absolute path of the "app.js" to be created
 
-        - Save the changes
-            - This file now contains a basic Webpack configuration
+            - Save the changes
+                - This file now contains a basic Webpack configuration
 
     
     - Open the file "package.json"
         - On the property "scripts"
-            - Place a "," after the script "test"
-            - Then add a new script named "build"
+            - After the script named "test", place a ","
+            - Add a new script named "build"
             - Assign "webpack" as value
-            - Save the changes
 
-        - NOTE: This calls npm package "webpack-cli" that triggers the package "webpack"
-            - The package "webpack" automatically searches for the file "webpack.config.js"       
+        - Save the changes
+            - This creates a new npm script named "build"
+
+            - Executing this script using "npm run build" 
+                - Calls the package "webpack-cli" first then calls the package "webpack"
+
+                - The package "webpack" searches for the file "webpack.config.js"
+                    - Identifies the entry & output points
+                    - Then work on bundiling the files w/in the folder "src"
+                    - Outputs two (2) bundled files in the folder "assets/scripts"
 
     
     - Test the recently created script "build" using npm
@@ -230,3 +195,100 @@ Bundling With Webpack
             - This file bundles the Class "Component" w/c is a dependency of "Tooltip"
 
         - NOTE: BOTH files are optimized for production
+
+
+- PERSONAL NOTE: Encountered issues following this lesson using the latest version of the packages
+    - Primarily due to the breaking changes brought about by Webpack 5
+
+    - Forced to use the "packages.json" provided by Teaching Assistant Joel as a workaround in 2023
+        - Replaced the "eslint" package w/ the latest version due to being broken & unresponsive
+        - Able to successfully complete this lesson
+
+    - Decided to repeat this lesson from scratch 
+        - Using the latest version of the packages used for this lesson
+            - The packages "eslint", "webpack" & "webpack-cli"
+
+        - Deleted the bundled codebase & repalced w/ the one that installed the latest "eslint" package
+
+        - Updated the "eslint.config.mjs" file
+            - To implement the new rule "no-undef" as demonstrated on this lesson
+            - Saved the changes
+
+        - Re-organized the project's file structure as demonstrated on this lesson
+
+        - Installed the packages "webpack" & "webpack-cli" as development devDependencies
+
+            npm i --save-dev webpack webpack-cli
+
+        - Created the file "webpack.config.js"
+            - Followed the Webpack configuration as demonstrated on this lesson
+            - Saved the changes
+
+        - Updated the "packages.json" file
+            - Added the "build" script that calls the package "webpack"
+            - Saved the changes
+
+        - Test the "build" script using npm
+
+            npm run build
+
+        - Encountered the following error in the file "./src/app.js"
+            - "Module parse failed: 'import' and 'export' may appear only with 'sourceType: module'"
+
+            - Noted a discrepancy between the generated & workaround "package.json" file
+                - The line "type": "commonjs" is NOT present in the workaround
+
+            - Removed the line "type": "commonjs" from the "package.json" generated by the latest Node.js
+                - Saved the changes
+    
+            - The updated content of the "package.json" file is as follows:
+
+                {
+                    "name": "project-planner",
+                    "version": "1.0.0",
+                    "description": "A simple project planner app",
+                    "author": "Benj Lazaro",
+                    "main": "index.js",
+                    "scripts": {
+                        "test": "echo \"Error: no test specified\" && exit 1",
+                        "build": "webpack"
+                    },
+                    "devDependencies": {
+                        "@eslint/js": "^10.0.1",
+                        "eslint": "^10.8.0",
+                        "globals": "^17.9.0",
+                        "webpack": "^5.109.2",
+                        "webpack-cli": "^7.2.2"
+                    }
+                }
+
+        - Run the "build" script again
+        
+            npm run build
+
+        - Webpack 5 successfully bundled the project
+            - Outputs two (2) files on the folder "assets/scripts/"
+                - "app.js" contains bundled files from:
+                    - "./src/app.js"
+                    - "./src/App/ProjectList.js"
+                    - "./src/Utility/DOMHelper.js"
+                    - "./src/App/ProjectItem.js"
+
+                - "41.app.js" contains bundled files from:
+                    - "./src/App/Tooltip.js"
+                    - "./src/App/Component.js"
+
+    - Unike on the previous build based on "package.json" workaround that used Webpack 4
+        - The Webpack 5 build did NOT encounter the same syntax-related errors 
+        
+        - NO files w/in the "src" folder were modified 
+            - To implement syntax-related workarounds
+
+        - NO manual removal of the filename extension ".js" from "import" statements where
+            - Webpack 4 automatically appends it
+
+        - ONLY after removing the line "type": "commonjs" from the "package.json" file that
+            - Webpack 5 successfully bundled the project
+            - Produced two (2) output files
+
+        - Now have a project running on the latest "eslting", "webpack" & "webpack-cli"
