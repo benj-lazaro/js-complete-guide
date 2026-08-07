@@ -1,48 +1,98 @@
 Linting With ESLint
 -------------------
-- Setup the npm package ESLint
-    - Launch the integrated terminal from the project's folder 
+- Setup the configuration of the recently installed npm package "eslint"
 
-    - Use the following command to initialize ESLint
+
+- PERSONAL NOTE: The ESLint used in the previous & current lesson is reported broken as of 2023
+    - Installed the latest version & followed the official configuration command
+        - URL (https://eslint.org/)
+
+    - Implemented the demonstrated user-defined rules based on the Getting Started page example
+        - URL (https://eslint.org/docs/latest/use/getting-started)
+
+
+- On the practice project
+    - Launch VS Code's Integrated Terminal at the project's root folder 
+
+
+    - Run the following npm command to create (initialzie) ESLint's configuration file
 
         npm init @eslint/config@latest
-    
-    - Prompts the following questions:
-        - "What do you want to link?"
-            - Select "JavaScript"
 
-        - "How would you like to use ESLint?"
+
+    - A series of questions will be prompted 
+        - Select the corresponding response based on the project's requirements
+
+        - Prompt "What do you want to link?"
+            - Select "JavaScript
+
+        - Prompt "How would you like to use ESLint?"
             - Select "To check syntax, find problems"
 
-        - "What type of modules does your project use?"
+        - Prompt "What type of modules does your project use?"
             - Select "JavaScript modules (import/export)"
 
-        - "Which framework does your project use?"
+        - Prompt "Which framework does your project use?"
             - Select "None of these"
 
-        - "Does your project use TypeScript"
+        - Prompt "Does your project use TypeScript"
             - Select "No"
 
-        - "Where does your code run?"
+        - Prompt "Where does your code run?"
             - Select "Browser"
 
-        - "The config that you've selected requires the following dependencies:
-            eslint, @eslint/js, globals. Would you want to install them now?"
+        - Prompt "The config that you've selected requires the following dependencies:
+                  eslint, @eslint/js, globals. Would you want to install them now?"
             - Select "Yes"
 
-        - "Which package manager do you want to use?"
+        - Prompt "Which package manager do you want to use?"
             - Select "npm"
        
-        - Creates a file "eslint.config.mjsn"
-            - Contains the configuration details & rules
+
+    - The configuration file "eslint.config.mjs" is created
+        - This contains the configuration details & user-defined rules (to be added)
+
+        - NOTE: Unlike the old ESLint that was demonstrated in the lesson
+            - The latest version did NOT came w/ pre-defined rules
 
 
-- PERSONAL NOTE: There have been significant changes w/ ESLint 
-    - Followed the installation instructions from ESLint's website
-        - Website (https://eslint.org/)
+    - Implement the two (2) user-defined rules that the author demonstrated
+        - Insert a new (2nd) object literal w/in the "defineConfig"
+        
+        - Inside the object literal
+            - Declare the property "rules"
+            - Assign an object literal as value
 
-    - Implement rules based on ESLint's online documentation
-        - Getting Started (https://eslint.org/docs/latest/use/getting-started)
+        - Inside the object literal
+            - Declare the rule "quotes"
+                - Assign an array as value
+                - The array contains two (2) string elements "error" & "double"
+                - NOTE: This is a rule for enforcing double quotes on string values
 
-    - Added the two (2) rules that the author provided as example
-        - Added the rules to the "defineConfig" of the "eslint.config.mjs" file.
+            - Declare the rule "semi"
+                - Assign an array as values
+                - The array contains a single string element "error"
+                - NOTE: This is a rule for enforcing semi-colons at the end of each statement
+
+                export default defineConfig([
+                    {
+                        files: ["**/*.{js,mjs,cjs}"],
+                        plugins: { js },
+                        extends: ["js/recommended"],
+                        languageOptions: { globals: globals.browser },
+                    },
+                    {
+                        rules: {
+                        quotes: ["error", "double"],
+                        semi: ["error"],
+                        },
+                    },
+                ]);,
+
+        - Save the changes
+
+    - Open the file "assets/scripts/app.js"
+        - Make changes in the code that violates the rules
+
+        - The ESLint extesion working w/ the ESLint package highlights the violations
+            - Provide acecss to the "Quick Fix" menu item
