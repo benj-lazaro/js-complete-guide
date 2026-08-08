@@ -1,0 +1,35 @@
+Multiple Entry Points
+---------------------
+- When working bigger projects w/ multiple HTML pages
+    - Likely to contain different (multiple) scripts for each HTML page
+    - Might require more than one (1) entry point & build more than one (1) bundle
+    
+
+- Webpack can be configured to have multiple entry points
+    - Using the following configuration
+
+        entry: {
+            welcome: './src/welcome-page/welcome.js',
+            about: './src/about-page/about.js',
+            // etc.
+        }
+
+    - Webpack will look up all the entry points
+        - Create one (1) bundle per entry point
+
+    - A simple rule that makes sense for most projects
+        - One (1) entry point per HTML file
+            - Typically one (1) script is assigned per HTML file
+
+        - Exceptions to this rule
+            - Multiple HTML files sharing one (1) script
+            - Static HTML file(s) that does NOT use a script
+
+    - Webpack coding splitting
+        - Reference (https://webpack.js.org/guides/code-splitting/)
+
+    - Webpack entry point configuration
+        - Reference (https://webpack.js.org/concepts/#entry)
+
+    - Webpack guides
+        - Reference (https://webpack.js.org/guides/)
