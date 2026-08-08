@@ -1,0 +1,107 @@
+Using webpack-dev-server
+------------------------
+- Next is to locally install a development server that
+    - Automatically reloads whenever changes in the code (or page) is saved
+
+
+- To install the package "webpack-dev-server" as a development dependency
+
+    npm i --save-dev "webpack-dev-server"
+
+
+- On the practice project
+    - Launch VS Code's Integrated Terminal at the project's root folder
+        - Locally install the package "webpack-dev-server" using npm
+
+            npm i --save-dev webpack-dev-server
+
+
+    - Open the file "webpack.config.js"
+        - Inside the "module.exports"
+            - Add a new key "devServer"
+            - Assign an object literal as value
+
+        - Inside the object literal
+            - Add a new key "static"
+            - Assign an object literal as value
+
+        - Inside the object literal (of the key "static")
+            - Add a new key "directory"
+            - Assign "./" a value
+        
+        module.exports = {
+            mode: "development",
+            entry: "./src/app.js",
+            output: {
+                filename: "app.js",
+                path: path.resolve(__dirname, "assets", "scripts"),
+            },
+            devServer: {
+                static: {
+                directory: "./",
+                },
+            },
+        };
+
+        - Save the changes
+
+
+    - Open the file "package.json"
+        - On the property "scripts"
+            - Add a new key named "build:dev"
+            - Assign the value "webpack-dev-server"
+
+        {
+            "name": "project-planner",
+            "version": "1.0.0",
+            "description": "A simple project planner app",
+            "author": "Benj Lazaro",
+            "main": "index.js",
+            "scripts": {
+                "test": "echo \"Error: no test specified\" && exit 1",
+                "build": "webpack",
+                "build:dev": "webpack-dev-server"
+            },
+            "devDependencies": {
+                "@eslint/js": "^10.0.1",
+                "eslint": "^10.8.0",
+                "globals": "^17.9.0",
+                "webpack": "^5.109.2",
+                "webpack-cli": "^7.2.2",
+                "webpack-dev-server": "^6.0.0"
+            }
+        }
+
+        - Save the changes
+            - NOTE: Keep the package "webpack-dev-server" running at the background
+        
+
+    - Run the package using the npm script "build:dev"
+
+        npm run build:dev
+
+        - The package "webpack" bundles the practice project
+            - Then executes the package "webpack-dev-server"
+            - Generates a "Local" & "Network" URL
+        
+        - Press "CTRL" & click the "Local" URL
+            - Launches the default browser
+            - Loads the practice project app
+
+        - Any changes in the code of any file
+            - The package "webpack" rebundles
+            - The package "webpack-dev-server" reloads the web app automatically
+
+        - To gracefully terminate the "web-dev-server" package
+            - Use "CTRL + C"
+
+
+    - Test the autoreload feature of the "webpack-dev-server" package
+        - Make some minor changes on "src/App/ProjectList.js" file
+        - Save the changes
+        - The packages "webpack" rebinds the app & "webpack-dev-server" automatically reloads the app
+
+
+    - NOTE: Uninstall the npm package "serve" that was installed globally
+
+        npm uninstall -g serve
