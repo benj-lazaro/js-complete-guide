@@ -1,0 +1,80 @@
+Development Mode & Fixing "Lazy Loading"
+----------------------------------------
+- To address Webpack's warning "mode option has not been set"
+    - Webpack (by default) implicitly sets the "mode" to "production"
+        - Produces bundled files that contains optimized code
+
+
+- To explicitly set Webpack's "mode" to "development"
+    - Open the "webpack.config.js" file
+    
+    - Add the key "mode"
+        - Assign the value of "development"
+    
+    - Executing the npm script "build"
+        - Wepback bundles the app & produces two (2) files that contains
+            - Unoptimized code
+            - Extra code appended by Webpack itself
+
+
+- On the practice project
+    - Open the file "webpack.config.js"
+        - Define a new key named "mode"
+        - Assign the value of "development"
+        - Save the changes
+
+
+    - Launch VS Code's Integrated Terminal at the project's root folder
+        - Execute the npm script "build" to run Webpack in "development" mode
+
+            npm run build
+
+        - Generates two (2) files w/in the folder "assets/scripts"
+            - "app.js"
+            - "src_App_Tooltip_js.app.js"
+
+        - NOTE: BOTH files contain un-optimized code & extra code appended by Webpack
+
+        - Test the bundled practice project
+
+            serve
+
+            - Click the "Local" URL to launch the default browser & loads the app
+  
+            - The practice project runs well until the button "More Info" is clicked
+                - Webpack 4 attempts to load the "0.app.js" file 
+                    - From the project's root folder instead from the "assets/scripts" sub-folder 
+                    
+                - Clicking the button does NOTHING
+
+            - PERSONAL NOTE: This is NOT an issue w/ Webpack 5
+                - On Wepback 5, the "0.app.js" file is renamed to "src_App_Tooltip_js.app.js"
+
+
+    - To address the encountered Webpack 4 problem:
+        - Open the file "webpack.config.js" again
+        
+        - On the key "output"
+            - Add a new key named "publicPath"
+            - Assign the value of "assets/scripts/"
+            - Save the changes
+
+            - NOTE: This explicitly informs Webpack 4 where 
+                - The remaining bundled files (besides "app.js") are to be read from
+
+            - PERSONAL NOTE: Adding this setting on Webpack 5 does NOT cause any isssues           
+
+        - Execute the npm script "build"
+
+            npm run build
+
+        - Test the bundled practice project
+
+            serve
+
+            - Click the "Local" URL to launch the default browser
+                - Launches the default browser & loads the app    
+
+            - Clicing the "More Info"
+                - Webpack 4 now properly loads & reads the "0.app.js" file
+        
