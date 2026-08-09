@@ -1,0 +1,60 @@
+Generating Source Maps
+----------------------
+- On the current state of Webpack
+    - Performing some debugging on a project's code via browser's "Developer Tools" (Dev Tools)
+        - Clicking the "Sources" tab
+
+        - The left-hand side panel displays a tree containing two (2) folders
+            - localhost:8080
+                - Contains the files & folders of Webpack's output point
+                - Files contains the appended & "development mode" code of Webpack
+
+            - <project_name>
+                - Contains processed copy of the project's source files
+                - Does NOT include the entry point file (i.e. "app.js")
+                - Files contains minimal appended & "development mode" code of Webpack
+                - Easy to read & debug BUT NOT ideal
+
+                - PERSONAL NOTE: On Webpack 4, this folder was labeled as "webpack://"
+
+        - For an ideal debugging experience
+            - Enabling Webpack's source maps is needed
+
+
+- To enable Webpack's source maps
+    - Open Webpack's "webpack.config.js"
+
+    - Add a new key named "devtool" on the "module.exports"
+        - Assign the string value of "eval-source-map"
+            - Save the changes
+        
+        - Recommended choice for development builds w/ high quality source maps
+            - Reference (https://webpack.js.org/configuration/devtool/#devtool)
+
+            module.exports = {
+                mode: "development",
+                entry: "./src/app.js",
+                output: {
+                    filename: "app.js",
+                    path: path.resolve(__dirname, "assets", "scripts"),
+                },
+                devServer: {
+                    static: {
+                    directory: "./",
+                    },
+                },
+                devtool: "eval-source-map",
+            };
+
+    - Stop the package "webpack-dev-server" & then re-run the npm script "build:dev" again
+
+        npm run buid:dev
+
+    - The package "webpack" rebundles the project
+        - The package "webpack-dev-server" serves the bundled files & high quality source maps
+        - Automatically reloads the app in the browser
+    
+    - The "project_name" folder of the "Sources" tab
+        - NOW includes a copy of the entry point file ("app.js")
+        - Files contains minimal appended code of Webpack along w/ the original source code
+        - Ideal for debugging the app's source on the browser
