@@ -42,3 +42,7 @@ Building For Production
     - Launches the default browser
     - Browser loads the "optimized" app
 
+
+- The project has now two (2) workflows
+    - Development
+    - Production
