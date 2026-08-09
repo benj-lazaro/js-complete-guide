@@ -1,23 +1,18 @@
 Building For Production
 -----------------------
-- To setup Webpack for production
-    - Create a seperate configuration file named "webpack.config.prod.js"
-        - Placed at the project's root folder
-    
-        - Copy & paste the contents of the file "webpack.config.js"
-    
+- To setup Webpack for "production" mode
+    - Create a new configuration file named "webpack.config.prod.js"
+        - Located at the project's root folder
+        - Copy & paste the contents of the "webpack.config.js" file
+
     - In the "webpack.config.prod.js" file
         - Change the assigned value of the key "mode" to "production"
 
-        - Change the assigned value of the key "devtool" to "source-map"
-            - Bundles production code w/ high quality source maps
+        - PERSONAL NOTE: The Webpack 4 source map type "cheap-source-map" does NOT work w/ Webpack 5
+            - Webpack 5 recommends "source-map" for production use w/ high quality source maps
             
-            - Alternatively, commenting or removing the "devtool" key is the
-                - Recommended choice for production w/ maximum performance
-        
-        - PERSONAL NOTE: The "cheap-source-map" used in the lesson (based on Webpack 4) is
-            - NOT recommended (anymore) for production use on Webpack 5
-    
+            - For maximum bundle performance, NOT setting the "devtool" key is the way to go
+
 
 - Add a new npm script in the "package.json" file
     - On the property "scripts"
@@ -25,24 +20,20 @@ Building For Production
         - Assign the value "webpack --config webpack.config.prod.js"
         - Save the changes
 
+    - NOTE: The project has now two (2) workflows namely "development" & "production"
 
-- Run the npm script
+
+- Run the npm script for "production" build
 
     npm run build:prod
 
-    - Webpack bundles the project's source files in production mode
-    - Outputs the generated files on the folder "assets/scripts/"
+    - Webpack bundles the project's source files in "production" mode
+    - Store the generated files w/in the sub-folder "assets/scripts/" w/ or w/out source maps
 
 
-- Run the npm package "serve" on the project's root folder
+- Use the npm package "serve" to locally host the project app
 
     serve
 
-    - Click the "Local" URL
-    - Launches the default browser
-    - Browser loads the "optimized" app
-
-
-- The project has now two (2) workflows
-    - Development
-    - Production
+    - Click the "Local" URL to launch the default browser
+    - Browser loads the "production" grade app
