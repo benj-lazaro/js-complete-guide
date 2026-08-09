@@ -4,13 +4,14 @@ module.exports = {
   mode: "production",
   entry: "./src/app.js",
   output: {
-    filename: "app.js",
+    filename: "[contenthash].js",
     path: path.resolve(__dirname, "assets", "scripts"),
+    clean: true,
   },
   devServer: {
     static: {
       directory: "./",
     },
   },
-  devtool: "source-map",
+  //   devtool: [{ type: "javascript", use: "source-map" }],
 };

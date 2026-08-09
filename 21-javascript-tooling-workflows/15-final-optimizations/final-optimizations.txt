@@ -1,50 +1,33 @@
 Final Optimizations
 -------------------
 - Implementation of two (2) final optimizations
-    - Cleaning Webpack's output entry for every "development" or "producton" build"
+    - Cleaning Webpack's output entry for every "development" or "production" build"
         - Prevents the accumulation of files
 
-    - Changing the filename of the bundled files for "production"
-        - Prevents old (cached) bundled files from being used
+    - Changing the filename of the "production" bundled files
+        - Prevents the default behavior of browsers using old (cached) files
+        - Forces client browsers to use the latest bundled "production" files
 
-    - PERSONAL NOTE: The lesson based on Webpack 4
-        - Required using a package named "clean-webpack-plugin"
+    - PERSONAL NOTE: This lesson based on Webpack 4
+        - Requires installing the package "clean-webpack-plugin" as a development dependency
 
-        - Installing this package reported three (3) warnings triggered
-            - By deprecated dependencies namely "inflight", "rimraf" & "glob"
+        - However, installing this package reports three (3) warnings
+            - Triggered by deprecated dependencies namely "inflight", "rimraf" & "glob"
 
-        - Webpack 5 has the ability to clean the Webpack's output entry
-            - By adding the key "clean" to the "output"
-            - Assigning the value of true
-            
-    
+        - Webpack 5 has the capability of cleaning its own output entry
+            - Everytime it bundles a project's files for "development" or "production" use
 
-- The 1st of the final optimizations is to clean out
-    - The bundled (old) files stored at Webpack's output point
-        - For every "development" or "production" build
+            - Requires add the key "clean" w/ the value of "true"
+                - To BOTH "webpack.config.js" & "webpack.config.prod.js" files
 
-    - To install the package "clean-webpack-plugin" as a development dependency
 
-        npm i --save-dev clean-webpack-plugin
-
-    - PERSONAL NOTE: This package reported three (3) warnings
-        - Deprecated dependencies namely "inflight", "rimraf" & "glob"
-
-    
-- Re-configure the Webpack configuration file for development
-    - Open the "webpack.config.js" file
-
-    - Create a global constant named "CleanPlugin"
-        - Assign the function "require()" as value
-        - Pass "clean-webpack-plugin" as argument value
-
-    - On the "module.exports"
-        - Add a new key "plugins"
-        - Assign an array as value
-        - Assign "new CleanPlugin.CleanWebpackPlugin" as an array element
+- To implement the 1st final optimization of cleaning out old files
+    - Open the file "webpack.config.js"
+        - On the key "output"
+            - Add the key "clean"
+            - Assign the value "true"
 
             const path = require("path");
-            const CleanPlugin = require("clean-webpack-plugin");
 
             module.exports = {
                 mode: "development",
@@ -52,41 +35,34 @@ Final Optimizations
                 output: {
                     filename: "app.js",
                     path: path.resolve(__dirname, "assets", "scripts"),
+                    clean: true,
                 },
                 devServer: {
                     static: {
                     directory: "./",
                     },
                 },
-                devtool: "eval-source-map",
-                plugins: [new CleanPlugin.CleanWebpackPlugin()],
+                devtool: [{ type: "javascript", use: "source-map" }],
             };
 
         - Save the changes
+    
+        - Run the npm scripts for the "development" workflow
 
-    - Run the npm script "build:dev:
-        - The package "clean-webpack-plugin" removes the old files from the output point
-        - The package "webpack" bundles the project app
-        - The package "webpack-dev-server" locally hosts the app
+            npm run build && npm run build:dev
 
-        - IMPORTANT: The generated bundled files are stored in memory
-            - Leaving the Webpack output point empty
+            - Click the generated URL to launch the default browser
+            - Browser loads the "development" grade project
+            - Previous bundled (i.e. development or product) & source map files deleted
+            - Replaced w/ fresh "development" bundled files w/ source maps
 
 
-- Re-configure the Webpack configuration file for production
-    - Open the "webpack.config.prod.js" file
-
-    - Create a global constant named "CleanPlugin"
-        - Assign the function "require()" as value
-        - Pass "clean-webpack-plugin" as argument value
-
-    - On the "module.exports"
-        - Add a new key "plugins"
-        - Assign an array as value
-        - Assign "new CleanPlugin.CleanWebpackPlugin" as an array element
+    - Open the file "webpack.config.prod.js"
+        - On the key "output"
+            - Add the key "clean"
+            - Assign the value "true"
 
             const path = require("path");
-            const CleanPlugin = require("clean-webpack-plugin");
 
             module.exports = {
                 mode: "production",
@@ -94,38 +70,40 @@ Final Optimizations
                 output: {
                     filename: "app.js",
                     path: path.resolve(__dirname, "assets", "scripts"),
+                    clean: true,
                 },
                 devServer: {
                     static: {
                     directory: "./",
                     },
                 },
-                devtool: "source-map",
-                plugins: [new CleanPlugin.CleanWebpackPlugin()],
+                //   devtool: [{ type: "javascript", use: "source-map" }],
             };
 
         - Save the changes
+    
+        - Run the npm script for the "production" workflow
 
-    - Run the npm script "build:prod:
-        - The package "clean-webpack-plugin" removes the old files from the output point
-        - The package "webpack" bundles the project app
-        - The package "webpack-dev-server" locally hosts the app
-        - Latest optimized bundled files (w/ source maps) stored on Webpack's output point
+            npm run build:prod
+
+            server
+
+            - Click the generated Local URL to launch the default browser
+                - Browser loads the "production" grade project
+
+            - The "development" bundled files deleted
+                - Replaced by "production" bundled files w/ NO source maps included
 
 
-- The 2nd final optimization is to have the bundled filenames updated for each "production" build
-    - Forces client browsers to download & use the latest bundled files
-        - Prevents older (caches) files from being used
+- To implement the 2nd final optimization of renaming "prodution" bundled files
+    - Open the file "webpack.config.prod.js"
+        - On the key "filename" w/in the "output"
+            - Change the assigned value "app.js" to "[contenthash].js"
 
-        - This is default browser behavior that
-            - Prevents cached files of the same filename from being downloaded again
-
-    - Open the "webpack.config.prod.js" file
-        - On the key "filename" of "output"
-            - Change the assigned value from "app.js" to "[contenthash].js"
+        - NOTE: This replaces the filenames of the generated bundled files w/ hash
+            - On every "production" build
 
             const path = require("path");
-            const CleanPlugin = require("clean-webpack-plugin");
 
             module.exports = {
                 mode: "production",
@@ -133,17 +111,18 @@ Final Optimizations
                 output: {
                     filename: "[contenthash].js",
                     path: path.resolve(__dirname, "assets", "scripts"),
+                    clean: true,
                 },
                 devServer: {
                     static: {
                     directory: "./",
                     },
                 },
-                devtool: "source-map",
-                plugins: [new CleanPlugin.CleanWebpackPlugin()],
+                //   devtool: [{ type: "javascript", use: "source-map" }],
             };
 
         - Save the changes
 
-    - IMPORTANT: After every "production" build
-        - Update the filename of the assigned script file of the HTML element <script>
+    - IMPORTANT: Requires to MANUALLY update the assigned value to the HTML element <script>
+        - Using the dynamically generated filename after a "production" build
+        - BEFORE uploading the project files to the production server
