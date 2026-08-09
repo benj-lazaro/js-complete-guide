@@ -12,5 +12,5 @@ module.exports = {
       directory: "./",
     },
   },
-  devtool: "eval-source-map",
+  devtool: [{ type: "javascript", use: "source-map" }],
 };

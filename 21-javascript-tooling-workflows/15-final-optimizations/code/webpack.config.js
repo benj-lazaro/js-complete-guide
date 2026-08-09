@@ -6,11 +6,12 @@ module.exports = {
   output: {
     filename: "app.js",
     path: path.resolve(__dirname, "assets", "scripts"),
+    clean: true,
   },
   devServer: {
     static: {
       directory: "./",
     },
   },
-  devtool: "eval-source-map",
+  devtool: [{ type: "javascript", use: "source-map" }],
 };
