@@ -102,6 +102,5 @@ Using webpack-dev-server
         - The packages "webpack" rebinds the app & "webpack-dev-server" automatically reloads the app
 
 
-    - NOTE: Uninstall the npm package "serve" that was installed globally
-
-        npm uninstall -g serve
+    - PERSONAL NOTE: Do NOT uninstall the npm package "serve"
+        - It will be used to host the "production" version of the project locally
