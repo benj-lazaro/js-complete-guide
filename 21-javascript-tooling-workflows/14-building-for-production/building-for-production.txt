@@ -1,0 +1,44 @@
+Building For Production
+-----------------------
+- To setup Webpack for production
+    - Create a seperate configuration file named "webpack.config.prod.js"
+        - Placed at the project's root folder
+    
+        - Copy & paste the contents of the file "webpack.config.js"
+    
+    - In the "webpack.config.prod.js" file
+        - Change the assigned value of the key "mode" to "production"
+
+        - Change the assigned value of the key "devtool" to "source-map"
+            - Bundles production code w/ high quality source maps
+            
+            - Alternatively, commenting or removing the "devtool" key is the
+                - Recommended choice for production w/ maximum performance
+        
+        - PERSONAL NOTE: The "cheap-source-map" used in the lesson (based on Webpack 4) is
+            - NOT recommended (anymore) for production use on Webpack 5
+    
+
+- Add a new npm script in the "package.json" file
+    - On the property "scripts"
+        - Add a new key named "build:prod"
+        - Assign the value "webpack --config webpack.config.prod.js"
+        - Save the changes
+
+
+- Run the npm script
+
+    npm run build:prod
+
+    - Webpack bundles the project's source files in production mode
+    - Outputs the generated files on the folder "assets/scripts/"
+
+
+- Run the npm package "serve" on the project's root folder
+
+    serve
+
+    - Click the "Local" URL
+    - Launches the default browser
+    - Browser loads the "optimized" app
+
