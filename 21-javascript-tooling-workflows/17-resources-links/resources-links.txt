@@ -1,0 +1,8 @@
+Useful Resources & Links
+------------------------
+- Official ESLint Documentation
+    - Reference (https://eslint.org/)
+
+
+- Official Webpack Documentation
+    - Reference (https://webpack.js.org/)
