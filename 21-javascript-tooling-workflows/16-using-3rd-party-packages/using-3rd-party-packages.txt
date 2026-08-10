@@ -1,0 +1,52 @@
+Using 3rd Party Packages
+------------------------
+- To install a 3rd party package as a dependency of a project using npm
+    - NOT as development dependency
+
+        npm i --save <package_name>
+
+
+- There are a few ways of importing a package in a project
+    - Most are heavily depedent on the documentation
+
+    - Common approach 
+
+        import * as <variable_name> from "<package_name>";
+
+        import * as <variable_name> from "<package_name>/<specific_functionalities>";
+
+
+- On the practice project
+    - Launch VS Code's Integrated Terminal at the project's root folder 
+
+
+    - Install the package "lodash" as a project depedency
+
+        npm i --save lodash
+
+
+    - Open the file "src/app.js"
+        - Import the package "lodash" 
+
+            import * as _ from "lodash"
+
+        - Call "console.log()"
+            - Pass the "lodash.difference()" as argument value
+
+            - Pass an array as argument value to the method ".difference()"
+                - Array contain the elements "[0, 1]" & "[1, 2]"
+
+        - Save the changes
+
+    
+    - Execute the project's "development" workflow
+
+        npm run build && npm run build:dev
+
+        - Click the Loopback URL
+            - Launches the default browser
+        
+        - Browser loads the "development" grade app
+            - Launch the browser's JavaScript console
+            - The returned value of "lodash.difference()" is displayed
+
