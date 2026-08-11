@@ -1,0 +1,38 @@
+Browser Storage Options
+-----------------------
+- Browser storage allows to store temporary data on a user's browser
+    - JavaScript is used to interact w/ browser storage
+    - Temporary data (e.g. session id) intended to improve user experience (UX)
+
+
+- Three (3) browser storage options
+    - localStorage & sessionStorage
+        - Stores simple key-value pairs
+            - Manages basic user data (e.g. user session id, preferences)
+            - Accessed via JavaScript ONLY
+            - Contents cleared manually via browser settings
+
+        - It is easy to use, quite versatile
+            - BAD for storing complex data
+
+    - Cookies
+        - Stores simple (& configurable) key-value pairs
+            - Manages basic user data (e.g. user session id, preferences)
+            - Accessed via JavaScript ONLY
+            - Contents cleared automatically (setting an expiry date) or manually via browser settings
+
+        - It has a clunky API, quite versatile
+            - Sent to the server (attached via headers of outgoing HTTP request)
+            - Stored data can be read by the server 
+            - BAD for storing complex data
+        
+    - IndexedDB
+        - Stores & manage complex data
+            - A relatively sophiticated client-side database built into the browser
+            - Accessed via JavaScript ONLY
+            - Contents cleared manually via browser settings
+
+        -  It has a clunky API
+            - Great for working w/ complex (non-critical) data
+            - Offers good performance
+            - Allows a web app to work offline
