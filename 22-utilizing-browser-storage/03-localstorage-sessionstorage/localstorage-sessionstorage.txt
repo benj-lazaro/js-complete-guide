@@ -1,0 +1,143 @@
+localStorage & sessionStorage
+-----------------------------
+- To implement localStorage & sessionStorage using JavaScript
+    - Use any of the following methods:
+        - ".clear()"        = erases ALL stored data
+        - ".getItem()       = retrieves data for a specific key
+        - ".key()"          = returns a key based on the passed index value
+        - ".length()"       = returns the current number of stored key-value pairs
+        - ".removeItem()"   = removes a specific key-value pair
+        - ".setItem()"      = stores a key-value pair
+
+    - NOTE: localStorage is part of the global "Window" object (i.e. window.localStorage)
+        - The key has to be of a string data type
+        - The assigned value can either be a string or any data type that can be converted into a string
+
+    - IMPORTANT: Data stored in localStorage can be MANIPULATED by the user
+        - NEVER treat it (stored data) as the single source of "truth"
+        - Tentatively holds data w/c the app's JavaScript code will work on
+
+    - IMPORTANT: localStorage can also store simple JSON data as an assigned value
+        - JSON data is actually a string (i.e. the pair of { } wrapped w/in a pair of " ")
+        - Requires the method "JSON.stringify()" BEFORE storing in localStorage
+        - Requires the method "JSON.parse()" AFTER retrieving from localStorage
+
+    - IMPORTANT: Can NOT rely on stored data to persist
+        - localStorage content can be deleted by the browser when running out of disk space 
+        - localStorage & sessionStorage content can be manually deleted by a user 
+        - sessionStorage content is lost when the active browser tab is closed
+
+
+- To view contents of localStorage & sessionStorage in the browser
+    - Launch the browser's "Developer Tools" (i.e. "DevTools")
+    
+    - Click the "Application" tab
+        - At the left-hand side panel
+            - Expand "Storage"
+
+        - Expand "Local Storage"
+            - Click "http://127.0.0.1:5500" (if using VS Code "Live Server" extension)
+            - Otherwise, click "file://"
+
+        - Expand "Session Storage" 
+            - Click "http://127.0.0.1:5500" (if using VS Code "Live Server" extension)
+            - Otherwise, click "file://"
+   
+
+- The difference between localStorage & sessionStorage
+    - When data are stored on both localStorage & sessionStorage
+        - The data is respectively stored locally in the browser
+
+    - Opening a new browser tab
+        - Then copy & paste the previous tab's URL
+
+    - Close the previous browser tab
+        - The data in localStorage persists
+        - The data in sessionStorage is gone
+
+    - Stored data in sessionStorage
+        - Lives as long as the browser tab is active
+        - It can survive a browser tab reload
+        - Closing the active tab results to losing the stored data
+
+    - Stored data in localStorage
+        - Lives as long as it is NOT removed by the browser or user 
+        - It remains persistent after the browser is closed
+
+
+- On the practice code (app.js)
+    - Create two (2) global constants named "storeBtn" & "retrieveBtn"
+        - Select their respective HTML element <button> using the method ".getElementById()"
+        - Pass "store-btn" & "retrieve-btn" as argument values, respectively
+
+    - Create another global constant named "userId"
+        - Assign the string of "user123" as value
+
+    - Create another global constant named "user"
+        - Assign the following JSON data as value
+
+            const user = {
+                name: "John Wick",
+                age: 60,
+                hobbies: ["Pencil-fu", "Shooting"],
+            };
+
+        - NOTE: JSON data is basically a string value
+
+    - Chain an Event listener on the constant "storeBtn"
+        - Using the method ".addEventListener()"
+            - Pass two (2) argument values
+                - 1st = "click"
+                - 2nd = an Anonymous arrow function
+
+        - Inside the Anonymous arrow function
+            - Store the value of the constant "userId" in sessionStorage
+            - Using the method ".setItem()"
+            - Pass two (2) argument values
+                - 1st = "UID"
+                - 2nd = userId
+
+            - Store the value of the constant "user" in localStorage
+            - Using the method ".setItem()"
+            - Pass two (2) argument values
+                - 1st = "UID"
+                - 2nd = JSON.stringify(user)
+
+    - Chain an Event listener on the constant "retrieveBtn"
+        - Using the method ".addEventListener()"
+            - Pass two (2) argument values
+                - 1st = "click"
+                - 2nd = an Anonymous arrow function
+
+        - Inside the Anonymous arrow function
+            - Create a local constant named "extractedUserId"
+                - Assign "sessionStorage.getItem("UID") as value
+
+            - Create a local constant named "extractedUser"
+                - Assign "JSON.parse(sessionStorage.getItem("user))" as value
+
+        - Use an "if" statement to display the content of the local constants
+
+    
+    - Save the changes
+        - Load / reload the browser
+            - Launch the browser's "Developer Tools"
+
+        - Clicking the button "STORE"
+            - A new content is created on BOTH localStorage & sessionStorage
+
+        - Clicking the button "RETRIEVE"
+            - Retrieves the stored content from localStorage & sessionStorage
+            - Display the values on the browser's JavaScript console
+
+    
+    - Copy the active browser tab's URL
+        - Open a new browser tab
+            - Paste the URL
+            - Close the previous browser tab
+        
+        - On the new active browser tab
+            - Click the "Application" tab
+            - The content of the localStorage persists
+            - The content of the sessionStorage is gone
+
