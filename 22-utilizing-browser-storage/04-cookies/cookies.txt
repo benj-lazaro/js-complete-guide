@@ -1,0 +1,55 @@
+Getting Started With Cookies
+----------------------------
+- To store a key-value pair (i.e. data) in cookies
+    - Simply assign the data to "document.cookie"
+
+        document.cookie = "<key>=<value>";
+
+    - NOTE: Assign a new value to the same key
+        - Overwrite the old value
+
+    - IMPORTANT: In order for data to be stored in cookies
+        - The webpage REQUIRES to be hosted by a (local or remote) server 
+            - It will store data when running on the "http://" or "https://" protocol
+            - It will NOT store data when running on the "file://" protocol
+
+        - NOTE: Using VS Code's "Live Server" or npm package "serve" will suffice
+
+
+- To retrieve stored data from cookies
+    - Simply assign "document.cookie" as argument value to "console.log()"
+
+
+- On the practice code (app.js)
+    - Rename the "app.js" to "localstorage.js"
+        - Copy the entire codebase
+
+    - Create a new "app.js"
+        - Paste the copied codebase
+        - Remove the code related to localStorage & sessionStorage
+
+    - On the Event Handler on storing data in cookies
+        - Create a local constant named "userId"
+            - Assign the value of "uid123"
+
+        - Access "document.cookie"
+            - Assign the string template `uid=${userId}` as value
+
+    - On the Event Handler on retrieve data from cookies
+        - Access "console.log()"
+            - Pass "document.cookie" as argument value
+
+    - Save the changes
+        - Activate "Live Server" or run the npm package "serve"
+            - Loads the web app on the browser
+
+        - Launch the browser's Development Tools (DevToools)
+            - Click the "Application" tab
+            - On the left-hand side panel, click "Cookies"
+
+        - Click the button "STORE"
+            - A new key-value pair is stored in the cookies
+
+        - Click the button "RETRIEVE"
+            - Click the "Console" tab
+            - The value "uid-123" is displayed
