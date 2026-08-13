@@ -1,0 +1,124 @@
+Working With Cookies
+--------------------
+- When storing more than one (1) key-value pair in cookies
+    - Use a unique "key"
+        - Then followed by its assigned value
+        - Otherwise, it overwrites the previous value of the same (existing) "key"
+
+        document.cookie = `<unique_key>=${<assigned_value>}`;
+        
+    - When storing data in cookies
+        - It basically adds a new key-value pair at the end
+
+
+- To store JSON data in cookies
+    - Use method ".stringify()"
+        - Pass the JSON data as argument value
+
+        document.cookie = `<key>=${JSON.stringify(<JSON_data>)}`;
+
+
+- To select a specific stored data from cookies
+    - Split the stored data using the string method ".split()"
+        - Pass the ";" character as argument value
+        - Store returned array of string elements in a local constant
+        - NOTE: Succeeding keys contains a prefix whitespace character
+
+    - Chain the method ".map()" on the local constant
+        - For each array element, chain the method ".trim()"
+        - To remove the prefix whitespace character individually
+        - Store cleaned array elements in another local constant
+
+    - Use the index value of the specific data to retrieve / read
+        - Split the key & value of the specific data using the string method ".split()"
+            - Pass the "=" character as argument value
+
+            <array>[<index_value>].split("=");
+
+
+- To retrieve the value ONLY of a specific data
+    - Split the key & value of the specific data using the string method ".split()"
+        - Pass the "=" character as argument value
+        - Followed by a pair of "[ ]"
+        - Pass the index of the assigned value
+
+            <array>[<index_value>].split("=")[<assigned_value_index>];
+
+    - IMPORTANT: When a data is deleted (or expired) from cookies
+        - The arrangement of the stored data gets updated
+            - Retreving data by index key alone is NOT reliable
+
+        - Better alternative is to search for the specific key name
+            - Using the string method ".includes()"
+
+            <array>.includes("<specific_key_name>").split("=")[<assigned_value_index>];
+
+
+- Two (2) set the expiration of a key-value pair stored in cookies
+    - Using the flag "max-age"
+        - Followed by a "="
+        - Then the value expressed in seconds
+
+        document.cookie = `<unique_key>=${<assigned_value>}; maxage=<seconds>`; 
+
+    - Using the flag "expires"
+        - Followed by a "="
+        - Then the date when the data expires
+
+        document.cookie = `<unique_key>=${<assigned_value>}; expires=<date>`; 
+
+    - IMPORTANT: BOTH of these flas are NOT part of the data stored in cookies
+
+    - NOTE: Cookies can be deleted by the browser & users
+
+
+- On the practice code (app.js)
+    - Inside the Anonymous arrow function of the Event Handler for "storeBtn"
+        - Create a local constant named "user"
+            - Assign a JSON data as value
+
+        - Store new data in cookies under the key named "user"
+            - Call the method "JSON.stringify()"
+            - Pass the local constant "user" as argument value
+
+
+    - Set the maximum age of the key named "uid" w/
+        - The maximum age of 5 seconds using the flag "max-age"
+
+    
+    - Inside the Anonymous arrow function of the Event Handler for "retrieveBtn"
+        - Create a local constant named "cookieData"
+            - Chain the method ".split()" to "document.cookie"
+            - Pass ";" as argument value
+            - Stores the key-value pairs as array elements
+            - NOTE: Succeeding keys comes w/ an extra prefix whitespace character
+
+        - Chain the method ".map()" on the local constant "cookieData"
+            - Chain the method ".trim()" for each array element read
+            - Store the returned array element in a local constant named "cleanedData"
+
+
+    - To retrieve the key-value pair of specific data from cookies
+        - Access the data using its index value from the constant "cleanedData"
+            - Chain the method ".split()" 
+            - Pass "=" as argument value
+            - Pass the entire statement as argument to "console.log()"
+
+    
+    - To retrieve the value ONLY of a specific key-value pair from cookies
+            - Access the data using its index key from the constant "cleanedData"
+            - Chain the method ".split()" 
+            - Pass "=" as argument value
+            - Followed by the index key of the assign value
+            - Pass the entire statement as argument to "console.log()"
+
+
+    - Save the changes
+        - Load / reload the browser
+            - Launch the browser's Development Tools
+            - Click the "Application" tab
+        
+        - On the left-hand side panel
+            - Expand "Cookies"
+            - Click "http://127.0.0.1:5000"
+            - Click the "Refresh" button to update the cookies' content
