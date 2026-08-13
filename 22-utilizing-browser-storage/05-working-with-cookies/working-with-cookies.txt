@@ -1,4 +1,4 @@
-Working With Cookies
+Working With Cookies 
 --------------------
 - When storing more than one (1) key-value pair in cookies
     - Use a unique "key"
