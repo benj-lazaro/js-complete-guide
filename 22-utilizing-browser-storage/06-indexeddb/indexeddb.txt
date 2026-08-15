@@ -1,196 +1,98 @@
 Getting Started With IndexedDB
 ------------------------------
-- To store data on the browser's IndexedDB storage
-    - Create a new connection or open a connection existing an existing databse
-        - This action is also referered as a "database request"
-
-    - Access "indexedDB" (i.e. "window.indexedDB")
-        - Chain the method ".open()"
-
-        - Pass the following argument values:
-            - 1st = database name
-            - 2nd = database version number (value of 1 when creating for the 1st time)
-
-        - Store the returned database request to a local constant
-
-            const <database_request> = indexedDB.open("<database_name>", <database_version_number>);
-
-        - IMPORTANT: The returned database request object is NOT a promised-based
-
-
-- Define an Event Handler for a successful database request
-    - Access the local constant where the database request is stored
-
-    - Chain the Event Handler ".onupgradeneeded"
-        - Assign an Anonymous function as value
-
-    - On the Anonymous function
-        - Define the paraemter variable named "event"
-            - Holds the Event of a successful database request
-
-    - Inside the Anonymous function
-        - Implement the logic for a successful database request
-
-        <database_request>.onupgradeneeded = function (event) {
-            // successful database request logic
-        }
-
-        - Access the property "target.result" of the paraemter variable "event"
-            - Store it to a local constant
-            - NOTE: This action creates a database inside 
-
-            const <database> = event.target.result;
-
-        - Create an Object Store (a database table) inside the database
-            - Access the local constant where the database is stored
-
-            - Chain the method ".createObjectStore()"
-
-            - Pass the argument values:
-                - 1st = object store name
-                - 2nd = object store configuration object
-
-            - On the configuration object
-                - Define the property named "keyPath"
-
-                - Assign the value w/c becomes a key (e.g. "id") that 
-                    - Uniquely identfies an item stored w/in an Object Store
-
-            - Store the created Object Store to a local constant
-
-            const <object_store> = <database>.createObjectStore("<object_store_name>", 
-              { keyPath:"<key>" });
-
-
-        - Configure the Object Store's transaction mode (i.e. "readonly" or "readwrite")
-            - Access the local constant where the Object Store is stored
-                - Chain the property ".transaction"
-                - Chain the Event Handler ".oncomplete"
-                - Assign an Anonymous function as value
-
-            <object_store>.transaction.oncomplete = function () {
-
-            }
-
-            - On the Anonymous function
-                - Define the paraemter variable named "event"  that
-                    - Holds the successful creation of the Object Store
-
-            - Inside the Anonymous function
-                - Access the local constant where the database is stored
-
-                - Chain the method ".transaction()"
-                
-                - Pass the argument values:
-                    1st = object store name
-                    2nd = "readwrite" (transaction mode)
-
-                - Chain the method ".objectStore()"
-                    - Pass the Object Store's name as argument value
-
-                const <transaction_mode> = <database>.transaction("<object_store_name>", "readwrite")
-                    .objectStore("<object_store_name>");
-
-        
-        - Add items to the Object Store
-            - Access the local constant where the Object Store's transaction configuration is stored
-
-            - Chain the method ".add()"
-            
-            - Pass an item in the form of a JavaScript object literal
-                - An item MUST have a property named based on the assigned value of "keyPath" property
-                    - Defined w/in the Object Store's configuration object
-
-
-- Define an Event Handler for a failed database request
-    - Access the local constant where the database request is stored
-
-    - Chain the Event Handler ".onerror"
-        - Assign an Anonymous function as value
-
-    - On the Anonymous function
-        - Define the paraemter variable named "event"
-            - Holds the Event of a failed database request
+- To store data in the browser's IndexedDB storage
 
 
 - On the practice code (app.js)
-    - Rename the previous "app.js" file to "cookies.js"
+    - Rename "app.js" file to "cookies.js"
         - Copy the entire codebase
-        - Create a new "app.js" file 
-        - Paste the codebase & remove ALL cookies related code
 
 
-    - Inside the Event Handler of "storeBtn"
-        - Create a database request to the browser's IndexedDB storage
-            - Access "indexedDB"
-            - Chain the method ".open()"
-            - Pass the argument values:
-                - 1st = StorageDummy"
-                - 2nd = 1
-
-        - Store the database request in the local constant named "dbRequest"
+    - Create a new "app.js"
+        - Paste the codebase
+        - Remove cookies-related code
 
 
-    - Create an Event Handler for a successful database request
-        - Access the local constant "dbRequest"
-            - Chain the Event Handler ".onupgradeneeded"
-            - Pass an Anonymous function as value
+    - Create a global constant "dbRequest"
+        - Assign "indexedDB.open()" as value
 
+        - Pass the following argument values:
+            - 1st = "StorageDummy" (database name)
+            - 2nd = 1 (database version; 1 when creating a new database)
+
+        - IMPORTANT: Returns an "IDBOpenRequest" object that is NOT promised-based
+            - This also referered as a "database request"
+
+        - If the database requested does NOT exists in IndexedDB
+            - It is creates a new database based on the given name
+            - Otherwise, grants access to an existing one
+
+
+    - Access the global constant "dbRequest"
+        - Chain the Event Listener ".onerror"
+            - Assign an Anonymous function as value
+        
         - On the Anonymous function
-            - Define the paraemter variable "event"
-
-        - Inside the Anonymous function
-            - Access the property ".target.result" of the paraemter variable "event"
-                - Store the returned database in the local constant named "db"
-                - NOTE: This creates the database named "StorageDummy" w/in the IndexedDB storage
-
-            - Access the local constant "db"
-                - Chain the method ".createObjectStore()"
-                - Pass the argument values:
-                    - 1st = "products"
-                    - 2nd = { keyPath: "id" }
-
-                - Store the Object Store "products" in the local constant "objStore"
-                - NOTE: This creates the table named "products" w/in the "StorageDummy" database
-
-            - Access the local constant "objStore"
-                - Chain the property ".transaction"
-                - Chain the Event Handler ".oncomplete"
-                - Assign an Anonymous function as value
-
-                - On the Anonymous function
-                    - Define the paraemter variable "event"
-                
-                - Inside the Anonymous function
-                    - Access the local constant "db"
-                    - Chain the method ".transaction()"
-                    - Pass the argument values:
-                        - 1st = "products" (table name)
-                        - 2nd = "readwrite" (transaction mode read & write)
-
-                    - Store the transaction configuration in the local constant "productStore"
-                    - NOTE: This configures the Object Store's transaction mode 
-
-            - Access the local constant "productStore"
-                - Chain the method ".add()"
-                - Pass a JavaScript object literal as value
-                - NOTE: This adds an item to the database table "products"
-
-                - IMPORTANT: The object MUST have a property named "id"
-                    - Assigned as value to the property "keyPath" of the Object Store's configuration
-                    - This uniquely identifies an item w/in the database table "products"
-
-
-    - Create an Event Handler for a failed database request
-        - Access the local constant "dbRequest"
-            - Chain the Event Handler ".onerror"
-            - Pass an Anonymous function as value
-
-        - On the Anonymous function
-            - Define the paraemter variable "event"
+            - Define the parameter variable "event"
 
         - Inside the Anonymous function
             - Pass "Error!" as argument value to "console.log()"
+            
+        - NOTE: Triggered when the "database request" failed
+
+
+    - Access the global constant "dbRequest
+        - Chain the Event Listener ".onupgradeneeded"
+            - Assign an Anonymous function as value
+        
+        - On the Anonymous function
+            - Define the parameter variable "event"
+
+        - Inside the Anonymous function
+            - Create a local constant named "db"
+                - Assign "event.target.result" as value
+                - NOTE: Grants access to the database "StorageDummy"
+
+            - Create a local constant "objStore"
+                - Assign "db.createObjectStore()" as value
+
+                - Pass the following argument values:
+                    - 1st = "products"        (table name)
+                    - 2nd = { keyPath: "id" } (configuration object)
+        
+                - NOTE: Creates & returns access to an Object Store (table)
+                    - Configuration object defines the key (property) that is required
+                    - To identify every stored object w/in the created Object Store
+
+            - Access the local constant "objectStore"
+                - Chain the property ".transaction"
+                - Chain the Event Listener ".oncomplete"
+                - Assign an Anonymous function as value
+                - NOTE: Triggered when the creation of Object Store is completed
+
+                - On the Anonymous function
+                    - Define the parameter variable "event"
+
+                - Inside the Anonymous function
+                    - Access the local constant "db"
+
+                    - Chain the method ".transaction()"
+                        - Pass the arguments values:
+                            - 1st = "products" (table name)
+                            - 2nd = "readwrite" (transaction mode)
+                            - NOTE: Configures the connection to the Object Store
+
+                    - Chain the method ".objectStore()"
+                        - Pass "products" (table name) as argument value
+                        - NOTE: Grants direct access to the Object Store
+                    
+                    - Create a local constant named "productsStore" &
+                        - Store the previous statement as value
+
+            - Access local constant "productsStore"
+                - Chain the method ".add()"
+
+        - NOTE: Triggered when the "database request" succeeded
 
 
     - Save the changes
@@ -201,17 +103,18 @@ Getting Started With IndexedDB
         - On the left-hand side panel
             - Expand "IndexedDB"
 
-        - Click the app "STORE" button
-            - The database "StorageDummy" is created w/in the IndexedDB
-
+        - Refresh page
+            - The database "StorageDummy" is created
+            
         - Expand "StorageDummy"
             - The table "products" is displayed
 
-        - Click the table "products"
-            - The items stored are displayed
+        - Click the Object Store "products" (table)
+            - The stored items w/in the Object Store are displayed
 
-        - NOTE: In the event that the database w/in IndexedDB does have 0 Object Stores
+        - NOTE: In the event that IndexedDB reported 0 Object Stores
             - Click "Delete database" button
-            - Confirm deletion of the "StorageDummy"
-            - Reload the web page
-            - Click the button "STORE" again
+                - Confirm deletion of the "StorageDummy"
+
+            - Reload the web page again
+                
