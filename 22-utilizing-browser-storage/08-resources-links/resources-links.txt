@@ -1,0 +1,12 @@
+Useful Resources & Links
+------------------------
+- localStorage & sessionStorage
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
+
+
+- Cookies
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie)
+
+
+- IndexedDB
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
