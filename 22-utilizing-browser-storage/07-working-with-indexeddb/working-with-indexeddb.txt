@@ -1,0 +1,95 @@
+Working With IndexedDB
+----------------------
+- Further exploration on IndexedDB
+    - Demonstrate the clunkiness of the IndexedDB API
+        - Requiring handlers to store & access stored items
+
+    - 3rd party libraries namely "idb.js"
+        - Allows working w/ the IndexedDB storage easier
+        - Offer Promisified features for adding / retrieving items
+        - GitHub Repository (https://github.com/jakearchibald/idb)
+
+
+- On the practice code (app.js)
+    - Create a global variable named "db" w/ NO assigned value
+        - Stores access to the created / existing database in IndexedDB
+        - Grants other Event Handlers access to the database
+
+
+    - Access the global constant "dbRequest"
+        - Chain the Event Handler ".onsuccess"
+            - Assign an Anonymous function as value
+
+        - On the Anonymous function
+            - Define the parameter variable "event"
+
+        - Inside the Anonymous function
+            - Access the global variable "db"
+            - Assign "event.target.result" as value
+
+            - NOTE: Grants access to the created or existing database w/o
+                - The need to change the database version number
+
+
+    - On the Event Handler ".onupgradeneeded"
+        - Refactor the constant "db" to the global variable "db"
+        - Select & copy the local constant "productsStore"
+    
+    - Inside the Event Handler of the global constant "storeBtn"
+        - Paste the local constant "productsStore"
+
+        - Access the local constant "productsStore"
+            - Chain the method ".add()"
+
+            - Pass a JavaScript object literal that contains the
+                - 2nd item to be stored in the "products" table
+
+
+    - Inside the Event Handler of the global constant "retrieveBtn"
+        - Paste the local constant "productsStore"
+
+        - Create a local constant named "request"
+            - Assign the local constant "productsStore" as value
+            - Chained w/ the method ".get()"
+            - Pass the specified item from the "products" table based on it's "id" value
+
+        - Access the local constant "request"
+            - Chain the Event Handler ".onsuccess"
+            - Assign an Anonymous function as value
+
+        - Inside the Anonymous function
+            - Pass "request.result" as argument value to "console.log()"
+
+        - Access the local constant "request"
+            - Chain the Event Handler ".onerror"
+            - Assign an Anonymous function as value
+
+        - Inside the Anonymous function
+            - Pass "Item NOT found" as argument value to "console.log()"
+
+        - NOTE: This is what the author mentioned about the clunkiness of
+            - The IndexedDB API
+
+
+    - Save the changes
+        - Load / Reload the browser
+            - Launch the browser's Developer Tools
+            - Click the "Application" table
+
+        - On the left-hand side panel
+            - Expand "IndexedDB"
+
+        - Refresh page
+            - The database "StorageDummy" is created
+            
+        - Expand "StorageDummy"
+            - The table "products" is displayed
+
+        - Click the Object Store "products" (table)
+            - The stored items w/in the Object Store are displayed
+
+        - Clicking the button "STORE"
+            - Adds the 2nd item in the "products" table of the "StorageDummy" database
+
+        - Clicking the button "RETRIEVE"
+            - Displays the 2nd item on the browser's JavaScript console
