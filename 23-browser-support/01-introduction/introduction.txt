@@ -1,0 +1,8 @@
+Module Introduction
+-------------------
+- This section focuses on:
+    - What is "browser support" about
+    - Determine required support
+    - Finding out which features works where
+    - Polyfills
+    - Transpilation
