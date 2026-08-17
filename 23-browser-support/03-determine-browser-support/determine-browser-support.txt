@@ -1,0 +1,28 @@
+Determining Browser Support
+---------------------------
+- When writing JavaScript code that will run in a browser
+    - Find out if a feature (to be used) is available or supported
+
+    - Available resources to check for browser support
+        - MDN (Mozilla Developer Network)
+            - Check the "Browser Compatibility" located at bottom of a feature's page
+            - Includes fallbacks, notes & workarounds (if feature is NOT available)
+            - URL (https://developer.mozilla.org/en-US/)
+
+        - Can I use
+            - Offers a detailed overview table including browser market shares
+            - Support on browser APIs & JavaScript features
+            - Includes fallbacks, notes & workarounds (if feature is NOT available)
+            - URL (https://caniuse.com/)
+
+        - Google
+            - Search for supported browsers of a specific browser API and/or JavaScript feature
+            - StackOverflow discussions on complex issues
+            - URL (https://google.com)
+
+        - ES6 / JavaScript Compat Table
+            - Detailed list of JavaScript versions, features & the browsers that supports it
+            - Great for checking whether some the next generation feature is available
+            - Includes support of various transpilers
+            - URL (https://compat-table.github.io/compat-table/es6/)
+            - URL (https://danielrosenwasser.github.io/compat-table/es6/)
