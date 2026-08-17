@@ -1,0 +1,29 @@
+What Is Browser Support?
+------------------------
+- It is a developer's responsibility to
+    - Ensure a web app's code to work on ALL targeted browsers
+
+    - Differentiate between browser features & the JavaScript syntax
+        - Browser features
+            - APIs offered by the browser & accessible via JavaScript
+                - They are NOT part of the JavaScript core language
+
+            - Implemented individually by browser developers
+            
+            - NOT ALL browsers supports the ALL features 
+                - Modern "evergreen" browsers receive updates
+                - Legacy browsers do NOT receive updates & new features anymore
+
+            - e.g. DOM API, "fetch()", geolocation API
+
+        - JavaScript syntax 
+            - Built-in functionality & features of the JavaScript language
+                - Browser's JavaScript Engine defines w/c syntax & version is supported
+
+            - Implemented individually or in chunks (e.g. ES6)
+            
+            - Transpiling allows to write latest JavaScript features 
+                - Then "compiled down" to older code that works on legacy browsers
+            
+            - e.g. const, let, async / await, Promises
+    
