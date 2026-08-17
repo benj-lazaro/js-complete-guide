@@ -1,0 +1,33 @@
+Determine Required Support
+--------------------------
+- To determine which browser support needed
+    - What NOT to do
+        - Make a selected feature to work on ALL browsers, across all browser versions
+            - It is NOT possible
+        
+        - Ends up shipping too much code
+            - Pass up features & improvements just to support older browsers
+            - Do NOT build an application to support the smallest possible denominator
+
+    - What to do instead
+        - Analyze user market
+            - Get an idea who will be using your application
+                - Then build the app for a specific user base & NOT for the global user base
+
+            - User: Internal tooling / app
+                - ALL companies have their own internal systems
+                - Internal company browser might be clearly defined (as part of its policy)
+                - Support for other browers NOT required
+
+            - User: Tech-savvy
+                - Use cutting-edge, updated browsers & versions
+                - Pass up support for very old legacy browsers
+                - e.g. Online learning sites, dev blogs, rich web apps
+
+            - User: Non-tech-savvy
+                - Likely use slightly older browsers
+        
+        - Test the application in a broad variety of browsers
+            - Browsers that are expected to be used by your app's users
+
+    
