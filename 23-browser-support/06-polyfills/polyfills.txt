@@ -1,0 +1,25 @@
+Using Polyfills
+---------------
+- Another strategy to build a web app that 
+    - Works in a broad variety of browsers is through the use of a Polyfill
+
+    - A Polyfill is a 3rd-party package that allows
+        - An uUnsupported feature to run on older browsers
+
+    - IMPORTANT: NOT ALL supported features can be made to work
+        - Some new features are dependent on some core mechanics that
+            - Can NOT be worked around using JavaScript on older browsers
+
+        - Some features can be replicated using features of older browsers
+            - Using a specific Polyfill makes it easier to implement 
+
+
+- Searching for a specific Polyfill
+    - Find 
+
+    - Search for a feature on the "Can I use" website
+        - Below the table of supported browsers
+        - Click the tab "Resources"
+        - Look for "Polyfill" links
+
+    - URL (https://caniuse.com/)
