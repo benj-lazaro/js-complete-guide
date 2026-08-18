@@ -1,0 +1,70 @@
+Solution: Feature Detection & Fallback Code
+-------------------------------------------
+- Strategies to build a web app that works in a broad variety of browsers
+    - Feature detection
+        - Detects if a feature (to be implemented) is supported by a browser
+
+    - Fallback code
+        - Alternate code that is executed when a feature is NOT supported by a browser
+        - Provides another way for a user to use the web app
+        
+    - NOTE: The goal is to prevent a web app from crashing
+
+
+- On the practice code (app.js)
+    - Create a global constant named "textParagraph"
+        - Assign "document.querySelector("p")" as value
+        - NOTE: Select the ONLY HTML element <p> in the "index.html" file
+
+    
+    - Inside the Event handler of the global constant "button"
+        - Create a local constant named "text"
+            - Assign "textParagraph.textContent" as value
+            - NOTE: Stores the text content of the selected HTML element <p>
+
+        - Use an "if" statement to check if the browser feature "navigation" is supported
+            - Pass "navigation" as argument value
+            - NOTE: Return an "undefined" (falsy) value is NOT supported
+
+        - Inside the truty "if" clause
+            - Access method "navigation.clipboard.writeText()"
+                - Pass "text" as argument value
+
+            - Chain the promise method ".then()"
+                - Pass an Anonymous function as argument value
+
+                - On the Anonymous function
+                    - Declare the parameter variable "result"
+
+                - Inside the Anonymous function
+                    - Pass "result" as argument value to "console.log()"
+            
+            - Chain the promise method ".catch()"
+                - Pass an Anonymous function as argument value
+
+                - On the Anonymous function
+                    - Declare the parameter variable "error"
+
+                - Inside the Anonymous function
+                    - Pass "error" as argument as argument value to "console.log()"
+
+            - Pass the string value "Copied to clipboard..." to "console.log()"
+
+        - Inside the "else" clause
+            - Pass the string value "Feature NOT available. Please copy manually." to "alert()"
+
+    
+    - Save the changes
+        - Run the npm script "build:dev"
+        
+        - Click the Loopback "http://localhost:8080"
+            - Loads the browser
+            - Launch the browser's JavaScript console
+
+        - Click the button "COPY TO CLIPBOARD"
+            - Copies the HTML element <p> text content to the system clipboard
+            - Displays the message "Copied to clipboard..." on the JavaScript console
+        
+        - Launch default notepad application
+            - Paste the content of the clipboard
+     
