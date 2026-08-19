@@ -1,0 +1,94 @@
+Solution: Transpiling Code
+--------------------------
+- Transpiling converts modern JavaScript code into older code that works in older browsers
+   
+
+- Babel is a popular 3rd-party JavaScript compiler or transpiler (translate + compiler)
+    - Converts ECMAScript 2015+ code into a backwards compatible code supported by older browsers
+    - Website (https://babeljs.io/)
+
+
+- Babel Loader is a 3rd-party package that integrates Babel to Webpack
+    - Repository (https://github.com/babel/babel-loader)
+
+    - To install Babel using npm:
+
+        npm install -D babel-loader @babel/core @babel/preset-env webpack
+
+        - NOTE: The flag "-D" is equivalent to "--save-dev"
+
+        - Package descriptions:
+            - "babel-loads"         = handles connection between Babel & Webpack
+            - "babel/core"          = handles translation from modern to older code
+            - "babel/preset-env"    = handles Babel's translation rules
+
+    - Since Webpack had previously been installed:
+
+        npm install --save-dev babel-loader @babel/core @babel/preset-env
+
+
+- Add "babel-loader" w/in the Webpack configuration files (webpack.config.js & webpack.config.prod.js)
+    - Webpack Loaders Documentation (https://webpack.js.org/loaders/babel-loader/#install)
+
+    - Placed the configuration setings w/in the "module.exports"
+
+        module: {
+            rules: [
+                {
+                test: /\.(?:js|mjs|cjs)$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                    targets: "defaults",
+                    presets: [
+                        ['@babel/preset-env']
+                    ]
+                    }
+                }
+                }
+            ]
+        },
+
+    - The "rules" property contains a JavaScript object
+        - The "test" property indentifies files that will be translated by Babel
+            - The assigned value of "/\.(?:js|mjs|cjs)$/"
+            - Searches for files w/ the extension of ".js", ".mjs" or ".cjs"
+ 
+        - The "exclude" property excludes files located w/in the assigned value
+            - The assigned value of "/node_modules/"
+            - Excludes files stored w/in that directory from being translated by Babel
+
+    - The "use" property contains a JavaScript object
+        - The "loader" property assigns the package that 
+            - Handles the loading the indentified files to be translated by Babel
+
+        - The "preset" property assigns the ruleset 
+            - To be applied in the translation of indentified files
+
+    
+- To inform Babel w/ older browsers to support
+    - Open the file "package.json"
+
+    - Add a new property named "browserslist"
+        - Assign the value of "> 2%" 
+            - This meant to support browsers w/ a market share of greater than 2%
+
+        - Or assign the value of "> 0.2%"
+            - This meant to support browsers w/ a market share of greater than 0.2%
+
+        - NOTE: "browserlist" is a separate package & tool used (under-the-hood) by "@babel/preset"
+
+    - Save the changes
+
+    - Run npm script
+
+        npm run build
+
+    - Check the generated code by Babel & Webpack (assets/scripts/app.js)
+
+
+- The downside of using Babel alone
+    - While it converts core JavaScript syntax (e.g. let & const) appropriately
+    - Other features (e.g. Promises) remained unchanged & unsupported by older browsers
+    - A better approach is to combine Babel & a Polyfill
