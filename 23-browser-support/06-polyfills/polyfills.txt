@@ -1,5 +1,5 @@
-Using Polyfills
----------------
+Solution: Using Polyfills
+-------------------------
 - Another strategy to build a web app that 
     - Works in a broad variety of browsers is through the use of a Polyfill
 
