@@ -1,4 +1,3 @@
-import "core-js";
 // NOTE: Code is NOW supported by a broad variety of browsers
 // It was NOT back in 2019 when this lecture was published
 
@@ -7,6 +6,10 @@ const textParagraph = document.querySelector("p");
 
 button.addEventListener("click", () => {
   const text = textParagraph.textContent;
+
+  // To test if the Polyfill works
+  const promise = new Promise();
+  console.log(promise);
 
   // Simple feature detection; returns "undefined" (falsy) if NOT supported
   if (navigation) {

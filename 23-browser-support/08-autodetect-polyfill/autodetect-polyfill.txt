@@ -17,14 +17,114 @@ Improvement: Automatically Detect & Polyfill
     - The "downside" of importing "core-js" to a web app's code is that
         - It adds EVERYTHING including features NOT used
 
-    - To install "core-js" as a "runtime" dependency
+    - To install the package "core-js" as a runtime dependency
 
         npm -i --save core-js
 
         npm install-scripts approve core-js
 
+    - Install the package "regenerator-runtime" as a runtime dependency
 
-- On the practice code (app.js)
-    - Open the "src/app.js"
-        - Import the package "core-js"
+        npm -i --save core-js
+
+        - NOTE: This is another Polyfill package that
+            - Handles other features NOT covered by "core-js"
+
+
+- Re-configure Babel to work w/ "core-js'
+    - Open the file "webpack.config.js"
+
+    - Refactor the value of the property "presets"
+        - Add a JavaScript object literal as a 2nd array element
+
+        - Contains a property "useBuiltIns"
+            - Controls the polyfill's (i.e. "core-js") behavior
+                - Assign the value of "usage"
+
+            - The value of "usage" instructs Babel to automatically
+                - Add polyfill entries c/o "core-js" as it detects it
+
+    - IMPORTANT: Encountered an error after running the npm script "build"
+
+        Error: [BABEL]: The 'useBuiltIns' option has been removed. Please use babel-plugin-polyfill-corejs3 instead.
+
+    - Roll back changes implement in the file "webpack.config.js"   
+        - Install "babel-plugin-polyfill-corejs3" as a development dependency
+        - Repository (https://github.com/babel/babel-polyfills/tree/main/packages/babel-plugin-polyfill-corejs3)
+
+            npm i --save-dev "babel-plugin-polyfill-corejs3"
+
+    - On the file "webpack.config.js"
+        - Declare the property "plugins" under "option"
+            - Assign an array as value
         
+        - Inside the array
+            - Assign sub-array w/ the following elements:
+                - "polyfill-corejs3"
+                - { method: "usage-global" }
+
+            module.exports = {
+                mode: "development",
+                entry: "./src/app.js",
+                output: {
+                    filename: "app.js",
+                    path: path.resolve(__dirname, "assets", "scripts"),
+                    clean: true,
+                },
+                devServer: {
+                    static: {
+                    directory: "./",
+                    },
+                },
+                devtool: [{ type: "javascript", use: "source-map" }],
+                module: {
+                    rules: [
+                    {
+                        test: /\.(?:js|mjs|cjs)$/,
+                        exclude: /node_modules/,
+                        use: {
+                        loader: "babel-loader",
+                        options: {
+                            targets: "defaults",
+                            presets: [["@babel/preset-env"]],
+                            plugins: [
+                            [
+                                "polyfill-corejs3",
+                                {
+                                method: "usage-global",
+                                },
+                            ],
+                            ],
+                        },
+                        },
+                    },
+                    ],
+                },
+            };        
+
+        - Save the changes
+
+
+- Run the npm scripts "build" & then "build:dev"
+    - Launch the browser's Developer Tools
+        - Click the tab "Network"
+        - The file size of "app.js" reports a size of "1.1k"
+
+
+- Open the file "app.js"
+    - Add the following line of code 
+
+        const promise = new Promise();
+        console.log(promise);
+
+    - Save the changes
+        - Run the npm scripts "build" & "build:dev"
+
+    - On the browser's Developer Tools
+        - On the tab "Network"
+        - The file size of "app.js" reports a size of "1.2k"
+
+
+    - PERSONAL NOTE: There is NO noticable indicated on the generated code that
+        - The polyfill has been applied unlike the older Babel version used
+        - Unfortunately, the lecture has NOT been updated since 2019

@@ -16,6 +16,7 @@
     "@babel/preset-env": "^8.0.2",
     "@eslint/js": "^10.0.1",
     "babel-loader": "^10.1.1",
+    "babel-plugin-polyfill-corejs3": "^1.0.0",
     "eslint": "^10.8.0",
     "globals": "^17.9.0",
     "webpack": "^5.109.2",
@@ -25,8 +26,5 @@
   "dependencies": {
     "core-js": "^3.50.0",
     "regenerator-runtime": "^0.14.1"
-  },
-  "allowScripts": {
-    "core-js@3.50.0": true
   }
 }
