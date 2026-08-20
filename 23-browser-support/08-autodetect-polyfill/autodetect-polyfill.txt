@@ -1,0 +1,30 @@
+Improvement: Automatically Detect & Polyfill
+--------------------------------------------
+- The 3rd-party packages "babel-loader" & "babel-preset" that 
+    - Takes the "browserlist" property of "package.json"
+        - Generates code that almost works on older browsers
+
+    - Manually managing feature detection, transpiled code & polyfills
+        - On a large-scale project to ensure that the generated code
+        - Runs on older browsers can be cubersome
+
+
+- Babel (under the hood) relies on a 3rd-party package named "core-js"
+    - It a huge package w/ a bunch of built-in polyfills
+        - Provides JavaScripts features available in ALL browsers
+        - Repository (https://github.com/zloirock/core-js)
+
+    - The "downside" of importing "core-js" to a web app's code is that
+        - It adds EVERYTHING including features NOT used
+
+    - To install "core-js" as a "runtime" dependency
+
+        npm -i --save core-js
+
+        npm install-scripts approve core-js
+
+
+- On the practice code (app.js)
+    - Open the "src/app.js"
+        - Import the package "core-js"
+        
