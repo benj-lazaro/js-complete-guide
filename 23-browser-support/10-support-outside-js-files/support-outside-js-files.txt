@@ -1,0 +1,36 @@
+Browser Support Outside JavaScript Files
+----------------------------------------
+- When using JavaScript modules w/out using Webpack
+    - The attribute "type" of the HTML element <script> w/ the value of "module"
+
+        <script src="..." defer type="module" ></script>
+
+    - However, older browsers do NOT support the attribute "module"
+        - As a fallback code, use the attribute "nomodule"
+
+        - Older browsers IGNORES this attribute but executes the embedded script
+
+            <script src="..." defer type="module" ></script>
+            <script nomodule>
+                // Fallback script code here...
+            </script>
+
+        - Modern browsers recognize the attribute "nomodule" & ignores the embeeded script
+        
+    - IMPORTANT: When using Webpack to bundle the web app's code, these attributes are NOT needed
+
+
+- For user's who disabled JavaScript on their browsers
+    - Rich web applications (e.g. Google Docs) will definitely crash
+        - Fallback code will NOT work w/out JavaScript enabled
+
+    - To inform users that JavaScript is required for a web app to work
+        - Use the HTML element <noscript>
+        - Pass as message as content
+
+            <noscript>
+                Please enable JavaScript to use this page.
+            </noscript>
+
+    - NOTE: This is NOT a fallback but rather as simply a message for users
+        - Why a web application is NOT working
