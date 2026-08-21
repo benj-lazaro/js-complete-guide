@@ -1,0 +1,12 @@
+Useful Resources & Links
+------------------------
+- Babel
+    - Reference (https://babeljs.io/docs/en/)
+
+
+- babel-loader Docs
+    - Reference (https://github.com/babel/babel-loader)
+
+
+- @babel/preset-env Docs
+    - Reference (https://babeljs.io/docs/en/babel-preset-env)
