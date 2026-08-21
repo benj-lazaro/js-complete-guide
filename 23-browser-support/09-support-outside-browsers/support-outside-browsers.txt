@@ -1,0 +1,10 @@
+What About Support Outside Of Browsers
+--------------------------------------
+- JavaScript is a hosted languages that work in other runtimes (e.g. Node.js)
+    - Node.js allows a user control w/c JavaScript & Node.js version to use
+        - Offers direct control over the environment where the (non-browser) code runs 
+    
+    - On browser-based JavaScript, this is beyond the user's control
+        - Requires a toolchain that allows the JavaScript code to work on
+        - Targeted browsers of the web application
+
