@@ -1,0 +1,26 @@
+Setting Up The Project
+----------------------
+- Setup the starter Project
+    - Install the packages
+    - Run the npm script to launch the project app
+
+
+- On the practice project
+    - Adjusted the packages listed in the attached "package.json" files
+        - Removed deprecated & high-severity npm packages
+        - Replaced "core-js" w/ "babel-plugin-polyfill-corejs3"
+
+
+    - Implemented Webpack 5 changes on BOTH configuration files
+
+
+    - Run the npm script "build:dev"
+
+        npm run build && npm run build:dev
+
+        - Click the "Loopback" URL to launch the project app
+
+    
+    - PERSONAL NOTE: Successfully launched the project app using
+        - The latest Babel & Webpack
+        - Updated Webpack configuration
