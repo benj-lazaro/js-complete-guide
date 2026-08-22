@@ -1,0 +1,6 @@
+NOTE: Use The LTS Version of Node.js
+------------------------------------
+- Running this section's code w/ the latest Node.js might fail
+    - Simply download & install the LTS version instead
+    - Website (https://nodejs.org/)
+
