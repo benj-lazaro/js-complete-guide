@@ -1,0 +1,8 @@
+Module Introduction
+-------------------
+- This section focuses on:
+    - Practice project of building a web page
+    - Work w/ 3rd-party library (Google Maps)
+    - Find the location of the place (to be shared)
+    - Share the place w/ other users
+
