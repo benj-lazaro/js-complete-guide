@@ -1,0 +1,48 @@
+Getting DOM Access
+------------------
+- To begin working on the practice project
+    - Starts w/ the file "src/SharePlace.js" whose generated "assets/scripts/SharePlace.js"
+        - Gets imported by the "dist/index.html" via HTML element <script>
+
+    - This file is responsible for access on the DOM elements w/in the "index.html"
+    
+    - Implenting code using the OOP approach over functional programming style
+        - For the sole reason to continue OOP practice
+        
+
+- On the practice project (src/SharePlace.js)
+    - Open the file "src/SharePlace.js"
+        - Create a new Class named "PlaceFinder"
+            - Inside, create a Constructor Method
+
+
+    - Inside the Class "PlaceFinder" Constructor Method
+        - Create a local constant named "addressForm"
+            - Assign "document.querySelector("form")" as value
+
+        - Create a local constant named "locateUserBtn"
+            - Assign "document.getElementById("locate-btn") as value
+
+        - Access the local constant "addressForm" then
+            - Chain the method ".addEventListner()"
+
+            - Pass the following argument values
+                - 1st = "submit"
+                - 2nd = "this.findAddressHandler"
+        
+        - Access the local constant "locateUserBtn" then
+            - Chain the method ".addEventListner()"
+            
+            - Pass the following argument values
+                - 1st = "click"
+                - 2nd = "this.locateUserHandler"
+
+    
+    - Outside the Class "PlaceFinder" Constructor Method
+        - Create an empty Method named "locateUserHandler"            
+        - Create an empty Method named "findAddressHandler"
+
+        - NOTE: BOTH of these methods works as Event Handlers
+    
+    
+    - Save the changes
