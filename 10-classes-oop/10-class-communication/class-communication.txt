@@ -5,7 +5,7 @@ Communication Can Be Challenging
 
     - The HTML markup stored as value in the Class "ShoppingCart" property "outputTotal"
         - Replaced w/ an updated HTML markup
-        - EVERYTIME the Class "ProductItem" method "addToCart()" is called
+        - EVERY TIME the Class "ProductItem" method "addToCart()" is called
 
 
 - On the practice project (assets/scripts/app.js)
@@ -14,7 +14,7 @@ Communication Can Be Challenging
             - Located above its sibling Class method "render()"
         
         - Define a parameter variable named "product"
-            - NOTE: Parameber variable holds the "ProductItem" object added to the cart 
+            - NOTE: Parameter variable holds the "ProductItem" object added to the cart 
     
 
     - Inside the Class method "addProduct()"
@@ -37,7 +37,7 @@ Communication Can Be Challenging
             - NOTE: The Class property "outputTotal" now contains the HTML markup & 
                 - The "sum" of "ProductItem" objects' prices
 
-        - IMPORANT: JavaScript allows the creation of a Class property 
+        - IMPORTANT: JavaScript allows the creation of a Class property 
             - Anywhere w/in a Class
             - It does NOT have to be done inside the Constructor method
 
@@ -55,12 +55,12 @@ Communication Can Be Challenging
         - Change the embedded string template literal "${0}" to "${1}"
 
         - NOTE: The logic for the dynamic update of the string template literal
-            - Will be implemented in the succeeeding lessons
+            - Will be implemented in the succeeding lessons
 
 
     - As mentioned, the intention of the implementation is to 
         - Update the assigned HTML markup in the Class "ShoppingCart" property "outputTotal"
-        - EVERYTIME the Class "ProductItem" method "addToCart()" is called
+        - EVERY TIME the Class "ProductItem" method "addToCart()" is called
 
 
     - Based on the codebase' current state
@@ -79,6 +79,6 @@ Communication Can Be Challenging
                 ShoppingCart.addProduct(this.product);
 
 
-    - Save the chanages
+    - Save the changes
         - Load / reload the browser
         - There are NO changes in the behavior of the web app

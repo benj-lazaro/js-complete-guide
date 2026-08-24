@@ -139,9 +139,9 @@ Implementing Inheritance
         - Triggered by the Base Class "Component" Constructor method
 
         - JavaScript does NOT know the current value of the 
-            - Constructor method's parametervariable "hookId"
+            - Constructor method's parameter variable "hookId"
 
-        - IMPORANT: Two (2) rules regarding Constructor method
+        - IMPORTANT: Two (2) rules regarding Constructor method
             - If a Sub-Class does NOT have its own Constructor method
                 - The Base Class' Constructor method will be called
 

@@ -3,7 +3,7 @@ Using & Connecting Multiple Classes
 - A Class can also create an object that contains logic that 
     - Can be split into multiple Classes & have them communicate in some clever way
 
-    - NOTE: The order of the Clases w/in the codebase does NOT MATTER
+    - NOTE: The order of the Classes w/in the codebase does NOT MATTER
         - JavaScript parses through the codebase PRIOR to execution
 
     - IMPORTANT: A Class must be DEFINED FIRST
@@ -41,7 +41,7 @@ Using & Connecting Multiple Classes
 
     - Chain the method name to the (global or local) constant
         - Followed by a pair of "( )" where argument value(s) is/are passed
-        - Termiante the statement w/ a ";"
+        - Terminate the statement w/ a ";"
     
     Example:
     const <object_name> = new <class_name>();
@@ -67,7 +67,7 @@ Using & Connecting Multiple Classes
         - Paste the "Product" objects as array elements to the Class field "products"
 
         - Create a Constructor method
-            - Leave it empty as the Class field "products" has already been initialiazed
+            - Leave it empty as the Class field "products" has already been initialized
 
 
     - Back on the global constant "prodList"
@@ -90,7 +90,7 @@ Using & Connecting Multiple Classes
         - Call the method "render()" of the Class "ProductList"
 
     
-    - Save the chanages
+    - Save the changes
         - Load / reload the browser
         - The behavior of the web app remains unchanged
 
@@ -149,6 +149,6 @@ Using & Connecting Multiple Classes
         - Store the returned Element node "li" in the local constant "prodEl"
 
         
-    - Save the chanages
+    - Save the changes
         - Load / reload the browser
         - The behavior of the web app remains unchanged

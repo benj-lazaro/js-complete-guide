@@ -3,7 +3,7 @@ Getting Started With OOP
 - To build a simple online dummy web app that has the following components
     - A list of products that contains the following attributes
         - A product name
-        - Thes price
+        - The price
         - An image
         - A short description
 
@@ -16,7 +16,7 @@ Getting Started With OOP
 
 - First, implement the web app using Object literal notation
     - To showcase the problem (limitation) of using this approach
-        - The need for a resuable "blueprint" for creating an object
+        - The need for a reusable "blueprint" for creating an object
 
     - The Object literal notation is best for
         - Creating an object "on-the-fly"

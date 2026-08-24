@@ -4,7 +4,7 @@ Working With Constructor Methods
     - Creates Class-based objects that have different data but retain the same structure
 
     - Different data are passed as arguments to the Constructor method that are
-        - Then assigned as initial values to correponding Class properties
+        - Then assigned as initial values to corresponding Class properties
 
     - IMPORTANT: A Class field inside a Constructor method is referred as a Class property
 
@@ -76,6 +76,6 @@ Working With Constructor Methods
         - Pass the previous object's value as arguments for the Constructor method
 
 
-    - Save the chanages
+    - Save the changes
         - Load / reload the browser
         - The behavior of the web app remains unchanged

@@ -15,7 +15,7 @@ Quiz 18: Classes
 
 - Which of the following statements about inheritance is correct?
     - Answer: super() NEEDS to be called before you use "this" in the
-        - Inherting Class (i.e. sub-Class)
+        - Inheriting Class (i.e. sub-Class)
 
 
 - What would be a good use-case for a private property?

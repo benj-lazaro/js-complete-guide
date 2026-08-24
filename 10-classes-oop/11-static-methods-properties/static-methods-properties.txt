@@ -34,7 +34,7 @@ Static Methods & Properties
     
     - At the bottom of the codebase
         - Cut the two (2) lines of code
-            - Instantation of the Class "Shop"
+            - Instantiation of the Class "Shop"
             - Calling its method "render()"
 
         - Replace it w/ a call to the Class "App" Static method "init()"

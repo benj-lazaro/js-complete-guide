@@ -3,7 +3,7 @@ Introducing Inheritance
 - The concept of Inheritance
     - To conveniently share code amongst Classes of an app
 
-    - It is implmented by first creating a Base Class that
+    - It is implemented by first creating a Base Class that
         - Contain properties & methods that are needed by other Classes
 
     - Then extend the Base Class into specialized Sub-Class(es)

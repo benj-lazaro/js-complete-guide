@@ -20,8 +20,8 @@ Wrap Up
 
 - Use inheritance to share common functionalities w/ other Classes
     - Allows to split code into reasonable units where
-        - Classes & objects are the uints that holds logic & data
+        - Classes & objects are the units that holds logic & data
         - Build an app from these units
 
-    - Helps structure code in a clearner, easier to understand way
+    - Helps structure code in a clearer, easier to understand way
 

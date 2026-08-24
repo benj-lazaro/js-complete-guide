@@ -45,7 +45,7 @@ Binding Class Methods & Working With "this"
             - NOTE: The keyword "this" refers to the Class "ProductItem"
 
 
-    - Save the chanages
+    - Save the changes
         - Load / reload the browser
         
         - Launch the browser's JavaScript console
@@ -95,7 +95,7 @@ Binding Class Methods & Working With "this"
             - Pass the keyword "this" as argument
 
 
-    - Save the chanages
+    - Save the changes
         - Load / reload the browser
 
         - Launch the browser's JavaScript console

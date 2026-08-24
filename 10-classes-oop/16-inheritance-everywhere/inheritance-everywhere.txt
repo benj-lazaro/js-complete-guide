@@ -16,7 +16,7 @@ Using Inheritance Everywhere
                 - Assigning of the value "product-item"
 
             - Leave the line of code where property ".innerHTML"
-                - Chained to the loacl constant "prodEl" behind
+                - Chained to the local constant "prodEl" behind
 
         - Replace those lines w/ a call 
             - To the Base Class "Component" method "createRootElement()"
@@ -61,7 +61,7 @@ Using Inheritance Everywhere
             - Pass the parameter variable "renderHookId" as argument
 
         - NOTE: Remember Base Class properties is REQUIRED to come FIRST 
-            - BEFORE any of the Sub-Class propertie
+            - BEFORE any of the Sub-Class properties
 
 
     - On the Class "ProductList"

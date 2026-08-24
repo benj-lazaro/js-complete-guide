@@ -109,7 +109,7 @@ Getters & Setters
             - NOTE: The Setter is treated like a Class property
             
 
-    - Save the chanages
+    - Save the changes
         - Load / reload the browser
 
         - Clicking the "Add to Cart" button of a product item

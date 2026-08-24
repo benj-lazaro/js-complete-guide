@@ -1,7 +1,7 @@
 Understanding Object Descriptors
 --------------------------------
 - Object descriptors allows to make an object's properties
-    - To be unwritable, undeletable, unconfigurable or 
+    - To be un-writable, undeletable, un-configurable or 
         - Excluded from a "for..in" loop
 
     - Every property of an object has a descriptor
@@ -28,7 +28,7 @@ Understanding Object Descriptors
 
     - Use case:
         - Lock down an object's property
-        - Make a property undeletable or unwritable
+        - Make a property undeletable or un-writable
 
 
 - To set an object's (property) descriptors

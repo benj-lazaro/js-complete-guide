@@ -24,7 +24,7 @@ Defining & Using A First Class
 
     - Inside the pair of "{ }"
         - Define the Class field name (i.e. property)
-            - Followed by a "=" operatpr
+            - Followed by a "=" operator
             - Then a default value
             - Terminate each field name w/ a ";"
 
@@ -43,7 +43,7 @@ Defining & Using A First Class
     - Use the keyword "new" followed by the Class name w/ a pair of "( )" 
         - The statement is terminated w/ a ";"
     
-    - JavaScript IMPLICTLY returns a Class-based object 
+    - JavaScript IMPLICITLY returns a Class-based object 
 
     - Often the object is assigned to a (global or local) constant as value
 
@@ -69,7 +69,7 @@ Defining & Using A First Class
         - Pass the implicitly returned object as argument to "console.log()"
 
     
-    - Save the chanages
+    - Save the changes
         - Load / reload the browser
         - Launch the browser's JavaScript console
 

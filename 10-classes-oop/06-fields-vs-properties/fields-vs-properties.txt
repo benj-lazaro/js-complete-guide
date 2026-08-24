@@ -38,7 +38,7 @@ Fields VS Properties
 - The difference between Class field & Class property is simply theoretical
     - A Class field becomes a Class property 
         - When the Constructor method of a Class is called (triggered)
-        - During the instantiaion of a Class into a Class-based object
+        - During the instantiation of a Class into a Class-based object
 
 
 - On the practice project (assets/scripts/app.js)
@@ -49,6 +49,6 @@ Fields VS Properties
             - The Constructor method of the Class
 
 
-    - Save the chanages
+    - Save the changes
         - Load / reload the browser
         - The behavior of the web app remains unchanged

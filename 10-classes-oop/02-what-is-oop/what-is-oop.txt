@@ -19,5 +19,5 @@ What Is Object-Oriented Programming (OOP)
 
     - A "ShoppingCart" object
         - Contain methods that
-            - Renders the products added & the total amout
+            - Renders the products added & the total amount
             - Allows a user to place on order (i.e. server communication logic)

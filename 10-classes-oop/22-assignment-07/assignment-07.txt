@@ -3,10 +3,10 @@ Assignment 07: Time To Practice Classes & OOP
 - Task #1:
     - Create a "Course" Class that has 3 properties
         - Namely "title", "length" & "price"
-        - All set up w/in the Constructur method
+        - All set up w/in the Constructor method
     
     - Instantiate the Class twice w/
-        - Two (2) dummary courses of your choice
+        - Two (2) summary courses of your choice
         - Output the objects to the console
 
 

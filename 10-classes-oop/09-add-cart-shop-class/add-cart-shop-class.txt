@@ -34,7 +34,7 @@ Adding A Cart & Shop Class
             - Assign the following HTML markup
 
             - An HTML element <h2> w/ the content "Total: \$${0}"
-                - NOTE: The "${0}" serve as a tenative placeholder for the total amount
+                - NOTE: The "${0}" serve as a tentative placeholder for the total amount
 
             - A sibling HTML element <button> w/ the content "Order Now!"
 
@@ -108,7 +108,7 @@ Adding A Cart & Shop Class
             - To render the "ShoppingCart" & "ProductList" objects in the DOM
 
 
-    - Save the chanages
+    - Save the changes
         - Load / reload the browser
 
         - Launch the browser's JavaScript console

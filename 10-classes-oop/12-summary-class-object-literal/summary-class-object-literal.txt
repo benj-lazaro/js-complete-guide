@@ -5,7 +5,7 @@ First Summary & Class VS Object Literal
     - Serving as a "glue" (or communication interface) between Classes
 
 
-- Instantiang a Class to an object is identical to
+- Instantiating a Class to an object is identical to
     - Using the Object literal notation
     - BOTH approaches yield an object 
 

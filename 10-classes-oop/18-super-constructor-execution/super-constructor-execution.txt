@@ -63,7 +63,7 @@ super() Constructor Execution, Order & "this"
     
     - On the Base Class "Component" Constructor method
         - Define a 2nd parameter variable named "shouldRender"
-            - Assign a defult value of "true"
+            - Assign a default value of "true"
 
         - BEFORE the call to a Sub-Class' method "render()"
             - Check if the parameter variable "shouldRender" is truthy
@@ -74,9 +74,9 @@ super() Constructor Execution, Order & "this"
             - Otherwise, do NOTHING
 
 
-    - On the Subl-Class "ProductItem" Constructor method
+    - On the Sub-Class "ProductItem" Constructor method
         - On the keyword "super()"
-            - Pass "false" as 2nd arguemnt value
+            - Pass "false" as 2nd argument value
 
             - NOTE: This prevent the Class method "render()" from 
                 - Being executed by the Base Class' Constructor method
