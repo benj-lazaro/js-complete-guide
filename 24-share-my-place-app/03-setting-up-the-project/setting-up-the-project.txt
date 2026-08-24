@@ -7,7 +7,7 @@ Setting Up The Project
         - To launch the browser
         - Load the starter project
 
-    - PERSONAL NOTE: Check if the ".gitignore" file excludes the "dist/" diretory
+    - PERSONAL NOTE: Check if the ".gitignore" file excludes the "dist/" directory
         - If it does, disable it by place a "#" prefix to comment it out
 
 
