@@ -17,7 +17,7 @@ Determine Required Support
             - User: Internal tooling / app
                 - ALL companies have their own internal systems
                 - Internal company browser might be clearly defined (as part of its policy)
-                - Support for other browers NOT required
+                - Support for other browsers NOT required
 
             - User: Tech-savvy
                 - Use cutting-edge, updated browsers & versions
