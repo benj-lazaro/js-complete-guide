@@ -13,7 +13,7 @@ First Project Steps & Planning
         - Display "Tool Tips"
             - When a project item's button "More Info" is clicked
 
-    - The app alreasy comes w/ a HTML document that
+    - The app already comes w/ a HTML document that
         - Contains content
 
         - Depicts content retrieved from a remote (backend) server

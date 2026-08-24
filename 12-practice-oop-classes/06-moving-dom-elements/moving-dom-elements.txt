@@ -1,31 +1,31 @@
 Moving DOM Elements
 -------------------
 - Implement the logic on the Class "ProjectList" method "addProject()"
-    - Moves a "ProjecItem" object's DOM element to
+    - Moves a "ProjectItem" object's DOM element to
         - The neighboring DOM element of a "ProjectList" instance 
 
 
 - On the practice project (assets/scripts/app.js)
-    - On the Class "ProjecList" method "addProject()"
+    - On the Class "ProjectList" method "addProject()"
         - Add a parameter variable named "project"
 
         - NOTE: Holds a "ProjectItem" object that is currently read
                     
 
-    - Inside the Class "ProjecList" method "addProject()"
-        - Access the Class "ProjecList" field "projects"
+    - Inside the Class "ProjectList" method "addProject()"
+        - Access the Class "ProjectList" field "projects"
             - Chain the method ".push()"
             - Pass the parameter variable "project" as argument value
 
-        - NOTE: Pushes the "ProjecItem" object read to the Class field "projects" of
+        - NOTE: Pushes the "ProjectItem" object read to the Class field "projects" of
             - The other (neighboring) Class "ProjectList" instanced
             - Stored in the local constants "finishedProjectsList" or "activeProjectsList"
             - Located w/in the Class "App"
 
 
     - Create a new Class named "DOMHelper"
-        - This Class will be responsible for moving the Class "ProjecItem" object's
-            - DOM elements to the other Class "ProjecList" instance DOM element
+        - This Class will be responsible for moving the Class "ProjectItem" object's
+            - DOM elements to the other Class "ProjectList" instance DOM element
 
         - Create a Static method named "moveElement"
             - Define two (2) parameter variables
@@ -39,7 +39,7 @@ Moving DOM Elements
             - Pass the parameter variable "elementId" as argument value
 
             - NOTE: Fetch & store the corresponding Element node "li" of 
-                - A "ProjecItem" object identified by its property "id"
+                - A "ProjectItem" object identified by its property "id"
 
         - Create another local constant named "destinationElement"
             - Assign the method "document.querySelector()" as value
@@ -48,7 +48,7 @@ Moving DOM Elements
             - NOTE: Fetch & store the Element node "ul" where
                 - Element node "li" of a "ProjectItem" object will switch to
 
-        - Acecss the local constant "destinationElement"
+        - Access the local constant "destinationElement"
             - Chain the method ".append()"
             - Pass the local constant "element" as argument value
 
@@ -76,21 +76,21 @@ Moving DOM Elements
                 - 1st = null
                 - 2nd = "this.id"
 
-        - NOTE: Attaches the "ProjecItem" object's property "id" to the callback function
+        - NOTE: Attaches the "ProjectItem" object's property "id" to the callback function
             - Stored in the Class property "updateProjectListsHandler"
 
 
     - On the Class "ProjectList" method "addProject()"
         - Access the parameter variable "project"
             - Chain the Class "ProjectItem" method ".update()"
-            - Pass the following arugment values
+            - Pass the following argument values
                 - 1st = "this.switchProject.bind(this)"
                 - 2nd = "this.type"
 
         - NOTE: The Class "ProjectItem" method "update" will be implemented next
 
     
-    - On the Class "ProjecItem"
+    - On the Class "ProjectItem"
         - Create a new Class method named "update"
             - Define two (2) parameter variables
                 - 1st = "updateProjectListsFn"
@@ -102,7 +102,7 @@ Moving DOM Elements
         - NOTE: Updates the switch handler of a "ProjectItem" object
 
 
-    - On the Class "ProjecItem" method "update()"
+    - On the Class "ProjectItem" method "update()"
         - Create a Class property named "updateProjectListsHandler"
             - Assign the parameter variable "updateProjectListsFn" as value
 
@@ -124,13 +124,13 @@ Moving DOM Elements
             - Chain the method ".cloneNode()"
             - Pass the boolean value "true" as argument value
 
-            - NOTE: Creates a deep clone of a "ProjecItem" object's DOM elements
+            - NOTE: Creates a deep clone of a "ProjectItem" object's DOM elements
 
         - Access the parameter variable "element"
             - Chain the method ".replaceWith()"
             - Pass the local constant "clonedElement" as argument value
 
-            - NOTE: Replaces the original "ProjecItem" object's DOM elements w/
+            - NOTE: Replaces the original "ProjectItem" object's DOM elements w/
                 - A brand-new clone of itself & effectively ditches previously
                 - Attached Event Listener on the original DOM elements
 
@@ -166,27 +166,27 @@ Moving DOM Elements
                     - Assign the value "Activate"
 
             - NOTE: This updates the "ProjectItem" object's button text
-                - From "Finisned" to "Activate" & vice-versa
+                - From "Finished" to "Activate" & vice-versa
 
 
-    - On the Class "ProjecItem" Constructor method
+    - On the Class "ProjectItem" Constructor method
         - Add a 3rd parameter variable named "type"
 
         - On the declaration of the Class method "connectSwitchButton()"
             - Pass the parameter variable "type" as argument value
 
 
-    - On the Class "ProjectList" Consutructor method
-        - On the instantiation of the Class "ProjecItem"
-            - Pass the Class properyt "type" as the 3rd argument value
+    - On the Class "ProjectList" Constructor method
+        - On the instantiation of the Class "ProjectItem"
+            - Pass the Class property "type" as the 3rd argument value
 
 
     - Save the changes
         - Load / reload the browser
 
         - Clicking a "ProjectItem" objects button (i.e. Finish or Activate)
-            - Moves the "ProjecItem" object to 
+            - Moves the "ProjectItem" object to 
                 - The corresponding project list (Active or Finished)
-                - Without generating errors on the brower's JavaScript console
+                - Without generating errors on the browser's JavaScript console
 
-            - Updates the text content of the "ProjecItem" button accordingly
+            - Updates the text content of the "ProjectItem" button accordingly

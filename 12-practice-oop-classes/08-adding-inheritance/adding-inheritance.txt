@@ -13,7 +13,7 @@ Adding Inheritance
         - Cut the Class methods "attach()" & "detach()"
 
 
-    - On the Base Clsss "Component"
+    - On the Base Class "Component"
         - Paste the methods "attach()" & "detach()"
 
     

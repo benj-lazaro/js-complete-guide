@@ -109,7 +109,7 @@ Starting With The "Switch Project" Logic
 
             - NOTE: This refers to the "ProjectItem" buttons "Finish" & "Activate"
 
-        - Attach an Event listner to the local constant "switchBtn"
+        - Attach an Event listener to the local constant "switchBtn"
             - Using the method ".addEventListener()"
 
             - Pass the Event "click" as the 1st argument value
@@ -167,7 +167,7 @@ Starting With The "Switch Project" Logic
                     - Stores the Element node "li" read 
 
                 - Compares the Element node property "id" w/ 
-                    - The parameter varaible "projectId"
+                    - The parameter variable "projectId"
 
                 - If STRICTLY EQUAL
                     - Assign the returned index value to the local constant "projectIndex"
@@ -194,7 +194,7 @@ Starting With The "Switch Project" Logic
                     - Stores the Element node "li" read 
 
                 - Compares the Element node property "id" w/ 
-                    - The parameter varaible "projectId"
+                    - The parameter variable "projectId"
 
                 - If NOT STRICTLY EQUAL
                     - Assign the returned index value to the local constant "projectIndex"
