@@ -8,7 +8,7 @@ Debugging Code Directly Inside VS Code
         - Published by Microsoft
 
     - It comes with a bundled JavaScript debugger
-        - Offers same features & functionaly
+        - Offers same features & functionally
 
     - Setting of a breakpoint & watchers 
         - Are pretty much the same as the Chrome Dev Tools

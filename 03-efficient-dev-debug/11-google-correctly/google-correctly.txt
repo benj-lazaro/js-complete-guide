@@ -7,4 +7,4 @@ How To Google Correctly
         - An idea, feature or function works
 
     - Returned search entries
-        - Stackoverflow is helpful, most of the times
+        - StackOverflow is helpful, most of the times

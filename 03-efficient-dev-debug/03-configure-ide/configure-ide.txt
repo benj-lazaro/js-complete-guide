@@ -11,7 +11,7 @@ Configuring the IDE: Look & Feel
         - Alternative: Material Icon Theme (3rd-party)
 
     - Apperance
-        - View -> Apperance -> Activity Bar Position
+        - View -> Appearance -> Activity Bar Position
         - Choose "Hidden" (author's preference)
 
     - NOTE: These configuration settings are OPTIONAL

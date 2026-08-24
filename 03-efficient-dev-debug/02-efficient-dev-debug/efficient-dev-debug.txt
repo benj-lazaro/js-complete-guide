@@ -1,4 +1,4 @@
-Efficident Development & Debugging: An Overview
+Efficient Development & Debugging: An Overview
 -----------------------------------------------
 - How to write code efficiently
     - NOT writing code as quickly as possible

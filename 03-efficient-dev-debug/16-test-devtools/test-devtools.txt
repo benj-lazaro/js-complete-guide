@@ -4,7 +4,7 @@ Testing Code Changes Directly In The Devtools
 
 
 - The tab "Sources"
-    - Allows to implement tenative changes in the code directly
+    - Allows to implement tentative changes in the code directly
 
     - To save changes
         - Keyboard shortcut = CTRL + s

@@ -12,7 +12,7 @@ Debugging JavaScript: An Overview
 
 
 - To address an error through debugging 
-    - Read & utiltiize the error message
+    - Read & utilize the error message
         - An error message is (often) clearly stated
         - If the error message NOT clear or easily understood, Google it
 

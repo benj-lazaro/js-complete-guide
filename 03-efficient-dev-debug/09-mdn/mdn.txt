@@ -8,7 +8,7 @@ Finding Help & Working With MDN
 
     - Other online source for help
         - Google (https://www.google.com)
-        - stacloverflow (https://stackoverflow.com/questions)
+        - StackOverflow (https://stackoverflow.com/questions)
 
 
 - To properly find help
