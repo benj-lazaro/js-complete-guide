@@ -6,7 +6,7 @@ Improvement: Automatically Detect & Polyfill
 
     - Manually managing feature detection, transpiled code & polyfills
         - On a large-scale project to ensure that the generated code
-        - Runs on older browsers can be cubersome
+        - Runs on older browsers can be cumbersome
 
 
 - Babel (under the hood) relies on a 3rd-party package named "core-js"
@@ -125,6 +125,6 @@ Improvement: Automatically Detect & Polyfill
         - The file size of "app.js" reports a size of "1.2k"
 
 
-    - PERSONAL NOTE: There is NO noticable indicated on the generated code that
+    - PERSONAL NOTE: There is NO noticeable indicated on the generated code that
         - The polyfill has been applied unlike the older Babel version used
         - Unfortunately, the lecture has NOT been updated since 2019

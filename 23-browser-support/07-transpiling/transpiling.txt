@@ -30,7 +30,7 @@ Solution: Transpiling Code
 - Add "babel-loader" w/in the Webpack configuration files (webpack.config.js & webpack.config.prod.js)
     - Webpack Loaders Documentation (https://webpack.js.org/loaders/babel-loader/#install)
 
-    - Placed the configuration setings w/in the "module.exports"
+    - Placed the configuration settings w/in the "module.exports"
 
         module: {
             rules: [
@@ -51,7 +51,7 @@ Solution: Transpiling Code
         },
 
     - The "rules" property contains a JavaScript object
-        - The "test" property indentifies files that will be translated by Babel
+        - The "test" property identifies files that will be translated by Babel
             - The assigned value of "/\.(?:js|mjs|cjs)$/"
             - Searches for files w/ the extension of ".js", ".mjs" or ".cjs"
  
@@ -61,10 +61,10 @@ Solution: Transpiling Code
 
     - The "use" property contains a JavaScript object
         - The "loader" property assigns the package that 
-            - Handles the loading the indentified files to be translated by Babel
+            - Handles the loading the identified files to be translated by Babel
 
         - The "preset" property assigns the ruleset 
-            - To be applied in the translation of indentified files
+            - To be applied in the translation of identified files
 
     
 - To inform Babel w/ older browsers to support

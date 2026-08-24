@@ -26,7 +26,7 @@ Solution: Feature Detection & Fallback Code
             - Pass "navigation" as argument value
             - NOTE: Return an "undefined" (falsy) value is NOT supported
 
-        - Inside the truty "if" clause
+        - Inside the truthy "if" clause
             - Access method "navigation.clipboard.writeText()"
                 - Pass "text" as argument value
 
