@@ -57,7 +57,7 @@ Working With Default Exports
             - Import the named export item "doSomething" w/in the pair of " {}"
 
         - On the Class definition of "Tooltip"
-            - Change the referece to "Component" after the "extends" to "Cmp"e
+            - Change the reference to "Component" after the "extends" to "Cmp"e
         
         - Save the changes
 

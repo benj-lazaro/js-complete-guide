@@ -5,7 +5,7 @@ Splitting Code In A Sub-Optimal Way
 
     - Working w/ the Project Planner app taken from Section 14 (Working With Events)
         - Entire application logic is placed on a single file (app.js)
-        - Finding stuff & mainting the codebase is NOT easy
+        - Finding stuff & maintaining the codebase is NOT easy
 
     - Splitting the codebase where
         - Each Class is stored on its own separate file

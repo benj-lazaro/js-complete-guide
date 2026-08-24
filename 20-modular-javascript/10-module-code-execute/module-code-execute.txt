@@ -2,9 +2,9 @@ When Does Module Code Execute
 -----------------------------
 - The behavior of a code w/in a module file that is NOT a Class
     - It runs ONLY ONCE when
-        - The correponding module file is loaded AND used for the 1st time
+        - The corresponding module file is loaded AND used for the 1st time
 
-    - Succedding imports of the same module
+    - Succeeding imports of the same module
         - The code will NOT run again
 
 

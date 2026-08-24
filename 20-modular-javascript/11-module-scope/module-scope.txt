@@ -33,7 +33,7 @@ Module Scope & globalThis
 
 - On the practice code
     - Open the file "app.js"
-        - At the top-level of the module, define a costant named DEFAULT_VALUE"
+        - At the top-level of the module, define a constant named DEFAULT_VALUE"
             - Assign the value of "MAX"
 
         - To share data stored in the constant "DEFAULT_VALUE"

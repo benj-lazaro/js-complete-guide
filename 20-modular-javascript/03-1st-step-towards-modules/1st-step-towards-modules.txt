@@ -22,7 +22,7 @@ First Step Towards JavaScript Modules
 - To switch to using JavaScript modules
     - On the app's starting "root" script (app.js)
         - Add the HTML attribute "type"
-        - Asisgn the value of "module"
+        - Assign the value of "module"
 
     - This informs the browser that the "app.hs" & ALL JavaScript files
         - Referenced by "app.js" will be using JavaScript modules

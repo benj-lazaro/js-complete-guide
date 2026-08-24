@@ -26,7 +26,7 @@ We Need A Development Server
 
 
 - To install & run the JavaScript package "serve"
-    - Launch VS Code's integratd terminal
+    - Launch VS Code's integrated terminal
 
         npm install -g serve
 

@@ -24,7 +24,7 @@ More Named Export Syntax Variations
     - IMPORTANT: The alias name will ONLY be relevant w/in the same file
 
     - Common use-case
-        - Name clash (confilcit) between a local constant & of the exported named item
+        - Name clash (conflict) between a local constant & of the exported named item
 
 
 - On the practice project
@@ -39,7 +39,7 @@ More Named Export Syntax Variations
     - On the file "assets/scripts/App/ProjectList.js"
         - Refactor the "import" statement 
             - Include the two (2) exported functions w/in the pair of "{ }"
-            - Remove the Class "DOMHelper" from the pari of "{ }"
+            - Remove the Class "DOMHelper" from the part of "{ }"
 
         - Inside the method "connectDroppable()
             - Refactor the call to the method "DOMHelper.moveElement"
