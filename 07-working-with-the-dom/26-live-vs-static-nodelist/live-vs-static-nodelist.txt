@@ -8,7 +8,7 @@ Live Node List VS Static Node List
 
     - This may lead to higher memory consumption
         - When managing a lot of "HTMLCollection"
-        - Although this incident would be a niche occurence
+        - Although this incident would be a niche occurrence
 
     - The following methods return a live "HTMLCollection"
         - ".getElementsByTagName()"
