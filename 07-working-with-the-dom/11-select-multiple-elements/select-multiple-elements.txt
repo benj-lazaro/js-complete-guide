@@ -16,7 +16,7 @@ Selecting Multiple Elements Summary
     
 
 - The "document" object method ".getElementsByTagName()"
-    - Accepts an Element node's tagname as argument value
+    - Accepts an Element node's tag name as argument value
         - Returns a collection of Element nodes stored in a live "HTMLCollection"
 
     - To access elements of a "HTMLCollection"
@@ -42,7 +42,7 @@ Selecting Multiple Elements Summary
     - Use the "document" object method ".querySelectorAll()"
         - Pass the Element node name "li" as argument value
         - To select ALL <li> Element nodes from the DOM
-        - Store the returned "NostList" to a constant named "listItemElements"
+        - Store the returned "NodeList" to a constant named "listItemElements"
 
     - Use "for..of" loop
         - Iterate through each element on the "NodeList"

@@ -21,7 +21,7 @@ Rendering Movie Items On The Screen
         
         - Implement an Inline CSS using 
             - The property "style.display" to "none" if NOT empty
-            - Otheriwise, "style.display" to "block"
+            - Otherwise, "style.display" to "block"
 
     - Create an Arrow function stored in a constant named "renderNewMovieElement"
         - Defines the following parameter variables

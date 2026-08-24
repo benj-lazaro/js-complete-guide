@@ -1,6 +1,6 @@
 Styling DOM Elements
 --------------------
-- Exploring ways to manipulate & chaning the styles of Element nodes
+- Exploring ways to manipulate & chaining the styles of Element nodes
 
 - Using the READ-ONLY property ".style"
     - Directly targets individual CSS style properties applied to that Element node

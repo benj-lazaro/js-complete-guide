@@ -1,7 +1,7 @@
 Traversing The DOM: Overview
 ----------------------------
 - Traversing the DOM is a concept that meant 
-    - Once an Element node is selcted
+    - Once an Element node is selected
         - It provides the ability to dive into ALL of its child, parent or sibling Element nodes
             - To add, remove or manipulate
             - Rather than manually selecting every (child, parent or sibling) Element nodes
@@ -70,21 +70,21 @@ Traversing The DOM: Overview
 
         - ".previousElementSibling"
             - Selects the previous direct sibling Element node
-            - Refers to the sibling Element onde that IMMEDIATELY PRECEDES the current selected Element node
+            - Refers to the sibling Element one that IMMEDIATELY PRECEDES the current selected Element node
             - NOTE: Returns "null" if the sibling node is the 1st child in a list
             - NOTE: This is a READ-ONLY property 
             - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/previousElementSibling)
 
         - ".nextSibling"
             - Selects the next direct sibling node (including non-Element nodes)
-            - Refers to the sibling node that IMMEDIATELY SUCEEDS the current selected Element node
+            - Refers to the sibling node that IMMEDIATELY SUCCEEDS the current selected Element node
             - NOTE: Returns "null" if the sibling node is the last child in a list
             - NOTE: This is a READ-ONLY property
             - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Node/nextSibling)
 
         - ".nextElementSibling"
             - Selects the next direct sibling Element node
-            - Refers to the sibling Element onde that IMMEDIATELY SUCEEDS the current selected Element node
+            - Refers to the sibling Element one that IMMEDIATELY SUCCEEDS the current selected Element node
             - NOTE: Returns "null" if the sibling node is the last child in a list
             - NOTE: This is a READ-ONLY property 
             - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Element/nextElementSibling)

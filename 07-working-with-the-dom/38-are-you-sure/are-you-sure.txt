@@ -13,7 +13,7 @@ Showing & Hiding The "Are You Sure" Dialog
     - Just above the Arrow function "deleteMovieHandler()"
         - Create a new Arrow function
             - Stored in a global constant named "deleteMovie"
-            - Define a parameter variable named "movideId"
+            - Define a parameter variable named "movieId"
 
         - Move the entire codebase of "deleteMovieHandler()"
             - Into the Arrow function "deleteMovie()"
@@ -86,5 +86,5 @@ Showing & Hiding The "Are You Sure" Dialog
             - Renders the deletion confirmation modal 
 
         - Click the backdrop
-            - Closes the deleteion confirmation modal
+            - Closes the deletion confirmation modal
 

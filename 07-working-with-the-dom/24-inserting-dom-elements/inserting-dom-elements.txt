@@ -6,7 +6,7 @@ Inserting DOM Elements
 
 
 - The method ".append()"
-    - Appends mutiple child Element or Text nodes
+    - Appends multiple child Element or Text nodes
         - AFTER the last child of the selected parent Element node
         - Each argument value is separated by a ","
 
@@ -112,13 +112,13 @@ Inserting DOM Elements
         - Assign the value of "Item 4"        
         
     - Select the 2nd HTML element <li> of the parent Element node "list"
-        - Use the property ".chidren" w/ the index value of 2
+        - Use the property ".children" w/ the index value of 2
         - Store the returned Element node to a constant named "secondLi"
 
     - Append the Element node "brandnewLi" as a child node of the parent Element node "list"
         - Right AFTER the 2nd child Element node
         - Use the method ".insertAdjacentElement()"
-        - Pass the following argumetn values
+        - Pass the following argument values
             - 1st = "afterend"
             - 2nd = brandnewLi
 

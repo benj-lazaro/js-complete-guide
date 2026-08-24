@@ -2,7 +2,7 @@ Selecting Sibling Elements
 --------------------------
 - Traversing sibling elements of a selected Element node
     - The property ".previousElementSibling"
-        - Returns the preceeding sibling Element node
+        - Returns the preceding sibling Element node
 
     - The property ".previousSibling"
         - Returns the proceeding sibling node w/c includes the Text node
@@ -22,10 +22,10 @@ Selecting Sibling Elements
         - Store the returned Element node in a constant named "ul"
 
         - Use the property ".previousElementSibling"
-            - To return the nearest preceeding Element node "header"
+            - To return the nearest preceding Element node "header"
 
         - Using the property ".previousSibling"
-            - To return the nearest preceeding Text node
+            - To return the nearest preceding Text node
 
     - To select the next sibling
         - Use the property ".nextElementSibling"

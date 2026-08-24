@@ -34,7 +34,7 @@ Traversing Child Nodes
 
     - Use the "document" object method ".querySelector()" to 
         - Select the parent HTML element <ul>
-        - Store the retured Element node in a constant name "ul"
+        - Store the returned Element node in a constant name "ul"
 
     - To access the 2nd child Element node
         - Use the property ".children" on the Element node stored in the constant "ul"

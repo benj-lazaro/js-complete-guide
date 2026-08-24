@@ -21,7 +21,7 @@ Using parentNode & parentElement
 
 - To access a child node's nearest descendant
     - Use the method ".querySelector()"
-        - Pass the target CSS selecto as argument value
+        - Pass the target CSS selector as argument value
             - To pick the nearest descendant Element node
 
             

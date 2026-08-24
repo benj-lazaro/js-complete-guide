@@ -18,7 +18,7 @@ Finish The App
         - Click a different movie item to delete
             - Then click the "Yes" button
 
-        - Returns the following error on the brower's JavaScript console
+        - Returns the following error on the browser's JavaScript console
             
             "Uncaught TypeError: Cannot read property "remove" of undefined at deleteMovieHandler"
 

@@ -13,8 +13,8 @@ DOM Traversal VS Query Methods
     - CONS
         - The code can be a bit hard to read
             - It is NOT immediately obvious to the one reading the code
-            - Particularly if the name of the contant is chosen poorly
-            - Requires reading the HTML code to understand what is actuallly going on
+            - Particularly if the name of the constant is chosen poorly
+            - Requires reading the HTML code to understand what is actually going on
 
         - Web app may introduce unexpected behavior or unexpectedly break
             - When its HTML code is refactored
@@ -22,7 +22,7 @@ DOM Traversal VS Query Methods
 
         - Deeply nested traversal logic
             - Will NOT yield better performance
-            - Likely be worse then using Query methods   - e.g. unoredered list
+            - Likely be worse then using Query methods   - e.g. unordered list
 
     - Use case:
         - When relations between DOM nodes (being traversed) remains the same

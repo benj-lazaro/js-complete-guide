@@ -6,7 +6,7 @@ Setting Up The Practice Project
         - Image
         - Personal ratings
 
-    - Render a list of favorate movies
+    - Render a list of favorite movies
 
     - Clicking an entry
         - View movie details

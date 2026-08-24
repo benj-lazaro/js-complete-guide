@@ -33,7 +33,7 @@ Starting With The Confirmation Logic
 
     - Rename the original "deleteMovieHandler()" to "startDeleteMovieHandler()"
 
-    - On the Arrow fuction "renderNewMovieElement()"
+    - On the Arrow function "renderNewMovieElement()"
         - Rename the callback function for the Element node "newMovieElement"
 
     - Save the changes

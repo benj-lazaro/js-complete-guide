@@ -14,7 +14,7 @@ Understanding The DOM
 
     - Two (2) commonly used Nodes in the DOM
         - Element Node  = HTML element
-        - Text Node     = Content including the un-rendered whitespace character that preceeds a Text Node
+        - Text Node     = Content including the un-rendered whitespace character that precedes a Text Node
 
 
 - Load the starter project (index.html) on the browser

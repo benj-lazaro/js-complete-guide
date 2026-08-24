@@ -68,7 +68,7 @@ Attributes VS Properties
         - Select the HTML element <input> from the DOM
             - Using the "document" method ".querySelector()" w/ "input" as argument value
         
-        - Save the returned Elenment node in a constant named "input"
+        - Save the returned Element node in a constant named "input"
         
         - Pass "input.value" as argument value to "console.log"
             - Returns the value "default text"
@@ -106,7 +106,7 @@ Attributes VS Properties
 
 
     - To fetch the previously set value on the attribute "value" of the HTML element <input> on the DOM
-        - Use the Elemet node method ".getAttribute()"
+        - Use the Element node method ".getAttribute()"
             - 1st argument = HTML attribute "value"
 
         - Assign the returned value to the Element node's property ".value"

@@ -13,7 +13,7 @@ Adding Element Via createElement()
         - Do NOT call this method on any other DOM node (object)
 
     - This method provide direct access to the created Element node that
-        - Allows to set properites (e.g. textContent, className, etc.)
+        - Allows to set properties (e.g. textContent, className, etc.)
         - Attach an Event listener
 
     - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement)
