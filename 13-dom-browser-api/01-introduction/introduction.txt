@@ -3,7 +3,7 @@ Module Introduction
 - This section focuses on:
     - Attaching data to DOM elements
 
-    - Work w/ element coodinates & sizes
+    - Work w/ element coordinates & sizes
 
     - Work w/ templates & dynamic scripts
 

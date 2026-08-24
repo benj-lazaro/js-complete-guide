@@ -18,7 +18,7 @@ The "navigator" Object
     - Web developers back then "fake" a browser's identity
         - By assigning a string of known browsers
 
-    - Since then browser vendors assign a stirng of ALL known browsers
+    - Since then browser vendors assign a string of ALL known browsers
         - As value to the property ".userAgent"
         - Enabling a browser to "fake" its own identify
 

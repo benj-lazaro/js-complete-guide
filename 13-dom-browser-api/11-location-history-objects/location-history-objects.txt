@@ -14,7 +14,7 @@ The "location" & "history" Objects
         - Effectively replaces the previous URL w/ the current one
 
     - The method ".assign()"
-        - Identical to & interchangably work w/ the property ".href"
+        - Identical to & interchangeably work w/ the property ".href"
 
     - The property ".host"
         - Returns the hostname where a page is hosted w/out the "https://" part
@@ -42,7 +42,7 @@ The "location" & "history" Objects
     - The method ".go()"
         - Accepts a number as argument that allows a user to "jump" to
             - The specified step number URL based on it's
-            - Current numerical posittion returned by the property ".length"
+            - Current numerical position returned by the property ".length"
 
     - NOTE: Moving users "around" a website does NOT guarantee a best user experience (UX)
         - Implement this feature w/ care

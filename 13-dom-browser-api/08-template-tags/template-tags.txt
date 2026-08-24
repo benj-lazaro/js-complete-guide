@@ -2,7 +2,7 @@ Working With Template Tags
 --------------------------
 - When working w/ the tooltip content
     - It is best to separate HTML markup from JavaScript code
-        - Setup the content w/in the HTML docuemnt
+        - Setup the content w/in the HTML document
         - Using the HTML element <template>
 
     - NOTE: The content of the HTML element <template>
@@ -11,7 +11,7 @@ Working With Template Tags
 
     - Set the HTML element <template> attribute "id" 
     
-    - Use the method "document.selectElementbyId()"
+    - Use the method "document.selectElementById()"
         - To select the HTML element <template> & work on using JavaScript
 
 
@@ -64,6 +64,6 @@ Working With Template Tags
             - Renders the corresponding tooltip content
 
         - This allows the tooltip content
-            - To manage its corrresponding HTML markup w/in the HTML document            
+            - To manage its corresponding HTML markup w/in the HTML document            
             - To be customized at a later time using JavaScript
             - To follow the "separation of concerns" approach

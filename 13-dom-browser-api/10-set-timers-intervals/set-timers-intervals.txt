@@ -19,10 +19,10 @@ Setting Timers & Intervals
 
         - IMPORTANT: Passing a non-numeric value (i.e. string) for timer
             - JavaScript performs an implicit type coercion
-            - This can lead to unexpected or suprising results
+            - This can lead to unexpected or surprising results
 
     - Returns a positive integer
-        - Often referred as a "timout ID"
+        - Often referred as a "timeout ID"
 
         - NOTE: To stop the execution of the method "setTimeout()"
             - Pass the "timeout ID" as argument value to the method "clearTimeout()"
@@ -48,13 +48,13 @@ setTimeout(<function>, <delay>, <parameter>);
         - A fixed time delay between each call
 
     - Returns a positive integer
-        - Often referred as a "internval ID"        
+        - Often referred as a "interval ID"        
 
     - IMPORTANT: As long as the "Window" instance is open / active
         - This method "window.setInterval()" will continue to run
 
     - NOTE: Two (2) ways stop the method "setInterval()"
-        - Pass the "internval ID" as argument value to the method "clearInterval()"
+        - Pass the "interval ID" as argument value to the method "clearInterval()"
             
         - Manually close the corresponding "Window" instance or active browser tab (window)
 
@@ -130,12 +130,12 @@ setInterval(<function>, <delay>, <parameter>)
                 - 2nd = an Arrow function
 
             - Inside the Arrow function
-                - Calls the "Window" method "clearInternval()"
-                - Pass the local constant "intervakId" as argument value
+                - Calls the "Window" method "clearInterval()"
+                - Pass the local constant "intervalId" as argument value
 
             - NOTE: This stops the execution of the method "setInterval()"
                 - The "Window" method "clearTimeout()" can also be used
-                - However, using the "clearInternval()" is explicit & clear of intention
+                - However, using the "clearInterval()" is explicit & clear of intention
 
     - Save the changes
         - Load / reload the browser

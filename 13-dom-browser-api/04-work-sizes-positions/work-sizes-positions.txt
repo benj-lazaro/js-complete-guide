@@ -1,6 +1,6 @@
 Work With Element Sizes & Positions
 -----------------------------------
-- Properites that allow to work w/ specific data of the selected DOM element
+- Properties that allow to work w/ specific data of the selected DOM element
     - ".offsetTop" & ".offsetLeft"
         - Returns the distance (in pixels)
             - Between the element's top-most & left-most points
