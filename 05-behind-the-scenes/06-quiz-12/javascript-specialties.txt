@@ -5,7 +5,7 @@ Quiz 12: JavaScript Specialties
 
 
 - What does "Block Scope" mean?
-    - Anwer: Variables are created in a block { } & then belongs to that block
+    - Answer: Variables are created in a block { } & then belongs to that block
 
 
 - Does this code execute correctly?

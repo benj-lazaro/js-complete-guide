@@ -1,6 +1,6 @@
 Garbage Collection & Memory Management
 --------------------------------------
-- How the brower manages the Heap (long-living memory)
+- How the browser manages the Heap (long-living memory)
     - Browser taps the host computer's system memory
         - Host computer allocates a certain amount of memory for use of the browser
     
@@ -48,7 +48,7 @@ Garbage Collection & Memory Management
         - Every click of the HTML element <button> w/ an attribute "id" of "addListenerBtn"
             - It calls the Anonymous callback function
 
-            - However, unliked the named callback function
+            - However, unlike the named callback function
                 - Every click, creates a new function on-the-fly
                 - Allocating memory for each instance
                 - This is a potential problem that can lead to a memory leak

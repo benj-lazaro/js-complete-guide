@@ -2,7 +2,7 @@ Understanding Hoisting
 ----------------------
 - Hosting is a special feature of the JavaScript Engine
     - It "hoists" variable(s) at the beginning of the file 
-        - Leaves the declaration (& initializtion) at the respective locations w/in the codebase
+        - Leaves the declaration (& initialization) at the respective locations w/in the codebase
 
     - This applies to variables created w/ the keyword "let" or "var"
 
@@ -17,6 +17,6 @@ Understanding Hoisting
 
 
 - Accessing a variable created w/ "let" BEFORE it is declared (& initialized)
-    - Triggers an "Uncaught ReferenceError: Cannot access '<variable_name>' before initializtion"
+    - Triggers an "Uncaught ReferenceError: Cannot access '<variable_name>' before initialization"
 
     - Forces developers to declare a variable BEFORE using it

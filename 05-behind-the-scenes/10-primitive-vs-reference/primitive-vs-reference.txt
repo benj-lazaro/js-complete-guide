@@ -9,7 +9,7 @@ Primitive VS Reference Values
     - Refers to the value of the following data types
         - Strings, Numbers, Booleans, null, undefined & Symbol
 
-    - The variable stores the actualy value itself
+    - The variable stores the actually value itself
 
     - Stored (generally) on the Stack
         - These are short-living values
@@ -20,11 +20,11 @@ Primitive VS Reference Values
         - Does NOT cost much memory
 
     - Copying a primitive value between two (2) variables using the operator "="
-        - JavaScript copies the actual value to the recepient variable
+        - JavaScript copies the actual value to the recipient variable
             - This is referred as "copied by value"
     
         - When the source variable change its stored primitive value
-            - The recepient variables does NOT REFLECT the change 
+            - The recipient variables does NOT REFLECT the change 
 
 
 - Reference values
@@ -47,18 +47,18 @@ Primitive VS Reference Values
         - Instead of the actual value itself
 
     - Copying a reference value between two (2) variables using the operator "="
-        - JavaScript assigns (NOT copies) the exact reference (memory address) to the recepient variable
+        - JavaScript assigns (NOT copies) the exact reference (memory address) to the recipient variable
             - This is referred as "copied by reference"
     
         - When the source variable changes (or updates) its stored reference value 
-            - The recepient variables REFLECT the changes made
+            - The recipient variables REFLECT the changes made
 
     - To copy the actual value of a reference value between two (2) variables
-        - Use the spead operator "..." followed by the variable
+        - Use the spread operator "..." followed by the variable
             - Enclosed w/in the pair of "{ }" or  "[ ]"
 
         - It pulls out the elements (if an array) or properties (if an object)
-            - Creates a real copy of the value (NOT the memory address) into the recepient variable
+            - Creates a real copy of the value (NOT the memory address) into the recipient variable
 
     - When comparing between two (2) identical reference values using the "===" or "==" operator
         - Will ALWAYS yield a boolean "false"

@@ -32,7 +32,7 @@ Strict Mode & Writing Good Code
         - NOTE: Returned error message is dependent on the reserved word used
 
     - Declaring a reserved word as a variable name using the keyword "let" or "var"
-        - Triggers an "Uncaught TypeErrpr"
+        - Triggers an "Uncaught TypeError"
         - NOTE: Returned error message is dependent on the reserved word used
         
     - List of behavioral changes when in Strict Mode
@@ -40,7 +40,7 @@ Strict Mode & Writing Good Code
 
 
 - When Strict Mode is disabled
-    - Variable declartion (before using it) is NOT REQUIRED
+    - Variable declaration (before using it) is NOT REQUIRED
         - Declaring a variable w/o using either "let" or "var" keywords
         - Behind the scene, JavaScript defaults using the keyword "var"
 

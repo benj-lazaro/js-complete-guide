@@ -2,7 +2,7 @@ Inside The JavaScript Engine: How The Code Executes
 ---------------------------------------------------
 - The JavaScript Engine in the end is all about
     - Managing memory (heap)
-    - Manaing execution steps (stack)
+    - Managing execution steps (stack)
 
 
 - Heap

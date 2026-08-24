@@ -5,7 +5,7 @@ ES5 VS ES6+ (Next Gen JS): Evolution of JavaScript
     - It is under Active Development
 
     - ECMA International
-        - Responsible for working new interations of ECMAScript
+        - Responsible for working new iterations of ECMAScript
         - Browser developers adopt these iterations into their JavaScript Engines
 
 

@@ -5,8 +5,8 @@ How Code Is Parsed & Compiled
     - Parses (reads) through the JavaScript code & then executes it
     
     - The exact details on what the browser does with 
-        - The JavaScript code is dependent on a brower's JavaScript Engine
-            - V8 Engine     = Chome, Brave, Edge, Opera
+        - The JavaScript code is dependent on a browser's JavaScript Engine
+            - V8 Engine     = Chrome, Brave, Edge, Opera
                 - Reference (https://hackernoon.com/javascript-v8-engine-explained-3f940148d4ef)
 
             - Spidermonkey  = Firefox
