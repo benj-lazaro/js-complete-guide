@@ -8,7 +8,7 @@ The Global "Number" & "Math" Objects
             - Instead of an error message as it approximates the result
 
     - The method ".isFinite()"
-        - Acceps a number as argument value
+        - Accept a number as argument value
         
         - Checks if a number is finite or NOT (i.e. "Infinity")
             - Returns "true" if it is finite
@@ -69,4 +69,4 @@ The Global "Number" & "Math" Objects
         - Returns the value of 5
 
     - Call the method "Math.random()"
-        - Returns a different value between 0 & 1 everytime is it called
+        - Returns a different value between 0 & 1 every time is it called

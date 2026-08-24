@@ -27,7 +27,7 @@ Example: Generate Random Number Between Min/Max
 
     - Save the changes
         - Load / reload the browser
-        - Launch the JavaSript console
+        - Launch the JavaScript console
 
         - Every reload of the browser
             - Generates a random number between the declared lowest & highest limit

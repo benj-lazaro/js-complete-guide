@@ -14,7 +14,7 @@ Floating Point (Im)Precision
 
 
 - The method ".toString()"
-    - Offers a conveninent way to see how numbers are represented in binary
+    - Offers a convenient way to see how numbers are represented in binary
 
     - Chain the method ".toString()" to a number
         - Pass "2" an an argument (radix) value
@@ -24,7 +24,7 @@ Floating Point (Im)Precision
 
     - Example:
         (1).toString(2);   // integer
-        (1/2).tostring(2); // fraction
+        (1/2).toString(2); // fraction
         (0.2).toString(2); // floating-point
 
 
@@ -54,7 +54,7 @@ Floating Point (Im)Precision
         - NO imprecision (long trailing digits)
         - e.g. 20.2 * 100 = 202 or 2020 (stored as 2020.0)
 
-    - The converted number is representedly perfectly in binary
+    - The converted number is represented perfectly in binary
         - e.g. 20.2 * 100 = 202 or 2020 (11001010 in binary)
 
     - Other solutions:

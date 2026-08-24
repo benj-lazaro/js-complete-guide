@@ -12,7 +12,7 @@ More On Regular Expressions
     - Allows to accepts ANY character in-place
         - Evaluates the string pattern to be "true"
 
-    - Absense of a character in-place
+    - Absence of a character in-place
         - Evaluates the string pattern to be "false"
 
 
@@ -41,7 +41,7 @@ More On Regular Expressions
 - IMPORTANT: Learning & writing complex regular expressions takes time to master
     - It is not needed that often
     - Best to lookup online for the best pattern for specific use-cases
-    - Particularly when doubtful the stirng pattern created is the best one
+    - Particularly when doubtful the string pattern created is the best one
 
 
 - Regular expression deep dive series

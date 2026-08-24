@@ -37,7 +37,7 @@ Syntax:
             - Update the string value of the local variable "priceCategory"
 
         - Return a template literal
-            - Conbines parts of the parameter variable 
+            - Combines parts of the parameter variable 
                 - "strings"
                 - "productName"
                 - "priceCategory"

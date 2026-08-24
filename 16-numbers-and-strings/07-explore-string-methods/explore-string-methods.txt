@@ -29,5 +29,5 @@ Exploring String Methods
 
 
 - The method ".trim()"
-    - Removes execess whitespace characters from a string
+    - Removes excess whitespace characters from a string
 
