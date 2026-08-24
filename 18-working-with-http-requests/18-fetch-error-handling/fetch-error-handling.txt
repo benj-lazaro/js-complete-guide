@@ -64,7 +64,7 @@ fetch() & Error Handling
 
     - Back on the "else" clause
         - Call "response.json()" as the 1st line of code
-            - To parse the streamted HTTP response
+            - To parse the streamed HTTP response
             - NOTE: The method ".json()" yields a Promise
 
         - Then chain the method ".then()"

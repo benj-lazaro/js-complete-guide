@@ -1,7 +1,7 @@
 Using The fetch() API
 ---------------------
 - XMLHttpRequest is the older method of sending HTTP request
-    - Intentially to send & fetch XML data
+    - Intentionally to send & fetch XML data
     - Nowadays replaced w/ JSON data but the named remains the same
     
     - Deep dive (https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest_API/Using_XMLHttpRequest)
@@ -22,7 +22,7 @@ Using The fetch() API
         - Pass a URL (string) as argument value
 
     - Prefix the function w/ a "return" keyword
-        - Returns the HTTP reponse as a promise object
+        - Returns the HTTP response as a promise object
     
     - NOTE: Returns a streamed response
         - It does NOT hold the HTTP response body
@@ -72,7 +72,7 @@ Using The fetch() API
 
 
     - Inside the Arrow function
-        - Chain the method ".json()" to the parameter variable "reponse"
+        - Chain the method ".json()" to the parameter variable "response"
             - NOTE: Converts the streamed HTTP response into a parsed one
         
         - Prefix the statement with the keyword "return"

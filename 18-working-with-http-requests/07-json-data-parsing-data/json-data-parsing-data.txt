@@ -16,7 +16,7 @@ JSON Data & Parsing Data
         - Property name is wrapped w/in a pair of double quotes ONLY
             - Single quotes are NOT allowed
 
-        - Assigned values can use numbers, booleans, stirngs, objects, arrays & null
+        - Assigned values can use numbers, booleans, strings, objects, arrays & null
 
 
 - To parse the JSON data from the HTTP response

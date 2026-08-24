@@ -18,7 +18,7 @@ Triggering Requests Via The UI
     
     - Create a local constant named "fetchButton"
         - Use the "document" object method ".querySelector()"
-        - Pass "#available-posts button" as arugment value
+        - Pass "#available-posts button" as argument value
 
         - NOTE: Selects the HTML element <button> labeled "FETCH POSTS" 
             - To be used for HTTP request "POST"

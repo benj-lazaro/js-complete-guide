@@ -44,7 +44,7 @@ Working With FormData
         - In the object literal passed as 2nd argument value to the function "fetch()"
             - Delete out the "headers" property
         
-            - Refactor the assigned value to the prorperty "body"
+            - Refactor the assigned value to the property "body"
                 - To the value of "data"
 
             - NOTE: The API function "fetch()" automatically sends the right headers
@@ -78,7 +78,7 @@ Working With FormData
 
         - On the index.html
             - Add the HTML attribute "name" to the HTML element <input> & <textarea>
-            - Assig the values "name" & "body", respectively
+            - Assign the values "name" & "body", respectively
 
     
     - Save the changes

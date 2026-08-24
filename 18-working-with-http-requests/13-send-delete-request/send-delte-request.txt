@@ -14,7 +14,7 @@ Sending A DELETE Request
 
     
     - Use Event delegation that
-        - Uses a single Event listner for ALL fetched JSON data
+        - Uses a single Event listener for ALL fetched JSON data
         - Identify w/c to delete based on the HTTP attribute "id"
 
 
@@ -36,7 +36,7 @@ Sending A DELETE Request
             - Define the parameter variable named "event"
 
         - Inside the Arrow function
-            - Use an "if" statement to check the prorperty "event.target.tagName" is
+            - Use an "if" statement to check the property "event.target.tagName" is
                 - STRICTLY EQUAL to "BUTTON"
 
             - Create a local constant "postId"

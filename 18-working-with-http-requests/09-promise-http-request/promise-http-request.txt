@@ -3,7 +3,7 @@ Promisifying HTTP Request (With XMLHttpRequest)
 - Prior to implementing logic for submitting data to the remote server
     - Refactor the current codebase
         - Defining a reusable function
-        - For sending HTTP requests & receiveing HTTP response
+        - For sending HTTP requests & receiving HTTP response
 
     - Promisify the HTTP request
         - Encasing it inside of a "Promise" object

@@ -49,7 +49,7 @@ More Background About HTTP
             - Extra data attached to the HTTP request
 
     - On supported data format
-        - The server decies w/c data format it supports for w/c 
+        - The server decides w/c data format it supports for w/c 
             - "HTTP method + URL" combination used by the HTTP request
 
         - JSON (JavaScript Object Notation) is the most common data format
