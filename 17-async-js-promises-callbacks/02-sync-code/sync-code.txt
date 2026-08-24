@@ -3,7 +3,7 @@ Understanding Synchronous Code Execution (Sync Code)
 - JavaScript is single-threaded
     - It ONLY execute one (1) task at a time
     
-    - Code executes in sequence (NOT simultaenously) & in order
+    - Code executes in sequence (NOT simultaneously) & in order
         - Succeeding tasks will NOT execute until the current task is NOT complete
 
 

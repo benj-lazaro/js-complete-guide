@@ -3,7 +3,7 @@ Getting Started With Promises
 - The concept of Promises
     - Help address "callback hell"
         - Callback function nested into each other
-        - Resulting to cubersome code that is hard to read & maintain
+        - Resulting to cumbersome code that is hard to read & maintain
 
     - Employs the method ".then()"
             - Pass a corresponding callback function as argument

@@ -1,7 +1,7 @@
 Sync + Async Code: The Execution Order
 --------------------------------------
 - The execution order between synchronous & asynchronous code
-    - Sycn code gets executed first
+    - Sync code gets executed first
 
     - Async code get executed second 
         - Despite how fast it completes its task

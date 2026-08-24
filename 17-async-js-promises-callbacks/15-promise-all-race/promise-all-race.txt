@@ -78,7 +78,7 @@ Promise.all(), Promise.race(), etc.
             - Pass the parameter variable "data" as an argument value to "console.log()"    
 
         - Returns an array of returned data from the passed "Promise" objects
-            - NOTE: If a "Promise" object failed, succeeding "Promise" ojects are NOT executed
+            - NOTE: If a "Promise" object failed, succeeding "Promise" objects are NOT executed
 
     
     - Access the Promise Static method ".allSettled()"

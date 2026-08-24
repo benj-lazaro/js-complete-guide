@@ -20,7 +20,7 @@ Async / Await VS "Raw Promises"
 
 
     - Keywords "async" & "await" is ONLY available on functions
-        - Can NOT use "await" on a "Promise" based code OUTISDE of an "async" function
+        - Can NOT use "await" on a "Promise" based code OUTSIDE of an "async" function
 
         - A workaround
             - Place the "await" statement w/in an Anonymous "async" function 

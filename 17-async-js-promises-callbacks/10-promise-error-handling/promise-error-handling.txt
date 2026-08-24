@@ -11,7 +11,7 @@ Promise Error Handling
             - Works on the failed "Promise" object
             - Removes the 2nd argument value from the chained method ".then()"
 
-        - It catches ANY errors (rejections) produced anywhre in the "Promise Chain"
+        - It catches ANY errors (rejections) produced anywhere in the "Promise Chain"
             - PRIOR to the declaration of the chained method ".catch()"
 
             - Allows succeeding chained method ".then()" to execute
@@ -42,7 +42,7 @@ Promise Error Handling
             - Return the string ""Execution continues..."
                 - Rendered after the displaying the error message
 
-        - The succeeing chained method ".then()" will be executed
+        - The succeeding chained method ".then()" will be executed
 
     
     - Save the changes
@@ -52,4 +52,4 @@ Promise Error Handling
         - Clicking the button "Track Me!"
             - The browser asks if it will permit the app to fetch the user's current location
             - Denying the request will trigger the chained method ".catch()" 
-            - Otherwise, it will behave as it has in the previous lessson
+            - Otherwise, it will behave as it has in the previous lesson
