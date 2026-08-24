@@ -89,14 +89,14 @@ Using webpack-dev-server
             - Loads the practice project app
 
         - Any changes in the code of any file
-            - The package "webpack" rebundles
+            - The package "webpack" bundles
             - The package "webpack-dev-server" reloads the web app automatically
 
         - To gracefully terminate the "web-dev-server" package
             - Use "CTRL + C"
 
 
-    - Test the autoreload feature of the "webpack-dev-server" package
+    - Test the auto-reload feature of the "webpack-dev-server" package
         - Make some minor changes on "src/App/ProjectList.js" file
         - Save the changes
         - The packages "webpack" rebinds the app & "webpack-dev-server" automatically reloads the app

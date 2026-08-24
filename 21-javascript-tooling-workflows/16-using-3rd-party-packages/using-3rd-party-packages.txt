@@ -7,7 +7,7 @@ Using 3rd Party Packages
 
 
 - There are a few ways of importing a package in a project
-    - Most are heavily depedent on the documentation
+    - Most are heavily dependent on the documentation
 
     - Common approach 
 
@@ -20,7 +20,7 @@ Using 3rd Party Packages
     - Launch VS Code's Integrated Terminal at the project's root folder 
 
 
-    - Install the package "lodash" as a project depedency
+    - Install the package "lodash" as a project dependency
 
         npm i --save lodash
 

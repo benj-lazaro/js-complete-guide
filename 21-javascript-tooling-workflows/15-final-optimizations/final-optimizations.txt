@@ -15,7 +15,7 @@ Final Optimizations
             - Triggered by deprecated dependencies namely "inflight", "rimraf" & "glob"
 
         - Webpack 5 has the capability of cleaning its own output entry
-            - Everytime it bundles a project's files for "development" or "production" use
+            - Every time it bundles a project's files for "development" or "production" use
 
             - Requires add the key "clean" w/ the value of "true"
                 - To BOTH "webpack.config.js" & "webpack.config.prod.js" files
@@ -95,7 +95,7 @@ Final Optimizations
                 - Replaced by "production" bundled files w/ NO source maps included
 
 
-- To implement the 2nd final optimization of renaming "prodution" bundled files
+- To implement the 2nd final optimization of renaming "production" bundled files
     - Open the file "webpack.config.prod.js"
         - On the key "filename" w/in the "output"
             - Change the assigned value "app.js" to "[contenthash].js"

@@ -22,7 +22,7 @@ Working With npm Packages
 
             - IMPORTANT: Do NOT TOUCH the code of any of these files
 
-            - IMPORTANT: EXLUDE this folder when sharing the project                
+            - IMPORTANT: EXCLUDE this folder when sharing the project                
                 - INCLUDE the project's "package.json" file
             
                 - Running the following npm command will install the npm packages used by the project
@@ -30,7 +30,7 @@ Working With npm Packages
                     npm install
 
 
-- On the pratice project
+- On the practice project
     - Launch the Integrated Terminal at the project's root folder
         - Install the npm package "eslint" as a development dependency
 
@@ -38,7 +38,7 @@ Working With npm Packages
 
 
         - NOTE: The old ESLint used in this lesson have already been reported to be broken in 2023
-            - Requests for updating this lesson have been filed but currently left unchaged
+            - Requests for updating this lesson have been filed but currently left unchanged
 
             - Installed the latest ESLint instead
 

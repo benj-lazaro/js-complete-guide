@@ -12,7 +12,7 @@ Development Mode & Fixing "Lazy Loading"
         - Assign the value of "development"
     
     - Executing the npm script "build"
-        - Wepback bundles the app & produces two (2) files that contains
+        - Webpack bundles the app & produces two (2) files that contains
             - Unoptimized code
             - Extra code appended by Webpack itself
 
@@ -48,7 +48,7 @@ Development Mode & Fixing "Lazy Loading"
                 - Clicking the button does NOTHING
 
             - PERSONAL NOTE: This is NOT an issue w/ Webpack 5
-                - On Wepback 5, the "0.app.js" file is renamed to "src_App_Tooltip_js.app.js"
+                - On Webpack 5, the "0.app.js" file is renamed to "src_App_Tooltip_js.app.js"
 
 
     - To address the encountered Webpack 4 problem:
@@ -62,7 +62,7 @@ Development Mode & Fixing "Lazy Loading"
             - NOTE: This explicitly informs Webpack 4 where 
                 - The remaining bundled files (besides "app.js") are to be read from
 
-            - PERSONAL NOTE: Adding this setting on Webpack 5 does NOT cause any isssues           
+            - PERSONAL NOTE: Adding this setting on Webpack 5 does NOT cause any issues           
 
         - Execute the npm script "build"
 
@@ -75,6 +75,6 @@ Development Mode & Fixing "Lazy Loading"
             - Click the "Local" URL to launch the default browser
                 - Launches the default browser & loads the app    
 
-            - Clicing the "More Info"
+            - Clicking the "More Info"
                 - Webpack 4 now properly loads & reads the "0.app.js" file
         

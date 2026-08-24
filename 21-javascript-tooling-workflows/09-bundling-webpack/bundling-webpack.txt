@@ -6,7 +6,7 @@ Bundling With Webpack
     - It can be configured manually
         - By creating a file named "webpack.config.js", placed at the project's root folder 
 
-        - File's contents will be read by Node.js & excute it
+        - File's contents will be read by Node.js & execute it
             - Based on the user-defined npm script on the project's "package.json" file
 
     - Inside the "webpack.config.js" file
@@ -99,7 +99,7 @@ Bundling With Webpack
 
                 - The package "webpack" searches for the file "webpack.config.js"
                     - Identifies the entry & output points
-                    - Then work on bundiling the files w/in the folder "src"
+                    - Then work on bundling the files w/in the folder "src"
                     - Outputs two (2) bundled files in the folder "assets/scripts"
 
     
@@ -149,7 +149,7 @@ Bundling With Webpack
 
     - Run the npm script "build" again
         - Encountered an error "Module parse failed: Unexpected token"
-            - Triggered by the syntax of the line w/in the file "/src/App/Tootip.js"
+            - Triggered by the syntax of the line w/in the file "/src/App/Tooltip.js"
 
                 closeTooltip = () => {
                     ...
@@ -208,7 +208,7 @@ Bundling With Webpack
         - Using the latest version of the packages used for this lesson
             - The packages "eslint", "webpack" & "webpack-cli"
 
-        - Deleted the bundled codebase & repalced w/ the one that installed the latest "eslint" package
+        - Deleted the bundled codebase & replaced w/ the one that installed the latest "eslint" package
 
         - Updated the "eslint.config.mjs" file
             - To implement the new rule "no-undef" as demonstrated on this lesson
@@ -278,7 +278,7 @@ Bundling With Webpack
                     - "./src/App/Tooltip.js"
                     - "./src/App/Component.js"
 
-    - Unike on the previous build based on "package.json" workaround that used Webpack 4
+    - Unlike on the previous build based on "package.json" workaround that used Webpack 4
         - The Webpack 5 build did NOT encounter the same syntax-related errors 
         
         - NO files w/in the "src" folder were modified 
@@ -291,4 +291,4 @@ Bundling With Webpack
             - Webpack 5 successfully bundled the project
             - Produced two (2) output files
 
-        - Now have a project running on the latest "eslting", "webpack" & "webpack-cli"
+        - Now have a project running on the latest "eslint", "webpack" & "webpack-cli"
