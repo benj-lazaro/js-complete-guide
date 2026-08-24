@@ -46,7 +46,7 @@ Working With Cookies
 
     - IMPORTANT: When a data is deleted (or expired) from cookies
         - The arrangement of the stored data gets updated
-            - Retreving data by index key alone is NOT reliable
+            - Retrieving data by index key alone is NOT reliable
 
         - Better alternative is to search for the specific key name
             - Using the string method ".includes()"
@@ -67,7 +67,7 @@ Working With Cookies
 
         document.cookie = `<unique_key>=${<assigned_value>}; expires=<date>`; 
 
-    - IMPORTANT: BOTH of these flas are NOT part of the data stored in cookies
+    - IMPORTANT: BOTH of these flags are NOT part of the data stored in cookies
 
     - NOTE: Cookies can be deleted by the browser & users
 

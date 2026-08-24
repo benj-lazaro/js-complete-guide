@@ -1,12 +1,12 @@
 Working With IndexedDB
 ----------------------
 - Further exploration on IndexedDB
-    - Demonstrate the clunkiness of the IndexedDB API
+    - Demonstrate the clunky-ness of the IndexedDB API
         - Requiring handlers to store & access stored items
 
     - 3rd party libraries namely "idb.js"
         - Allows working w/ the IndexedDB storage easier
-        - Offer Promisified features for adding / retrieving items
+        - Offer Promisify features for adding / retrieving items
         - GitHub Repository (https://github.com/jakearchibald/idb)
 
 
@@ -67,7 +67,7 @@ Working With IndexedDB
         - Inside the Anonymous function
             - Pass "Item NOT found" as argument value to "console.log()"
 
-        - NOTE: This is what the author mentioned about the clunkiness of
+        - NOTE: This is what the author mentioned about the clunky-ness of
             - The IndexedDB API
 
 

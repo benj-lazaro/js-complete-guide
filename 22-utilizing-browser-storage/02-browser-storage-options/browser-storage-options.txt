@@ -28,7 +28,7 @@ Browser Storage Options
         
     - IndexedDB
         - Stores & manage complex data
-            - A relatively sophiticated client-side database built into the browser
+            - A relatively sophisticated client-side database built into the browser
             - Accessed via JavaScript ONLY
             - Contents cleared manually via browser settings
 

@@ -21,7 +21,7 @@ Getting Started With IndexedDB
             - 2nd = 1 (database version; 1 when creating a new database)
 
         - IMPORTANT: Returns an "IDBOpenRequest" object that is NOT promised-based
-            - This also referered as a "database request"
+            - This also referred as a "database request"
 
         - If the database requested does NOT exists in IndexedDB
             - It is creates a new database based on the given name

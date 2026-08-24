@@ -43,7 +43,7 @@ Getting Started With Cookies
         - Activate "Live Server" or run the npm package "serve"
             - Loads the web app on the browser
 
-        - Launch the browser's Development Tools (DevToools)
+        - Launch the browser's Development Tools (DevTools)
             - Click the "Application" tab
             - On the left-hand side panel, click "Cookies"
 
