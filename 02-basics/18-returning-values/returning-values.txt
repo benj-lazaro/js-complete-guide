@@ -28,7 +28,7 @@ Returning Values
     - Remove the lines that calls the function "add()"
 
     - Refactor the assigned value to the variable "currentResult"
-        - Remove the mathemtical expression
+        - Remove the mathematical expression
 
         - Replace it with a call to the function "add()"
             - Passing the respective argument values

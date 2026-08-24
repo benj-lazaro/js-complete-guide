@@ -15,7 +15,7 @@ Quiz 01: Variables & Operators
     - Answer: userAge is the variable, 30 is the data
 
 
-- Could you replace the snipet
+- Could you replace the snippet
 
     let age = 30;
     alert(age);

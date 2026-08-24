@@ -10,8 +10,8 @@ Code Styles, Conventions & Syntax
     }
 
 
-- Whitespace, linbreaks & indentation is OPTIONAL
-    - Does NOT make it an execuse for NOT writing readable code
+- Whitespace, linebreaks & indentation is OPTIONAL
+    - Does NOT make it an excuse for NOT writing readable code
 
 
 - Semi-colon is OPTIONAL

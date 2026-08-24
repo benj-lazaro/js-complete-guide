@@ -1,4 +1,4 @@
-Introducting Functions
+Introduction Functions
 ----------------------
 - A function is a language construct that
     - Defines some code w/c can be executed at a later time   

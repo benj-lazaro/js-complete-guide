@@ -4,7 +4,7 @@ Working With Code Comments
     - Are IGNORED & NOT executed by the JavaScript Engine
 
     - To make the code readable (understandable) for 
-        - Other develoeprs
+        - Other developers
         - Yourself after coming back at a later time
     
     - Implemented in the form of a

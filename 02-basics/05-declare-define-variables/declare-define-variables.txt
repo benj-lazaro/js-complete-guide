@@ -41,7 +41,7 @@ Declaring & Defining Variables
         - Important thing is to be consistent throughout the entire codebase
 
     - A ";" is REQUIRED 
-        - When writng two (2) expressions on a single line of code
+        - When writing two (2) expressions on a single line of code
 
 
     Example:

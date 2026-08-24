@@ -20,7 +20,7 @@ Using Constants
 
     - Copy the value of the constant "defaultResult"
         - To the declaration of the variable "currentResult"
-        - Effectively initialzing the variable
+        - Effectively initializing the variable
 
     - Assign the result of the mathematical expression
         - Into the variable "currentResult"

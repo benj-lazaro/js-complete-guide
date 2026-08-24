@@ -8,7 +8,7 @@ Data Types: Numbers & Strings (Text)
 
     - String
         - For working with text
-        - For gathering text user-input & outputing text results
+        - For gathering text user-input & outputting text results
         
         - Expressed by enclosing text w/in a pair of:
             - Single quotes ' '
