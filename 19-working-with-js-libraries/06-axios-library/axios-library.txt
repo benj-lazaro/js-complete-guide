@@ -14,7 +14,7 @@ Axios Library & HTTP Requests
         - ".delete()"   = Sends a HTTP request "DELETE"
 
     - Eliminates the manual setup of HTTP headers
-        - Axios automatically analysizes submitted data
+        - Axios automatically analyzes submitted data
         - Transforms submitted data accordingly (e.g. FormData, JSON, ...)
         - Chooses the appropriate "Content-Type" value
 
@@ -46,7 +46,7 @@ Axios Library & HTTP Requests
         - API endpoint (URL) for HTTP request POST
         - Constant where the data to be submitted is stored
 
-    - Automatically analysize the data submitted
+    - Automatically analyze the data submitted
         - Determines what data type to convert it into (e.g. JSON or FormData)
         - Set up the appropriate value for the HTTP header "Content-Type"
 
@@ -70,7 +70,7 @@ Axios Library & HTTP Requests
     - Refactor the JavaScript code of the web app
         - Use the Axios library for sending HTTP request 
 
-        - Rendering the function "sendHttpRequest()" depricated
+        - Rendering the function "sendHttpRequest()" deprecated
             - Leaving as it is for now
 
     

@@ -1,7 +1,7 @@
 Adding Libraries
 ----------------
 - Two (2) methods of adding an external JavaScript library on a project
-    - Download & locally install the library w/in the same folder as the web app's JavaScrpit files
+    - Download & locally install the library w/in the same folder as the web app's JavaScript files
         - Get the minified (optimized) version if available
 
     - Use CDN (Content Delivery Network) URL of the library
