@@ -1,0 +1,70 @@
+Getting User Location
+---------------------
+- Implement the logic for the Event Handler "locateUserHandler()"
+    - Using the browser API "navigator.geolocation"
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API)
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API)
+    
+
+- On the practice project (src/SharePlace.js)
+    - In the Event Handler "locateUserHandler()"
+        - Check if a user's browser supports "navigator.geolocation" using an "if"statement
+
+        - If NOT supported
+            - Call "alert()" as a fallback code
+            - Pass a message (see below) as argument value 
+
+                "Location features is NOT available. Use a modern browser or manually enter an address."
+
+            - Return back to the main program using "return"
+
+        - If supported
+            - Call "navigator.geolocation()"
+            - Pass two (2) Anonymous functions as argument values
+                - 1st = successful retrieval
+                - 2nd = failed retrieval
+
+        - On the Anonymous function of a successful retrieval
+            - Declare a parameter variable named "success"
+
+        - Inside the Anonymous function
+            - Declare a local constant named "coordinates"
+                - Assign an object literal as value
+
+            - Inside the object literal
+                - Declare the property named "latitude"
+                    - Assign "success.coords.latitude" as value
+
+                - Declare the property named "longitude"
+                    - Assign "success.coords.longitude" as value
+
+        - On the Anonymous function of a failed retrieval
+            - Declare a parameter variable named "error"
+
+        - Inside the Anonymous function
+            - Call "alert()" as a fallback code
+            - Pass a message (see below) as argument value
+
+                "Could NOT locate you unfortunately. Please enter an address manually."
+
+
+    - Create a global constant named "placeFinder"
+        - Assign the instantiation of the Class "PlaceFinder" as value
+
+
+    - Save the changes
+        - Run the npm script
+
+            npm run build && npm run build:dev
+
+        - Click the "Loopback" URL
+            - To launch the default browser
+            - Loads the practice project
+        
+        - Launch the browser's Developer Tools
+            - Click the tab "Console"
+
+        - Click the project's button "Get Current Location"
+            - Browser will ask if it will be allowed to view current Location
+            - Click button "Allow"
+            - An object literal containing the latitude & longitude will be returned on the "Console"
