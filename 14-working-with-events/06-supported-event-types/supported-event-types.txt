@@ -18,7 +18,7 @@ Supported Event Types
     - Triggers when the scroll bar of the "Window" object gets scrolled down/up
     
     - NOTE: Handle this event w/ care as it gets triggered easily
-        - May affect the overall performance of a web app when perfoming heavy calculations
+        - May affect the overall performance of a web app when performing heavy calculations
 
     - Use case
         - Calculate how far a user is from the bottom of the (active) HTML document
@@ -38,7 +38,7 @@ Supported Event Types
         - Declare an HTML attribute "id" w/ the value of "long-one"
 
 
-    - On the correspoding CSS file (assests/styles/events.css)
+    - On the corresponding CSS file (assets/styles/events.css)
         - Declare an ID Selector named "#long-one"
 
         - Declare the CSS property "height"
@@ -47,7 +47,7 @@ Supported Event Types
         - Save the changes
 
 
-    - On the practice code (assests/scripts/events.js)
+    - On the practice code (assets/scripts/events.js)
         - Access the "Window" object
             - Chain the method ".addEventListener()"
 

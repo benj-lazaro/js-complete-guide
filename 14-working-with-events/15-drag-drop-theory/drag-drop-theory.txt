@@ -11,7 +11,7 @@ Drag & Drop Theory
             - Event is triggered when the element is being dragged around
 
         - In the Event listener, allow to interface w/ the Event object
-            - Desctibe the drag operation (i.e. copying or moving)
+            - Describe the drag operation (i.e. copying or moving)
             - Append data to the Event object that will be passed to related Events
 
         - Tell JavaScript where the dragged item can be dropped

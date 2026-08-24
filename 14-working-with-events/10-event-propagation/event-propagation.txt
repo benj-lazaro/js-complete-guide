@@ -31,7 +31,7 @@ Event Propagation & "stopPropagation()"
 
 - The "Event" method ".stopPropagation()"
     - Prevents the registered Event listener of the selected Element node's ancestor
-        - From being triggered alonside w/ the Element node's Event listener
+        - From being triggered alongside w/ the Element node's Event listener
 
     - NOTE: Does NOT PREVENT selected Element node's default behavior from executing
         - It still allows for the default behavior ro run
@@ -40,7 +40,7 @@ Event Propagation & "stopPropagation()"
         - Multiple Event listeners registered on the same Element node from being triggered
 
 
-- The "Event" method ".stopImmediatePropagation)"
+- The "Event" method ".stopImmediatePropagation()"
     - Useful if a selected Element node has multiple registered Event listeners
 
     - It immediately stops other registered Event listener from execution
@@ -55,7 +55,7 @@ Event Propagation & "stopPropagation()"
         - Otherwise, it will & may require to use the method ".stopPropagation()"
 
 
-- On the practice code (assests/scripts/events.js)
+- On the practice code (assets/scripts/events.js)
     - Select the 1st HTML element <button> from the HTML document (events.html)
         - Using the method "document.querySelector()"
         - Passing "button" as argument value
@@ -132,7 +132,7 @@ Event Propagation & "stopPropagation()"
 
     - Save the changes
         - Load / reload the browser
-        - Launch the btowser's JavaScript console
+        - Launch the browser's JavaScript console
 
         - Clicking the button "Click me"
             - Returns its own "PointerEvent" object

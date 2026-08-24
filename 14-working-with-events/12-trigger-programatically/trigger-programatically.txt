@@ -1,6 +1,6 @@
-Triggering DOM Elements Programatically
+Triggering DOM Elements Programmatically
 ---------------------------------------
-- Triggering an Event programatically
+- Triggering an Event programmatically
     - Using the method ".submit()" on a selected Element node (e.g. "form")
         - Simulates a form submission 
 
@@ -14,7 +14,7 @@ Triggering DOM Elements Programatically
 
         - The registered Event listener for an Event "click" gets executed
         
-        - Retuns a "MouseEvent" w/ the following properties
+        - Returns a "MouseEvent" w/ the following properties
             - Property "clientX", "clientY", "screenX" &" screenY" is to 0
 
     - IMPORTANT: Triggering an Event programmatically is NOT exactly
@@ -36,5 +36,5 @@ Triggering DOM Elements Programatically
 
         - Clicking any of the Element node "li"
             - Triggers a form submission
-            - It programatically clicks the "Submit" button
+            - It programmatically clicks the "Submit" button
 

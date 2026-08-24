@@ -4,7 +4,7 @@ Example: Infinite Scrolling
     - Create a list that scrolls indefinitely
 
 
-- On the practice code (assests/scripts/events.js)
+- On the practice code (assets/scripts/events.js)
     - Create a global constant named "curElementNumber"
         - Assign it w/ a value of 0
 
@@ -25,7 +25,7 @@ Example: Infinite Scrolling
                 - The "document.documentElement.clientHeight + 150"
 
             - NOTE: Compares the distance to the bottom (of the overall content)
-                - To the "Window" height + a certain thershold (e.g. 150)
+                - To the "Window" height + a certain threshold (e.g. 150)
 
                 - The property ".clientHeight" is used as it respects 
                     - The potential scroll bars while the property ".innerHeight" does NOT
@@ -66,5 +66,5 @@ Example: Infinite Scrolling
             - A new HTML element <div> is created
 
             - It is populated w/ HTML element <p>
-                - Outputs an increamenting counter value
+                - Outputs an incrementing counter value
                 - e.g. ("Element 1... Element nn")

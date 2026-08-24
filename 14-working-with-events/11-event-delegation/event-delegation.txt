@@ -18,7 +18,7 @@ Using Event Delegation
         - Use the combination of the property "event.target" & DOM travel method ".closeest()"
             - Pass the child list element as argument
 
-        - Esnures that the property "event.target" ALWAYS refers to the child list item
+        - Ensures that the property "event.target" ALWAYS refers to the child list item
 
 
 - The property "event.currentTarget"
@@ -35,7 +35,7 @@ Using Event Delegation
             - A HTML element <p> w/ the content "Some text"
 
 
-    - Define CSS styles for the unordered list & its items (assests/styles/events.css)
+    - Define CSS styles for the unordered list & its items (assets/styles/events.css)
         - Element selector "li"
             - Property "padding" of "1rem"
             - Property "border" of "1px solid #ccc"
@@ -88,6 +88,6 @@ Using Event Delegation
             - When the Element node "li" is clicked 
 
         - This pattern requires ONLY the parent Element node "ul"
-            - To registered an Event listner for a "click" &
+            - To registered an Event listener for a "click" &
             - Call the corresponding Event handler (i.e. Arrow function)
 

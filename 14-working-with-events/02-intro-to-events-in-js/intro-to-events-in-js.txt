@@ -11,7 +11,7 @@ Introduction To Events In JavaScript
 
 
 - Events typically transport data (or metadata)
-    - Desctibe an Event
+    - Describe an Event
     - How to interact w/ that Event
     - Run some code based on that Event
 

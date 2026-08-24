@@ -12,7 +12,7 @@ Syntax:
 <event_variable>.preventDefault();
 
 
-- On the practice code (assests/scripts/events.js)
+- On the practice code (assets/scripts/events.js)
     - Clear out previous code base
 
 
@@ -39,7 +39,7 @@ Syntax:
             - Use "Submit" as content
     
 
-    - On the practice code (assests/scripts/events.js)
+    - On the practice code (assets/scripts/events.js)
         - Create a global constant named "form"
             - Assign the method "document.querySelector()" as value
             - Pass "form" as argument value

@@ -6,7 +6,7 @@ The "Event" Object
     - NOTE: This is the core idea behind event-driven code
     
     - Whatever triggered an event, it (typically) provide
-        - Data (metadata) to descibe it
+        - Data (metadata) to describe it
         - Methods to control how it behaves
 
 

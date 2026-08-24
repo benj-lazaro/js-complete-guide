@@ -37,7 +37,7 @@ Different Ways Of Listening To Events
 
         - Workaround
             - Call the earlier Event handlers w/in a 3rd callback function
-            - Quickly gets cubersome to maintain
+            - Quickly gets cumbersome to maintain
             - Offers NO fine grain control on when to use w/c Event handler
 
         - It is tricky to add / remove an Event handler

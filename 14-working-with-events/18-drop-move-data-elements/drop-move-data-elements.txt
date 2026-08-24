@@ -40,7 +40,7 @@ Dropping & Moving Data + Elements
                 - If the Arrow function returns "true"
                     - Execute a "return" statement
 
-                - Otherwise, similuate a button (Activate/Finish) on the "ProjectItem" object
+                - Otherwise, simulate a button (Activate/Finish) on the "ProjectItem" object
                     - Call method "document.getElementById()"
                     - Pass the local constant "prjId" as argument value
                     - Chain the method ".querySelector()"
@@ -96,9 +96,9 @@ Dropping & Moving Data + Elements
                 - Refers to the Element node of the dragged "ProjectItem" object
 
             - The property "dropEffect" under "dataTransfer" 
-                - Check if a "drop" Event is successsful
+                - Check if a "drop" Event is successful
 
-                - Returns "move" if successsful
+                - Returns "move" if successful
                 
                 - Otherwise, returns "none"
-                    - Dragged item is NOT dropped on a desinated "drop area"
+                    - Dragged item is NOT dropped on a designated "drop area"

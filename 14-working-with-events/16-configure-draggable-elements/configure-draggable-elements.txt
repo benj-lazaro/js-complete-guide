@@ -1,6 +1,6 @@
 Configuring Draggable Elements
 ------------------------------
-- To make selected DOM elements in the web page draggablee
+- To make selected DOM elements in the web page draggable
     - Add the HTML attribute "draggable"
         - Assign the value of "true"
 
@@ -26,7 +26,7 @@ Configuring Draggable Elements
     - On the Class "App" Static method "init()"
         - Tentatively disable sending mock-up analytics
             - Comment the local constant "timerId"
-            - Comment the Event listner for the Static method "startAnalytics()"
+            - Comment the Event listener for the Static method "startAnalytics()"
 
     
     - On the attached HTML document (index.html)
