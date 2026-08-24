@@ -11,7 +11,7 @@ How JavaScript Is Executed
 
 
 - JavaScript Engine's job is to:
-    - Parse (read & undertstand) the JavaScript code
+    - Parse (read & understand) the JavaScript code
     - Compile each line "on-the-fly" into its corresponding Machine code
     - Optimize & executes the Machine code on a single thread
 

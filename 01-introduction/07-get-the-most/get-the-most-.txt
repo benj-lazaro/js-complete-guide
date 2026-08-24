@@ -3,7 +3,7 @@ How To Get The Most Out Of This Course
 - Tips on the best way to learn
     - Watch the videos
         - At preferred speed using Udemy's playback controls
-        - Slow down or rewing videos on concepts that are NOT clear
+        - Slow down or rewind videos on concepts that are NOT clear
 
     - Code along
         - Implement the code on your own prior to looking at the author's solution        

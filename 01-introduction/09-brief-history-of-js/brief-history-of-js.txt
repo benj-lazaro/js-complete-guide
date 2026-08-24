@@ -38,7 +38,7 @@ A Brief History Of JavaScript
 
     - ECMAScript is then implemented by browser vendors as JavaScript 
         - JavaScript being the MOST FAMOUS implementation
-        - Others include the (now defunct) "ActionScript" and "jscript"
+        - Others include the (now defunct) "ActionScript" and "jScript"
 
     - JavaScript in the end is ECMAScript
     

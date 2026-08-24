@@ -1,6 +1,6 @@
 Dynamic VS Weakly Typed Languages
 ---------------------------------
-- JavaScript is a dynamic, intepreted & weakly-typed programming language
+- JavaScript is a dynamic, interpreted & weakly-typed programming language
 
 
 - Dynamic

@@ -22,7 +22,7 @@ JavaScript VS Java
         
         - Allows for code & knowledge reuse
         
-        - Allows access to non-brwoser APIs
+        - Allows access to non-browser APIs
             - e.g. local filesystem, incoming HTTP requests, etc.
 
     - NOTE: Syntax, concepts & core features of the client & server side are EXACTLY the SAME
