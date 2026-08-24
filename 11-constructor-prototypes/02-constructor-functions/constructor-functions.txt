@@ -20,12 +20,12 @@ Introducing Constructor Functions
             - Assign w/ the value of "Max"
 
         - Define a Constructor method
-            - Dynamnically create a Class property "age"
+            - Dynamically create a Class property "age"
             - Assign w/ the value of 40
 
         - Define a Class method "greet()"
             - Pass a string template literal as argument to "console.log"
-            - String temlate literal accesses the Class field "name" & property "age"
+            - String template literal accesses the Class field "name" & property "age"
 
         - Instantiate the Class into an object
 
@@ -38,7 +38,7 @@ Introducing Constructor Functions
 
         - The Anonymous function
             - Pass a string template literal as argument to "console.log"
-            - String temlate literal accesses the Class field "name" & property "age"
+            - String template literal accesses the Class field "name" & property "age"
 
 
     - Save the changes

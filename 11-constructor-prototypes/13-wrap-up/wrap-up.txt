@@ -21,7 +21,7 @@ Wrap Up
     - Constructor function
         - Blueprint for objects
         - Contains properties & methods
-        - ALL propertyes & methods are enumerable (by default)
+        - ALL properties & methods are enumerable (by default)
         - Can be called w/ the keyword "new"
         - Does NOT use "strict mode" by default
 

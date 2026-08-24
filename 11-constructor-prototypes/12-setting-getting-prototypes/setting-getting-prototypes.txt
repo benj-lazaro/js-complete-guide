@@ -71,7 +71,7 @@ Setting & Getting Prototypes
         - Currently NOT part of the assigned "prototype object"
         - Returns an error
 
-            "Uncaight TypeError: course.printRating() is not a function
+            "Uncaught TypeError: course.printRating() is not a function
 
 
     - Use the global Constructor function "Object" method ".getPrototypeOf()"
@@ -92,7 +92,7 @@ Setting & Getting Prototypes
                 },
             }
 
-        - NOTE: Overwrites the preivous assigned "prototype object" of the object "course"
+        - NOTE: Overwrites the previous assigned "prototype object" of the object "course"
 
     
     - To keep the original "prototype object" of the object "course"
@@ -111,9 +111,9 @@ Setting & Getting Prototypes
         - Pass an object as argument
 
         - The object has a property named "printProgress"
-            - Assigned with an Anonymouse function as value
+            - Assigned with an Anonymous function as value
 
-        - The Anonymouse function
+        - The Anonymous function
             - Pass the property "progress" (non-existent) as argument to "console.log()"
 
         - Save the created object to the global constant "student"

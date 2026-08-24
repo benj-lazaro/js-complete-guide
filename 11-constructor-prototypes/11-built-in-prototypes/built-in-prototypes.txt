@@ -24,7 +24,7 @@ Built-in Prototypes In JavaScript
     
 
 - The same applies with Strings
-    - Stirng is a Primitive value that behave like an object
+    - String is a Primitive value that behave like an object
         - When calling a built-in method on it
 
     - NOTE: Built-in String methods on MDN are also

@@ -16,7 +16,7 @@ Constructor Functions VS Classes & Understanding "new"
     - NOTE: The same thing happens behind-the-scenes on a Class 
 
 
-- JavaScript Class is a "syntatic sugar" for the Constructor function
+- JavaScript Class is a "syntactic sugar" for the Constructor function
     - As the latter can be both cumbersome & confusing 
 
     - The Class offers an easy way to write a "blueprint" of an object

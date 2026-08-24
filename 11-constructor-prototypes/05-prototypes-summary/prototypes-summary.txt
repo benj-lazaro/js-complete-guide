@@ -35,7 +35,7 @@ Prototypes Summary
 
 
     - Pass the object "person" as argument to "console.log()"
-        - Expand the prorperty ".__proto__"
+        - Expand the property ".__proto__"
         
         - Contains the properties defined in the object that
             - Was passed as value to the property ".prototype" of the Constructor function

@@ -23,7 +23,7 @@ Methods In Classes & In Constructors
         - This translates to
             - Less created objects
             - Less memory consumption
-            - Less performance impact (as creating objects cost perforamnce) 
+            - Less performance impact (as creating objects cost performance) 
         
 
 - To prove that ALL created instances share the same Class methods
@@ -49,14 +49,14 @@ Methods In Classes & In Constructors
         - Assign on its property ".__proto__"
 
     - The method is ONLY created ONCE
-        - Shared across ALL instances of the same Cosntructor function
+        - Shared across ALL instances of the same Constructor function
 
 
 - To make a Class method part of EVERY created instance
     - NO longer part of the "prototype object" that is shared across ALL instances
 
     - Option #1
-        - Define a Class property inside a Class' Construtor method
+        - Define a Class property inside a Class' Constructor method
         - Assign an Anonymous function as value
 
     - Option #2
@@ -65,8 +65,8 @@ Methods In Classes & In Constructors
         - NOTE: Method shorthand is NOT available for Arrow functions
 
     - Common-use case
-        - A Class method in the form of an Arrow function assignedto a Class field
-            - Used as a callbak method of an Evern listener
+        - A Class method in the form of an Arrow function assigned to a Class field
+            - Used as a callback method of an Event listener
         
         - An Arrow function does NOT know the value of the keyword "this"
             - When used inside of an Arrow function

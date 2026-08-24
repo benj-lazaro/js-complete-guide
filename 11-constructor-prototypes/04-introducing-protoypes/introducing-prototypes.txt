@@ -3,7 +3,7 @@ Introducing Prototypes
 - JavaScript is a prototype-based language that use prototypical inheritance
 
 
-- The keyword "class" is basically just a syntatic sugar for 
+- The keyword "class" is basically just a syntactic sugar for 
     - Constructor functions
     - Working w/ the prototypes
 
@@ -69,7 +69,7 @@ Introducing Prototypes
         - Referring to an object's last nested (chained) property ".__proto__"
 
 
-- The Protype Chain
+- The Prototype Chain
     - The idea behind it is when a blueprint is built w/ a Constructor function
         - Then creates an object based on that Constructor function
 
@@ -95,7 +95,7 @@ Introducing Prototypes
 
 - An object created by a Constructor function
     - By default, the property ".__proto__" is assigned w/ a default object that
-        - Conains two (2) properties
+        - Contains two (2) properties
             - "constructor" = assigned w/ a function
             - ".__proto__"  = assigned or points to another object
 
@@ -106,7 +106,7 @@ Introducing Prototypes
     - Requires the use of the Constructor function's property ".prototype"
 
     - Properties & methods set w/in the object assigned as value to the property ".prototype"
-        - Becomes the "protoype object" assigned to the property ".__proto__" of
+        - Becomes the "prototype object" assigned to the property ".__proto__" of
         - The created object based on that Constructor function
 
     - This is why the "prototype object" assigned to 
@@ -121,7 +121,7 @@ Introducing Prototypes
             - The created object based on that Construction function
 
     - The keyword "this" inside the "prototype object" assigned as value to
-        - The property ".protoype" of a Constructor function 
+        - The property ".prototype" of a Constructor function 
         - ALWAYS refers to the object object w/c accessed the property or called the method
 
 
