@@ -95,5 +95,5 @@ The ".splice()" Method
 
     - Save the Changes
 
-    - Load / reload the brower
+    - Load / reload the browser
         - Launch the browser's JavaScript console to view results

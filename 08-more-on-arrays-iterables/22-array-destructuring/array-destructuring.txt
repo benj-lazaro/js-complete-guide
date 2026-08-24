@@ -2,7 +2,7 @@ Array Destructuring
 -------------------
 - A syntax feature known as Array Destructuring
     - Extract elements of an array
-        - Into invidual constants or variables (i.e. placeholder)
+        - Into individual constants or variables (i.e. placeholder)
 
     - Syntax is read from left to right
         - 1st element assigned to the 1st placeholder
@@ -24,7 +24,7 @@ Array Destructuring
         - Populate it w/ primitive values
 
     - Declare a constant
-        - Intead of using a name, use a pair of "[ ]"
+        - Instead of using a name, use a pair of "[ ]"
 
     - Declare the placeholders, w/in the pair of "[ ]"
         - 1st placeholder = "firstName"

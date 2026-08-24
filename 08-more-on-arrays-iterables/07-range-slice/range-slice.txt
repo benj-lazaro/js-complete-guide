@@ -52,7 +52,7 @@ Selecting Ranges & Creating Copies With ".slice()"
         - Store the returned array in a global constant named "lastResults"
 
     - Create a "shallow copy" array that
-        - Constains the 3rd element (index position 2) up to the end of the original array
+        - Contains the 3rd element (index position 2) up to the end of the original array
         - Store the returned array in a global constant named "thirdToEndResult"
 
     - Save the changes

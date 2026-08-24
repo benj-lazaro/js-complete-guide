@@ -45,7 +45,7 @@
 
 
 - The array method ".reverse()"
-    - Rerverses the elements of an array "in-place" (i.e. no copy is made)
+    - Reverses the elements of an array "in-place" (i.e. no copy is made)
 
     - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse)
 
@@ -55,7 +55,7 @@
 
 
 - On the practice project (app.js)
-    - Create a new array w/ priimitive values
+    - Create a new array w/ primitive values
         - Stored in a global constant named "prices"
 
     - Use the array method ".sort()" on the array "prices"

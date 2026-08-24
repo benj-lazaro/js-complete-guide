@@ -22,7 +22,7 @@ Assignment 06: Time To Practice Arrays & Iterables
 
 - Task #3:
     - Tweak the function named "findMax()" that
-        - It finds BOTH minimum & maxumum
+        - It finds BOTH minimum & maximum
             - Returns those as an array
 
         - Then use destructuring when calling the function
@@ -33,5 +33,5 @@ Assignment 06: Time To Practice Arrays & Iterables
     - Create a list
         - Where you ensure that NO duplicate values can be added
 
-        - Use whichever approach seems approriate
+        - Use whichever approach seems appropriate
         

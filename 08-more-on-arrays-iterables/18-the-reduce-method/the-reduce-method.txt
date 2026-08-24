@@ -1,8 +1,8 @@
 The Important ".reduce()" Method
 --------------------------------
 - The array method ".reduce()"
-    - Reduces the elements of an array into a simplier value 
-        - simplier value = single number or string
+    - Reduces the elements of an array into a simpler value 
+        - simpler value = single number or string
         - e.g. sum of all elements
 
     - It accepts two (2) argument
@@ -16,10 +16,10 @@ The Important ".reduce()" Method
         - 4th   = plural name of the elements w/in an array (optional)
 
     - The function executes the logic on every element of the array that
-        - Reduces into a simplier value
+        - Reduces into a simpler value
     
-        - Explicitly returns the simplier (reduced) value
-            - Using the "return" statment
+        - Explicitly returns the simpler (reduced) value
+            - Using the "return" statement
         
         - NOTE: Elements of the array remains untouched
 
@@ -43,7 +43,7 @@ The Important ".reduce()" Method
 
 
 - On the practice project (app.js)
-    - Create a new array w/ priimitive values
+    - Create a new array w/ primitive values
         - Stored in a global constant named "prices"
 
     - Use the method ".filter()" on the array "prices"

@@ -45,7 +45,7 @@ Retrieving Indexes With ".indexOf()" & ".lastIndexOf()"
         - Passed as an argument value to either methods
 
     - The reference address of the object element w/in an array is NEVER THE SAME
-        - As the reference address of the object passed as argument valuw
+        - As the reference address of the object passed as argument value
         - Returns the value of "-1" (i.e. element NOT found)
 
     - NOTE: There is a method that works w/ object elements in an array

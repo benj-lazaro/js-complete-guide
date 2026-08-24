@@ -54,7 +54,7 @@ Working With Sets
 - To go through w/ ALL the values of a set
     - Use the method ".entries()"
 
-    - Returns an itereable that
+    - Returns an iterable that
         - Can be used w/ a "for..of" loop
 
     - Working w/ a "for..of" loop

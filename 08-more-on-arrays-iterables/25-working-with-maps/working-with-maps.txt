@@ -142,7 +142,7 @@ Working With Maps
 
     
     - Delete ALL entries in the map
-        - Use the method ".cleart()
+        - Use the method ".clear()
 
 
     - Display the current size of the map
