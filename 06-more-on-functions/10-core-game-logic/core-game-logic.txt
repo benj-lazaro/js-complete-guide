@@ -39,7 +39,7 @@ Implementing The Core Game Logic
             - 2nd   = player's choice
 
         - Declare an "if" statement that
-            - Detemrines who wins the current round
+            - Determines who wins the current round
 
     - On the anonymous function of the Event handler
         - Call the function "getComputerChoice()"

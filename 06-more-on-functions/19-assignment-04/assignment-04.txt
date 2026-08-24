@@ -1,6 +1,6 @@
 Assignment 04: Time To Practice Functions
 -----------------------------------------
-- Re-write the gunction named "sayHello" as an Arrow Functions
+- Re-write the function named "sayHello" as an Arrow Functions
 
 - Adjust the Arrow function to use three (3) different syntaxes
     - W/ two (2) arguments

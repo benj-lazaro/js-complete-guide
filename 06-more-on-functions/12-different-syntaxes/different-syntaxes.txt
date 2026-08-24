@@ -37,7 +37,7 @@ Different Arrow Function Syntaxes
 
     - Shorter parameter syntax w/ ONLY 1 (one) parameter variable & returns an object
         - Place an extra pair of "( )" around the object
-            - Avoids the object's "{ }" being misinterpreted as the function body's delimeters
+            - Avoids the object's "{ }" being misinterpreted as the function body's delimiters
         
         const <name> = <parameter> => (<{object}>);
         

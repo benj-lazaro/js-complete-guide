@@ -23,7 +23,7 @@ Functions VS Methods
 
         <object_name>.<property_name>();
 
-    Exanple:
+    Example:
     person.greet(); // Calls the "person" object's "greet()" method
 
 

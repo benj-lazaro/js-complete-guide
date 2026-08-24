@@ -5,12 +5,12 @@ Adding .bind() To The Calculator Project
         - Into a single function named "calculation()"
 
     - Using the method ".bind()"
-        - To pass specific arguments values in order to execute specifc mathematical opearation
+        - To pass specific arguments values in order to execute specific mathematical operation
 
 
 - On the starter project (app.js)
     - Declare a new function named "calculation()"
-        - Declare a new parameter variable named "opearation"
+        - Declare a new parameter variable named "operation"
 
     - Inside the function "calculation()"
         - Copy & paste the declaration of local constants "enteredNumber" & "initialResult"
@@ -22,7 +22,7 @@ Adding .bind() To The Calculator Project
         - Declare an "if" statement
             - Check the argument value of the parameter variable "operation"
 
-            - Copy &p aste the line that stores the evaluated value from the expression
+            - Copy & paste the line that stores the evaluated value from the expression
                 - Between the global variable "currentResult" & local constant "enteredNumber"
                 - From their respective functions (e.g. "add()", "subtract()", "multiply()" & "divide()")
 

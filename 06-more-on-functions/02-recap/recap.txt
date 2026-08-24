@@ -27,7 +27,7 @@ Recapping Functions: What We Know Thus Far
 
     - Be called indirectly
         - Attaching the function name to another function
-            - Without the suceeding pair of "( )"
+            - Without the succeeding pair of "( )"
             - (e.g. event handler functions)
             - This PREVENTS the IMMEDIATE EXECUTION of the function
         

@@ -1,4 +1,4 @@
-Introducting Arrow Functions
+Introducing Arrow Functions
 ----------------------------
 - An Arrow function
     - A shorter alternative syntax when working w/ an Anonymous function
@@ -16,7 +16,7 @@ Introducting Arrow Functions
 
     - If the Anonymous function has ONLY a single-line expression
         - Drop the pair of "{ }"
-        - Drop the "return" statement as it ALWAYS IMPLICTLY RETURNS a value
+        - Drop the "return" statement as it ALWAYS IMPLICITLY RETURNS a value
 
     - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
 
