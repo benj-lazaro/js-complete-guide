@@ -52,7 +52,7 @@ Adding More "if" Statements & A "Strong Attack" Functionality
 
         - Attach the event handler that
             - Listen to a "click" event
-            - That excutes the callback function "strongAttackHandler()" it occurs
+            - That executes the callback function "strongAttackHandler()" it occurs
 
     - Save the changes
 

@@ -10,7 +10,7 @@ The "for of" Loop
             - Set
             - NodeList (& other DOM collections)
             - Arguments object
-            - Generators (produced by Gnerator Functions)
+            - Generators (produced by Generator Functions)
             - User-defined iterables
 
     - The downside of a "for..of" loop

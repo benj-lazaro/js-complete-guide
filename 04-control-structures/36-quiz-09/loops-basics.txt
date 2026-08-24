@@ -1,7 +1,7 @@
 Quiz 09: Loops Basics
 ---------------------
 - Why do loops exists?
-    - Answer: Because you somtimes need to execute the same code
+    - Answer: Because you sometimes need to execute the same code
         - Maybe with different, dynamic values multiple times
 
 

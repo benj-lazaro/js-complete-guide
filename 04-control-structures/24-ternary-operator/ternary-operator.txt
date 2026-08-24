@@ -2,7 +2,7 @@ Introducting The Ternary Operator
 ---------------------------------
 - A Ternary operator is a special conditional expression that 
     - Takes three (3) operators
-        - A condintional statement followed by a "?"
+        - A conditional statement followed by a "?"
         - Then an expression if condition is truthy followed by a ":"
         - Then an expression if condition is falsy
 
@@ -24,7 +24,7 @@ Introducting The Ternary Operator
 
 
 - A Ternary operator is ideal for
-    - Short condintional statement wherein
+    - Short conditional statement wherein
         - Returned value will be assigned to a constant / variable
 
     - It is NOT strictly better than an "if" statement

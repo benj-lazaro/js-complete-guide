@@ -2,7 +2,7 @@ Beyond "true", "false", Truthy & Falsy Values
 ---------------------------------------------
 - JavaScript has a concept of Falsy & Truthy values
     - These are NOT data types
-    - They're how JavaScript evaluates conditiona under the hood
+    - They're how JavaScript evaluates conditions under the hood
 
 
 - JavaScript's conditional statements generally work w/ either

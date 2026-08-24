@@ -35,7 +35,7 @@ Using "if" Statements
             - Assign the string value "-" to the local variable "mathOperator"
 
     - On the function call to "createAndWriteOutput()"
-        - Replace the arguement value "+" with the local variable "mathOperator"
+        - Replace the argument value "+" with the local variable "mathOperator"
 
     - On the function call to "writeToLog()"
         - Replace the argument value "ADD" with parameter variable "calculationType"

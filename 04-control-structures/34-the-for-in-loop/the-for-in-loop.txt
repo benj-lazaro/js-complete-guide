@@ -38,7 +38,7 @@ The "for..in" Loop
                 - Placeholder of the object's property name
 
             - Use the previously declared local constant "logEntry" as the object
-                - Holds the value assigned to the corresponding property naem
+                - Holds the value assigned to the corresponding property name
 
             - Pass the following string template literals to the function "console.log()"
                 - `${key}`              = Object's property name

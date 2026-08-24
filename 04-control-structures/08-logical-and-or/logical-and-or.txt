@@ -37,7 +37,7 @@ The Logical AND & OR operators
             - Using the logical AND
         
         - Check if the correct argument value for the parameter "calculationType" is passed
-            - Otherwise issue a "return" statment
+            - Otherwise issue a "return" statement
 
     - Save the changes
 

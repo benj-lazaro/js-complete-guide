@@ -1,6 +1,6 @@
 Logical Operator "Tricks" & Shorthands
 --------------------------------------
-- Logical opeartor "!!"
+- Logical operator "!!"
     - Performs a boolean coercion that
         - Coerces a truthy or falsy value into a REAL boolean "true" or "false" value
         - Basically a Type Conversion trick

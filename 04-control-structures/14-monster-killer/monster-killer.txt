@@ -15,7 +15,7 @@ Setting Up A Bigger Example Project: The Monster Killer
             - User (author) defined functions 
 
     - The file "scripts/app.js"
-        - Implement one's code throghout this module
+        - Implement one's code throughout this module
 
     - The file "styles/app.css"
         - Styles for the HTML document

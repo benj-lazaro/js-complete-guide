@@ -33,7 +33,7 @@ Using "if" Statements For Checking The Win Condition
                 - To display the corresponding message who wins
 
                 - NOTE: The function "alert()" when called
-                    - Tenatively halts the rendering of the content on the browser
+                    - Tentatively halts the rendering of the content on the browser
 
                     - Resulting to displaying the message who win
                         - Before the health bars are updated

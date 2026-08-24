@@ -1,6 +1,6 @@
 Utilizing Global Constants As Identifiers In Conditional Code
 -------------------------------------------------------------
-- Implementing a pattern for conditational statements that
+- Implementing a pattern for conditional statements that
     - Use global constants as identifiers over hard-coded values
         - Assign static values to constants
 

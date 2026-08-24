@@ -11,7 +11,7 @@ Controlling The Conditional Bonus Life (Without Boolean Operators)
             - Launch an attack (normal or strong) against the monster
 
         - Shows an alert message that the bonus life has been triggered
-            - Corresonding UI button disppears
+            - Corresponding UI button disappears
 
 
 - On the starter project

@@ -45,4 +45,4 @@ Throwing Custom Errors
         - The browser's Javascript console should receive an object
             - Containing the custom error message
         
-        - The other buttons are unclickable
+        - The other buttons are un-clickable
