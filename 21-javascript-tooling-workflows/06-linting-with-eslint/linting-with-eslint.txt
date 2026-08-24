@@ -15,7 +15,7 @@ Linting With ESLint
     - Launch VS Code's Integrated Terminal at the project's root folder 
 
 
-    - Run the following npm command to create (initialzie) ESLint's configuration file
+    - Run the following npm command to create (initialize) ESLint's configuration file
 
         npm init @eslint/config@latest
 
@@ -94,5 +94,5 @@ Linting With ESLint
     - Open the file "assets/scripts/app.js"
         - Make changes in the code that violates the rules
 
-        - The ESLint extesion working w/ the ESLint package highlights the violations
-            - Provide acecss to the "Quick Fix" menu item
+        - The ESLint extension working w/ the ESLint package highlights the violations
+            - Provide access to the "Quick Fix" menu item

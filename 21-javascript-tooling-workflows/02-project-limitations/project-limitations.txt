@@ -1,10 +1,10 @@
 Project Limitations & Why We Need Tools
 ---------------------------------------
 - The limitations of basic JavaScript projects
-    - Requires micro-managing manual imports or have lots of unncessary HTTP requests
+    - Requires micro-managing manual imports or have lots of unnecessary HTTP requests
         - As the project grows either (or BOTH at the same time)
             - More the need to manually micro-manage imports
-            - Live w/ the unncessary HTTP requests
+            - Live w/ the unnecessary HTTP requests
 
     - Code is NOT really optimized
         - NOT as small as it could possibly be
@@ -17,11 +17,11 @@ Project Limitations & Why We Need Tools
             - Results to loading the app faster
             - Requiring the browser to download less bytes
 
-    - Potentally sub-optimized browser support
+    - Potentially sub-optimized browser support
         - NOT ALL of the latest & greatest JavaScript features are supported by ALL browsers
 
         - Need a tool that could translates modern code into an older code
-            - For the use cases of uploading a (mondern code) project on a older web server
+            - For the use cases of uploading a (modern code) project on a older web server
             - To ensure compatibility on more browsers
 
     - Need to constantly reload pages manually
@@ -32,7 +32,7 @@ Project Limitations & Why We Need Tools
 
     - Code quality is NOT checked
         - Need a tool that could be configured w/ rules on good code quality
-        - Automatically checks if the code is properly writtten & followed established rules
+        - Automatically checks if the code is properly written & followed established rules
 
 
 - JavaScript tooling that helps address aforementioned limitations
@@ -44,7 +44,7 @@ Project Limitations & Why We Need Tools
     - Bundling tool
         - Analyzes (ALL of the code's) imports & exports using JavaScript modules
         - Combines ALL of these files into a couple of file bundles
-        - Removes unncessary HTTP requests, effectively reduces requests
+        - Removes unnecessary HTTP requests, effectively reduces requests
         - Tool: Webpack
 
     - Code optimization tool
@@ -55,7 +55,7 @@ Project Limitations & Why We Need Tools
         - Tool: Webpack Optimizer Plugins
 
     - Code compilation tool
-        - Write modern code & able ship code that is supproted by older browsers
+        - Write modern code & able ship code that is supported by older browsers
         - Transpiles modern code into code that works on older browsers
         - Tool: Babel
 
