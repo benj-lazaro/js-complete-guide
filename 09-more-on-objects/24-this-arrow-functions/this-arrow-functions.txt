@@ -57,7 +57,7 @@
             - Render the individual names w/ the team name 
 
         - The Arrow function does NOT bind the keyword "this" to ANY object
-            - Preceives that it is execute outside of its own function body
+            - Perceives that it is execute outside of its own function body
 
             - It "executes" w/in the method "getTeamMembers"
                 - Where the keyword "this" references the object "members"
