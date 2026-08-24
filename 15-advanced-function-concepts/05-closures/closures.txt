@@ -11,7 +11,7 @@ Closures
             - ALL variables defined globally
 
         - An outer function has NO access to
-            - Constants, parameters & varibales defined w/in an inner function
+            - Constants, parameters & variables defined w/in an inner function
 
         - NOTE: Every call to the outer function
             - Locks in the assigned values (parameters and/or variables)
@@ -20,32 +20,32 @@ Closures
         - A global variable is accessed by the outer and/or inner function
             - It does NOT get "locked in" by either functions
             - Any changes in the assigned value
-            - Either functions (inner or outer) picks up the latestt assigned value
+            - Either functions (inner or outer) picks up the latest assigned value
 
 
 - On the practice code (app.js)
-    - Define a global variable named "multipler"
+    - Define a global variable named "multiplier"
         - Assign the value of 1.1
 
 
     - Inside the inner function "calculateTax()"
-        - Pass the global variable "multipler" as argument value to "console.log()"
+        - Pass the global variable "multiplier" as argument value to "console.log()"
 
-        - Refactor the return statement to include the global variable "multipler"
+        - Refactor the return statement to include the global variable "multiplier"
 
             return amount * tax * multiplier;
 
     
     - Prior to calling the outer function "createTaxCalculator()" for the 3rd time
-        - Assign the value of 1.2 to the variable "multipler"
+        - Assign the value of 1.2 to the variable "multiplier"
 
 
     - Save the changes
         - Load / reload the browser
 
         - Launch the browser's JavaScript console
-            - Displays the value of the variable "multipler"
-            - Displays the returned results based on the initial value of "multipler"
+            - Displays the value of the variable "multiplier"
+            - Displays the returned results based on the initial value of "multiplier"
 
-            - Displays the changed assigned value of the variable "multipler"
-            - Displays the updated results based on the new value of "multipler"
+            - Displays the changed assigned value of the variable "multiplier"
+            - Displays the updated results based on the new value of "multiplier"

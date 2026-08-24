@@ -67,7 +67,7 @@ Pure Functions & Side-Effects
             - Call "console.log()"
                 - Pass the parameter variable "hobby" as argument value
 
-            - NOTE: This is a side-effct as it changes the array OUTSIDE of the function
+            - NOTE: This is a side-effect as it changes the array OUTSIDE of the function
                 - The passed array as argument value
                     - References to the address of the actual array in memory
     

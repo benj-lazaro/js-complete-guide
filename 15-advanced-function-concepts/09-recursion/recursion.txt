@@ -1,6 +1,6 @@
 Introducing Recursion
 ---------------------
-- It is a pattern of a functin calling itself
+- It is a pattern of a function calling itself
     - Offers as a shorter alternative to a "for" loop & do more
 
 

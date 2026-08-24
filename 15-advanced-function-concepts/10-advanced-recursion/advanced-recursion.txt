@@ -48,7 +48,7 @@ Advanced Recursion
 
         
     - Call the function "getFriendNames()"
-        - Pass the object "myself" as argumen value
+        - Pass the object "myself" as argument value
 
 
     - Save the changes
