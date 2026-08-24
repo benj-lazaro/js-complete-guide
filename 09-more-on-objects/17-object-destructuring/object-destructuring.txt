@@ -28,7 +28,7 @@ Object Destructuring
     const { <existing_property_name>: <new_property_name> } = <source_object>;
 
 
-- In the practice project (asssets/scripts/objects.js)
+- In the practice project (assets/scripts/objects.js)
     - On the Arrow function stored in the global constant "renderMovies"
         - On the call for the method ".forEach()" on the object "filteredMovie"
 

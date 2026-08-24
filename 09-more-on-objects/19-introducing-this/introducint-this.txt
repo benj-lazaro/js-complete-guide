@@ -1,4 +1,4 @@
-Introducting "this"
+Introducing "this"
 -------------------
 - The keyword "this" refers to
     - The piece of code responsible for calling a method

@@ -5,7 +5,7 @@ Adding The Filter Functionality
     - Render a list of movie(s) that matches the search
 
 
-- In the practice project (asssets/scripts/objects.js)
+- In the practice project (assets/scripts/objects.js)
     - Create an Arrow callback function
         - Stored in a global constant named "searchMovieHandler"
 
@@ -18,14 +18,14 @@ Adding The Filter Functionality
             - Pass "filterTerm" as argument
 
     - Switch to the Arrow function stored in the global constant "renderMovies"
-        - Add a paramter variable named "filter"
+        - Add a parameter variable named "filter"
             - Assign the default value of an empty string ""
 
         - After the line of code of setting the property ".innerHTML" of "movieList"
             - Create a local constant named "filteredMovie"
             
             - Assign a ternary expression
-                - If the value of the paramter variable "filter" is an empty string
+                - If the value of the parameter variable "filter" is an empty string
                     - Assign it w/ the array "movies"
                 
                 - Otherwise, assign it w/ a "filtered" array
@@ -35,7 +35,7 @@ Adding The Filter Functionality
                 - Inside the arrow function
                     - Implicitly return the value of "movie.info.title"
                         - Using the method ".includes()"
-                        - Passing parameter variable "filter" as arugment
+                        - Passing parameter variable "filter" as argument
 
     - At the last line of code
         - Create a new event handler for the Element node stored in the global constant "searchBtn"

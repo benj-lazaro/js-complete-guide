@@ -17,7 +17,7 @@ Property Types & Order
 
     - IMPORTANT: When accessing a property of Number data type
         - Using the "." notation w/o the Square bracket will NOT WORK
-        - e.g. <object>.1, <objec>.357
+        - e.g. <object>.1, <object>.357
 
 
 - On the JavaScript object's order of properties
@@ -31,4 +31,4 @@ Property Types & Order
 
     - NOTE: On an object w/c ONLY consists of Number data type properties
         - Properties are sorted according to their numerical ascending order
-            - On BOTH Chrome Dev Tools' Expande & Summary mode 
+            - On BOTH Chrome Dev Tools' Expand & Summary mode 

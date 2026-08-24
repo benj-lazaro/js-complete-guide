@@ -13,7 +13,7 @@ Checking For Property Existence
     }
 
 
-- Alaternatively, use an "if" statement to check
+- Alternatively, use an "if" statement to check
     - If the target property has the value of "undefined"
 
     - A non-existent object property

@@ -4,7 +4,7 @@ for-in Loops & Outputting Dynamic Properties
     - As child elements of the parent HTML element <ul>
 
 
-- In the practice project (asssets/scripts/objects.js)
+- In the practice project (assets/scripts/objects.js)
     - On the function "renderMovie()"
         - Refactor the arrow function passed as argument in the method "forEach()"
 

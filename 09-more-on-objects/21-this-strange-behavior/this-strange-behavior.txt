@@ -15,7 +15,7 @@ The "this" Keyword & Its Strange behavior
         - The keyword "this" returns the value "undefined"
 
 
-- To prevent help identify which object that the keyword "this" is currently referreing to
+- To prevent help identify which object that the keyword "this" is currently referring to
     - Declare the name of the object that calls the method
         - Prefixing the object's name
         - A "." notation

@@ -27,7 +27,7 @@ The Object Spread Operator (...)
 
 - In the practice example (scripts.js)
     - Create a new object using Object literal notation
-        - Declare the following propertiies
+        - Declare the following properties
             - Property "name" assigned w/ a primitive value
             - Property "hobbies" assigned w/ a reference value (array)
 
@@ -43,7 +43,7 @@ The Object Spread Operator (...)
     - Push a new element in the property "hobbies" of the object "person"
         - Using the method ".push()"
 
-        - This updates the proerty "hobbies" of both objects "person" & "person2"
+        - This updates the property "hobbies" of both objects "person" & "person2"
 
     - Create a new object using Object literal notation
         - Based on a deep-copy of object "person"
@@ -52,7 +52,7 @@ The Object Spread Operator (...)
         - Declare a new property "age"
             - Assign w/ a primitive value
 
-        - Perform a deep-copy of the proerty "hobbies" of object "person"
+        - Perform a deep-copy of the property "hobbies" of object "person"
             - Using the spread operator (...)
 
     - Remove the last element from the property "hobbies" of object "person"
@@ -64,6 +64,6 @@ The Object Spread Operator (...)
     - Save the changes
 
     - Load / reload the browser
-        - Launch the brower's JavaScript console
+        - Launch the browser's JavaScript console
 
         - View the results

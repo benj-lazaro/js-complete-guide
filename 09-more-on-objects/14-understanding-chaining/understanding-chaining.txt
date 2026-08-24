@@ -22,7 +22,7 @@ Understanding Chaining (Property & Method Chaining)
         };
 
 
-- In the practice project (asssets/scripts/objects.js)
+- In the practice project (assets/scripts/objects.js)
     - On the Arrow callback function stored in the global constant "addMovieHandler"
 
     - Chain the method ".toString()" to the method "Math.random()"

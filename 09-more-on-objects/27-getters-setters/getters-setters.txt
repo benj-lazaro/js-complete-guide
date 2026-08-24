@@ -16,7 +16,7 @@ Getters & Setters
 
     - Common use case:
         - To create READ-ONLY properties
-        - Add extra (input) validtion for a property w/ a fallback value
+        - Add extra (input) validation for a property w/ a fallback value
         - Setup default transformations to a property's value
 
 
@@ -56,12 +56,12 @@ Getters & Setters
         - Next a pair of "( )"
         - Then a pair of "{ }" that contains the Getter's logic
 
-    - On the paraemter field enclosed w/in a pair of "( )"
+    - On the parameter field enclosed w/in a pair of "( )"
         - Define the parameter variable(s) whose value will be assigned
             - To an existing property of the object
 
     - Inside the Setter
-        - Perform validation checks on the value of the paraemter variable(s)
+        - Perform validation checks on the value of the parameter variable(s)
 
         - Define the object that called the Setter
             - Referenced by the keyword "this"
@@ -70,7 +70,7 @@ Getters & Setters
             - Prefix w/ a "_" character w/c indicates it is an "internal" property
             - Then the existing property name of the object
             - Next is the "=" operator
-            - And assign the value(s) of the paraemter variable(s)     
+            - And assign the value(s) of the parameter variable(s)     
 
     Syntax:
     <object> = {
@@ -99,7 +99,7 @@ Getters & Setters
                 - Followed by a property named "title" w/ a pair of "( )"
 
                 - In the pair of "( )"
-                    - Define the paraemter variable "value"
+                    - Define the parameter variable "value"
 
                 - Next a pair of "{ }"
                     - To house the Setter logic
@@ -111,14 +111,14 @@ Getters & Setters
                     - Assign the a default string value "DEFAULT"
                     - Then return the call using an empty "return" statement
 
-                - Otheriwse
+                - Otherwise
                     - Use the keyword "this"
                         - To reference the object that called the Setter
 
                     - Then an internal property named "_title"
                     
                     - Followed by an "=" operator that
-                        - Assigns the value of the paraemter variable "value"
+                        - Assigns the value of the parameter variable "value"
 
             - Next, define a Getter
                 - Use the keyword "get"

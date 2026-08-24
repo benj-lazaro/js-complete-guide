@@ -7,7 +7,7 @@ Rendering Elements Based On Objects
         - The CSS property "display" is currently set to "none" (hidden)
 
 
-- In the practice project (asssets/scripts/objects.js)
+- In the practice project (assets/scripts/objects.js)
     - Create an Arrow callback function
         - Stored in a global constant named "renderMovie"
 
@@ -39,7 +39,7 @@ Rendering Elements Based On Objects
             - Set the property ".textContent"
                 - To the value stored in "movie.info.title"
             
-            - Append thie "movieElement" as a child of "movieList"
+            - Append the "movieElement" as a child of "movieList"
                 - Using the method ".appendChild()"
 
     - Call the function "renderMovie()" w/in the callback function "addMovieHandler()"

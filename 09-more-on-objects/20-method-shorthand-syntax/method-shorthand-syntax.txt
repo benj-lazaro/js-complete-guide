@@ -3,7 +3,7 @@ The Method Shorthand Syntax
 - An alternative shorthand way of defining a method w/in an object
     - When using an Anonymous function
         - Remove the keyword "function"
-        - Remove the ":" that seperates the property name & anonymous function
+        - Remove the ":" that separates the property name & anonymous function
         - Place a pair of "( )" RIGHT AFTER the property name
 
         Syntax:
@@ -17,7 +17,7 @@ The Method Shorthand Syntax
 
     - When using an Arrow function
         - Remove the "=>"
-        - Remove the ":" that seperates the property name & Arrow function
+        - Remove the ":" that separates the property name & Arrow function
         - Place a pair of "( )" RIGHT AFTER the property name
 
         Syntax:

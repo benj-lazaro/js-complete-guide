@@ -35,7 +35,7 @@ The Object.assign()
     - Declare a new object
         - Using the Object literal notation
             
-        - Declare the following propertiies
+        - Declare the following properties
             - Property "name" assigned w/ a primitive value
             - Property "hobbies" assigned w/ a reference value (array)
 

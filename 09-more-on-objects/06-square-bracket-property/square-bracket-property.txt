@@ -17,7 +17,7 @@ Special Key Names & Square Bracket Property Access
 
 - To access a special property name
     - Use the Square bracket notation
-    - Pass the special property name enclosed w/in a " " as arguement
+    - Pass the special property name enclosed w/in a " " as argument
         
     Syntax:
     <object>.["<property-name>"];
