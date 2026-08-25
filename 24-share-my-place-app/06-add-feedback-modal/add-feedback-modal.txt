@@ -1,0 +1,154 @@
+Adding Feedback (Showing A Modal)
+---------------------------------
+- Implement a modal that shows a "loading spinner"
+    - When fetching a user's current location then hides it after it is done
+        - NOTE: A modal is simply on overlay displayed in front of an app
+            - Similar to that of JavaScript's "alert()" function
+
+    - The practice project's HTML document (dist/index.html)
+        - Comes w/ two (2) HTML element <template> whose purpose is
+            - To serve as a modal container
+            - To display the "loading spinner" animation w/in the modal container
+
+        - NOTE: Internet Explorer does NOT support the HTML element <template>
+
+
+- On the practice project
+    - Create a new sub-folder named "UI" (src/UI)
+        - Inside the sub-folder, create a new file named "Modal.js"
+
+    
+    - In the file "Modal.js"
+        - Create a new Class named "Modal"
+
+        - Prefix the Class w/ the keyword "export"
+            - It will be imported into the Class "PlaceFinder" (src/PlaceFinder.js)
+            - To render the modal & the "loading spinner" animation
+
+    - In the Class "Modal"
+        - Create two (2) general purpose methods that will control the modal named
+            - "show()"
+            - "hide()"
+
+        - Create a Constructor Method
+            - Define the following parameter variables
+                - "contentId"    = Identifies the attribute "id" of the HTML element <template>
+                - "fallbackText" = Message for unsupported feature(s)
+
+        - Inside the Constructor Method
+            - Define the property "this.contentTemplateId"
+                - Assign "document.getElementById()" as value
+                    - Pass the parameter variable "contentId" as argument value
+
+                - NOTE: Targets the HTML <template> w/ the attribute "id" of "loading-modal-template"
+                    - Renders the "loading spinner" w/in the modal container
+
+            - Define the property "this.contentTemplateElement"
+                - Assign "document.getElementById()" as value
+                    - Pass "modal-template" as argument value
+
+                - NOTE: Targets the HTML <template> w/ the attribute "id" of "modal-template"
+                    - The modal container w/in the HTML document (dist/index.html)
+
+            - Define the property "this.fallbackText"
+                - Assigns the parameter variable "fallbackText" as value
+                - NOTE: Contains the corresponding text message for a failed operation
+
+        - On the method "show()"
+            - Implement a feature detection code for a browser's support for the HTML element <template>
+            
+            - Using an "if" statement
+                - To check for the property "content" w/in the returned object after executing:
+
+                    document.createElement("template")
+
+                - A browser that supports the HTML element <template>
+                    - Returns an Element Node (object) w/ a property "content"
+                    - Otherwise, a value of "undefined" is returned instead
+
+            - In the "if" clause
+                - Create a local constant "modalElements"
+                    - Assign "document.importNode()" as value
+                    
+                    - Pass the following argument values
+                        - 1st = this.modalTemplateElement.content
+                        - 2nd = true
+
+                    - NOTE: Creates a deep copy of the modal container that
+                        - Grants access to two (2) of its child HTML elements <div> w/
+                        - The attribute "class" of "backdrop" & "modal", respectively
+                        
+                - Create a local constant "backdropElement"
+                    - Assign "modalElements.querySelector()" as value
+                        - Pass ".backdrop" as argument value
+
+                - Create a local constant "modalElement"
+                    - Assign "modalElements.querySelector()" as value
+                        - Pass ".modal" as argument value
+
+                - Create a local constant "contentElement"
+                    - Assign "document.importNode()" as value
+
+                    - Pass the following argument values
+                        - 1st = this.contentTemplateElement.content
+                        - 2nd = true
+                    
+                    - NOTE: Create a deep copy of the HTML element <template> for the "loading spinner"
+                
+                - Access "document.insertAdjacentElement()"
+                    - Pass the following argument values
+                        - 1st = "afterbegin"
+                        - 2nd = modalElement
+
+                - Access "document.insertAdjacentElement()"
+                    - Pass the following argument values
+                        - 1st = "afterbegin"
+                        - 2nd = backdropElement
+
+                    - NOTE: Inserts the modal container in the HTML document
+                        - Just right after the HTML element <body>
+    
+            - In the "else" clause
+                - Access the function "alert()"
+                - Pass the property "this.fallbackText" as argument value
+
+
+    - In the file "src/SharePlace.js"
+        - Use the keyword "import"
+            - To import the Class "Modal" from "src/UI/Modal.js"
+
+        - In the method "locateUserHandler()"
+            - Right after the browser feature check
+
+            - Instantiate the Class "Modal"
+                - Pass the following argument values
+                    - 1st = "loading-modal-content"
+                    - 2nd = "Loading location, please wait."
+
+                - Save the returned object in a local constant named "modal"
+
+            - Call the Class "Modal" method "show()"
+
+            - In the "success" clause of the "navigator.geolocation.getCurrentPosition()"
+                - Call the Class "Modal" method "hide()"
+
+            - In the "error" clause of the "navigator.geolocation.getCurrentPosition()"
+                - Call the Class "Modal" method "hide()"
+
+
+    - Save the changes
+        - Run the npm scripts
+
+            npm run build && npm run build:dev
+
+        
+        - Click the "Loopback" URL
+            - Launches the default browser
+            - Loads the practice project
+        
+        - Clicking the button "Get Current Location" of the practice project
+            - Executes the "loading spinner" modal
+
+            - HOWEVER, the "loading spinner" modal does NOT hide after 
+                - Successfully retrieving the user's current location
+                - An issue to be tackled on the next lesson
