@@ -1,0 +1,14 @@
+Continue Without Credit Card
+----------------------------
+- OpenLayers has been provided as an alternative to Google Maps
+    - It does NOT require a credit card
+    - Requires a few tweaks on the previous lesson's codebase
+    
+    - PERSONAL NOTE:
+        - Fellow student under the name "Raghvendra"
+
+        - Provided a solution using the OpenLayers
+            - Reference (https://openlayers.org/doc/quickstart.html)
+
+        - Observed that in order to render the map in the DOM
+            - Clicking the button "Get Current Location" twice
