@@ -1,0 +1,165 @@
+Rendering A Map With Google Maps
+--------------------------------
+- Setup requirements for the Google Maps
+    - Integrate the service to the practice project
+
+    - Google Maps (unfortunately) requires an active Google account & credit card
+        - To generate a personal API or demo key
+        - In order to use the service
+        
+        - NOTE: As for 2026, new customers get a $300 trial credit
+            - Back in 2019 (lesson publication), it was $200
+
+
+- On the practice project
+    - In the HTML document "dist/index.html"
+        - Import the Google Maps snippet & (generated) API key
+            - Remove the "&libraries=maps" part from the snippet
+            - To allow the execution of a function (or method) once the map is loaded
+
+            <script src="https://maps.googleapis.com/maps/api/js?key=<YOUR_DEMO_KEY>" defer></script>
+
+        - Placed above the project's own HTML element <script>           
+        
+        - NOTE: This loads Google Map using its JavaScript API
+
+
+    - Set up a Google Map project
+        - Open a separate browser tab
+            - Go to Google Maps (https://developers.google.com/maps)
+            - Sign-in using a Google account 
+            - Click the "Get Started" button
+        
+        - In the "Enable Google Maps Platform" window
+            
+            - Click the following checkboxes
+                - Maps
+                - Places
+
+            - Click the "Continue" button
+
+        - On the "Select or create project" drop-down menu
+            - Select "Create a new project"
+            - Enter the name of the project (e.g. js-complete-my-places)
+            - Click the "Next" button
+            - Forwarded to "Google Maps Cloud Platform"
+
+        - On the "Set the billing account for project <project_name>" window        
+            - Click the "Set Account" button
+
+        - On the "Enable Google Maps Platform" window
+            - Click the "Next" button
+            - The API or demo key is generated
+            - Copy the generated key
+            - Paste the key w/in the imported Google snippet in the HTML document
+
+            <script src="https://maps.googleapis.com/maps/api/js?key=<YOUR_DEMO_KEY>" defer></script>
+
+        - PERSONAL NOTE: Have NO credit card
+            - Unable to create an API (or demo) key
+            - Left the copied Google snippet from the documentation unchanged
+            - Likely trigger an error during execution
+
+
+    - On the directory "src/UI/"
+        - Create a new file named "Map.js"
+        
+
+    - Inside the "Map.js"
+        - Create a new Class named "Map"
+            - This Class will be responsible for rendering the map in the DOM
+        
+        - Prefix the keyword "export"
+            - This will be imported into the "SharePlace.js"
+
+        
+    - In the Class "Map"
+        - Create a Constructor Method
+            - Define a parameter variable named "coords"
+
+        - Inside the Constructor Method
+            - Define a property named "this.render()"
+            - Pass the parameter variable "coords" as argument value
+
+        - Create a method named "render()"
+            - Define a parameter variable named "coordinates"
+
+        - Inside the method "render()"
+            - Check if the app has access to the global variable "google"
+                - Using an "if" statement
+
+            - If the app as NO access to the global variable "google"
+                - Call the function "alert()"
+                - Pass the string (below) as argument value
+
+                    "Could NOT load maps library, please try again later!"
+
+                - Use "return" to return back to the main program
+                
+            - Create a local constant named "map"
+                - Assign a new instance of Google Maps as value
+                    - Using Google Maps' Constructor Method ".Map()"
+
+                - Pass the following argument values
+                    - 1st = document.getElementById("map")
+                    - 2nd = JavaScript object literal
+                
+                - The JavaScript object literal has the following properties:
+                    - "center" w/ the value of "coordinates"
+                    - "zoom" w/ the value of 16
+
+            - Instantiate a Google Maps marker
+                - Using the Google Map's Constructor Method "Marker()"
+                    - Pass a JavaScript object literal as argument value
+
+                - The JavaScript object literal has the following properties:
+                    - "position" w/ the value of "coordinates"
+                    - "map" w/ the local constant "map" as value
+
+
+    - In the file "src/SharePlace.js"
+        - Import the Class "Map" from "src/UI/Maps.js"
+
+        - Below the Constructor Method
+            - Create a new method named "selectPlace()"
+                - Define a parameter variable named "coordinates"
+
+        - Inside the method "selectPlace()"
+            - Check if the property "this.map" exists
+                - Using an "if" statement
+
+            - If it does exists
+                - Call the Class "Map" method "render()"
+                - Pass the local constant "coordinates" as argument value
+
+            - Otherwise
+                - Create a new property named "this.map"
+                - Assign the instantiation of the Class "Map" as value
+                - Pass the local constant "coordinates" as argument value
+
+                - NOTE: The local constant "coordinates" had been
+                    - Defined w/in the Event Handler "locateUserHandler()"
+
+        - Inside the Event Handler "locateUserHandler()"
+            - Replace the line that calls "console.log("coordinates")" w/
+                - The line "this.selectPlace("coordinates")"
+
+        - Back on the Constructor Method
+            - On the lines that hooks up Event Handlers
+                - Chain the method ".bind()"
+                - Pass "this" as argument value
+
+            - NOTE: To bind the Event Handler's Arrow functions w/in
+                - The Class "PlaceFinder"
+
+
+    - Save the changes
+        - Run the npm scripts
+
+            npm run build && npm run build:dev
+
+            - Launches the default browser
+            - Loads the practice project
+
+        - PERSONAL NOTE: Unable to test the app due to
+            - The unavailability of a Google Maps API (or demo) key
