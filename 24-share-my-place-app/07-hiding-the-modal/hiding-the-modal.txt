@@ -1,0 +1,41 @@
+Hiding The Modal
+----------------
+- Implement the logic that will address the earlier issue of hiding the modal
+    - On the method "show()"
+        - Switch the local constant of the backdrop & modal elements into Class properties      
+
+    - On the method "hide()"
+        - Remove the backdrop & modal's elements from the DOM
+        - Advise the JavaScript Engine to "garbage collect" them to prevent memory leak
+
+    
+- On the practice project (src/UI/Modal.js)
+    - In the method "show()"
+        - Refactor the local constants "backdropElement" & "modalElement"
+        - Implement changes w/in the method
+
+
+    - In the method "hide()"
+        - Check if the modal's elements is active
+        
+        - If it is, remove them from the DOM
+            - Using the method ".removeChild()" for better support on wide array of browsers
+            - NOTE: Modern method is ".remove()" but NOT supported in older browsers
+
+        - Assign the value of "null" to the Class properties "backdropElement" & "modalElement"
+            - To advise the JavaScript Engine to garbage collect these properties
+            - Preventing a potential memory leak if left alone
+
+
+    - Save the changes
+        - Run the npm scripts
+
+            npm run build && npm run build:dev
+
+            - Launches the default browser
+            - Loads the practice project
+
+        
+        - Clicking the "Get Current Location"
+            - Loads the Modal & the "loading spinner" animation
+            - Automatically hides it as soon as the user's current location has been retrieved
