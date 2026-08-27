@@ -2,6 +2,46 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/UI/Map.js"
+/*!***********************!*\
+  !*** ./src/UI/Map.js ***!
+  \***********************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Map: () => (/* binding */ Map)
+/* harmony export */ });
+class Map {
+  constructor(coords) {
+    this.render(coords);
+  }
+
+  // Method that accepts the coordinates & renders the map
+  render(coordinates) {
+    document.getElementById("map").innerHTML = "";
+
+    // Create a new instance of OpenLayers map
+    const map = new ol.Map({
+      target: "map",
+      layers: [new ol.layer.Tile({
+        source: new ol.source.OSM()
+      })],
+      view: new ol.View({
+        center: ol.proj.fromLonLat([coordinates.longitude, coordinates.latitude]),
+        zoom: 16
+      })
+    });
+
+    // Create a marker
+    const marker = new ol.Feature({
+      geometry: new ol.geom.Point(ol.proj.fromLonLat([coordinates.longitude, coordinates.latitude]))
+    });
+  }
+}
+
+/***/ },
+
 /***/ "./src/UI/Modal.js"
 /*!*************************!*\
   !*** ./src/UI/Modal.js ***!
@@ -149,6 +189,8 @@ let __webpack_exports__ = {};
   \***************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _UI_Modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./UI/Modal */ "./src/UI/Modal.js");
+/* harmony import */ var _UI_Map__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./UI/Map */ "./src/UI/Map.js");
+
 
 class PlaceFinder {
   // Constructor Method
@@ -157,8 +199,18 @@ class PlaceFinder {
     const locateUserBtn = document.getElementById("locate-btn");
 
     // Hook-up Event Handlers
-    locateUserBtn.addEventListener("click", this.locateUserHandler);
-    addressForm.addEventListener("submit", this.findAddressHandler);
+    locateUserBtn.addEventListener("click", this.locateUserHandler.bind(this));
+    addressForm.addEventListener("submit", this.findAddressHandler.bind(this));
+  }
+
+  // Method that renders the (OpenLayers) map on the DOM
+  selectPlace(coordinates) {
+    // Use current map if already rendered
+    if (this.map) {
+      this.map.render(coordinates);
+    } else {
+      this.map = new _UI_Map__WEBPACK_IMPORTED_MODULE_1__.Map(coordinates);
+    }
   }
 
   // Event Handlers
@@ -185,7 +237,9 @@ class PlaceFinder {
         latitude: success.coords.latitude,
         longitude: success.coords.longitude
       };
-      console.log(coordinates);
+
+      // Render the map in the DOM
+      this.selectPlace(coordinates);
     }, error => {
       // Hide the "loading spinner" modal
       modal.hide();

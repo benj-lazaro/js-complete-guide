@@ -1,14 +1,101 @@
 Continue Without Credit Card
 ----------------------------
-- OpenLayers has been provided as an alternative to Google Maps
+- OpenLayers has been recommended as an alternative to Google Maps
     - It does NOT require a credit card
-    - Requires a few tweaks on the previous lesson's codebase
+    - Admittedly the quickstart presents a different implementation
+    - Reference (https://openlayers.org/doc/quickstart.html)
     
-    - PERSONAL NOTE:
-        - Fellow student under the name "Raghvendra"
 
-        - Provided a solution using the OpenLayers
-            - Reference (https://openlayers.org/doc/quickstart.html)
+- PERSONAL NOTE: Fellow student under the name "Raghvendra"
+    - Provided a solution that implements previous lesson's code using OpenLayers
+    
+    - NOTE: OpenLayers Constructor Methods guide
 
-        - Observed that in order to render the map in the DOM
-            - Clicking the button "Get Current Location" twice
+        import Map from 'ol/Map.js';
+        import View from 'ol/View.js';
+        import Feature from 'ol/Feature.js';
+        import Point from 'ol/geom/Point.js';
+        import VectorSource from 'ol/source/Vector.js';
+        import VectorLayer from 'ol/layer/Vector.js';
+        import Style from 'ol/style/Style.js';
+        import Icon from 'ol/style/Icon.js';
+        import { fromLonLat } from 'ol/proj.js'    
+    
+
+- On the practice project
+    - Import the OpenLayers' CSS & JavaScript files via CDN in the "index.html" file
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v7.2.2/ol.css"/>  
+        <script src="https://cdn.jsdelivr.net/npm/ol@v7.2.2/dist/ol.js"></script>
+
+        - NOTE: Place BEFORE the practice project's imported CSS & JavaScript files
+
+    
+    - In the sub-folder "src/UI"
+        - Create a new file named "Map.js"
+
+    
+    - Inside the file "Map.js"
+        - Create a new Class named "Map"
+            - Prefix w/ the keyword "export"
+
+
+    - Inside the Class "Map"
+        - Create a Constructor Method
+            - Define a parameter variable named "coords"
+
+        - Create a method named "render()"
+            - Define a parameter variable named "coordinates"
+    
+
+    - Inside the Constructor Methods
+        - Define a property named "this.render()"
+            - Pass the parameter variable "coords" as argument value
+
+
+    - Inside the method "render()"
+        - Access the HTML element <script> where the map will be rendered
+            - Using the method "document.getElementById()"
+                - Pass "map" as argument value
+
+            - Chain the property ".innerHTML"
+                - Assign an empty string as value
+                - Clears out the HTML element <p> & its text content
+
+        - Create a local constant named "map"
+            - Assign the creation of a new instance of a map as value
+                - Using the Constructor Method "ol.Map()"
+                - Pass a JavaScript object literal as argument value
+
+            - The JavaScript object literal contains the following properties & values
+                - "target": "map"
+                - "layers": [new ol.layer.Tile({ source: new ol.source.OSM() })]
+                - "view": new ol.View({
+                    center: ol.proj.fromLonLat([coordinates.longitude, coordinates.latitude,]),
+                    zoom: 16,})
+
+            - NOTE: Creates a map based on the fetched current location of a user
+
+        - Create a local constant named "marker"
+            - Assign the creation of a new instance of a Feature as value
+                - Using the Constructor Method "ol.Feature()"
+                - Pass a JavaScript object literal as argument value
+
+         - The JavaScript object literal contains the following properties & values
+            - "geometry": new ol.geom.Point(ol.proj.fromLonLat([coordinates.longitude, 
+                coordinates.latitude])
+   
+            - NOTE: This is the rough equivalent to Google Maps API Constructor Method ".Marker()"
+
+
+    - Save the changes
+        - Run the npm scripts
+
+            npm run build && npm run build:dev
+
+            - Launches the default browser
+            - Loads the practice project
+
+        - Clicking the button "Get Current Location"
+            - Launches the "spinning loader"
+            - Then loads the OpenLayers' map based on the user's current location
