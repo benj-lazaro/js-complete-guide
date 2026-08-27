@@ -1,0 +1,71 @@
+Finding An Address & Getting The Coordinates
+--------------------------------------------
+- Implement the logic for the Event Handler "findAddressHandler()" that
+    - Translates user-input address into longitude & latitude
+
+    - PERSONAL NOTE: Have used OpenStreetMap's geocoding service
+        - Instead of Google Geolocation service
+
+
+- On the practice project (src/SharePlace.js)
+    - On the Event Handler "findAddressHandler()"
+        - Define a parameter variable named "event"
+
+    
+    - Inside the Event Handler "findAddressHandler()"
+        - Access the parameter variable "event"
+            - Chain the method ".preventDefault()"
+
+        - Create a local constant named "address"
+            - Assign "event.target.querySelector("input").value" as value
+
+        - Perform a user-input validation using an "if" statement
+            - Check the length of the value stored in the local constant "address"
+            
+            - If the length is 0
+                - Call the function "alert()"
+                - Pass the following string as argument value
+
+                    "Invalid address entered, please try again!"
+
+            - Return back to the calling program
+
+        - Create a local constant named "modal"
+            - Assign a new instance of the Class "Modal"
+            - Pass the following argument values
+                - 1st = "loading-modal-content"
+                - 2nd = "Loading location, please wait."
+
+        - Access the local constant "modal"
+            - Chain the method ".show()"
+
+    
+    - In the folder "src"
+        - Create a new sub-folder named "Utility"
+        - Create a new file named "Location.js" inside the sub-folder "Utility"
+
+
+    - Inside the "Utility.js" file
+        - Create an Asynchronous function named "getCoordsFromAddress()"
+            - Define a parameter variable named "address"
+            - Prefix w/ the keyword "export"    
+
+    
+    - Inside the function "getCoordsFromAddress()"
+        - Create a local constant named "response"
+            - Assign an await call of the function "fetch()"
+            - Pass OpenStreetMap's geocoding service URL as argument value
+                - NOTE: The parameter variable "address" embedded in the URL
+
+        - Use an "if" statement to check if the request has failed
+            - Throw a new instance of the Constructor Method "Error()"
+            - Pass the following string as argument value
+
+                "Failed to fetch coordinates. Please try again."
+
+        - Create a local constant named "data"
+            - Assign the "response" object as value
+            - Chain the method ".json()" to convert it to JSON data
+
+
+    - Save the changes
