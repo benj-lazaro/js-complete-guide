@@ -1,0 +1,74 @@
+Converting User Input To Coordinates
+------------------------------------
+- Implement the logic that converts the user-input address & convert it to coordinates
+    - Render the location of the address in the map
+
+    - PERSONAL NOTE: Kept the author's code
+        - Modified ONLY the properties of the received JSON data
+
+
+- On the practice project
+    - In the "src/UI/Utility/Location.js" file
+        - Use an "if" statement to check for errors on the returned JSON data
+            - Throw an "Error" object if there is one
+                - Pass "data.error.message" as argument value
+
+        - Extract the latitude & longitude properties from the JSON data
+            - Create a local constant named "coordinates"
+                - Assign a JavaScript object literal as value
+
+            - The JavaScript object literal contains the following key-value pairs:
+                - "latitude"  = data[0].lat
+                - "longitude" = data[0].lon
+
+            - NOTE: OpenStreetMap's Geocoding data is structured differently from Google Maps
+
+        - Return the local constant "coordinates"
+
+
+    - In the "src/SharePlace.js" file
+        - Import the function "getCoordsFromAddress()" from the "Location.js" file
+
+        - On the Event Handler "findAddressHandler()"
+            - Prefix it w/ the keyword "async"
+
+        - In the Event Handler "findAddressHandler()"            
+            - Create a local constant named "coordinates"
+                - Assign a call to the function "getCoordsFromAddress()"
+                    - Prefix the keyword "await"
+
+                - Pass the local constant "address" as argument value
+                
+                - NOTE: Statement placed right after the call to "modal.show()" method
+
+            - Call the method "this.selectPlace()"
+                - Pass the local constant "coordinates" as argument value
+                
+                - Place this statement in the "try" clause of a "try-catch" statement
+                    - On the "catch" clause
+                        - Declare a parameter variable named "error"
+                    
+                    - In the "catch" clause
+                        - Call the "alert()" function
+                        - Pass the object "error.message" as argument value
+
+                - NOTE The function "selectPlace()" forwards the coordinates
+                    - To the Class "Map" method "render()"
+                    - To render the map of the user-input address in the DOM
+
+            - Call the method "modal.hide()"
+                - To hide the "loading spinner" modal
+
+
+    - Save the changes
+        - Run the npm scripts
+
+            npm run build && npm run build:dev
+
+            - Launches the default browser
+            - Loads the practice project
+
+        - On the "Address" field
+            - Enter an address
+            - Click the button "Find Place"
+            - Loads the OpenLayers's map based on the provided address
