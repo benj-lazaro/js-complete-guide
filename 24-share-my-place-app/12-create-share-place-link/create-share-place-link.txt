@@ -1,0 +1,103 @@
+Creating a "Share Place" Link
+-----------------------------
+- Implement the logic that retrieves the named address based on the coordinates
+    - Updates the "Select a place to get a sharable link." field w/ the named address & coordinates    
+    - Enables the button "Share Place"
+
+
+- On the practice project
+    - In the "src/Utility/Location.js"
+        - Create a new Async function named "getAddressFromCoords()"
+            - Define a parameter variable name "coordinates"
+            - Prefix the function w/ the keyword "export"
+
+        - Inside the function "getAddressFromCoords()"
+            - Create a local constant named "response"
+            
+            - Assign a call to the function "fetch()" as value
+                - Pass the reverse address URL of OpenStreetMap
+
+                https://nominatim.openstreetmap.org/reverse?lat=${coordinates.latitude}&lon=${coordinates.longitude}&format=jsonv2
+
+                - NOTE: Prefix the Anonymous function w/ the keyword "await"
+
+                - Use an "if" statement to check 
+                    - If the status of the HTTP request is successful
+
+            - Create a local constant named "data"
+                - Assign the "await" HTTP response in JSON format as value
+
+                - Use an "if" statement to check 
+                    - If the HTTP response does NOT contain an error message
+
+            - Create a local constant named "address"
+                - Assign the stringified JSON data value of the property "display_name"
+                - Return the constant "address"
+
+    
+    - In the "src/SharePlace.js" file
+        - Import the function "getAddressFromCoords()"
+            - Add the function name on the import statement along w/ "getCoordsFromAddress"
+
+        - Inside the Constructor Method
+            - Define a new property named "this.shareBtn"
+                - Assign "document.getElementById("share-btn")" as value
+
+            - NOTE: Selects the button "Share Place"
+
+        - Inside the Event Handler "locateUserHandler()"
+            - In the Anonymous function argument value of "navigator.geolocation.getCurrentPosition()"
+
+            - Create a local constant named "address"
+                - Call the function "getAddressFromCoords()" as value
+                - NOTE: Prefix w/ the keyword "await"
+
+                - Move the call to "modal.hide()" right after this statement
+
+            - Call the method "this.selectPlace()"
+                - Pass the local constant "address" as a 2nd argument value
+
+        - On the method "selectPlace()"
+            - Add a 2nd parameter variable named "address"
+
+        
+        - Inside the method "selectPlace()"
+            - Access the property "this.shareBtn"
+                - Chain the property ".disable"
+                - Assign the value of "false"
+                - NOTE: Enables the button "Share Place"
+
+            - Create a local constant named "sharedLinkInputElement"
+                - Assign "document.getElementById("share-link")" as value
+
+            - Access the constant "sharedLinkInputElement"
+                - Chain the property ".value"
+                - Assign the following string template literal as value
+
+                    `${location.origin}/my-place?address=${encodeURI(address)}&lat=${coordinates.latitude}&lon=${coordinates.longitude}`
+
+
+        - On the Event Handler "findAddressHandler()"
+            - Refactor the call to the method "this.selectPlace()"
+                - Pass the local constant "address" as the 2nd argument value
+
+
+    - Save the changes
+        - Run the npm scripts
+
+            npm run build && npm run build:dev
+
+            - Launches the default browser
+            - Loads the practice project
+
+        - Whether any of the following actions taken:
+            - Clicking the button "Get Current Location"
+            - Manually providing an address & clicking the button "Find Place"
+
+        - Will result to the following:
+            - User's determined or provided location will be rendered in the nap
+
+            - The field labeled "Select a place to get a sharable link."
+                - Replaced w/ the URI address that includes:
+                    - Named address
+                    - Coordinates (latitude & longitude)
