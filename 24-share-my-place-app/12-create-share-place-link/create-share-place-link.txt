@@ -95,7 +95,7 @@ Creating a "Share Place" Link
             - Manually providing an address & clicking the button "Find Place"
 
         - Will result to the following:
-            - User's determined or provided location will be rendered in the nap
+            - User's determined or provided location will be rendered in the map
 
             - The field labeled "Select a place to get a sharable link."
                 - Replaced w/ the URI address that includes:
