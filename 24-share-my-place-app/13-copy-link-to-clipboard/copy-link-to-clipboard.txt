@@ -1,0 +1,79 @@
+Copying The Link To The Clipboard
+---------------------------------
+- Implement the logic that copies the shared link to the system clipboard 
+    - Using the Clipboard API has an slight issue regarding browser support
+    - Some features are NOT supported
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API)
+
+
+- On the practice project (src/SharePlace.js)
+    - Uncomment the statement:
+
+        this.shareBtn.addEventListener("click",);
+
+        - Pass the (to be created) Event Handler "this.sharePlaceHandler" as the 2nd argument value
+
+
+    - After the method "selectPlace()"
+        - Create an Event Handler (method) named "sharePlaceHandler()"
+
+
+    - Inside the Event Handler "sharePlaceHandler()"
+        - Create a local constant named "sharedLinkInputElement"
+            - Assign "document.getElementById("share-link")" as value
+
+        - Check if the Clipboard API is supported by the (client) browser
+            - Use an "if" statement to check for "navigator.clipboard"
+
+            - If NOT supported
+                - Access the local constant "sharedLinkInputElement"
+                    - Chain the method ".select()"
+                    - NOTE: Selects the full URL value in the "share link" field
+
+                - Returns to the main program
+
+            - Otherwise, access the "navigator.clipboard"
+                - Chain the method ".writeText()"
+                    - Pass the local constant "sharedLinkInputElement.value" as argument value
+
+                - Chain the method ".next()"
+                    - Pass an Arrow function as argument value
+                    
+                    - The Arrow function calls the "alert()" function
+                        - Pass "Copied URL to clipboard" as argument value
+
+                - Chain the method ".catch()"
+                    - Pass an Arrow function as argument value
+
+                    - The Arrow function has a parameter variable named "error"
+                        - Calls "console.log()"
+                            - Pass the parameter variable "error" as argument value
+
+                        - Access the local constant "sharedLinkInputElement"
+                            - Chain the method ".select()"
+                        
+                        - NOTE: Selects the full URL value in the "share link" field
+
+
+    - Save the changes
+        - Run the npm scripts
+
+            npm run build && npm run build:dev
+
+            - Launches the default browser
+            - Loads the practice project
+
+        - Whether any of the following actions taken:
+            - Clicking the button "Get Current Location"
+            - Manually providing an address & clicking the button "Find Place"
+
+        - Will result to the following:
+            - User's determined or provided location will be rendered in the map
+
+            - The field labeled "Select a place to get a sharable link."
+                - Replaced w/ the URI address that includes:
+                    - Named address
+                    - Coordinates (latitude & longitude)
+
+        - Clicking the button "Share Place"
+            - Copies the full URL to the system clipboard
