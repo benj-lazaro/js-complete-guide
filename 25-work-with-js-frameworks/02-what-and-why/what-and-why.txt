@@ -1,0 +1,57 @@
+What And Why
+------------
+- JavaScript libraries
+    - 3rd party packages that adds functionalities to a JavaScript driven app
+    - Typically focused on one (1) or a few core tasks
+    - e.g. Axios, LoDash, jQuery
+
+
+- JavaScript frameworks
+    - 3rd party packages that adds functionalities similar to that of a JavaScript library
+    - Provide a complete structure for building a JavaScript driven app
+    - Allows to focus on the app's business logic & spend less time w/ nitty-gritty details
+    - e.g. Angular, React.js (edge-case), Vue.js
+
+    - NOTE: React.js is a JavaScript library but a big one that 
+        - Spawned a huge ecosystem w/c effectively forms a framework
+
+
+- Angular (framework)
+    - Uses TypeScript (a JavaScript superset language)
+        - A JavaScript superset language
+        - Code compiled into JavaScript
+        - A standalone project detached from the Angular framework
+    
+    - It is like using the next generation JavaScript w/ Babel
+        - Offer more features w/c does NOT exists in the next-gen JavaScript
+
+    - A popular & huge framework w/ lots of features
+        - Rendering beautiful user interfaces
+        - Animating stuff
+        - Validating user input
+        - Sending HTTP requests w/o using the Axios library
+
+
+- React.js (library)
+    - Uses an enhanced JavaScript syntax (JSX)
+        - Add a certain syntax that are NOT supported in vanilla JavaScript
+        - Code compiled into JavaScript
+
+    - Build beautiful user interfaces w/out manually working on targeted elements in the DOM
+
+    - A popular rich JavaScript library
+        - Spawned a huge ecosystem that add features around React.js
+        - Leaner than Angular
+        - Does come w/ its own built-in validation, HTTP requests
+        - Uses other packages to work w/ React to address what functionality it lacked
+
+
+- Vue.js (framework)
+    - Uses regular vanilla JavaScript
+        - It can work w/ TypeScript
+
+    - Easiest to learn framework
+        - Contains ALL important features (similar to but less than Angular)
+        - Has more built-in features than React.js
+        - Does NOT require working w/ other packages to address what functionality it lacked
+
