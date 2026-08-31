@@ -1,0 +1,100 @@
+Rendering The "Shared Place" Screen
+-----------------------------------
+- Implement the logic that renders the "Shared Place"
+    - Based on the copied full URL stored in the system clipboard
+
+    - Updates the HTML document (my-place/index.html)
+        - Render the address as w/in the child <h1> of the HTML element <header>
+        - Render the map w/in the HTML element <div> w/ the attribute "id" of "map"
+
+
+- On the practice project (my-place/index.html)
+    - Import the OpenLayer's CSS & JavaScript files in the HTML document's header
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v7.2.2/ol.css"/>
+        <script src="https://cdn.jsdelivr.net/npm/ol@v7.2.2/dist/ol.js"></script>
+
+        - NOTE: Place BEFORE the app's own CSS stylesheets & JavaScript file
+
+    
+    - In the "src/MyPlace.js" file
+        - Import the Class "Map" from "./src/UI/Map"
+        - Create a new Class named "LoadedPlace"
+        
+    
+    - Inside the class "LoadedPlace"
+        - Create a Constructor Method
+        - Define two parameter variables named "coordinates" & "address"
+
+
+    - Inside the Constructor Method
+        - Instantiate the Class "Map"
+            - Pass the parameter variable "coordinates" as argument value
+
+        - Create a local constant named "headerTitleElement"
+            - Assign "document.getQuerySelector(header h1)" as value
+
+        - Access the local constant "headerTitleElement"
+            - Assign the parameter variable "address" as value
+
+
+    - Create a global constant named "url"
+        - Assign the call of the Constructor Method "URL" as value
+        - Pass "location.href" as argument value
+        - NOTE: Parses the full URL & returns an object
+
+
+    - Create a global constant named "queryParams"
+        - Assign the local constant "url" as value
+        - Chain the property ".searchParams"
+        - NOTE: Returns an object that contains "key-value" query parameters
+
+
+    - Create a global constant named "coordinates"
+        - Assign an object literal that contains the following key-value pairs
+            - latitude: parseFloat(queryParams.get("lat"))
+            - longitude: +queryParams.get("lon")
+
+        - NOTE: The values returned as in string format
+            - Requires coercion to number (float to be specified)
+            - Can use either the function "parseFloat()" or the prefix "+" operator
+            - Respectively implement BOTH in the practice project
+
+    - Create a global constant named "address"
+        - Assign "queryParams.get("address")" as value
+
+
+    - Instantiate the Class "LoadedPlace"
+        - Pass the global constants "coordinates" & "address" as argument values
+
+
+    - Save the changes
+        - Run the npm scripts
+
+            npm run build && npm run build:dev
+
+            - Launches the default browser
+            - Loads the practice project
+
+        - Whether any of the following actions taken:
+            - Clicking the button "Get Current Location"
+            - Manually providing an address & clicking the button "Find Place"
+
+        - Will result to the following:
+            - User's determined or provided location will be rendered in the map
+
+            - The field labeled "Select a place to get a sharable link."
+                - Replaced w/ the URI address that includes:
+                    - Named address
+                    - Coordinates (latitude & longitude)
+
+        - Clicking the button "Share Place"
+            - Copies the full URL to the system clipboard
+
+        - Pasting the full URL on a new browser tab
+            - Loads the "My Place" page
+            - Renders the address on the HTML document's header
+            - Renders the map in the body
+
+        - Clicking the button "Share a New Place!"
+            - Loads the "Share a Place" page
