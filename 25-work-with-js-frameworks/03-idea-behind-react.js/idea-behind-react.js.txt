@@ -1,0 +1,30 @@
+The Idea Behind React.js
+------------------------
+- React is a JavaScript library for building user interfaces
+    - It has a huge eco-system that effectively forming a "pseudo" framework
+
+    - React.js performs the heavy lifting behind-the-scenes
+        - It allows the developer to focus on the application "state"
+        - React updates the user interface on what changed in the "state"
+
+        - This behavior is referred as "Declarative Approach"
+
+    - Defines components (i.e. reusable UI elements)
+        - These are NOT HTML elements but rather JavaScript Classes
+
+        - At runtime, the code on the page are interpreted by React.js, it knows
+            - What DOM element to touch
+            - What to (element) render where in the DOM under w/c circumstances
+
+        
+- A Declarative Approach
+    - The developer defines the result (i.e. what is seen on the screen in various scenarios)
+        - NOT the steps (i.e. heavy lifting) that leads to the result
+
+    - This approach is also used by Angular & Vue.js
+
+
+- An Imperative Approach
+    - The developer manually define the steps to achieve the result
+
+    - This approach is used by vanilla JavaScript
