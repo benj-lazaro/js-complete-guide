@@ -1,0 +1,18 @@
+Module Introduction
+-------------------
+- This section focuses on:
+    - Symbols
+    - Iterators & Generators
+    - Reflect API
+    - Proxy API
+
+
+- These are very niche & advanced JavaScript features
+    - NOT often used in normal web app development
+
+    - Used for building 3rd-party libraries or in advanced projects
+        - Offers features such as:
+            - Allows to change the behavior of certain parts of the codebase
+
+            - Improve code safety from an API standpoint
+                - Ensure the exposed API endpoints are used properly
