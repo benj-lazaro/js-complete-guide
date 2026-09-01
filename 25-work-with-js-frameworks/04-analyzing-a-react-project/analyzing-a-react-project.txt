@@ -1,0 +1,76 @@
+Analyzing A React Project
+-------------------------
+- Unpack the attached project
+    - Install the packages listed in the "package.json" file
+
+        - NOTE: As of 2026, the packages have already been deprecated
+            - Most have been reported w/ high-level vulnerabilities
+            - Breaking changes on the latest version that prevents from running the app
+
+
+- Author demonstrates how the previous practice project is
+    - Implemented using React compared to vanilla JavaScript
+
+    - The lesson is a simple overview on how React
+        - Monitors the state changes
+        - Calls corresponding function to implement changes
+        - Implement & use the JSX syntax
+
+
+- PERSONAL NOTE:
+    - Installed the latest version of the packages manually as dependencies
+
+        npm i --save react react-dom react-router-dom react-scripts@5
+
+
+    - Implemented the changes provided by fellow student "Thomas Judge"
+        - In the "App.js" file
+
+                import React from 'react';
+                // import { BrowserRouter, Route, Switch} from 'react-router-dom';
+                import {BrowserRouter, Route, Routes} from 'react-router-dom';
+                import SharePlace from './Pages/SharePlace';
+                import MyPlace from './Pages/MyPlace';
+                
+                function App() {
+                    return (
+                        <BrowserRouter>
+                        <Routes>
+                            <Route path='/' element={<SharePlace/>} exact />
+                            <Route path='/my-place' element={<MyPlace/>} />
+                        </Routes>
+                        </BrowserRouter>
+                    );
+                }
+                
+                export default App;
+
+
+        - In the "index.js" file
+
+                import React from "react";
+                // import ReactDOM from 'react-dom';
+                import { createRoot } from "react-dom/client";
+
+                import "./index.css";
+                import App from "./App";
+
+                const container = document.getElementById("root");
+                const root = createRoot(container);
+                root.render(<App tab="home" />);
+
+                // ReactDOM.render(<App />, document.getElementById('root'));
+
+
+        - In the file "public/index.html"
+            - Update the Google Maps API key (w/c I do NOT have)
+
+
+        - The implemented changes have addressed the earlier reported errors
+            - Allows the app to run after executing "npm start"
+
+        - Clicking the buttons "Find Place" or "Get Current Location" buttons
+            - Returns an "Uncaught runtime errors: The provided API key is invalid"
+
+            - This can be addressed w/ a new Google Maps API key
+                - Requires an active Google account & credit card        
