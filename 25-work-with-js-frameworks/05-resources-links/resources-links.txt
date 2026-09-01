@@ -1,0 +1,8 @@
+Useful Resources & Links
+------------------------
+- The big three (3) frameworks in comparison
+    - Reference (https://academind.com/tutorials/angular-vs-react-vs-vue-my-thoughts)
+
+
+- More about React.js
+    - Reference (https://academind.com/learn/react/)
