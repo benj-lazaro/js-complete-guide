@@ -1,0 +1,73 @@
+Understanding Symbols
+---------------------
+- A symbol is a primitive value
+    - It is used as an object property identifier 
+        - Simply, used to add a unique key to an object 
+
+    - Two types of symbols
+        - Built-in
+        - User-defined     
+    
+    - It is NOT possible to overwrite an existing symbol of the same name
+        - Every symbol is standalone & unique
+
+
+- On the practice code (app.js)
+    - Create a global constant named "uid"
+        - Assign a new symbol as value w/ the identifier "uid"
+    
+    - Pass the global constant "uid" as an argument value to "console.log()"
+        - Returns a "Symbol(uid)" value
+
+
+    - Create a new constant named "user"
+        - Assign an object literal as value
+
+        - The object literal contains the following "key-value" pairs:
+            - [uid]: "person1"
+            - name: "John Wick"
+            - age: 60
+
+    
+    - Pass the global constant "user" as an argument value to "console.log()"
+        - Returns an object 
+
+            {
+                Symbol(uid): "person1",
+                name: "John Wick",
+                age: 60,                
+            }
+
+    
+        - NOTE: The "Symbol(uid)" is an unique property identifier
+            - The "uid" serves as an identifier (for the developer)
+
+        
+    - W/out knowledge of the identifier used when creating a Symbol
+        - It likely end up unintentionally adding a new property instead
+
+
+    - To effectively update the value of a symbol property in an object
+        - Use a pair of "[ ]"
+            - Pass the identifier of a Symbol as argument value
+
+            [<symbol_identifier>] = <new_assigned_value>;
+
+        - Update the value of "[uid]"
+            - Assign the value "person3"
+
+
+    - Pass the global constant "user" as an argument value to "console.log()"
+        - Returns an object 
+
+            {
+                Symbol(uid): "person3",
+                name: "John Wick",
+                age: 60,                
+            }
+
+
+    - Save the changes
+        - Load / reload the browser
+        - Launch the browser's developer tools
+        - Click the "Console" tab
