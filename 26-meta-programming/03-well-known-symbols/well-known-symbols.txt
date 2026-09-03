@@ -1,0 +1,38 @@
+Well-Known Symbols
+------------------
+- Well-known Symbols refers symbols built-in on modern JavaScript (ES6+)
+    - To help perform certain tasks e.g. Symbol.iterator, Symbol.toStringTag
+
+      
+- The "Symbol.toStringTag"
+    - Allows to customize (tweak) the default description of an object
+    
+    - This property is accessed by the method "Object.prototype.toString()" when called
+        - By default, returns the value "object Object"
+
+    - To change the default description of an object
+        - Use "Symbol.toStringTag" as a property
+            - Using the Dynamic Property Syntax (i.e. [ ])
+
+        - Assign a replacement string value 
+
+        - This replace the "Object" part of the returned value "object Object" 
+
+
+- On the practice code (app.js)
+    - Customize the description produced by the method ".toString()"
+        - When chained to an object instead of the default value "object Object"
+
+
+    - On the object "user"
+        - Using the dynamic property syntax (i.e. "[ ]")
+            - Pass "Symbol.toStringTag" as an argument value
+            - This effectively uses a Symbol as a (unique) property identifier
+
+        - Assign the string "A simple object literal using Symbols as properties." as value
+
+    
+    - Access the object "user"
+        - Chain the method ".toString()"
+        - Pass the statement as argument value to "console.log()"
+        - The string value is returned (& displayed) in the JavaScript console
