@@ -59,3 +59,8 @@ Important: Webpack Version & Configuring npm Scripts
                 - Successfully reported violations of implemented user-defined rules
 
             - The Webpack 5 packages reported NO warning & vulnerabilities
+
+
+- PERSONAL NOTE (update: 2026-09-03)
+    - Removed the package "cross-dev" due to reported vulnerabilities
+        - In addition, the package was NOT used w/ the current implemented workaround
