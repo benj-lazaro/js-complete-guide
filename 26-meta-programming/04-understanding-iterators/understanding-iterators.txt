@@ -1,0 +1,72 @@
+Understanding Iterators
+-----------------------
+- Iterators allows to loop through a specific property of an object
+    - By inserting a method "next()" w/in the object
+    
+    - Inside the method "next()"
+        - Implement the logic that allows to iterate through a specific property
+        - Fetch & store the assigned value to an object
+        - Increment the "index" pointer
+        - Return the object containing the current value of the targeted property of the object
+
+    - Chaining the method ".next()" to an object
+        - Allows to go through each value of a targeted property
+
+    - Calling the method ".next()" multiple times
+        - Returns a different value taken from the targeted property
+
+    - NOTE: This is useful if an object is used as a data storage
+        - Requires some logic to go through & output data stored in a property
+
+
+- On the practice code (app.js)
+    - Create a global constant named "company"
+        - Assign a JavaScript object literal as value
+
+
+    - Inside the JavaScript object literal
+        - Declare the following properties & their respective assigned values
+            - "currentEmployee": 0
+            - "employees": ["Max", "Manuel", "Anna"],
+            - method named "next()"
+
+        - Inside the method "next()"
+            - Use an "if" statement to check if 
+                - The value of the property "this.currentEmployee" is greater than
+                    - The value returned by "this.employees.length"
+
+                - If it evaluates to true
+                    - Return a JavaScript object literal
+                    
+                    { value: this.currentEmployee, done: true }
+
+            - Create a local constant named "returnValue"
+                - Assign the following JavaScript object literal as value
+
+                    { value: this.employees[this.currentEmployee], done: false, }
+
+            - Increment the property "this.currentEmployee" by 1
+                - Using the operator "++"
+
+            - Return the local constant "returnValue"
+
+
+        - Create a global variable named "employee"
+            - Assign "company.next()" as value
+
+        
+        - Use a "while" loop to iterate through the property "employees" of the object "company"
+            - Check if the property "done" is falsy
+
+            - If truthy
+                - Pass "company.next()" as argument value to "console.log()"
+                - Assign "company.next()" as (a new) value to the global variable "employee"
+
+
+    - Save the changes
+        - Load / reload the browser
+        - Launch the browser's developer tools
+        - Click the "console" tab
+        - The assigned values in the property "employees" of the "company" object is listed individually
+
+
