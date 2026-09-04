@@ -112,19 +112,21 @@ class Modal {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getAddressFromCoords: () => (/* binding */ getAddressFromCoords),
 /* harmony export */   getCoordsFromAddress: () => (/* binding */ getCoordsFromAddress)
 /* harmony export */ });
+// Function that fetches the coordinates of a user's current location using OpenStreetMap's Geocoding
 async function getCoordsFromAddress(address) {
-  // Use OpenStreetMap's Geocoding service
   const response = await fetch(`https://nominatim.openstreetmap.org/search?format=jsonv2&limit=1&q=${encodeURIComponent(address)}`);
 
-  // Check if HTTP request transmission is successful
+  // Check if HTTP request is successful
   if (!response.ok) {
     throw new Error("Failed to fetch coordinates. Please try again.");
   }
 
   // Received HTTP response in JSON format
   const data = await response.json();
+  // console.log(data);
 
   // Check the returned data
   if (data.error_message) {
@@ -137,6 +139,29 @@ async function getCoordsFromAddress(address) {
     longitude: data[0].lon
   };
   return coordinates;
+}
+
+// Function that fetches the named address based on given coordinates using OpenStreetMap's Geocoding
+async function getAddressFromCoords(coordinates) {
+  const response = await fetch(`https://nominatim.openstreetmap.org/reverse?lat=${coordinates.latitude}&lon=${coordinates.longitude}&format=jsonv2`);
+
+  // Check if HTTP request is successful
+  if (!response.ok) {
+    throw new Error("Failed to fetch address. Please try again.");
+  }
+
+  // Received HTTP response in JSON format
+  const data = await response.json();
+  // console.log(data);
+
+  // Check the returned data
+  if (data.error_message) {
+    throw new Error(data.error_message);
+  }
+
+  // Extract & stringify the named address from JSON data
+  const address = JSON.stringify(data.display_name);
+  return address;
 }
 
 /***/ }
@@ -236,20 +261,29 @@ class PlaceFinder {
   constructor() {
     const addressForm = document.querySelector("form");
     const locateUserBtn = document.getElementById("locate-btn");
+    this.shareBtn = document.getElementById("share-btn");
 
     // Hook-up Event Handlers
     locateUserBtn.addEventListener("click", this.locateUserHandler.bind(this));
+    // this.shareBtn.addEventListener("click");
     addressForm.addEventListener("submit", this.findAddressHandler.bind(this));
   }
 
   // Method that renders the (OpenLayers) map on the DOM
-  selectPlace(coordinates) {
+  selectPlace(coordinates, address) {
     // Use current map if already rendered
     if (this.map) {
       this.map.render(coordinates);
     } else {
       this.map = new _UI_Map__WEBPACK_IMPORTED_MODULE_1__.Map(coordinates);
     }
+
+    // Enable the "Share Place" button
+    this.shareBtn.disable = false;
+
+    // Select the "share link" field
+    const sharedLinkInputElement = document.getElementById("share-link");
+    sharedLinkInputElement.value = `${location.origin}/my-place?address=${encodeURI(address)}&lat=${coordinates.latitude}&lon=${coordinates.longitude}`;
   }
 
   // Event Handler (method) that locates a user's current location
@@ -267,18 +301,21 @@ class PlaceFinder {
     modal.show();
 
     // Get user's current geolocation position
-    navigator.geolocation.getCurrentPosition(success => {
-      // Hide the "loading spinner" modal
-      modal.hide();
-
+    navigator.geolocation.getCurrentPosition(async success => {
       // Get user's current coordinates
       const coordinates = {
         latitude: success.coords.latitude,
         longitude: success.coords.longitude
       };
 
+      // Get the named address based on the fetched coordinates
+      const address = await (0,_Utility_Location__WEBPACK_IMPORTED_MODULE_2__.getAddressFromCoords)(coordinates);
+
+      // Hide the "loading spinner" modal
+      modal.hide();
+
       // Render the map in the DOM
-      this.selectPlace(coordinates);
+      this.selectPlace(coordinates, address);
     }, error => {
       // Hide the "loading spinner" modal
       modal.hide();
@@ -308,7 +345,7 @@ class PlaceFinder {
 
     // Render submitted address on the map
     try {
-      this.selectPlace(coordinates);
+      this.selectPlace(coordinates, address);
     } catch (error) {
       alert(error.message);
     }
