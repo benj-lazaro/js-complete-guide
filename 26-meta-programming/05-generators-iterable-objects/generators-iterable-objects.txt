@@ -1,0 +1,111 @@
+Generators & Iterable Objects
+-----------------------------
+- Any JavaScript object w/ a ".next()" method is an Iterator
+    - When used w/ a "while" loop allows
+        - The creation of a looping logic in an object
+    
+    - But does NOT work when used w/ a "for..of" loop or a spread operator (...)
+        - Returns a "Uncaught TypeError: <object> is not iterable"
+
+
+- A Generator is a special JavaScript function that
+    - Creates (returns) an Iterator object
+        - An object w/ a built-in ".next()" method
+
+
+- To define a Generator w/in an object
+    - Define a property using the Dynamic Property Syntax (i.e. "[ ]")
+        - Using a well-known Symbol named "Symbol.iterator"
+
+    - Assign either an Anonymous or named function as value
+        - Use "function*" instead of a normal keyword "function"
+        - Automatically converts a normal function into a Generator
+
+            [Symbol.iterator]: function* () {
+                ...
+            }
+
+        - NOTE: A Generator creates (returns) an Iterator object
+
+    - Inside the function
+        - Implement the looping logic
+
+        - Define a variable that will be used as an index pointer
+            - Initialize w/ the value of 0
+
+        - Use a "while" loop to iterate through the property w/ multiple values
+        
+        - Inside the "while" loop
+            - Use the keyword "yield"
+                - Followed by the property (prefixed w/ "this") that contains multiple values
+                - Then a pair of "[ ]"
+                - Pass the index pointer as argument value
+
+                yield this.<property>[<index_pointer>];
+
+            - NOTE: Every call to the "yield" keyword
+                - Returns a value to the calling line of code
+            
+            - Increment the value of the index pointer by 1     
+        
+
+    - Use a "for..of" loop on the object
+        - Searches for the "Symbol.iterator"
+        
+        - Executes the assigned function (i.e. function* = Generator)
+            - Returns an Iterator object
+
+        - JavaScript executes the built-in method ".next()" of the iterator
+            - Returns the current value of the property containing multiple values
+            - As long as the property "done" is NOT truthy
+
+        - NOTE: This allows to write a "for..of" loop-able object
+
+
+    - Alternatively, a spread operator (...) on the object "company" can also be used
+        - Returns the values stored w/in the property "employees" on a single line
+
+
+- On the practice code (index.js)
+    - Refactor the JavaScript object literal 
+        - Assigned as value to the global constant "company
+        - Remove EVERYTHING EXCEPT for the property "employees"
+
+
+    - Define a property using the Dynamic Property Syntax & use "Symbol.iterator"
+        - Assign a function named "employeeGenerator()" as value
+        - NOTE: Use the keyword "function*" to EXPLICITLY convert it into a Generator
+
+
+    - Inside the function "employeeGenerator()"
+        - Define a local variable named "currentEmployee"
+            - Initialize w/ the value of 0
+
+        - Use a "while" loop to iterate through the property "this.employees"
+            - Pass the following conditional statement
+
+                currentEmployee < this.employees.length
+
+    
+    - Inside the "while" loop
+        - Use the keyword "yield"
+            - Followed by "this.employees[currentEmployee]
+
+        - Increment the value of the variable "currentEmployee" by 1
+            - Using the "++" operator
+
+
+    - Use a "for..of" loop
+        - To iterate through the object "company"
+        
+        - Define a constant named "employee"
+            - Contains the current value of the property "employees"
+            - Yielded by the Generator w/in the object "company"
+
+
+    - Save the changes
+        - Load / reload the browser
+        - Launch the browser's developer tools
+        - Click the "Console" tab
+
+        - Renders the values stored w/in the property "employees" of the object "company"
