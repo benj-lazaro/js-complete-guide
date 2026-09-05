@@ -1,0 +1,18 @@
+Generators Summary & Built-In Iterables Examples
+------------------------------------------------
+- A Generator function (i.e. function*)
+    - Returns a new object w/ a ".next()" method (i.e. Iterator object)
+    
+    - Uses a "for..of" loop to iterate through the stored element w/in an Iterator object
+        - Internally uses the keyword "yield" to return an object that contains
+            - The property "value"  = current value (or "undefined") from the Iterator object
+            - The property "done"   = boolean "true" or "false"
+
+
+- The exact concept on what an Array and a String uses internally
+    - It has access to a Generator function that
+        - Returns an Iterator object
+
+
+- The Iterator & Generator allows to create a "loop-able" values
+
