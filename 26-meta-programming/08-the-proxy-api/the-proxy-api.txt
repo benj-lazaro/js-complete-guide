@@ -1,0 +1,77 @@
+The Proxy API And A First "Trap"
+--------------------------------
+- It is an API that allows to configure (tweak) JavaScript code and/or objects that
+    - Add some extra functionality when other developers work on it
+
+    - To create traps for certain object operations that allows to
+        - Step in on certain operations & execute code
+
+    - To setup & execute logic triggered by certain object operations that allows to
+        - Change what is returned by an object
+        - Perform additional tasks
+
+    - It "wraps" an extra object over the existing (target) object
+        - Accepts two argument values
+            - 1st = target object
+            - 2nd = object that defines certain handlers (i.e. traps) for the target object
+
+        - The extra object assumes all properties & methods of the target object
+            - Funneling access through the traps defined in the handler object
+
+        - NOTE: The target object's properties & methods remains unchanged
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy#A_complete_traps_list_example)
+
+
+- On the practice code (app.js)
+    - Create a global constant named "courseHandler"
+        - Assign a JavaScript object literal as value
+
+
+    - Inside the object literal
+        - Create a method named "get"
+        - Define two (2) parameter variables named "targetObject" &" propertyName"
+
+    
+    - Inside the method "get()"
+        - Pass the parameter variable "propertyName" as an argument value to "console.log()"
+
+        - Use an "if" statement
+            - To check if the value of the parameter variable "propertyName" is "length"
+
+            - If truthy
+                - Return the value of 0
+
+        - Return the value of an existing property of the target object using
+
+            return targetObject[propertyName]
+
+        - If the property name is non-existent, return the string "NOT FOUND"
+            
+            return targetObject[propertyName] || "NOT FOUND"
+
+    
+    - Create a global constant named "proxyCourse"
+        - Assign a new instantiation of the "Proxy" API
+        
+        - Pass the following argument values
+            - 1st = "course"
+            - 2nd = "courseHandler"
+
+
+    - Pass "proxyCourse.title" to the "console.log()"
+        - Returns the value of the "course" object's property "title"
+
+
+    - Pass "proxyCourse.length" to the "console.log()"
+        - Returns the value of 0
+
+
+    - Pass "proxyCourse.rating" to the "console.log()"
+        - Returns the string value of "NOT FOUND"
+
+
+    - Save the changes
+        - Load / reload the browser
+        - Launch the browser's developer tools
+        - Click the "console" tab
