@@ -1,0 +1,59 @@
+The Reflect API
+---------------
+- It is an API (an object itself) that allows to control JavaScript objects
+    - Contains grouped standardized static methods that help work w/ objects on the meta level
+
+    - Controls code usage / impact (i.e. how it behaves)
+
+    - Works similarly w/ the older Object API
+        - Reflect API is newer & was added recently w/ ES6
+
+        - Has two (2) advantages over the older Object API
+            - Better error handling
+                - Returns an error or boolean "true" or "false"
+                - Better than "undefined" or fail silently
+
+            - Bundles features needed to work w/ objects
+                - It has a ".deleteProperty()" method that is non-existent on Object API
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect)
+
+
+- On the practice code (app.js)
+    - Define a new object named "course"
+        - Contains a property named "title"
+        - Assigned w/ a string value of "JavaScript - The Complete Guide"
+
+    
+    - Use the Static Method ".setPrototypeOf()" of the Reflect API
+        - Pass the following argument values
+            - 1st = "course"
+            - 2nd = JavaScript object literal containing a custom method ".toString()"
+
+        - The custom method ".toString()"
+            - Returns the property "title" of the "course" object
+
+        - NOTE: This overrides the normal ".toString()" method of an object
+
+
+    - Pass the call of the method ".toString()" of the "course" object 
+        - As an argument value to "console.log()"
+        - Returns the value to the "course" object property "title"
+
+
+    - Use the Static Method ".deleteProperty()" of the Reflect API
+        - Pass the following argument values
+            - 1st = "course"
+            - 2nd = "title"
+
+        - NOTE: Deletes the property "title" from the "course" object
+
+
+    - Pass the "course" object as an argument value to "console.log()"
+        - Returns an empty JavaScript object literal
+
+
+    - Save the changes
+        - Load / reload the browser
+        - Launch the browser's developer tools
+        - Click the "Console" tab
