@@ -50,6 +50,8 @@ The Proxy API And A First "Trap"
             
             return targetObject[propertyName] || "NOT FOUND"
 
+        - NOTE: This is a "set()" trap
+
     
     - Create a global constant named "proxyCourse"
         - Assign a new instantiation of the "Proxy" API
