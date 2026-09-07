@@ -1,0 +1,51 @@
+Working With Proxy Traps
+------------------------
+- Another useful Proxy API trap is the "set()" 
+    - It allows users to set a value for a given property of an object
+    
+    - NOTE: Unlike a Setter w/c is focused on a specific property
+        - Proxy API traps are NOT bound to a specific property name
+        - e.g. "get()", "set()", etc.
+    
+
+- On the practice code (app.js)
+    - On the local constant "courseHandler"
+        - Add a Proxy API trap "set()"
+        - Declare three (3) parameter variables
+            - 1st = "targetObject"
+            - 2nd = "propertyName"
+            - 3rd = "newValue"
+
+
+    - In the Proxy API trap "set()"
+        - Use an "if" statement to check
+            - If the parameter variable "propertyName" === "rating"
+            - Call the keyword "return" if truthy
+
+        - Otherwise, call:
+
+            targetObject[propertyName] = newValue
+
+        - NOTE: This sets a new property w/ an assigned value of the "course" object
+
+
+    - Access the Proxy API handler "proxyCourse"
+        - Chain the property named "ratings"
+        - Assign the value of 10
+
+
+    - Access the Proxy API handler "proxyCourse"
+        - Chain the property named "price"
+        - Assign the value of 20
+
+
+    - Pass the "course" object as an argument value to "console.log()"
+
+    
+    - Save the changes
+        - Load / reload the browser
+        - Launch the browser's developer tools
+        - Click the "console" tab
+
+        - The property "ratings" is NOT present w/in the object "course"
+        - the property "price" is assigned w/ the value of 20
