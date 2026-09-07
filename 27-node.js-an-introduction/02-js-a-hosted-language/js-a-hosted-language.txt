@@ -1,0 +1,19 @@
+JavaScript Is A Hosted Language
+-------------------------------
+- JavaScript itself is the definition of a language that
+    - Can be implemented in different environments
+    
+    - All it needs is a JavaScript Engine that parses & executes the code
+
+    - Common environments
+        - Browser w/c have their own JavaScript Engine + browser APIs
+        - On any computer w/ a JavaScript Engine + non-browser APIs
+
+
+- Node.js is essentially an extracted Chrome V8 JavaScript Engine
+    - Enriched by non-browser APIs
+    
+    - Uses regular JavaScript w/ the exception of
+        - Browser-specific parts (e.g. DOM, browser storage, etc.)
+
+
