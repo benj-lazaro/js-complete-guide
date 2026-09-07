@@ -1,0 +1,7 @@
+Module Introduction
+-------------------
+- This section focuses on:
+    - What exactly is Node.js
+    - Writing Node.js code
+    - Using Express.js
+    - Talking to a database
