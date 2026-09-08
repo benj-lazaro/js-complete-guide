@@ -1,0 +1,45 @@
+Installation & Basics
+---------------------
+- Download Node.js installer from their official website
+    - Website (https://nodejs.org/en/download)
+
+
+- Node.js is often used in the context of web servers
+    - It can be used as a server-side language
+        
+    - To write a web server logic w/ it for
+        - Handling incoming HTTP requests
+        - Sending back HTTP responses
+
+    - IMPORTANT: Node.js has NO support for browser APIs
+        - It has support on core JavaScript features
+
+    - NOTE: In the end, it allows to execute any JavaScript code 
+        - Write custom utility scripts to perform system-level tasks
+        
+
+- To execute the JavaScript code using Node.js
+    - Run the following command on the terminal
+
+        node <file>.js
+
+    - Node.js reads & executes the JavaScript code stored w/in a ".js" file
+
+
+- On the practice code (app.js)
+    - Create a global constant named "userName"
+        - Assign a string value
+
+    
+    - Call "console.log()"
+        - Pass the global constant "userName" as an argument value
+
+
+    - Save the changes
+        - Open VS Code's Integrated Terminal
+        
+        - Type the following command:
+
+            node app.js
+
+        - The argument value passed on "console.log()" is displayed on the terminal
