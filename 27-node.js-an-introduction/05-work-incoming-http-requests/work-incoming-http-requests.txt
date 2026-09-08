@@ -1,0 +1,89 @@
+Working With Incoming HTTP Requests
+-----------------------------------
+- Node.js running a web server
+    - Working w/ the built-in module "http" to
+        - Listen to incoming HTTP requests
+        - Create & send a HTTP request to a remote server
+    
+    - More commonly used to setup & run a local web server
+        - To host files locally
+        - To listen to incoming HTTP requests
+
+
+- The "http" module method ".createServer()"
+    - Creates a local web server
+        - Requires an Event Listener as an argument value
+
+    - An Event Listener is a function that
+        - Gets triggered for EVERY incoming HTTP request
+
+        - It takes two (2) argument values w/c are passed automatically by Node.js
+            - 1st = request object
+            - 2nd = response object
+
+        - The "request" object reflects the incoming HTTP request
+            - Includes the headers & data parts of the HTTP request
+
+        - The "response" object is used to configure
+            - The response that is to be sent back to the client
+            - Performs the act of sending the response back
+
+    
+- The method ".write()" attached to the "response" object
+    - Accepts the data to be sent back
+
+
+- The method ".end()" attached to the "response" object
+    - Performs the act of sending the HTTP response (data attached) to the client
+
+
+- On the practice code (app.js)
+    - Create a global constant named "http"
+        - Assign the call to the function "request()" as value
+        - Pass "http" as an argument value
+        - NOTE: Imports the built-in module "http"
+
+
+    - Create a global constant named "server"
+        - Assign the global constant "http" as value
+        - Chain the method ".createServer()"
+        - Pass an Event Listener (an Arrow function) as an argument value
+
+    
+    - On the Event Listener
+        - Declare two (2) parameter variables named "request" & "response"
+        - These represents the "request" & "response" objects
+
+
+    - Inside the Event Listener
+        - Access the parameter variable "response"
+            - Chain the method ".write()"
+            - Pass the string value (below) as an argument value
+
+                "Greetings from the local web server!"
+
+            - NOTE: This creates the HTTP response when the local web server is accessed
+
+        - Access the parameter variable "response"
+            - Chain the method ".end()"
+            - NOTE: This performs the act of sending the HTTP response to a client
+
+        
+    - Access the global constant "server"
+        - Chain the method ".listen()"
+        - Pass the value of 3000 as an argument values
+        - NOTE: This starts the local web server & listen to incoming HTTP requests at port 3000
+
+
+    - Save the changes
+        - Run the "app.js" using Node.js
+
+            node app.js
+
+        - Launch the default browser
+            - Access the local webserver using the URL "https://localhost:3000"
+
+            - The string message send as a HTTP response is rendered on the browser
+    
+        - To gracefully terminate the local web server
+            - Type CTRL+C at the terminal
