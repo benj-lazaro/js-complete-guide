@@ -1,0 +1,70 @@
+Understanding Modules & File Access
+-----------------------------------
+- Node.js require to explicitly import functionalities (i.e. modules) into its code
+    - Core modules (https://nodejs.org/docs/latest/api/index.html#index)
+
+
+- Unlike w/ the browser-based JavaScript
+    - To import a built-in core (or 3rd-party) module in Node.js 
+        - Requires the use of the function "require()"
+        - Passing the name of the module as an argument value enclosed w/in a pair of ' ' or " "
+
+        const <name> = require("<module_name>");
+
+    
+- On the practice code (app.js)
+    - Import the built-in core module "fs" (i.e. filesystem) of Node.js
+        - Create a global constant named "fileSystem"
+        - Assign the call to the functin "require()" as value
+        - Pass "fs" as an argument value
+
+    
+    - Access the global constant named "fileSystem"
+        - Chain the method ".readFile()"
+        - Pass the following argument values
+            - 1st = "user-data.txt"
+            - 2nd = an Arrow function
+
+        - On the Arrow function
+            - Declare two (2) parameter variables named "error" & "data"
+
+        - Inside the Arrow function
+            - Use an "if" statement to check if the parameter variable "error" has a values
+                - Pass the value as an argument value to "console.log()"
+                - Use the keyword "return" to immediately return to the calling program
+
+            - Otherwise, pass the parameter variable "data" as an argument value to "console.log()"
+                - Chain the method ".toString()"
+    
+                - NOTE: This is  make the fetched data from the file, human-readable
+                    - Otherwise, returns a "<Buffer xx xx xx xx...>
+                    - Where "xx" is a hexadecimal representation of the read data
+        
+        - NOTE: This reads data stored in a file
+
+
+    - Access the global constant named "fileSystem"
+        - Chain the method ".writeFile()"
+        - Pass the following argument values
+            - 1st = "user-data.txt"
+            - 2nd = data to be written inside the file
+            - 3rd = an Arrow function
+
+        - On the Arrow function
+            - Declare the parameter variable named "error"
+
+        - Inside the Arrow function
+            - Use an "if" statement to check if the parameter variable "error" has a values
+                - Pass the value as an argument value to "console.log()"
+
+            - Otherwise, call "console.log()"
+                - Pass a string value to indicate that data has been written to the file
+
+
+    - Save the changes
+        - Run the file "app.js" using node 
+
+            node app.js
+
+        - Displays the message "Wrote to file"
+            - Followed by the data read from the file "user-data.txt"
