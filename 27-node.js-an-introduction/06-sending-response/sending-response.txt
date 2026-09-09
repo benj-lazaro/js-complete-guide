@@ -1,0 +1,39 @@
+Sending Response (HTML Data)
+----------------------------
+- To send back HTML data to the client
+    - Best to explicitly identify the type of content
+        - Use the method ".setHeader()" to configure the HTTP Response Header
+        - Pass argument values that identifies the type of content
+
+
+- On the practice code (app.js)
+    - Inside the Response Handler BEFORE to calling the method ".write()"
+        - Call the method ".setHeader()"
+        - Pass the following argument values
+            - 1st = "Content-Type"
+            - 2nd = "text/html"
+
+    
+    - Refactor the argument value of the method ".write()"
+        - Embed the previous text content as value of the HTML element <h1>
+
+
+    - Save the changes
+        - Run the "app.js" using Node.js
+
+            node app.js
+
+        - Launch the default browser
+            - Access the local webserver using the URL "https://localhost:3000"
+            - Renders the HTML element <h1>
+
+        - Open the default browser's Dev Tools
+            - Click the "Network" tab
+                - Select-click "localhost" entry at the left-hand side panel
+
+            - Click the "Headers" tab
+                - Expand "Response headers"
+                - The "Context-Type" field has the value of "text/html"
+    
+        - To gracefully terminate the local web server
+            - Type CTRL+C at the terminal
