@@ -1,0 +1,99 @@
+Parsing Incoming Data
+---------------------
+- To parse incoming data received from a HTTP request
+    - Require the use of the method ".on()"
+
+    - It accepts two (2) arguments
+        - 1st = Event
+        - 2nd = corresponding function to execute for said Event
+
+    - The Event "data"
+        - Triggered when data is received c/o HTTP request
+        
+        - To store the received data in an array that needs to be
+            - Concatenated
+            - Converted into a string
+            - Split by an identified character
+            - Pick specific data to use
+
+    - The Event "end"
+        - Triggered when the received data has completed being parsed & processed
+
+        - This is where the HTTP response is formed & sent back to the client
+
+
+- On the practice code (app.js)
+    - Inside the Event Handler passed as an argument value to the method ".createServer()"
+        - Define a local variable named "body"
+            - Assign an empty Array as value
+
+
+        - Access the parameter variable "request"
+            - Chain the method ".on()"
+                - Pass the following argument values
+                    - 1st = "data" (an Event)
+                    - 2nd = Arrow function
+
+            - On the Arrow function
+                - Create a parameter variable named "dataChunk"
+                - NOTE: This contains the data that came along w/ the incoming HTTP request 
+
+            - Inside the Arrow function
+                - Access the local variable "body"
+                    - Chain the method ".push()"
+                    - Pass the parameter variable "dataChunk" as an argument value
+
+
+        - Access the parameter variable "request"
+            - Chain the method ".on()"
+                - Pass the following argument values
+                    - 1st = "end" (an Event)
+                    - 2nd = Arrow function
+
+            - Inside the Arrow function
+                - Access the local variable "body"
+                    - Assign the object "Buffer" as value
+                    - Chain the method ".concat()"
+                    - Pass the variable "body" as an argument value
+                    - Chain the method ".toString()"
+                    - NOTE: Concat the data & then convert it into a string value
+
+                - Create a local variable named "userName"
+                    - Assign an initial string value of "Unknown User"
+
+                - Use an "if" statement if the local variable "body" has a value
+                    - Access the local variable "userName"
+                    - Assign the local variable "body" as value
+                    - Chain the method ".split()"
+                    - Pass "=" as an argument value
+                    - Chain "[1]" to access the 2nd element
+
+                - Cut lines of code that called the methods ".setHeader()" & ".write()"
+                    - Paste them inside the Arrow function
+                    - Leaving the call to the method ".end()" behind
+
+                - Refactor the string value passed as an argument value to the method ".write()"
+                    - Convert it into a Template Literal String
+                    - Insert the value of the local variable "userName"
+
+
+    - Save the changes
+        - Run the "app.js" using Node.js
+
+            node app.js
+
+        - Launch the default browser
+            - Access the local webserver using the URL "https://localhost:3000"
+            - IMPORTANT: Press the ENTER key after typing the URL
+                - Ensures that a new page is reloaded property
+                - Prevents from carrying over the previous data typed in the HTML element <input>
+
+        - The HTML element <h1> will render "Hello Unknown User"
+
+        - Type a username on the rendered HTML element <input>
+            - Clicking the button "Send"
+            - The content of the HTML element <h1> get updated
+
+
+        - To gracefully terminate the local web server
+            - Type CTRL+C at the terminal
