@@ -1,0 +1,142 @@
+Express.js The Basics
+---------------------
+- Express.js is a Node.js library
+    - More specifically, a middleware-driven framework
+    
+    - Funnels incoming HTTP requests through
+        - A bunch of methods that receives & acts on the request
+        
+    - Each method can
+        - Either stop or send back a HTTP response
+        - Forward the request to another method
+
+
+- To import the Express.js library
+    - Requires the function "require()"
+    - Pass "express" as an argument value
+
+
+- To create an app
+    - Call the function "express()"
+        - Save the returned object into a constant
+        - The object comes w/ a lot of features & method provided by Express.js
+
+    - Behind-the-scenes
+        - Performs an import of the Node.js "http" module
+        - Call the method "http.createServer()" to create a local web server
+    
+    
+- To listen to incoming HTTP requests
+    - Call the constant where the returned object is stored
+        - Chain the method ".listen()"
+        - Pass the port number to listen for incoming HTTP requests
+
+
+- To work on incoming HTTP requests
+    - Use the method ".use()"
+        - Requires an Arrow function as an argument value
+        - This function will act on the incoming HTTP request
+
+    - The Arrow function requires three (3) argument values
+        - 1st = "request" (request object)
+        - 2nd = "response" (response object)
+        - 3rd = "next" function
+
+    - IMPORTANT: The order of the method ".use()" matters
+    
+    - Calling the "next()" function w/in the Arrow function
+        - Informs Express.js to move to the next middleware (i.e. ".use()" method) in line
+        - Execute the corresponding Arrow function
+
+    - NOT calling "next()" function w/in te Arrow function
+        - Informs Express.js to there is NO more next middleware in line to execute
+
+
+- To set a HTTP response header
+    - Chain the method ".setHeader()" to the "response" object
+    
+    - Pass the argument values
+        - 1st = "Content-Type"
+        - 2nd = "text/html"
+
+    - NOTE: This is a response header setup for returning a HTML document
+
+    - Call the function "next()"
+        - To inform Express.js on executing the next middleware in line w/c 
+        - Handles sending the HTTP response to a client   
+
+
+- To send a HTTP response to a client
+    - Chain the method ".send()" to the "response" object
+        - Pass an HTML tag as an argument value
+        - Sends the corresponding HTML tag to the client
+
+    - There is NO need to call the function "next()"
+        - After sending the HTTP response to a client
+
+
+- On the practice code (app.js)
+    - Import the Express.js library using the Node.js function "require()"
+        - Pass "express" as an argument values
+        - Save the imported library into the global constant named "express"
+
+
+    - Create an Express.js object
+        - Call the function "Express()"
+        - Save the returned object into the global constant named "app"
+
+
+    - Setup a HTTP response header
+        - Access the global constant "app"
+            - Chain the method ".use()"
+            - Pass an Arrow function as an argument value
+
+        - On the Arrow function
+            - Declare the following parameter variables
+                - 1st = "request"
+                - 2nd = "response"
+                - 3rd = "next"
+
+        - Inside the Arrow function
+            - Access the parameter variable "response"
+                - Chain the method ".setHeader()"
+            
+                - Pass the following argument values
+                    - 1st = "Content-Type"
+                    - 2nd = "text/html"
+
+            - Call the function "next()"
+                - NOTE: To execute the next in-line method ".use()"
+
+
+    - Send the HTTP response
+        - Access the global constant "app"
+            - Chain the method ".use()"
+            - Pass an Arrow function as an argument value
+
+        - On the Arrow function
+            - Declare the following parameter variables
+                - 1st = "request"
+                - 2nd = "response"
+                - 3rd = "next"
+
+        - Inside the Arrow function
+            - Access the parameter variable "response"
+                - Chain the method ".send()"
+
+                - Pass the following HTML element as an argument value
+
+                    "<h1>Greetings from the local webserver!</h1>")            
+
+
+    - Save the changes
+        - Run the "app.js" using Node.js
+
+            node app.js
+
+        - Launch the default browser
+            - Access the local webserver using the URL "https://localhost:3000"
+            - Renders the HTML element <h1>
+    
+        - To gracefully terminate the local web server
+            - Type CTRL+C at the terminal
