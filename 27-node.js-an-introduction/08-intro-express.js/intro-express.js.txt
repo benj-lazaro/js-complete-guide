@@ -1,0 +1,27 @@
+Introducing & Installing Express.js
+-----------------------------------
+- Doing the manual data parsing & response generation can be cumbersome to maintain & scale
+    - Express.js is a popular Node.js library that
+        - Allows building web applications & web servers in Node.js easier
+
+    - Installed using npm
+
+        npm i express
+
+    - Website (https://expressjs.com/)
+
+
+- On the practice code (app.js)
+    - Convert the app into a proper Node.js project
+
+        npm init
+
+        - NOTE: Confirm ALL default settings to produce a "package.json" file
+
+
+    - Rename the "app.js" file to "pure-node.js"
+    
+    
+    - Create a new "app.js" file
+        - This will contain the Express.js code that will be implemented on the next lesson
+
