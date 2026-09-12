@@ -1,0 +1,59 @@
+Extracting Data
+---------------
+- The 3rd-party package "body-parser" parse the incoming HTTP request body
+    - Returns a parsed "request" object that can be integrated w/ the HTTP response
+
+
+- To install "body-parser" package via npm
+
+    npm i body-parser
+
+
+- On the practice code (app.js)
+    - Import the 3rd-party package "body-parser"
+        - Define a global constant named "bodyParser"
+        - Assign the call to "require()" as value
+        - Pass "body-parser" as an argument value
+
+
+    - Right after the declaration of the global constant "app"
+        - Use the global constant "app"
+            - Chain the method ".use()"
+
+        - Pass the global constant "bodyParser" as an argument value
+            - Chain the method ".urlencoded()"
+            - Pass the following object as an argument value
+
+            app.use(bodyParser.urlencoded({ extended: false }));
+
+        - NOTE: Implicitly returns a parsed "request" object
+            - To be used by the succeeding ".use()" methods
+
+
+    - Inside the method ".use()" that sends a HTTP response to the client
+        - Refactor a local variable "userName" into a constant
+
+        - Refactor the assigned value to:
+
+            request.body?.username || "Unknown User";
+
+        PERSON NOTE: Null propagation used after the "request" object property "body"
+            - To address the returned "undefined" value from "request.body"
+            
+        - On the method ".send()", refactor the assigned value to:
+
+            `<h1>Hello ${userName}</h1><form method="POST" action="/"><input name="username" type="text"><button type="submit">Send</button></form>`
+
+
+    - Save the changes
+        - Run the "app.js" using Node.js
+
+            node app.js
+
+        - Launch the default browser
+            - Access the local webserver using the URL "https://localhost:3000"
+            - Renders the HTML element <h1> & <input>
+            - Renders the entered name on the HTML element <input>
+    
+        - To gracefully terminate the local web server
+            - Type CTRL+C at the terminal
