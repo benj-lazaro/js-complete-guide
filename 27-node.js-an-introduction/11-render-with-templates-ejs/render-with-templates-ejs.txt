@@ -1,0 +1,121 @@
+Rendering Server-side HTML With Templates & EJS
+-----------------------------------------------
+- To render server-side HTML (document)
+    - Using templates that get dynamically injected w/ content
+        - To be sent back (as a HTTP response) to the client
+
+    - Requires a 3rd-party templating engine named "ejs"
+        - Parses HTML templates (i.e. views)
+        - Finds special syntax w/in the templates to render content dynamically
+
+    - EJS stands for Embedded JavaScript
+        - GitHub Repository (https://github.com/mde/ejs)
+        - Reference (https://ejs.co/)
+
+    - Supported by Express.js
+        - Requires using the method ".set()" 
+            - To set "ejs" as the parsing engine for the app's HTML templates
+            - To set the folder where the HTML templates are stored
+
+        - NOTE: The HTML template is expected to have a filename extension of ".ejs"
+
+    - An EJS template
+        - Generally use HTML mark-up
+        
+        - Use the following syntax to inject dynamic content
+
+            <%= <variable_name> %>
+
+    - Express.js use the method ".render()" to render a HTML template
+        - Require the following argument values
+            - 1st = <template_filename_w/out_filename_extension>
+            - 2nd = object literal containing data that will be dynamically render on the template
+
+        - The object literal contains the following key-value parsing
+            - key   = name of the placeholder declared in the HTML template
+            - value = name of the constant whose value dynamically replace the placeholder
+
+
+- On the practice code (app.js)
+    - Create a new folder named "views"
+
+
+    - Inside the folder "views"
+        - Create a new file named "index.ejs"
+
+
+    - Install the package "ejs" using npm
+
+        npm i ejs
+
+
+    - In the "app.js" file
+        - Right after the declaration of the global constant "app"
+
+        - Set "ejs" as the parsing engine for the HTML templates
+            - Access the global constant "app"
+                - Chain the method ".use()"
+
+            - Pass the following argument values
+                - 1st = "view engine"
+                - 2nd = "ejs"
+
+        - Set the location of the HTML templates
+            - Access the global constant "app"
+                - Chain the method ".use()"
+
+            - Pass the following argument values
+                - 1st = "views"
+                - 2nd = "views" (folder name)
+
+
+    - Inside the file "index.ejs"
+        - Use the VS Code "!" shortcut to render a HTML boilerplate Code
+
+        - On the HTML element <title>
+            - Replace the default content w/ "Node.js Demo"
+
+        - In the HTML element <body>
+            - Add a HTML element <h1> w/ the following content 
+
+                Hello <%= user %>
+
+            - NOTE: The "user" is a placeholder to be replaced w/ a dynamic content
+
+            - Copy the HTML element <form> from the "app.js" & paste it
+
+                <form method="POST" action="/">
+                    <input name="username" type="text" />
+                    <button type="submit">Send</button>
+                </form>
+
+    
+    - Back on the "app.js" file
+        - Refactor the last "app.use()" 
+            - Where the HTTP response is send back to the client
+
+        - Replace "response.send()" w/ "response.render()"
+            - Pass the following argument values
+                - 1st = "index" (referring to the file "index.ejs")
+                - 2nd = object literal
+
+            - The object literal contains the following key-pair value
+
+                { user: userName }
+
+            - NOTE: The value stored in the local constant "userName"
+                - Replaces the placeholder "user" in the HTML template
+
+
+    - Save the changes
+        - Run the "app.js" using Node.js
+
+            node app.js
+
+        - Launch the default browser
+            - Access the local webserver using the URL "https://localhost:3000"
+            - Renders the HTML element <h1> & <input>
+            - Renders the entered name on the HTML element <input>
+    
+        - To gracefully terminate the local web server
+            - Type CTRL+C at the terminal        
