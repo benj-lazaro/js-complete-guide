@@ -1,0 +1,10 @@
+Enhancing Our Project
+---------------------
+- To further explore the backend service of Node.js
+    - By enhancing the project 
+        - Writing its own REST API (routes)
+    
+    - Interfaces (routes) that a client can "talk" to
+        - By sending the correct data to the correct URL
+        - Returning the corresponding response instead of a rendered HTML page
+
