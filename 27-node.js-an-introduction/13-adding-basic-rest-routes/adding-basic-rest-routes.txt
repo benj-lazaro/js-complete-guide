@@ -1,0 +1,178 @@
+Adding Basic REST Routes
+------------------------
+- For this lesson:
+    - Create a new folder named "client"
+        - Copy & paste the codebase of the previous project "share my place" app in the folder
+        - Test run the app
+
+    - Create a new folder named "server"
+        - Move the "app.js" file & related folders
+
+    - On the (server) "app.js" file
+        - Delete the "views" folder & remove associated code related to rendering HTML templates
+        - Will NOT be sending rendered HTML template as a HTTP Response
+        - The new approach focuses on exchanging JSON data w/ the client
+
+    - On the "server" folder
+        - Create a new folder named "routes"
+        - NOTE: This will contain the files for each REST route (to be implemented)
+
+
+- On the practice code (server/app.js)
+    - Delete the folder "views"
+    
+    
+    - In the "server/app.js" file
+        - Remove the code that renders HTML templates
+
+        - Refactor the chained method ".urlencoded() to the "bodyParser" object
+            - To the method ".json()"
+
+        - NOTE: For the purpose of exchanging JSON data w/ the client
+    
+
+    - Create a new folder "server/routes"
+        - Create a new file named "location.js"
+
+
+    - In the "location.js" file
+        - Import Express.js using the function "require()
+            - Passing "express" as an argument value
+            - Store returned object in the global constant "express"
+
+        - Create a global constant named "router"
+            - Assign the global constant "express" as value
+            - Chain the method "router()"
+
+        - Create a global constant named "locationStorage"
+            - Assign a JavaScript object literal as value
+
+            - Inside the JavaScript object literal
+                - Create a property named "locations"
+                - Assign an empty Array as value
+
+        - Access the global constant "router"
+            - Chain the method ".post()"
+
+            - Pass the following argument values
+                - 1st = "/add-location" (route)
+                - 2nd = An Arrow function
+
+            - On the Arrow function
+                - Declare the following parameter variables
+                    - 1st = "request"
+                    - 2nd = "response"
+                    - 3rd = "next"
+
+            - Inside the Arrow function
+                - Access the global constant "locationStorage"
+                - Chain the property ".locations"
+                - Chain the method ".push()"
+                - Pass a JavaScript object literal as an argument value
+
+            - Inside the JavaScript object literal
+                - Declare the following key-value pairs
+                    - "id"      = "Math.random()"
+                    - "address" = "request.body.address"
+                    - "coords"  = "{ lat: request.body.latitude, lon: request.body.longitude }"
+
+            - Access the parameter variable "response"
+                - Chain the method ".json()"
+                - Pass a JavaScript object literal as an argument values
+
+            - Inside the JavaScript object literal
+                - Declare the following key-value pairs
+                    - "message" = "Stored location"
+
+        - Access the global constant "router"
+            - Chain the method ".get()"
+
+            - Pass the following argument values
+                - 1st = "/add-location" (route)
+                - 2nd = An Arrow function 
+
+            - On the Arrow function
+                - Declare the following parameter variables
+                    - 1st = "request"
+                    - 2nd = "response"
+                    - 3rd = "next"
+            
+        - Export this file
+            - Call "module.exports()"
+            - Assign the global constant "router" as values
+            - NOTE: Exports the defined routes
+
+
+    - Back in the "server/app.js" file
+        - Create a global constant named "locationRoutes"
+            - Assign the call to the function "require()" as value
+            - Pass "./routes/location" as an argument value
+            - NOTE: Imports the "routers/location.js" file
+
+        - Call "app.use()"
+            - Pass the global constant "locationRoutes" as an argument values
+                - Located after the 1st call to the method ".use()"
+            
+            - NOTE: Informs Express.js to funnel incoming HTTP requests through
+                - The registered routes defined in the file "server/routes/location.js"
+
+
+    - On the "client/src/SharePlace.js"
+        - Inside the method "selectPlace()", right after the "if" statement
+
+        - Call the function "fetch()"
+            - Pass the following argument values
+                - 1st = "http://localhost:3000/add-location/"
+                - 2nd = a JavaScript object literal
+
+            - The JavaScript object literal contains the following key-value pairs:
+                - "method"  = "POST"
+                - "body"    = JSON.stringify({ address: address, lat: coordinates.latitude,
+                                               lon: coordinates.longitude, })
+
+                - "headers" = { "Content-Type": "application/json" }
+
+            - NOTE: Informs Express.js about the incoming JSON data
+
+        - Chain the method ".then()"
+            - Pass an Arrow function as an argument value
+
+        - On the Arrow function 
+            - Declare a parameter variable named "response"
+            - NOTE: Contains the HTTP response from the server
+        
+        - Inside the Arrow function
+            - Return the received HTTP response from the server
+            - Chain the method ".json()" to parse the response as JSON data
+
+        - Chain another method ".then()"
+            - Pass an Arrow function as an argument value
+
+        - On the Arrow function
+            - Declare a parameter variable named "data"
+            - NOTE: Contains the parsed JSON data from the received HTTP response
+
+        - Inside the Arrow function
+            - Pass the parameter variable "data" as an argument value to "console.log()"
+
+    
+    - Save the changes
+        - Launch the server side via terminal
+
+            node app.js
+
+        - Launch the client side running the npm script
+
+            npm run build:dev
+
+        - Click the returned Loopback URL
+            - Launches the default browser
+
+            - Manually enter an address & click the button "Find Place"
+
+            - Returns an error
+            
+                "Access to fetch a "http://localhost:3000/add-location/" from origin
+                "http://localhost:8000" has been blocked by CORS policy..."
+
+            - NOTE: This concern will be addressed on the next lesson
