@@ -1,0 +1,88 @@
+Understanding CORS (Cross Origin Resource Sharing)
+--------------------------------------------------
+- The idea behind CORS is simple
+    - Two (2) different servers exchanging resources
+        - Sending HTTP requests to exchange data from another server
+        - A server function as a client & the other as a backend server
+
+    - By default, browsers prevent such CORS requests wherein it ONLY
+        - Allows HTTP requests to the same origin (i.e. domain, server)
+        - Allows to communicate w/ registered routes from the same origin & NOT from another server
+
+    - This mechanism exists to protect resources
+        - A server should NOT be allowed to fetch data from any server
+
+    - With the modern web where standalone APIs is quite common
+        - Requires a way to inform browsers on specific CORS request is allowed        
+        
+        - Setting up headers of the backend server's HTTP Response
+            - To signal browsers that a CORS request to the backend server is allowed
+
+        - IMPORTANT: CORS related issues are ALWAYS addressed on the backend server
+
+    - Reference (https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS)
+
+
+- On the practice code (server/app.js)
+    - Right after the 1st call to "app.use()" that parses incoming HTTP request body
+        - To setup the HTTP Response header of the backend server that
+            - Allows a CORS request
+
+        - Call the "app.use()"
+            - Pass an Arrow function as an argument value
+
+        - On the Arrow function
+            - Declare the parameter variables named "request", "response" & "next"
+
+        - Inside the Arrow function
+            - Access the parameter variable "response"
+                - Chain the method ".setHeader()"
+                - Pass the following argument value
+                    - 1st = "Access-Control-Allow-Origin"
+                    - 2nd = "*"
+
+                - NOTE: Grants CORS request access from ANY server
+
+            - Access the parameter variable "response"
+                - Chain the method ".setHeader()"
+                - Pass the following argument value
+                    - 1st = "Access-Control-Allow-Methods"
+                    - 2nd = "POST, GET, OPTIONS"
+
+                - NOTE: Grants access to the following HTTP methods
+                    - The "OPTIONS" request is sent by the browser (by default) 
+                    - BEFORE sending a "POST" request
+
+            - Access the parameter variable "response"
+                - Chain the method ".setHeader()"
+                - Pass the following argument value
+                    - 1st = "Access-Control-Allow-Headers"
+                    - 2nd = "Content-Type"
+
+                - NOTE: Grants access to the request w/ the specified header
+                    - This HTTP header has been set in the client-side code
+
+            - Call the function "next()"
+                - In order to call the succeeding "app.use(locationRoutes)"
+
+        - NOTE: The backend server now communicates as a REST API
+
+
+    - Save the changes
+        - Launch the server side via terminal
+
+            node app.js
+
+        - Launch the client side running the npm script
+
+            npm run build:dev
+
+        - Click the returned Loopback URL
+            - Launches the default browser
+
+            - Manually enter an address & click the button "Find Place"
+
+            - On the browser's JavaScript console, a JavaScript object literal is returned
+
+
+                { message: "Stored Location" }
