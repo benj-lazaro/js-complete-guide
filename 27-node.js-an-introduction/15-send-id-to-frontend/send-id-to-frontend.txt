@@ -1,0 +1,61 @@
+Sending The Location ID To The Frontend
+---------------------------------------
+- Implement the logic on the backend server
+    - To generate a random ID as value for the Location ID (i.e. locId)
+
+    - Send back the Location ID to the client
+        - Renders a URL on the "Share Place" text field w/ the Location Id embedded
+
+
+- On the practice code "server/routes/Location.js" file
+    - Inside the Arrow function passed as an argument value to "router.post()"
+        - Create a local constant named "id"
+            - Assign "Math.random()" as value
+
+        - Inside the Arrow function passed as an argument value to "locationStorage.locations.push()"
+            - Assign the local constant "id" as value to the property "id"
+
+        - Inside the JavaScript object literal passed as an argument value to "response.json()"
+            - Pass the key-value pair "locationId : id"
+
+
+    - On "client/src/SharePlace.js"
+        - Inside the method "selectPlace()"
+            - Select & cut the following lines of code:
+
+                this.shareBtn.disabled = false;
+
+                const sharedLinkInputElement = document.getElementById("share-link");
+
+                sharedLinkInputElement.value = `${location.origin}/my-place?address=${encodeURI(address)}&lat=${coordinates.latitude}&lon=${coordinates.longitude}`;
+
+            - Paste (to replace) the codebase w/in the Arrow function passed an argument value
+                - To the last chained method ".then()"
+
+            - Inside the Arrow function
+                - Create a local constant named "locationId"
+                    - Assign "data.locationId" as value
+                    - NOTE: Taken from the returned JSON data property "locationId"
+
+                - Refactor the value assigned of the local constant "sharedLinkInputElement"
+                    - Replace it with `${location.origin}/my-place?location=${locationId}`
+
+                
+    - Save the changes
+        - Launch the server side via terminal
+
+            node app.js
+
+        - Launch the client side running the npm script
+
+            npm run build:dev
+
+        - Click the returned Loopback URL
+            - Launches the default browser
+
+            - Manually enter an address & click the button "Find Place"
+
+            - The "Share Page" text field returns w/ the URL
+
+                http://localhost:8080/my-place?location=<random_location_id>
+              
