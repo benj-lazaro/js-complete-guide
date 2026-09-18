@@ -1,0 +1,134 @@
+Adding The GET Location Route
+-----------------------------
+- Implement the logic for the "GET" route of the backend server
+
+
+- On the practice code
+    - On the "server/routes/location.js" file's registered HTTP method "router.get()"
+        - Refactor the route "/location" to "/location:lid"
+        - NOTE: The ":lid" serves as a placeholder for the dynamically rendered location id
+
+
+    - In the registered HTTP method "route.get()"
+        - Create a local constant named "locationId"
+            - Assign "+request.params.lid" as value
+            - NOTE: Converts the location id (i.e. lid) from the HTTP request params into a number
+
+        - Create a local constant named "location"
+            - Assign the global constant "locationStorage" as value
+                - Chain the property ".locations"
+                - Chain the method ".find()"
+                - Pass an Arrow function as an argument value
+
+            - On the Arrow function
+                - Declare the parameter variable "location"
+                - NOTE: This holds the returned value from the body of the Arrow function
+
+            - Inside the Arrow function
+                - Return the matching Array element in "locationStorage.locations" that
+                    - Matches the property "id" w/ the local constant "locationId"
+
+        - Use an "if" statement to check if the local constant "location" is truthy or falsy
+            - If falsy
+                - Return the parameter variable "response"
+                    - Chain the method ".status()"
+                        - Pass 404 as an argument value
+
+                    - Chain the method ".json()"
+                        - Pass a JavaScript object literal as an argument value
+
+                    - JavaScript object literal contains the key-value pair
+
+                        { message: "Not found" }
+
+            - If truthy
+                - Return the parameter variable "response"
+                    - Chain the method ".json()"
+                        - Pass a JavaScript object literal as an argument value
+
+                    - JavaScript object literal contains the key-value pair
+
+                        { address: location.address, coordinates: location.coords, }
+
+    
+    - On the "client/MyPlace.js" file
+        - Comment the global constants "coordinates" & "address"
+
+
+        - Create a global constant named "locId"
+            - Assign the global constant "queryParams" as value
+                - Chain the method ".get()"
+                - Pass "location" as an argument value
+                - NOTE: Extracts the value of the key "location" from the parsed URL
+
+
+        - Call the function "fetch()"
+            - Pass the following as an argument value
+
+                "http://localhost:3000/location/" + locId
+
+            - Chain the method ".then()"
+                - Pass an Arrow function as an argument value
+
+                - On the Arrow function
+                    - Pass the "response" object as an argument value
+
+                - Inside the Arrow function
+                    - Use an "if" statement to check if the property "status" is strictly equal to 404
+
+                    - If truthy
+                        - Throw a new Error object
+                        - Pass the string "Could NOT find location" as an argument value
+
+                    - If falsy
+                        - Return the JSON data as a HTTP response
+
+            - Chain the method ".then()"
+                - Pass an Arrow function as an argument value
+
+                - On the Arrow function
+                    - Pass the "data" object as an argument value
+
+                - Inside the Arrow function
+                    - Instantiate the Class "LoadedPlace"
+                    - Pass the following as argument values
+                        - 1st = data.coordinates
+                        - 2nd = data.address
+                
+            - Chain the method ".catch()"
+                - Pass an Arrow function as an argument value
+
+                - On the Arrow function
+                    - Pass the "error" object as an argument value
+
+                - Inside the Arrow function
+                    - Call "alert()"
+                    - Pass "error.message" as an argument values
+
+
+    - Save the changes
+        - Launch the server side via terminal
+
+            node app.js
+
+        - Launch the client side running the npm script
+
+            npm run build:dev
+
+        - Click the returned Loopback URL
+            - Launches the default browser
+
+            - Manually enter an address & click the button "Find Place"
+
+            - The "Share Page" text field returns w/ the URL
+
+                http://localhost:8080/my-place?location=<random_location_id>
+
+
+            - Clicking the "Share Page" button
+                - Copies the URL on the system clipboard
+
+        - Open a new browser tab
+            - Paste the copied URL
+
+            - Loads the "shared page" using the backend server's URL
