@@ -1,0 +1,31 @@
+Introducing MongoDB (Database)
+------------------------------
+- Using MongoDB database (cloud service, NOT local) to store the shared place
+    - Requires creating an account
+        - Avail the free tier cloud database (Atlas) service
+
+        - Pick the provider (AWS) & region (default selected based on current location)
+            - Leave the default settings as it currently is
+
+        - Click the button "Create Deployment"
+            - To create & deploy a database server on the cloud
+        
+        - Click the button "Connect" 
+            - To provide details on how to connect the app to the cloud service
+            - Also includes the user credentials to grant access
+
+        - Click the link "Database & Network Access"
+            - Select "Read & write to any database" privilege for the current user
+            
+            - On the "IP Access List", add local IP address is not yet included
+
+    - Locally install a MongoDB driver using npm on the backend server that
+        - Allows the backend app to communicate w/ the cloud service database
+
+            npm i mongodb 
+
+    - PERSONAL NOTE: The example portrayed in the lesson is already defunct by 2026
+        - Implementing a solution shared by fellow student 5 years ago
+        - However, recent changes in MongoDB have considered that solution unworkable
+        - Currently finding a workaround solution
+
