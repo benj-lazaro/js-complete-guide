@@ -8,7 +8,7 @@ const { MongoClient } = mongodb;
 // Create an Express.js Router
 const router = express.Router();
 
-// MongoDB cloud service URL w/ credentials
+// MongoDB cloud database URL w/ credentials
 const url =
   "mongodb+srv://benj:fKxiCNqt7GhaCEG5@cluster0.nbao964.mongodb.net/?appName=Cluster0";
 
@@ -33,15 +33,18 @@ router.post("/add-location", async (request, response, next) => {
       coords: { latitude: request.body.lat, longitude: request.body.lon },
     };
 
-    const result = await collection.insert(doc);
+    const result = await collection.insertOne(doc);
 
-    response.json({ message: "Stored location!", locId: result.insertedId });
+    response.json({
+      message: "Stored location!",
+      locationId: result.insertedId,
+    });
 
     console.log(
-      `${result.insertedCount} location documents were inserted with the _id: ${result.insertedId}`,
+      `Location documents were inserted with the _id: ${result.insertedId}`,
     );
   } catch (error) {
-    console.log(error);
+    console.dir(error);
   }
 });
 
@@ -62,7 +65,7 @@ router.get("/location/:lid", async (request, response, next) => {
     const location = await collection.findOne(query);
 
     if (!location) {
-      res.status(404).json("Not Found!");
+      response.status(404).json("Not Found!");
       return;
     }
 
@@ -72,7 +75,7 @@ router.get("/location/:lid", async (request, response, next) => {
       address: location.address,
     });
   } catch (error) {
-    console.log(error);
+    console.dir(error);
   }
 });
 

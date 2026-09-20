@@ -19,13 +19,188 @@ Introducing MongoDB (Database)
             
             - On the "IP Access List", add local IP address is not yet included
 
-    - Locally install a MongoDB driver using npm on the backend server that
-        - Allows the backend app to communicate w/ the cloud service database
-
+    - Locally install a MongoDB driver using npm on the backend server ONLY
+        - Allows the app's backend to communicate w/ the cloud-based database
+        
             npm i mongodb 
 
-    - PERSONAL NOTE: The example portrayed in the lesson is already defunct by 2026
-        - Implementing a solution shared by fellow student 5 years ago
-        - However, recent changes in MongoDB have considered that solution unworkable
-        - Currently finding a workaround solution
+    - PERSONAL NOTE: The example portrayed in the lesson is already unworkable in 2026
+        - Implemented the solution shared by a fellow student from 5 years ago
+        - Implemented my own changes due to method(s) used are currently discontinued
 
+    - IMPORTANT: To prevent the abuse of the embedded credentials
+        - The cloud-based database & associated user account had been deleted
+
+
+- On the practice code (server/routes/location.js)
+    - Import MongoDB
+        - Create a global constant named "mongodb"
+            - Assign the function "require()" as value
+            - Pass "mongodb" as an argument value
+
+
+    - Create a MongoDB client
+        - Create a global constant named "{ MongoClient }"
+            - Assign the global constant "mongodb" as value
+
+        - NOTE: Extracts the "MongoClient" from the MongoDB
+
+
+    - Create a global constant named "url"
+        - Copy & paste the generated URL
+            - Provided by MongoDB cloud service when database was created
+
+        - Insert the username & auto-generated password w/in the URL
+
+    
+    - Create a global constant named "client"
+        - Instantiate the "MongoClient" w/ the keyword "new"
+        - Pass the global constant "url" as an argument value
+
+
+    - Refactor the 2nd argument value for "router.post()"
+        - Pass an Async Arrow function
+
+        - On the Arrow function
+            - Declare the parameter variables "request", "response" & "next"
+
+        - Inside the Arrow function
+            - Declare a "try" block
+
+        - Inside the "try" block
+            - Call the await "client.connect()"
+                - NOTE: Connects to the MongoDB cloud database
+
+            - Create a local constant named "database"
+                - Assign the call to "client.db()" as value
+                - Pass "locations" as an argument value
+    
+            - Create a local constant named "collection"
+                - Assign the call to "database.collection()" as value
+                - Pass "user-locations" as an argument value
+    
+            - Create a local constant named "doc"
+                - Assign a JavaScript object literal as value
+
+                - JavaScript object literal contains the following key-value pairs
+                    - "address"   = request.body.address
+                    - "coords"    = { latitude: request.body.lat, longitude: request.body.lon }
+
+                - NOTE: Defines the properties of a record (i.e. document)
+
+            - Create a local constant named "result"
+                - Assign an Await call to "collection.insertOne()"
+                - Pass the local constant "doc" as an argument value
+
+                - NOTE: Inserts a record (i.e. document) in the collection "user-locations"
+
+            - Access the parameter variable "response"
+                - Chain the method ".json()"
+                    - Pass a JavaScript object literal as an argument value
+
+                - JavaScript object literal contains the following key-value pairs
+                    - "message"     = "Stored location!"
+                    - "locationId"  = result.insertedId
+
+            - Call "console.log()"
+                - Pass the following string template literal as an argument value
+
+                    `Location documents were inserted with the _id: ${result.insertedId}`
+
+        - Inside the chained "catch" block w/ the parameter variable "error"
+            - Call "console.dir()"
+            - Pass the parameter variable "error" as an argument value
+
+
+    - Refactor the 2nd argument value for "router.get()"
+        - Pass an Async Arrow function
+
+        - On the Arrow function
+            - Declare the parameter variables "request", "response" & "next"
+
+        - Inside the Arrow function
+            - Declare a "try" block
+
+        - Inside the "try" block
+            - Call the await "client.connect()"
+                - NOTE: Connects to the MongoDB cloud database
+
+            - Create a local constant named "database"
+                - Assign the call to "client.db()" as value
+                - Pass "locations" as an argument value
+    
+            - Create a local constant named "collection"
+                - Assign the call to "database.collection()" as value
+                - Pass "user-locations" as an argument value
+
+            - Create a local constant named "query"
+                - Pass a JavaScript object literal as an argument value
+
+            - The JavaScript object literal contains the following key-value pairs
+                - "_id"   =  new mongodb.ObjectId(locationId)
+
+                - NOTE: Sets up the query string for the database
+
+            - Create a local constant named "location"
+                - Assign an Await call to "collection.findOne()"
+                - Pass the local constant "query" as an argument value
+                - NOTE: Sends a query to the cloud database for a single documents
+
+            - Use an "if" statement to check the local constant "location" is falsy
+                - Access the parameter variable "response"
+
+                - Chain the method ".status()"
+                    - Pass "404" as an argument value
+
+                - Chain the method ".json()"
+                    - Pass "Not Found!" as an argument value
+
+                - Call the keyword "return"
+
+            - Access the parameter variable "response"
+                - Chain the method ".json()"
+                    - Pass a JavaScript object literal as an argument value
+
+                - The JavaScript object literal contains the following key-value pairs
+                    - "message"     = "Retrieved location!"
+                    - "coordinates" = location.coords
+                    - "address"     = location.address
+
+                - NOTE: Returns the matching document as JSON data via HTTP response
+
+        - Inside the chained "catch" block w/ the parameter variable "error"
+            - Call "console.dir()"
+            - Pass the parameter variable "error" as an argument value
+
+
+    - Save the changes
+        - Launch the server side via terminal
+
+            node app.js
+
+        - Launch the client side running the npm script
+
+            npm run build:dev
+
+        - Click the returned Loopback URL
+            - Launches the default browser
+
+            - Manually enter an address & click the button "Find Place"
+
+            - The "Share Page" text field returns w/ the URL
+
+                http://localhost:8080/my-place?location=<random_location_id>
+
+
+            - Clicking the "Share Page" button
+                - Copies the URL on the system clipboard
+
+        - Open a new browser tab
+            - Paste the copied URL
+            - Loads the "shared page" using the backend server's URL
+
+        - On the MongoDB cloud database
+            - Click "Data Explorer"
+            - Click the database "locations"
+            - Click the collection "user-locations"
+            - Lists the stored documents (i.e. records)
