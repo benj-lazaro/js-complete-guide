@@ -1,0 +1,20 @@
+Security Hole Overview & Exposing Data In Your Code
+---------------------------------------------------
+- Security details in your code
+    - Client-side JavaScript code can be read by ANYONE
+        - It is part of what the browser downloads & runs on
+
+    - Security-relevant details are exposed & can be read
+        - The code is available in human-readable form
+            - NOT compiled into machine code
+
+        - Accessed using the browser's developer tools
+            - Located under the "Sources" tab
+
+        - Available 3rd-party tools
+            - Make minified & optimized code readable
+
+    - Attackers may be able to abuse exposed data
+
+    - e.g. Database access credentials exposed in code
+
