@@ -1,0 +1,8 @@
+Useful Resources & Links
+------------------------
+- More about Node.JS
+    - Reference (https://academind.com/learn/node-js/)
+
+
+- Node.JS Official Docs
+    - Reference (https://nodejs.org/en/docs/)
