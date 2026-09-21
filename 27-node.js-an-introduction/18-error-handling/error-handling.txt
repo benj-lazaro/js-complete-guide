@@ -1,0 +1,13 @@
+Node.JS Error Handling
+----------------------
+- The previous lesson's code (client/src/MyPlace.js) will crash
+    - Using an invalid "id" on the "/my-place/:<id>" URL
+
+    - Have been advised to implement 
+        - A "try-catch" block (for synchronous code) or async / await
+        - Use method ".then()" & ".catch()" (for promise-based code)
+
+    - PERSONAL NOTE: This has already been implemented
+        - Based on the code shared by a fellow student &
+        - Have been modified to use the current MongoDB method(s)
+
