@@ -1,0 +1,86 @@
+Cross-Site Scripting Attacks (XSS)
+----------------------------------
+- A dangerous attack pattern on the client-side JavaScript where 
+    - Malicious code gets injected into an application & executed there
+
+    - The injected code can do ANYTHING on behalf of the application's code
+        - e.g. Gather client-side data from application users
+
+    - Grants the attack full "behind-the-scenes" control
+    
+    - e.g. Unchecked user-generated content
+
+
+- A 3rd-party package named "sanitize-html"
+    - Cleans (sanitizes) user-submitted HTML
+        - Keeping ONLY "allowlisted" tags & attributes
+        - Works by escaping text content so unsafe HTML can't run as code
+
+    - Sanitization MUST be done on the backend-side of the application
+        - It can also be done on the frontend-side 
+    
+    - Install the package as a development dependency via npm
+
+        npm i --save-dev sanitize-html
+    
+    - Package (https://www.npmjs.com/package/sanitize-html)
+
+
+- On the practice code
+    - Simulate a XSS attack
+        - By modifying the client-side JavaScript code
+        - Allow to inject "malicious" code in the user-generated URL
+
+    - Open the file "src/MyPlace.js"
+    
+    - Inside the Class "LoadedPlace"
+        - Replace the property ".textContent" of local constant "headerTitleElement" w/
+            - The property ".innerHTML"
+            - Introduces an attack vector for a XSS
+
+        - Save the changes
+            - Execute the npm script
+
+                npm run build:dev
+
+            - Click "Get Current Location"
+                - Corresponding user-generated URL pasted on the "Share Place" field
+                - Click the button "Share Place"
+
+            - Open a new browser tab
+                - Paste the generated URL
+                
+                - Modify the URL
+                    - Insert the following "malicious" code right after the "address="
+
+                    <img src="" onerror="<script>alert(%27 Hi there%27)</script>"/>
+
+                - Press ENTER
+                    - An alert with the message "Hi there" is generated
+                    - The "malicious" code is embedded in the generated HTML document
+
+            - PERSONAL NOTE: On the current (2026) Chrome browser release 
+                - The "attack" is treated as an "Uncaught SyntaxError: Unexpected token '<'"
+                - However, the "malicious" code remains embedded in the generated HTML document
+
+
+        - Import the package "sanitize-html" in the file "src/MyPlace.js""
+        
+            import sanitizeHTML from "sanitize-html";
+
+        - Back on the local constant "headerTitleElement" w/ the property ".innerHTML"
+            - Assign the function "sanitizeHTML()" as value
+            - Pass parameter variable "address" as an argument value
+
+        - Save the changes
+            - Execute the npm script
+
+                npm run build:dev
+
+            - Repeat the simulated XSS attack
+                - The "malicious" code does NOT get executed
+                    - Actually "scrubbed" from existence by the "sanitize-html" package
+
+                - The "malicious" code is also NOT embedded w/in the generated HTML document
+
+                - NOTE: It behaves as if the property ".textContent" is used instead
