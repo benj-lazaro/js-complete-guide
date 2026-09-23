@@ -1,0 +1,32 @@
+Third Party Libraries & XSS
+---------------------------
+- Third party libraries can be vulnerable to Cross-Site Scripting (XSS) attacks
+    - Get 3rd party libraries (packages) 
+        - ONLY from trustworthy & secure sources (e.g. Google)
+    
+    - It is actively maintained 
+        - Contributions to the library's code are checked
+    
+    - Scan & analyze the source code (if open-source)
+        - Look for anything strange
+        - Behavior(s) that the library is NOT intended to perform
+
+    - Use "npm" to install the package
+        - Perform an post-installation audit on the package's dependencies
+        - Checks for vulnerabilities
+        - Nice to have 0 reported vulnerabilities
+
+    - NOTE: NOT every found vulnerability is an issue
+        - A potential security hole w/c may NOT be related to the app's code
+            - Rather on the dependencies of the package
+
+        - If the installed package serves as a development dependency
+            - It might NOT be as dangerous
+            - It is NOT necessarily getting abused / exploited by a bad actor
+            - It ONLY runs on the development machine, NOT on the user's
+        
+        - If the vulnerability is related to the version of the package
+            - Best update the package to the latest version
+
+    - IMPORTANT: Unlikely to attain 100% security
+        - Aim for as much security as possible
