@@ -1,0 +1,15 @@
+Quiz 25: XSS & Exposing Confidential Details
+--------------------------------------------
+- What should you NOT store in your client-side (browser-side) JavaScript code?
+    - Answer: Database credentials to open a connection for a database 
+
+
+- What's a potential XSS scenario?
+    - Answer: You output user-generated content
+        - e.g. user input in an <input> field via HTML attribute "innerHTML"
+
+
+- How could attackers execute malicious code on your website (for everyone visiting your site)?
+    - Answer: Attackers can prepare a script & enter it in a page input w/c
+        - In turn might be stored in a database or URL
+
