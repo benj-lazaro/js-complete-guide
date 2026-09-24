@@ -1,0 +1,24 @@
+Cross-Origin Resource Sharing
+-----------------------------
+- It is more of a security concept than an attack pattern
+    - Requests are ONLY allowed from the same origin (domain / server)
+        - HTTP requests from a web app's front-end can ONLY forward 
+        - To its own back-end where BOTH are hosted from the same server
+
+        - IMPORTANT: This is a default browser behavior
+            - A built-in security mechanism of the browser
+
+    - Controlled via server-side HTTP response headers (ONLY)
+        - Whether such incoming cross-site request is allowed
+            - May or may NOT send a valid response to the request
+
+        - Response headers set on the web app's back-end
+            - "Access-Control-Allow-Origin"
+            - "Access-Control-Allow-Methods"
+            - "Access-Control-Allow-Origin"
+
+        - NOTE: The right settings of the server-side HTTP headers can OVERRIDE
+            - The default browser behavior regarding CORS
+
+    - The same concept (of CORS) is implemented on JavaScript modules
+        - ONLY imports a JavaScript file (module) w/c sits on the same server
