@@ -1,0 +1,4 @@
+Useful Resources & Links
+------------------------
+- More about JavaScript security
+    - Reference (https://medium.com/@dhtmlx/security-of-javascript-applications-1c95cd2ce533)
