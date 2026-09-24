@@ -1,0 +1,44 @@
+Cross-Site Request Forgery (CSRF) Attacks
+-----------------------------------------
+- It is predominantly a server-side attack pattern that
+    - Depends on the injected content (e.g. image)
+        - It can work along side w/ a Cross-Site Scripting (XSS) attach
+
+    - Forwards legitimate HTTP Requests to malicious servers
+        - Along w/ user's (session) cookies / data
+        - Then connect to a legitimate server
+
+    - Actions can be execute w/out the user's knowledge
+
+    - e.g. Malicious image URL
+
+    - To protect against CSRF attacks on the server-side
+        - Use a CSRF token 
+        - Implementation details are available on the author's Node.js course
+
+    - NOTE: Attack is NOT exclusive to JavaScript
+        - Any backend programming language can be susceptible a CSRF attack
+
+
+- Attack details
+    - On a typical website that requires a login
+        - A user is identified using a session object
+            - Stores the session object (data) on the server
+            - Sends back session ID w/c is stored on the user's (browser) cookies
+
+        - This allows to send an intended request to the server
+
+    - A CSRF comes in the form of a link in an email
+        - When clicked connects to an identical (forged) website
+            - Can be implemented w/ or w/out a Cross-Site Scripting (XSS) attack
+        
+        - User logins
+            - Server created a session object
+            - Sends back a session ID
+        
+        - Forged website "hijacks" the session ID
+            - Executes legitimate request to the server w/out the user's knowledge
+                - e.g. send money to a bad actor
+
+            - The request succeeds due to the "hijacked" valid session ID
+    
