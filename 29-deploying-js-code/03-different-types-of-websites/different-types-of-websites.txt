@@ -1,0 +1,22 @@
+Different Types of Websites
+---------------------------
+- Three different types of web applications (websites)
+    - Static Website
+        - Just HTML, CSS & JavaScript
+
+    - Single Page Application (SPA)
+        - Just HTML, CSS & JavaScript
+        - One (1) HTML document served
+        - Client-side JavaScript is used to re-render the page dynamically
+
+    - Dynamic / Server-side rendered Web Application
+        - HTML document(s) created dynamically on the server
+        - Use templating engines (e.g. Express.js)
+
+    - Reference (https://academind.com/learn/web-dev/dynamic-vs-static-vs-spa/)
+    
+    - Static website & SPA require ONLY a static web host
+
+    - Dynamic Web Application requires a server capable of executing server-side code
+        - A server that supports a server-side language (e.g. Node.js, PHP, etc.)
+
