@@ -1,0 +1,52 @@
+Deployment Steps
+----------------
+- There are two (2) types of web applications
+    - Website
+        - Client-side code
+            - Written in HTML, CSS & JavaScript
+            - Runs on the user's browsers
+
+        - Hosted on a static host
+            - Configured such that incoming HTTP requests
+                - Does NOT execute server-side code locally
+                - Returns requested HTML, CSS & JavaScript files as a response
+
+            - A server that host & provide HTML, CSS & JavaScript assets
+                - A 3rd-party static web hosting service
+                - e.g. AWS S3, Firebase hosting, etc.
+
+    - Backend app
+        - Server-side code
+            - Written in a server-side language (e.g. PHP, JavaScript c/o Node.js)
+            - Runs on the server
+
+        - Hosted on a dynamic (non-static) host
+            - Configured such that incoming HTTP requests
+                - Executes server-side code locally
+                - Returns requested HTML, CSS & JavaScript files
+        
+            - A server that host & execute server-side code
+                - A 3rd-party dynamic hosting service
+                - e.g. AWS Elastic Beanstalk, Heroku, etc.
+
+
+- General deployment steps 
+    - Develop / write code
+        - Build or write the code
+
+    - Test
+        - Make it error free, secure, fix bugs
+
+    - Optimize
+        - Write fallbacks for good browser support
+        - Check required browser support
+        - Use Babel + Webpack to optimize, shrink & add polyfills needed
+
+    - Build for production
+        - Use Webpack to minify the code
+        - To ship & deploy a small code package as possible
+        - To launch the code as quick as possible w/out causing unnecessary delays
+        - NOTE: The server-side code does NOT have to be as small as possible
+
+    - Deploy the output (of the optimized production build)
+        - Upload it to a server (paid service)
