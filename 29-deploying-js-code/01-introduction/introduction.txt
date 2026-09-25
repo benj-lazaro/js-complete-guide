@@ -1,0 +1,5 @@
+Module Introduction
+-------------------
+- This section focuses on:
+    - Deploying a web page (HTML, CSS & JavaScript ONLY) w/ NO server-side code
+    - Deploying a Node.js application (server-side code)
