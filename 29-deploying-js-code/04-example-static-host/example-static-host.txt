@@ -1,0 +1,60 @@
+Example: Static Host Deployment (No Server Code)
+------------------------------------------------
+- Prior to deploying a static web app
+    - Perform optimization (e.g. Webpack production build)
+        - Implement filename changes in the "dist/index.html"
+
+    - Upload to a paid static hosting service 
+        - e.g. Google Firebase (https://firebase.google.com/)
+        
+        - Each one has their own steps of uploading the static web app
+            - For Firebase, download & install their CLI app globally
+                
+                npm install -g firebase-tools
+
+            - Execute the CLI app w/in the project's root folder
+
+                firebase init
+
+            - Prompt to sign-in to your Google account
+
+            - Select the following menu item "Hosting: Configure and deploy Firebase Hosting sites"
+                - Press SPACE to select then press ENTER
+
+            - Select the menu item "Create a new project"
+                - Use arrow key then press ENTER
+
+            - Specify a unique project id (6-30 characters)
+                - NOTE: This can NOT be changed later
+
+            - Specify the project name
+                - NOTE: Press ENTER to default using the project id
+
+            - Creates Google Cloud Platform project
+
+            - Specify the app's public directory
+                - For the example project, this refers to the "dist" folder
+
+            - Inquires if the app will be configured as a single-page app
+                - Re-routes routes to the root "index.html"
+                    - Answer "N"
+
+                - Generates a "404.html" file automatically
+                    - NOTE: Can be customized at a later time
+
+            - Inquires to overwrite the existing "dist/index.html" file
+                - Overwrites the web app's own "dist/index.html" w/ Firebase's code
+                - Answer "N"
+
+            - To deploy the web app to Firebase's server
+
+                firebase deploy
+
+            - Firebase CLI app uploads the web app to their server
+                - Once done returns the following message:
+
+                    Deploy complete!
+
+                - Returns the web app's URL
+
+                    https://<project_name>.firebase.com/
