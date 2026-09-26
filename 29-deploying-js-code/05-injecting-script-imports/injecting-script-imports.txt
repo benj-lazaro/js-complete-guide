@@ -1,0 +1,11 @@
+Injecting Script Imports Into HTML Automatically
+------------------------------------------------
+- In previous lesson
+    - The "production" npm script was executed to optimize for deployment
+    - Manually rename the referenced JavaScript file w/in the root "dist/index.html"
+
+
+- This task can be automated
+    - Using a Webpack plugin "HtmlWebpackPlugin" (now "Native HTML" in Webpack 5)
+        - Reference (https://webpack.js.org/guides/native-html/)
+        - Repository (https://github.com/jantimon/html-webpack-plugin)
