@@ -1,0 +1,54 @@
+Example: Dynamic Page Deployment (With Server-Side Code)
+--------------------------------------------------------
+- Prior to deploying the app
+    - Update the port where the app is listening To
+        - Initially uses the port 3000 during development using the method ".listen()"
+        
+        - Refactor the passed argument value to
+            
+            app.listen(process.env.PORT || 3000);
+
+        - NOTE: Uses Node.js' environment variable where the value will be
+            - Dynamically injected by the environment (i.e. 3rd-party service)
+            - Otherwise, uses port 3000 as fallback
+        
+
+- To deploy a dynamic page app to a 3rd-party service
+    - PERSONAL NOTE: The lesson have NOT been updated since 2019
+        - Heroku (https://www.heroku.com/) had ceased their free-tier service
+
+    - The demonstrated Heroku-specific deployment steps have likely been updated since
+        - Git will likely be required to be locally installed
+            - Then download & install Heroku's Git client
+
+        - Add an entry on the "script" property of "package.json"
+            - Key name "start"
+            - Assign "node app.js"
+    
+            - NOTE: Identifies how to start the app & the backend language (i.e. Node.js) used
+
+        - Or create a "Procfile"
+            - Inside contains the following line:
+
+                web: node app.js
+
+        - NOTE: The latter two steps may have been removed from the current deployment steps
+
+
+    - On the MongoDB Cluster where the app's database resides
+        - Click the tab "Network Access"
+
+        - Click the button "ALLOW ACCESS FROM ANYWHERE"
+            - In order to whitelist the app deployed in Heroku 
+            - Grants the app access to the database
+
+
+    - On the Heroku's management page
+        - Click the "More" button
+
+        - Click "Restart Dynos" to restart the server
+
+        - Click the "Open app" button to open the app on the default browser
+
+        - Enter the test URL for the app
+            - Returns a JSON data
