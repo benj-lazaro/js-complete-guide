@@ -1,0 +1,8 @@
+Module Introduction
+-------------------
+- This section focuses on:
+    - What is "Performance"?
+    - Measuring & Analyzing Performance
+    - Optimization Ideas
+    - Further Resources
+    
