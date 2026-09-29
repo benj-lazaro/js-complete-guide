@@ -1,0 +1,40 @@
+What Is Performance & Optimization About?
+-----------------------------------------
+- Performance (of a web application) can be split into two (2) categories:
+    - Startup Time
+        - How long does it take to "see something" on the screen
+
+        - How quickly does a user is able to interact w/ the page
+
+    - Runtime
+        - How smooth does the operation run
+            - Does it occasionally freeze or lag
+
+        - How smooth do animation play
+            - Are there any "visual" lag
+
+        - Are there any memory leaks
+            - Does the page getting slower over time
+
+    - NOTE: Performance can also be influenced by the server's configuration & speed
+        - Server accessed by users on the other side of the globe
+        - Number of users accessing the server globally
+
+
+- What influences performance
+    - Startup time
+        - How fast does the JavaScript code load & execute
+        
+        - Performance influenced by the browser-side JavaScript
+            - Browser downloads the HTML, CSS & JavaScript code (i.e. download delay)           
+            - There is NO download delay on the server-side JavaScript code        
+
+    - Runtime
+        - How much work does & how efficiently the JavaScript code performs
+            - How it interacts with the DOM
+
+        - How much memory is consumed
+            - Avoid memory leaks to prevent performance degradation over time
+
+        - Performance influenced by ALL JavaScript environments (browser & server-side)
+            
