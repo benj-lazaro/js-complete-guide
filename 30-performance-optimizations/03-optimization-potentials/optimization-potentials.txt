@@ -1,0 +1,45 @@
+Optimization Potentials
+-----------------------
+- Different layers of performance optimization
+    - Startup Time
+        - Bundle / script size
+            - Bigger file size takes a while to download
+                - Users w/ slow internet access are affected
+
+            - Webpack bundles, minifies & optimizes scripts
+
+            - Addresses delays on initial parsing / execution
+
+        - Number of HTTP request round trips 
+            - Due to non-bundled code or by 3rd party library CDNs
+            
+            - Webpack bundles & reduces scripts down to a single or few bundles
+                - Reduces the round trips 
+
+            - Addresses delays on initial parsing / execution
+
+    - Runtime
+        - Optimize code execution
+            - On browser-side JavaScript
+                - Improve DOM access
+                - Avoid unnecessary DOM operations / re-rendering
+                - Working w/ the DOM is expensive (performance-wise)
+            
+            - Avoid unnecessary code execution
+            - Write efficient code
+
+        - Avoid memory leaks
+            - Big memory leaks can add up & slows down performance of the app 
+            - It can crash the app in the worst case
+
+        - Find code alternatives w/ better performance
+            - Particularly on "high frequency" parts of the code
+
+        - Implement micro-optimizations in the code
+            - Optimize for a very specific use-case
+            - e.g. use a certain data structures for frequent access / changes
+
+            - NOTE: Generally advised to shy away from micro-optimizations
+                - Applicable ONLY to niche & large web applications
+
+    - IMPORTANT: JavaScript optimization is ONLY one part of the optimization process
