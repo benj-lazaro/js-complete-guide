@@ -1,0 +1,127 @@
+Diving Into The Browser DevTools (For Performance Measuring)
+------------------------------------------------------------
+- The example project included some "problems" to the code that
+    - Affects performance over a period of time or the complexity of the app scales up
+
+    - NOTE: The code is in development mode
+        - NOT production-ready code (NOT optimize)
+        - Purpose is to walk-through different tools offered by the browser's DevTools
+
+
+- On the example code
+    - Launch the web app using the npm script
+
+        npm run build:dev
+
+        - Launches the default Browser
+        - Loads the web app 
+
+    
+    - The "Elements" tab helps determine
+        - How often users interacts w/ the DOM
+        - What "actions" (of the app) affects the DOM
+
+        - On the right-hand side panel
+            - Expand the HTML element <ul>
+
+        - On the left-hand side panel
+            - Click the button "DELETE" of an item
+
+        - Notice that on the right-hand side panel
+            - The HTML element <ul> & its children <li> elements get re-rendered
+            - Updates the list of items on the left-hand side panel
+
+        - Every item delete
+            - Results to re-rendering the entire list
+            - This is a potential item to optimize
+
+
+    - The "Network" tab helps determine
+        - How much file & how long it takes to download
+        - How many round trips performed
+        
+        - On the right-hand side panel
+            - Displays the downloaded files
+                - Along w/ corresponding file size & download time (in ms)
+
+            - NOTE: The "ws" (websocket) request is related to
+                - The development setup c/o Webpack
+                - This will NOT exists in production          
+
+            - Webpack (even in development mode) bundles the app into a single file
+                - Effectively reduced the app's round trips
+
+            - PERSONAL NOTE: Unlike the 2019 lesson
+                - The "shop.js" file was sized at 1.1Mb using Webpack 4
+                - Webpack 5 significantly reduced the file size of "shop.js" to 39.9Kb
+            
+        - Click the checkbox "Disable cache"
+            - Prevents the browser from caching the app
+
+        - Click the drop-down menu besides "Disable cache" checkbox
+            - Select the throttling speed of "3G" (slow 3G)
+                - Simulates a slow network speed
+
+        - Reload the web app
+            - Each file took 2.08s to download
+                - Quite slow compared to it's non-throttled counterpart of 194ms
+
+            - PERSONAL NOTE: Unlike in the 2019 lesson
+                - Webpack 5 addressed the delay startup time of the app
+                - After it significantly reduced the file size of "shop.js"
+
+
+    - The "Performance" tab helps determine
+        - Local & Field metrics (performance) of the web app
+
+        - Click the "Gear" icon
+            - To access CPU & Network throttling
+                - CPU simulates the user's CPU speed
+                - Network simulates the user's network speed
+
+        - Click the "Memory" checkbox
+            - Records memory consumption
+            - Help analyze memory leaks
+
+        - Click the "Record" button
+            - A modal would appear & record the app's performance
+            
+            - Delete a few items from the web app's list
+            
+            - Click the "Stop" button
+                - Generates a profile report
+                - Summary breakdown of the recorded operation's overall work
+    
+
+    - The "Memory" tab helps determine
+        - The web app's memory consumption
+            - By taking snapshots of the Heap memory
+        
+        - Click the "Take snapshot" button
+            - Returns a two (2) columns summary
+            
+            - Right-hand side panel 
+                - Snapshot of Heap memory
+
+            - Left-hand side panel
+                - Everything loaded on Heap memory
+
+
+    - The "Audit" tab
+        - Runs a performance audit of the web app
+
+        - Offers options on the
+            - Mode of the audit
+            - Device (i.e. mobile or desktop)
+            - Categories of audit
+
+        - Click the "Analyze page load" button to commence
+            - Returns a rating on the following categories:
+                - Performance
+                - Accessibility
+                - Best practices
+                - SEO
+
+        - NOTE: As of Chrome version 83
+            - The "Audit" tab is renamed "Lighthouse"
+            - Reference (https://developers.google.com/web/updates/2020/03/devtools#lighthouse)
