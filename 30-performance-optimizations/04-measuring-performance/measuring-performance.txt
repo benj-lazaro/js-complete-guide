@@ -1,0 +1,54 @@
+Measuring Performance
+---------------------
+- When optimizing an app
+    - Measure & audit the app
+        - In order to find performance bottlenecks
+    
+    - Do NOT guess, measure
+        - Check how many round trips
+        - Check how big is the downloaded (script) files
+        - Set certain size budgets (e.g. below 100kb)
+
+    - Measure runtime performance w/ the browser's DevTools
+        - Determine how long parts of a script takes
+        - Try out alternative code & then check if performance has improved
+
+    - Explore best practices, patterns & benchmarks online
+        - Google "JavaScript performance" or on specific performance questions
+        - Look at how other developers solve certain problems
+
+    - IMPORTANT: Measure production-ready code
+        - Do NOT measure development code
+        
+        - Development code is NOT optimal at all
+            - Tools like Webpack inject extra code for debugging & finding issues
+            - But NOT great for measuring Performance
+        
+
+- When measuring performance
+    - Inject the method "performance.now()" into the development code
+        - Recognized by modern browsers
+        
+        - Checks the execution time (difference) of certain app's operations
+            - Perform a before & after execution of an operation
+            - Finds out how long an operation take
+
+    - Use the browser's DevTools
+        - Offers features that detects 
+            - Unnecessary code execution & HTTP requests
+            - Measure execution time + memory leaks
+
+    - Use 3rd-party service "jsperf" (https://jsperf.com/)
+        - Compare alternative code snippets & measure performance
+            - NOTE: The service had been disabled by 2026
+        
+        - Alternative (successor?)
+            - jsperf.app (https://jsperf.app/)
+            - jsperf.net (https://www.jsperf.net/)
+
+    - Use 3rd-party service "webpagetest" (https://webpagetest.com/)
+        - Tests a live web app to detect optimization potential
+            - NOTE: The service is non-existent by 2026
+
+        - Alternative
+            - WebPageTest (https://newdev.webpagetest.org/)
