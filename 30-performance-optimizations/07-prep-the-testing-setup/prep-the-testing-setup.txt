@@ -1,0 +1,35 @@
+Preparing The Testing Setup
+---------------------------
+- To prepare the example code (project) for testing
+    - Rebuild the web app for "production" use
+
+    - However, running the corresponding npm script will result to
+        - Unable to locally run & conduct performance tests
+        - NO access to the app's source maps; make debugging "optimized" code difficult
+
+        - Hosting the app using the npm package "server"
+            - Launch from the "dist/" folder is NOT appropriate but doable
+        
+    - Instead, modify the Webpack configuration for "development" mode (webpack.config.js)
+        - Change the assigned value of "mode" from "development" to "production"
+        
+        - Doing so will:
+            - Optimize the web app's code (& effectively reduce JavaScript file's size)
+            - Generate source maps to work w/ the Chrome browser's DevTools later
+            - Locally host the web app & conduct performance tests
+
+    - PERSONAL NOTE: Configuration changes presented in the lesson was based on Webpack 4
+        - Implemented configuration changes that works on Webpack 5
+
+    - Run the modified npm script for "development" use
+
+        npm run build:dev
+
+    - Click the generated "Loopback" URL
+        - Launch the default browser
+        - Launch the browser's DevTools
+    
+    - Click the "Network" tab
+        - Notice the file size of the "shop.js" file
+        - Reduce to 18.7Kb from previous lesson's 39.9Kb
+
