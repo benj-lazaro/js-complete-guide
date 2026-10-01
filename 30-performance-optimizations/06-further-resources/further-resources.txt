@@ -1,0 +1,10 @@
+Further Resources
+-----------------
+- Additional resources on:
+    - Analyzing runtime performance using Chrome browser's performance analysis tools
+        - Reference (https://developer.chrome.com/docs/devtools/performance)
+
+    - Web performance optimization (browser-context)
+        - Reference (https://developer.chrome.com/docs/devtools/performance/overview)
+        - Reference (https://web.dev/articles/optimize-javascript-execution)
+        
