@@ -1,0 +1,206 @@
+Optimizing Startup Time & Code Usage
+------------------------------------
+- To improve the web app's startup time
+    - Check how much of the downloaded code is actually being used
+
+
+    - Chrome DevTools's "Coverage"
+        - Checks how much of the download JavaScript code is 
+            - Used (called) at the web app's startup
+
+        - On the "Network" tab
+            - Press ESC
+                - Click the three (3) vertical DevTools
+        
+        - Click "Coverage"
+            - Click the round button (i.e. Instrument coverage)
+                - Reloads the web app & starts recording
+            
+            - Displays a table that contains the following:
+                - Individual files downloaded at startup
+
+                - Type of files
+
+                - Total bytes
+
+                - Unused bytes
+
+                - Usage visualization
+                    - NOTE: Gray color = unused code at startup
+
+            - Clicking a file from the table
+                - Launches the "Sources" tab
+                - To visually identify unused lines of code at startup
+
+        - NOTE: Unused code is an opportunity for optimization w/ the help of Lazy Loading
+                
+
+    - To address this concern
+        - Refactor the contents of the file
+            - Dynamically load parts that are NOT called at startup
+
+        - Initial downside of this approach
+            - More files will be downloaded at the web app's startup
+
+
+- On the example code
+    - Run the npm script 
+
+        npm run build:dev
+
+
+    - Loads / reloads the web app
+        - Launch the browser's DevTools
+
+
+    - Access the DevTools' "Coverage" tab
+        - Click the "Instrument coverage" button
+            - Reloads the web app & starts recording
+
+        - Identifies the "shop.js" file
+            - Having 62.3% of unused bytes
+
+        - Double-click "shop.js" file
+            - Launches the "Sources" tab
+        
+    
+    - On the "Sources" tab's left-hand panel
+        - Expand "my-places"
+        - Expand "src/non-optimized"
+
+        - NOTE: Provides access to the file's original source code that
+            - Is NOT altered by Webpack 5
+
+        - Inspect each file
+            - To visually identify lines of unused code (NOT executed at startup)
+
+        - On the file "product-management.js"
+            - The functions "addProduct()" & "deleteProduct()" are unused
+
+
+    - To implement Lazy Loading on the example code
+        - Inside the folder "src"
+            - Create a new folder named "optimized"
+            - Copy files from "src/non-optimized" into this folder
+
+        - Open the files "webpack.config.js" & "webpack.config.prod.js"
+            - Refactor the example code's Webpack "entry" point from:
+            
+                entry: {
+                    shop: "./src/non-optimized/shop.js",
+                }
+
+            - To:
+
+                entry: {
+                    shop: "./src/optimized/shop.js",
+                }
+
+        - In the "optimized" folder
+            - Create a new file "products.js"
+        
+        - In the "product-management.js" file
+            - Select & cut the global variable "products"
+        
+        - Back to the "products.js" files
+            - Paste the global variable "products"
+            - Change it into a global constant
+            - Export the global constant "products"
+
+        - Back to the "product-management.js" file
+            - Import "products" as "prods" from the "products.js" file
+
+            - Create a global variable named "products"
+                - Assign the alias "prods" as value
+
+            - Select & cut the function "initProducts()"
+
+        - On the "shop.js" file
+            - Paste the function "initProducts()"
+                - Remove the keyword "export"
+                - Located after the declaration of the global constant "addProductForm"
+
+            - Import "products" from "products.js" file
+
+            - Import "renderProducts" from "rendering.js" file
+
+            - Create a function named "addProduct()"
+                - Declare the parameter variable "event"
+            
+            - Remove "addProduct" from the "import" statement
+                
+            - Inside the "addProduct()" function 
+                - Calls the function "import()"
+                    - Pass "./product-management.js" as an argument value
+
+                - Chain the method ".next()"
+                    - Pass an Arrow function as an argument value
+
+                - On the Arrow function
+                    - Declare a parameter variable named "module"
+
+                - Inside the Arrow function
+                    - Access the parameter variable "module"
+                    - Chain the method ".addProduct()"
+                    - Pass the parameter variable "event" as an argument value
+
+            - Create a function named "deleteProduct()"
+                - Declare the parameter variable "productId"
+
+            - Inside the function "deleteProduct()"
+                - Calls the function "import()"
+                    - Pass "./product-management.js" as an argument value
+
+                - Chain the method ".next()"
+                    - Pass an Arrow function as an argument value
+
+                - On the Arrow function
+                    - Declare a parameter variable named "module"
+
+                - Inside the Arrow function
+                    - Access the parameter variable "module"
+                    - Chain the method ".deleteProduct()"
+                    - Pass the parameter variable "productId" as argument value                        
+
+            - Remove the import statement for "product-management.js"
+
+        - Re-run the npm script
+            - Reloads the web app
+
+            - Access the DevTools' "Coverage" tab
+                - Click the "Instrument coverage" button
+                    - Reloads the web app & starts recording
+
+            - Identifies the "shop.js" file
+                - Having 62.1% of unused bytes (at startup)
+                - Compared to the previously reported 62.3% of unused bytes
+
+            - Access the "Network" tab
+                - Deleting an item from the web app
+                
+                - Dynamically imports the associated code (i.e. "product-management.js")
+                    - Although assigned w/ a different name (e.g. "703.js")
+
+            - Access the "Sources" tab
+                - Files under "src/optimized" have been less unused code
+                    - Most of the listed files have been marked Green
+                
+                - NOTE: The "product-management.js" file is NOT included
+                    - But dynamically loaded when adding / deleting a product
+                    - Listed under a different filename (e.g. "703.js")
+
+
+        - NOTE: Improvements is negligible for a small web app
+            - Dynamically loading functions "addProduct()" & "deleteProduct()"
+                - From "product-management.js" is NOT worth the hassle
+
+            - Webpack add overhead code
+                - Ended up downloading more code (files) to download than before
+
+            - However if the aforementioned functions are more complex
+                - The dynamically importing them helps a lot
+                - Rather than downloading associated files at startup
+
+            - NOTE: This approach is useful for web apps that
+                - Are big in scale
+                - Have big optional code that are dynamically called
