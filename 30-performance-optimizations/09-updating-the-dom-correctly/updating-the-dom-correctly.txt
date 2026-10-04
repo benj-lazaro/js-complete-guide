@@ -1,0 +1,121 @@
+Updating The DOM Correctly
+--------------------------
+- Implement changes in the code that
+    - Address the performance issue of 
+        - Re-rendering the entire child nodes of the HTML element <ul>
+        - Update ONLY the HTML element <ul> after deleting a child node
+
+
+    - This issue is evident from the "Performance" tab
+        - Press ESC
+            - Select "Rendering"
+            - Click the "Paint flashing" checkbox
+        
+        - Reload the web app
+            - Delete an item from the list
+            - Note that the entire list has flashed a Green colored overlay
+            - Confirms that the entire list is repainted (re-rendered)
+
+        - To address this concern
+            - Refactor associated code
+
+            - Use functions or methods that does NOT re-render an entire list
+                - When removing a child node
+
+            - Adding a new child node to the list
+                - It is normal to re-render the entire list
+
+
+    - PERSONAL NOTE: Recent breaking changes in the package "webpack-dev-server"
+        - Reported several high level vulnerabilities from its dependencies
+        - Despite forcing the fixes, the vulnerabilities remain present
+        - As of October 4, 2026
+
+
+- On the example code
+    - On the file "src/optimized/rendering.js"
+        - The exported function "renderProducts()"
+            - Responsible for rendering the list of products on the DOM
+
+            - ALWAYS clears existing child HTML element <li>
+                - By setting the ".innerHTML" attribute of the HTML element <ul> to ""
+
+            - Creates each child HTML element <li>
+                - Then add them as children of the HTML element <ul>
+
+            - NOTE: Re-rendering EVERY child node for every change is HORRIBLE
+                - Deleting an item from a list of 100 items
+                    - Then re-renders the entire list will impact a web app's performance
+                    - Users w/ slower machines can notice the performance degradation
+        
+                - Generally, accessing the DOM is quite performance intensive
+
+        - To address this concern:
+            - Create a new exported function named "updateProducts()"
+                - Declare the following parameter variables:
+                    - product           = product to delete
+                    - prodId            = product id to delete 
+                    - deleteProductFn   = function to use in deleting the product
+                    - isAdding          = boolean value that identifies whether to add or delete
+
+            - Inside the exported function "updateProducts()"
+                - Use an "if" statement
+                    - To check if the parameter variable "isAdding" is truthy
+                    - NOTE: For this lesson, leave this clause block blank
+
+                - On the "else" clause
+                    - Create a local constant named "productEl"
+                        - Assign "document.getElementById()" as value
+                        - Pass the parameter variable "prodId" as an argument value
+
+            - In the exported function "renderProducts()"
+                - Inside the "forEach()" loop of the parameter variable "products"
+
+                - Access the local constant "newListEl"
+                    - Chain the property ".id"
+                    - Assign w/ the value read from "product.id"
+
+                - NOTE: Effectively fetches the "id" attribute of each product item
+                    - Helps in identifying the product item to be deleted
+
+            - Back to the exported function "updateProducts()"
+                - Access the local constant "productEl"
+                    - Chain the method ".remove()"
+
+                - NOTE: This method is NOT supported by older browsers
+
+            - In the file "product-management.js"
+                - Import the function "updateProducts" from the file "rendering.js"
+
+            - In the exported function "deleteProduct()" of the file "product-management.js"
+                - Replace call to the exported function "renderProducts()" w/ "updateProducts()"
+
+                - After the declaration of the local constant "updatedProducts"
+                    - Create a local variable named "deletedProduct"
+                        - Leave it undefined for now
+                    
+                    - This will identify the product item to be deleted
+
+                    - Inside the "for..of" loop
+                        - Chain an "else" clause to the "if" statement
+
+                        - Inside the "else" clause
+                            - Access the local variable "deletedProduct"
+                                - Assign the local constant "prod" as value
+
+                            - NOTE: Assigns the product item to be deleted
+
+                - Back to the call to "updatedProducts()"
+                    - Pass the following argument values:
+                        - local variable "deletedProduct"   = product to be delete
+                        - parameter variable "prodId"       = product id of the product to be delete
+                        - function "deleteProduct"          = function that deletes the product
+                        - "false"                           = to delete; NOT add a product item
+
+        
+        - Save the changes
+            - Reload the web app
+
+            - Clicking the "DELETE" button of a product item
+                - Does NOT re-render the entire product list in the DOM
+                - ONLY updates the HTML element <ul> itself
