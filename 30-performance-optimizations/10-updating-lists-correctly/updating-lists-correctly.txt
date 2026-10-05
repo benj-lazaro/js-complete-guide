@@ -1,0 +1,129 @@
+Updating Lists Correctly
+------------------------
+- Implement the optimized logic for adding a new product item that
+    - Prevents re-rendering the entire list
+
+
+- On the example code (src/optimized/rendering.js)
+    - Create a new function named "createElement()"
+        - Declare the parameter variables
+            - "product"
+            - "prodId"
+            - "deleteProductFn"
+
+
+    - On the exported function "renderProducts()"
+        - Inside the "forEach()" loop
+            - Select & cut the code that creates the product item
+            
+            - Leave the following line of code behind
+
+                productListEl.appendChild(newListEl);
+
+    
+    - Back on the function "createElement()"
+        - Paste the lines of code
+        - Refactor reference to "product.id" into "prodId"
+        - Return the value of the local constant "newListEl"
+
+
+    - Back on the exported function "renderProducts()"
+        - Inside the "forEach()" loop 
+            - Create a local constant named "newListEl"
+                - Assign the call to the function "createElement()" as value
+                
+                - Pass the following as argument values:
+                    - "product"
+                    - "product.id"
+                    - "deleteProductFn"
+
+    
+    - On the exported function "updateProducts()"
+        - On the truthy clause block of the "if" statement
+            - Create a local constant named "newProductEl"
+                - Assign the call to the function "createElement()" as value
+
+                - Pass the following as argument values:
+                    - product
+                    - prodId
+                    - deleteProductFn
+
+
+    - Back on the exported function "renderProducts()"
+        - Refactor the local const "productListEl" into a global const
+
+
+    - Back On the exported function "updateProducts()"
+        - Right after the declaration of the local constant "newProductEl"
+            - Access the global constant "productListEl"
+            - Chain the method ".insertAdjacentElement()"
+            - Pass the argument values:
+                - 1st = "afterbegin"
+                - 2nd = newProductEl
+
+    
+    - On the "product-management.js" file
+        - Refactor the call to the function "renderProducts()"
+            - Change it to a call to "updateProducts()"
+            - Pass the argument value:
+                - 1st = newProduct
+                - 2nd = newProduct.id
+                - 3rd = deleteProduct
+                - 4th = true
+        
+        - Remove the import for "renderProducts"
+
+    
+    - On the "shop.js" file
+        - In the function "addProduct()"
+            - Access the parameter variable "event"
+            - Chain the method ".preventDefault()"
+
+        - NOTE: Prevents the default behavior of refreshing
+            - The DOM after submitting a new product item
+
+    
+    - Back on the "product-management.js" file
+        - On the function "addProduct()"
+            - Remove the "event.preventDefault()" line of code
+
+        - NOTE: Removed due to being a redundant line of code
+
+
+    - Save the changes
+        - Load / reload the web app
+
+        - Add a new product item
+            - Notice that the added product only gets rendered on the DOM
+            - The existing product items did NOT get re-rendered
+
+    
+    - Back on the "rendering.js" file
+        - On the function "createElement()"
+            - After the declaration of the local constant "newListEl"
+                - Delete the local constants "prodTitleEl" & "prodPriceEl"
+                - Remove associated references to these local constants
+
+            - Access the local constant "newListEl"
+                - Chain the property ".innerHTML"
+                - Assign the following string template literal as value
+
+                    `
+                    <h2>${product.title}</h2>
+                    <p>${product.price}</p>
+                    `
+
+                - IMPORTANT: This is vulnerable to XSS attacks
+
+            - Refactor the chained property of the local constant "prodDeleteButtonEl"
+                - From ".innerHTML" to ".textContent"
+
+        - NOTE: This refactors offers a better performance
+
+    
+    - Save the changes
+        - Load / reload the web app
+
+        - Add a new product item
+            - Notice that the added product only gets rendered on the DOM
+            - The existing product items did NOT get re-rendered
