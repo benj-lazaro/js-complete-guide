@@ -1,0 +1,73 @@
+Optimizing The Small Things
+---------------------------
+- Implement micro optimizations on the example code
+    - The result will NOT provide significant improvements
+    
+    - Focus on improving the codebase by 
+        - Using alternative ways of implementing functionality
+
+
+- On the example code (src/optimized/product-management.js)
+    - Delete the declaration of the global variable "products"  
+        - Remove "as prods" from the import statement
+
+    - In the exported function "deleteProduct()"
+        - Delete the entire code block EXCEPT for
+
+            updateProducts(deletedProduct, prodId, deleteProduct, false);
+
+        - Create a local constant named "deletedProductIndex"
+            - Access the imported constant named "products" as value
+                - Chain the method ".findIndex()"
+                - Pass an Arrow function as an argument value
+
+            - On the Arrow function
+                - Declare the parameter variable named "prod"
+
+            - Inside the Arrow function
+                - Strictly compare "prod.id" w/ "prodId"
+                - Implicitly returns the matching array element
+
+        - Create a local constant named "deletedProduct"
+            - Assign the imported constant "products" as value
+                - Chain the pair of "[]"
+                - Pass the local constant "deletedProductIndex" as an argument value
+
+        - Access the imported constant "products"
+            - Chain the method ".splice()"
+            - Pass the following argument values:
+                - 1st = deletedProductIndex
+                - 2nd = 1
+
+            - NOTE: Effectively splices the targeted element from the array
+
+        - Implemented changes resulted to a less complicated & probably (a bit) faster code
+
+
+    - In the exported function "addProduct()"
+        - Select & cut the local constants "titleEl" & "priceEl"
+            - Refactor them into global constants w/in the module
+
+        - Refactor the methods used by the DOM selectors of these constants
+            - From ".querySelector()" to ".getElementById()"
+            - Refactor the argument values passed, accordingly
+
+
+    - Save the changes
+        - Load / reload the web app
+        
+        - Test the app by adding & deleting product items
+            - Performance improvements are minimal at best
+            - Refactored code is readable than it was before
+
+
+    - PERSONAL NOTE: The package "webpack-dev-server" reported vulnerabilities
+        - Caused by its own dependencies
+
+        - Current attempts to fix using "npm audit fix --force"
+            - Resulted to breaking the app 
+
+        - Since the package "webpack-dev-server" is a development dependency
+            - It is ONLY used as a tool during development of the web app
+            - Does NOT affect the web app itself
+            - Leaving the reported vulnerabilities as it is for now (until a later fix is available)
