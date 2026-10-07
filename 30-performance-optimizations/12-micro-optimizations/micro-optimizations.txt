@@ -1,0 +1,57 @@
+Micro-Optimizations (Think Twice)
+---------------------------------
+- Be careful when implementing micro-optimizations
+    - Benchmark the code (of an app)
+        - Using 3rd-party tools such as jsPerf (https://jsperf.app/)
+        - Before deciding w/c "optimized" code (function or method) to implement
+    
+    - Interpret the results w/ caution
+        - You might NOT be running thousands of operations
+            - Implementing micro-optimizations is NOT required
+
+        - Performance changes over time (& from browser to browser)
+            - What may be considered "slow" code implementation today 
+                - Will NOT be the same six (6) months from now
+            
+            - New JavaScript Engine features will likely be faster over time
+                - Might overtake the existing or older approach 
+
+
+- On the practice code (src/optimized/rendering.js)
+    - jsPerf proved that a normal "for" loop is faster than ".forEach()" method
+        - When iterating through the elements of an array
+        - Reference (https://jsperf.app/yesoqi)
+
+    - In the exported function "renderProducts()"
+        - Comment out the ".forEach()" method
+            - Copy the content of the "forEach" loop
+
+        - Create a local constant named "startTime"
+            - Assign the object "performance"
+            - Chain the method ".now()"
+            - NOTE: Captures that time prior calling the "for" loop
+
+        - Create a "for" loop
+            - Paste the copied code
+            - Refactor the code
+
+        - Create a local constant named "endTime"
+            - Assign the object "performance"
+            - Chain the method ".now()"
+            - NOTE: Captures that time after calling the "for" loop
+
+        - Pass the difference of the constants "endTime" & "startTime"
+            - As an argument value to "console.log()"
+
+    
+    - Save the changes
+        - Load / reload the web app
+
+        - Launch the browser's DevTools
+            - Click the "Console" tab
+
+        - Reload the web app multiple times
+            - Noted that the duration between each reload varies
+            - This means that performance is NOT consistent
+            - The reason why caution is needed when implementing micro-optimizations
+
