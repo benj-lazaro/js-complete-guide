@@ -1,0 +1,116 @@
+Finding & Fixing Memory Leaks
+-----------------------------
+- Exploring memory leaks of a web app using
+    - DevTools' "Memory" tab
+    - Reference (https://developer.chrome.com/docs/devtools/memory-problems)
+
+
+- On the example code
+    - Load the web app
+
+
+    - Launch Chrome's DevTools
+        - Click the "Memory" tab
+
+        - Take a (Heap memory) snapshot
+            - Wait for the snapshot to complete
+        
+        - Delete a product item from the list
+            - Then take another snapshot
+            - Wait for the snapshot to complete
+
+        - Click the drop-down menu
+            - Sort by "Delta"
+
+        - Sort list by "Constructor"
+            - Search for "HTMLLIElement"
+            
+            - Expand "HTMLLIElement"
+            
+            - Lists HTML elements <li> that are NOT removed from the DOM
+                - After deleting a product item
+
+        - NOTE: The "HTMLLIElement" has been cleaned from Heap memory
+
+        - Perform two (2) more separate snapshots
+            - Select "Summary"
+                - Search for "liel" (i.e. fragment of "HTMLLIElement" in lowercase)
+
+            - Hover the mouse pointer on each entry
+                - Some of the entries will be highlighted on the left-land panel preview
+                    - Some return "Preview not available"
+
+                - Associated objects will be listed in the "Retainers" window
+                    - Hovering over an associated object (e.g. <button>)
+                    - Highlights the rendered DOM element on the left-land panel preview
+
+            - NOTE: This entry (or element) is currently rendered on the DOM
+                - The rest may be:
+                    - An internal Constructor method used by JavaScript to create an HTML element
+                    - A lingering object waiting to be cleaned-up by the Garbage Collector
+
+            - On the "Retainers" window
+                - An object's "Distance" value is an indicator on how actively it is used
+                    - Based on it's smaller value
+                
+                - An object's "Retained size", the smaller the size meant it is NOT actively used
+                    - Probably an object left by the browser to be cleaned up eventally
+
+
+    - To deliberately simulate a memory leak
+        - In the file "rendering.js"
+            - Create a global constant named "renderedProducts"
+                - Assign an empty array
+                - NOTE: Keeps track of the created product items
+
+            - In the exported function "updateProducts()"
+                - Inside the truthy clause of the "if" statement
+                
+                - Access the global constant "renderedProducts"
+                    - Chain the method ".push()"
+                    - Pass the local constant "newproductEl" as an argument value
+
+                - Pass the global constant "renderedProducts"
+                    - As an argument value to "console.log()"
+
+                - NOTE: Every added product item is added into an array
+                    - When the product item is deleted from the DOM
+                    
+                    - Reference to the underlying JavaScript object of the product item remains
+                        - Leaving it in a "detached" state
+
+                    - Normally, the browser destroys the underlying JavaScript object
+                        - But if somewhere in the code have a references the object
+                        - The browser does NOT destroy the JavaScript object
+                        - Creating a memory leak
+
+                - IMPORTANT: Ensure to keep track of created DOM elements (& their objects)
+                    - Clean them (i.e. element & underlying object) up when removed from the DOM
+
+
+        - Save the changes
+            - Reload the web app
+
+            - Add two (2) new product items
+                - Delete the recently added product items
+                - Add a new product item
+                - The previously deleted item remains an element of the array (i.e. renderedProducts)
+
+            - Click the "Memory" tab
+                - Clear previously taken snapshots
+                    - Take a new snapshot
+
+                - Delete a product item
+                    - Take another snapshot
+
+                - In the "Summary" view
+                    - Search for "liel"
+
+            - PERSONAL NOTE: The lesson lists a "DetachedHTMLLIElement"
+                - Refers to HTML elements <li> that are still referenced in Heap Memory that
+                    - Haven't been destroyed by the Garbage Collector
+                
+                    - This serves as a hint that there is something wrong
+
+                - Replicating the steps given did NOT produce such elements
+                    - Current Chrome browser may have already destroyed these objects already
