@@ -1,0 +1,41 @@
+Wrap Up
+-------
+- Runtime performance & potential improvements
+    - Avoid unnecessary code executions
+        - Batch operations together
+        - Avoid unnecessary DOM access
+
+    - Find & fix memory leaks
+        - Even small ones as they do stack up over time
+    
+    - For high-frequency operations
+        - Use optimal JavaScript approaches (re-validated regularly)
+            - Use the faster approach
+
+    - Consider micro-optimizations
+        - However, be cautious of using them
+        
+        - Performance is NOT a fixed thing
+            - It changes over time
+            - Might end up optimizing something that does NOT matter (at a later time)
+
+        
+- Startup performance & potential improvements
+    - Eliminate unnecessary / unused code
+        - Avoid using too many 3rd-party libraries
+            - Adds as an extra code to be downloaded by the client
+
+        - Aim to have a small downloadable file as possible
+
+    - Potentially add 3rd-party libraries to bundle 
+        - Using Webpack for bundled & code splitting instead of using CDN
+        - CDN links does NOT use code splitting
+
+    - Bundle code & use "lazy loading"
+        - Loading associated code ONLY when needed, NOT at start-Up
+        - Ensures the web app to start fast & execute code as early as possible
+
+    - Minify code
+        - To ensure that the web app is shipped using little code as possible
+        - Webpack performs this automatically
+        
