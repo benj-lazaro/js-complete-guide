@@ -1,0 +1,48 @@
+Server-side Performance Optimizations
+-------------------------------------
+- When it comes to the overall performance of a web app
+    - It is NOT just JavaScript that matters
+
+    - Other client-side optimization matters as well
+        - Reference (https://web.dev/articles/performance-optimizing-content-efficiency)
+
+    - As well as the server-side
+        - Server configuration is important
+
+        - There are three (3) main categories to look into:
+            - Compression of served assets
+            - Caching (client-side & server-side)
+            - HTTP/2
+
+
+- Compression
+    - It is about "zipping" assets (e.g. CSS, JavaScript, images) BEFORE serving them
+        - Modern browsers knows how-to unzip such files automatically
+        - Less data is sent from server to client = faster load time
+
+    - How it is setup is dependent on which server or 3rd-party service
+        - Firebase service, assets are automatically compressed
+
+    - On Node.js server-side code
+        - You have to manually ensure that assets are compressed
+        - Reference (https://github.com/expressjs/compression)
+
+
+
+- Caching
+    - It is about saving data or files for re-used
+    
+    - Browsers automatically cache files (e.g. JavaScript files)
+        - Based on the caching headers set by the serving host
+            - Reference (https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control)
+
+        - Controlling these headers on the server-side configuration
+            - Allows control on how browsers will cache files
+            - Helps unnecessary data transfers
+
+        - Server-side caching is about storing data you work on the server (e.g. fetched from a database)
+            - Multiple request for the same data will refer to the cached data instead
+
+            - Reference (https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching)
+
+            - Reference (https://wp-rocket.me/blog/different-types-of-caching/)
