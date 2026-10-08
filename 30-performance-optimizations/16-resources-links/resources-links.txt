@@ -1,0 +1,12 @@
+Useful Resources & Links
+------------------------
+- Google Performance Docs
+    - Reference (https://web.dev/articles/rendering-performance)
+
+
+- Chrome DevTools Performance Docs
+    - Reference (https://developer.chrome.com/docs/devtools/performance/reference)
+
+
+- Chrome DevTools Memory
+    - Reference (https://developer.chrome.com/docs/devtools/memory-problems)
