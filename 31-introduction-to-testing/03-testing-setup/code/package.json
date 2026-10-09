@@ -1,0 +1,33 @@
+{
+  "name": "js-testing-introduction",
+  "version": "1.0.0",
+  "description": "An introduction to JS testing",
+  "main": "app.js",
+  "scripts": {
+    "start": "webpack ./app.js --mode development --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "js",
+    "javascript",
+    "testing",
+    "jest",
+    "unit",
+    "tests",
+    "integration",
+    "tests",
+    "e2e",
+    "tests"
+  ],
+  "author": "Maximilian Schwarzmüller/ Academind GmbH",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^30.5.2",
+    "webpack": "^5.111.1",
+    "webpack-cli": "^7.2.3"
+  },
+  "allowScripts": {
+    "@parcel/watcher@2.6.0": true,
+    "unrs-resolver@1.12.2": true
+  }
+}

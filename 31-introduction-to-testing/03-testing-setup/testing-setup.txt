@@ -1,0 +1,67 @@
+Testing Setup
+-------------
+- After downloading the specified software dependencies in the "package.json" file
+    - Run the npm script "start"
+    
+    - Creates a "dist" folder
+        - Contains a generated (bundled & optimized) file named "main.js"
+        
+    - PERSONAL NOTE:
+        - Replaced the versions of "webpack" & "webpack-cli" packages
+            - To their current release instead of the ones stated in the "package.json" file
+            
+        - Refactored the "start" script of the "package.json" file
+            - Prefixed the "app.js" file w/ a "./"
+            - Otherwise, triggers an error of NOT being able to resolve the file's location
+
+        - To launch & load the "index.html" file on the default browser
+            - Used the VS Code extension "Live Server"
+            - Instead of "webpack-dev-server" w/c (thankfully) NOT included in the starter file
+
+
+- In order to write tests, require the following tools:
+    - Test Runner
+        - Execute the tests & summarize the results
+        - Used for Unit & Integration testing
+        - e.g. Mocha or Jest (https://jestjs.io/)
+
+    - Assertion Library
+        - Define testing logic & expected outcomes
+        - Used for Unit & Integration testing        
+        - e.g. Chai or Jest
+
+    - Headless Browser
+        - Simulate browser interaction
+        - Used for E2E testing        
+        - e.g. Puppeteer
+
+
+- On the practice code
+    - Download & install Jest using npm as a software dependency
+
+        npm i --save-dev jest
+
+    - PERSONAL NOTE:
+        - The latest release of Jest reported 19 moderate vulnerabilities
+            - Triggered by the package "glob@10.5.0"
+
+        - Two (2) packages blocked for having install scripts NOT covered by allowScripts
+            - @parcel/watches@2.6.0
+            - unrs-resolver@1.12.2
+
+            - Allowed the install scripts of the aforementioned packages:
+
+                npm install-scripts approve @parcel/watcher@2.6.0
+                npm install-scripts approve unrs-resolver@1.12.2
+
+        - Running "npm audit fix"
+            - Failed to address the reported moderate vulnerabilities
+
+        - Running "npm audit fix --force"
+            - Downgrades Jest to version 25.0.0 from ^30.5.2
+            - Resulted to 17 moderate, 25 hight & 2 critical vulnerabilities
+
+        - Decided to reverted back to Jest version ^30.5.2
+            - Despite of the moderate vulnerabilities
+            - Since Jest will ONLY be used for local testing & NOT part of production
+        
