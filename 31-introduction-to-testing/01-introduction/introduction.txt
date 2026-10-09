@@ -1,0 +1,7 @@
+Module Introduction
+-------------------
+- This section focuses on:
+    - Automated testing
+    - Integration tests
+    - Unit tests & more
+    
