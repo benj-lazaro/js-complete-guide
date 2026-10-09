@@ -1,0 +1,76 @@
+What Is Testing? Why Does It Matter?
+------------------------------------
+-  Testing involves the following steps:
+    - Write code
+        - Implement the app's logic
+
+    - Expected results (in mind)
+
+    - Test
+        - Success
+        - Failure
+            - Back to the 1st step
+            - Modify & fix the code
+
+    - NOTE: JavaScript testing refers to
+        - The automation & simplification of the test process
+            - To eliminate manually testing everything in the app
+        
+        - To run test(s) after implementing changes the in code
+            - To check for breaking changes w/out manually testing everything
+
+        - Major benefit of writing tests
+            - It is worth a lot of have a suite of pre-defined automated tests
+
+
+- Why (write) test?
+    - Get an error if the code broke
+        - To immediately be notified w/out having to manually test everything
+
+    - Save time
+        - NO need to manually test everything over & over again
+
+    - Think about possible issues & bugs (ahead of time)
+        - When writing automated tests
+        - What to test & how to write one that makes sense
+
+    - Integrate into a build workflow
+        - A Git commit to push an app to its Github repository
+        
+        - A workflow (in the repository) that is automatically triggered
+            - Tests the app
+            - Automatically deploys the app if successful
+            - Ensures that NO broken code or invalid code is deployed
+
+    - Breakup complex dependencies
+        - Write code that can be split up (i.e. modular)
+        - This makes tests easier 
+    
+    - Improves (the app's) code
+        - Forced to follow certain patterns that makes testing easier
+
+
+- Different kinds of tests
+    - Unit Test
+            - Fully isolated 
+            - Test a single isolated unit of the app
+            - e.g. Testing one function
+        
+        - Complexity: Relatively easy to write
+        - Frequency: Write thousands of these
+
+    - Integration Test
+        - Testing units w/ some dependencies 
+            - Dependent on the returned result of another function
+            - e.g. Test a function that calls another function
+
+        - Complexity: The more dependencies, the more complex it becomes
+        - Frequency: Write a good couple of these
+
+    - End-to-End (E2E) Test
+        - Full flow also referred as User Interface Test
+            - Executes a series of steps & check for expected results
+            - e.g. Validates a DOM after a click
+
+        - Complexity: Most complex; define the steps needed to be executed
+        - Frequency: Write a few of these
