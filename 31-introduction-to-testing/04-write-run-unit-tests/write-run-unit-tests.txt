@@ -1,0 +1,175 @@
+Writing & Running Unit Tests
+----------------------------
+- To write a unit test 
+    - Create a separate file that stores the tests
+    
+    - Common naming convention used:
+        - Name it based on the the file that is being tested
+        
+        - Followed by ".spec" or ".test"
+            - Jest automatically detects & runs files w/ the suffix of "spec.js" or "test.js"
+
+        - Then the filename extension of ".js"
+
+            <file_test>.spec.js
+            <file_test>.test.js
+
+
+- To import a function to be tested from a target file
+    - Use "Destructuring Syntax"
+        - Assign the function "require()" as value
+            - Pass the target file as an argument value
+            - Save it as a global constant
+
+            const { generateText } = require("./<filename>");
+
+    - NOTE: This is the Jest's native way of importing a function to be tested
+        - Jest supports the way how Node.js exports functions
+
+            exports.<function_name> = () => { ... };
+
+    - IMPORTANT: Using ES6 way of importing functions is NOT natively supported by Jest
+        - To make it work requires a complex build workflow & additional packages
+
+            import { generateText } from "./<filename>";
+
+
+- On the practice code
+    - Create a file named "utils.test.js"
+        - To store the unit tests for the "utils.js" file
+
+    
+    - Import the function "generateText()" using "Destructuring Syntax"
+        - Save it as a global constant
+
+        const { generateText } = require("./util");
+
+
+    - Call the Jest function "test()"
+        - Pass the following argument values
+            - 1st = "should output name and age"
+            - 2nd = (Arrow) function that implements the test logic
+
+
+        - Inside the Arrow function
+            - Create a local constant named "text"
+                - Assign it w/ a call to the imported function "generateText()"
+                - Pass the following argument values:
+                    - 1st = "Max"
+                    - 2nd = 29
+
+            - Call the Jest function "expect()"
+                - Pass the local constant "text" as an argument value
+
+            - Chain the method ".toBe()"
+                - Pass "Max (29 years old)" as an argument values
+        
+            - Save the changes
+
+
+    - Refactor the "test" script in the "package.json" file
+        - Change the pre-defined value to "jest"
+        - Save the changes
+        - NOTE: Jest automatically searches & executes files w/ the suffix "test.js"
+
+
+    - Run the script "test" via VS Code's Integrated Terminal
+
+        npm run test
+
+        - Runs the unit test
+            - List the tests (based on their descriptive name) that passed or failed
+            - Including the elapsed time
+
+    
+    - On the function "generateText()" of the "util.js" file
+        - On the "return" statement
+            - Deliberately change the passed parameter variable "name" to "age"
+
+        - Save the changes
+
+        - Run the "test" script
+            - Jest reports a failed test
+            - Pointed that the expected string value "Max" is replaced with a string "29"
+
+        - Revert back changes made on the "return" statement of the function "generateText()"
+            - Run the "test" script again
+            - Jest reports a passed test
+
+
+    - To enable Jest's watch mode
+        - Open the "package.json" file
+
+        - On the script "test"
+            - Add the line "--watch" after calling "jest"
+
+        - Save the changes
+
+        - Run the script "test"
+            - Run Jest when changes in the code are updated
+
+
+    - IMPORTANT: On Linux systems
+        - Change the "Linux inotify watcher limit" 
+            - To allow Jest' watch mode to execute
+
+            - Prevent Linux from crashing Jest & returning a ENOSPC 
+                - ENOSPC = Linux error code for "No space left on device"
+            
+            - It does NOT mean that disk is full
+                - Rather Jest could NOT allocate another "inotify" file watcher
+                - Due to Linux's default watch limit being reached
+            
+            - Increasing the limit size addresses the problem
+
+        - To increase the watch limit
+            - To check the current limit size:
+
+                cat /proc/sys/fs/inotify/max_user_watches 
+
+            - To change the watch limit size:
+
+                sudo sysctl fs.inotify.max_user_watches=524288
+
+            - To keep the changes after a system reboot:
+
+                sudo geany /etc/sysctl.d/90-inotify.conf
+
+                - Insert the following line & save the changes
+
+                fs.inotify.max_user_watches=524288
+
+            - To apply the changes system-wide
+
+                sudo sysctl --system
+
+
+    - Create a 2nd unit test that
+        - That checks for an returned value when NO arguments passed to the function being tested
+
+        - Call the Jest function "test()"
+            - Pass the following argument values:
+                1st = "should output data-less text"
+                2nd = An Arrow function
+
+        - Inside the Arrow function
+            - Create a local constant named "text"
+                - Assign it w/ a call to the imported function "generateText()"
+                - Pass the following argument values:
+                    - 1st = " "
+                    - 2nd = null
+
+            - Call the Jest function "expect()"
+                - Pass the local constant "text" as an argument value
+
+            - Chain the method ".toBe()"
+                - Pass "" (null years old)"" as an argument values
+        
+            - Save the changes
+
+            - Run the "test" script
+                - Jest should report two (2) Unit tests that passed
+
+
+    - IMPORTANT: Implementing double & opposite checks on Unit tests
+        - Help avoid false positives
