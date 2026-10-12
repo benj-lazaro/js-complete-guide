@@ -1,0 +1,104 @@
+Writing & Running Integration Tests
+-----------------------------------
+- To write an integration test
+    - Search for a function that 
+        - Has a number of dependencies (i.e. calling other functions)
+        - Accepts (or works w/) an input & returns an output
+
+    - Create a corresponding integrated test(s) in the "utils.test.js" file
+
+
+- On the practice code (app.js)
+    - The Arrow function assigned to the global constant "addUser"
+        - Despite NOT taking an input & returning an output on its own
+
+        - A part of its code works w/ user input data & then
+            - Calls the following exported functions from the "util.js" for output
+                - "generateText()"
+                - "validateInput()"
+
+        - Prior to writing an integration test
+            - Create an exported global constant named "checkAndGenerate"
+                - Assign an Arrow function as value
+
+            - On the Arrow function
+                - Declare the parameter variables "name" & "age"
+
+            - In the function "addUser()" of the "app.js" file
+                - Cut the "if" statement that calls the exported function "validateInput()"
+            
+            - Back in the "utils.js" file
+                - Paste the code w/in the Arrow function of the global constant "checkAndGenerate"
+
+            - In the Arrow function
+                - Rename the parameter variable "newUserNameInput.value" to "name"
+                - Rename the parameter variable "newUserAgeInput.value" to "age"
+
+                - On the "else" block of the "if" statement
+                    - Return the boolean value of "false"
+
+                - After the "if" statement
+                    - Return the call to the function "generateText()"
+                    - Pass the parameter variables "name" & "age" as argument values
+
+            - Back in the "app.js" file
+                - Remove "generateText" & "validateInput" from the import statement
+                - Add "checkAndGenerate" in the import statement
+
+                - In the function "addUser()"
+                    - Replace the call to "generateText()" w/ "checkAndGenerate()"
+                        - As an assigned value to the global constant "outputText"
+
+                    - Move the it right after the declaration of the local constant "newUserAgeInput"
+
+                    - Add an "if" statement
+                        - To check if the call to the function "checkAndGenerate()" evaluates to "false"
+                        - If truthy, call a "return" statement
+
+            - Back in the "util.js" file
+                - Remove the keyword "exports" from "generateText" & "validateInput"
+                    - Redefine BOTH as a global constant instead
+                    - In order to be locally available & called by the function "checkAndGenerate()"
+        
+                - At the last line of the file
+                    - Write "exports.generateText"
+                        - Assign the global constant "generateText" as value
+                    
+                    - Write "exports.validateInput"
+                        - Assign the global constant "validateInput" as value
+
+                    - NOTE: Allows to be available for other files besides the "util.js" file
+
+            - Save the changes
+
+        
+        - Write an integration test in "utils.test.js" file
+            - Call the Jest function "test()"
+                - Pass the following argument values
+                    - 1st = "should generate a valid text output"
+                    - 2nd = an Arrow function
+
+                - Inside the Arrow function
+                    - Create a local constant named "text"
+                        - Assign a call to the exported function "checkAndGenerate()" as value
+                    
+                    - Pass the following argument values
+                        - 1st = "Max"
+                        - 2nd = 29
+
+                    - Call the Jest function "expect()"
+                        - Pass the local constant "text" as an argument value
+
+                    - Chain the method ".toBe()"
+                        - Pass "Max (29 years old)" as an argument value
+
+            - Save the changes
+
+
+        - NOTE: When writing tests, it is best to drill down to the small possible levels first
+            - Write tests for ALL units (i.e. unit test)
+
+            - Write tests between units (i.e. integration)
+                - Ensures that dependencies between units work together as intended
+                - Captures logical errors when a unit is improperly used w/in another unit
+
