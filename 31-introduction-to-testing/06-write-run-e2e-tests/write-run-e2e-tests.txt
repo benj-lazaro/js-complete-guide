@@ -1,0 +1,164 @@
+Writing & Running E2E Tests
+---------------------------
+- To write an e2e (i.e. end-to-end) or UI test
+    - Require installing a headless version of the Chrome browser named "puppeteer" via npm
+
+        npm i --save-dev puppeteer
+
+    - Then run, to down the the specific browser
+
+        npx puppeteer browsers install chrome
+
+        - NOTE: Downloading the package may take
+
+    - PERSONAL NOTE: Post installation requires the "puppeteer" package to be
+        - Approved (i.e. covered) by allowScripts as it's install scripts has been blocked
+
+        npm install-scripts approve puppeteer
+
+    - IMPORTANT: To successfully import Puppeteer w/in a Jest test file
+        - Modify the npm script "test" in the "package.json" file
+
+        - Add the following flags on the "test" script
+            - Flag "NODE_OPTIONS=--experimental-vm-modules" BEFORE calling Jest
+            
+            - Flag "--runInBand" AFTER the "--watch" flag of Jest 
+
+                "scripts": {
+                    "start": "webpack ./app.js --mode development --watch",
+                    "test": "NODE_OPTIONS=--experimental-vm-modules jest --watch --runInBand"
+                },        
+
+            - NOTE:
+                - The 1st flag is to enable Puppeteer to work w/ Jest
+                - The 2nd flag is to address the warning message at end of a e2e test
+
+                    "A worker process has failed to exit gracefully and has been force exited."
+
+        - The instructor uses the function "require()" 
+            - To import Puppeteer into the test file
+                - This function uses a CommonJS syntax
+
+            - While Node.js (v24.21.0) is capable handling "require()"
+                - Jest itself run its own environment that conflicts w/ "require()" statement
+
+        - To address this concern:
+            - Prefix the flag "NODE_OPTIONS=--experimental-vm-modules" prior calling Jest
+            - Doing so address the issue between module formats & Jest's test runtime
+
+
+- Next is defining the steps that will be executed in the headless browser
+    - To automate certain processes (i.e. operations) on the web app
+    - To test the results returned by the processes
+
+
+- On the practice code (utils.test.js)
+    - Import Puppeteer by creating a global constant named "puppeteer" 
+        - Assign a call to the function "require()" as value
+        - Pass "puppeteer" as an argument value
+
+    - Call the Jest function "test()"
+        - Pass the following argument values
+            - 1st = "should create an element with text and correct class"
+            - 2nd = an Async Arrow function
+            - 3rd = 25000 (timeout value; reduce when running headless e.g. 10000)
+
+    - Inside the Arrow function
+        - Create a local constant named "browser"
+            - Call the Puppeteer method ".launch()" as an Await method
+                - Pass an JavaScript object literal as an argument value
+                - NOTE: This configures Puppeteer overall behavior during the e2e test
+
+            - Inside the JavaScript object contains the following properties
+                - "headless"    = "false" (NOT headless)
+                - "slowMo       = 80 (how slow to run, in order to visually see it)
+                - args          = ["--window-size=1024,768"] (size of the browser window)
+
+            - NOTE: This launches an instance of the Chrome browser
+
+        - Define a "try" & a "finally" block
+
+        - Inside the "finally" block
+            - Access the local constant "browser"
+                - Chain the Puppeteer method ".close()"
+
+            - NOTE: To gracefully close the browser
+            
+        - Inside the "try" block
+            - Create a local constant named "page"
+                - Call the Puppeteer method ".newPage()" as an Await method
+                
+                - NOTE: This opens a browser window (or page)
+
+            - Access the constant "page"
+                - Chain the method ".goto()"
+                - Pass the local URL of the web app as an argument value
+        
+            - Access the constant "page"
+                - Chain the method ".click()"
+                - Pass the HTML element's attribute "id" as an argument values
+                
+                - NOTE: This selects a specific DOM element in the web app
+
+            - Access the constant "page"
+                - Chain the method ".type()"
+                
+                - Pass the following argument values
+                    - 1st = The attribute "id" of the target HTML element
+                    - 2nd = The value to be typed on the target HTML element
+
+            - Access the constant "page"
+                - Chain the method ".click()"
+                - Pass the HTML element attribute "id" of the button 
+                    - To be clicked & submit the value
+
+            - Create a local constant named "finalText"
+                - Assign access the constant "page" as value
+                    - Chain the method ".$eval()"
+
+                - Pass the following argument values
+                    - 1st = Attribute "id" or "class" value of the targeted element
+                    - 2nd = Arrow function
+
+                - On the Arrow function
+                    - Define the parameter variable "el" (or element)
+            
+                - Inside the Arrow function
+                    - Access the parameter variable "el"
+                    - Chain the property ".textContent"
+                
+                - NOTE: Implicitly returns the text content value of the targeted element
+                    - Stores the returned value in the local constant "finalText"
+
+            - Access Jest function "expect()"
+                - Pass the local constant "finalText" as an argument value
+                    - Chain the Jest method ".toBe()"
+                    - Pass the expected string to be returned as an argument value
+
+                - NOTE: Tests whether the returned value matches the expected value
+
+    - Save the changes
+        - Use VS Code extension "Live Server"
+            - To locally host the "index.html" file
+
+
+        - Launch VS Code's Integrated Terminal 
+            - Run the npm script "test"
+                
+                npm run test 
+    
+            - Launches an instance of a Chrome browser
+                - Loads the web app
+                - Automatically inputs test data & clicks the button
+                - Evaluates the returned data vs the expected data
+
+            - Returns result if it passed the test or NOT
+
+
+    - Configure the e2e test to be headless
+        - Comment the properties of the JavaScript object literal that is
+            - Passed as an argument value to the Puppeteer method ".launch()"
+
+        - Save the changes
+
+        - Run the npm script "test" again
