@@ -1,0 +1,192 @@
+Dealing w/ Async Code
+---------------------
+- Testing asynchronous code where side-effects occurs such as:
+    - Timeout of HTTP requests when a function is called
+        - Ends up distorting test results
+
+
+- Takes a look on testing asynchronous code
+    - To make the test simpler, focus on what really matters
+
+    - Testing on whether your back-end code works
+        - Those tests should NOT be conducted w/ the front-end tests
+        - It should have its own separate tests
+
+    - Testing 3rd-party package functionalities
+        - A package is provided by a 3rd-party & rely on it doing its job (well)
+
+    - Testing the front-end code 
+        - Fetching data from a 3rd-party API or one's own back-end code
+        - Working on the fetched data
+
+
+- On the practice project
+    - Install the npm packages that 
+        - Came w/ the "package.json" file
+
+        - PERSONAL NOTE:
+            - Manually installed the latest version of the list packages 
+            - The lesson's packages are considered outdated by October of 2026
+
+
+    - Run the npm script "start"
+        - To have the project bundled & optimized
+        - To product the "dist/main.js" file w/c the "index.html" relies on
+        - Press CTRL + C once the "app.js" is bundled & optimized
+
+
+    -  Open the file "index.html" in VS Code
+        - Click the "live server" button to locally host the file
+            - Loads the "dist/main.js" in the background
+
+
+    - Clicking the web app's button "Get Post Title!"
+        - Triggers the callback function "printTitle()" w/c
+            - Calls the function "loadTitle()"
+            - Waits for the modified data
+            - Renders the received data on the JavaScript console
+        
+        - The function "loadTitle()"
+            - Calls the function "fetchData()"
+            - Waits & convert received data to uppercase
+            - Return the modified fetched data back to "printTitle()"
+
+        - The function "fetchData()"
+            - Uses Axios to send a HTTP request & receive the response data asynchronously
+            - Waits & returns the fetch data back to "loadTitle()"
+        
+
+    - Testing the function "printTitle()" will fail
+        - It attempts to access a DOM element (i.e. button) that does NOT exists
+
+
+    - To address this concern:
+        - Create a new file named "util.js"
+
+        - Take the functions "printTitle()" & "loadTitle()" from "app.js" file
+            - Paste them w/in the "util.js" file
+
+            - Export the function "printTitle()"
+            
+                exports.printTitle = printTitle;
+
+            - Grab the import statement for "fetchData()" from "app.js" file into "util.js"
+
+                const { fetchData } = require("./http");
+
+        - On the "app.js" file
+            - Import "printTitle" from "util.js" file
+
+        - Save the changes
+
+
+    - Create a file named "util.test.js"
+        - Import the function "printTitle()" from "util.js" file
+
+        - Call the Jest function "test()"
+            - Pass the following argument values:
+                - 1st = "should print an uppercase text"
+                - 2nd = an Arrow function
+
+            - Inside the Arrow function
+                - Call Jest function "expect()"
+                    - Pass the function "printTitle()" as an argument value
+
+                - Chain the method ".toBe()"
+                    - Pass the string "DELECTUS AUT AUTEM" as an argument value
+
+        - Save the changes
+
+    
+    - Run the npm script "test"
+
+        npm run test
+
+        - The test failed due to:
+            - Expected to receive "DELECTUS AUT AUTEM"
+            - But received "undefined" instead
+
+            - NOTE: This is a problem w/ asynchronous code
+
+
+        - The reason it failed is due to normal JavaScript behavior
+            - The "return" statements inside inside of a promise ".then()" calls
+            - JavaScript does NOT WAIT for them
+            - JavaScript IMMEDIATELY runs the code w/out waiting for the requested data
+            
+            - This is why the test received an "undefined" value instead of the expected string value
+                - JavaScript simply did NOT wait for the requested data
+                - Immediately worked w/ what it have on-hold w/c is nothing = "undefined"
+
+
+    - To address this concern:
+        - Shift the focus of the test to the overall function w/c is
+            - The conversion of the fetched data to uppercase
+        
+        - In the "util.js" file
+            - The function "loadTitle()"
+                - Returns the uppercase extracted data w/in itself
+                - Returns the modified fetched data to the function "printTitle()"
+
+            - Export the function "loadTitle()"
+
+                exports.loadTitle = loadTitle;
+
+            - Remove the export statement for the function "printTitle()"
+
+                exports.printTitle = printTitle;
+
+        - On the "util.test.js"
+            - On the import statement 
+                - Change "loadTitle" instead of "printTitle" 
+
+            - Inside the Arrow function
+                - Remove earlier line of code
+
+                - Call the function "loadTitle()"
+                    - Chain the method ".then()"
+                    - Pass an Arrow function as an argument value
+
+                - On the Arrow function
+                    - Declare the parameter variable named "title"
+                    - NOTE: Holds the returned value from the function "loadTitle()"
+
+
+                - Inside the Arrow function
+                    - Call the Jest function "expect()"
+                        - Pass the parameter variable "title" as an argument value
+
+                    - Chain the Jest method ".toBe()"
+                        - Pass the string "DELECTUS AUT AUTEM" as an argument values
+                
+                - Save the changes
+
+            - Run the npm script "test" again
+                - The test passed
+
+
+    - Despite the test passed, there is an underlying problem
+        - The test "hits" the web app's API
+            
+        - This test should be done during the (back-end) API development
+            - NOT when testing the front-end
+            - These should be two (2) separate tests
+        
+        - The test calls the function "fetchData()"
+            - It makes a real API request to a 3rd-party service
+
+            - This type of test should NOT be done when testing one's web app
+                - As it will likely exceed the 3rd party service's API usage quota
+            
+        - When testing for the web app's POST requested
+            - This will require some editing on the web app's production-grade API w/c
+                - Should NOT be performed as part of the testing
+                - As this belongs to the back-end
+        
+        - Rather, focus on front-end tests instead
+            - e.g. Testing for error fallbacks
+
+            - NOT for testing if the web app's API is working
+                - The same w/ testing 3rd party package's functionalities
+                - They're provided by a 3rd party
+                - One should rely on their package on doing its job well
