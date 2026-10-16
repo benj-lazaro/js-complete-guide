@@ -1,0 +1,126 @@
+Working With Mocks
+------------------
+- As stated in the previous lesson
+    - Testing the functionality of a 3rd-party package or an API service should NOT be part of it
+
+    - Advised to focus the test on the web app's (front-end) functionality
+        - Fetching the JSON data from the 3rd-party API service
+        - Extracting data from the returned JSON
+        - Transforming the data's case into lowercase
+
+    - Implementing a mock version of the 3rd-party package or API service using Jest
+        - NOTE: This also applies to functions that access the local filesystem
+
+    - Testing mocks in JavaScript
+        - Reference (https://www.harrymt.com/blog/2018/04/11/stubs-spies-and-mocks-in-js.html)
+
+    - Jest Getting Started docs
+        - Reference (https://jestjs.io/docs/getting-started)
+
+
+- To use Jest's mock implementation
+    - Requires the creation of the folder named "__mocks__"
+        - On the same level of the web app's root folder
+
+    - Inside the "__mocks__" folder
+        - Create a file w/ the identical filename where the function (to be tested) resides
+
+    - Copy the codebase of the original file
+        - Paste it to the identical file w/in the "__mocks__" folder
+
+    - Inside the body of the function to be tested by Jest
+        - Remove the original codebase
+        - Replace it w/ a "return" statement along w/ the expected data that allows to pass the test
+
+    - On the Jest test file
+        - Import the mock file using the method ".mock()"
+            - Pass the mock file (w/out extensions) as an argument value
+
+        - IMPORTANT: Globally installed 3rd-party packages
+            - Do NOT require manual import w/in the Jest test file
+            - Jest automatically performs this in the background during the test run
+
+            
+    - During the test run
+        - Jest loads the mock file(s)
+
+        - Replace the actual 3rd-party package or API service w/ a mocked implementation
+            - Defined w/in the files stored in the "__mocks__" folder
+
+        - Evaluates the web app's (front-end) functionalities
+            - Testing if it passes the test or NOT
+
+
+- On the practice code
+    - To implement a mock version of the web app's function "fetchData()"
+        - Residing w/in the file "http.js"
+
+        - Create a folder named "__mocks__"
+            - Located at the web app's root folder 
+
+        - Inside the "__mocks__" folder
+            - Create a file named "http.js"
+    
+        - Inside the file "__mocks__/http.js"
+            - Create a global constant named "fetchData"
+                - Assign an Arrow function as value
+
+            - Inside the Arrow function
+                - Return a "Promise" object w/ the method ".resolve()" chained
+                - Pass an JavaScript object literal as an argument value
+
+                - NOTE: The JavaScript object literal contains
+                    - A property named "title" w/ the string value of "delectus aut autem"
+        
+            - Export the global constant "fetchData"
+
+                exports.fetchData = fetchData;
+
+        - On the "util.test.js"
+            - Import the mock file "__mocks__/http.js" using Jest method ".mock"
+            - Pass the mock filename w/out the filename extension ".js"
+        
+        - Save the changes
+            - Run the npm script "test"
+
+                npm run test
+
+
+    - To implement the mock ".get()" method of the globally installed package "Axios"
+        - Inside the "__mocks__" folder
+            - Create a file named "axios.js"
+
+        - Inside the file "__mocks__/axios.js"
+            - Create a global constant named "get"
+                - Assign an Arrow function as value
+
+            - On the Arrow function
+                - Define the parameter variable named "url"
+                
+                - NOTE: Mimicking Axios' ".get()" method that
+                    - Expects a URL as an argument value
+                    - But will do NOTHING w/in the mocked version
+
+            - Inside the Arrow function
+                - Return a "Promise" object w/ the method ".resolve()" chained
+                - Pass an JavaScript object literal as an argument value
+
+                - NOTE: The JavaScript object literal contains
+                    - A property named "data" w/ a JavaScript object literal as value
+
+                    - The inner JavaScript object literal contains
+                        - A property named "title" w/ the string value of "delectus aut autem"
+
+            - Save the changes
+
+        - On the "util.test.js"
+            - Remove the import statement for the mock file "__mocks__/http.js"
+
+            - Since Axios is globally installed
+                - Jest will automatically import the mocked version of Axios
+                - NO need to import the package using the method ".mock()";
+
+        - Save the changes
+            - Run the npm script "test"
+
+                npm run test
