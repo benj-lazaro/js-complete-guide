@@ -1,0 +1,12 @@
+Useful Resources & Links
+------------------------
+- JavaScript Testing
+    - Reference (https://academind.com/tutorials/javascript-testing-introduction)
+
+
+- Official Jest Docs
+    - Reference (https://jestjs.io/docs/en/getting-started)
+
+
+- Testing w/ Spies, Stubs & Mocks
+    - Reference (https://www.harrymt.com/blog/2018/04/11/stubs-spies-and-mocks-in-js.html)
