@@ -1,0 +1,9 @@
+Module Introduction
+-------------------
+- This section focuses on:
+    - What are programming paradigms
+    - Understanding "procedural" programming
+    - Understanding "functional" programming
+    - Understanding "object-oriented" programming
+
+    
