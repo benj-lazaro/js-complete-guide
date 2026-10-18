@@ -1,0 +1,40 @@
+What Are "Programming Paradigms"?
+---------------------------------
+- It is a way of writing code
+    - How to write, structure & organize code
+        - NOT a syntax or special feature
+
+
+- Three (3) programming paradigms 
+    - Object-oriented
+        - Organize data + logic in objects
+            - Data in properties of an object
+            - Logic in methods of an object
+
+        - Everything in the app
+            - Gets represented as a class
+            - Then (in the end) as an object
+
+        - Organize code in logical entities
+            - Translate an app being written into the real world
+
+            - Think things that makes up an app in real world terms
+                - e.g. products, shopping cart
+            
+    - Procedural
+        - Write sequential series of execution steps (tasks)
+
+        - It has a "top to bottom" code execution
+            - Does NOT organize in logical pieces of data
+            - Does NOT use objects & entities to structure the code
+    
+    - Functional
+        - Organize code as pure functions w/ clearly defined tasks
+
+        - Receive data that a function require as parameters
+            - Then often returns something new
+
+        - Pass data around via (a function's) parameters
+
+        - These functions holds logic
+            - Every function (if possible) works on its own
