@@ -1,0 +1,76 @@
+Procedural Paradigm In Practice
+-------------------------------
+- Use the attached practice code
+    - To implement a simple program using procedural paradigm
+
+
+- On the practice code
+    - Create a global constant named "form"
+        - Assign the method "document.getElementById()" as value
+        - Pass "user-input" as an argument value
+    
+
+    - Create a function named "signUpHandler"
+        - Define the parameter variable named "event"
+        - NOTE: This serves as an Event Handler
+
+
+    - Access the global constant "form"
+        - Chain the method ".addEventListener()"
+        - Pass the following argument values:
+            - 1st = "submit"
+            - 2nd = "signUpHandler"
+
+
+    - Inside the Event Handler function "signUpHandler()"
+        - Create a local constant named "username"
+            - Assign method method "document.getElementById()" as value
+            - Pass "username" as an argument value
+            - Chain the property ".value"
+
+        - Create a local constant named "password"
+            - Assign method method "document.getElementById()" as value
+            - Pass "password" as an argument value
+            - Chain the property ".value"
+
+        - Use an "if" statement
+            - To check if the trimmed length of the constant "username" is 0
+                - If truthy, call "alert()"
+                - Pass the string value as an argument value
+
+                    "Error: Username MUST NOT be empty!"
+
+                - Call the keyword "return" 
+
+        - Use another "if" statement
+            - To check if the trimmed length of the constant "password" <= 5
+                - If truthy, call "alert()"
+                - Pass the string value as an argument value
+
+                    "Error: Password MUST be 6 character or more!"
+
+                - Call the keyword "return" 
+
+        - Create a local constant named "userAccount"
+            - Assign a JavaScript object literal as value
+
+        - Inside the object literal
+            - Declare the property "name"
+                - Assign the local constant "username" as value
+
+            - Declare the property "password"
+                - Assign the local constant "password" as value
+
+        - Call "console.log()"
+            - Pass the local constant "userAccount" as an argument value
+
+        - Call "console.log()"
+            - Pass the following string template literal as an argument value
+
+                `Hi, I am ${username}!`)
+
+
+    - Save the changes
+        - Load / reload the web app
+
+        - Test the functionalities of the web app
