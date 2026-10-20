@@ -1,0 +1,31 @@
+Wrap-up
+------------------------
+- JavaScript is quite versatile
+    - Supports three (3) programming paradigms
+
+    - Find the paradigms that best suits your needs
+        - Experienced developers certain apps works well w/ a specific paradigm
+        - Some paradigms work better than the other two (2)
+
+
+- Functional programming paradigm
+    - Making a strong comeback as of 2019
+    - Quite readable
+    - Organizes code quite nicely
+    - Straight-forward
+    - Each function is relatively small
+    - Produces highly reusable code
+
+
+- Object oriented programming paradigm
+    - Was extremely popular
+    - Far from being considered obsolete
+    - Produces readable code
+    - Splits code into logical pieces
+    - Classes introduces a little bit of overhead
+
+
+- Procedural programming paradigm
+    - Great for writing simple scripts
+    - NOT suitable for apps that scale up (i.e. more complex)
+    - Difficult to organize & maintain as the app scales up
