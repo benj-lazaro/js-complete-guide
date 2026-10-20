@@ -1,5 +1,5 @@
 Wrap-up
-------------------------
+-------
 - JavaScript is quite versatile
     - Supports three (3) programming paradigms
 
