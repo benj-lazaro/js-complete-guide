@@ -1,0 +1,120 @@
+Object Oriented Programming In Practice
+---------------------------------------
+- Use the previous lesson's attached practice code
+    - To implement a simple program using object oriented paradigm
+
+
+- On the practice code
+    - Create a Class named "Validator"
+        - NOTE: This handles the validation of user input value(s)
+
+    - Create a Class named "User"
+        - NOTE: This stores the user account(s)
+
+    - Create the Class named "UserInputForm"
+        - NOTE: This handles the user input value(s)
+
+    - Inside the Class "Validator"
+        - Define the following Static Properties
+            - "REQUIRED" assigned w/ the string value of "REQUIRED"
+            - "MIN_LENGTH" assigned w/ the string value of "MIN_LENGTH"
+
+        - Define a Static Method named "validate"
+            - Define three (3) parameter variables
+                - value             = refers to the passed value
+                - flag              = refers to the Static Property (REQUIRED or MIN_LENGTH)
+                - validatorValue    = user in conjunction w/ the parameter "flag"
+
+        - Inside the Static Method "validate()"
+            - Use an "if" statement
+                - To check if the parameter variable "flag" refers to Static Property "REQUIRED"
+                
+                - Return the value of the parameter variable "value"
+                    - Chain the method ".trim()"
+                    - Chain the property ".length"
+                    - Whose length is greater than 0
+
+            - Use an "if" statement
+                - To check if the parameter variable "flag" refers to Static Property "MIN_LENGTH"
+                
+                - Return the value of the parameter variable "value"
+                    - Chain the method ".trim()"
+                    - Chain the property ".length"
+                    - Whose length is greater than the assigned value of "validatorValue"
+
+            - NOTE: BOTH "if" statements returns a boolean value
+
+
+    - Inside the Class "User"
+        - Create a Constructor Method
+            - Define the parameter variables "userName" & "userPassword"
+
+        - Inside the Constructor method
+            - Define the property named "this.username"
+                - Assign the parameter variable "userName" as value
+
+            - Define the property named "this.password"
+                - Assign the parameter variable "userPassword" as value
+
+        - Create a method named "greet"
+            - Call "console.log()"
+                - Pass the following string template literal as an argument value
+
+                `Hi there! I'm ${this.username}.`
+
+
+    - Inside the Class "UserInputForm"
+        - Create a Constructor Method
+
+        - Inside the Constructor Method
+            - Define the property named "this.form"
+                - Assign the method "document.getElementById()" as value
+                - Pass "user-input" as an argument value 
+
+            - Define the property named "this.userName"
+                - Assign the method "document.getElementById()" as value
+                - Pass "username" as an argument value 
+
+            - Define the property named "this.userPassword"
+                - Assign the method "document.getElementById()" as value
+                - Pass "password" as an argument value 
+
+            - Access the property "this.form"
+                - Chain the method ".addEventListener()"
+                    - Pass the following argument values
+                        - 1st = "submit"
+                        - 2nd = signUpHandler
+
+                - Chain the method ".bind()"
+                    - Pass the argument value "this"
+                    
+                    - NOTE: To binds the Class "UserInputForm" to the keyword "this"
+                        - Instead of the Element node that triggered the Event
+
+        - Create a method named "signUpHandler"
+            - Define the parameter variable named "event"
+
+            - Access the parameter variable "event"
+                - Chain the method ".preventDefault()"
+
+            - Create a local constant named "enteredUserName"
+                - Assign the property "this.userName" as value
+                - Chain the property ".value"
+
+            - Create a local constant named "enteredPassword"
+                - Assign the property "this.userPassword" as value
+                - Chain the property ".value"
+
+            - Use an "if" statement to evaluate the returned value
+                - From the Static Method ".validate()" of the Class "Validator"
+
+                 !Validator.validate(enteredUserName, Validator.REQUIRED) ||
+                 !Validator.validate(enteredPassword, Validator.MIN_LENGTH, 5)
+
+                - If it evaluates to truthy
+                    - Call "alert()", pass the following string values
+                    
+                    "Error: Empty username or short password length (min: 6 characters"
+
+                - Call a "return" statement
+
