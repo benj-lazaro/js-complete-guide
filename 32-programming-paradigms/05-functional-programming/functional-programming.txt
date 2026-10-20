@@ -1,0 +1,157 @@
+Functional Programming In Practice
+----------------------------------
+- Use the previous lesson's attached practice code
+    - To implement a simple program using the functional paradigm
+    
+    - Splits an app's logic into logical blocks
+        - Each as a pure & side-effect free function (as possible)
+        - Input(s) is/are accepted through a function's parameters
+        - Returns a value
+
+    - NOTE: Use any of the following ways to declare a function
+        - Normal function declaration
+        - Functional expression
+        - Arrow function
+
+
+- On the practice code
+    - Create two (2) global constants
+        - Named "REQUIRED"
+            - Assigned w/ the string value of "REQUIRED"
+
+        - Named "MIN_LENGTH"
+            - Assigned w/ the string value of "MIN_LENGTH"
+
+        - NOTE: Serves as a "flag" fot the function "validate()"
+
+
+    - Create a function named "validate()"
+        - Define the following parameter variables
+            - value             = refers to the passed value
+            - flag              = refers to the global constants REQUIRED or MIN_LENGTH
+            - validatorValue    = user in conjunction w/ the parameter "flag"
+
+        - Inside the function
+            - Use an "if" statement
+                - To check if the parameter "flag" is either "REQUIRED" or "MIN_LENGTH"
+
+            - If the parameter "flag" === "REQUIRED
+                - Return the parameter variable "value"
+                    - Chain the method ".trim()"
+                    - Chain the property ".length"
+                    - Followed by "> 0"
+
+            - If the parameter "flag" === "MIN_LENGTH"
+                - Return the parameter variable "value"
+                    - Chain the method ".trim()"
+                    - Chain the property ".length"
+                    - Followed by "> validatorValue"
+
+        - NOTE: This function validates the value of a user input
+
+
+    - Create a function named "getUserInput()"
+        - Define the parameter variable named "inputElementId"
+
+        - Inside the function
+            - Return the statement:
+            
+                document.getElementById(inputElementId).value
+
+        - NOTE: This function returns the assigned value of a HTML element <input>
+
+    
+    - Create a function named "createUser()"
+        - Define the parameter variables "userName" & "userPassword"
+
+        - Inside the function
+            - Use an "if" statement to evaluate the following expression
+
+                !validate(userName, "REQUIRED") || !validate(userPassword, "MIN_LENGTH", 5)
+
+            - If truthy
+                - Throw a new Error object w/ the following string value
+
+                "Error: Empty username or short password length (min: 6 characters"
+
+            - If falsy
+                - Return a JavaScript Object Literal w/ the following properties
+                    - "username" w/ the assigned value from the parameter "userName"
+                    - "password" w/ the assigned value from the parameter "userPassword"
+
+        - NOTE: This function either returns a new Error object or JavaScript Object Literal
+
+    
+    - Create a function named "greetUser()"
+        - Define the parameter variable named "user"
+
+        - Inside the function
+            - Call "console.log()"
+                - Pass the following string template literal as an argument values
+
+                    `Hi there! I'm ${user.username}.`
+
+            - NOTE: This "side-effect" is unavoidable
+
+        - NOTE: This function displays the value of the property "username" in the console
+
+
+    - Create a function named "signUpHandler()"
+        - Define the parameter "event"
+
+        - Inside the function
+            - Access the parameter variable "event"
+                - Chain the method ".preventDefault()"
+
+            - Create a local constant named "enteredUserName"
+                - Assign the function "getUserInput()" as value
+                - Pass "username" as an argument value
+
+            - Create a local constant named "enteredUserPassword"
+                - Assign the function "getUserInput()" as value
+                - Pass "password" as an argument value 
+
+            - Use a "try..catch()" statement
+                - Inside the "try" block
+                    - Create a local constant "newUser"
+                        - Assign the function "createUser()" as value
+                        - Pass "enteredUserName" & "enteredUserPassword" as argument values
+
+                    - Call the function "greetUser()"
+                        - Pass the local constant "newUser" as an argument value 
+
+                - On the "catch" block
+                    - Define the parameter variable "error"
+
+                - Inside the "catch" block
+                    - Call "alert()"
+                        - Pass the parameter "error" as an argument value 
+                        - Chain the property ".message"
+
+                    - NOTE: This too is an unavoidable "side-effect"
+
+    
+    - Create a function named "connectForm()"
+        - Declare the parameter variables "formId" & "formSubmitHandler"
+
+        - Inside the function
+            - Create a local constant named "form"
+                - Assign the method "document.getElementById()" as values
+                - Pass "formId" as an argument value 
+
+            - Access the local constant "form"
+                - Chain the method ".addEventListener()"
+                - Pass the following argument values
+                    - 1st = "submit"
+                    - 2nd = "formSubmitHandler"
+
+
+    - Call the function "connectForm()"
+        - Pass the following argument values
+            - 1st = "user-input"
+            - 2nd = "signUpHandler"
+
+
+    - Save the changes
+        - Load / reload the browser
+        - Test the web app's functionalities
