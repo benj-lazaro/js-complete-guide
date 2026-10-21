@@ -1,0 +1,6 @@
+Module Introduction
+-------------------
+- This section focuses on:
+    - What & Why (algorithms & data structures)
+    - Time Complexity & The Big "O" Notation
+    - Examples
