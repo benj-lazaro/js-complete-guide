@@ -1,0 +1,59 @@
+A First Example
+---------------
+- Write an algorithm (pseudocode) that 
+    - Involves an array data structure containing unsorted number elements
+    - The goal (result) is to return the minimum number (i.e. smallest value)
+    - Implement the algorithm in JavaScript
+
+
+- An algorithmic approach for the desired result
+    - Use a loop & iterate through ALL of the array's elements
+
+    - Prior to iterating through the array's elements
+        - Create a variable named "currentMinimum"
+        - Assign the array's 1st element as value
+
+    - At every iteration of the loop
+        - Compare the value of the latest read element to the value of the variable "currentMinimum"
+
+        - If the condition evaluates to truthy
+            - Assign the current element as the new value to the variable "currentMinimum"
+
+        - Otherwise, move to the array's next element
+    
+    - Once the loop concludes
+        - Return the variable "currentMinimum"
+
+
+- On the practice code
+    - Create a function named "getMin"
+        - Define the parameter variable named "numbers"
+
+    - Inside the function
+        - Use an "if" statement
+            - To check if the passed array is empty
+
+            - If truthy
+                - Throw an Error object w/ the following string value
+
+                    "Should NOT be an empty array!" 
+
+        - Create a local variable named "currentMinimum"
+            - Assign the 1st element of the array as value
+
+        - Use a "for" loop to iterate through the array
+            - Beginning at the 2nd element of the array
+            
+            - Compare current element read to the value of "currentMinimum"
+
+            - If the current element is lower than that of "currentMinimum|
+                - Assign it as the new value for the variable "currentMinimum"
+
+        - Return the variable "currentMinimum"
+
+
+    - Save the changes
+        - Set up test cases
+
+        - Load the web app in the browser
+
