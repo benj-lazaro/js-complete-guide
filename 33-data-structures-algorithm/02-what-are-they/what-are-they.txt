@@ -1,0 +1,20 @@
+What Are Data Structures & algorithms
+-------------------------------------
+- Algorithm is simply a sequence of steps (i.e. solution)
+    - For a given input to get the desired output
+
+
+- Data structure is a piece of data w/c 
+    - Follows certain rules to solve a certain problem
+    - e.g. array, maps, object, etc.
+
+
+- Why use them?
+    - When working w/ complex problems may require the following to solve it
+        - Sophisticated data storage (i.e. data structure)
+        - Sophisticated computation logic (i.e. algorithm)
+
+    - To express a solution to a problem logically as a programmer
+        - To derive solutions & compare against other ones
+    
+    - To ace job interviews & get hired
