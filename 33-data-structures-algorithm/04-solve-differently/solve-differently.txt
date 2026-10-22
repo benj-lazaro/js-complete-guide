@@ -1,0 +1,11 @@
+Solve The Same Problem Differently
+----------------------------------
+- Implement a different solution to solve the same problem
+    - Sort the array elements in ascending order
+        - Writing one's own sorting algorithm
+        - Instead of using the method ".sort()"
+
+    - Return the 1st element of the array
+
+
+- On the practice code
