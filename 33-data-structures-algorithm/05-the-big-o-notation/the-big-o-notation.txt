@@ -1,28 +1,27 @@
 Performance & The Big "O" Notation
 ----------------------------------
-- When faced w/ from multiple solutions for a given problem
-    - To find the best one, it is necessary to compare the solutions
-        - By figuring out each solution's runtime performance
+- When faced w/ multiple solutions for a given problem
+    - To determine the best one 
+        - Figure out each solution's run-time performance
+        - Pick the solution that takes less amount of time to execute
 
-    - Determine how long a solution's operation take
-        - Pick the one that takes the less amount of time = fastest to execute
+    - Using a stopwatch is NOT a good idea due to its dependence on
+        - The PC hardware the test is running on
+        - The background processes running concurrently
 
-    - Using a stopwatch is NOT a good idea as it is dependent on
-        - The hardware it (i.e. the test) is running on
-        - Background processes concurrently running
-        
-    - Best to test performance in a generalized form
-        - NOT in time units as results varies
-        - But in mathematical terms in the form of Time Complexity
+    - It is best to test a solution's performance in a generalized form
+        - NOT based on time units as it varies
+        - In a mathematical form referred as Time Complexity
 
-    - Time Complexity is expressed as a chart that
-        - Contains two (2) axis
-            - Time
-            - Items = size of the input fed into the algorithm
 
-        - Produces a chart that is expressed as the Big "O" Notation
-            - Expressed as O(n)
-            - Where "n" refers to the number of affected items
+- Time Complexity
+    - It is a chart that w/ two (2) axis where:
+        - x-axis = Time
+        - y-axis = Items (input size fed to the algorithm)
+
+    - The chart is referred as the Big "O" Notation
+        - Mathematically expressed as "O(n)"
+            - Where "n" refers to the number of affected items 
 
 
 - On the practice code
