@@ -26,41 +26,36 @@ Performance & The Big "O" Notation
 
 - On the practice code
     - Focusing on the function "getMin()"
+        - Determine the Time Complexity of the algorithm used in the function
 
 
-    - To determine the Time Complexity of the function "getMin()" at runtime
-        - Group parts of the code into two (2) categorizes
-            - Runs ONLY once throughout the function's runtime
-            - Runs MORE THAN once
+    - Group parts of the code into two (2) categorizes
+        - Constant  = parts of the code that runs ONCE
+        - Dynamic   = parts of the code that runs MORE THAN ONCE
 
-        - As a visual aid
-            - Ascertain w/c parts of the code that fits into the given categorizes
-            - Insert breakpoints using "console.log()"
-
-        - Parts of the function's code that executes ONLY ONCE does not matter
-            - It simply executes ONCE regardless of the input size (i.e. input items)
-                - NOTE: Refers to the array's size (i.e. length)
-
-        - Parts of the function's code that executes MORE THAN once matter
-            - It is heavily dependent on the input size (i.e. input items)
-                
-            - Need to determine how many operations this part of the code executes
-                - Based on the given input size
-                
-            - In the function "getMin()", feeding it w/ an array of 100 elements
-                - The "for" loop will operate for 99 times
-                
-                - Based on how the "for" is configured
-                    - To start working w/ the 2nd element of the array
-
-            - This is expressed as "n" of the "O(n)"
+        - To serve as a visual aid
+            - Discern parts of the code that fits in the given category
+                - Manually insert breakpoints using "console.log()"
             
-            - The function "getMin()" has a "Linear Time Complexity"
-                - NOTE: It is linearly dependent on the length of the array (i.e. input size)
-                
-            - The bigger the input size
-                - The longer it takes to execute but ggrows in a linear way
+            - Load the web app on the browser
+                - Launch the browser's JavaScript console
+                - Visually count the number of times a part of the code executes
 
-                - An array w/ 100 elements
-                    - Takes around 100 times as long it takes on one (1) element
-                    - Does NOT grow exponentially (or slower) but at a linear rate
+        
+    - Focus ONLY on parts of the code that are dynamic
+        - As it is heavily dependent on the input size fed to the algorithm
+            - Influences the number of times that part of the code executes (operates)
+                - Based on the given input size
+            
+            - If the function "getMin()" is passed w/ an array of 100 elements
+                - The "for" loop executes for 99 times based on how it is configured
+
+            - Based on the behavior of the function's algorithm
+                - It considered to have a "Linear Time Complexity"
+
+                - It is linearly dependent on the input size (i.e. array size)
+                    - The bigger the input size, the longer it takes to execute
+                    - It does NOT grow exponentially (or slower) but rather on a linear rate
+
+
+    - The "Linear Time Complexity" is mathematically expressed as "O(n)"
