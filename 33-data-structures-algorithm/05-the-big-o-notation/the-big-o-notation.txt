@@ -51,11 +51,11 @@ Performance & The Big "O" Notation
                 - The "for" loop executes for 99 times based on how it is configured
 
             - Based on the behavior of the function's algorithm
-                - It considered to have a "Linear Time Complexity"
+                - It's performance is dependent on the input size
 
-                - It is linearly dependent on the input size (i.e. array size)
-                    - The bigger the input size, the longer it takes to execute
-                    - It does NOT grow exponentially (or slower) but rather on a linear rate
+                - The bigger the size, the longer it takes to execute
+                    - It grows in a linear way
+                    - It does NOT grow exponentially (or slower)
 
-
-    - The "Linear Time Complexity" is mathematically expressed as "O(n)"
+            - It can be said that this algorithm has a "Linear Time Complexity"
+                - It is mathematically expressed as "O(n)"
