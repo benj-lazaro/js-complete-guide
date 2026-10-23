@@ -1,0 +1,67 @@
+Performance & The Big "O" Notation
+----------------------------------
+- When faced w/ from multiple solutions for a given problem
+    - To find the best one, it is necessary to compare the solutions
+        - By figuring out each solution's runtime performance
+
+    - Determine how long a solution's operation take
+        - Pick the one that takes the less amount of time = fastest to execute
+
+    - Using a stopwatch is NOT a good idea as it is dependent on
+        - The hardware it (i.e. the test) is running on
+        - Background processes concurrently running
+        
+    - Best to test performance in a generalized form
+        - NOT in time units as results varies
+        - But in mathematical terms in the form of Time Complexity
+
+    - Time Complexity is expressed as a chart that
+        - Contains two (2) axis
+            - Time
+            - Items = size of the input fed into the algorithm
+
+        - Produces a chart that is expressed as the Big "O" Notation
+            - Expressed as O(n)
+            - Where "n" refers to the number of affected items
+
+
+- On the practice code
+    - Focusing on the function "getMin()"
+
+
+    - To determine the Time Complexity of the function "getMin()" at runtime
+        - Group parts of the code into two (2) categorizes
+            - Runs ONLY once throughout the function's runtime
+            - Runs MORE THAN once
+
+        - As a visual aid
+            - Ascertain w/c parts of the code that fits into the given categorizes
+            - Insert breakpoints using "console.log()"
+
+        - Parts of the function's code that executes ONLY ONCE does not matter
+            - It simply executes ONCE regardless of the input size (i.e. input items)
+                - NOTE: Refers to the array's size (i.e. length)
+
+        - Parts of the function's code that executes MORE THAN once matter
+            - It is heavily dependent on the input size (i.e. input items)
+                
+            - Need to determine how many operations this part of the code executes
+                - Based on the given input size
+                
+            - In the function "getMin()", feeding it w/ an array of 100 elements
+                - The "for" loop will operate for 99 times
+                
+                - Based on how the "for" is configured
+                    - To start working w/ the 2nd element of the array
+
+            - This is expressed as "n" of the "O(n)"
+            
+            - The function "getMin()" has a "Linear Time Complexity"
+                - NOTE: It is linearly dependent on the length of the array (i.e. input size)
+                
+            - The bigger the input size
+                - The longer it takes to execute but ggrows in a linear way
+
+                - An array w/ 100 elements
+                    - Takes around 100 times as long it takes on one (1) element
+                    - Does NOT grow exponentially (or slower) but at a linear rate
