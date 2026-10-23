@@ -48,14 +48,14 @@ Performance & The Big "O" Notation
                 - Based on the given input size
             
             - If the function "getMin()" is passed w/ an array of 100 elements
-                - The "for" loop executes for 99 times based on how it is configured
+                - The "for" loop will execute 99 times based on how it is configured
 
-            - Based on the behavior of the function's algorithm
-                - It's performance is dependent on the input size
+        - Based on the behavior of the implemented algorithm in the function
+            - It's performance is dependent on the input size
 
-                - The bigger the size, the longer it takes to execute
-                    - It grows in a linear way
-                    - It does NOT grow exponentially (or slower)
+            - The bigger the size, the longer it takes to execute
+                - It grows in a linear way
+                - But does NOT grow exponentially (or slower)
 
-            - It can be said that this algorithm has a "Linear Time Complexity"
-                - It is mathematically expressed as "O(n)"
+        - The algorithm has a "Linear Time Complexity"
+            - Mathematically expressed as "O(n)"
