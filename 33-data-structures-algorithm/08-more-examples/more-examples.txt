@@ -1,0 +1,54 @@
+More Examples
+-------------
+- The Constant Time Complexity
+    - Refers to the execution of an algorithm that
+        - Has the same execution time regardless of the input            
+        - It does NOT contain big things e.g. recursions
+
+    - Expressed as "O(1)"me
+
+    - NOTE: A function w/ single line of code does NOT guarantee a constant execution time
+
+    - Another good example
+        - Using the method ".push()" to add an element at the end of an array
+        
+        - It appends a new element w/out affecting the existing the elements
+            - NO matter how many existing elements in the array
+            - It will ALWAYS have the same execution (operation) time
+        
+
+- The Linear Time Complexity
+    - Refers to the execution of an algorithm that
+        - Has a linear execution time that is dependent on the input size
+
+        - The bigger the size, the longer it takes to execute
+            - But grows in a linear fashion
+            - e.g. 1000 input items takes 1000 times longer than one (1) item
+
+        - It contains big things (e.g. "for" loop)
+        
+    - Expressed as "O(n)"
+
+
+- The Quadratic Time Complexity
+    - Refers to the execution of an algorithm that
+        - The more input items it takes, the longer it takes to execute
+            - But grows exponentially at a faster rate
+    
+        - It contains nested recursions
+
+        - NOTE: If possible avoid algorithms w/ this time complexity as
+            - It quickly reaches a point where operations takes super long 
+
+    - Expressed as "O(n^2)"
+
+
+- The Logarithmic Time Complexity
+    - Refers to the execution of an algorithm that
+        - The more input items it takes, the longer it take to execute
+            - But grows in a slow rate; slower than the Linear Time Complexity
+            - e.g. 1000 input items does NOT takes 1000 times longer than one (1) item
+
+    - Expressed as "O(log n)"
+
+    - An example is a binary search algorithm
