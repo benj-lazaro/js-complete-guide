@@ -1,0 +1,52 @@
+More On Big O
+-------------
+- When determining an algorithm's Big O Notation
+    - What matters is Average Case
+        - Where the input size or the order of its elements is NOT known ahead of time
+
+    - Focuses on the big things (e.g. "for" loop)
+        - Ignore the constants (e.g. "if" statements) that
+            - May execute a few times or NOT at all
+
+    
+- On the practice code
+    - The function "getMin()"
+        - The Best Case is expressed as "O(n)"
+            - Where the input size is 1 or none
+
+            - The input size of 1
+                - Executes the statements "if", "let" & "return" ONLY ONCE
+
+            - The input size of 0
+                - Executes the "if" statement ONLY ONCE
+
+        - The Worst Case is expressed as "O(n - 1)" or simply "O(n)"
+            - Where the input > 1
+                - Executes ALL of the function's code
+    
+            - Performance is linearly dependent on the input size
+                - The bigger the input size, the longer it takes for the function to execute
+
+        - The Average Case is also expressed as "O(n)"
+            - Since the input size or the order of its elements in NOT known in advance
+            - Focuses on the big things ONLY (e.g. "for" loop)
+            - Ignores the constants (e.g. "if" statement)
+
+
+    - The function "getMin2()"
+        - The Best Case is expressed as "O(n^2)"
+            - Executes MOST of the function's code
+            
+            - Performs a bit "faster" when the input elements are ORDERED
+                - The constant (e.g. "if" statement) is skipped
+
+        - The Worst Case is expressed as "O(n^2)"
+            - Executes ALL of the function's code
+            
+            - Performs a bit "slower" when the input elements are ORDERED in REVERSE
+                - The constant ALWAYS gets called
+
+        - The Average Case is also expressed as "O(n^2)"
+            - Since the input size or the order of its elements in NOT known in advance
+            - Focuses on the big things ONLY (e.g. "for" loop)
+            - Ignores the constants (e.g. "if" statement)
