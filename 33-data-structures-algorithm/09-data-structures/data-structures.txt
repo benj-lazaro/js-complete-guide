@@ -1,0 +1,77 @@
+Diving Into Data Structures & Time Complexities
+-----------------------------------------------
+- Data structure is anything that stores data
+    - e.g. array, map, object, set, string
+
+
+- JavaScript have different built-in data structures that
+    - Offers different time complexities 
+
+    - Important to be aware of it in order to
+        - Use the right data structure for the task to be solved
+
+    
+- On the practice code
+    - Create global constant named "age"
+        - Assign an array w/ the elements 30, 29 & 54 
+
+        - Add a new element of 60 at the end of the array 
+            - Using the method ".push()" 
+
+            - This operation returns a Constant Time Complexity or "O(1)"
+                - It does NOT affect the rest of the elements of the array
+
+        - Add a new element of 10 at the beginning of the array
+            - Using the method ".unshift()"
+
+            - This operation returns a Linear Time Complexity or "O(n)"
+                - It moves ALL of the elements of the array (to the right)
+
+
+    - Create a global constant named myAge
+        - Assign the element located at index 1 as value
+            - This operation returns a Constant Time Complexity or "O(1)"
+                - It immediately find the target element
+                - It does NOT traverse the entirety of the array to find the target
+
+
+    - Create a global constant named named "namePopularity"
+        - Assign an array that contains the following object elements
+
+            { userName: "Max", usages: 5 }, { userName: "Manuel", usages: 6 }
+
+        - Create a another global constant named "manuelUsage"
+            - Access the global constant "namePopularity"
+                - Chain the method ".find()"
+                    - Pass an Arrow function as argument
+                    - Chain the property ".usages"
+
+                - On the Arrow function
+                    - Declare the parameter variable named "person"
+
+                - Inside the Arrow function
+                    - Access the parameter variable "person"
+                    - Chain the property ".userName
+
+            - If the target object is located at the array's index 0
+                - The operation returns a Constant Time Complexity or "O(1)"
+                - It prevents from traversing the entire array
+
+            - If the target object is located anywhere in the array
+                - The operation returns a Linear Time Complexity or "O(n)"
+
+
+    - Rebuilding the previous example using a map
+        - Create a global constant named "nameMap"
+            - Assign an JavaScript Object Literal as value that
+                - Contain the following properties & values
+
+        - Create a global constant named "manuelUsage2"
+            - Access "nameMap"
+                - Chain a "[ ]"
+                - Pass "manuel" as an argument value (or key)
+
+            - This operation returns a Constant Time Complexity or "O(1)"
+                - It immediately returns the value of the associated key
+
+        
