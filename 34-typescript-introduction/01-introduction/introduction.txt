@@ -1,0 +1,6 @@
+Module Introduction
+-------------------
+- This section focuses on:
+    - What TypeScript is
+    - How it works & use it
+    - How it adds new features to & write cleaner JavaScript code
