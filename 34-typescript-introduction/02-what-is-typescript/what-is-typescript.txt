@@ -1,0 +1,23 @@
+What Is TypeScript And Why Would You Use It?
+--------------------------------------------
+- TypeScript is NOT a brand-new programming language
+    - It is a "super-set" to JavaScript
+        - Basically JavaScript w/ MORE syntax features (i.e. syntactic sugar)
+            - However, it is NOT supported by the browser
+    
+    - Requires a compiler that compiles TypeScript into JavaScript code
+        - It can compile next-generation JavaScript to its old-generation JavaScript counterpart
+            - For backward compatibility w/ older browsers
+
+        - This is similar to the 3rd-party tool "Babel" used for JavaScript
+            - Except that TypeScript has this as a built-in feature instead
+
+    - Offers explicit declaration of static data types during coding
+        - Prevents unintended logical bugs PRIOR to run-time (as JavaScript)
+            - Flagged as compile-time errors
+
+        - JavaScript static data types are evaluated at run-time
+            - Unintended logical bugs will ONLY be discovered then
+
+    - Offers features that does NOT exists in JavaScript
+        - These features are eventually compiled down to as JavaScript workarounds
