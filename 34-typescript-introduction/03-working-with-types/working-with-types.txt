@@ -1,0 +1,63 @@
+Working With Types
+------------------
+- Download the latest TypeScript compiler from their official website
+    - Website (https://www.typescriptlang.org/)
+
+    - Install the compiler globally using Node.js npm
+
+        npm i -g typescript
+
+    
+- On the practice code
+    - Create a file named "app.ts"
+
+
+    - Inside the file
+        - Create a function named "add()"
+            - Declare two parameter variables named "a" & "b"
+            
+            - On each parameter variable
+                - Specify the expected data type using the suffix ": number"
+                - Explicitly specifies to expect a "number" data type
+
+        - Inside the function
+            - Return the sum through the statement "a + b"
+
+        - Create a global constant named "result"
+            - Assign the call of the function "add()" as value
+            - Pass the values 5 & 3 as argument values
+
+        - Call "console.log()"
+            - Pass the global constant "result" as an argument values
+
+
+    - Create a new file named "index.html"
+        - Use VS Code's HTML template generator
+            - On the HTML element <script> attribute "src"
+            - Assign the file "app.js" as value
+            - Followed by the attribute "defer"
+
+
+    - Compile the "app.ts" file into JavaScript code
+        - Launch VS Code's integrated terminal
+        
+        - Use the TypeScript Compiler (tsc) to compile the code into JavaScript
+
+            tsc app.ts
+
+        - The fle "app.js" is automatically generated
+            - Contains JavaScript code in "strict mode"
+        
+
+    - Back on the "app.ts" file
+        - Changing the 1st argument value to a string data type
+            - VS Code IMMEDIATELY flags this as an error
+            - It does NOT comply w/ the declared data type for the 1st parameter
+
+        - Disregarding the error & compiling the code
+            - The compiler flags an error
+
+                "Argument of type "<string_value>" is not assignable to parameter of type 'number'
+
+        - NOTE: This is the very reason for using TypeScript
+            - It requires to be very specific about the types of data
