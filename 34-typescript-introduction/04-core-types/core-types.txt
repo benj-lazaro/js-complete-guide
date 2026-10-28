@@ -1,0 +1,147 @@
+Core Types & Diving Deeper
+--------------------------
+- TypeScript has a key feature called "Type Inference" 
+    - Wherein it infers the data type(s) it is working on
+    
+    - NOTE: In VS Code, hovering the mouse pointer over
+        - A constant that (for example) receives the returned value from a function
+            - Shows the inferred data type that the constant is expected to work on
+
+        - A function 
+            - Shows the inferred data type of the parameter variables & returned value
+
+
+- The supported core data types in TypeScript
+    - It has the same core data types of JavaScript
+        - e.g. number, string, boolean, object, function & so on
+
+    - NOTE: Assigning a value to a constant
+        - TypeScript infers the actual value instead of the data type
+        - Since a constant is NOT capable of being re-assigned w/ a new value
+
+    - The data type "function"
+        - It is made up of two (2) parts
+            - Parameter type(s)
+            - Return type
+
+    - The data type "void"
+        - Optionally declared on a function's return value 
+            - If the function returns NO value
+            - TypeScript can infer the type "void"
+
+        - NOTE: The data type "undefined" can be use in its place
+            - However, TypeScript treats it differently
+
+            - In JavaScript
+                - A function that returns NO value
+                - implicitly returns an "undefined" value
+
+            - In TypeScript
+                - A function w/ an explicit "undefined" return value
+                
+                - It expects that the function to has a "return undefined" statement
+                    - Otherwise, it flags an error PRIOR to compile-time
+                
+            - Best practice for a function that returns NO value
+                - Remove the "return" statement
+                - TypeScript infers the data type of the function's return value as "void"
+
+
+    - The data type "any"
+        - Optionally declared on a function's parameter variable(s)
+            - Where the value(s) data type is/are NOT be determined ahead of time
+    
+        - NOTE: Use "any" carefully
+            - This is the "default" data type on ALL values
+                - Considered as the "last resort" 
+
+            - Strips TypeScript's advantage of being strongly-typed
+                - It basically works on "any" value
+                - Unable to catch error early (prior to compile or run-time)
+
+
+- To override or typecast "Type Inference"
+    - Use the keyword "as"
+        - Followed by the intended data type
+        - NOTE: This approach is being adapted more frequently as of 2019
+
+    - Alternatively, use "< >"
+        - In front of the thing whose value data type is intended to be overridden
+        - Pass the intended data type as an argument value
+
+    - NOTE: Choose one (1) approach
+        - Remain consistent on the entire codebase
+
+
+- On the practice code (index.html)
+    - On the "index.html" file
+        - Add two HTML element <input>
+            - Assign the attribute "id" w/ the values "num1" & "num2", respectively
+
+        - Add a HTML element <button> w/ the content "Add"
+
+    
+    - On the "app.ts" file
+        - Define a function named "printResult()"
+            - Define the parameter variable named "result"
+            - Declare the returned data type as "void"
+            - NOTE: This is optional
+
+        - Inside the function
+            - Call "console.log()"
+            - Pass the parameter "result" as an argument value
+
+        - Create a global constant named "num1Input"
+            - Assign the method "document.getElementById()" as value
+                - Pass "num1" as an argument value
+                - Chain the keyword "as"
+                - Followed by "HTMLInputElement"
+            
+            - IMPORTANT: Overrides TypeScript's Type Inference (typecasting)
+                - Informs TypeScript that the assigned value is an HTML Element <input> that
+                - Contains the property ".value"
+
+        - Create a global constant named "num2Input"
+            - Assign the method "document.getElementById()" as value
+                - Pass "num2" as an argument value
+            
+            - Prefix the method w/ "<HTMLInputElement>"
+    
+            - NOTE: This is an alternative typecasting approach
+
+        - Create a global constant named "addButton"
+            - Assign the method "document.querySelector()" as value
+            - Pass "button" as an argument values
+
+        - Access the global constant "addButton"
+            - Followed by a null operator "?"
+            - Chain the method ".addEventListener()"
+            - Pass the following argument values:
+                - 1st = "click"
+                - 2nd = an Arrow function
+
+        - Inside the Arrow function
+            - Create a local constant named "num1"
+                - Assign "+num1Input.value" as value
+
+                - NOTE: "+" typecasts the string to a number data type
+
+            - Create a local constant named "num2"
+                - Assign "+num2Input.value" as value
+            
+            - Create a local constant named "sum"
+                - Assign a call to the function "add()" as value
+                - Pass the local constants "num1" & "num2" as argument values
+
+            - Call the function "printResult()"
+                - Pass the local constant "sum" as argument values
+
+
+    - Compile the TypeScript file "app.ts" into JavaScript (app.js)
+
+        tsc app.ts
+
+
+    - Load / reload the web browser
+        - Launch the browser's Developer Tools
+        - Click the "Console" tab
