@@ -1,0 +1,56 @@
+Object Types, Array Types & Function Types
+------------------------------------------
+- Working w/ the "object" data type
+    - TypeScript automatically infers the data type
+    - NO need to explicitly assign the data type "object"
+
+
+- Working w/ an empty array & later assigned w/ object elements
+    - Explicitly infer the object element's properties & corresponding data type
+        - On the array's type assignment field ": "
+        - Specific the object's properties & corresponding data type w/in "{ }"
+        - Then followed by a "[]"
+
+            let <array>: { <property>: <data_type> }[] = [];
+
+        - NOTE: Informs TypeScript to accept
+            - Elements that is of "object" data type that
+                - Contain specific properties w/ matching data type
+        
+            - Prevents elements of other data types
+                - From unintentionally added or pushed into the array
+
+    - IMPORTANT: If an object element (to be assigned) to an array contains
+        - A method that is (understandably NOT declared) w/in the "{<property>: <data_type>}[]"
+            - TypeScript flags an error
+
+        - To address this concern:
+            - Remove the "{<property>: <data_type>}[]" declaration
+
+            - TypeScript automatically infers the corresponding data type based
+                - On the data type of the properties' & of the returned value from the method
+
+        - Better approach:
+            - Declare the method name w/in the "{<property>: <data_type>}[]"
+                - On the type assignment field ": " assign the value of "() => "
+                - Followed by the data type of the method's return value (e.g. void)
+
+                let <array>: { <property>: <data_type>, <method>: ()=> "<return_data_type>" }[] = [];
+
+            - If the method has & works w/ parameter variables
+                - Declare the parameter variables w/in the "()"
+                    - Followed by their corresponding data type
+
+                let <array>: { <property>: <data_type>, <method>: (<parameter>: <data_type>, ...) =>
+                 "<return_data_type>" }[] = [];
+                 
+            - NOTE: This approach is more readable
+
+
+- Working w/ an initialized array
+    - TypeScript implicitly infers the array's data type 
+        - Based on the initially assigned elements' data type
+    
+        let <array>: = ["a", "b", "c"]; // an array of string or "string[]"
+
+        - NOTE: The example is inferred as "string[]" or an array w/ string elements
