@@ -1,0 +1,132 @@
+Advanced Types (Literal Types, Union Types, Enum)
+-------------------------------------------------
+- The TypeScript Type Alias
+    - Uses the keyword "type"
+        - Followed by a data type name w/ its 1st letter capitalized
+        - Then a "=" operator
+        - Followed by the assigned core, literal or union data type
+
+        type PrintMode = "console";
+
+    - This allows to create one's own data type
+        - Write lengthy (complex) data type assignment once (on a separate line of codd)
+            - Then referenced by other parts of the code base 
+
+
+- The TypeScript Literal Type
+    - This allows a literal value to be declared as a data type
+
+        function printResult(result, printMode: "console" | "alert") {
+            ...
+        }
+
+
+- The TypeScript Union Type
+    - Expressed using the "|" operator
+        - Allows two (2) different data types on a Type Alias
+        - Works w/ primitive (core) data & literal types
+
+        type PrintMode = "console"  | "alert"
+
+
+- The TypeScript Enum Type
+    - Using the keyword "enum"
+        - Followed by a data type name w/ its 1st letter capitalized
+        - Then a pair of "{ }"
+        - Pass ALL allowed values as argument values to the "{ }" wherein
+            - Each value is written in capitalized letters & Separated by a ","
+
+            enum OutputMode =  { CONSOLE, ALERT };
+
+    - It serves as an alternative
+        - To a Union type assigned w/ Literal type values
+        - Preferred approach when working w/ multiple allowed values
+
+    - It basically creates an array of choices
+        - Each allowed value is accessed similar to that of an object property
+        - EXCEPT that the property name is capitalized 
+
+            printResult(result, OutputMode.CONSOLE);
+
+    - Behind-the-scenes
+        - The allowed values are stored as numbers
+            - Similar to an array's index value
+            - When compiled into JavaScript code
+
+
+- On the practice code (app.ts)
+    - Use a Type Alias on the data type of the global constant "result"
+        - On the line of code that precedes the constant "result"
+        
+        - Use the keyword "type"
+            - Then a data type alias name "CalculationResults"
+            - Followed by the "=" operator
+
+        - On the assigned data type of the constant "result"
+            - Cut the line "{ result: number; print: () => void }[]"
+            - Paste it as value for the type alias "CalculationResults"
+
+        - On the constant "result"
+            - Replace the removed assigned data type w/ the alias "CalculationResults"
+
+    
+    - On the function "printResult()"
+        - Add a 2nd parameter variable named "printMode"
+            - Intended to be assigned w/ two (2) string values
+                - Namely "console" & "alert", respectively
+        
+            - On the data type field assignment
+                - Assign the literal string values "console" & "alert"
+                - Separated by a "|" operator (i.e. making it a Union type)
+
+        - On the parameter variable "result"
+            - Re-assign it w/ the Type Alias "CalculationResults"
+
+        - Inside the function
+            - Use an "if" statement to check the value of the parameter "printMode"
+            
+            - If the value is "console"
+                - Call "console.log()"
+                - Pass the parameter "result" as an argument value 
+
+            - If the value is "alert"
+                - Call "alert()"
+                - Pass "result[0].res" as an argument value
+
+        - To make the Literal type assigned to the parameter "printMode" modular
+            - Create a new type alias 
+                - Using the keyword "type" followed by name "PrintMode"
+                - Assign a Union type value containing the strings "console" & "alert()"
+            
+            - Replace the data type of the "printResult()" function parameter "printMode"
+                - Using the type alias "PrintMode"
+
+        - An alternative approach to Union type is an Enum type
+            - Use the keyword "enum"
+                - Followed by an type alias named "OutputMode"
+                - Next is a pair of "{ }"
+                
+            - Inside the pair of "{ }"
+                - Pass the allowed values written in capitalized letters
+                    - i.e. "CONSOLE" & "ALERT"
+
+                - Each allowed value is separated by a ","
+
+            - Replace the data type of the parameter "printMode"
+                - To "OutputMode"
+
+            - Inside the "printResult()" function's "if" statements
+                - Check the value of the parameter "printMode"
+                - For values of "OutputMode.CONSOLE" or "OutputMode.ALERT"
+
+            - On the calls to the function "printResult()"
+                - Change the 2nd argument value to 
+                - OutputMode.CONSOLE or OutputMode.ALERT, respectively
+
+
+    - Save the changes
+        - Compile the TypeScript code to JavaScript code
+
+            tsc ts.app
+
+        - Load / reload the browser
