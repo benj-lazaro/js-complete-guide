@@ -1,0 +1,92 @@
+Classes & Interfaces
+--------------------
+- Modern-day JavaScript & TypeScript supports Classes
+    - TypeScript can compile class code into older JavaScript code that
+        - Does NOT natively support classes
+        - Converts them into Constructor functions that runs on older browsers 
+    
+
+- Common approach on creating a Class in TypeScript
+    - Inside the Class
+        - Define the access modifiers, field names & their corresponding data types
+        - NOTE: Access modifier "public" is NOT REQUIRED to be explicitly declared 
+
+    - On the Constructor method's parameter field
+        - Define the parameter variables & its corresponding data type
+        - Based on the Class' fields that will be used w/in the method
+
+    - Inside the Constructor method
+        - Reference the Class fields w/ the keyword "this"
+
+
+- Shorthand approach on creating a Class in TypeScript
+    - On the Class' Constructor method parameter field
+        - Define the access modifiers, field names & their corresponding data types
+        - NOTE: Access modifier "public" is REQUIRED to be explicitly declared 
+
+    - Inside the Constructor method
+        - The parameter variables automatically converted into Class fields
+        - REMOVES the need to reference the Class fields w/ the keyword "this"
+
+
+- Class inheritance in TypeScript
+    - Similar to that of JavaScript
+        - Requires the use of the keywords "extends"
+        - Followed by the parent Class name 
+
+    - On the Constructor method's parameter fields
+        - NO need to declare the access modifiers on inherited fields
+            - ONLY the corresponding data type
+
+        - Non-inherited Class fields are REQUIRED 
+            - To declare BOTH access modifier & data type
+
+    -  Inside the Constructor method
+        - Use the function "super()"
+            - Pass the inherited Class fields as argument values
+
+
+- Creating an Interface in TypeScript
+    - An Interface is a "blueprint"
+        - Similar to that of a Class; defining properties & methods
+        - NOT intended to be instantiated into an object
+        - Offers the type safety of a Class
+
+    - Use the keyword "interface"
+        - Followed by the name of the Interface (1st letter is capitalized)
+
+    - Inside the Interface
+        - Define properties & their corresponding data types
+        - Define method & their corresponding (returned value) data types
+    
+    - An Interface is used as a data type
+        - Serves as an alternative to Type Alias
+    
+    - An Interface as a Contract on a Class
+        - On a Class declaration
+            - Implemented using the keyword "implements"
+            - Followed by the name of the Interface
+
+        - A Contract forces a Class to have certain structures (i.e. property / method)
+            - Defined inside an Interface
+
+                interface Greetable {
+                    <property>: <data_type>;
+                }
+
+                class User implements Greetable {
+                    constructor(<property>: <data_type>) {}
+                }
+
+        - Removing the defined Interface property from a Class will flag an error
+            - NOTE: A class can ADD MORE (properties / methods) than
+                - What an Interface (as a Contract) demands but NEVER LESS
+
+        - A Contract is useful on bigger projects w/ multiple developers
+            - Helps keep track of what you want to do where
+            - Forces other developers to do something in a certain way
+            - Enforces the same style towards the same goal
+
+    - NOTE: When compiling into JavaScript code
+        - Defined Interface(s) are lost
+        - Compiled into code that does NOT use the keyword "class"
