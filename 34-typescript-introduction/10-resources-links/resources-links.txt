@@ -1,0 +1,4 @@
+Useful Resources & Links
+------------------------
+- Official TypeScript documents
+    - Reference (https://www.typescriptlang.org/)
