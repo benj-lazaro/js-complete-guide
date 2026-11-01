@@ -1,0 +1,38 @@
+Configuring TypeScript Compiler
+-------------------------------
+- The "-w" flag (watch mode) of the TypeScript compiler
+    - Automatically compiles the TypeScript code whenever changes are saved
+    - Use "CTRL + C" to quit
+
+
+- To create a TypeScript managed project
+    - Create a "tsconfig.json" file 
+
+        tsc --init
+
+    - This allows to compile ALL TypeScript files simultaneously
+        - Using the command "tsc" ONLY
+        - Alternatively, the command "tsc -w" if preferred to run in watch mode
+    
+        tsc
+
+
+- The "tsconfig.json" file
+    - Allows to configure the TypeScript compiler
+
+    - NOTE: The compiler PRIOR to the creation of "tsconfig.json" file
+        - Is configured differently from the compiler after the file is created
+
+    - The field "target"
+        - Refers to the version of JavaScript that TypeScript converts into
+        - Default value of "esnext"
+
+    - The field "strict"
+        - Refers to the enabling the strict mode related checks on the TypeScript code
+        - Default value of true (boolean)
+    
+        - NOTE: When encountering the "error TS2532: Object is possibly 'undefined'."
+            - This occurs when the "strict" field is enabled
+
+            - A workaround is to add "!" suffix to the object being accessed
+                - Provided that the object returns a value other than "undefined" is expected
