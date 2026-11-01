@@ -1,0 +1,112 @@
+Generic Types
+-------------
+- TypeScript Generic data type
+    - An Array type is a Generic type in TypeScript
+        - It is read as two (2) separate values:
+            - Array type
+            - Data type of its elements
+
+        - Using Array data type directly
+            - Requires to pass one (1) type argument
+            - Otherwise, it flags an error prior compile-time
+
+        - It requires declaring the "<T>" placeholder
+            - Right after the "Array" keyword 
+
+            - Replace "T" w/ the specific data type
+                - e.g. any, string, number, interface, etc.
+
+            - NOTE: The letter "T" placeholder can be replaced w/ any letters
+                - The common identifier used is "T"
+                - Probably in reference to "type" (or data type)
+        
+            // Array w/ elements of type Interface "CalculationContainer"
+            const results: Array<CalculationContainer> = []; 
+
+
+    - A Promise type also a Generic type in TypeScript
+        - It is read as two (2) separate values:
+            - Promise type
+            - Data type of the resolved (returned) value
+
+        
+- To create function of Generic type
+    - Create a function similar to that of JavaScript
+
+    - In-between the function name & the parameter field
+        - Insert the "<T>" placeholder
+
+    - On the function's parameter field
+        - Declare the placeholder "T" as data type of its variable(s)
+
+
+        function <function_name><T>(<parameter>:T) {
+            //
+            return <variable>;
+        }
+
+    - This is read as whoever calls the function
+        - TypeScript checks the data type of the passed argument value(s)
+        
+        - Adopts & works w/ that data type inside the function body
+
+        - NOTE: The placeholder "T" can also be used anywhere in the function body
+
+    - Calling the function
+        - Requires passing the intended data type as argument value
+            - To the pair of "< >" located in-between the function and pair of "( )"
+        
+        <function_name><data_type>(<argument_value>);
+
+
+- On the practice code (app.ts)
+    - Create a function of Generic type named "logAndEcho()"
+        - Insert the placeholder <T> in-between the function name & parameter field
+
+
+    - On the parameter field
+        - Define the parameter variable named "value"
+        - Assign it with the data type of the "T" placeholder
+
+
+    - Inside the function
+        - Call "console.log()"
+        - Pass the parameter variable "value" as an argument value
+        - Return the parameter variable "value"
+
+
+    - Create a global constant named "resultStr"
+        - Assign a call to the function "logAndEcho()" as value
+            - Insert the data type placeholder "<string>"
+                - In-between the function name "logAndEcho" & its pair of "()"
+
+            - Pass "Hello There" as an argument value to the function
+
+            - Chain the string method ".split()"
+                - Pass " " as an argument value
+
+
+    - Call "console.log()"
+        - Pass the global constant "resultStr" an argument value
+
+
+    - Create a global constant named "resultNum"
+        - Assign a call to the function "logAndEcho()" as value
+            - Insert the data type placeholder "<number>"
+                - In-between the function name "logAndEcho" & its pair of "()"
+
+            - Pass 47 as an argument value to the function
+
+
+    - Call "console.log()"
+        - Pass the global constant "resultNum" an argument value
+
+
+    - Save the changes
+        - Compile TypeScript code into JavaScript code
+
+            tsc app.ts
+
+        - Load / reload the browser
+            - Launch the browser's DevTools
+            - Click the "Console" tab
