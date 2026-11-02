@@ -1,0 +1,50 @@
+Web Components In Action
+------------------------
+- Web components are basically custom HTML elements
+    - These HTML elements are NOT built-in the browser
+    
+    - Behind-the-scenes
+        - Uses browser native HTML elements that are grouped together
+        - Add logic using JavaScript
+        - Imported into HTML via HTML element <script>
+
+    
+- On the practice code (index.html)
+    - Import the attached web component (modal.js)
+        - Using the HTML element <script>
+
+
+    - Implement the web component <uc-modal>
+
+
+    - Inside the <uc-modal>
+        - Add a HTML element <h1>
+            - Define a custom attribute "slot"
+            - Assign the value of "title"
+
+        - On the content of the HTML element <h1>
+            - Add "The Modal Title"
+
+        - Add a HTML element <p>
+            - For its content, add "This is our first web component!"
+
+    
+    - Add another HTML element <script>
+        - Inside, create a local constant named "modal"
+            - Assign the method "document.querySelector()" as value
+                - Pass "uc-modal" as an argument value
+
+            - Call "setTimeout()"
+                - Pass two argument values
+                    - 1st = an Arrow function
+                    - 2nd = 3000 (milliseconds or 3 seconds)
+
+                - Inside the Arrow function
+                    - Call "modal.open()"
+
+
+    - Save the changes
+        - Load / reload the browser
+
+        - Loads the web app
+            - After 3 seconds, a modal will be rendered
