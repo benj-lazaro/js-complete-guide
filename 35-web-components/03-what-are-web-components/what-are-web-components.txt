@@ -1,0 +1,28 @@
+What Are Web Components
+-----------------------
+- Web Components has three (3) core features:
+    - Custom HTML elements
+        - Creation of custom HTML elements
+        - Define their corresponding logic behind it via JavaScript
+
+    - Shadow DOM
+        - Manage a separate DOM node tree for custom HTML elements
+            - Including scoped CSS styles
+
+        - Prevents interference w/ normal HTML elements
+
+    - Templates & Slows
+        - Write a HTML template that can be added to the custom HTML element
+
+        - A Template will be rendered as a "Shadow DOM"
+
+        - A Slot exposes entry point(s) that
+            - Allow to enter content into a custom HTML element
+
+    - HTML Imports (*** DISCONTINUED ***)
+        - Allows the importation of HTML files into HTML files
+            - In order to define a template for a custom HTML element 
+
+        - Replaced by JavaScript w/ modern-build tools
+            - JavaScript modules import & export HTML templates inside a JavaScript file
+            - HTML templates are imported as a string
