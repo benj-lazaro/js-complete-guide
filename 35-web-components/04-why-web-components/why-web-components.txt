@@ -1,0 +1,24 @@
+Why Web Components?
+-------------------
+- Why use Web Components
+    - Encapsulates logic & a User Interface in a custom HTML element 
+        - Easy to understand
+        - Easy to maintain
+        - Offers a separation of concerns
+
+    - Reusable across different HTML documents (i.e. pages)
+        - Use it (i.e. Web Component) like a normal HTML element
+
+        - Do NOT worry about overlapping logic
+
+        - Write logic + UL ONLY once
+            - Pass different content into it at different parts of the app
+
+    - Reusable across different projects (apps)
+        - Use it (i.e. Web Component) like a normal HTML element
+
+        - Write projects using different frameworks (e.g. Angular, React)
+            - Drop in the same Web Component on BOTH projects
+
+        - Re-use core UI elements across multiple projects
+
