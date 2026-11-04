@@ -1,0 +1,41 @@
+Getting Started
+---------------
+- Learning Web Components from scratch
+    - Using vanilla JavaScript that runs natively on the browser
+    - NO 3rd-party libraries and packages
+
+
+- A brief refresher on Web Components
+    - It is basically a custom HTML element
+        - Defined using JavaScript
+        - Imported into HTML documents
+
+    - It is made up of three (3) specifications
+        - Custom HTML element specification
+            - Bunch of JavaScript functionalities that defines
+                - A Web Component & the associated logic behind it
+
+            - Registers the Web Component
+                - To be imported into a HTML document
+
+        - Shadow DOM specification
+            - Create & manage a separate DOM node tree
+                - To support a Web Component including its scoped CSS styles
+
+            - Hidden away from the main DOM tree
+                - Prevents "contaminating" normal HTML elements            
+
+        - Templates & Slots
+            - Define the HTML structure (i.e. Template)
+                - Hidden behind a Web Component
+
+            - Slot(s) add flexible entry point(s) that
+                - Allows to populate information into a Web Component from outside
+
+        - HTML Imports (*** DISCONTINUED ***)
+            - Import HTML files into HTML files
+                - Similar to importing a CSS & JavaScript files in a HTML file
+
+            - Discontinued due to the fact that 
+                - There is a more elegant way of importing Web Component(s) in a HTML file
+
