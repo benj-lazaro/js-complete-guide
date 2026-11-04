@@ -1,0 +1,24 @@
+Web Component Browser Support
+-----------------------------
+- To check & verify support for Web Components on major web browsers
+    - Visit the official website (https://www.webcomponents.org/)
+    
+    - Scroll-down to the section "Browser support"
+        - Displays a table of web browsers
+        - Column of supported Web Component specifications (per browser)
+
+        - NOTE: The "ES Modules" specifications refers 
+            - To importing JavaScript files into JavaScript files
+
+        - PERSONAL NOTE: The lesson based in 2019 indicates that
+            - Microsoft Edge browser does NOT yet support "Custom Elements" & "Shadow DOM"
+            - Requires a 3rd-party polyfills to support these specifications
+            - HOWEVER in 2026, these are NOW fully supported
+
+    - Alternatively, use the "Can I use" website (https://caniuse.com/)
+        - Search for Custom Elements v1 (current specification)
+            - Reference (https://caniuse.com/?search=custom+elements)
+
+        - Provides a MORE accurate report
+            - On major web browser's support on Web Component's specifications
+
