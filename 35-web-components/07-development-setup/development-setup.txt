@@ -1,0 +1,47 @@
+Development Setup
+-----------------
+- Two (2) ways of building Web Components
+    - Autonomous Elements
+        - A Web Component that is NOT dependent on anything
+        - Totally independent from existing normal HTML elements
+        - Common approach 
+
+        - NOTE: This lesson focuses on building Autonomous Elements
+
+    - Extending built-in HTML Elements
+        - Builds (extends) on top of existing normal HTML elements
+
+
+- On the practice Code
+    - Create a new HTML document named "index.html"
+    
+
+    - Inside the "index.html" file
+        - Use VS Code's HTML boilerplate shortcut
+            - To populate the file w/ basic HTML mark-up
+
+        - On the HTML element <title>
+            - Assign "Web Components" as its content
+
+        - Save the changes
+
+        - NOTE: This file hosts the Web Component(s) to be built
+
+
+    - Create a new JavaScript file named "tooltip.js"
+        - Leave the file empty for now
+
+        - NOTE: This file will contain the code necessary
+            - To create a Web Component
+
+
+    - Back on the "index.html" file
+        - Add the HTML element <script>
+            - Located underneath the HTML element <title>
+
+        - Add the HTML attribute "src"
+            - Assign the file "tooltip.js" as value 
+
+        - Save the changes
+
+        - NOTE: Imports the "tooltip.js" file in the HTML document
