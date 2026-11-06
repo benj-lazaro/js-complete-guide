@@ -1,0 +1,97 @@
+A First Custom Element
+----------------------
+- Building the 1st custom element (i.e. Web Component)
+    - Requires writing a new Class that
+        - Extends the "HTMLElement" Class built into the browser
+
+    - Despite extending an existing Class
+        - It builds an autonomous / independent Web Component
+
+    - Grants access to a basic HTML element
+        - To build a Web Component
+        - Does NOT dependent on an built-in (i.e. normal) HTML element
+
+    - Inside the created Class
+        - Place ALL the logic that makes up the Web Component
+
+        - The logic to be implemented for the 1st Web Component
+            - Render a tooltip icon
+            
+            - Hovering the mouse pointer on the icon
+                - Presents a tooltip to the user
+
+
+- To register a Web Component
+    - Using the built-in JavaScript object named "customElements"
+        - Accessing the method ".define()"
+
+    - The method requires two (2) argument values:
+        - 1st = Custom HTML tag name (string)
+        - 2nd = Class that holds the Web Component's logic
+
+        - IMPORTANT: Naming convention for the custom HTML tag
+            - A single word w/c consists of two (2) words separated by a "-"            
+                - Using "_" as a word separator is NOT ALLOWED
+
+                - Using a single word HTML tag name is NOT ALLOWED
+                    - Prevent accidental override of the browser's built-in HTML elements                
+    
+            - Choose a unique prefix (i.e. 1st word prior to the "-")
+                - Ensures a Web Component's HTML tag of being unique
+                
+                - Offers a low chance of clashing w/
+                    - Other Web Components' from different libraries
+
+                - Common convention is using a company or name initials as a prefix
+                    - e.g. "udemy-tooltip"
+
+    - The method '.define()"
+        - Instantiates the Class containing the Web Component's logic into an object
+            - Whenever it encounters the registered custom HTML tag
+
+        - The created object provides access to the logic behind the Web Component
+
+    - Use the HTML element <script>
+        - To import the JavaScript file that holds the Web Component's logic into an HTML document
+    
+    - Inside the HTML document
+        - Use the Web Component's custom HTML element like a normal HTML element
+
+
+- On the practice code
+    - On the file "tooltip.js"
+        - Create a new Class named "Tooltip"
+            - Use the keyword "extends" to extend the built-in Class "HTMLElement"
+
+        - Inside the Class "Tooltip"
+            - Create a Constructor method
+
+        - Inside the Constructor method
+            - Call "super()" function
+                - Required when extending a Class from an existing Base Class
+                - Prevents an "Uncaught ReferenceError" error from being flagged
+
+            - Call "console.log()"
+                - Pass the string "It is working!" as an argument value
+
+        - Register the Web Component
+            - Access "customElements" object
+                - Chain the method ".define()"
+
+            - Pass the following argument values:
+                - 1st = "uc-tooltip" (Web Component's custom HTML tag)
+                - 2nd = Tooltip (Class name)
+
+        - Save the changes
+
+
+    - On the file "index.html"
+        - Use the HTML tag "uc-tooltip" like a normal HTML element        
+        - Save the changes
+
+
+    - Load / reload the browser
+        - Launch the browser's Developer Tools (i.e. DevTools)
+
+        - Click the "Console" tab
+            - The text "It is working!" should be displayed
