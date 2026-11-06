@@ -1,0 +1,65 @@
+Interacting With The Surrounding DOM
+------------------------------------
+- The core idea behind Web Components is
+    - To interact w/ the surround DOM elements in a HTML document
+
+    - On the recently created Web Component <uc-tooltip>
+        - To wrap it around a portion of the string content of a HTML element <p>
+
+        - Implement an icon that when hovered over by the mouse pointer
+            - Renders a tooltip content
+
+
+- On the practice code
+    - On the HTML file (index.html)
+        - Delete the Web Component <uc-tooltip> implemented on the previous lesson
+
+        - Add a HTML element <p>
+            - Assign the string "Web Components are awesome!" as content
+
+        - Wrap the Web Component <uc-tooltip>
+            - Around the string "Web Components"
+
+    
+    - On the JavaScript file (tooltip.js)
+        - On the Constructor method of the class "Tooltip"
+            - Remove the call to "console.log()"
+
+            - Create a local constant named "tooltipIcon"
+                - Assign the method "document.createElement()" as value
+                - Pass "span" as an argument value
+
+            - Access the local constant "tooltipIcon"
+                - Chain the property ".textContent"
+                - Assign the string " (?)" as value
+                - NOTE: Serves as the Web Component's icon
+
+            - Access the keyword "this"
+                - Chain the method ".appendChild()"
+                - Pass the constant "tooltipIcon" as an argument value
+
+        - Save the changes
+
+
+    - Load / reload the browser
+        - Launch the browser's Developer Tools
+        
+        - Click the tab "Console"
+            - Returns the following error message:
+                
+                "Uncaught DOMException: Failed to construct 'CustomElement':
+                 The result must not have children"
+
+            - PERSONAL NOTE: As of 2026, the error message is rendered as:
+
+                "Uncaught NotSupportedError: The result must not have children"
+
+
+        - This error is triggered due to the place 
+            - Inside the "tooltip.js" file appends the Web Component's icon in the DOM
+                - This action MUST NOT be performed w/in the Constructor method
+
+        - To address this concern:
+            - Understand how the JavaScript Engine creates a Web Component
+                - As it follows a specific lifecycle for Web Components
+                - To be discussed on the next lesson
