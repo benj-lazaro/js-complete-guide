@@ -1,0 +1,32 @@
+Web Component Lifecycle
+-----------------------
+- Web Component created
+    - Uses the Web Component's Constructor method
+        - Perform basic initializations
+        - Creates the Web Component
+        - Stores the Web Component in memory, NOT on the DOM
+
+    - NOTE: This is the WRONG PLACE to access the DOM
+        
+
+- Web Component attached to the DOM
+    - Uses the method ".connectedCallback()"
+        - To mount the Web Component to the DOM
+
+    - NOTE: This is the RIGHT PLACE to:
+        - Perform DOM initializations
+        - Add content to the Web Component
+        - Access the DOM
+
+
+- Web Component detached from the DOM
+    - Uses the method ".disconnectedCallback()"
+        - Automatically runs when detaching a Web Component from the DOM
+        - Performs the "clean up" work
+
+
+- Observed attribute updated
+    - Uses the method ".attributeChangedCallback()"
+        - Listens to changes on the Web Component's attributes 
+
+    - It is used for updating the Web Component's data & DOM
