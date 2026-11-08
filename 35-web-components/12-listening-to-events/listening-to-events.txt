@@ -1,0 +1,90 @@
+Listening To Events Inside The Component
+----------------------------------------
+- Implementing Event-related logic in the Web Component
+    - Renders a HTML element <div> w/ some text content
+        - When the mouse pointer hovers over the Web Component's area
+
+    - Clears the HTML element <div> & its content
+        - When the mouse pointer leaves the Web Component's area
+
+
+- On the practice code (tooltip.js)
+    - Inside the Web Component's Constructor method
+        - Create a private property named "_tooltipContainer"
+
+        - This private property will store the HTML element <div> that will be created
+            
+        - IMPORTANT: The "_" prefix
+            - Serves as a naming convention to indicate a "private" visibility
+            - Intended ONLY to be accessed w/in the same Class
+
+
+    - Outside the Constructor method
+        - Create two (2) private method respectively named
+            - "_showTooltip()"
+            - "_hideTooltip()"
+
+
+    - Inside the inherited method "connectedCallback()"
+        - PRIOR to calling the method ".appendChild()"
+
+        - Access the local constant "tooltipIcon"
+            - Chain the method ".addEventListener()"
+            - Pass the argument values:
+                - 1st = "mouseenter"
+                - 2nd = this._showTooltip.bind(this)"
+
+        - Access the local constant "tooltipIcon"
+            - Chain the method ".addEventListener()"
+            - Pass the argument values:
+                - 1st = "mouseleave"
+                - 2nd = this._hideTooltip.bind(this)"
+
+        - NOTE: The call to ".bind(this)" ensures that 
+            - The keyword "this" refers to the Class "Tooltip"
+            - NOT the object that called / triggered the Event w/c is the browser "Window"
+    
+    
+    - Inside the method "_showTooltip()"
+        - Access the private property "this._tooltipContainer"
+            - Assign the inherited method "document.createElement()" as value
+            - Pass "div" as an argument value
+
+        - Access the private property "this._tooltipContainer"
+            - Chain the property ".textContent"
+            - Assign "This is the tooltip text!" as value
+
+        - Access the inherited method "this.appendChild()"
+            - Pass the private property "this._tooltipContainer" as an argument value
+
+        - NOTE: Renders the created HTML element <div> to the DOM
+            - When the mouse pointer enters the Web Component's area
+
+    
+    - Inside the method "_hideTooltip()"
+        - Call the inherited method "this.removeChild()"
+            - Pass the private property "this._tooltipContainer" as an argument value
+
+        - NOTE: Removes the created HTML element <div> from the DOM
+            - When the mouse pointer leaves the Web Component's area        
+
+
+    - Save the changes
+
+
+    - On the HTML document (index.html)
+        - Add a new Web Component using the custom HTML tag <uc-tooltip>
+        - Passing the string "Here we go!" as content
+
+
+    - Save the changes
+        - Load / reload the browser
+        
+        - Web app renders two (2) lines of text
+            - Each w/ its own Web Component's icon
+
+        - When each text hovered over w/ a mouse pointer
+            - Renders the HTML element <div> w/ text "This is the tooltip text!" on the DOM
+
+        - When the mouse pointer leaves
+            - Removes the HTML element <div> w/ text "This is the tooltip text!" from the DOM
