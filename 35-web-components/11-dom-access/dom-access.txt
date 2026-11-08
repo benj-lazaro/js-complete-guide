@@ -1,0 +1,34 @@
+Using ".connectedCallback()" For DOM Access
+-------------------------------------------
+- The previous lesson on Web Component lifecycle
+    - Offered the reason behind the encountered error message
+        - When attempting to create & append (mount) the Web Component to the DOM
+
+    - The Web Component's Constructor method is
+        - NOT the best place to create a Web Component & mount it to the DOM
+
+        - Calling the method ".appendChild()"
+            - Attempts to mount a Web Component as a child node to the DOM will fail
+            - The created Web Component still resides in memory at this point in time
+
+
+- To address this error message:
+    - Select ALL of the Constructor method's codebase
+        - Leaving the call to "super()" behind
+
+    - Outside the Constructor method
+        - Call the method "connectedCallback()"
+        - NOTE: This method is inherited from the Class "HTMLElement"
+
+    - Inside the method "connectedCallback()"
+        - Paste the code from the Constructor method
+            
+        - Behind-the-scenes, this method:
+            - Creates a & adds content to the Web Component
+            - Accesses the browser's DOM
+            - Appends (mounts) the Web Component as a child node to the DOM       
+
+        - Save the changes
+            - Load / reload the browser
+            - The error on the "Console" tab is gone
+            - The Web Component's "( ?)" icon is rendered on the browser
