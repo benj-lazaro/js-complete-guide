@@ -1,0 +1,51 @@
+Using Attributes On Custom Elements
+-----------------------------------
+- Using a custom attribute of a Web Component
+    - To configure or pass content outside of the method "connectedCallback()"
+
+    - In the Web Component's Constructor method
+        - Create a private property
+            - Assign the default value for the custom attribute
+
+    - In the method "connectedCallback()"
+        - Check if the custom attribute as been set
+            - In the corresponding HTML document
+
+        - Use the method ".getAttribute()"
+            - Pass the name of the custom attribute as an argument value
+            - Extract the assigned value from Web Component in the corresponding HTML document
+            - Assign the extracted value to the private property
+
+    - In the private method "_showTooltip()
+        - Assign the private property as value to property ".textContent" of
+            - The private property that holds Web Component's HTML element
+
+
+- On the practice project (tooltip.js)
+    - Create a new private property named "_tooltipText"
+        - Assign the string "Default tooltip text." as value
+        - NOTE: Serves as the Web Component's default text
+
+    - In the method "connectedCallback()"
+        - Use an "if" statement to check
+            - If the custom attribute "text" is set in the corresponding HTML document
+
+        - If truthy
+            - Create a private property also named "_tooltipText"
+                - Assign the method "this.getAttribute()" as value
+                - Pass the custom attribute "text" as an argument value
+
+            - NOTE: Effectively overrides the default value
+                - Declared in the Constructor method
+
+    - In the private method "_showTooltip()"
+        - Replace the previous value "This is the tooltip text!" w/
+            - A call to the private property "this._tooltipText"
+
+    
+    - Save the changes
+        - Load / reload the browser
+        
+        - Hover over the individual Web Components
+            - 1st Web Component returns the text "Web Components is a set of standards."
+            - 2nd Web Component returns the text "Default tooltip text."
