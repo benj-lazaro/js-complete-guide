@@ -1,0 +1,60 @@
+Styling Our Elements
+--------------------
+- Implement styling on a Web Component w/out using templates & the "Shadow DOM"
+    - Requires the tedious line-by-line styling implementation
+        - On the HTML element that contains the Web Component
+
+    - This styling approach is susceptible
+        - To clash / override the styling of HTML elements in the DOM that
+        - Uses the same HTML element of the Web Component & vise-versa
+
+
+- On the practice code (tooltip.js)
+    - In the private method "_showTooltip()"
+        - Right after the assignment of content 
+            - To the private property "this._tooltipContainer"
+
+        - Access the private property "this._tooltipContainer"
+            - Chain the property ".style.backgroundColor"
+            - Assign the value "black"
+
+        - Access the private property "this._tooltipContainer"
+            - Chain the property ".style.color"
+            - Assign the value "white"
+
+        - Access the private property "this._tooltipContainer"
+            - Chain the property ".style.position"
+            - Assign the value "absolute"        
+
+        - Access the private property "this._tooltipContainer"
+            - Chain the property ".style.zIndex"
+            - Assign the value 10
+    
+
+    - In the method "connectedCallback()"
+        - At the last line of code
+            - Access the custom HTML tag <uc-tooltip> referred as "this"
+            - Chain the property ".style.position"
+            - Assign the value "relative"
+
+    
+    - To demonstrate styling class
+        - On the HTML document (index.html)
+
+        - Implement an Inline CSS styling
+            - Specifically for the HTML element <div>
+            - Assign an orange colored "border" of 2px wide 
+
+        - The styling is unintentionally implemented on
+            - The same HTML element <div> used by the Web Component
+
+
+    - Save the changes
+        - Load / reload the browser
+
+        - Hover the mouse pointer over the Web Component's icon
+            - The overlay contains:
+                - A Black background color
+                - A White text color
+                - An Orange colored border that is 2px wide
+
