@@ -42,7 +42,7 @@ Working With The Shadow DOM
             - Transferred into the "Shadow DOM"
 
         - To bring it back to the normal DOM
-            - Requires the use of Templates
+            - Requires the use of HTML Templates
             - To be discussed on the next lesson
 
     - The global CSS styling for the HTML element <div>
@@ -92,6 +92,6 @@ Working With The Shadow DOM
             - Removed from the normal DOM w/c resulted to NOT being rendered
 
         - To address this concern:
-            - Requires using Templates
+            - Requires the use of HTML Templates
             
 
