@@ -1,0 +1,97 @@
+Working With The Shadow DOM
+---------------------------
+- Based on the previous lessons
+    - The Web Component is added to the normal DOM
+
+    - The CSS styles set for HTML elements on the normal DOM
+        - Ends up also getting applied to a Web Component
+
+
+- Using the "Shadow DOM"
+    - Allows a Web Component to have its own DOM tree
+        - Located behind the (shadow) of the normal DOM
+
+        - To implement its own CSS styles that
+            - Remains unaffected by the global styles applied on the normal DOM
+
+    - On the Constructor method of the Web Component
+        - Call the method "this.attachShadow()"
+            - Pass a JavaScript object literal as an argument value
+
+        - The JavaScript object literal has a single property
+            - Property named "mode"
+            - Assigned w/ the value of "open"
+
+        - NOTE: Allows access the "Shadow DOM" from outside of the Web Component
+            - Closing the access is typically NOT done
+                - There are other ways to access it even w/ the "mode" set to "close"
+                - NOT worth the effort to do so
+
+            - Simply NOT calling the method "this.attachShadow()" is 
+                - The straightforward way of NOT accessing the "Shadow DOM"
+
+    - On the methods "connectedCallback()", "_showTooltip()" & "_hideTooltip()"
+        - To append the Web Component as a child node of the "Shadow DOM"
+
+        - Refactor reference to "this." w/ "this.shadowRoot"
+            - The former accesses the normal DOM
+            - The latter accesses the "Shadow DOM" root
+
+    - The text content surrounded by the Web Component's custom HTML tag
+        - Detaches from the normal DOM
+            - Transferred into the "Shadow DOM"
+
+        - To bring it back to the normal DOM
+            - Requires the use of Templates
+            - To be discussed on the next lesson
+
+    - The global CSS styling for the HTML element <div>
+        - Ceased to get applied on the Web Component's HTML element <div>
+
+
+- On the practice code (tooltip.js)
+    - In the Constructor method
+        - Call the method "this.attachShadow()"
+        - Pass the following JavaScript object literal as an argument value
+
+            { mode: "open" }
+
+        - NOTE: Grants the Web Component access to the "Shadow DOM"
+
+
+    - In the method "connectedCallback()"
+        - Refactor the reference "this" to "this.shadowRoot" on following statement:
+
+            this.shadowRoot.appendChild(tooltipIcon);
+
+        - NOTE: Appends the Web Component's icon (anchor) as a child node to the "Shadow DOM"
+
+    
+    - In the private method "_showTooltip()"
+        - Refactor the reference "this" to "this.shadowRoot" on following statement:
+
+            this.shadowRoot.appendChild(this._tooltipContainer);
+
+        - NOTE: Appends the Web Component's custom HTML tag as a child node to the "Shadow DOM"
+
+
+    - In the private method "_hideTooltip()"
+        - Refactor the reference "this" to "this.shadowRoot" on following statement:
+
+            this.shadowRoot.removeChild(this._tooltipContainer);
+
+        - NOTE: Removes the Web Component's custom HTML tag from the "Shadow DOM"
+
+
+    - Save the changes
+        - Load / reload the browser
+
+        - The text content surrounded by the Web Component's custom HTML tag gets
+            - Transferred to the "Shadow DOM"
+            
+            - Removed from the normal DOM w/c resulted to NOT being rendered
+
+        - To address this concern:
+            - Requires using Templates
+            
+
