@@ -1,0 +1,102 @@
+Adding An HTML Template
+-----------------------
+- HTML Template
+    - Defines the HTML structure of the Web Component that resides in the Shadow DOM
+
+
+- The 1st approach of adding an HTML template
+    - In the HTML document
+        - On the line of code prior to the Web Component's custom HTML tag
+
+        - Add an HTML element <template>
+            - Pass the Web Component's HTML mark-up as content
+
+            - This HTML mark-up was created in the Web Component's Constructor method
+                - Used as an "anchor" to trigger an Event
+        
+    - On the HTML element <template>
+        - Add the HTML attribute "id"
+            - Assign an identifier that will be used by the Constructor method later
+            - To select the HTML element <template>
+
+    - On the Web Component's Constructor method
+        - Create a local constant
+            - Assign the method "document.querySelector()" as value
+        
+        - Pass the HTML element <template>'s attribute "id" value as an argument
+            - Selects & stores the HTML element <template> 
+
+        - Access the root of the "Shadow DOM"
+            - Chain the method ".appendChild()"
+
+            - Pass the local constant that stores the HTML element <template>
+                - Chain the property ".content"
+                    - To access the HTML mark-up content of the HTML element <template>
+
+                - Chain the method ".cloneNode()"
+                    - Pass a boolean value of true
+                    - To create a deep clone of the HTML mark-up content on the "Shadow DOM"
+
+    - On the method "connectedCallback()"
+        - Remove the two (2) lines of code that
+            - Creates the Web Component's HTML mark-up, rendered in the (normal) DOM
+
+        - Replace it w/ a local constant
+            - Assign the method "this.shadowRoot.querySelector()" as value
+
+            - Pass the HTML tag used by the Web Component that is stored w/in
+                - The deep cloned HTML mark-up content (of the HTML element <template>)
+
+    - This approach results to:
+        - Unable to render the content wrapped by the Web Component's custom HTML tag
+        - Requiring to add content in the associated HTML document
+
+    - The 2nd approach (to be discussed on succeeding lessons)
+        - Contains the Web Component composition w/in a JavaScript file
+        - Removes the need to add content on the HTML document
+
+
+- On the practice code (index.html)
+    - On the line prior to the Web Component's custom HTML tag <uc-tooltip>
+        - Add a HTML element <template>
+            - Add the HTML attribute "id"
+            - Assign the value "tooltip-template"
+
+        - Pass the following HTML mark-up as content:
+
+            <span> (?) </span>
+
+        - Save the changes
+
+
+    - In the Web Component's Constructor method (tooltip.js)
+        - Create a local constant named "template"
+            - Assign the method "document.querySelector()" as value
+            - Pass "#tooltip-template" as an argument value
+
+        - Access the root of the "Shadow DOM"
+            - Chain the method ".appendChild()"
+            - Pass "template.content.cloneNode(true)" as an argument value
+            - Perform a deep clone of the HTML element <template> HTML mark-up content
+
+
+    - In the method "connectedCallback()"
+        - Remove the two (2) lines of code that
+            - Creates the local constant "tooltipIcon"
+            - Assignment of the string " (?) "
+
+        - Replace it w/ a new local constant (also) named "tooltipIcon"
+            - Assign the method "this.shadowRoot.querySelector()" as value
+                - Pass "span" as an argument value
+
+            - Selects the HTML element <span> from the deep clone HTML mark-up content
+                - Taken from the selected HTML element <template>
+
+
+    - Save the changes
+        - Load / reload the browser
+
+        - The content that is wrapped around the 
+            - Web Component's custom HTML <uc-tooltip> remains un-rendered
+
+        - To be addressed on the following lessons
