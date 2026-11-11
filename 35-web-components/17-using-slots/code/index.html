@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Components</title>
+    <style>
+      div {
+        border: solid 2px orange;
+      }
+    </style>
+    <script src="tooltip.js"></script>
+  </head>
+  <body>
+    <template id="tooltip-template">
+      <slot>Some default</slot>
+      <span> (?) </span>
+    </template>
+    <p>
+      <uc-tooltip text="Web Components is a set of standards."
+        >Web Components</uc-tooltip
+      >are awesome!
+    </p>
+    <uc-tooltip></uc-tooltip>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+Using Slots
+-----------
+- The Web Component feature Slots
+    - Renders the content located in-between the custom HTML tag
+
+    - Placing the HTML element <slot>
+        - As content of the HTML element <template>
+
+    - Passing content to the HTML element <slot>
+        - Serves as the default content for the Web Component
+        
+        - It is rendered on the DOM
+            - When NO content is passed to the Web Component's custom HTML tag
+
+
+- On the practice code (index.html)
+    - On the line of code right after the opening HTML element <template>
+        - Insert the HTML element <slot>
+        - NO content in-between the opening & closing tags
+
+
+    - Save the changes
+        - Load / reload the browser
+        
+        - The content wrapped in-between the custom HTML elements of
+            - The Web Component is NOW rendered on the DOM
+
+    
+    - Pass the content "Some default" to the HTML element <slot>
+        - On the 2nd Web Component custom HTML tag <uc-tooltip>
+        - Remove the content
+    
+
+    - Save the changes
+        - Load / reload the browser
+        
+        - On the 2nd Web Component
+            - The default content "Some default" is rendered on the DOM
