@@ -1,0 +1,49 @@
+Defining The Template In JavaScript
+-----------------------------------
+- Use a Template in JavaScript
+    - To remove declaring a HTML element <template> in the corresponding HTML document
+        - Move it on the Web Component's Constructor method
+        - Resulting to a reusable Web Component
+
+
+    - Instead of the recent implemented method w/in the Constructor method where:
+        - Selecting the HTML element <template> from the HTML document
+            - Assigning it to a local constant as value
+            - Deep clone the value (i.e. HTML element <template>)
+            - Append the clone as a child Node on the root of the "Shadow DOM"
+
+        - Access the root of the "Shadow DOM"
+            - Chain the inherited property ".innerHTML"
+
+            - Assign the content of the HTML element <template> as value
+
+            - NOTE: Use Template String Literal
+                - In order to assign a multi-line string
+                - Making it easier to read the assigned HTML mark-up
+
+            - Remove the HTML element <template>
+                - Left behind in the corresponding HTML document
+
+        - Resulting to a simple & reusable Web Component
+
+
+- On the practice code (tooltip.js)
+    - In the Constructor method
+        - Delete the two (2) line of code that:
+            - Creates a local constant named "template"
+            - Appends the local constant as a child Node to the root of the "Shadow DOM"
+
+        - Replace it w/:
+            - Access the root of the "Shadow DOM"
+                - Chain the property ".innerHTML"
+                - Assign the content of the HTML element <template> as value
+
+            - Delete the empty HTML element <template> that is left behind
+
+
+    - Save the changes
+        - Load / reload the browser
+
+        - Web Component behaves exactly as before
+            - The logic is contained w/in a JavaScript file
+            - Making it reusable
