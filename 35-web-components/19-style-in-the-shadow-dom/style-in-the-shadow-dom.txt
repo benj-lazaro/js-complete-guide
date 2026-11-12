@@ -1,0 +1,45 @@
+Using Style Tags In The Shadow DOM
+----------------------------------
+- Implementing CSS styles w/in the Template of the "Shadow DOM"
+    - Styles scoped w/in the Web Component ONLY
+    
+    - Inline CSS
+        - Use the HTML element <style>
+
+        - Declare the target Selector(s)
+        
+        - Implement styling rule(s)
+            - Assign value(s) to specific properties
+
+
+- On the practice code (tooltip.js)
+    - In the Constructor method
+        - Inside the Template of the "Shadow DOM"
+            - Implement an Inline CSS styling on the assigned Template String Literal value
+            - To the property ".innerHTML" of the "Shadow DOM"'s root
+
+        - Create an Element Selector <div>
+            - Set the property "background-color" to "black"
+            - Set the property "color" to "white"
+            - Set the property "position" to "absolute"
+            - Set the property "z-index" to 10
+
+
+    - In the private method "_showTooltip()"
+        - Remove the lines of code that
+            - Implements the CSS style for the created HTML element <div>
+
+    
+    - In the HTML document (index.html)
+        - On the 2nd Web Component
+            - Add an HTML element <div>
+            - Assign the content "This does NOT get the Web Component's styles!"
+
+
+    - Save the changes
+        - Load / reload the browser
+
+        - The CSS styling of the Web Component remains the same
+
+        - The CSS style of the HTML element <div> w/in the HTML document
+            - Does NOT clash w/ that of the Web Component's CSS style
