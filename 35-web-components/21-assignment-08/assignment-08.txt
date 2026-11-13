@@ -1,0 +1,33 @@
+Assignment 08: Time To Practice The Basics
+------------------------------------------
+- Follow the instructions explained in the problem video
+    - Try to implement a solution on your own
+
+    - Attached is a HTML document (index.html)
+        - Contains Inline JavaScript code
+        
+        - Toggles a button w/ a label "Show"
+            - When clicked
+                - Renders an HTML element <p> w/ the content "More infos!"
+                - Changes the label to  "Hide"
+
+            - When clicked again
+                - Hide the HTML element <o>
+                - Change the label back to "Show"
+
+        - Create a Web Component 
+            - By extending the Class "HTMLElement" that will
+                - Contain both the HTML element <button> & <p>
+
+            - Use a Template
+                - The HTML element <p> will have a Slot that
+                    - Allows to pass content from the outside
+
+            - The initial state of the Web Component
+                - Should be controlled through an attribute
+
+            - implement an Event Listener for the HTML element <button>
+
+        - The corresponding HTML document
+            - Should have NO inline CSS & JavaScript code
+
