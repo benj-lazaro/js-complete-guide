@@ -1,0 +1,109 @@
+Extending Built-in Elements
+---------------------------
+- An alternative way to create a Web Component
+    - To base it from an existing (normal) HTML element
+
+    - This Web Component does NOT REQUIRE
+        - A Constructor method
+        - Accessing the "Shadow DOM"
+        
+        - NOTE: Unless there is a need to implement its own styling
+            - NOT when it simply adds a functionality to the existing HTML element
+
+    - This Web Component REQUIRES
+        - Passing a 3rd argument value when 
+            - Calling the method "customElements.defined()" to register the Web Component
+                - 1st = Web Component's custom HTML tag
+                - 2nd = Class name of the Web Component
+                - 3rd = JavaScript object literal 
+        
+            - The JavaScript object literal has
+                - A property named "extends"
+                - Assigned w/ the HTML element that the Web Component is based on
+
+    - On the corresponding HTML document
+        - On the extended HTML element
+            - Use the HTML attribute "is"
+            - Assign the Web Component's custom HTML tag as value
+
+
+- On the practice code
+    - Create a new JavaScript file named "confirm-link.js"
+        - This Web Component will extend the HTML element <a>
+        
+        - Adds a feature that will require the user
+            - To confirm if he/she will proceed to the link's external site
+
+    
+    - In the file (confirm-link.js)
+        - Create a new Class named "ConfirmLink"
+            - Extend the Class "HTMLAnchorElement" using the keyword "extends"
+
+            - NOTE: Extends the specific Class of the HTML element <a>
+                - Instead of the general-scoped Class "HTMLElement"
+
+    
+    - Inside the Class "ConfirmLink"
+        - Add an Event Listener using the method "this.addEventListener()"
+
+        - Pass the following argument values
+            - 1st = The Event "click"
+            - 2nd = An Arrow function
+
+        - On the Arrow function
+            - Define the parameter variable named "event"
+
+        - In the Arrow function
+            - Use an "if" statement to evaluate the user's response
+                - Using the function "confirm()"
+
+                - On the function "confirm()"
+                    - Pass the string "Proceed to open a new tab for this site ?" as argument value
+            
+                - NOTE: The function "confirm()"
+                    - Open a Modal similar to that of "alert()"
+                    - Renders the passed string argument value
+                    - Renders two (2) buttons: "Cancel" & "OK"
+
+                - Use the NOT operator (!) on the "if" conditional statement
+                    - To evaluate & execute code should the user
+                    - Decides NOT to proceed to the external site
+
+                - Call the method "event.preventDefault()"
+                    - When the user clicked the button "Cancel"
+
+        - Outside the Class "ConfirmLink"
+            - Call the method "customElements.define()"
+            
+            - Pass the following argument values
+                - 1st = "uc-confirm-link"
+                - 2nd = ConfirmLink
+                - 3rd = { extends: "a" }
+
+        - Save the changes
+
+
+    - On the HTML document (index.html)
+        - On the line following the last HTML element <div>
+            - Add a HTML element <a>
+
+        - On the HTML element <a>
+            - Add the HTML attribute "is"
+                - Assign "uc-confirm-link" as value
+
+            - Add the HTML attribute "src"
+                - Assign "httpsL://www.google.com" as value
+
+            - Add the HTML attribute "target"
+                - Assign "_blank" as value
+
+        - Save the changes
+
+
+    - Load / reload the browser
+        - Click the link "Google"
+        
+        - Modal wll be rendered on the DOM
+            - Inquiring to "Proceed to open a new tab for this site ?"
+
+        - Clicking the button "Cancel"
