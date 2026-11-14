@@ -1,0 +1,6 @@
+The Next Steps
+--------------
+- The following lessons will focus on the following:
+    - How to work w/ Slots
+    - How to react to changes in the Web Component's attributes
+    - How to style Web Components
