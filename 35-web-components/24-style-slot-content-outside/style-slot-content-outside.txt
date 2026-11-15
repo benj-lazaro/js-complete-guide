@@ -1,0 +1,45 @@
+Styling "slot" Content Outside Of The Shadow DOM
+------------------------------------------------
+- As mentioned in the previous lesson
+    - The content of the <slot> (i.e. projected/slotted content) is NOT part of the "Shadow DOM"
+        - This meant that the content can be styled in the (normal) DOM
+
+    - To style this content:
+        - Wrap it w/in a HTML element <span> 
+            - To function as a Selector for styling in CSS
+
+        - This will NOT conflict w/ the CSS styling defined w/ the "Shadow DOM"
+
+
+- On the practice code (index.html)
+    - On the 1st Web Component <uc-tooltip>
+        - Wrap the content "Web Components" w/in an HTML element <span>
+        
+        - Add the HTML attribute "class"
+            - Assign the value of "highlight"
+    
+
+    - On the HTML document's Inline CSS
+        - Add a Class Selector named ".highlight"
+            - Define the property "background-color"
+            - Assign the value of "rgb(236, 203, 141)"
+
+        - Save the changes
+            - Load / reload the browser
+            - The content "Web Component" is rendered w/ a light Orange background
+            - Proof that it is NOT part of the "Shadow DOM"
+
+
+    - To prove the scoped styling of the "Shadow DOM" does NOT conflict w/ the (normal) DOM
+        - In the Template of the Web Component "ToolTip"
+            - Add a Class Selector named ".highlight"
+                - Define the property "background-color"
+                - Assign the value of "red"
+
+        - Save the changes
+            - Load / reload the browser
+            
+            - The content "Web Component" is still rendered w/ a light Orange background
+                - It is NOT affected by the implemented styling in the "Shadow DOM"
+                - Despite having the identical Class Selector name ".highlight"
+
