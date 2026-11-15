@@ -1,0 +1,21 @@
+Understanding Shadow DOM Projection
+-----------------------------------
+- Observing the previous Web Component "Tooltip" on the Dev Tools' "Elements" tab
+    - The custom HTML tag <uc-tooltip>, its attributes "text" & "style" are rendered on the DOM
+        - Including the root of "Shadow DOM" & its corresponding contents (e.g. <slot>)
+
+    - The string "Web Components" wrapped in-between <uc-tooltip> tags that
+        - Gets pulled (projected) into the "Shadow DOM" via HTML tag <slot>
+        
+        - It is NOT part of the "Shadow DOM" but rather it's sibling in the DOM
+
+    - The HTML tag <slot>
+        - Offers an entry point into the "Shadow DOM" from the DOM
+            - Allows to project content into a Web Component's "Shadow DOM"
+
+        - It does NOT technically "move" an element (or content) into the "Shadow DOM"
+            - The content "Web Components" is NOT moved into it
+            - The corresponding DOM node is NOT moved into the "Shadow DOM"
+        
+        - NOTE: This distinction is IMPORTANT
+            - For the succeeding lessons
