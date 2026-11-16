@@ -1,0 +1,36 @@
+Conditional Host Styling
+------------------------
+- To implement a conditional styling from inside the Web Component
+    - On the Selector ":host()"
+        - Pass a Selector that evaluates to true as an argument value
+    
+    - NOTE: These argument values are referred as "required Selectors"
+        - The value passed could be a Attribute, Class or an ID Selector
+
+    - IMPORTANT: Styling applies ONLY to the custom HTML tags that
+        - Has been assigned w/ the passed Selector(s) to the ":host()"
+
+        - The styling of the remaining custom HTML tags remained untouched
+
+
+- On the practice code
+    - In the HTML document's (index.html) 
+        - Add the HTML attribute "class" on the 1st <uc-tooltip> Web Component
+            - Assign the value "important"
+
+        - Save the changes
+
+
+    - In Web Component's ":host" component
+        - Pass the Class Selector ".important" as an argument values
+
+        - Save the changes
+
+
+    - Load / reload the browser
+        - The internal styling of the Web Component is ONLY applied
+            - On the 1st custom HTML tag <uc-council> w/ the "class" attribute of "important"
+                - Being assigned w/ a background color of Gray (i.e. #ccc)
+
+            - The rest of the custom html tag <uc-council> w/out
+                - The aforementioned "class" attribute remains unchanged
