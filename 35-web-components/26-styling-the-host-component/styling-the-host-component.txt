@@ -1,0 +1,43 @@
+Styling The Host Component
+--------------------------
+- To style a Web Component as a whole outside the "Shadow DOM"
+    - Treat the registered custom HTML tag as a CSS Selector in the DOM
+        - Define the corresponding styling properties
+
+
+- To style the Web Component as a whole inside the "Shadow DOM"
+    - Use the Selector ":host"
+        - Define the corresponding styling properties
+
+    - IMPORTANT: Identical styling properties defined in the (normal) DOM
+        - Overrides the styling defined in the Selector ":host"
+
+
+- In the practice code
+    - To style the entire Web Component outside the "Shadow DOM"
+        - Use the Web Component's custom HTML tag as a Selector
+            - In the HTML document's (index.html) Inline CSS
+                   
+            - Define the property "border"
+                - Assign the value "1px solid blue"
+
+            - Define the property "padding"
+                - Assign the value "0.15rem"
+
+            - Save the changes
+                - Load / reload the browser
+                - Styling on the Web Component has been applied
+
+
+    - To style tne entire Web Component inside the "Shadow DOM"
+        - Use the ":host" Selector in the Web Component's Template
+            - Define the property "background-color"
+                - Assign the value "#ccc"
+            
+            - Save the changes
+                - Load / reload the browser
+                - Styling on the Web Component has been applied
+
+            - IMPORTANT: On identical styling properties
+                - Styling properties defined in the DOM OVERRIDES
+                - The styling defined in the "Shadow DOM"
