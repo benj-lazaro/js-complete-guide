@@ -1,0 +1,49 @@
+Styling "slot" Content Inside Of The Shadow DOM
+-----------------------------------------------
+- To style the slotted content of a Web Component inside the "Shadow DOM"
+    - Use the Pseudo Selector "::slotted()"
+        - Pass a CSS Selector (for the slotted content) as an argument value
+        
+        - IMPORTANT: It ONLY SELECTS the top-most element for styling
+            - Can NOT SELECT nested content / child element in the slotted content
+
+        - Inside the Pseudo Selector
+            - Define additional styling properties
+
+        - IMPORTANT: Order of (identical) styling properties
+            - The styling property defined in the DOM will OVERRIDE
+            - The slotted content's styling property defined in the "Shadow DOM"
+
+    - Use the Pseudo Selector "::slotted(*)"
+        - To style ANY slotted content
+
+
+- On the practice code (tooltip.js)
+    - In the Web Component's Template
+        - Add the Pseudo Selector "::slotted()"
+            - Pass the Class Selector ".highlight" as an argument value
+
+        - In the "::slotted()" Selector
+            - Add the property "border-bottom"
+            - Assign the value "1px dotted red"
+
+        - Save the changes
+            - Load / reload the browser
+            - The styling is applied on the "Shadow DOM" slotted content
+
+    
+    - In the HTML document (index.html)
+        - To test that an identical CSS Selector in the DOM OVERRIDES
+            - The slotted content styling w/in the "Shadow DOM"
+
+        - In the Class Selector ".highlight"
+            - Add the property "border-bottom"
+            - Assign the value "2px solid blue"
+
+        - Save the changes
+            - Load / reload teh browser
+
+            - The styling of the identical Selector in the DOM OVERRIDES
+                - The styling of the slotted content
+
+        
