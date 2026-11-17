@@ -1,0 +1,30 @@
+Styling With The Host Context In Mind
+-------------------------------------
+- Styling the element surrounding the Web Component's custom HTML tag
+    - In the Web Component's Template styling
+        - Use the Selector ":host-context()"
+        
+        - Pass the Element Selector as an argument value
+            - NOTE: Can pass Element, Class, Attribute or any combination
+        
+        - Then declare the styling properties inside that
+            - Will be applied to the surround HTML element of the Web Component
+
+
+- On the practice code (tooltip.js)
+    - In the Web Component's Template
+        - Use the Selector ":host-context()"
+            - Pass "p" as an argument value
+
+        - Refers to the 1st Web Component <uc-council> that is
+            - Surrounded w/in a pair of HTML Element <p>
+
+
+    - Inside the Selector ":host-context(p)"
+        - Define the property "font-weight"
+            - Assign the value "bold"
+
+
+    - Save the changes
+        - The font weight of the 1st Web Component <uc-tooltip" has
+            - Changed to bold
