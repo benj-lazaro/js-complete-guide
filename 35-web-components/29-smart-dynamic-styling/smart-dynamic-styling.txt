@@ -1,0 +1,80 @@
+Smart Dynamic Styling With CSS Variables
+----------------------------------------
+- Web Component styling using CSS variables
+    - A CSS variable is built-in to the core functionality of CSS
+        - It allows to set the style of a Web Component in the DOM
+
+        - On the Web Component's Template styling
+            - Use the CSS function "var()"
+                - To pull the CSS variable's assigned value into the "Shadow DOM"
+
+            - Removes the need to dig into a Web Component's internals
+                - To set a styling property
+
+
+- On the corresponding HTML document's CSS
+    - Declare the Selector "html" or ":root"
+        
+    - Inside the Selector "html"
+        - Define a CSS variable & assign a value
+
+        - Using the following convention:
+
+            --<variable_name>: <value>;
+
+            --<variable>-<name>: <value>;
+
+        - Reference (https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/--*)
+
+
+- On the Web Component's Template
+    - In a Selector's styling property
+        - Assign the CSS function "var()" as a value
+        - Pass the name of the CSS variable (defined in the DOM) as an argument value
+
+            <Selector> {
+                <property>: var(<css_variable_name>);
+            }
+
+    - To set a default / fallback value
+        - Place a "," RIGHT AFTER the CSS variable
+        - Followed by the default / fallback value
+
+            <Selector> {
+                <property>: var(<css_variable_name>, <default_value>);
+            }
+
+        - NOTE: The default / fallback value gets rendered
+            - When the CSS variable is NOT declared in the corresponding HTML document
+
+
+- On the practice code
+    - In the HTML document's ((index.html)) inline CSS styling
+        - Use the Selector ":root" or "html"
+            - Define a CSS variable named "--color-primary"
+            - Assign the value "#a4e6fc"
+
+        - Save the changes
+
+
+    - In the Web Component's Template (tooltip.js)
+        - In the Selector ":host(.important)"
+            - On the property "background"
+                - Add the a call to the CSS function "var()"
+                - Pass the CSS variable "--color-primary" as an argument value
+                - Followed by a "," and the value "#ccc"
+            
+            - NOTE: The value "#ccc" serves as the default / fallback value
+                - When the CSS variable "--color-primary" is NOT declared in the HTML document
+
+
+        - Save the changes
+            - Load / reload the browser
+                - The 1st Web Component renders a new default background color
+            
+            - Commenting the CSS variable "--color-primary" in the HTML document
+                - The default / fallback value gets used instead
+
+            - To change the background color of the Web Component
+                - Simply update the assigned value of the CSS variable "--color-primary"
+                
