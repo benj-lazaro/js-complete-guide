@@ -1,0 +1,34 @@
+Cleaning Up The Overall Styling
+-------------------------------
+- Cleaning up the implemented styling for the Web Component <uc-tooltip>
+
+
+- On the practice code
+    - In the corresponding HTML document (index.html)
+        - In the CSS inline styling
+            - Declare the Selector "*"
+                - Set the property "box-sizing" to "border-box"
+
+            - In the Selector "html"
+                - Set the property "font-family' to "sans-serif"
+
+            - Delete the Selectors "div", "uc-tooltip" & ".highlight"
+
+        - Remove the HTML element <div>
+
+        - Save the changes
+
+
+    - In the Web Component's Template styling (tooltip.js)
+        - In the Selector "div"
+            - Set the property "font-weight" to "normal"
+            - Set the property "top" to "1.5rem"
+            - Set the property "left" to "0.75rem"
+            - Set the property "padding" to "0.15rem"
+            - Set the property "border-radius" to "3px"
+            - Set the property "box-shadow" to "1px 1px 6px rgba(0, 0, 0, 0.26)"
+
+        - In the Selector ":host(.important)"
+            - Set the property "padding" to "0.15rem"
+
+        - Save the changes
