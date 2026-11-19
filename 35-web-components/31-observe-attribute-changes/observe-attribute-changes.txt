@@ -1,0 +1,81 @@
+Observing Attribute Changes
+---------------------------
+- Implement the logic that allows a Web Component
+    - To dynamically change the content passed via attribute
+
+    - Currently, there is NO logic w/in the Web Component that
+        - Picks up changes in the custom HTML tag's attribute &
+            - Dynamically render the content
+    
+        - The method "connectedCallback()" extracts the content
+            - From the custom HTML tag's attribute
+            - When the Web Component gets mounted to the DOM
+
+    - Add a lifecycle hook using the method "attributeChangedCallback()"
+        - This gets executed when an observed attribute is updated
+
+        - Requires three (3) argument values
+            - The name of attribute whose value changed
+            - The old value initially passed to the attribute
+            - The new value passed to the attribute
+
+        - NOTE: This method is simply a performance optimization
+            - It does NOT watch the attribute(s) of a Web Component
+
+    - To observe (& capture) a change in a Web Component's attribute
+        - Use the method "observedAttribute()"
+            - Along w/ the keywords "static" & "get"
+            
+            - Functions as a Static Getter method
+                - It can be called from outside w/out instantiating a Class
+
+            - Returns an array that
+                - Contains the attribute(s) of the Web Component to be "listened" to
+
+            - The array is then implicitly picked up 
+                - By the lifecycle hook (method) "attributeChangedCallback()"
+
+
+- On the practice code (tooltip.js)
+    - Right after the call of the method "connectedCallback()"
+        - Call the method "attributeChangedCallback()"
+            - Declare the following parameter variables:
+                - name
+                - oldValue
+                - new value
+
+        - Inside the method
+            - Call "console.log()"
+            - Pass the parameter variables as argument values
+                - name
+                - oldValue
+                - new value
+
+
+    - Outside the method "attributeChangedCallback()"
+        - Call the method "observedAttribute()"
+            - Prefix w/ the keywords "static' & "get"
+
+        - Inside the method:
+            - Return an array w/ the element "text"
+            - NOTE: Refers to the Web Component's attribute "text"
+
+        - Save the changes
+            - Load / reload the browser
+
+
+    - Launch the Chrome Dev Tools
+        - Click the tab "Elements"
+
+        - Change the "text" attribute of the Web Component <uc-tooltip>
+            - Press ENTER
+
+        - Click the tab "Console"
+            - Two (2) outputs are rendered
+                - 1st output
+                    - The oldValue is set to "null"
+                    - The newValue is set to the current (PRIOR to update) value
+
+                - 2nd output
+                    - The oldValue is set to the previous value
+                    - The newValue is set to the recent change 
