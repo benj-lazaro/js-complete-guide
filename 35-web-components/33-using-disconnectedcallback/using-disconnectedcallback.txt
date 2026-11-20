@@ -1,0 +1,65 @@
+Using "disconnectedCallback()"
+------------------------------
+- When performing any clean-up work on a Web Component
+    - After being removed from the DOM
+    
+    - It is implemented w/in the lifecycle method "disconnectedCallback()"
+        - Triggered when a Web Component is removed from the DOM
+
+
+- On the practice code (tooltip.js)
+    - In the method "connectedCallback()"
+        - Remove the redundant line of code
+
+            this.shadowRoot.appendChild(tooltipIcon);
+
+        - This is NOT required anymore since
+            - It is already defined w/in the Web Component's Template
+
+        - Change the local constant named "tooltipIcon" into 
+            - A Private Class property named "this._tooltipIcon"
+
+        - Refactor references to "tooltipIcon" to "this._tooltipIcon"
+
+
+    - In the Constructor method
+        - Declare a Private Class property named "tooltipIcon"
+            - Leave it uninitialized
+
+
+    - Right after the Static Getter method "observedAttributes()"
+        - Add a lifecycle method "disconnectedCallback()"
+
+    
+    - Inside the lifecycle method "disconnectedCallback()"
+        - Access the Private property "this._tooltipIcon"
+            - Chain the method ".removeEventListener()
+            - Pass the argument values
+                - 1st = "mouseenter"
+                - 2nd = this._showTooltip
+
+        - Access the Private property "this._tooltipIcon"
+            - Chain the method ".removeEventListener()
+            - Pass the argument values
+                - 1st = "mouseleave"
+                - 2nd = this._hideTooltip
+
+        - Call "console.log()"
+            - Pass "Event Listeners cleaned!" as an argument value
+
+        - Save the changes
+
+
+    - Load / reload the browser
+        - Launch Chrome's Dev Tools
+            - Click the tab "Elements"
+
+        - Select the 1st Web Component <uc-tooltip>
+            - Press BACKSPACE or DELETE
+            
+            - To manually remove the Web Component from the DOM
+                - Trigger the lifecycle method "disconnectedCallback()"
+
+            - Click the tab "Console"
+                - The message "Event Listeners cleaned!" is displayed
+
