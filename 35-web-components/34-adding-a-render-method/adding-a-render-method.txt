@@ -1,0 +1,83 @@
+Adding A render() Method
+------------------------
+- An optional optimization pattern of the Web Component
+    - Move the Web Component's rendering logic
+        - From the Private methods "_showTooltip()" & "_hideTooltip()"
+        - Into a centralized Private method named "_render()"
+
+    - The Private methods "_showTooltip()" & "_hideTooltip()"
+        - Handles setting the Web Component's visibility in the DOM
+        
+        - Calls the Private method "_render()"
+            - To respectively render or hide the Web Component to / from the DOM
+
+    - This pattern is quite useful for complex Web Components
+
+
+- On the practice code (tooltip.js)
+    - In the Constructor method
+        - Create a Private property named "this._tooltipVisible"
+        - Assign a boolean value of false
+
+    
+    - Right after the lifecycle method "disconnectedCallback()"
+        - Create a new Private method named "_render()"
+
+
+    - Inside the Private method "_render()"
+        - Use an "if" statement 
+            - To check if the Private property "this._tooltipVisible" is truthy
+
+            - If truthy
+                - Select & cut the code of the Private method "_showTooltip()" 
+                - Paste it here
+
+            - Otherwise
+                - Select & cut the code of the Private method "_hideTooltip()"
+                - Paste it here
+
+
+    - Back in the Constructor method
+        - Remove the Private property "this._tooltipContainer"
+
+
+    - Back in the Private method "_render()"
+        - Create a variable named "tooltipContainer"
+            - Assign "this.shadowRoot.querySelector()" as value
+                - Pass "div" as an argument value
+
+            - NOTE: The HTML element <div> in the root of the "Shadow DOM"
+                - Refers to the HTML element that will contain the Web Component
+
+        - Refactor references to the Private property "this._tooltipContainer" 
+            - To the variable "tooltipContainer"
+
+        - On the "else" clause of the "if" statement
+            - Use a nested "if" statement
+                - To check if the variable "tooltipContainer" is defined
+                - Move the code that removes the Web Component from the DOM into this clause
+            
+            - NOTE: Serves as a failsafe from removing an undefined Web Component's container
+    
+
+    - In the Private method "_showTooltip()"
+        - Access the Private property "this._tooltipVisible"
+            - Assign it w/ a boolean value of true
+
+        - Call the Private method "this._render()"
+            - Renders the Web Component in the DOM
+
+
+    - In the Private method "_hideTooltip()"
+        - Access the Private property "this._tooltipVisible"
+            - Assign it w/ a boolean value of false
+
+        - Call the Private method "this._render()"
+            - Removes the Web Component from the DOM
+
+
+    - Save the changes
+        - Load / reload the browser
+
+        - Behavior of the Web Component remains unchanged
+            - The logic behind the rendering / removal of the Web Component organized
