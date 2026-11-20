@@ -1,0 +1,30 @@
+Adjusting The Component Behavior Upon Attribute Changes
+-------------------------------------------------------
+- Implementing the logic that updates a Web Component's content / behavior
+    - Right after a change on it's attribute
+
+
+- On the practice code (tooltip.js)
+    - In the method "attributeChangedCallback()"
+        - Use an "if" statement
+            - To check if the parameter variables "oldValue" & "newValue" are equal
+
+            - If truthy
+                - Use a "return" statement to immediately return
+                - To prevent waste of time & resources
+
+        - Otherwise, use an "if" statement
+            - To check if the parameter variable "name" is equal to the targeted attribute
+            
+            - Access the Web Component's property
+                - Assign the value stored in the parameter variable "newValue"
+
+        - Save the changes
+        
+        - Load / reload the browser
+            - Launch Chrome's Dev Tools
+            - Click the tab "Elements"
+
+        - Assign a new value to the 1st Web Component's HTML attribute "text" & then press ENTER
+            - Hover the mouse pointer over the 1st Web Component's icon
+            - The updated text is rendered
