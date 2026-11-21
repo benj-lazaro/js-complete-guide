@@ -1,0 +1,24 @@
+Final Adjustment
+----------------
+- In the example code
+    - One final adjustment for the Web Component <uc-tooltip>
+    
+    
+    - In the lifecycle method "connectedCallback()"
+        - Remove the line:
+
+            this.style.position = relative;
+
+  
+    - In the Web Component's Template
+        - Add the following style in the "Shadow DOM"
+
+            :host {
+                position: relative;
+            }
+
+
+    - Save the changes
+        - Load / reload the browser
+
+        - NO changes on the behavior of the Web Component <uc-tooltip>
