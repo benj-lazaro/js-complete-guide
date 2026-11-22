@@ -1,0 +1,10 @@
+The Next Steps
+--------------
+- A dive into building more complex Web Component
+    - By writing a modal Web Component
+
+    - A configurable pop-up (overlay) w/in a web page
+        - Has a nice backdrop & able to pass content into it
+
+    - Able to dispatch own Events from inside the Web Component 
+        - So that it can react to these custom Events outside of it
