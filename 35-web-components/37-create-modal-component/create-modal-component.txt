@@ -1,0 +1,73 @@
+Creating The Basic Modal Component
+----------------------------------
+- Create a basic Modal Web Component that
+    - Comprises of two (2) parts:
+        - A backdrop
+        - A modal
+
+
+- On the practice code
+    - Create a HTML document (index.html)
+        - Use VS Code's HTML boilerplate shortcut
+
+    
+    - Create a JavaSCript file (modal.js)
+        - Create a Class named "Modal" that
+            - Extends the Class "HTMLElement"
+
+        - Inside the Class "Modal"
+            - Access the Parent Class using the method "super()"
+
+            - Open access to the "Shadow DOM"
+                - Using the method "this.attachShadow()"
+                - Pass { mode: "open" } as an argument value
+
+            - Setup the Web Component's Template
+                - Using the property "this.shadowRoot.innerHTML"
+                - Assign the following String Template Literal as value
+
+                `
+                    <style>
+                        #backdrop {
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100vh; 
+                        background: rgba(0, 0, 0, 0.75);
+                        }
+                    </style>
+
+                    <div id="backdrop"></div>
+                    <div id="modal"></div>
+                `
+
+        - Register the Web Component
+            - Using the method "customElements.define()"
+            - Pass the following argument values:
+                - 1st = "uc-modal"
+                - 2nd = "Modal"
+
+        - Save the changes
+
+
+    - Back in the HTML document (index.html)
+        - Implement the Web Component's custom HTML tag <uc-modal>
+
+        - Add an HTML element <p>
+            - Assign the following string content:
+
+                "Please confirm your choice"
+
+        - Add an HTML element <button>
+            - Assign the following content:
+
+                "Show Details & Confirm"
+
+        - Save the changes
+
+
+    - Load / reload the browser
+        - A semi-transparent black colored Web page is rendered that contains
+            - A paragraph contain the string "Please confirm your choice"
+            - A button labeled "Show Details & Confirm" 
