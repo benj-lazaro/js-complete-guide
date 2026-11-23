@@ -1,0 +1,48 @@
+Adding The Modal Container
+--------------------------
+- Implement the CSS styling for the container of the Modal
+    - Prior to populating it w/ content
+
+
+- On the practice code (modal.js)
+    - In the Web Component's Template styling for the ID Selector "#backdrop"
+        - Add the property "z-index"
+            - Assign the value of "10"
+
+
+    - In the ID Selector "#modal"
+        - Add the property "position
+            - Assign the value of "fixed"
+
+        - Add the property "top"
+            - Assign the value of "15vh"
+
+        - Add the property "left"
+            - Assign the value of "25%"
+
+        - Add the property "width"
+            - Assign the value of "50%"
+
+        - Add the property "height"
+            - Assign the value of "30rem"
+
+            - NOTE: This is a tentative implementation
+                - Required in order to "see" the modal container
+
+        - Add the property "z-index"
+            - Assign the value of 100
+
+        - Add the property "backdrop"
+            - Assign the value of "white"
+
+        - Add the property "border-radius"
+            - Assign the value of "3px"
+
+        - Add the property "box-shadow"
+            - Assign the value of "rgba(0, 0, 0, 0.26)"
+
+
+    - Save the changes
+        - Load / reload the browser
+
+        - The modal container is rendered on the DOM
