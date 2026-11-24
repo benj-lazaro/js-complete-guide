@@ -1,0 +1,75 @@
+Styling The Modal Elements
+--------------------------
+- Add content inside the modal then
+    - Style the corresponding elements & content inside of it
+
+
+- On the practice code (modal.js)
+    - In the Web Component's Template
+        - In the HTML element <div> w/ the attribute "id" of "modal"
+            - Add an HTML element <header>
+                - Inside, add an HTML element <h1>
+                    - Add the content "Please Confirm"
+
+            - Add an HTML element <section> w/ an attribute "id" of "main"
+                - Inside, add an HTML element <slot>
+
+            - Add an HTML element <section> w/ an attribute "id" of "actions"
+                - Inside, add an HTML element <button>
+                    - Add the content "Cancel"
+
+                - Add another HTML element <button>
+                    - Add the content "Ok"
+
+        - In the CSS Selector "#modal"
+            - Remove the property "height"
+
+            - NOTE: This is NOT needed anymore
+                - Initially used to make the modal visible w/out content
+
+        - Add a new Element Selector "header"
+            - Add the property "padding"
+                - Assign the value of "1rem"
+
+        - Add a new Element Selector "header h1"
+            - Add the property "font-size"
+                - Assign the value of "1.25rem"
+
+        - Add an ID Selector "#main"
+            - Add the property "padding"
+                - Assign the value of "1rem"
+        
+        - Add an ID Selector "#actions"
+            - Add the property "border-top"
+                - Assign the value of "1px solid #ccc"
+            
+            - Add the property "padding"
+                - Assign the value of "1rem"
+
+            - Add the property "display"
+                - Assign the value of "flex"
+
+            - Add the property "justify-content"
+                - Assign the value of "flex-end"
+
+        - Add an IS Selector "#actions button"
+            - Add the property "margin"
+                - Assign the value of "0 0.25rem"
+
+        - Save the changes
+
+
+    - In the HTML document (index.html)
+        - In-between the Web Component custom HTML tag <uc-modal>
+            - Add an HTML element <p>
+            - Add the content "With your confirmation, you agree to pay the full amount!"
+
+        - Save the changes
+
+    
+    - Load / reload the browser
+        - The modal now contains a 
+            - Header text
+            - Modal text
+            - Pair of buttons "Cancel" & "Ok"
+
