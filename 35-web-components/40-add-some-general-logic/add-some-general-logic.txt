@@ -1,0 +1,72 @@
+Adding Some General App Logic
+-----------------------------
+- Implementing logic on the Web Component "Modal" that
+    - Controls the visibility of the backdrop
+    
+    - Shows / hides the Modal
+        - By adding a custom attribute named "opened" to the custom HTML tag <uc-modal>
+
+
+- On the practice code (index.html)
+    - Add an Inline JavaScript code
+        - Using a child HTML element <script> w/in the HTML element <body>
+        
+        - Implement the Event Handler 
+            - When the button "Please confirm your choice" is clicked
+
+        - Create a global constant named "confirmButton"
+            - Assign the method "document.querySelector()" as value
+                - Pass "button" as an argument value
+
+            - NOTE: The HTML element <button> in the "Shadow DOM" does NOT get selected
+                - This refers to the HTML element <button> in the DOM ONLY
+
+        - Create another global constant named "modal"
+            - Assign the method "document.querySelector()" as value
+                - Pass "uc-modal" as an argument values
+
+            - NOTE: This selects the Web Component's custom HTML tag
+
+        - Access the global constant "confirmButton"
+            - Chain the method ".addEventListener()"
+                
+            - Pass the following argument values
+                - 1st = "click"
+                - 2nd = an Arrow function
+
+            - In the Arrow function
+                - Access the global constant "modal"
+                - Chain the method ".setAttribute()"
+                - Pass the following argument values
+                    - 1st = "opened"
+                    - 2nd = ""
+
+        - Save the changes
+
+    
+    - On the Web Component's Template (modal.js)
+        - In the ID Selector "#backdrop"
+            - Add the property "opacity"
+                - Assign the value of 0
+
+            - Add the property "pointer-events"
+                - Assign the value of "none"
+                - NOTE: Sets the targeted HTML element NOT to accept any mouse clicks
+
+        - In the ID Selector "#modal"
+            - Add the property "opacity"
+                - Assign the value of 0
+
+        - Save the changes
+
+
+    - Load / reload the browser
+        - Launch the Chrome Dev Tools
+            - Click the tab "Elements"
+
+            - Look at the Web Component's custom HTML tag <uc-modal>
+                - Click the button "Show Details & Confirm" in the DOM
+                - The attribute "opened" is added
+
+        - On the next lesson
+            - Implement the corresponding logic when the attribute "opened" is added
