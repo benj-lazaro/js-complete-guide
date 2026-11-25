@@ -5,8 +5,8 @@ Opening The Modal Via CSS
         - The Static Get method "observedAttributes()"
     
     - NOTE: This approach is applicable ONLY
-        - When working solely on styling
-        - Otherwise, using the aforementioned methods is the way to go
+        - When solely updating the Web Component's styling
+        - Otherwise, the aforementioned methods is the way to go
 
 
 - On the practice code (modal.js)

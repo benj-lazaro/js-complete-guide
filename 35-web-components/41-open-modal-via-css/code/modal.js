@@ -83,6 +83,23 @@ class Modal extends HTMLElement {
       </div>
     `;
   }
+
+  // Use this lifecycle method if opening the modal requires MORE than just styling
+  // If it is updating the Web Component's styling, use CSS instead
+  // attributeChangedCallback(name, oldValue, newValue) {
+  //  if (name === "opened") {
+  //   if (this.hasAttribute("opened")) {
+  //     this.shadowRoot.querySelector("#backdrop").style.opacity = 1;
+  //     this.shadowRoot.querySelector("#backdrop").style.pointerEvents = "all";
+  //     this.shadowRoot.querySelector("#modal").style.opacity = 1;
+  //     this.shadowRoot.querySelector("#modal").style.pointerEvents = "all";
+  //   }
+  //  }
+  // }
+
+  // static get observedAttributes() {
+  //   return ["opened"];
+  // }
 }
 
 // Register the Web Component
