@@ -1,0 +1,30 @@
+Opening The Modal Via CSS
+-------------------------
+- Implement the logic that opens the modal using CSS
+    - Instead using the lifecycle method "attributeChangeCallback()" &
+        - The Static Get method "observedAttributes()"
+    
+    - NOTE: This approach is applicable ONLY
+        - When working solely on styling
+        - Otherwise, using the aforementioned methods is the way to go
+
+
+- On the practice code (modal.js)
+    - In the Web Component's Template
+        - Add the selectors ":host([opened]) #modal" & ":host([opened]) #backdrop"
+
+        - Set the property "opacity"
+            - To the value of 1
+
+        -  Set the property "pointer-events"
+            - To the value of "all"
+
+    
+    - Save the changes
+        - Load/reload the browser
+        
+        - Click the button "Show Details & Confirm"
+            - The modal is rendered on the DOM
+            
+            - The backdrop is behind the modal
+                - It's button is now inaccessible
