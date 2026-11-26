@@ -1,0 +1,103 @@
+Public Methods & Properties
+---------------------------
+- An alternative way to the previous lesson
+    - Using the Web Component's public method & property to open the modal
+
+
+- On the practice code (modal.js)
+    - In the Class "Modal"
+        - Define a (public) method named "open"
+
+    
+    - Inside the method "open"
+        - Call the method "this.setAttribute()"
+        - Pass the argument values:
+            - 1st = "opened"
+            - 2nd = ""
+
+    
+    - In the HTML document (index.html)
+        - In the Event Handler attached to the constant "confirmButton"
+            - Comment the call to the method "modal.setAttribute()"
+            - Replace it w/ a call to the Web Component's public method "modal.open()"
+
+        - NOTE: This abstracts the complexity away from the HTML document &
+            - Manage the complexity w/in the Web Component instead
+
+            - This is NOT STRICTLY a better approach but rather considered as an alternative 
+
+
+    - Back in the Web Component's Class "Modal"
+        - Declare a public property named "this.isOpen"
+            - Assign a boolean value of false
+
+        - Inside the (public) method "open()"
+            - Access the (public) property "this.isOpen"
+            - Assign a boolean value of true
+
+
+    - Back in the HTML document (index.html)
+        - In the Event Handler attached to the constant "confirmButton"
+            - After the call to the public method "modal.open()"
+            
+            - Call "console.log()"
+                - Pass the public property "modal.isOpen" as an argument value
+
+            - Save the changes
+                - Load / reload the browser
+                    - Launch the Chrome Dev Tools
+                    - Click the tab "Console"
+
+                - Click the button "Show Details & Confirm"
+                    - The modal is opened / rendered on the DOM
+                    - The boolean value of true is returned in the "Console" tab
+
+            - NOTE: This demonstrates that a public property
+                - Can be accessed outside outside of the Class "Modal"
+                - This approach is totally OPTIONAL
+
+
+    - Back in the Web Component Class "Modal"
+        - In exposing the public property in the HTML document
+            - Best to add the lifecycle method "attributeChangedCallback()"
+
+            - NOT to change the styles (the CSS still does that part) 
+                - To assign the boolean value of true to the public property "isOpen"
+
+            - NOTE: This demonstrates that a public property
+                - Can be accessed outside outside of the Class "Modal"
+                - This approach is totally OPTIONAL
+            
+    
+    - Back in the Event Handler of the HTML document (index.html)
+        - Prior to calling the public method "open()"
+            - Check if the public property "modal.isOpen" is false
+                - Using an "if" statement
+            
+            - If truthy
+                - Call the public method "open()"
+                - Otherwise, do NOTHING or log a message that the modal has already been opened
+        
+        - NOTE: Prevents the manually manipulating the attribute "opened" of
+            - The Web Component using Chrome Dev Tools
+            - Forcing the modal to get re-opened again despite being opened already
+
+    
+    - Save the changes
+        - Load / reload the browser
+            - Launch the Chrome Dev Tools
+            - Click the tab "Console"
+
+        - Click the button "Show Details & Confirm"
+            - The modal is rendered on the DOM
+            - The boolean value of true is returned in the "Console" tab
+
+        - Click the tab "Elements"
+            - Manually remove the attribute "opened" from the Web Component <uc-modal>
+                - Press ENTER & the modal is "removed" from the DOM
+
+            - Click the button "Show Details & Confirm" again
+                - Returns the message that the modal has already been opened
+
+
+
