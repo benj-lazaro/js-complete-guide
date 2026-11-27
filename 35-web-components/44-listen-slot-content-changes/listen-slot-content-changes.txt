@@ -1,0 +1,61 @@
+Listening To Slot Content Changes
+---------------------------------
+- Implement logic that listens to changes
+    - In the content passed to the Web Component's SLot
+
+
+- On the practice code (modal.js)
+    - After the Web Component's Template
+        - Create a local constant named "slots"
+            - Assign the method "this.shadowRoot.querySelectorAll()" as value
+            - Pass "slot" as an argument value
+        
+        - NOTE: Returns ALL HTML element <slot> as elements of an array
+            - From the corresponding HTML document 
+
+
+    - Access the 2nd array element stored in the constant "slots"
+        - Add the suffix "[1]" to reference the 2nd element
+
+        - Chain the method ".addEventListener()"
+            - Pass the following arguments value
+                - 1st = "slotchange"
+                - 2nd = an Arrow function
+
+            - NOTE: The Event "slotchange" is triggered
+                - When a change / update occurred on a Slot's content
+
+    
+    - On the Arrow function
+        - Declare a parameter variable named "event"
+
+    
+    - Inside the Arrow function
+        - Call "console.dir()"
+            - Pass "slots[1].assignedNodes()" as an argument value
+
+        - NOTE: The method ".assignedNodes()"
+            - Returns an array that HTML elements that gets
+                - Projected into the Web Component's Slot(s)
+
+            - These element(s) are NOT part of the "Shadow DOM"
+
+        - NOTE: On the projected HTML element's property "assignedSlot"
+            - Identifies w/c custom HTML tag <slot> the content is projected
+
+
+    - Save the changes
+        - Load / reload the browser
+        
+        - Launch Chrome's Dev Tools
+            - Click the tab "Console"
+
+        - Displays an array containing four (4) elements
+            - Returns the passed content on the 2nd HTML element <slot>
+
+        - Expanding the HTML element <p>
+            - On the property "assignedSlot"
+            
+            - Show a value of "slot"
+                - Referring to the 2nd HTML element <slot> that
+                - Does NOT have a named Slot
