@@ -1,0 +1,48 @@
+Understanding Named Slots
+-------------------------
+- Passing custom content into the Web Component using
+    - A named Slot w/in the Template
+
+    - HTML attribute "slot" on the HTML element that
+        - Assign the define Slot name
+        
+        - NOTE: This HTML element will be passed as content to the Web Component   
+    
+
+- On the practice code (modal.js)
+    - In the Template
+        - Replace the HTML element <h1> w/ <slot>
+
+        - Add the attribute "name"
+            - Assign the value of "title"
+
+        - NOTE: Optionally assign a content to the HTML element <slot>
+            - This will serve as the default value
+            - In the event that there is NO HTML element passed w/ the attribute "name"
+
+    
+    - In the HTML document (index.html)
+        - In the Web Component's custom HTML tag <uc-modal>
+            - Add an HTML element <h1>
+            
+            - Declare the attribute "slot"
+                - Assign the value of "title" (i.e. named Slot) as value
+            
+            - Pass the following string as content
+
+                Please Confirm
+
+            - NOTE: The content will be assigned as value to the Web Component's named Slot
+                - Unnamed Slot will simply fetch the corresponding content
+                - From the content of the Web Component's custom HTML tag
+
+
+    - Back to the Web Component's Template (modal.js)
+        - Replace the CSS Element Selector "header h1" w/
+            - The Selector "::slotted(h1)
+
+        - NOTE: The previous Element Selector can NOT be targeted anymore
+
+        
+
+
